@@ -16,10 +16,28 @@ let string_of_relation =
     function Relation (r, vs) -> r ^ "(" ^ (String.concat ", " vs) ^ ")"
 
 let string_of_symbol =
-    function Symbol (r, ts) -> r ^ " :" ^ (String.concat " -> " ts) 
+    function Symbol (r, ts) -> r ^ " :" ^ (String.concat " -> " ts)
 
 (* type for representing conjuntion of relations *)
 type cube = Cube of relation list
+
+type formula =
+  | Eq of cube * cube
+  | Impl of cube * cube
+
+let isEq f =
+  match f with
+  | Eq (_,_) -> true
+  | Impl (_,_) -> false
+
+let split f =
+  match f with
+  | Eq (x,y) -> (x,y)
+  | Impl (x,y) -> (x,y)
+
+(* TODO: implement partitioning *)
+let partition c =
+  function (Cube l) -> l
 
 (* modifying cubes *)
 let empty_cube = Cube []
@@ -75,10 +93,11 @@ let outputs c = DependenceGraph.output_nodes (DependenceGraph.from_cube c)
 
 (* printing cubes *)
 let string_of_cube =
-    function Cube rs -> String.concat " & " (List.map string_of_relation rs)
+    function Cube rs -> String.concat " , " (List.map string_of_relation rs)
 
 (* now we deal with partitions of relations in a cube *)
 module RelMap = Map.Make(struct type t = int let compare = compare end)
+module StrMap = Map.Make(struct type t = string let compare = compare end)
 
 module Partition = struct
     type t = cube RelMap.t
