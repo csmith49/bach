@@ -18,6 +18,12 @@ let string_of_relation =
 let string_of_symbol =
     function Symbol (r, ts) -> r ^ " :" ^ (String.concat " -> " ts)
 
+let symbol_arity = function
+    | Symbol (r, ts) -> List.length ts
+
+let apply_symbol s vars = match s with
+    Symbol (r, ts) -> Relation (r, vars)
+
 (* type for representing conjuntion of relations *)
 type cube = Cube of relation list
 
@@ -43,6 +49,9 @@ let partition c =
 let empty_cube = Cube []
 
 let conjoin c r = match c with Cube rs -> Cube (r :: rs)
+
+let add_cubes cl cr = match cl with Cube ls ->
+    match cr with Cube rs -> Cube (ls @ rs)
 
 (* extracting useful information from cubes *)
 module VarMap = Map.Make(struct type t = var let compare = compare end)
@@ -115,4 +124,18 @@ module Partition = struct
 
     (* shortcut for making a brand new bucket in the partition with rel *)
     let insert rel part = insert_into (num_partitions part) rel part
+
+    (* accessing the ith cube in a partition  *)
+    let get_cube index part = RelMap.find index part
+
+    (* convert back to a cube *)
+    let flatten part =
+        let f i cl cr = add_cubes cl cr in
+            RelMap.fold f part empty_cube
+
+    (* get input, output information from partition as a whole *)
+    let total_inputs part = inputs (flatten part)
+    let total_outputs part = outputs (flatten part)
+
+    let variables part = DependenceGraph.nodes (DependenceGraph.from_cube (flatten part))
 end
