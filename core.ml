@@ -53,6 +53,22 @@ let conjoin c r = match c with Cube rs -> Cube (r :: rs)
 let add_cubes cl cr = match cl with Cube ls ->
     match cr with Cube rs -> Cube (ls @ rs)
 
+let cube_length = function
+    | Cube xs -> List.length xs
+
+let cube_select c i = match c with
+    | Cube xs -> List.nth xs i
+
+let rec list_pop xs i = match xs with
+    | [] -> []
+    | y :: ys -> if i == 0
+        then ys
+        else y :: (list_pop ys (i - 1))
+
+(* new cube without the ith element *)
+let cube_pop c i = match c with
+    | Cube xs -> Cube (list_pop xs i)
+
 (* extracting useful information from cubes *)
 module VarMap = Map.Make(struct type t = var let compare = compare end)
 module DependenceGraph = struct
@@ -138,4 +154,7 @@ module Partition = struct
     let total_outputs part = outputs (flatten part)
 
     let variables part = DependenceGraph.nodes (DependenceGraph.from_cube (flatten part))
+
+    let pop_cube part = RelMap.remove ((num_partitions part) - 1) part
+    let update_cube part i c = RelMap.add i c part
 end
