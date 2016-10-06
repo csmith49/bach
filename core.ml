@@ -6,6 +6,29 @@ type var = string
 type symbol = Symbol of string * sort list
 type relation = Relation of string * var list
 
+module Relation = struct
+    type t = relation
+    let inputs = function
+        Relation (r, vs) -> List.rev (List.tl (List.rev vs))
+    let output = function
+        Relation (r, vs) -> List.hd (List.rev vs)
+    let to_string = function
+        Relation (r, vs) -> r ^ "(" ^ (String.concat ", " vs) ^ ")"
+    let size = function
+        Relation (r, vs) -> List.length vs
+end
+
+module Symbol = struct
+    type t = symbol
+    let to_string = function
+        Symbol (r, ts) -> r ^ " :" ^ (String.concat " -> " ts)
+    let arity = function
+        | Symbol (r, ts) -> (List.length ts) - 1
+    let apply s vars = match s with
+        Symbol (r, ts) -> Relation (r, vars)
+end
+
+
 let input_variables =
     function Relation (r, vs) -> List.rev (List.tl (List.rev vs))
 
@@ -14,6 +37,9 @@ let output_variable =
 
 let string_of_relation =
     function Relation (r, vs) -> r ^ "(" ^ (String.concat ", " vs) ^ ")"
+
+let relation_size =
+    function Relation (r, vs) -> List.length vs
 
 let string_of_symbol =
     function Symbol (r, ts) -> r ^ " :" ^ (String.concat " -> " ts)
@@ -25,7 +51,30 @@ let apply_symbol s vars = match s with
     Symbol (r, ts) -> Relation (r, vars)
 
 (* type for representing conjuntion of relations *)
+let rec list_pop xs i = match xs with
+    | [] -> []
+    | y :: ys -> if i == 0
+        then ys
+        else y :: (list_pop ys (i - 1))
+
 type cube = Cube of relation list
+
+module Cube = struct
+    type t = cube
+    let extend c r = match c with Cube rs -> Cube (r :: rs)
+    let conjoin cl cr = match cl with Cube ls ->
+        match cr with Cube rs -> Cube (ls @ rs)
+    let length = function
+        | Cube xs -> List.length xs
+    let size = function
+        | Cube xs -> List.fold_left (+) 0 (List.map Relation.size xs)
+    let select c i = match c with
+        | Cube xs -> List.nth xs i
+    let pop c i =  match c with
+        | Cube xs -> Cube (list_pop xs i)
+    let to_string = function
+        Cube rs -> String.concat " , " (List.map Relation.to_string rs)
+end
 
 type formula =
   | Eq of cube * cube
@@ -56,14 +105,11 @@ let add_cubes cl cr = match cl with Cube ls ->
 let cube_length = function
     | Cube xs -> List.length xs
 
+let cube_size = function
+    | Cube xs -> List.fold_left (+) 0 (List.map relation_size xs)
+
 let cube_select c i = match c with
     | Cube xs -> List.nth xs i
-
-let rec list_pop xs i = match xs with
-    | [] -> []
-    | y :: ys -> if i == 0
-        then ys
-        else y :: (list_pop ys (i - 1))
 
 (* new cube without the ith element *)
 let cube_pop c i = match c with
@@ -157,4 +203,5 @@ module Partition = struct
 
     let pop_cube part = RelMap.remove ((num_partitions part) - 1) part
     let update_cube part i c = RelMap.add i c part
+
 end

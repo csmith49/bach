@@ -21,12 +21,15 @@ let _ =
 
     Arg.parse (Arg.align spec_list) anon_fun usage_msg;
 
+    if !noisy then print_endline "Noisy is set!";
+
     for i = 0 to 100 do
         (* get the newest element and update the frontier *)
-        let e, fp = Search.next !f in
+        let e, fp = Search.good_next !f in
         f := fp;
         (* let's see what we're working with *)
-        print_endline (string_of_cube (Partition.flatten e));
+        print_endline ("Handling cube: " ^ (string_of_cube (Partition.flatten e)));
+        List.iter (fun p -> print_endline (string_of_cube (Partition.flatten p))) (SearchablePartition.children e);
         (* for every already-seen cube, we'll make an equation and check *)
         List.iter (fun c -> begin
             wrapped_check (to_cube c) (to_cube e); ()
