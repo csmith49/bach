@@ -1,10 +1,6 @@
 open Core
 open Frontier
-
-(* these variables define the search parameters *)
-let g_allowed_vars = ref ["x";"y";"z"]
-let g_max_terms = ref 2
-let g_signature = ref [Symbol ("f", ["t";"t";"t"]); Symbol ("g", ["t";"t"])]
+open Problem
 
 let new_relation var_in var_out s =
     List.map
@@ -24,19 +20,19 @@ module SearchablePartition = struct
         let process_cube p t = match t with
             | (i, c) ->
                 let outs = Cube.inputs c in
-                let ins = Aux.subtract !g_allowed_vars (Cube.outputs c) in
-                let relations = Aux.flat_map (new_relation ins outs) !g_signature in
+                let ins = Aux.subtract !Problem.globals.variables (Cube.outputs c) in
+                let relations = Aux.flat_map (new_relation ins outs) !Problem.globals.signature in
                 output := !output @ (List.map
                         (fun r -> Partition.insert_into i r p)
                     relations)
         in List.iter (process_cube p) (RelMap.bindings p);
-        if (Partition.length p) < !g_max_terms then
+        if (Partition.length p) < !Problem.globals.max_terms then
             let p_vars = Aux.subtract
-                !g_allowed_vars
+                !Problem.globals.variables
                 (Aux.subtract
                     (Partition.variables p)
                     ((Partition.inputs p) @ (Partition.outputs p)))
-            in let relations = Aux.flat_map (new_relation p_vars p_vars) !g_signature in
+            in let relations = Aux.flat_map (new_relation p_vars p_vars) !Problem.globals.signature in
             output := !output @ (List.map
                     (fun r -> Partition.insert r p)
                 relations)

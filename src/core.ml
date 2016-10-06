@@ -20,11 +20,11 @@ end
 
 (* string aliases for type safety *)
 type sort = string [@@deriving of_sexp]
-type var = string
+type var = string [@@deriving of_sexp]
 
 (* types for symbols and applied symbols  *)
-type symbol = Symbol of string * sort list [@@deriving of_sexp]
-type relation = Relation of string * var list
+type symbol = Symbol of string * (sort list) [@@deriving of_sexp]
+type relation = Relation of string * (var list)
 
 (* wrapper for relation functions *)
 module Relation = struct

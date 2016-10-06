@@ -1,4 +1,4 @@
-OCB_FLAGS = -use-ocamlfind -pkgs 'sexplib,str' -I src
+OCB_FLAGS = -r -use-ocamlfind -pkgs 'sexplib,str,ppx_sexp_conv' -I src
 OCB = ocamlbuild $(OCB_FLAGS)
 
 all: native
