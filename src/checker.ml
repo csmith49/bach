@@ -10,181 +10,148 @@ open Printf
   (make sure it's actually tabs when testing, in case you're a spaceman)
 *)
 
-let syscall cmd =
-  let ic, oc = Unix.open_process cmd in
-  let buf = Buffer.create 16 in
-  (try
-     while true do
-       Buffer.add_channel buf ic 1
-     done
-   with End_of_file -> ());
-  let _ = Unix.close_process (ic, oc) in
-  (Buffer.contents buf)
+let rec make_type n =
+  if n == 0 then [] else "T" :: (make_type (n-1))
 
-let rec makeDummyType n =
-  if n == 0 then [] else "T" :: (makeDummyType (n-1))
-
-let makeDummyVar n =
-  let rec makeDummyVar' n m =
-    if m >= n+1 then [] else ("v"^(string_of_int m)) :: (makeDummyVar' n (m+1))
+let make_var n =
+  let rec make_var' n m =
+    if m >= n+1 then [] else ("v"^(string_of_int m)) :: (make_var' n (m+1))
   in
-  makeDummyVar' n 1
+  make_var' n 1
 
 (* checker receives a list of symbols and lists of subcubes *)
 
-let check (rs: symbol list) (lhs: cube list) (rhs: cube list) (impl: bool)  =
+let to_souffle rs lhs rhs impl output_file = begin
+    let count = ref 0 in
 
-  let count = ref 0 in
-
-  let cubeRep c name =
-    count := !count + 1;
-    let ivs = Cube.inputs c in
-    let ovs = Cube.outputs c in
-    let arr = (List.length ivs) + (List.length ovs) in
-    let sname = name^"_"^(string_of_int !count) in
-    let sym  = Symbol (sname, makeDummyType arr) in
-    let rel = Relation (sname, ivs @ ovs) in
-    (c, Cube.to_string c, sym, rel)
-  in
-
-  let cubeRepString cr =
-    let (c, body, sym, rel) = cr in
-      (Relation.to_string rel) ^ " :- " ^ body ^ "."
-  in
-
-  let relString =
-    fun (Symbol (sname, types)) ->
-      let vars = makeDummyVar (List.length types) in
-      let args = List.map (fun v -> v ^ " : " ^ "T") vars in
-        ".decl " ^ sname ^ "(" ^
-          (String.concat ", " args) ^ ")"
-  in
-
-  let inputRelString s =
-    (relString s) ^ " input"
-  in
-
-
-  let outputRelString s =
-    (relString s) ^ " output printsize"
-  in
-
-  let makePositiveCl lhsReps rhsReps =
-    let body =
-      Cube (List.map (fun (_,_,_,rel) -> rel) (lhsReps @ rhsReps)) in
-
-    let bodyString = Cube.to_string body in
-
-    let ivs = Cube.inputs body in
-    let ovs = Cube.outputs body in
-    let arr = (List.length ivs) + (List.length ovs) in
-
-    let sname = "pos" in
-    let sym  = Symbol (sname, makeDummyType arr) in
-    let rel = Relation (sname, ivs @ ovs) in
-
-    (sym, (Relation.to_string rel) ^ " :- " ^ bodyString ^ ".")
-  in
-
-  let makeNegativeCls lhsReps rhsReps left =
-    let negateRel =
-      fun (c, body, sym, rel) ->
-        let ov = Relation.output rel in
-        let ivs = Relation.inputs rel in
-        let ovfresh = "fr_" ^ ov in
-        let negRel =
-          match rel with
-            Relation (n,vs) -> Relation (n,(ivs @ [ovfresh]))
-        in
-        (Relation.to_string negRel) ^ (", " ^ ov ^ " != " ^ ovfresh)
+    let cube_representation c name =
+        incr count;
+        let in_vars = Cube.inputs c in
+        let out_vars = Cube.outputs c in
+        let arr = (List.length in_vars) + (List.length out_vars) in
+        let s_name = name ^ "_" ^ (string_of_int !count) in
+        let s = Symbol (s_name, make_type arr) in
+        let r = Relation (s_name, in_vars @ out_vars) in
+        (c, Cube.to_string c, s, r)
+    in
+    let cube_representation_string cr =
+        let (c, body, s, r) = cr in
+        (Relation.to_string r) ^ " :- " ^ body ^ "."
+    in
+    let relation_string = function
+        | Symbol (s_name, types) ->
+            let vars = make_var (List.length types) in
+            let args = List.map (fun v -> v ^ " : " ^ "T") vars in
+                ".decl " ^ s_name ^ "(" ^ (String.concat ", " args) ^ ")"
+    in
+    let input_rel_string s = (relation_string s) ^ " input"
+    in
+    (* we use the following line when we only care about numbers, and not
+    actual evidence
+    let output_rel_string s = (relation_string s) ^ " output printsize" *)
+    let output_rel_string s = (relation_string s) ^ " output"
     in
 
+    let makePositiveCl lhsReps rhsReps =
+        let body =
+            Cube (List.map
+                (fun (_, _, _, rel) -> rel)
+                (lhsReps @ rhsReps)) in
+        let body_string = Cube.to_string body in
 
-    let posbody =
-      Cube (List.map (fun (_,_,_,rel) -> rel) lhsReps) in
+        let in_vars = Cube.inputs body in
+        let out_vars = Cube.outputs body in
+        let arr = (List.length in_vars) + (List.length out_vars) in
 
-    let bodyString = Cube.to_string posbody in
+        let s_name = "pos" in
+        let s = Symbol (s_name, make_type arr) in
+        let r = Relation (s_name, in_vars @ out_vars) in
+        (s, (Relation.to_string r) ^ " :- " ^ body_string ^ ".")
+    in
 
-    let ivs = Cube.inputs posbody in
-    let ovs = Cube.outputs posbody in
-    let arr = (List.length ivs) + (List.length ovs) in
+    let makeNegativeCls lhsReps rhsReps left =
+        let negate = fun (c, body, s, r) ->
+            let out_var = Relation.output r in
+            let in_vars = Relation.inputs r in
+            let fresh_out = "fr_" ^ out_var in
+            let neg_r = match r with
+                Relation (n, vs) -> Relation (n, in_vars @ [fresh_out]) in
+            (Relation.to_string neg_r) ^ (", " ^ out_var ^ " != " ^ fresh_out) in
+        let pos_body =
+            Cube (List.map (fun (_, _, _, r) -> r) lhsReps) in
+        let body_string = Cube.to_string pos_body in
+        let in_vars = Cube.inputs pos_body in
+        let out_vars = Cube.outputs pos_body in
+        let arr = (List.length in_vars) + (List.length out_vars) in
 
-    let rhsneg = List.map (fun x -> negateRel x) rhsReps in
+        let rhs_neg = List.map (fun x -> negate x) rhsReps in
 
-    let sname = if left then "lneg" else "rneg" in
-    let sym  = Symbol (sname, makeDummyType arr) in
-    let rel = Relation (sname, ivs @ ovs) in
+        let s_name = if left then "lneg" else "rneg" in
+        let s = Symbol (s_name, make_type arr) in
+        let r = Relation (s_name, in_vars @ out_vars) in
 
-    (sym,
-      List.map (fun x ->
-        (Relation.to_string rel) ^ " :- " ^ bodyString ^ ", " ^ x ^ ".")
-        rhsneg)
+        (s, List.map (fun x ->
+                (Relation.to_string r) ^ " :- " ^ body_string ^ ", " ^ x ^ "."
+            ) rhs_neg)
+    in
 
+    let lhsReps = List.map (fun c -> cube_representation c "lhs") lhs in
+    let rhsReps = List.map (fun c -> cube_representation c "rhs") rhs in
 
-    (* for each nagated rhs atom, create a clause *)
+    let (psym, pcl) = makePositiveCl lhsReps rhsReps in
 
-  in
+    (* dump to file *)
+    let oc = open_out output_file in
 
-  let lhsReps = List.map (fun c -> cubeRep c "lhs") lhs in
-  let rhsReps = List.map (fun c -> cubeRep c "rhs") rhs in
+    (* TODO: for now, im assuming everything is type T *)
+    fprintf oc ".type T\n\n";
 
-  let (psym, pcl) = makePositiveCl lhsReps rhsReps in
+    (* declare input relations *)
+    List.iter (fun x -> fprintf oc "%s\n" (input_rel_string x)) rs;
 
-  (* dump to file *)
-  let oc = open_out "temp.dl" in
+    (* declare output relations LHS *)
+    fprintf oc "\n\n//LHS programs:\n";
 
-  (* TODO: for now, im assuming everything is type T *)
-  fprintf oc ".type T\n\n";
+    let orelsLhs = List.map (fun (_,_,s,_) -> s) lhsReps in
+    List.iter (fun x -> fprintf oc "%s\n" (relation_string x)) orelsLhs;
 
-  (* declare input relations *)
-  List.iter (fun x -> fprintf oc "%s\n" (inputRelString x)) rs;
+    List.iter (fun x -> fprintf oc "%s\n" (cube_representation_string x)) lhsReps;
 
-  (* declare output relations LHS *)
-  fprintf oc "\n\n//LHS programs:\n";
+    (* declare output relations RHS *)
+    fprintf oc "\n\n//RHS programs:\n";
 
-  let orelsLhs = List.map (fun (_,_,s,_) -> s) lhsReps in
-  List.iter (fun x -> fprintf oc "%s\n" (outputRelString x)) orelsLhs;
+    let orelsRhs = List.map (fun (_,_,s,_) -> s) rhsReps in
+    List.iter (fun x -> fprintf oc "%s\n" (output_rel_string x)) orelsRhs;
 
-  List.iter (fun x -> fprintf oc "%s\n" (cubeRepString x)) lhsReps;
+    List.iter (fun x -> fprintf oc "%s\n" (cube_representation_string x)) rhsReps;
 
-  (* declare output relations RHS *)
-  fprintf oc "\n\n//RHS programs:\n";
+    (* declare output relation Positive Evidence *)
+    fprintf oc "\n\n//Positive evidence:\n";
+    fprintf oc "%s\n" (output_rel_string psym);
+    fprintf oc "%s\n" pcl;
 
-  let orelsRhs = List.map (fun (_,_,s,_) -> s) rhsReps in
-  List.iter (fun x -> fprintf oc "%s\n" (outputRelString x)) orelsRhs;
+    let (lnsym, lnegClsList) = makeNegativeCls lhsReps rhsReps true in
 
-  List.iter (fun x -> fprintf oc "%s\n" (cubeRepString x)) rhsReps;
+    fprintf oc "\n\n//Left Negative evidence:\n";
+    fprintf oc "%s\n" (output_rel_string lnsym);
+    List.iter (fun clsStr -> fprintf oc "%s\n" clsStr) lnegClsList;
 
-  (* declare output relation Positive Evidence *)
-  fprintf oc "\n\n//Positive evidence:\n";
-  fprintf oc "%s\n" (outputRelString psym);
-  fprintf oc "%s\n" pcl;
+    if not impl then begin
+        let (rnsym, rnegClsList) = makeNegativeCls rhsReps lhsReps false in
 
-  let (lnsym, lnegClsList) = makeNegativeCls lhsReps rhsReps true in
+        fprintf oc "\n\n//Right Negative evidence:\n";
+        fprintf oc "%s\n" (output_rel_string rnsym);
+        List.iter (fun clsStr -> fprintf oc "%s\n" clsStr) rnegClsList;
+    end;
 
-  fprintf oc "\n\n//Left Negative evidence:\n";
-  fprintf oc "%s\n" (outputRelString lnsym);
-  List.iter (fun clsStr -> fprintf oc "%s\n" clsStr) lnegClsList;
+    close_out oc;
+    end
 
-  if not impl then begin
-    let (rnsym, rnegClsList) = makeNegativeCls rhsReps lhsReps false in
+let run_souffle souffle work_dir in_file fact_dir =
+    (* we build up a souffle command *)
+    let cmd = souffle ^ " -D " ^ work_dir ^ " -I " ^ fact_dir ^ " " in
+    let std_out = Aux.syscall (cmd ^ in_file) in
+    (* then extract the results from the fact files in the work_dir *)
 
-    fprintf oc "\n\n//Right Negative evidence:\n";
-    fprintf oc "%s\n" (outputRelString rnsym);
-    List.iter (fun clsStr -> fprintf oc "%s\n" clsStr) rnegClsList;
-  end;
-
-  close_out oc;
-
-  let souffle = "~/git/souffle-lang/src/souffle -D /tmp" in
-  let s = syscall (souffle ^ " temp.dl") in
-  let sl = Str.split (Str.regexp "\n") s in
-  let slsp = List.map (fun x -> Str.split (Str.regexp "\t") x) sl in
-
-  let m = StrMap.empty in
-  let res = List.fold_left
-    (fun y x ->
-      StrMap.add (List.nth x 0) (int_of_string (List.nth x 1)) y)
-      m slsp
-  in
-  res
+    (* and return them wrapped up in a StrMap *)
+    ();

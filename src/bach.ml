@@ -2,7 +2,17 @@ open Core
 open Search
 open Problem
 open Checker
+open Decision
+open Abduction
 
+let work_dir = "/tmp/"
+let work_file = "/tmp/tmp.dl"
+let souffle = "~/Documents/code/souffle/src/souffle"
+
+let check l r impl = begin
+    to_souffle !Problem.globals.signature l r impl work_file;
+    run_souffle souffle work_dir work_file work_dir
+end
 
 let noisy = ref false
 
@@ -21,11 +31,13 @@ let _ =
 
     if !noisy then print_endline "Noisy is set.";
 
-    for i = 0 to 100 do
-        let e, fp = Search.good_next !f in
+    let e, fp = Search.good_next !f in
+        let e, fp = Search.good_next fp in begin
         f := fp;
         print_endline (Partition.to_string e);
-    done;
+        let c = Partition.to_cube_list e in
+        check c c true
+    end;
 
     if !noisy then begin
         print_endline "STATS";

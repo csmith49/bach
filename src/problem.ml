@@ -19,16 +19,5 @@ let globals = ref {
     signature = [];
 }
 
-let load_lines fname =
-    let lines = ref [] in
-    let chan = open_in fname in
-    try
-        while true; do
-            lines := input_line chan :: !lines
-        done; !lines
-    with End_of_file ->
-        close_in chan;
-        List.rev !lines
-
 let parse_problem_file fname =
-    globals := Params.of_string (String.concat " " (load_lines fname))
+    globals := Params.of_string (String.concat " " (Aux.load_lines fname))

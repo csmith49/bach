@@ -16,6 +16,26 @@ module Aux = struct
     let rec list_copy xs i =
         if i == 0 then []
         else xs :: (list_copy xs (i - 1))
+    let syscall cmd =
+        let ic, oc = Unix.open_process cmd in
+        let buffer = Buffer.create 16 in
+        (try
+            while true do
+                Buffer.add_channel buffer ic 1
+            done
+        with End_of_file -> ());
+        let _ = Unix.close_process (ic, oc) in
+        (Buffer.contents buffer)
+    let load_lines fname =
+        let lines = ref [] in
+        let chan = open_in fname in
+        try
+            while true; do
+                lines := input_line chan :: !lines
+            done; !lines
+        with End_of_file ->
+            close_in chan;
+            List.rev !lines
 end
 
 (* string aliases for type safety *)
@@ -48,6 +68,8 @@ module Symbol = struct
         | Symbol (r, ts) -> (List.length ts) - 1
     let apply s vars = match s with
         Symbol (r, ts) -> Relation (r, vars)
+    let sorts s = match s with
+        Symbol (r, ts) -> ts
 end
 
 (* dependence graph gives us input, output, and local vars *)
@@ -78,8 +100,22 @@ module DependenceGraph = struct
     let nodes graph = match (List.split (VarMap.bindings graph)) with
         (l, r) -> List.sort_uniq compare (l @ List.concat r)
 
+    let self_loop (l, r) = (l == r)
+
+    let edges graph = Aux.flat_map
+            (fun (v, xs) -> List.map (fun x -> (v, x)) xs)
+        (VarMap.bindings graph)
+
+    let nt_edges graph = List.filter (fun e -> not (self_loop e)) (edges graph)
+
+    let output_nodes graph = Aux.subtract (nodes graph)
+        (List.map fst (nt_edges graph))
+
+    let input_nodes graph = Aux.subtract (nodes graph)
+        (List.map snd (nt_edges graph))
+
     (* which nodes are for output, and which are for input? *)
-    let is_output n graph = not (List.mem n (sources graph))
+    (* let is_output n graph = not (List.mem n (sources graph))
 
     let is_input n graph = not (List.mem n (destinations graph))
 
@@ -87,7 +123,7 @@ module DependenceGraph = struct
         List.filter f (destinations graph)
 
     let input_nodes graph = let f n = is_input n graph in
-        List.filter f (sources graph)
+        List.filter f (sources graph) *)
 end
 
 (* type for representing conjuntion of relations *)
@@ -160,5 +196,8 @@ module Partition = struct
 
     let to_string part =
         Cube.to_string (flatten part)
+
+    let to_cube_list part =
+        List.map snd (RelMap.bindings part)
 
 end
