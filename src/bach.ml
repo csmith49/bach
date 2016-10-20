@@ -1,9 +1,9 @@
 open Core
-open Search
 open Problem
 open Checker
 open Decision
 open Abduction
+open Terms
 
 let work_dir = "/tmp/"
 let work_file = "/tmp/tmp.dl"
@@ -25,19 +25,20 @@ let usage_msg = "todo"
 let anon_fun s = raise (Arg.Bad (s ^ " is not recognized."))
 
 let _ =
-    let f = ref (Search.start Partition.empty) in
+    let f = ref (TermSearch.start []) in
 
     Arg.parse (Arg.align spec_list) anon_fun usage_msg;
 
     if !noisy then print_endline "Noisy is set.";
 
-    let e, fp = Search.good_next !f in
-        let e, fp = Search.good_next fp in begin
-        f := fp;
-        print_endline (Partition.to_string e);
-        let c = Partition.to_cube_list e in
-        check c c true
-    end;
+    while true do
+        let e, fp = TermSearch.next !f in
+        begin
+            f := fp;
+            let (c, i, o) = Multiterm.to_cube e in
+                print_endline (Cube.to_string c);
+        end;
+    done;
 
     if !noisy then begin
         print_endline "STATS";

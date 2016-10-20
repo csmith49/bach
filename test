@@ -1,0 +1,14 @@
+(
+    (max_terms 4)
+    (variables
+        (
+            (t (x y))
+        )
+    )
+    (signature
+        (
+            (Symbol f (t t))
+            (Symbol g (t t t))
+        )
+    )
+)

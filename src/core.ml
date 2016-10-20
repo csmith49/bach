@@ -7,6 +7,9 @@ module Aux = struct
         | y :: ys -> if i == 0
             then ys
             else y :: (list_pop ys (i - 1))
+    let cross_prod l r =
+        List.concat (List.map (fun e -> List.map (fun e' -> (e,e')) r) l)
+
     let rec cart_prod = function
         | [] -> [[]]
         | x :: xs -> let rest = cart_prod xs in
@@ -70,6 +73,10 @@ module Symbol = struct
         Symbol (r, ts) -> Relation (r, vars)
     let sorts s = match s with
         Symbol (r, ts) -> ts
+    let inputs s = List.rev (List.tl (List.rev (sorts s)))
+    let output s = List.hd (List.rev (sorts s))
+    let name = function
+        Symbol (r, _) -> r
 end
 
 (* dependence graph gives us input, output, and local vars *)
@@ -201,3 +208,7 @@ module Partition = struct
         List.map snd (RelMap.bindings part)
 
 end
+
+
+(* some helper types we'll inevitably need to pass in *)
+module SortMap = Map.Make(struct type t = sort let compare = compare end)

@@ -51,9 +51,6 @@ let simplify_guard g =
 (* types and stuff for predicates we're searching over *)
 type predicate = ((int list) -> ((int list) -> bool)) * symbol
 
-(* some helper types we'll inevitably need to pass in *)
-module SortMap = Map.Make(struct type t = sort let compare = compare end)
-
 (* given predicates and knowledge about variables, we'll make attributes for id3 *)
 let create_attributes (preds : predicate list)
                       (var_order : int VarMap.t) (* gives index in data point *)
