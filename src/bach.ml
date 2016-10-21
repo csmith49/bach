@@ -4,15 +4,11 @@ open Checker
 open Decision
 open Abduction
 open Terms
+open Souffle
 
 let work_dir = "/tmp/"
 let work_file = "/tmp/tmp.dl"
 let souffle = "~/Documents/code/souffle/src/souffle"
-
-let check l r impl = begin
-    to_souffle !Problem.globals.signature l r impl work_file;
-    run_souffle souffle work_dir work_file work_dir
-end
 
 let noisy = ref false
 
@@ -31,14 +27,10 @@ let _ =
 
     if !noisy then print_endline "Noisy is set.";
 
-    while true do
-        let e, fp = TermSearch.next !f in
-        begin
-            f := fp;
-            let (c, i, o) = Multiterm.to_cube e in
-                print_endline (Cube.to_string c);
-        end;
-    done;
+    let e, fp = TermSearch.next !f in
+        let e, fp = TermSearch.next fp in
+            let e, fp = TermSearch.next fp in
+                to_souffle e e "tmp.dl";
 
     if !noisy then begin
         print_endline "STATS";
