@@ -2,6 +2,13 @@ open Core
 open Frontier
 open Problem
 
+(* counter for fresh variables *)
+let fresh_var_counter = ref 0
+let fresh_var _ = begin
+    incr fresh_var_counter;
+    "v_" ^ (string_of_int !fresh_var_counter)
+end
+
 (* we search over terms, although the top-most node has a var *)
 type term = Var of var | App of symbol * term list
 type root = Root of term * var
@@ -54,13 +61,18 @@ module Term = struct
                         else t) ts
                 in App (s, nts)
     let size t = List.length (get_positions t)
-end
-
-let fresh_var_counter = ref 0
-
-let fresh_var _ = begin
-    incr fresh_var_counter;
-    "v_" ^ (string_of_int !fresh_var_counter)
+    (* the helper maps terms to cube * var *)
+    let rec cube_rep t = match t with
+        | Var v -> Cube.empty, v
+        | App (s, ts) ->
+            let cs, vs = List.split (List.map cube_rep ts) in
+            let v = fresh_var () in
+            let c = Symbol.apply s (vs @ [v]) in
+            let csi = Aux.flat_map
+                (fun x -> match x with
+                    Cube rs -> rs)
+                cs in
+            (Cube (csi @ [c]), v)
 end
 
 module Root = struct
@@ -77,22 +89,16 @@ module Root = struct
     let set_position (r: root) (p: Term.position) (nt: term): root = match r with
         Root (t, v) -> Root (Term.set_position t p nt, v)
     (* utility function *)
-    (* the helper maps terms to cube * var *)
-    let rec cube_rep_helper t = match t with
-        | Var vp -> Cube.empty, vp
-        | App (s, ts) ->
-            let cs, vs = List.split (List.map cube_rep_helper ts) in
-            let v = fresh_var () in
-            let c = Symbol.apply s (vs @ [v]) in
-            let csi = Aux.flat_map
-                (fun x -> match x with
-                    Cube rs -> rs)
-                cs in
-            (Cube (csi @ [c]), v)
     (* while the function ingnores the top-most output var *)
     let cube_rep r = match r with
-        Root (t, v) -> match (cube_rep_helper t) with
-        (c, v) -> c
+        Root (t, v) -> match t with
+            | Var v -> Cube.empty
+            | App (s, ts) ->
+                let cs, vs = List.split (List.map Term.cube_rep ts) in
+                let c = Symbol.apply s (vs @ [v]) in
+                let csi = Aux.flat_map
+                    (fun x -> match x with Cube rs -> rs) cs
+                in Cube (csi @ [c])
     (* iterates over all nodes of the term collecting root vars *)
     let rec input_vars_helper t = match t with
         | Var vp -> [vp]
