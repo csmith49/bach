@@ -37,7 +37,8 @@ let _ =
                     let results = check s e in
                     if !noisy then begin
                         print_endline "Checking...";
-                        print_endline ((Multiterm.to_string s) ^ " = " ^ (Multiterm.to_string e));
+                        print_endline ((Multiterm.to_string s) ^ " <=> " ^ (Multiterm.to_string e));
+                        print_endline (String.concat "\t" (List.map (fun (a, b) -> a ^ ": " ^ (string_of_int (List.length b))) (StrMap.bindings results)));
                     end else ();
                 else ();
             ) !seen;
