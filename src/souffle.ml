@@ -133,18 +133,6 @@ let run_souffle souffle work_dir in_file fact_dir =
     (* and then we shia just do it *)
     Aux.syscall (cmd ^ in_file)
 
-(* loads a file as a list of strings (lines) *)
-let load_file (filename : string) =
-    let lines = ref [] in
-    let chan = open_in filename in
-    try
-        while true; do
-            lines := input_line chan :: !lines
-        done; !lines
-    with End_of_file ->
-        close_in chan;
-        List.rev !lines ;;
-
 (* splits a line on tabs and turns everything to integers *)
 let parse_line (line : string): int list =
     List.map int_of_string (Str.split (Str.regexp "\t") line)
@@ -152,12 +140,12 @@ let parse_line (line : string): int list =
 (* finally, we bundle everything together as a checker *)
 let check (lhs : multiterm)
           (rhs : multiterm) : (int list) list StrMap.t =
-    let work_dir = "/tmp/" in
-    let filename = "tmp.dl" in
-    let fact_dir = "/tmp/" in
-    let souffle = "~/Documents/code/souffle/src/souffle" in
+    let work_dir = !Problem.work_globals.work_dir in
+    let filename = !Problem.work_globals.work_file in
+    let fact_dir = !Problem.fact_dir in
+    let souffle = !Problem.work_globals.souffle in
     let process_output_file n =
-        let lines = load_file (work_dir ^ n) in
+        let lines = Aux.load_lines (work_dir ^ n) in
         List.map parse_line lines
     in
     begin
