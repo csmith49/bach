@@ -48,7 +48,7 @@ def main():
     functions = load_functions(os.path.join(os.getcwd(), args.functions))
 
     for f in functions:
-        out = "{}/{}.csv".format(args.output, f.name)
+        out = "{}/{}.facts".format(args.output, f.name)
         filename = os.path.join(os.getcwd(), out)
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, 'w', newline='') as csvfile:
