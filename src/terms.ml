@@ -191,6 +191,12 @@ module Multiterm = struct
         List.fold_left (fun (cb, ib, ob) (c, i, b) ->
                 (Cube.conjoin cb c, i @ ib, b :: ob))
             (Cube.empty, [], []) cubes
+    (* we also need to be able to constrain output effectively for checking purposes *)
+    let out_constrained_by m1 m2 =
+        let _, _, outputs = to_cube m1 in
+        let _, cons_in, cons_out = to_cube m2 in
+        let cons_vs = cons_in @ cons_out in
+        List.for_all (fun o -> List.mem o cons_vs) outputs
 end
 
 module TermSearch = Deadbeat(Multiterm)

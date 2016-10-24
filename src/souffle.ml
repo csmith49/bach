@@ -58,7 +58,7 @@ let to_souffle (lhs : multiterm)
     (* we need these *)
     let _, li, lo = Multiterm.to_cube lhs in
     let _, ri, ro = Multiterm.to_cube rhs in
-    let total_vars = li @ ri @ lo @ ro in
+    let total_vars = List.sort_uniq Pervasives.compare (li @ ri @ lo @ ro) in
     (* pos and neg relations *)
     let pos = Relation ("pos", total_vars) in
     let lneg = Relation ("lneg", total_vars) in
@@ -93,7 +93,7 @@ let to_souffle (lhs : multiterm)
         end) rhs;
     (* now we can say what we mean by positive evidence *)
     write "\n// POSITIVE EVIDENCE";
-    let rs = relation_string pos in
+    let rs = (relation_string pos) ^ " output" in
     let hd = Relation.to_string pos in
     let bdy = String.concat ", " (List.map
             Relation.to_string
@@ -105,7 +105,7 @@ let to_souffle (lhs : multiterm)
     let pos_body = (String.concat ", " (List.map
             Relation.to_string
         !lhs_rels)) in
-    write (relation_string lneg);
+    write ((relation_string lneg) ^ " output");
     List.iter (fun r ->
             let neg = rel_to_neg_string r in
             write (hd ^ " :- " ^ pos_body ^ ", " ^ neg ^ ".")
@@ -116,7 +116,7 @@ let to_souffle (lhs : multiterm)
     let pos_body = (String.concat ", " (List.map
             Relation.to_string
         !rhs_rels)) in
-    write (relation_string rneg);
+    write ((relation_string rneg) ^ " output");
     List.iter (fun r ->
             let neg = rel_to_neg_string r in
             write (hd ^ " :- " ^ pos_body ^ ", " ^ neg ^ ".")
@@ -129,13 +129,13 @@ end
 (* actually executes the command *)
 let run_souffle souffle work_dir in_file fact_dir =
     (* we build up a souffle command *)
-    let cmd = souffle ^ " -D " ^ work_dir ^ " -I " ^ fact_dir ^ " " in
+    let cmd = souffle ^ " -D " ^ work_dir ^ " -F " ^ fact_dir ^ " " in
     (* and then we shia just do it *)
     Aux.syscall (cmd ^ in_file)
 
 (* splits a line on tabs and turns everything to integers *)
 let parse_line (line : string): int list =
-    List.map int_of_string (Str.split (Str.regexp "\t") line)
+    List.map (fun s -> int_of_string (String.trim s)) (Str.split (Str.regexp "\t") line)
 
 (* finally, we bundle everything together as a checker *)
 let check (lhs : multiterm)
@@ -152,6 +152,6 @@ let check (lhs : multiterm)
         to_souffle lhs rhs (work_dir ^ filename);
         run_souffle souffle work_dir (work_dir ^ filename) fact_dir;
         List.fold_left (fun m n ->
-                StrMap.add n (process_output_file n) m
+                StrMap.add n (process_output_file (n ^ ".csv")) m
             ) StrMap.empty ["pos"; "lneg"; "rneg"]
     end
