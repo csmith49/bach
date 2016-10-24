@@ -70,6 +70,12 @@ def int_gen():
     while True:
         yield randint(-32768, 32767)
 
+@add_generator('fp17')
+def fp_gen():
+    from random import randint
+    while True:
+        yield randint(0, 16)
+
 @add_generator('denom')
 def denom_gen():
     from random import randint
