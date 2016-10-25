@@ -9,8 +9,8 @@ issat = []
 isvalid = []
 #
 
-threshold = 300
-depth = 3
+threshold = 1005
+depth = 4
 
 def f_sat(a):
     s = Solver()
@@ -36,15 +36,16 @@ def f_valid(a):
 
 x = Bool('x')
 y = Bool('y')
+z = Bool('z')
 m = {}
-m[0] = [x,y,True,False]
-
+m[0] = [x,y,z,True,False]
+maxi = 0
 def generateForms():
-
+    global maxi
     
     for i in range(1,depth):
         m[i] = []
-
+        if i > maxi : maxi = i
         for a in m[i-1]:
             neg.append((a,Not(a)))
             m[i].append(Not(a))
@@ -83,8 +84,8 @@ print len(issat)
 print len(isvalid)
             
 allforms = []
-for i in range(1,depth+1):
-    for a in m[i-1]:
+for i in range(0,maxi+1):
+    for a in m[i]:
         allforms.append(a)
 
 
@@ -93,9 +94,8 @@ h = {}
 count = 0
 
 def ineq(f,e):
-    for fp in e:
-        if f_valid (f == fp):
-            return True
+    if f_valid (f == e[0]):
+        return True
 
     return False
 
