@@ -3,6 +3,7 @@ open Core
 type 'a idtree = Attribute of 'a * ('a idtree) * ('a idtree)
               | Pos
               | Neg
+              | Mixed
 
 module type DECIDABLE = sig
     type elt
@@ -63,8 +64,6 @@ module IDTree = functor (D : DECIDABLE) -> struct
         let a, _ = List.hd (List.rev (List.sort cmp search_atts)) in
         (a, Aux.subtract atts [a])
 
-    exception No_exact_classifier
-
     (* let's learn a tree from a set of tagged elements and attributes *)
     let rec learn (atts : attribute list) (ls : labeled list) =
         (* count positive and negative examples *)
@@ -75,9 +74,7 @@ module IDTree = functor (D : DECIDABLE) -> struct
         (* case 2: all negative elements in ls *)
         if (num_pos == 0) then Neg else
         (* case 3: attribute list is empty *)
-        if (List.length atts) == 0 then
-            raise No_exact_classifier
-        else
+        if (List.length atts) == 0 then Mixed else
         (* case 4: let's recurse *)
         let a, new_atts = select_attribute atts ls in
         let f l = apply a (fst l) in

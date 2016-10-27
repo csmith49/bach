@@ -11,42 +11,56 @@ module AbductionLearner =
         type tag = relation
     end)
 
-(* our end goal is to find guards, which look like the following *)
-(* paths have pos (on left) and neg (on right) relations *)
-type path = Top | Bottom | Path of (relation list) * (relation list)
-(* and guards are really just disjunctions of paths *)
+(* to convert our learned tree into something reasonable, we should convert to labeled paths *)
+type path_label = PLabel | NLabel | MLabel
+type path = Path of (relation list) * (relation list) * path_label
 type guard = path list
 
-(* paths form a lattice, some of which is detailed here *)
 module Path = struct
     type t = path
-    (* basic constructors  *)
-    let p_path a = Path ([snd a], [])
-    let n_path a = Path ([], [snd a])
-    (* lower semi-lattice, should be commutative, effectively is *)
-    let meet a b = match a with
-        | Top -> b
-        | Bottom -> Bottom
-        | Path (la, ra) -> match b with
-            | Top -> a
-            | Bottom -> Bottom
-            | Path (lb, rb) -> Path (la @ lb, ra @ rb)
+
+    let to_string p = match p with
+        Path (l, r, m) ->
+            let pos = List.map Relation.to_string l in
+            let neg = List.map (fun rel -> "!" ^ Relation.to_string rel) r in
+            let rels = String.concat ", " (pos @ neg) in
+            match m with
+                | PLabel -> "+: " ^ rels
+                | NLabel -> "-: " ^ rels
+                | MLabel -> "?: " ^ rels
 end
 
-(* importantly, we convert trees to paths by a form of flattening *)
-let rec to_guard t = match t with
-    | Pos -> [Top]
-    | Neg -> [Bottom]
-    | Attribute (a, l, r) ->
-        let pos_paths = List.map (Path.meet (Path.p_path a)) (to_guard l) in
-        let neg_paths = List.map (Path.meet (Path.n_path a)) (to_guard r) in
-        pos_paths @ neg_paths
-
-(* guards are disjunctions, so having top means g is trivially true
-we can also just get rid of any bottoms, they're effectively paths we'll never take *)
-let simplify_guard g =
-    if List.mem Top g then [Top] else
-    List.filter (fun p -> p != Bottom) g
+module Guard = struct
+    type t = guard
+    (* by recursive traversal, we can pick up labeled paths easily *)
+    let rec paths t = match t with
+        | Pos -> [Path ([], [], PLabel)]
+        | Neg -> [Path ([], [], NLabel)]
+        | Mixed -> [Path ([], [], MLabel)]
+        | Attribute ((f, a), l, r) ->
+            let lps = List.map (fun p -> match p with
+                    Path (ll, rr, m) -> Path (a :: ll, rr, m)
+                ) (paths l) in
+            let rps = List.map (fun p -> match p with
+                    Path (ll, rr, m) -> Path (ll, a :: rr, m)
+                ) (paths r) in
+            lps @ rps
+    (* a neg path can become a pos path by negation *)
+    let positivize g = List.map (fun p -> match p with
+            Path (l, r, m) -> match m with
+                | NLabel -> Path (r, l, PLabel)
+                | _ -> p
+        ) g
+    (* and we don't care about mixed labels, they're no good to us *)
+    let exact_paths g = List.filter (fun p -> match p with
+            Path (_, _, m) -> match m with
+                | MLabel -> false
+                | _ -> true
+        ) g
+    (* and the ever-helpful printer *)
+    let to_string g =
+        String.concat " V " (List.map Path.to_string g)
+end
 
 (* types and stuff for predicates we're searching over *)
 type predicate = ((int list) -> ((int list) -> bool)) * symbol
@@ -69,7 +83,5 @@ let abduce (var_order : int VarMap.t)
            (var_sorts : (var list) SortMap.t)
            (evidence : AbductionLearner.labeled list) =
     let attributes = create_attributes global_preds var_order var_sorts in
-    let classifier =
-        try AbductionLearner.learn attributes evidence
-        with AbductionLearner.No_exact_classifier -> Neg
-    in simplify_guard (to_guard classifier)
+    let classifier = AbductionLearner.learn attributes evidence in
+    Guard.positivize (Guard.exact_paths (Guard.paths classifier))

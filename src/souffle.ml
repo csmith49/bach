@@ -43,10 +43,13 @@ let rel_to_neg_string r =
     let x = Relation.output r in
     let fresh_x = "fr_" ^ x in
     let inputs = Relation.inputs r in
+    let fresh_inputs = List.map (fun s -> "_") inputs in
     match r with Relation (f, _) ->
         let new_rel = Relation (f, inputs @ [fresh_x]) in
+        let binder_rel = Relation (f, fresh_inputs @ [x]) in
         let rs = Relation.to_string new_rel in
-            rs ^ ", " ^ x ^ " != " ^ fresh_x
+        let brs = Relation.to_string binder_rel in
+            rs ^ ", " ^ brs ^ ", " ^ x ^ " != " ^ fresh_x
 
 (* now lets write stuff out to a file *)
 let to_souffle (lhs : multiterm)

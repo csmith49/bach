@@ -92,7 +92,7 @@ module Root = struct
     (* while the function ingnores the top-most output var *)
     let cube_rep r = match r with
         Root (t, v) -> match t with
-            | Var v -> Cube.empty
+            | Var v' -> Cube [Relation ("id", [v';v])]
             | App (s, ts) ->
                 let cs, vs = List.split (List.map Term.cube_rep ts) in
                 let c = Symbol.apply s (vs @ [v]) in

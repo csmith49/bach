@@ -15,6 +15,8 @@ let spec_list = [
 let usage_msg = "todo"
 let anon_fun s = raise (Arg.Bad (s ^ " is not recognized."))
 
+let noisy_print s = if !noisy then print_endline s else ()
+
 let _ =
     (* parse command line options *)
     Arg.parse (Arg.align spec_list) anon_fun usage_msg;
@@ -33,13 +35,27 @@ let _ =
         frontier := new_frontier;
         (* we'll check each pair in seen x e *)
         List.iter (fun s ->
-                if ((Multiterm.out_constrained_by s e) && (Multiterm.out_constrained_by e s)) then
-                    let results = check s e in
-                    if !noisy then begin
-                        print_endline "Checking...";
+                (* check and get results *)
+                let results = check s e in
+                let pos_vals = StrMap.find "pos" results in
+                let lneg_vals = StrMap.find "lneg" results in
+                let rneg_vals = StrMap.find "rneg" results in
+                (* now we have a few immediate cases we care about *)
+                (* there is positive evidence *)
+                if ((List.length pos_vals) > 0) then
+                    (* and no negative evidence *)
+                    if ((List.length (lneg_vals @ rneg_vals)) == 0) then begin
+                        noisy_print "POSITIVE FORMULA";
                         print_endline ((Multiterm.to_string s) ^ " <=> " ^ (Multiterm.to_string e));
-                        print_endline (String.concat "\t" (List.map (fun (a, b) -> a ^ ": " ^ (string_of_int (List.length b))) (StrMap.bindings results)));
-                    end else ();
+                    end
+                    else if ((List.length lneg_vals) == 0) then begin
+                        noisy_print "IMPLICATION FORMULA";
+                        print_endline ((Multiterm.to_string s) ^ " ==> " ^ (Multiterm.to_string e));
+                    end
+                    else if ((List.length rneg_vals) == 0) then begin
+                        noisy_print "IMPLICATION FORMULA";
+                        print_endline((Multiterm.to_string e) ^ " ==> " ^ (Multiterm.to_string s));
+                    end
                 else ();
             ) !seen;
         (* and finally add our new multiterm to the seen list *)
