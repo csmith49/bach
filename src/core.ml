@@ -39,6 +39,15 @@ module Aux = struct
         with End_of_file ->
             close_in chan;
             List.rev !lines
+    let delete_at l i =
+        if i < 0 || i >= (List.length l) then
+            invalid_arg "delete_at"
+        else let rec del l' i' =
+            match l' with
+                | [] -> []
+                | h :: t when i = 0 -> t
+                | h :: t -> h :: (del t (i' - 1))
+            in del l i
 end
 
 (* string aliases for type safety *)

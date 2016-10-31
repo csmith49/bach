@@ -3,6 +3,7 @@ open Problem
 open Abduction
 open Terms
 open Souffle
+open Clean
 
 let noisy = ref false
 
