@@ -154,3 +154,86 @@ module Multiterm = struct
         (* TODO: also filter *)
         !output
 end
+
+(* the variables that are used *)
+module PartialVars = struct
+    type t = (sort * (var list)) list
+
+    (* read off sorts from config -- must be function, or won't update *)
+    let available_sorts _ = fst (List.split !Problem.globals.variables)
+    (* new t *)
+    let empty = List.map (fun s -> (s, [])) (available_sorts ())
+    (* find the next available variable for a sort *)
+    let get_next (vs: t) (s: sort): var option =
+        let available = List.assoc s !Problem.globals.variables in
+        let used = List.assoc s vs in
+        try
+            Some (List.hd (Aux.subtract available used))
+        with
+            | _ -> None
+    (* manipulation of inner lists *)
+    let update_sort (vs: t) (s: sort) (v: var): t =
+        List.map (fun (s', vs') ->
+                if s' == s then (s', vs' @ [v]) else (s', vs'))
+            vs
+    (* now we get possible variables, and update the t as we go *)
+    let use_sort (vs: t) (s: sort): (var list) * t =
+        let fresh = get_next vs s in
+        match fresh with
+            | None -> (List.assoc s vs, vs)
+            | Some v ->
+                let vs' = update_sort vs s v in
+                (List.assoc s vs', vs')
+    (* conver list of sorts into list of lists of vars *)
+    let possible_assignments (ss: sort list): (var list) list =
+        let f (vs, t) s =
+            let v, t' = use_sort t s in
+            (vs @ [v], t')
+         in
+        fst (List.fold_left f ([], empty) ss)
+end
+
+(* what we're ultimately after *)
+module Rep = struct
+    (* TODO: can probably move fresh var counter into here *)
+    type e_rel = E of var * var | R of string * var list
+    type t = {
+        reference : string;
+        body : e_rel list;
+        variables : var list;
+    }
+    let e_rel_rep e = match e with
+        | E (v, v') -> v ^ " = " ^ v'
+        | R (s, vs) -> s ^ "(" ^ (String.concat ", " vs) ^ ")"
+    (* now the parts we care about --- string outputs *)
+    let decl_string (rep: t): string =
+        let var_decls = List.mapi (fun i v ->
+                "v_" ^ (string_of_int i) ^ ": T")
+            (rep.variables) in
+        let f = rep.reference in
+        let args = String.concat ", " var_decls in
+        ".decl " ^ f ^ "(" ^ args ^ ")"
+    let pos_string (rep: t): string =
+        let f = rep.reference in
+        let args = String.concat ", " (rep.variables) in
+        f ^ "(" ^ args ^ ")"
+    let neg_string (rep: t): string =
+        let f = rep.reference in
+        let rev_vars = List.rev (rep.variables) in
+        let inputs = List.rev (List.tl rev_vars) in
+        let output = List.hd rev_vars in
+        let fresh_inputs = List.map (fun _ -> "_") inputs in
+        let fresh_output = "fr_" ^ output in
+        let j ss = String.concat ", " ss in
+        let forward =
+            f ^ "(" ^ (j (inputs @ [fresh_output])) ^ ")" in
+        let ineq =
+            output ^ " != " ^ fresh_output in
+        let backward =
+            f ^ "(" ^ (j (fresh_inputs @ [output])) ^ ")" in
+        j [forward;ineq;backward]
+    let def_string (rep: t): string =
+        let hd = pos_string rep in
+        let body = String.concat ", " (List.map e_rel_rep rep.body) in
+        hd ^ " :- " ^ body
+end
