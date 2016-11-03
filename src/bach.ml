@@ -3,7 +3,6 @@ open Problem
 open Abduction
 open Terms
 open Souffle
-open Clean
 
 let noisy = ref false
 
@@ -24,43 +23,44 @@ let _ =
     (* load config options *)
     parse_work_file "config.sexp";
     (* now we search *)
+    print_endline (string_of_int (List.length (Multiterm.children [])));
+
+    print_endline "TESTING";
+
+    let vars = Variables.next_vars ["x";"y";"z"] "fp17" in
+    print_endline ("VARS: " ^ (String.concat ", " vars));
+    print_endline (Variables.get_sort "x");
+
+    let frontier = ref (AbstractSearch.start []) in
+    let _, f' = AbstractSearch.next !frontier in
     let seen = ref [] in
-    let frontier = ref (TermSearch.start []) in
-    (* we need to iterate the frontier to get rid of blank elements *)
-    let _, f = TermSearch.next !frontier in
-    frontier := f;
-    (* then we can start looping *)
+    frontier := f';
+
+    let interpret_check smp l r =
+        let pos_ev = StrMap.find "pos" smp in
+        let lneg_ev = StrMap.find "lneg" smp in
+        let rneg_ev = StrMap.find "rneg" smp in
+        if (List.length pos_ev) > 0 then
+            if (List.length (lneg_ev @ rneg_ev)) = 0 then
+                let fancy_l = Form.to_string l in
+                let fancy_r = Form.to_string r in
+                    print_endline (fancy_l ^ " == " ^ fancy_r)
+    in
     while true do
-        (* let's increment the search *)
-        let e, new_frontier = TermSearch.next !frontier in
-        frontier := new_frontier;
-        (* we'll check each pair in seen x e *)
-        List.iter (fun s ->
-                (* check and get results *)
-                let results = check s e in
-                let pos_vals = StrMap.find "pos" results in
-                let lneg_vals = StrMap.find "lneg" results in
-                let rneg_vals = StrMap.find "rneg" results in
-                (* now we have a few immediate cases we care about *)
-                (* there is positive evidence *)
-                if ((List.length pos_vals) > 0) then
-                    (* and no negative evidence *)
-                    if ((List.length (lneg_vals @ rneg_vals)) == 0) then begin
-                        noisy_print "POSITIVE FORMULA";
-                        print_endline ((Multiterm.to_string s) ^ " <=> " ^ (Multiterm.to_string e));
-                    end
-                    else if ((List.length lneg_vals) == 0) then begin
-                        noisy_print "IMPLICATION FORMULA";
-                        print_endline ((Multiterm.to_string s) ^ " ==> " ^ (Multiterm.to_string e));
-                    end
-                    else if ((List.length rneg_vals) == 0) then begin
-                        noisy_print "IMPLICATION FORMULA";
-                        print_endline((Multiterm.to_string e) ^ " ==> " ^ (Multiterm.to_string s));
-                    end
-                else ();
-            ) !seen;
-        (* and finally add our new multiterm to the seen list *)
-        seen := e :: !seen;
+        let e, f' = AbstractSearch.next !frontier in
+        frontier := f';
+        seen := !seen @ [e];
+        List.iter (fun e' -> begin
+            let forms = Form.convert e e' in
+            List.iter (fun (l, r) ->
+                let lhs, rhs = Form.name_forms l r in
+                let vars, smp = check lhs rhs in
+                (* print_endline ("Checking: " ^ (Form.to_string lhs) ^ ", " ^ (Form.to_string rhs)); *)
+                interpret_check smp lhs rhs;
+                ()
+                ) forms;
+        end) !seen;
+        print_endline (Multiterm.to_string e);
     done;
     (* and finally, print out any relevant stats *)
     if !noisy then begin

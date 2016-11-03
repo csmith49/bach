@@ -1,130 +1,89 @@
+open Test
 open Core
-open Terms
-open Problem
 open Printf
+open Problem
 
-(* helper functions for making some boilerplate code *)
-let rec make_type n =
-    if n == 0 then [] else "T" :: (make_type (n-1))
+type printable = string * Form.form
 
-let make_var n =
-    let rec make_var' n m =
-        if m >= n+1 then
-            []
-        else
-            ("v" ^ (string_of_int m)) :: (make_var' n (m+1))
-    in make_var' n 1
+let decl_rel r = match r with
+    Relation (n, ts) ->
+        let vars = List.mapi (fun i _ ->
+                "v_" ^ (string_of_int i) ^ " : T")
+            ts in
+        ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
-(* minor string and type conversion functions *)
-let symbol_to_rel = function
-    | Symbol (s, ss) -> Relation (s, ss)
-
-let relation_string = function
-    | Relation (f, vs) ->
-        let vars = make_var (List.length vs) in
-        let args = List.map (fun v -> v ^ " : T") vars in
-        ".decl " ^ f ^ "(" ^ (String.concat ", " args) ^ ")"
-
-let root_to_rel r n =
-    let (c, iv, ov) = (Root.to_cube r) in
-        c, Relation (n, iv @ [ov])
-
-let root_to_rule_string r n =
-    let c, rel = root_to_rel r n in
-    let rs = relation_string rel in
-    let hd = Relation.to_string rel in
-    let bdy = match c with
-        Cube xs ->
-            String.concat ", " (List.map Relation.to_string xs)
-    in
-        rs ^ "\n" ^ hd ^ " :- " ^ bdy ^ "."
-
-let rel_to_neg_string r =
-    let x = Relation.output r in
-    let fresh_x = "fr_" ^ x in
-    let inputs = Relation.inputs r in
-    let fresh_inputs = List.map (fun s -> "_") inputs in
-    match r with Relation (f, _) ->
-        let new_rel = Relation (f, inputs @ [fresh_x]) in
-        let binder_rel = Relation (f, fresh_inputs @ [x]) in
-        let rs = Relation.to_string new_rel in
-        let brs = Relation.to_string binder_rel in
-            rs ^ ", " ^ brs ^ ", " ^ x ^ " != " ^ fresh_x
-
-(* now lets write stuff out to a file *)
-let to_souffle (lhs : multiterm)
-               (rhs : multiterm)
+let to_souffle (lhs : printable list)
+               (rhs : printable list)
                (filename : string): var list = begin
-    (* for making variables *)
-    let count = ref 0 in
-
-    (* we need these *)
-    let _, li, lo = Multiterm.to_cube lhs in
-    let _, ri, ro = Multiterm.to_cube rhs in
-    let total_vars = List.sort_uniq Pervasives.compare (li @ ri @ lo @ ro) in
-    (* pos and neg relations *)
+    (* first, might as well grab the variables *)
+    let extract_vars (n, (c, iv, ov)) = Aux.append iv ov in
+    let total_vars = List.sort_uniq
+            Pervasives.compare
+        (Aux.flat_map
+                extract_vars
+            (lhs @ rhs)) in
+    (* and now we'll define pos, lneg, rneg *)
     let pos = Relation ("pos", total_vars) in
     let lneg = Relation ("lneg", total_vars) in
     let rneg = Relation ("rneg", total_vars) in
-    (* so we can find the relations later *)
-    let lhs_rels = ref [] in
-    let rhs_rels = ref [] in
-
-    (* lets make an output channel *)
+    (* then open an output channel *)
     let oc = open_out filename in
     let write s = fprintf oc "%s\n" s in
+    (* and do some printing *)
     write "// BASIC DECLS";
-    (* we assume souffle just has to deal with a single type *)
+    (* we assume souffle has to deal with just one type *)
     write ".type T";
-    (* we'll print all possible input relations *)
-    List.iter (fun s -> write
-        ((relation_string (symbol_to_rel s)) ^ " input")
-    ) !Problem.globals.signature;
-    (* now the lhs roots *)
+    (* now we need to print all input relations *)
+    List.iter (fun s -> match s with Symbol (n, ts) ->
+                write ((decl_rel (Relation (n, ts))) ^ " input"))
+        !Problem.globals.signature;
+    (* now the lhs decls and bodies *)
     write "\n// LHS ROOTS";
-    List.iteri (fun i r -> begin
-            let name = "lhs_" ^ (string_of_int i) in
-            lhs_rels := !lhs_rels @ [snd (root_to_rel r name)];
-            write (root_to_rule_string r name);
-        end) lhs;
-    (* and the rhs roots *)
+    List.iter (fun (n, f) ->
+            begin
+                write (Form.decl_string n f);
+                write (Form.definition_string n f);
+            end)
+        lhs;
+    (* how about the rhs now *)
     write "\n// RHS ROOTS";
-    List.iteri (fun i r -> begin
-            let name = "rhs_" ^ (string_of_int i) in
-            rhs_rels := !rhs_rels @ [snd (root_to_rel r name)];
-            write (root_to_rule_string r name);
-        end) rhs;
-    (* now we can say what we mean by positive evidence *)
-    write "\n// POSITIVE EVIDENCE";
-    let rs = (relation_string pos) ^ " output" in
+    List.iter (fun (n, f) ->
+            begin
+                write (Form.decl_string n f);
+                write (Form.definition_string n f);
+            end)
+        rhs;
+    (* now let's define positive evidence *)
+    write "\n// POS EVIDENCE";
+    write ((decl_rel pos) ^ " output");
     let hd = Relation.to_string pos in
-    let bdy = String.concat ", " (List.map
-            Relation.to_string
-        (!lhs_rels @ !rhs_rels)) in
-    write (rs ^ "\n" ^ hd ^ " :- " ^ bdy ^ ".");
-    (* we'll start with left negative evidence *)
-    write "\n// LEFT NEGATIVE EVIDENCE";
+    let bdy = String.concat ", " (List.map (fun (n, f) ->
+            Form.pos_string n f)
+        (lhs @ rhs)) in
+    write (hd ^ " :- " ^ bdy ^ ".");
+    (* and left neg next *)
+    write "\n// LNEG EVIDENCE";
+    write ((decl_rel lneg) ^ " output");
     let hd = Relation.to_string lneg in
-    let pos_body = (String.concat ", " (List.map
-            Relation.to_string
-        !lhs_rels)) in
-    write ((relation_string lneg) ^ " output");
-    List.iter (fun r ->
-            let neg = rel_to_neg_string r in
-            write (hd ^ " :- " ^ pos_body ^ ", " ^ neg ^ ".")
-        ) !rhs_rels;
-    (* and copy for right neg evidence *)
-    write "\n// RIGHT NEGATIVE EVIDENCE";
+    let lbdy = String.concat ", " (List.map (fun (n, f) ->
+            Form.pos_string n f)
+        lhs) in
+    let rbdys = List.map (fun (n, f) -> Form.neg_string n f) rhs in
+    List.iter (fun n ->
+            write (hd ^ " :- " ^ lbdy ^ ", " ^ n ^ ".");)
+        rbdys;
+    (* symmetrically for right *)
+    write "\n// RNEG EVIDENCE";
+    write ((decl_rel rneg) ^ " output");
     let hd = Relation.to_string rneg in
-    let pos_body = (String.concat ", " (List.map
-            Relation.to_string
-        !rhs_rels)) in
-    write ((relation_string rneg) ^ " output");
-    List.iter (fun r ->
-            let neg = rel_to_neg_string r in
-            write (hd ^ " :- " ^ pos_body ^ ", " ^ neg ^ ".")
-        ) !lhs_rels;
-    (* finally, we need to close the file *)
+    let lbdy = String.concat ", " (List.map (fun (n, f) ->
+            Form.pos_string n f)
+        rhs) in
+    let rbdys = List.map (fun (n, f) -> Form.neg_string n f) lhs in
+    List.iter (fun n ->
+            write (hd ^ " :- " ^ lbdy ^ ", " ^ n ^ ".");)
+        rbdys;
+    (* and finally, we can print things *)
     close_out oc;
     total_vars
 end
@@ -134,15 +93,16 @@ let run_souffle souffle work_dir in_file fact_dir =
     (* we build up a souffle command *)
     let cmd = souffle ^ " -D " ^ work_dir ^ " -F " ^ fact_dir ^ " " in
     (* and then we shia just do it *)
-    Aux.syscall (cmd ^ in_file)
+    let _ = Aux.syscall (cmd ^ in_file) in
+    ()
 
-(* splits a line on tabs and turns everything to integers *)
-let parse_line (line : string): int list =
-    List.map (fun s -> int_of_string (String.trim s)) (Str.split (Str.regexp "\t") line)
+(* splits a line on tabs and turns everything to strings *)
+let parse_line (line : string): string list =
+    Str.split (Str.regexp "\t") line
 
-(* finally, we bundle everything together as a checker *)
-let check (lhs : multiterm)
-          (rhs : multiterm) : (int list) list StrMap.t =
+(* finally, bundle it all up in a checker *)
+let check (lhs : printable list)
+          (rhs : printable list): (var list) * ((string list) list StrMap.t) =
     let work_dir = !Problem.work_globals.work_dir in
     let filename = !Problem.work_globals.work_file in
     let fact_dir = !Problem.fact_dir in
@@ -152,9 +112,10 @@ let check (lhs : multiterm)
         List.map parse_line lines
     in
     begin
-        to_souffle lhs rhs (work_dir ^ filename);
+        let vars = to_souffle lhs rhs (work_dir ^ filename) in
         run_souffle souffle work_dir (work_dir ^ filename) fact_dir;
-        List.fold_left (fun m n ->
-                StrMap.add n (process_output_file (n ^ ".csv")) m
-            ) StrMap.empty ["pos"; "lneg"; "rneg"]
+        let results = List.fold_left (fun m n ->
+                StrMap.add n (process_output_file (n ^ ".csv")) m)
+            StrMap.empty ["pos"; "lneg"; "rneg"] in
+        vars, results
     end
