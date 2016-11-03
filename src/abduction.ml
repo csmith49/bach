@@ -7,7 +7,7 @@ let global_preds = []
 (* we now make our special instance of the id3 module *)
 module AbductionLearner =
     IDTree(struct
-        type elt = int list
+        type elt = string list
         type tag = relation
     end)
 
@@ -63,7 +63,7 @@ module Guard = struct
 end
 
 (* types and stuff for predicates we're searching over *)
-type predicate = ((int list) -> ((int list) -> bool)) * symbol
+type predicate = ((int list) -> ((string list) -> bool)) * symbol
 
 (* given predicates and knowledge about variables, we'll make attributes for id3 *)
 let create_attributes (preds : predicate list)

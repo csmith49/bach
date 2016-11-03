@@ -9,7 +9,6 @@ module Aux = struct
             else y :: (list_pop ys (i - 1))
     let cross_prod l r =
         List.concat (List.map (fun e -> List.map (fun e' -> (e,e')) r) l)
-
     let rec cart_prod = function
         | [] -> [[]]
         | x :: xs -> let rest = cart_prod xs in
@@ -48,6 +47,19 @@ module Aux = struct
                 | h :: t when i = 0 -> t
                 | h :: t -> h :: (del t (i' - 1))
             in del l i
+    let rec drop_from l i = if i == 0
+        then l
+        else drop_from (List.tl l) (i - 1)
+    let rec set_at m i n = match m with
+        | [] -> if i == 0 then [n] else invalid_arg "set_at"
+        | r :: rs -> if i == 0
+            then n :: rs
+            else r :: (set_at rs (i - 1) n)
+    let append l n =
+        List.rev (n :: (List.rev l))
+    let rec take_from l i = if i == 0
+        then []
+        else (List.hd l) :: (take_from l (i - 1))
 end
 
 (* string aliases for type safety *)
