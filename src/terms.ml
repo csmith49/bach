@@ -202,13 +202,13 @@ module ConcretizedMT = struct
                 hd ^ " :- " ^ body ^ "."
             in List.mapi set_ith rs
     let pos_strings (base : string) (cmt : t) : string list = match cmt with
-        | Truth -> ["true(_)"]
+        | Truth -> ["bool(\"true\")"]
         | Concretized rs ->
             let set_ith i r =
                 Root.positive (base ^ "_" ^ (string_of_int i)) r
             in List.mapi set_ith rs
     let neg_strings (base : string) (cmt : t) : string list list = match cmt with
-        | Truth -> [["false(_)"]]
+        | Truth -> [["bool(\"false\")"]]
         | Concretized rs ->
             let set_ith i r =
                 let neg = Root.negative (base ^ "_" ^ (string_of_int i)) r in

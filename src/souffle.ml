@@ -35,6 +35,10 @@ let to_souffle (lhs : ConcretizedMT.t)
                 write ((decl_rel (Relation (n, ts))) ^ " input"))
         !Problem.globals.signature;
 
+    (* and i want stuff for true and false *)
+    write ".decl bool(v : T)";
+    write "bool(\"true\").";
+
     (* now the lhs decls and bodies *)
     write "\n// LHS ROOTS";
     List.iter write (ConcretizedMT.decl_strings "lhs" lhs);
