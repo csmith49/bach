@@ -62,8 +62,8 @@ module IDTree = functor (D : DECIDABLE) -> struct
     let select_attribute (atts : attribute list) (ls : labeled list) =
         let search_atts = List.map (fun a -> (a, info_gain a ls)) atts in
         let cmp x y = Pervasives.compare (snd x) (snd y) in
-        let a, _ = List.hd (List.rev (List.sort cmp search_atts)) in
-        (a, Aux.subtract atts [a])
+        let atts', a = Aux.rev_cons (fst (List.split (List.sort cmp search_atts))) in
+        (a, atts')
 
     (* let's learn a tree from a set of tagged elements and attributes *)
     let rec learn (atts : attribute list) (ls : labeled list) =
@@ -80,8 +80,6 @@ module IDTree = functor (D : DECIDABLE) -> struct
         let a, new_atts = select_attribute atts ls in
         let f l = apply a (fst l) in
         let p, n = List.partition f ls in
-        let _ = print_endline "before" in
         let ans = Attribute (a, (learn new_atts p), (learn new_atts n)) in
-        let _ = print_endline "after" in
         ans
 end
