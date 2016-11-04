@@ -23,6 +23,8 @@ let _ =
     Arg.parse (Arg.align spec_list) anon_fun usage_msg;
     (* load config options *)
     parse_work_file "config.sexp";
+    (* load fact files *)
+    add_fact_data !Problem.fact_dir;
     (* now we search *)
     print_endline "TESTING";
 

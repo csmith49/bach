@@ -191,4 +191,9 @@ module Term = struct
                 (ps : position list): 'c list =
         List.map (fun p -> f (at_position t p)) ps
     let size t = List.length (positions t)
+    let node_values (t : ('a, 'b) term) : 'b list =
+        let inner_positions = filter (fun t -> not (is_leaf t)) t in
+        pos_map (fun t' -> match t' with
+                    | L _ -> invalid_arg "uhh"
+                    | N (s, ts) -> s) t inner_positions
 end

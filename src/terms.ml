@@ -175,7 +175,8 @@ module Root = struct
         Root (t, v) ->
             let t_string = vterm_to_string t in
             t_string ^ " = " ^ v
-
+    let fst (r : root) = match r with
+        Root (t, v) -> t
 end
 
 (* this module just helps with printing --- needed for souffle stuff *)
@@ -223,6 +224,12 @@ module ConcretizedMT = struct
     let to_string (cmt : t) : string = match cmt with
         | Truth -> "T"
         | Concretized rs -> Aux.concat (List.map Root.to_string rs)
+    (* to limit filesize, need exactly the input relations that appear here *)
+    let symbols_used (cmt : t) : symbol list = match cmt with
+        | Truth -> []
+        | Concretized rs -> Aux.flat_map (fun t ->
+                Term.node_values t)
+            (List.map Root.fst rs)
 end
 
 module LiftedMT = struct

@@ -3,6 +3,13 @@ open Core
 open Printf
 open Problem
 
+let fact_data = ref (StrMap.add "bool" "bool(\"true\")." StrMap.empty)
+
+(* splits a line on tabs and turns everything to strings *)
+let parse_line (line : string): string list =
+    List.map String.trim (Str.split (Str.regexp "\t") line)
+
+(* helpful, as we want to declare several relations as we build *)
 let decl_rel r = match r with
     Relation (n, ts) ->
         let vars = List.mapi (fun i _ ->
@@ -10,13 +17,41 @@ let decl_rel r = match r with
             ts in
         ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
+(* we're gonna make a string map containing all the data, and we're gonna make souffle pay for it *)
+let load_facts (fact_dir : string) =
+    (* line by line, turn a b c into rel("a", "b", "c"). *)
+    let handle_fact_file rel_name =
+        let data = Aux.load_lines (fact_dir ^ rel_name ^ ".facts") in
+        let quote s = "\"" ^ s ^ "\"" in
+        let process_line l =
+            let line_vals = parse_line l in
+            rel_name ^ "(" ^ (Aux.concat (List.map quote line_vals)) ^ ")." in
+        String.concat "\n" (List.map process_line data)
+    in List.fold_left (fun m r ->
+            StrMap.add r (handle_fact_file r) m)
+        StrMap.empty (List.map Symbol.name !Problem.globals.signature)
+
+(* and now we update our global variable appropriately *)
+let add_fact_data (fact_dir : string) =
+    let new_facts = load_facts fact_dir in
+    fact_data := StrMap.union (fun k v v' ->
+            Some (v ^ "\n" ^ v'))
+        new_facts !fact_data
+
+(* once we have our concretized stuff, we want to print it out *)
 let to_souffle (lhs : ConcretizedMT.t)
                (rhs : ConcretizedMT.t)
                (filename : string): var list = begin
+
     (* first, might as well grab the variables *)
     let total_vars = List.sort_uniq
             Pervasives.compare
         ((ConcretizedMT.variables lhs) @ (ConcretizedMT.variables rhs)) in
+    (* and the symbols to be used *)
+    let total_symbols = List.sort_uniq
+        Pervasives.compare
+        ((ConcretizedMT.symbols_used lhs) @ (ConcretizedMT.symbols_used rhs)) in
+
     (* and now we'll define pos, lneg, rneg *)
     let pos = Relation ("pos", total_vars) in
     let lneg = Relation ("lneg", total_vars) in
@@ -29,15 +64,25 @@ let to_souffle (lhs : ConcretizedMT.t)
     (* and do some printing *)
     write "// BASIC DECLS";
     (* we assume souffle has to deal with just one type *)
+    (* TODO: extend this with types from the symbols used *)
     write ".type T";
-    (* now we need to print all input relations *)
-    List.iter (fun s -> match s with Symbol (n, ts) ->
-                write ((decl_rel (Relation (n, ts))) ^ " input"))
-        !Problem.globals.signature;
 
-    (* and i want stuff for true and false *)
-    write ".decl bool(v : T)";
-    write "bool(\"true\").";
+    (* now we declare all relations we use in this file *)
+    List.iter (fun s -> match s with Symbol (n, ts) ->
+            write (decl_rel (Relation (n, ts))))
+        total_symbols;
+
+    (* and booleans *)
+    write (decl_rel (Relation ("bool", ["bool_sort"])));
+
+    (* now we can write down all the data we need for the symbols used *)
+    write "\n// DATA";
+    List.iter (fun s ->
+            write (StrMap.find (Symbol.name s) !fact_data))
+        total_symbols;
+
+    (* and for the booleans *)
+    write (StrMap.find "bool" !fact_data);
 
     (* now the lhs decls and bodies *)
     write "\n// LHS ROOTS";
@@ -93,23 +138,18 @@ let to_souffle (lhs : ConcretizedMT.t)
 end
 
 (* actually executes the command *)
-let run_souffle souffle work_dir in_file fact_dir =
+let run_souffle souffle work_dir in_file =
     (* we build up a souffle command *)
-    let cmd = souffle ^ " -D " ^ work_dir ^ " -F " ^ fact_dir ^ " " in
+    let cmd = souffle ^ " -D " ^ work_dir ^ " " in
     (* and then we shia just do it *)
     let _ = Aux.syscall (cmd ^ in_file) in
     ()
-
-(* splits a line on tabs and turns everything to strings *)
-let parse_line (line : string): string list =
-    Str.split (Str.regexp "\t") line
 
 (* finally, bundle it all up in a checker *)
 let check (lhs : ConcretizedMT.t)
           (rhs : ConcretizedMT.t): (var list) * ((string list) list StrMap.t) =
     let work_dir = !Problem.work_globals.work_dir in
     let filename = !Problem.work_globals.work_file in
-    let fact_dir = !Problem.fact_dir in
     let souffle = !Problem.work_globals.souffle in
     let process_output_file n =
         let lines = Aux.load_lines (work_dir ^ n) in
@@ -117,7 +157,7 @@ let check (lhs : ConcretizedMT.t)
     in
     begin
         let vars = to_souffle lhs rhs (work_dir ^ filename) in
-        run_souffle souffle work_dir (work_dir ^ filename) fact_dir;
+        run_souffle souffle work_dir (work_dir ^ filename);
         let results = List.fold_left (fun m n ->
                 StrMap.add n (process_output_file (n ^ ".csv")) m)
             StrMap.empty ["pos"; "lneg"; "rneg"] in
