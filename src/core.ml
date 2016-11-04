@@ -59,14 +59,17 @@ module Aux = struct
         List.rev (n :: (List.rev l))
     let rec take_from l i = if i == 0
         then []
-        else (List.hd l) :: (take_from l (i - 1))
-    let rev_cons ls =
-        let rls = List.rev ls in
-        let tl = List.rev (List.tl rls) in
-        let hd = List.hd rls in
-        (tl, hd)
+        else (List.hd l) :: (take_from (List.tl l) (i - 1))
+    let rec rev_cons ls = match ls with
+        | x :: [] -> ([], x)
+        | x :: xs -> let tl, hd = rev_cons xs in
+            (x :: tl, hd)
     let concat ls =
         String.concat ", " ls
+    let wait _ = begin
+        let _ = input_line stdin in ()
+    end
+    let intersect ls rs = List.filter (fun l -> List.mem l rs) ls
 end
 
 (* string aliases for type safety *)

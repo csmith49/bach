@@ -1,7 +1,7 @@
 open Core
 open Decision
 
-let global_preds = []
+let global_preds = ref []
 
 (* we now make our special instance of the id3 module *)
 module AbductionLearner =
@@ -64,14 +64,31 @@ end
 (* types and stuff for predicates we're searching over *)
 type predicate = ((int list) -> ((string list) -> bool)) * symbol
 
+let pred (f : (string list) -> bool) : (int list) -> ((string list) -> bool) =
+    let selecter (xs : int list) =
+        let f' (ss : string list) =
+            let args = List.map (fun i -> List.nth ss i) xs in
+            f args
+        in f'
+    in selecter
+
+let register_predicate (name : string) (sorts : sort list) (f : (string list) -> bool) =
+    let s = Symbol (name, sorts) in
+    let f' = pred f in
+    global_preds := Aux.append !global_preds (f', s)
+
 (* given predicates and knowledge about variables, we'll make attributes for id3 *)
 let create_attributes (preds : predicate list)
                       (var_order : int VarMap.t) (* gives index in data point *)
-                      (var_sorts : (var list) SortMap.t) (* gives all vars of a sort *)=
+                      (var_sorts : (sort * var list) list) (* gives all vars of a sort *) =
+    let used_vars = fst (List.split (VarMap.bindings var_order)) in
     let make_single_attr p vs =
         let vi = List.map (fun k -> VarMap.find k var_order) vs in
         ((fst p) vi , Symbol.apply (snd p) vs) in
-    let vars_from_sorts ss = List.map (fun s -> SortMap.find s var_sorts) ss in
+    let vars_from_sorts ss = List.map (fun s ->
+            let possible = List.assoc s var_sorts in
+            Aux.intersect used_vars possible)
+        ss in
     let make_attrs p = List.map
             (make_single_attr p)
         (Aux.cart_prod (vars_from_sorts (Symbol.sorts (snd p)))) in
@@ -79,8 +96,8 @@ let create_attributes (preds : predicate list)
 
 (* and apply it to abduction in the obvious way *)
 let abduce (var_order : int VarMap.t)
-           (var_sorts : (var list) SortMap.t)
+           (var_sorts : (sort * var list) list)
            (evidence : AbductionLearner.labeled list) =
-    let attributes = create_attributes global_preds var_order var_sorts in
+    let attributes = create_attributes !global_preds var_order var_sorts in
     let classifier = AbductionLearner.learn attributes evidence in
     Guard.positivize (Guard.exact_paths (Guard.paths classifier))

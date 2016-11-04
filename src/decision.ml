@@ -80,5 +80,8 @@ module IDTree = functor (D : DECIDABLE) -> struct
         let a, new_atts = select_attribute atts ls in
         let f l = apply a (fst l) in
         let p, n = List.partition f ls in
-        Attribute (a, (learn new_atts p), (learn new_atts n))
+        let _ = print_endline "before" in
+        let ans = Attribute (a, (learn new_atts p), (learn new_atts n)) in
+        let _ = print_endline "after" in
+        ans
 end

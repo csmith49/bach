@@ -46,6 +46,7 @@ module SortTerm = struct
     (* comparison stuff *)
     let metric s = (Term.size s, s)
     let compare l r = Pervasives.compare (metric l) (metric r)
+    let num_variables s = List.length (sort_list s)
 end
 
 module Multiterm = struct
@@ -187,7 +188,7 @@ module ConcretizedMT = struct
             let set_ith i r =
                 let vars = Root.variables r in
                 let var_decls = List.mapi (fun j _ ->
-                        "v_" ^ (string_of_int j) ^ " T ")
+                        "v_" ^ (string_of_int j) ^ " : T")
                     vars in
                 let name = base ^ "_" ^ (string_of_int i) in
                 ".decl " ^ name ^ "(" ^ (Aux.concat var_decls) ^ ")"
@@ -218,6 +219,10 @@ module ConcretizedMT = struct
     let variables (cmt : t) : var list = match cmt with
         | Truth -> []
         | Concretized rs -> Aux.flat_map Root.variables rs
+    (* as well as how to print this *)
+    let to_string (cmt : t) : string = match cmt with
+        | Truth -> "T"
+        | Concretized rs -> Aux.concat (List.map Root.to_string rs)
 end
 
 module LiftedMT = struct
@@ -248,28 +253,23 @@ module LiftedMT = struct
     let sort_list lmt = match lmt with
         | Truth -> []
         | Lifted mt -> Aux.flat_map SortTerm.sort_list mt
-    let concretize lmt = []
-
+    let concretize (lmt : t) (vars : var list) : ConcretizedMT.t * var list = match lmt with
+        | Truth -> ConcretizedMT.Truth, vars
+        | Lifted mt ->
+            let roots, leftovers = List.fold_left (fun (rs, vs) s ->
+                    let k = SortTerm.num_variables s in
+                    let to_use = Aux.take_from vs k in
+                    let vs' = Aux.drop_from vs k in
+                    (Aux.append rs (Root.concretize s to_use), vs'))
+                ([], vars) mt
+            in ConcretizedMT.Concretized roots, leftovers
+    (* I do enjoy me some printing *)
+    let to_string (lmt : t) : string = match lmt with
+        | Truth -> "T"
+        | Lifted mt -> Aux.concat (List.map SortTerm.to_string mt)
 end
 
 module AbstractSearch = Deadbeat(LiftedMT)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 (* a very helpful module *)
 module Variables = struct
@@ -298,15 +298,6 @@ module Variables = struct
         match leftover with
             | [] -> vs
             | x :: xs -> Aux.append vs' x
-    (* and given a list of sorts, we can get all assignments *)
-    (* let valid_assignments (ss : sort list): (var list) list =
-        let f a s = Aux.flat_map (fun a' ->
-                List.map
-                        (Aux.append a')
-                    (next_vars a' s))
-            a in
-        List.fold_left f [] ss *)
-
     let valid_assignments (ss : sort list): (var list) list =
         let extend path s =
             List.map (fun v -> path @ [v]) (next_vars path s) in
