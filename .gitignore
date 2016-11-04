@@ -23,4 +23,4 @@ setup.log
 bach
 
 # probably don't want the config file to be passed around
-confix.sexp
+config.sexp
