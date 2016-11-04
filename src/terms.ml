@@ -2,61 +2,6 @@ open Core
 open Frontier
 open Problem
 
-type ('a, 'b) term = L of 'a | N of 'b * (('a, 'b) term) list
-
-module Term = struct
-    type position = int list
-    exception Bad_position
-    (* now we get to actually manipulate some of this stuff *)
-    let rec positions t: position list = match t with
-        | L _ -> [[]]
-        | N (_, ts) -> [] :: (List.concat
-            (List.mapi (fun i t ->
-                    List.map (fun p -> i :: p) (positions t))
-                ts))
-    let rec at_position t p = match p with
-        | [] -> t
-        | i :: rest -> match t with
-            | L _ -> raise Bad_position
-            | N (_, ts) -> at_position (List.nth ts i) rest
-    let rec set_at t p nt = match p with
-        | [] -> nt
-        | i :: rest -> match t with
-            | L _ -> raise Bad_position
-            | N (s, ts) -> let nts =
-                List.mapi (fun j t ->
-                        if i == j then
-                            set_at t rest nt
-                        else t) ts
-                    in N (s, nts)
-    (* of course, we can filter some positions *)
-    let filter (f: ('a, 'b) term -> bool)
-               (t: ('a, 'b) term): position list =
-        let ps = List.sort Pervasives.compare (positions t) in
-        List.filter (fun p -> f (at_position t p)) ps
-    (* terminal means not leaf, but all children are leaves *)
-    let is_leaf t = match t with
-        | L _ -> true
-        | N (_, _) -> false
-    let is_terminal t = match t with
-        | L _ -> false
-        | N (_, ts) -> List.for_all is_leaf ts
-    (* and do some modifications of the temrs *)
-    let rec cata (f: 'a -> 'p)
-                 (g: 'b -> 'q)
-                 (t: ('a, 'b) term): ('p, 'q) term = match t with
-        | L v -> L (f v)
-        | N (n, ts) ->
-            let n' = g n in
-            let ts' = List.map (cata f g) ts in
-                N (n', ts')
-    let pos_map (f : ('a, 'b) term -> 'c)
-                (t : ('a, 'b) term)
-                (ps : position list): 'c list =
-        List.map (fun p -> f (at_position t p)) ps
-    let size t = List.length (positions t)
-end
-
 module SortTerm = struct
     (* leaves are sorts, nodes are symbols *)
     type t = (sort, symbol) term
