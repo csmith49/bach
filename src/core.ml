@@ -60,6 +60,13 @@ module Aux = struct
     let rec take_from l i = if i == 0
         then []
         else (List.hd l) :: (take_from l (i - 1))
+    let rev_cons ls =
+        let rls = List.rev ls in
+        let tl = List.rev (List.tl rls) in
+        let hd = List.hd rls in
+        (tl, hd)
+    let concat ls =
+        String.concat ", " ls
 end
 
 (* string aliases for type safety *)
@@ -100,60 +107,6 @@ module Symbol = struct
         Symbol (r, _) -> r
 end
 
-(* dependence graph gives us input, output, and local vars *)
-module VarMap = Map.Make(struct type t = var let compare = compare end)
-module DependenceGraph = struct
-
-    type t = (var list) VarMap.t
-
-    let empty = VarMap.empty
-
-    (* build up graph by inserting edges one at a time *)
-    let insert source dest graph =  try
-        VarMap.add source (dest :: (VarMap.find source graph)) graph
-        with Not_found -> VarMap.add source (dest :: []) graph
-
-    let insert_relation rel graph =
-        let dest = Relation.output rel in
-            let f g v = insert v dest g in
-                List.fold_left f graph (Relation.inputs rel)
-
-    (* extract all the nodes in the graph by seeing which have edges *)
-    let sources graph = match (List.split (VarMap.bindings graph)) with
-        (l, _) -> l
-
-    let destinations graph = match (List.split (VarMap.bindings graph)) with
-        (_, r) -> List.sort_uniq compare (List.concat r)
-
-    let nodes graph = match (List.split (VarMap.bindings graph)) with
-        (l, r) -> List.sort_uniq compare (l @ List.concat r)
-
-    let self_loop (l, r) = (l == r)
-
-    let edges graph = Aux.flat_map
-            (fun (v, xs) -> List.map (fun x -> (v, x)) xs)
-        (VarMap.bindings graph)
-
-    let nt_edges graph = List.filter (fun e -> not (self_loop e)) (edges graph)
-
-    let output_nodes graph = Aux.subtract (nodes graph)
-        (List.map fst (nt_edges graph))
-
-    let input_nodes graph = Aux.subtract (nodes graph)
-        (List.map snd (nt_edges graph))
-
-    (* which nodes are for output, and which are for input? *)
-    (* let is_output n graph = not (List.mem n (sources graph))
-
-    let is_input n graph = not (List.mem n (destinations graph))
-
-    let output_nodes graph = let f n = is_output n graph in
-        List.filter f (destinations graph)
-
-    let input_nodes graph = let f n = is_input n graph in
-        List.filter f (sources graph) *)
-end
-
 (* type for representing conjuntion of relations *)
 type cube = Cube of relation list
 
@@ -173,63 +126,66 @@ module Cube = struct
     let to_string = function
         Cube rs -> String.concat " , " (List.map Relation.to_string rs)
     let empty = Cube []
-    let to_graph = function
-        Cube rs -> let f g r = DependenceGraph.insert_relation r g in
-            List.fold_left f DependenceGraph.empty rs
-    let inputs c = DependenceGraph.input_nodes (to_graph c)
-    let outputs c = DependenceGraph.output_nodes (to_graph c)
 end
 
-(* now we deal with partitions of relations in a cube *)
+(* maps are the best *)
 module RelMap = Map.Make(struct type t = int let compare = compare end)
 module StrMap = Map.Make(struct type t = string let compare = compare end)
-
-module Partition = struct
-    type t = cube RelMap.t
-    let empty = RelMap.empty
-
-    (* count the number of partitions, for finding new labels  *)
-    let length part = try
-        match (RelMap.max_binding part) with (n, c) -> n
-        with Not_found -> 0
-
-    (* add a relation to a partition *)
-    let insert_into index rel part = try
-        RelMap.add index (Cube.extend (RelMap.find index part) rel) part
-        with Not_found -> RelMap.add index (Cube.extend Cube.empty rel) part
-
-    (* shortcut for making a brand new bucket in the partition with rel *)
-    let insert rel part = insert_into (length part) rel part
-
-    (* accessing the ith cube in a partition  *)
-    let find index part = RelMap.find index part
-
-    (* convert back to a cube *)
-    let flatten part =
-        let f i cl cr = Cube.conjoin cl cr in
-            RelMap.fold f part Cube.empty
-
-    (* get input, output information from partition as a whole *)
-    let inputs part = Cube.inputs (flatten part)
-    let outputs part = Cube.outputs (flatten part)
-
-    let variables part = DependenceGraph.nodes (Cube.to_graph (flatten part))
-
-    let pop part = RelMap.remove ((length part) - 1) part
-    let update part i c = RelMap.add i c part
-
-    let size part =
-        let f t = Cube.size (snd t) in
-        List.fold_left (+) 0 (List.map f (RelMap.bindings part))
-
-    let to_string part =
-        Cube.to_string (flatten part)
-
-    let to_cube_list part =
-        List.map snd (RelMap.bindings part)
-
-end
-
-
-(* some helper types we'll inevitably need to pass in *)
 module SortMap = Map.Make(struct type t = sort let compare = compare end)
+module VarMap = Map.Make(struct type t = var let compare = compare end)
+
+(* terms, can't live with em or without em *)
+type ('a, 'b) term = L of 'a | N of 'b * (('a, 'b) term) list
+
+module Term = struct
+    type position = int list
+    exception Bad_position
+    (* now we get to actually manipulate some of this stuff *)
+    let rec positions t: position list = match t with
+        | L _ -> [[]]
+        | N (_, ts) -> [] :: (List.concat
+            (List.mapi (fun i t ->
+                    List.map (fun p -> i :: p) (positions t))
+                ts))
+    let rec at_position t p = match p with
+        | [] -> t
+        | i :: rest -> match t with
+            | L _ -> raise Bad_position
+            | N (_, ts) -> at_position (List.nth ts i) rest
+    let rec set_at t p nt = match p with
+        | [] -> nt
+        | i :: rest -> match t with
+            | L _ -> raise Bad_position
+            | N (s, ts) -> let nts =
+                List.mapi (fun j t ->
+                        if i == j then
+                            set_at t rest nt
+                        else t) ts
+                    in N (s, nts)
+    (* of course, we can filter some positions *)
+    let filter (f: ('a, 'b) term -> bool)
+               (t: ('a, 'b) term): position list =
+        let ps = List.sort Pervasives.compare (positions t) in
+        List.filter (fun p -> f (at_position t p)) ps
+    (* terminal means not leaf, but all children are leaves *)
+    let is_leaf t = match t with
+        | L _ -> true
+        | N (_, _) -> false
+    let is_terminal t = match t with
+        | L _ -> false
+        | N (_, ts) -> List.for_all is_leaf ts
+    (* and do some modifications of the temrs *)
+    let rec cata (f: 'a -> 'p)
+                 (g: 'b -> 'q)
+                 (t: ('a, 'b) term): ('p, 'q) term = match t with
+        | L v -> L (f v)
+        | N (n, ts) ->
+            let n' = g n in
+            let ts' = List.map (cata f g) ts in
+                N (n', ts')
+    let pos_map (f : ('a, 'b) term -> 'c)
+                (t : ('a, 'b) term)
+                (ps : position list): 'c list =
+        List.map (fun p -> f (at_position t p)) ps
+    let size t = List.length (positions t)
+end

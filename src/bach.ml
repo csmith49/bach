@@ -27,7 +27,7 @@ let _ =
 
     print_endline "TESTING";
 
-    let vars = Variables.next_vars ["x";"y";"z"] "fp17" in
+    (* let vars = Variables.next_vars ["x";"y";"z"] "fp17" in
     print_endline ("VARS: " ^ (String.concat ", " vars));
     print_endline (Variables.get_sort "x");
 
@@ -61,7 +61,7 @@ let _ =
                 ) forms;
         end) !seen;
         print_endline (Multiterm.to_string e);
-    done;
+    done; *)
     (* and finally, print out any relevant stats *)
     if !noisy then begin
         print_endline "STATS";

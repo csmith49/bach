@@ -57,41 +57,6 @@ module Term = struct
     let size t = List.length (positions t)
 end
 
-module VarTerm = struct
-    (* we'll need to make new variables on occasion *)
-    let fresh_var_counter = ref 0
-    let fresh_var _ = begin
-        incr fresh_var_counter;
-        "v_" ^ (string_of_int !fresh_var_counter)
-    end
-    (* and we'll want a type of our very own *)
-    type t = (var, symbol) term
-    (* if we follow the struct from a sterm, we just have dummy vars *)
-    let update_variables (t : t)
-                         (vs : (var * Term.position) list): t =
-        List.fold_left (fun t' (v, p) -> Term.set_at t' p (L v)) t vs
-    (* and finally, we want to convert to a list of relations *)
-    let rec inner_to_cube (t : t): cube * var = match t with
-        | L v -> Cube.empty, v
-        | N (s, ts) ->
-            let cs, vs = List.split (List.map inner_to_cube ts) in
-            let v = fresh_var () in
-            let c = Symbol.apply s (Aux.append vs v) in
-            let csi = Aux.flat_map (fun x ->
-                    match x with Cube rs -> rs)
-                cs in
-            Cube (Aux.append csi c), v
-    let to_cube (t : t) (output_var : var): cube = match t with
-        | L _ -> invalid_arg "to_cube"
-        | N (s, ts) ->
-            let cs, vs = List.split (List.map inner_to_cube ts) in
-            let c = Symbol.apply s (Aux.append vs output_var) in
-            let csi = Aux.flat_map (fun x ->
-                    match x with Cube rs -> rs)
-                cs in
-            Cube (Aux.append csi c)
-end
-
 module SortTerm = struct
     (* leaves are sorts, nodes are symbols *)
     type t = (sort, symbol) term
@@ -106,9 +71,6 @@ module SortTerm = struct
     let get_sort t = match t with
         | L s -> s
         | N (s, _) -> Symbol.output s
-    (* and we'll want to conver them to varterms, easily *)
-    let to_vterm: t -> VarTerm.t =
-        Term.cata (fun s -> "v_" ^ s) (fun s -> s)
     (* we'll want to know which sorts we care about *)
     let input_sorts (t: t): (sort * Term.position) list =
         let sort_positions = Term.filter Term.is_leaf t in
@@ -116,8 +78,7 @@ module SortTerm = struct
         List.combine sorts sort_positions
     let get_sorts (t: t): (sort * Term.position) list * sort =
         (input_sorts t, get_sort t)
-    let to_cube (t : t) (vs : (var * Term.position) list) (output : var): cube =
-        VarTerm.to_cube (VarTerm.update_variables (to_vterm t) vs) output
+    let sort_list t = fst (List.split (input_sorts t)) @ [get_sort t]
     (* now we can define the searching functions *)
     let children t =
         Aux.flat_map (fun (s, p) ->
@@ -137,6 +98,9 @@ module SortTerm = struct
         | N (s, ts) ->
             let args = String.concat ", " (List.map to_string ts) in
             (Symbol.name s) ^ "(" ^ args ^ ")"
+    (* comparison stuff *)
+    let metric s = (Term.size s, s)
+    let compare l r = Pervasives.compare (metric l) (metric r)
 end
 
 module Multiterm = struct
@@ -199,7 +163,168 @@ module Multiterm = struct
     let compare l r = Pervasives.compare (metric l) (metric r)
 end
 
-module AbstractSearch = Deadbeat(Multiterm)
+module Root = struct
+    type root = Root of (var, symbol) term * var
+    (* we'll need to make new variables on occasion *)
+    let fresh_var_counter = ref 0
+    let fresh_var _ = begin
+        incr fresh_var_counter;
+        "v_" ^ (string_of_int !fresh_var_counter)
+    end
+    (* we only want these so we can make cubes anyways *)
+    let rec inner_to_cube (t : (var, symbol) term) : cube * var = match t with
+        | L v -> Cube.empty, v
+        | N (s, ts) ->
+            let cs, vs = List.split (List.map inner_to_cube ts) in
+            let fresh_v = fresh_var () in
+            let c = Symbol.apply s (Aux.append vs fresh_v) in
+            List.fold_left Cube.conjoin (Cube [c]) cs, fresh_v
+    let to_cube (r : root) : cube = match r with
+        Root (t, v) -> match t with
+            | L _ -> invalid_arg "to_cube"
+            | N (s, ts) ->
+                let cs, vs = List.split (List.map inner_to_cube ts) in
+                let c = Symbol.apply s (Aux.append vs v) in
+                List.fold_left Cube.conjoin (Cube [c]) cs
+    (* and of course, once we know vars we want to construct a root *)
+    let concretize (s : SortTerm.t) (vars : var list) : root =
+        let in_vars, out_var = Aux.rev_cons vars in
+        let vps = List.combine in_vars (Term.filter Term.is_leaf s) in
+        let t = List.fold_left (fun t' (v, p) ->
+                Term.set_at t' p (L v))
+            s vps in
+        Root (t, out_var)
+    (* for printing, we need some info *)
+    let input_variables (r : root) = match r with
+        Root (t, v) -> List.map (fun p ->
+                let t' = Term.at_position t p in match t' with
+                    | L v' -> v'
+                    | _ -> invalid_arg "input_variables")
+            (Term.filter Term.is_leaf t)
+    let output_variable (r : root) = match r with
+        Root (t, v) -> v
+    let variables (r : root) : var list =
+        Aux.append (input_variables r) (output_variable r)
+    let positive (name : string) (r : root) =
+        name ^ "(" ^ (Aux.concat (variables r)) ^ ")"
+    let negative (name : string) (r : root) =
+        let in_vars = input_variables r in
+        let fresh_in_vars = List.map (fun _ -> "_") in_vars in
+        let out_var = output_variable r in
+        let fresh_out_var = "fr_" ^ out_var in
+        let forwards =
+            name ^ "(" ^ (Aux.concat (Aux.append in_vars fresh_out_var)) ^ ")" in
+        let backwards =
+            name ^ "(" ^ (Aux.concat (Aux.append fresh_in_vars out_var)) ^ ")" in
+        let twist = out_var ^ " != " ^ fresh_out_var in
+        Aux.concat [forwards; twist; backwards]
+    (* sometimes we want to print the root, tho --- more readable *)
+    let rec vterm_to_string (t : (var, symbol) term) : string = match t with
+        | L v -> v
+        | N (s, ts) ->
+            let f = Symbol.name s in
+            let args = List.map vterm_to_string ts in
+            f ^ "(" ^ (Aux.concat args) ^ ")"
+    let to_string (r : root) : string = match r with
+        Root (t, v) ->
+            let t_string = vterm_to_string t in
+            t_string ^ " = " ^ v
+
+end
+
+(* this module just helps with printing --- needed for souffle stuff *)
+module ConcretizedMT = struct
+    type t = Truth | Concretized of Root.root list
+    (* we need to declare each root in the mt *)
+    let decl_strings (base : string) (cmt : t) : string list = match cmt with
+        | Truth -> []
+        | Concretized rs ->
+            let set_ith i r =
+                let vars = Root.variables r in
+                let var_decls = List.mapi (fun j _ ->
+                        "v_" ^ (string_of_int j) ^ " T ")
+                    vars in
+                let name = base ^ "_" ^ (string_of_int i) in
+                ".decl " ^ name ^ "(" ^ (Aux.concat var_decls) ^ ")"
+            in List.mapi set_ith rs
+    let defn_strings (base : string) (cmt : t) : string list = match cmt with
+        | Truth -> []
+        | Concretized rs ->
+            let set_ith i r =
+                let hd = Root.positive (base ^ "_" ^ (string_of_int i)) r in
+                let body = Cube.to_string (Root.to_cube r) in
+                hd ^ " :- " ^ body ^ "."
+            in List.mapi set_ith rs
+    let pos_strings (base : string) (cmt : t) : string list = match cmt with
+        | Truth -> ["true(_)"]
+        | Concretized rs ->
+            let set_ith i r =
+                Root.positive (base ^ "_" ^ (string_of_int i)) r
+            in List.mapi set_ith rs
+    let neg_strings (base : string) (cmt : t) : string list list = match cmt with
+        | Truth -> [["false(_)"]]
+        | Concretized rs ->
+            let set_ith i r =
+                let neg = Root.negative (base ^ "_" ^ (string_of_int i)) r in
+                let pos = pos_strings base cmt in
+                Aux.append (Aux.delete_at pos i) neg
+            in List.mapi set_ith rs
+    (* and it's good to know what variables we're actually using *)
+    let variables (cmt : t) : var list = match cmt with
+        | Truth -> []
+        | Concretized rs -> Aux.flat_map Root.variables rs
+end
+
+module LiftedMT = struct
+    type t = Truth | Lifted of Multiterm.t
+    (* conversion between *)
+    let from_mt mt = match mt with
+        | [] -> Truth
+        | _ -> Lifted (List.sort SortTerm.compare mt)
+    let to_mt lmt = match lmt with
+        | Truth -> []
+        | Lifted mt -> mt
+    (* we have a natural comparison *)
+    let compare a b = match a with
+        | Truth -> -1
+        | Lifted ml -> match b with
+            | Truth -> 1
+            | Lifted mr -> Multiterm.compare ml mr
+    (* and now we lift the search cleanly *)
+    let children lmt =
+        let mt_kids = Multiterm.children (to_mt lmt) in
+        let kids = List.map from_mt mt_kids in
+        List.sort_uniq compare kids
+    let parents lmt =
+        let mt_parents = Multiterm.parents (to_mt lmt) in
+        let parents = List.map from_mt mt_parents in
+        List.sort_uniq compare parents
+    (* we have to concretize as some point *)
+    let sort_list lmt = match lmt with
+        | Truth -> []
+        | Lifted mt -> Aux.flat_map SortTerm.sort_list mt
+    let concretize lmt = []
+
+end
+
+module AbstractSearch = Deadbeat(LiftedMT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (* a very helpful module *)
 module Variables = struct
@@ -244,88 +369,4 @@ module Variables = struct
             Aux.flat_map (fun p -> extend p s) paths in
         let paths = List.fold_left extend_all [[]] ss in
         List.sort_uniq Pervasives.compare paths
-end
-
-module Form = struct
-    (* base type to help keep track of things *)
-    type form = cube * var list * var
-    (* some aux functions for manipulating variables *)
-    let peel_inputs (s : SortTerm.t)
-                    (vs : var list): ((var * Term.position) list) * (var list) =
-        let ps = Term.filter Term.is_leaf s in
-        let k = List.length ps in
-        (List.combine (Aux.take_from vs k) ps , Aux.drop_from vs k)
-    let peel_output (s : SortTerm.t)
-                    (vs : var list): var * (var list) =
-        (List.nth vs 0, Aux.drop_from vs 1)
-    (* now we can also peel whole cubes *)
-    let peel_term (s : SortTerm.t)
-                  (vs : var list): form * (var list) =
-        let (ins, vs') = peel_inputs s vs in
-        let (out, vs'') = peel_output s vs' in
-        let c = SortTerm.to_cube s ins out in
-        ((c, fst (List.split ins), out), vs'')
-    (* and consequently multiterms *)
-    let peel_multiterm (mt : Multiterm.t)
-                       (vs : var list): (form list) * (var list) =
-        let f (cs, vs') t =
-            let c, vs'' = peel_term t vs' in
-            (Aux.append cs c, vs'') in
-        List.fold_left f ([], vs) mt
-    (* finally, we can convert forms to list of pairs of cubes *)
-    let convert (lhs : Multiterm.t)
-                (rhs : Multiterm.t): (form list * form list) list =
-        let sorts = (Multiterm.get_sorts lhs) @ (Multiterm.get_sorts rhs) in
-        let vss = Variables.valid_assignments sorts in
-        List.map (fun vs ->
-                let lc, vs' = peel_multiterm lhs vs in
-                let rc, _ = peel_multiterm rhs vs in
-                (lc, rc))
-            vss
-    let name_forms (lhs : form list) (rhs : form list) =
-        let name_forms base i f = (base ^ (string_of_int i), f) in
-        let lhs' = List.mapi (name_forms "lhs_") lhs in
-        let rhs' = List.mapi (name_forms "rhs_") rhs in
-        (lhs', rhs')
-    (* now we have a section for just the auxilliary printing stuff *)
-    let variables (f : form): var list =
-        let (c, iv, ov) = f in
-            Aux.append iv ov
-    let decl_string (n : string) (f : form): string =
-        let typed_vars = List.mapi (fun i _ ->
-                "v_" ^ (string_of_int i) ^ " : T")
-            (variables f) in
-        ".decl" ^ n ^ "(" ^ (String.concat ", " (typed_vars)) ^ ")"
-    let body_string (f: form): string =
-        let (c, iv, ov) = f in match c with
-            | Cube [] -> "true(_)"
-            | Cube xs ->
-                let rels = List.map Relation.to_string xs in
-                String.concat ", " rels
-    let definition_string (n : string) (f : form): string =
-        let hd = n ^ "(" ^ (String.concat ", " (variables f)) ^ ")" in
-        let bdy = body_string f in
-        hd ^ " :- " ^ bdy ^ "."
-    let pos_string (n : string) (f : form): string =
-        let (c, iv, ov) = f in match c with
-            | Cube [] -> "true(_)"
-            | Cube xs ->
-                n ^ "(" ^ (String.concat ", " (variables f)) ^ ")"
-    let neg_string (n : string) (f : form): string =
-        let (c, iv, ov) = f in match c with
-            | Cube [] -> "false(_)"
-            | Cube _ ->
-                let fresh_ov = "fr_" ^ ov in
-                let forward =
-                    let vars = (Aux.append iv fresh_ov) in
-                    n ^ "(" ^ (String.concat ", " vars) ^ ")" in
-                let backward =
-                    let vars = (Aux.append (List.map (fun _ -> "_") iv) ov) in
-                    n ^ "(" ^ (String.concat ", " vars) ^ ")" in
-                String.concat ", " [forward; fresh_ov ^ " != " ^ ov; backward]
-    let to_string ps =
-        Cube.to_string (List.fold_left (fun c (n, f) ->
-                let c', _, _ = f in Cube.conjoin c c')
-            Cube.empty ps)
-
 end

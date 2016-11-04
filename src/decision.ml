@@ -56,6 +56,7 @@ module IDTree = functor (D : DECIDABLE) -> struct
                 else classify r elt
         | Pos -> true
         | Neg -> false
+        | Mixed -> invalid_arg "classify"
 
     (* selects the attribute that has the most info gain *)
     let select_attribute (atts : attribute list) (ls : labeled list) =

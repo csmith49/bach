@@ -1,6 +1,5 @@
 open Core
 open Decision
-open Checker
 
 let global_preds = []
 

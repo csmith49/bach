@@ -1,9 +1,7 @@
-open Test
+open Terms
 open Core
 open Printf
 open Problem
-
-type printable = string * Form.form
 
 let decl_rel r = match r with
     Relation (n, ts) ->
@@ -12,23 +10,22 @@ let decl_rel r = match r with
             ts in
         ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
-let to_souffle (lhs : printable list)
-               (rhs : printable list)
+let to_souffle (lhs : ConcretizedMT.t)
+               (rhs : ConcretizedMT.t)
                (filename : string): var list = begin
     (* first, might as well grab the variables *)
-    let extract_vars (n, (c, iv, ov)) = Aux.append iv ov in
     let total_vars = List.sort_uniq
             Pervasives.compare
-        (Aux.flat_map
-                extract_vars
-            (lhs @ rhs)) in
+        ((ConcretizedMT.variables lhs) @ (ConcretizedMT.variables rhs)) in
     (* and now we'll define pos, lneg, rneg *)
     let pos = Relation ("pos", total_vars) in
     let lneg = Relation ("lneg", total_vars) in
     let rneg = Relation ("rneg", total_vars) in
+
     (* then open an output channel *)
     let oc = open_out filename in
     let write s = fprintf oc "%s\n" s in
+
     (* and do some printing *)
     write "// BASIC DECLS";
     (* we assume souffle has to deal with just one type *)
@@ -37,52 +34,55 @@ let to_souffle (lhs : printable list)
     List.iter (fun s -> match s with Symbol (n, ts) ->
                 write ((decl_rel (Relation (n, ts))) ^ " input"))
         !Problem.globals.signature;
+
     (* now the lhs decls and bodies *)
     write "\n// LHS ROOTS";
-    List.iter (fun (n, f) ->
-            begin
-                write (Form.decl_string n f);
-                write (Form.definition_string n f);
-            end)
-        lhs;
+    List.iter write (ConcretizedMT.decl_strings "lhs" lhs);
+    List.iter write (ConcretizedMT.defn_strings "lhs" lhs);
+
     (* how about the rhs now *)
     write "\n// RHS ROOTS";
-    List.iter (fun (n, f) ->
-            begin
-                write (Form.decl_string n f);
-                write (Form.definition_string n f);
-            end)
-        rhs;
+    List.iter write (ConcretizedMT.decl_strings "rhs" rhs);
+    List.iter write (ConcretizedMT.defn_strings "rhs" rhs);
+
     (* now let's define positive evidence *)
     write "\n// POS EVIDENCE";
+    (* which we declare *)
     write ((decl_rel pos) ^ " output");
+    (* and then construct *)
     let hd = Relation.to_string pos in
-    let bdy = String.concat ", " (List.map (fun (n, f) ->
-            Form.pos_string n f)
-        (lhs @ rhs)) in
+    let bdy = Aux.concat
+        ((ConcretizedMT.pos_strings "lhs" lhs) @ (ConcretizedMT.pos_strings "rhs" rhs)) in
     write (hd ^ " :- " ^ bdy ^ ".");
+
     (* and left neg next *)
     write "\n// LNEG EVIDENCE";
+    (* declare again *)
     write ((decl_rel lneg) ^ " output");
+    (* save the hd string, we'll need it a bit *)
     let hd = Relation.to_string lneg in
-    let lbdy = String.concat ", " (List.map (fun (n, f) ->
-            Form.pos_string n f)
-        lhs) in
-    let rbdys = List.map (fun (n, f) -> Form.neg_string n f) rhs in
-    List.iter (fun n ->
-            write (hd ^ " :- " ^ lbdy ^ ", " ^ n ^ ".");)
-        rbdys;
+    (* neg parts a list of lists *)
+    let pos_part = ConcretizedMT.pos_strings "lhs" lhs in
+    let neg_parts = ConcretizedMT.neg_strings "rhs" rhs in
+    List.iter (fun ns ->
+            let bdy = Aux.concat (pos_part @ ns) in
+            write (hd ^ " :- " ^ bdy ^ "."))
+        neg_parts;
+
     (* symmetrically for right *)
     write "\n// RNEG EVIDENCE";
+    (* declare again *)
     write ((decl_rel rneg) ^ " output");
+    (* save the hd string, we'll need it a bit *)
     let hd = Relation.to_string rneg in
-    let lbdy = String.concat ", " (List.map (fun (n, f) ->
-            Form.pos_string n f)
-        rhs) in
-    let rbdys = List.map (fun (n, f) -> Form.neg_string n f) lhs in
-    List.iter (fun n ->
-            write (hd ^ " :- " ^ lbdy ^ ", " ^ n ^ ".");)
-        rbdys;
+    (* neg parts a list of lists *)
+    let pos_part = ConcretizedMT.pos_strings "rhs" rhs in
+    let neg_parts = ConcretizedMT.neg_strings "lhs" lhs in
+    List.iter (fun ns ->
+            let bdy = Aux.concat (pos_part @ ns) in
+            write (hd ^ " :- " ^ bdy ^ "."))
+        neg_parts;
+
     (* and finally, we can print things *)
     close_out oc;
     total_vars
@@ -101,8 +101,8 @@ let parse_line (line : string): string list =
     Str.split (Str.regexp "\t") line
 
 (* finally, bundle it all up in a checker *)
-let check (lhs : printable list)
-          (rhs : printable list): (var list) * ((string list) list StrMap.t) =
+let check (lhs : ConcretizedMT.t)
+          (rhs : ConcretizedMT.t): (var list) * ((string list) list StrMap.t) =
     let work_dir = !Problem.work_globals.work_dir in
     let filename = !Problem.work_globals.work_file in
     let fact_dir = !Problem.fact_dir in
