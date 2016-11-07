@@ -70,17 +70,29 @@ def int_gen():
     while True:
         yield randint(-32768, 32767)
 
+@add_generator('cons_int')
+def int_gen():
+    from random import randint
+    while True:
+        yield randint(0, 10)
+
 @add_generator('fp17')
 def fp_gen():
     from random import randint
     while True:
         yield randint(0, 16)
 
-@add_generator('denom')
-def denom_gen():
+@add_generator('string')
+def string_gen():
     from random import randint
     while True:
-        yield randint(-1, 5)
+        yield str(randint(0, 100))
+
+@add_generator('list')
+def list_gen():
+    from random import randint
+    while True:
+        yield [randint(0,10) for r in range(5)]
 
 if __name__ == "__main__":
     main()
