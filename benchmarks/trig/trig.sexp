@@ -10,8 +10,8 @@
         (
             (Symbol trig_sin (rad int))
 			(Symbol trig_cos (rad int))
-			(Symbol trig_acos (int rad))
-			(Symbol trig_asin (int rad))
+			(Symbol trig_arccos (int rad))
+			(Symbol trig_arcsin (int rad))
         )
     )
 )
