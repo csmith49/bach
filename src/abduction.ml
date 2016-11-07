@@ -3,6 +3,14 @@ open Decision
 
 let global_preds = ref []
 
+let usable_preds var_sorts =
+    let sorts = fst (List.split var_sorts) in
+    let usable p = match (snd p) with
+        Symbol (s, ts) -> List.for_all (fun s ->
+                List.mem s sorts)
+            ts in
+    List.filter usable !global_preds
+
 (* we now make our special instance of the id3 module *)
 module AbductionLearner =
     IDTree(struct
@@ -27,6 +35,9 @@ module Path = struct
                 | PLabel -> "+: " ^ rels
                 | NLabel -> "-: " ^ rels
                 | MLabel -> "?: " ^ rels
+
+    let metric p = match p with
+        Path (l, r, m) -> List.length (l @ r)
 end
 
 module Guard = struct
@@ -59,6 +70,8 @@ module Guard = struct
     (* and the ever-helpful printer *)
     let to_string g =
         String.concat " V " (List.map Path.to_string g)
+    (* we must construct additional metrics *)
+    let metric g = List.fold_left (+) 0 (List.map Path.metric g)
 end
 
 (* types and stuff for predicates we're searching over *)
@@ -98,6 +111,6 @@ let create_attributes (preds : predicate list)
 let abduce (var_order : int VarMap.t)
            (var_sorts : (sort * var list) list)
            (evidence : AbductionLearner.labeled list) =
-    let attributes = create_attributes !global_preds var_order var_sorts in
+    let attributes = create_attributes (usable_preds var_sorts) var_order var_sorts in
     let classifier = AbductionLearner.learn attributes evidence in
     Guard.positivize (Guard.exact_paths (Guard.paths classifier))

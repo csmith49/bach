@@ -177,6 +177,8 @@ module Root = struct
             t_string ^ " = " ^ v
     let fst (r : root) = match r with
         Root (t, v) -> t
+    let metric (r : root) = match r with
+        Root (t, v) -> Term.size t
 end
 
 (* this module just helps with printing --- needed for souffle stuff *)
@@ -230,6 +232,10 @@ module ConcretizedMT = struct
         | Concretized rs -> Aux.flat_map (fun t ->
                 Term.node_values t)
             (List.map Root.fst rs)
+    (* metrics for dayyyyyys *)
+    let metric (cmt : t) : int = match cmt with
+        | Truth -> 1
+        | Concretized rs -> List.fold_left (+) 0 (List.map Root.metric rs)
 end
 
 module LiftedMT = struct
@@ -297,19 +303,25 @@ module Variables = struct
     let vars_with_sort (vs : var list) (s : sort): var list =
         List.filter (fun v -> (get_sort v) = s) vs
     (* and now the next variables that can be used of a sort *)
-    let next_vars (vs : var list) (s : sort): var list =
-        let vs' = vars_with_sort vs s in
+    let next_vars_inner (vs : var list) (seen : var list) (s : sort): var list =
+        let vars = List.sort_uniq Pervasives.compare (vs @ seen) in
+        let vs' = vars_with_sort vars s in
         let leftover = Aux.subtract
             (List.assoc s !Problem.globals.variables)
             vs' in
         match leftover with
-            | [] -> vs
-            | x :: xs -> Aux.append vs' x
-    let valid_assignments (ss : sort list): (var list) list =
+            | [] -> vars
+            | x :: xs -> Aux.append vars x
+    let next_vars (vs : var list) (s : sort): var list =
+        next_vars_inner vs [] s
+    (* we can build up from the sorts and variables that we've seen *)
+    let valid_assignments_inner (ss : sort list) (vs : var list) : (var list) list =
         let extend path s =
-            List.map (fun v -> path @ [v]) (next_vars path s) in
+            List.map (fun v -> path @ [v]) (next_vars_inner path vs s) in
         let extend_all paths s =
             Aux.flat_map (fun p -> extend p s) paths in
         let paths = List.fold_left extend_all [[]] ss in
         List.sort_uniq Pervasives.compare paths
+    let valid_assignments (ss : sort list): (var list) list =
+        valid_assignments_inner ss []
 end
