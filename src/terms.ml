@@ -184,6 +184,12 @@ end
 (* this module just helps with printing --- needed for souffle stuff *)
 module ConcretizedMT = struct
     type t = Truth | Concretized of Root.root list
+    (* we can combine these things! *)
+    let conjoin (l : t) (r : t) : t = match l with
+        | Truth -> r
+        | Concretized lhs -> match r with
+            | Truth -> l
+            | Concretized rhs -> Concretized (lhs @ rhs)
     (* we need to declare each root in the mt *)
     let decl_strings (base : string) (cmt : t) : string list = match cmt with
         | Truth -> []
@@ -236,6 +242,34 @@ module ConcretizedMT = struct
     let metric (cmt : t) : int = match cmt with
         | Truth -> 1
         | Concretized rs -> List.fold_left (+) 0 (List.map Root.metric rs)
+    (* we'll want to check if mts are well quantified *)
+    let input_variables (cmt : t) : var list = match cmt with
+        | Truth -> []
+        | Concretized rs -> List.sort_uniq Pervasives.compare (Aux.flat_map
+                Root.input_variables
+            rs)
+    let output_variables (cmt : t) : var list = match cmt with
+        | Truth -> []
+        | Concretized rs -> List.sort_uniq Pervasives.compare (List.map
+                Root.output_variable
+            rs)
+    let variables (cmt : t) : var list = List.sort_uniq Pervasives.compare
+        ((input_variables cmt) @ (output_variables cmt))
+    (* to constrain: output vars have to show up somewhere else *)
+    let well_constrained (l : t) (r : t) : bool =
+        let cmt = conjoin l r in
+        let roots = match cmt with
+            | Truth -> []
+            | Concretized rs -> rs in
+        let all_but_output index = List.concat (List.mapi (fun i r ->
+                if i = index then Root.input_variables r
+                else Root.variables r)
+            roots) in
+        List.for_all (fun b -> b) (List.mapi (fun i r ->
+                let o = Root.output_variable r in
+                let vars = all_but_output i in
+                List.mem o vars)
+            roots)
 end
 
 module LiftedMT = struct

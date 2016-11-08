@@ -7,6 +7,8 @@ open Preds
 
 let noisy = ref false
 let scalar = ref 1.0
+let abduce_flag = ref false
+let prune_flag = ref true
 
 let spec_list = [
     ("-noisy", Arg.Set noisy, " Print additional information.");
@@ -16,7 +18,8 @@ let spec_list = [
             parse_problem_file ("./benchmarks/" ^ s ^ "/" ^ s ^ ".sexp");
             Problem.fact_dir := ("./benchmarks/" ^ s ^ "/facts/");
         end),
-    " Runs the named benchmark.")
+    " Runs the named benchmark.");
+    ("-abduce", Arg.Set abduce_flag, " Turns on abduction.")
 ]
 
 let usage_msg = "todo"
@@ -24,6 +27,7 @@ let anon_fun s = raise (Arg.Bad (s ^ " is not recognized."))
 let noisy_print s = if !noisy then print_endline s else ()
 
 (* utility functions for connecting all the pieces together *)
+(* specifially here for modifying results *)
 let results_to_string res =
     let g s =
         let ev = StrMap.find s res in
@@ -32,10 +36,6 @@ let results_to_string res =
     in
     let summary = List.map g ["pos"; "lneg"; "rneg"] in
     Aux.concat summary
-let already_implied res =
-    let pos_ev = StrMap.find "pos" res in
-    let neg_ev = (StrMap.find "lneg" res) @ (StrMap.find "rneg" res) in
-    (List.length pos_ev) > 0 && (List.length neg_ev) = 0
 let learn vs res =
     let pos_ev = StrMap.find "pos" res in
     let lneg_ev = StrMap.find "lneg" res in
@@ -49,14 +49,22 @@ let learn vs res =
                 (i, v))
             vs) in
     abduce var_order !Problem.globals.variables (pos @ neg)
-let left_implied res =
+
+(* and here for checking how good the results are *)
+let equivalent res =
+    let pos_ev = StrMap.find "pos" res in
+    let neg_ev = (StrMap.find "lneg" res) @ (StrMap.find "rneg" res) in
+    (List.length pos_ev) > 0 && (List.length neg_ev) = 0
+let left_impl res =
     let pos_ev = StrMap.find "pos" res in
     let lneg_ev = (StrMap.find "lneg" res) in
     (List.length pos_ev) > 0 && (List.length lneg_ev) = 0
-let right_implied res =
+let right_impl res =
     let pos_ev = StrMap.find "pos" res in
     let rneg_ev = (StrMap.find "rneg" res) in
     (List.length pos_ev) > 0 && (List.length rneg_ev) = 0
+
+(* and finally for scoring the function as best we can *)
 let score res g lhs rhs =
     let pos_ev = float (List.length (StrMap.find "pos" res)) in
     let g_score = float (Guard.metric g) in
@@ -95,47 +103,51 @@ let _ =
                 vars in
             (* and now we process the concretizations *)
             let handle_concretized c' =
+                if !abduce_flag || not (ConcretizedMT.well_constrained c c')
+                then ()
+                else begin
+                (* =================================== *)
                 (* check the pair *)
                 let var_order, results = check c c' in
                 (* also help for printing *)
-                let pair_string d = (ConcretizedMT.to_string c) ^ d ^ (ConcretizedMT.to_string c') in
+                let pair_string d =
+                    (ConcretizedMT.to_string c) ^ d ^ (ConcretizedMT.to_string c') in
                 (* we might end up not adding anything` *)
                 let okay_to_store = ref true in
+                let okay_to_report = ref false in
                 let guard = ref ([] : Guard.t) in
                 let direction = ref " ? " in
-                (* heuristically, prune if something is reducible to what we've seen *)
-
-                    if already_implied results then begin
-                        noisy_print ("" ^ (pair_string " == "));
-                        noisy_print ("\talready implied");
-                        (* we don't need to score, and guard stays empty *)
-                        okay_to_store := false;
-                        direction := " == ";
+                (* first case, best case --- all positive evidence *)
+                if equivalent results then begin
+                        if !prune_flag then okay_to_store := false;
+                        okay_to_report := true;
+                        direction := " === ";
                     end
-                    else if left_implied results then begin
-                        noisy_print ("" ^ (pair_string " => "));
-                        direction := " => ";
+                (* next case, left-implication *)
+                else if left_impl results then begin
+                        okay_to_report := true;
+                        direction := " ==> ";
                     end
-                    else if right_implied results then begin
-                        noisy_print ("" ^ (pair_string " <= "));
-                        direction := " <= ";
+                (* symmetrically, right-implication *)
+                else if right_impl results then begin
+                        okay_to_report := true;
+                        direction := " <== ";
                     end
-                    else begin
-                        noisy_print ("" ^ (pair_string " == "));
+                (* final case, maybe we abduce *)
+                else begin
+                        ();
+                    end;
+                let s = score results !guard c c' in
+                if !okay_to_report && (s > 1.0) then begin
+                        print_endline (pair_string !direction);
+                        noisy_print ("\t" ^ (results_to_string results));
+                        noisy_print ("\t" ^ (string_of_float s));
                         noisy_print ("\t" ^ (Guard.to_string !guard));
-                        direction := " == ";
-                        guard := learn var_order results;
                     end;
-                    let s = score results !guard c c' in
-                    if 1.0 <= s then begin
-                        print_endline "FOUND: ";
-                        print_endline ("\t" ^ (pair_string !direction));
-                        print_endline ("\t" ^ (results_to_string results));
-                        print_endline ("\t" ^ (string_of_float s));
-                        print_endline ("\t" ^ (Guard.to_string !guard));
-                    end;
-                    if !okay_to_store then
-                        seen := !seen @ [c'];
+                if !okay_to_store then
+                    seen := !seen @ [c'];
+                (* =================================== *)
+                end
             in
             List.iter handle_concretized relative_concretizations;
         in
