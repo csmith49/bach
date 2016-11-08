@@ -11,7 +11,12 @@ let scalar = ref 1.0
 let spec_list = [
     ("-noisy", Arg.Set noisy, " Print additional information.");
     ("-induct", Arg.String parse_problem_file, " Parses problem statement file.");
-    ("-fact", Arg.String (fun s -> Problem.fact_dir := s), " Sets the fact directory.")
+    ("-fact", Arg.String (fun s -> Problem.fact_dir := s), " Sets the fact directory.");
+    ("-b", Arg.String (fun s -> begin
+            parse_problem_file ("./benchmarks/" ^ s ^ "/" ^ s ^ ".sexp");
+            Problem.fact_dir := ("./benchmarks/" ^ s ^ "/facts/");
+        end),
+    " Runs the named benchmark.")
 ]
 
 let usage_msg = "todo"
