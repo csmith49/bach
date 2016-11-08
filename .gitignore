@@ -24,3 +24,6 @@ bach
 
 # probably don't want the config file to be passed around
 config.sexp
+
+# don't want benchmark pycaches
+**/__pycache__/
