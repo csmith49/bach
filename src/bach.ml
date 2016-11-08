@@ -103,6 +103,10 @@ let _ =
                 vars in
             (* and now we process the concretizations *)
             let handle_concretized c' =
+                if !abduce_flag || not (ConcretizedMT.well_constrained c c')
+                then ()
+                else begin
+                (* =================================== *)
                 (* check the pair *)
                 let var_order, results = check c c' in
                 (* also help for printing *)
@@ -142,6 +146,8 @@ let _ =
                     end;
                 if !okay_to_store then
                     seen := !seen @ [c'];
+                (* =================================== *)
+                end
             in
             List.iter handle_concretized relative_concretizations;
         in
