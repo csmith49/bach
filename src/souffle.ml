@@ -112,6 +112,7 @@ let to_souffle (lhs : ConcretizedMT.t)
     let hd = Relation.to_string lneg in
     (* neg parts a list of lists *)
     let pos_part = ConcretizedMT.pos_strings "lhs" lhs in
+    (* TODO : this is only n, needs to be 2^n *)
     let neg_parts = ConcretizedMT.neg_strings "rhs" rhs in
     List.iter (fun ns ->
             let bdy = Aux.concat (pos_part @ ns) in

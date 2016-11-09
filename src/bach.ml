@@ -84,6 +84,7 @@ let _ =
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
     let seen = ref ([ConcretizedMT.Truth] : ConcretizedMT.t list) in
+    let implied = ref ([] : ConcretizedMT.t list) in
     (* and now we loop *)
     while true do
         (* push an abstract mt off the frontier *)
@@ -103,23 +104,31 @@ let _ =
                 vars in
             (* and now we process the concretizations *)
             let handle_concretized c' =
-                if !abduce_flag || not (ConcretizedMT.well_constrained c c')
-                then ()
-                else begin
+                if !abduce_flag && (ConcretizedMT.well_constrained c c')
+                then begin
                 (* =================================== *)
                 (* check the pair *)
                 let var_order, results = check c c' in
-                (* also help for printing *)
-                let pair_string d =
-                    (ConcretizedMT.to_string c) ^ d ^ (ConcretizedMT.to_string c') in
                 (* we might end up not adding anything` *)
-                let okay_to_store = ref true in
                 let okay_to_report = ref false in
                 let guard = ref ([] : Guard.t) in
                 let direction = ref " ? " in
+                (* also help for printing *)
+                let pair_string d =
+                    let l = ConcretizedMT.to_string c in
+                    let r = ConcretizedMT.to_string c' in
+                    let g =
+                        if Guard.decides !guard
+                            then
+                                " | " ^ (Guard.to_string !guard)
+                            else ""
+                    in
+                    l ^ d ^ r ^ g in
                 (* first case, best case --- all positive evidence *)
                 if equivalent results then begin
-                        if !prune_flag then okay_to_store := false;
+                        if !prune_flag then
+                            let clean = ConcretizedMT.rebase_variables c' in
+                            implied := !implied @ [clean];
                         okay_to_report := true;
                         direction := " === ";
                     end
@@ -134,8 +143,12 @@ let _ =
                         direction := " <== ";
                     end
                 (* final case, maybe we abduce *)
-                else begin
-                        ();
+                else if !abduce_flag then begin
+                        guard := learn var_order results;
+                        if Guard.decides !guard then begin
+                                okay_to_report := true;
+                                direction := " === ";
+                            end
                     end;
                 let s = score results !guard c c' in
                 if !okay_to_report && (s > 1.0) then begin
@@ -144,8 +157,10 @@ let _ =
                         noisy_print ("\t" ^ (string_of_float s));
                         noisy_print ("\t" ^ (Guard.to_string !guard));
                     end;
-                if !okay_to_store then
-                    seen := !seen @ [c'];
+                let clean = ConcretizedMT.rebase_variables c' in
+                if not (List.mem clean !implied) then
+                    if not (List.mem clean !seen) then
+                        seen := !seen @ [clean];
                 (* =================================== *)
                 end
             in

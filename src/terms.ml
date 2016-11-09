@@ -47,15 +47,14 @@ module Variables = struct
         let vars = List.assoc s !Problem.globals.variables in
         try List.hd (Aux.subtract vars used)
         with _ -> invalid_arg "get_fresh"
-    let rebase_variables (vs : var list) : var list =
-        let subs = List.fold_left (fun m v ->
+    let rebase_variables (vs : var list) : var VarMap.t =
+        List.fold_left (fun m v ->
                 if not (VarMap.mem v m) then
                     let used = snd (List.split (VarMap.bindings m)) in
                     let fresh = get_fresh (get_sort v) used in
                     VarMap.add v fresh m
                 else m)
-            VarMap.empty vs in
-        List.map (fun v -> VarMap.find v subs) vs
+            VarMap.empty vs
 end
 
 (* how we search *)
@@ -197,10 +196,13 @@ module Root = struct
                 Term.set_at t' p (L v))
             s vps in
         Root (t, out_var)
-    let to_sterm (r : root) : SortTerm.t = match r with
-        Root (t, v) -> Term.cata (fun v -> Variables.get_sort v) (fun s -> s) t
-    let udpate_variables (r : root) (vs : var list) : root =
-        concretize (to_sterm r) vs
+    let apply_varmap (r : root) (vm : var VarMap.t) : root = match r with
+        Root (t, v) ->
+            let fresh_v = VarMap.find v vm in
+            let fresh_t = Term.cata (fun v' -> VarMap.find v' vm)
+                                    (fun s -> s)
+                                t
+            in Root (fresh_t, fresh_v)
     (* for printing, we need some info *)
     let input_variables (r : root) = match r with
         Root (t, v) -> List.map (fun p ->
@@ -331,6 +333,13 @@ module ConcretizedMT = struct
                 let vars = all_but_output i in
                 List.mem o vars)
             roots)
+    let rebase_variables (cmt : t) : t = match cmt with
+        | Truth -> Truth
+        | Concretized rs ->
+            let vars = Aux.flat_map Root.variables rs in
+            let vm = Variables.rebase_variables vars in
+            let rs' = List.map (fun r -> Root.apply_varmap r vm) rs in
+            Concretized rs'
 end
 
 module LiftedMT = struct

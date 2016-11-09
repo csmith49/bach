@@ -72,6 +72,9 @@ module Guard = struct
         String.concat " V " (List.map Path.to_string g)
     (* we must construct additional metrics *)
     let metric g = List.fold_left (+) 0 (List.map Path.metric g)
+    let decides g = match g with
+        | [] -> false
+        | _ -> true
 end
 
 (* types and stuff for predicates we're searching over *)
