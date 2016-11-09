@@ -61,6 +61,7 @@ module Aux = struct
         then []
         else (List.hd l) :: (take_from (List.tl l) (i - 1))
     let rec rev_cons ls = match ls with
+        | [] -> invalid_arg "rev_cons"
         | x :: [] -> ([], x)
         | x :: xs -> let tl, hd = rev_cons xs in
             (x :: tl, hd)

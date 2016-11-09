@@ -2,6 +2,63 @@ open Core
 open Frontier
 open Problem
 
+(* a very helpful module *)
+module Variables = struct
+    type t = (sort * (var list)) list
+    (* a copy from above *)
+    let global_sorts _ = fst (List.split !Problem.globals.variables)
+    (* find the sort of a variable *)
+    let get_sort (v : var): sort =
+        let f (_, vs) = List.mem v vs in
+        let ss =
+            fst (List.split (List.filter
+                    f
+                !Problem.globals.variables)) in
+        match ss with
+            | [] -> invalid_arg "get_sort"
+            | s :: xs -> s
+    (* get all variables of a particular sort form a list *)
+    let vars_with_sort (vs : var list) (s : sort): var list =
+        List.filter (fun v -> (get_sort v) = s) vs
+    (* and now the next variables that can be used of a sort *)
+    let next_vars_inner (vs : var list) (seen : var list) (s : sort): var list =
+        let vars = List.sort_uniq Pervasives.compare (vs @ seen) in
+        let vs' = vars_with_sort vars s in
+        let leftover = Aux.subtract
+            (List.assoc s !Problem.globals.variables)
+            vs' in
+        match leftover with
+            | [] -> vars
+            | x :: xs -> Aux.append vars x
+    let next_vars (vs : var list) (s : sort): var list =
+        next_vars_inner vs [] s
+    (* we can build up from the sorts and variables that we've seen *)
+    let valid_assignments_inner (ss : sort list) (vs : var list) : (var list) list =
+        let extend path s =
+            List.map (fun v -> path @ [v]) (next_vars_inner path vs s) in
+        let extend_all paths s =
+            Aux.flat_map (fun p -> extend p s) paths in
+        let paths = List.fold_left extend_all [[]] ss in
+        List.sort_uniq Pervasives.compare paths
+    let valid_assignments (ss : sort list): (var list) list =
+        valid_assignments_inner ss []
+    (* but the names aren't always right *)
+    let get_fresh (s : sort) (used : var list) : var =
+        let vars = List.assoc s !Problem.globals.variables in
+        try List.hd (Aux.subtract vars used)
+        with _ -> invalid_arg "get_fresh"
+    let rebase_variables (vs : var list) : var list =
+        let subs = List.fold_left (fun m v ->
+                if not (VarMap.mem v m) then
+                    let used = snd (List.split (VarMap.bindings m)) in
+                    let fresh = get_fresh (get_sort v) used in
+                    VarMap.add v fresh m
+                else m)
+            VarMap.empty vs in
+        List.map (fun v -> VarMap.find v subs) vs
+end
+
+(* how we search *)
 module SortTerm = struct
     (* leaves are sorts, nodes are symbols *)
     type t = (sort, symbol) term
@@ -140,6 +197,10 @@ module Root = struct
                 Term.set_at t' p (L v))
             s vps in
         Root (t, out_var)
+    let to_sterm (r : root) : SortTerm.t = match r with
+        Root (t, v) -> Term.cata (fun v -> Variables.get_sort v) (fun s -> s) t
+    let udpate_variables (r : root) (vs : var list) : root =
+        concretize (to_sterm r) vs
     (* for printing, we need some info *)
     let input_variables (r : root) = match r with
         Root (t, v) -> List.map (fun p ->
@@ -317,45 +378,3 @@ module LiftedMT = struct
 end
 
 module AbstractSearch = Deadbeat(LiftedMT)
-
-(* a very helpful module *)
-module Variables = struct
-    type t = (sort * (var list)) list
-    (* a copy from above *)
-    let global_sorts _ = fst (List.split !Problem.globals.variables)
-    (* find the sort of a variable *)
-    let get_sort (v : var): sort =
-        let f (_, vs) = List.mem v vs in
-        let ss =
-            fst (List.split (List.filter
-                    f
-                !Problem.globals.variables)) in
-        match ss with
-            | [] -> invalid_arg "get_sort"
-            | s :: xs -> s
-    (* get all variables of a particular sort form a list *)
-    let vars_with_sort (vs : var list) (s : sort): var list =
-        List.filter (fun v -> (get_sort v) = s) vs
-    (* and now the next variables that can be used of a sort *)
-    let next_vars_inner (vs : var list) (seen : var list) (s : sort): var list =
-        let vars = List.sort_uniq Pervasives.compare (vs @ seen) in
-        let vs' = vars_with_sort vars s in
-        let leftover = Aux.subtract
-            (List.assoc s !Problem.globals.variables)
-            vs' in
-        match leftover with
-            | [] -> vars
-            | x :: xs -> Aux.append vars x
-    let next_vars (vs : var list) (s : sort): var list =
-        next_vars_inner vs [] s
-    (* we can build up from the sorts and variables that we've seen *)
-    let valid_assignments_inner (ss : sort list) (vs : var list) : (var list) list =
-        let extend path s =
-            List.map (fun v -> path @ [v]) (next_vars_inner path vs s) in
-        let extend_all paths s =
-            Aux.flat_map (fun p -> extend p s) paths in
-        let paths = List.fold_left extend_all [[]] ss in
-        List.sort_uniq Pervasives.compare paths
-    let valid_assignments (ss : sort list): (var list) list =
-        valid_assignments_inner ss []
-end
