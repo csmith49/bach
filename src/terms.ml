@@ -329,7 +329,7 @@ module ConcretizedMT = struct
     let variables (cmt : t) : var list = List.sort_uniq Pervasives.compare
         ((input_variables cmt) @ (output_variables cmt))
     (* to constrain: output vars have to show up somewhere else *)
-    let well_constrained (l : t) (r : t) : bool =
+    let outputs_constrained (l : t) (r : t) : bool =
         let cmt = conjoin l r in
         let roots = match cmt with
             | Truth -> []
@@ -343,6 +343,16 @@ module ConcretizedMT = struct
                 let vars = all_but_output i in
                 List.mem o vars)
             roots)
+    let well_constrained (l : t) (r : t) : bool =
+        let lvars = variables l in
+        let rvars = variables r in
+        (List.length (Aux.intersect lvars rvars)) > 0
+    let non_trivial (l : t) (r : t) : bool =
+        match l with
+            | Truth -> false
+            | _ -> match r with
+                | Truth -> false
+                | _ -> true
     let rebase_variables (cmt : t) : t = match cmt with
         | Truth -> Truth
         | Concretized rs ->

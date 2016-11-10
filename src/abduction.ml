@@ -72,9 +72,18 @@ module Guard = struct
         String.concat " V " (List.map Path.to_string g)
     (* we must construct additional metrics *)
     let metric g = List.fold_left (+) 0 (List.map Path.metric g)
-    let decides g = match g with
-        | [] -> false
-        | _ -> true
+    (* and of course, the important part is post-processing *)
+    let clean g = positivize (exact_paths g)
+    let reduce g =
+        (* first, we have to canonicalize all paths *)
+        let paths = List.map (fun p -> match p with
+                Path (pos, neg, label) ->
+                    let pos' = List.sort Pervasives.compare pos in
+                    let neg' = List.sort Pervasives.compare neg in
+                    Path (pos', neg', label))
+            g in
+        ()
+    let decides g = true
 end
 
 (* types and stuff for predicates we're searching over *)
@@ -116,4 +125,4 @@ let abduce (var_order : int VarMap.t)
            (evidence : AbductionLearner.labeled list) =
     let attributes = create_attributes (usable_preds var_sorts) var_order var_sorts in
     let classifier = AbductionLearner.learn attributes evidence in
-    Guard.positivize (Guard.exact_paths (Guard.paths classifier))
+    Guard.clean (Guard.paths classifier)

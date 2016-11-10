@@ -104,12 +104,6 @@ let _ =
                 vars in
             (* and now we process the concretizations *)
             let handle_concretized c' =
-                if !abduce_flag || (ConcretizedMT.well_constrained c c')
-                then begin
-                (* =================================== *)
-                (* check the pair *)
-                let var_order, results = check c c' in
-                (* we might end up not adding anything` *)
                 let okay_to_report = ref false in
                 let guard = ref ([] : Guard.t) in
                 let direction = ref " ? " in
@@ -124,6 +118,18 @@ let _ =
                             else ""
                     in
                     l ^ d ^ r ^ g in
+                let _ = noisy_print ("CHECKING: " ^ (pair_string " ? ")) in
+                (* checks to make sure everything is ship-shape *)
+                let non_trivial = ConcretizedMT.non_trivial c c' in
+                let well_constrained = ConcretizedMT.well_constrained c c' in
+                let not_seen = not (List.mem (ConcretizedMT.rebase_variables c') !implied) in
+                if not_seen && (!abduce_flag ||
+                                well_constrained ||
+                                not non_trivial) then begin
+                (* =================================== *)
+                (* check the pair *)
+                let var_order, results = check c c' in
+                let _ = noisy_print ("CHECKING: " ^ (pair_string " ? ")) in
                 (* first case, best case --- all positive evidence *)
                 if equivalent results then begin
                         if !prune_flag then
@@ -133,12 +139,12 @@ let _ =
                         direction := " === ";
                     end
                 (* next case, left-implication *)
-                else if left_impl results then begin
+                else if left_impl results && non_trivial then begin
                         okay_to_report := true;
                         direction := " ==> ";
                     end
                 (* symmetrically, right-implication *)
-                else if right_impl results then begin
+                else if right_impl results && non_trivial then begin
                         okay_to_report := true;
                         direction := " <== ";
                     end
@@ -161,6 +167,7 @@ let _ =
                 if not (List.mem clean !implied) then
                     if not (List.mem clean !seen) then
                         seen := !seen @ [clean];
+                        noisy_print ("ADDED: "  ^ (ConcretizedMT.to_string clean));
                 (* =================================== *)
                 end
             in
