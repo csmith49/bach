@@ -21,7 +21,7 @@ vc = 0
 def f_valid(a):
     global vc
     vc = vc + 1
-    #print vc
+    print vc
     
     s = Solver()
     s.add(a)
@@ -102,12 +102,7 @@ def ineq(f,e):
 
 count = 0
 num = 1
-seen = {}
 for f in allforms:
-    print num
-    num = num + 1
-    if f in seen: continue
-    seen[f] = 1
     found = False
     for i in eq:
         if ineq(f,eq[i]):
