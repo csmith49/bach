@@ -1,6 +1,6 @@
 from z3 import *
 import itertools
-
+from sets import Set
 
 land = []
 lor = []
@@ -9,7 +9,7 @@ issat = []
 isvalid = []
 #
 
-threshold = 1005
+threshold = 1000
 depth = 4
 
 def f_sat(a):
@@ -54,7 +54,8 @@ def generateForms():
             isvalid.append((a, f_valid(a)))
 
         for (a,b) in itertools.product(m[i-1], repeat=2): 
-            if len(land) > threshold: return 
+            if len(land) > threshold: return
+            print "len: ", len(land)
             conj = And(a,b)
             disj = Or(a,b)
             
@@ -100,6 +101,7 @@ def ineq(f,e):
     return False
 
 count = 0
+num = 1
 for f in allforms:
     found = False
     for i in eq:
@@ -115,7 +117,7 @@ for f in allforms:
         h[f] = count
 
 print eq
-print h
+#print h
 
 land = map(lambda (a,b,c): (h[a],h[b],h[c]), land)
 lor = map(lambda (a,b,c): (h[a],h[b],h[c]), lor)
@@ -123,11 +125,11 @@ neg = map(lambda (a,b): (h[a],h[b]), neg)
 issat = map(lambda (a,b): (h[a],b), issat)
 isvalid = map(lambda (a,b): (h[a],b), isvalid)
 
-print land
-print lor
-print neg
-print issat
-print isvalid
+#print land
+#print lor
+#print neg
+#print issat
+#print isvalid
 
 toFile("and",land)
 toFile("or",lor)
