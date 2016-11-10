@@ -247,7 +247,7 @@ module Root = struct
         Root (t, _) -> Term.cata (fun v -> Variables.get_sort v) (fun s -> s) t
     let freshen (r : root) : root =
         let ivs = List.mapi (fun i _ ->
-                "i_" ^ (string_of_int i))
+                "in_" ^ (string_of_int i))
             (input_variables r) in
         let ov = "out" in
         concretize (to_sortterm r) (ivs @ [ov])
