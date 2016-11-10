@@ -242,6 +242,15 @@ module Root = struct
         Root (t, v) -> t
     let metric (r : root) = match r with
         Root (t, v) -> Term.size t
+    (* because souffle doesn't like it when variables aren't fresh to death *)
+    let to_sortterm (r : root) : SortTerm.t = match r with
+        Root (t, _) -> Term.cata (fun v -> Variables.get_sort v) (fun s -> s) t
+    let freshen (r : root) : root =
+        let ivs = List.mapi (fun i _ ->
+                "i_" ^ (string_of_int i))
+            (input_variables r) in
+        let ov = "out" in
+        concretize (to_sortterm r) (ivs @ [ov])
 end
 
 (* this module just helps with printing --- needed for souffle stuff *)
@@ -269,8 +278,9 @@ module ConcretizedMT = struct
         | Truth -> []
         | Concretized rs ->
             let set_ith i r =
-                let hd = Root.positive (base ^ "_" ^ (string_of_int i)) r in
-                let body = Cube.to_string (Root.to_cube r) in
+                let r' = Root.freshen r in
+                let hd = Root.positive (base ^ "_" ^ (string_of_int i)) r' in
+                let body = Cube.to_string (Root.to_cube r') in
                 hd ^ " :- " ^ body ^ "."
             in List.mapi set_ith rs
     let pos_strings (base : string) (cmt : t) : string list = match cmt with
