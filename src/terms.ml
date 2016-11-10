@@ -365,6 +365,12 @@ module ConcretizedMT = struct
             let vm = Variables.rebase_variables vars in
             let rs' = List.map (fun r -> Root.apply_varmap r vm) rs in
             Concretized rs'
+    let containment_check (l : t) (r : t) : bool = match l with
+        | Truth -> false
+        | Concretized ls -> match r with
+            | Truth -> false
+            | Concretized rs ->
+                (Aux.contains rs ls) || (Aux.contains ls rs)
 end
 
 module LiftedMT = struct

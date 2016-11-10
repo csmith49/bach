@@ -10,6 +10,8 @@ let scalar = ref 1.0
 let abduce_flag = ref false
 let prune_flag = ref true
 
+let pruned = ref []
+
 let spec_list = [
     ("-noisy", Arg.Set noisy, " Print additional information.");
     ("-induct", Arg.String parse_problem_file, " Parses problem statement file.");
@@ -71,6 +73,69 @@ let score res g lhs rhs =
     let t_score = float ((ConcretizedMT.metric lhs) + (ConcretizedMT.metric rhs)) in
     (pos_ev /. (!scalar *. (g_score +. t_score)))
 
+(* now we need to actually process pairs of mts and stuff *)
+let process_pair (lhs : ConcretizedMT.t)
+                 (rhs : ConcretizedMT.t) : ConcretizedMT.t option =
+    (* fill this out as we go *)
+    let okay_to_record = ref true in
+    let okay_to_report = ref false in
+    let guard = ref ([] : Guard.t) in
+    let direction = ref " ? " in
+    (* eases printing throughout *)
+    let pair_string d =
+        let l = ConcretizedMT.to_string lhs in
+        let r = ConcretizedMT.to_string rhs in
+        let g =
+            if Guard.decides !guard
+                then
+                    " | " ^ (Guard.to_string !guard)
+                else ""
+        in
+        l ^ d ^ r ^ g in
+    (* now we need to check that everything is in tip top shape *)
+    (* lhs not in pruned *)
+    let lhs_np = not (List.mem (ConcretizedMT.rebase_variables lhs) !pruned) in
+    (* no truth sides *)
+    let nt = ConcretizedMT.non_trivial lhs rhs in
+    (* non-empty variable intersection *)
+    let wc = ConcretizedMT.well_constrained lhs rhs in
+    (* sides aren't contained in the other *)
+    let nc = not (ConcretizedMT.containment_check lhs rhs) in
+    (* now see if we should proceed *)
+    if lhs_np && nc && (!abduce_flag || wc) then begin
+        (* get results! finally! *)
+        let var_order, results = check lhs rhs in
+        if equivalent results then begin
+            if !prune_flag then
+                pruned := Aux.append !pruned (ConcretizedMT.rebase_variables rhs);
+            okay_to_report := true;
+            direction := " === ";
+        end else if left_impl results && nt then begin
+            okay_to_report := true;
+            direction := " ==> ";
+        end else if right_impl results && nt then begin
+            okay_to_report := true;
+            direction := " <== ";
+        end else if !abduce_flag then begin
+            guard := learn var_order results;
+            if Guard.decides !guard then begin
+                okay_to_report := true;
+                direction := " === ";
+            end
+        end;
+        (* now we can see how well we did *)
+        let s = score results !guard lhs rhs in
+        (* if the results are worth reporting, print 'em *)
+        if !okay_to_report && (s > 1.0) then begin
+            print_endline (pair_string !direction);
+            noisy_print ("\t" ^ (results_to_string results));
+            noisy_print ("\t" ^ (string_of_float s));
+        end;
+        (* now clean up the rhs *)
+        let clean = ConcretizedMT.rebase_variables rhs in
+        Some (clean)
+    end else None
+
 (* MAIN LOOP *)
 let _ =
     (* parse command line options *)
@@ -83,8 +148,7 @@ let _ =
     noisy_print "Starting iteration...";
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
-    let seen = ref ([ConcretizedMT.Truth] : ConcretizedMT.t list) in
-    let implied = ref ([] : ConcretizedMT.t list) in
+    let seen = ref ([LiftedMT.Truth] : LiftedMT.t list) in
     (* and now we loop *)
     while true do
         (* push an abstract mt off the frontier *)
@@ -92,86 +156,24 @@ let _ =
         frontier := frontier';
         noisy_print ("GENERATED: " ^ (LiftedMT.to_string e));
         noisy_print ("CONCRETIZING...");
-        let compare_with_concrete c =
-            (* pick out the sorts we need to fill, and the variables we need to fill against *)
-            let concrete_vars = ConcretizedMT.variables c in
-            let symbolic_sorts = LiftedMT.sort_list e in
-            let vars = Variables.valid_assignments_inner symbolic_sorts concrete_vars in
-            (* now generate all concretizations *)
-            let relative_concretizations = List.map (fun vs ->
-                    let rel, vs' = LiftedMT.concretize e vs in
-                    rel)
+        (* how do we actually compare? *)
+        let compare_with_symbolic c =
+            let symbolic_sorts = (LiftedMT.sort_list c) @ (LiftedMT.sort_list e) in
+            let vars = Variables.valid_assignments symbolic_sorts in
+            (* now we concretize *)
+            let concs = List.map (fun vs ->
+                    let lhs, vs' = LiftedMT.concretize c vs in
+                    let rhs, _ = LiftedMT.concretize e vs' in
+                    (lhs, rhs))
                 vars in
-            (* and now we process the concretizations *)
-            let handle_concretized c' =
-                let okay_to_report = ref false in
-                let guard = ref ([] : Guard.t) in
-                let direction = ref " ? " in
-                (* also help for printing *)
-                let pair_string d =
-                    let l = ConcretizedMT.to_string c in
-                    let r = ConcretizedMT.to_string c' in
-                    let g =
-                        if Guard.decides !guard
-                            then
-                                " | " ^ (Guard.to_string !guard)
-                            else ""
-                    in
-                    l ^ d ^ r ^ g in
-                let _ = noisy_print ("CHECKING: " ^ (pair_string " ? ")) in
-                (* checks to make sure everything is ship-shape *)
-                let non_trivial = ConcretizedMT.non_trivial c c' in
-                let well_constrained = ConcretizedMT.well_constrained c c' in
-                let not_seen = not (List.mem (ConcretizedMT.rebase_variables c') !implied) in
-                if not_seen && (!abduce_flag ||
-                                well_constrained ||
-                                not non_trivial) then begin
-                (* =================================== *)
-                (* check the pair *)
-                let var_order, results = check c c' in
-                let _ = noisy_print ("CHECKING: " ^ (pair_string " ? ")) in
-                (* first case, best case --- all positive evidence *)
-                if equivalent results then begin
-                        if !prune_flag then
-                            let clean = ConcretizedMT.rebase_variables c' in
-                            implied := !implied @ [clean];
-                        okay_to_report := true;
-                        direction := " === ";
-                    end
-                (* next case, left-implication *)
-                else if left_impl results && non_trivial then begin
-                        okay_to_report := true;
-                        direction := " ==> ";
-                    end
-                (* symmetrically, right-implication *)
-                else if right_impl results && non_trivial then begin
-                        okay_to_report := true;
-                        direction := " <== ";
-                    end
-                (* final case, maybe we abduce *)
-                else if !abduce_flag then begin
-                        guard := learn var_order results;
-                        if Guard.decides !guard then begin
-                                okay_to_report := true;
-                                direction := " === ";
-                            end
-                    end;
-                let s = score results !guard c c' in
-                if !okay_to_report && (s > 1.0) then begin
-                        print_endline (pair_string !direction);
-                        noisy_print ("\t" ^ (results_to_string results));
-                        noisy_print ("\t" ^ (string_of_float s));
-                        noisy_print ("\t" ^ (Guard.to_string !guard));
-                    end;
-                let clean = ConcretizedMT.rebase_variables c' in
-                if not (List.mem clean !implied) then
-                    if not (List.mem clean !seen) then
-                        seen := !seen @ [clean];
-                        noisy_print ("ADDED: "  ^ (ConcretizedMT.to_string clean));
-                (* =================================== *)
-                end
-            in
-            List.iter handle_concretized relative_concretizations;
-        in
-        List.iter compare_with_concrete !seen;
+            List.fold_left (fun l (lhs, rhs) ->
+                    match (process_pair lhs rhs) with
+                        | None -> l
+                        | Some conc -> Aux.append l conc)
+                []
+                concs
+        in begin
+            seen := Aux.append !seen e;
+            List.iter (fun c -> let _ = compare_with_symbolic c in ()) !seen;
+        end
     done;
