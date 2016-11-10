@@ -78,7 +78,7 @@ let _ =
     (* load config options *)
     parse_work_file "config.sexp";
     (* load fact files *)
-    add_fact_data !Problem.fact_dir;
+    load_fact_data !Problem.fact_dir;
     (* now we search *)
     noisy_print "Starting iteration...";
     (* construct the frontier and history *)

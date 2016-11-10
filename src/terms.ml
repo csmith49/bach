@@ -256,6 +256,10 @@ end
 (* this module just helps with printing --- needed for souffle stuff *)
 module ConcretizedMT = struct
     type t = Truth | Concretized of Root.root list
+    (* and it's good to know what variables we're actually using *)
+    let variables (cmt : t) : var list = match cmt with
+        | Truth -> []
+        | Concretized rs -> Aux.flat_map Root.variables rs
     (* we can combine these things! *)
     let conjoin (l : t) (r : t) : t = match l with
         | Truth -> r
@@ -292,15 +296,16 @@ module ConcretizedMT = struct
     let neg_strings (base : string) (cmt : t) : string list list = match cmt with
         | Truth -> [["bool(\"false\")"]]
         | Concretized rs ->
+            let mt_vars = variables cmt in
             let set_ith i r =
                 let neg = Root.negative (base ^ "_" ^ (string_of_int i)) r in
-                let pos = pos_strings base cmt in
-                Aux.append (Aux.delete_at pos i) neg
+                let scopes = List.map (fun v ->
+                        let s = Variables.get_sort v in
+                        let n = "scope_" ^ s in
+                        n ^ "(" ^ v ^ ")")
+                    (Aux.subtract mt_vars (Root.variables r)) in
+                Aux.append scopes neg
             in List.mapi set_ith rs
-    (* and it's good to know what variables we're actually using *)
-    let variables (cmt : t) : var list = match cmt with
-        | Truth -> []
-        | Concretized rs -> Aux.flat_map Root.variables rs
     (* as well as how to print this *)
     let to_string (cmt : t) : string = match cmt with
         | Truth -> "T"
@@ -398,8 +403,9 @@ module LiftedMT = struct
                     let to_use = Aux.take_from vs k in
                     let vs' = Aux.drop_from vs k in
                     (Aux.append rs (Root.concretize s to_use), vs'))
-                ([], vars) mt
-            in ConcretizedMT.Concretized roots, leftovers
+                ([], vars) mt in
+            let roots' = List.sort_uniq Pervasives.compare roots in
+            ConcretizedMT.Concretized roots', leftovers
     (* I do enjoy me some printing *)
     let to_string (lmt : t) : string = match lmt with
         | Truth -> "T"

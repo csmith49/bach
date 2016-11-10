@@ -5,6 +5,8 @@ open Problem
 
 let fact_data = ref (StrMap.add "bool" "bool(\"true\")." StrMap.empty)
 
+let sort_data = ref SortMap.empty
+
 (* splits a line on tabs and turns everything to strings *)
 let parse_line (line : string): string list =
     List.map String.trim (Str.split (Str.regexp "\t") line)
@@ -17,26 +19,42 @@ let decl_rel r = match r with
             ts in
         ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
-(* we're gonna make a string map containing all the data, and we're gonna make souffle pay for it *)
-let load_facts (fact_dir : string) =
-    (* line by line, turn a b c into rel("a", "b", "c"). *)
-    let handle_fact_file rel_name =
-        let data = Aux.load_lines (fact_dir ^ rel_name ^ ".facts") in
-        let quote s = "\"" ^ s ^ "\"" in
-        let process_line l =
-            let line_vals = parse_line l in
-            rel_name ^ "(" ^ (Aux.concat (List.map quote line_vals)) ^ ")." in
-        String.concat "\n" (List.map process_line data)
-    in List.fold_left (fun m r ->
-            StrMap.add r (handle_fact_file r) m)
-        StrMap.empty (List.map Symbol.name !Problem.globals.signature)
-
-(* and now we update our global variable appropriately *)
-let add_fact_data (fact_dir : string) =
-    let new_facts = load_facts fact_dir in
-    fact_data := StrMap.union (fun k v v' ->
-            Some (v ^ "\n" ^ v'))
-        new_facts !fact_data
+(* we're gonna parse all the fact files, and we're gonna make souffle pay for it *)
+let load_fact_data (fact_dir : string) =
+    let quote s = "\"" ^ s ^ "\"" in
+    let sort_values = ref SortMap.empty in
+    let handle_fact_file (s : symbol) = match s with
+        Symbol (name, sorts) -> begin
+                (* load the data as rows *)
+                let raw_lines = Aux.load_lines (fact_dir ^ name ^ ".facts") in
+                let data = List.map (fun l ->
+                        List.map quote (parse_line l))
+                    raw_lines in
+                (* turn each line into the appropriate string *)
+                let convert_line vals = name ^ "(" ^ (Aux.concat vals) ^ ")." in
+                let line_blob = String.concat "\n" (List.map convert_line data) in
+                (* and save the blob for later *)
+                fact_data := StrMap.add name line_blob !fact_data;
+                (* now we need to extract all the columns *)
+                let columns = List.combine sorts (Aux.transpose data) in
+                let sort_union k l r = Some (l @ r) in
+                (* and stick all the sorts together *)
+                sort_values := List.fold_left (fun m (k, v) ->
+                        let col = SortMap.singleton k v in
+                        SortMap.union sort_union m col)
+                    !sort_values
+                    columns;
+            end
+        in
+    begin
+        List.iter handle_fact_file !Problem.globals.signature;
+        sort_data := SortMap.mapi (fun k vs ->
+                let rel_name = "scope_" ^ k in
+                let proc_val v = rel_name ^ "(" ^ v ^ ")." in
+                let vs' = List.sort_uniq Pervasives.compare vs in
+                String.concat "\n" (List.map proc_val vs'))
+            !sort_values;
+    end
 
 (* once we have our concretized stuff, we want to print it out *)
 let to_souffle (lhs : ConcretizedMT.t)
@@ -51,6 +69,10 @@ let to_souffle (lhs : ConcretizedMT.t)
     let total_symbols = List.sort_uniq
         Pervasives.compare
         ((ConcretizedMT.symbols_used lhs) @ (ConcretizedMT.symbols_used rhs)) in
+    (* and the sorts, which we need fors coping *)
+    let total_sorts = List.sort_uniq
+            Pervasives.compare
+        (List.map Variables.get_sort total_vars) in
 
     (* and now we'll define pos, lneg, rneg *)
     let pos = Relation ("pos", total_vars) in
@@ -75,6 +97,12 @@ let to_souffle (lhs : ConcretizedMT.t)
     (* and booleans *)
     write (decl_rel (Relation ("bool", ["bool_sort"])));
 
+    (* and scope relations *)
+    List.iter (fun s ->
+            let n = "scope_" ^ s in
+            write (".decl " ^ n ^ "(v : T)"))
+        total_sorts;
+
     (* now we can write down all the data we need for the symbols used *)
     write "\n// DATA";
     List.iter (fun s ->
@@ -83,6 +111,12 @@ let to_souffle (lhs : ConcretizedMT.t)
 
     (* and for the booleans *)
     write (StrMap.find "bool" !fact_data);
+
+    (* now we can write down the actual scoping values *)
+    write "\n// SCOPING";
+    List.iter (fun s ->
+            write (SortMap.find s !sort_data))
+        total_sorts;
 
     (* now the lhs decls and bodies *)
     write "\n// LHS ROOTS";

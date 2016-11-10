@@ -71,6 +71,12 @@ module Aux = struct
         let _ = input_line stdin in ()
     end
     let intersect ls rs = List.filter (fun l -> List.mem l rs) ls
+    (* we need transpose for picking out columns in the data *)
+    let rec transpose l = match l with
+        | [] -> []
+        | [] :: xs -> transpose xs
+        | (x::xs) :: xss ->
+            (x :: List.map List.hd xss) :: transpose (xs :: List.map List.tl xss)
 end
 
 (* string aliases for type safety *)
