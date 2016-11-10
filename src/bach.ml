@@ -104,7 +104,7 @@ let _ =
                 vars in
             (* and now we process the concretizations *)
             let handle_concretized c' =
-                if !abduce_flag && (ConcretizedMT.well_constrained c c')
+                if !abduce_flag || (ConcretizedMT.well_constrained c c')
                 then begin
                 (* =================================== *)
                 (* check the pair *)
