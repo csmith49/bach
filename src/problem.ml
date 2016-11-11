@@ -6,6 +6,7 @@ type search_params = {
     max_terms : int [@default 2];
     variables : (sort * (var list)) list;
     signature : symbol list;
+    abduction_depth : int [@default 2];
 } [@@deriving of_sexp]
 
 module SearchParams = struct
@@ -18,6 +19,7 @@ let globals = ref {
     max_terms = 2;
     variables = [];
     signature = [];
+    abduction_depth = 2;
 }
 
 let parse_problem_file fname =

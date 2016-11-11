@@ -1,5 +1,6 @@
 open Core
 open Decision
+open Problem
 
 let global_preds = ref []
 
@@ -124,5 +125,5 @@ let abduce (var_order : int VarMap.t)
            (var_sorts : (sort * var list) list)
            (evidence : AbductionLearner.labeled list) =
     let attributes = create_attributes (usable_preds var_sorts) var_order var_sorts in
-    let classifier = AbductionLearner.learn attributes evidence in
+    let classifier = AbductionLearner.learn_to_depth attributes evidence !Problem.globals.abduction_depth in
     Guard.clean (Guard.paths classifier)
