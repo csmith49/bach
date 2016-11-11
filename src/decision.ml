@@ -82,4 +82,22 @@ module IDTree = functor (D : DECIDABLE) -> struct
         let p, n = List.partition f ls in
         let ans = Attribute (a, (learn new_atts p), (learn new_atts n)) in
         ans
+
+    let rec learn_to_depth (atts : attribute list) (ls : labeled list) (depth : int) =
+        (* count positive and negative examples *)
+        let num_pos = (List.length (positive_elements ls)) in
+        let num_neg = (List.length (negative_elements ls)) in
+        (* case 1, as above *)
+        if (num_neg == 0) then Pos else
+        (* case 2, as above *)
+        if (num_pos == 0) then Neg else
+        (* case 3, as above, and don't go too deep *)
+        if (List.length atts) == 0 || depth == 0 then Mixed else
+        (* case 4, let's recurse *)
+        let a, new_atts = select_attribute atts ls in
+        let f l = apply a (fst l) in
+        let p, n = List.partition f ls in
+        let learn' ls = learn_to_depth new_atts ls (depth - 1) in
+        let ans = Attribute (a, (learn' p), (learn' n)) in
+        ans
 end
