@@ -28,8 +28,8 @@ module Variables = struct
             (List.assoc s !Problem.globals.variables)
             vs' in
         match leftover with
-            | [] -> vars
-            | x :: xs -> Aux.append vars x
+            | [] -> vs'
+            | x :: xs -> Aux.append vs' x
     let next_vars (vs : var list) (s : sort): var list =
         next_vars_inner vs [] s
     (* we can build up from the sorts and variables that we've seen *)
