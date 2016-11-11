@@ -92,7 +92,7 @@ def string_gen():
 def list_gen():
     from random import randint
     while True:
-        yield [randint(0,10) for r in range(5)]
+        yield [randint(0,10) for r in range(randint(1, 5))]
 
 if __name__ == "__main__":
     main()
