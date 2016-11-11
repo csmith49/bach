@@ -308,7 +308,7 @@ module ConcretizedMT = struct
             in List.mapi set_ith rs
     (* as well as how to print this *)
     let to_string (cmt : t) : string = match cmt with
-        | Truth -> "T"
+        | Truth -> "True"
         | Concretized rs -> Aux.concat (List.map Root.to_string rs)
     (* to limit filesize, need exactly the input relations that appear here *)
     let symbols_used (cmt : t) : symbol list = match cmt with
