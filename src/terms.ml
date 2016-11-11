@@ -223,10 +223,8 @@ module Root = struct
         let fresh_out_var = "fr_" ^ out_var in
         let forwards =
             name ^ "(" ^ (Aux.concat (Aux.append in_vars fresh_out_var)) ^ ")" in
-        let backwards =
-            name ^ "(" ^ (Aux.concat (Aux.append fresh_in_vars out_var)) ^ ")" in
         let twist = out_var ^ " != " ^ fresh_out_var in
-        Aux.concat [forwards; twist; backwards]
+        Aux.concat [forwards; twist]
     (* sometimes we want to print the root, tho --- more readable *)
     let rec vterm_to_string (t : (var, symbol) term) : string = match t with
         | L v -> v
@@ -303,7 +301,7 @@ module ConcretizedMT = struct
                         let s = Variables.get_sort v in
                         let n = "scope_" ^ s in
                         n ^ "(" ^ v ^ ")")
-                    (Aux.subtract mt_vars (Root.variables r)) in
+                    (Aux.subtract mt_vars (Root.input_variables r)) in
                 Aux.append scopes neg
             in List.mapi set_ith rs
     (* as well as how to print this *)
