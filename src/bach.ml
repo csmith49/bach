@@ -129,6 +129,7 @@ let process_pair (lhs : ConcretizedMT.t)
             direction := " <== ";
         end else if !abduce_flag then begin
             guard := learn var_order results;
+            let _ = noisy_print ("\tFOUND: " ^ (Guard.to_string !guard)) in
             if Guard.decides !guard then begin
                 okay_to_report := true;
                 direction := " === ";
@@ -144,6 +145,7 @@ let process_pair (lhs : ConcretizedMT.t)
         end;
         (* now clean up the rhs *)
         let clean = ConcretizedMT.rebase_variables rhs in
+        let _ = Aux.wait () in
         Some (clean)
     end else None
 

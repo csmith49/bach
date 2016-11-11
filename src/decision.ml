@@ -87,10 +87,11 @@ module IDTree = functor (D : DECIDABLE) -> struct
         (* count positive and negative examples *)
         let num_pos = (List.length (positive_elements ls)) in
         let num_neg = (List.length (negative_elements ls)) in
+        let _ = print_endline (Aux.concat [string_of_int num_pos;string_of_int num_neg]) in
         (* case 1, as above *)
-        if (num_neg == 0) then Pos else
+        if (num_neg == 0) && (num_pos > 0) then Pos else
         (* case 2, as above *)
-        if (num_pos == 0) then Neg else
+        if (num_pos == 0) && (num_neg > 0) then Neg else
         (* case 3, as above, and don't go too deep *)
         if (List.length atts) == 0 || depth == 0 then Mixed else
         (* case 4, let's recurse *)
