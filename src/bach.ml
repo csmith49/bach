@@ -92,9 +92,12 @@ let process_pair (lhs : ConcretizedMT.t)
                 else ""
         in
         l ^ d ^ r ^ g in
+    let _ = noisy_print ("\tChecking: " ^ (pair_string !direction)) in
     (* now we need to check that everything is in tip top shape *)
     (* lhs not in pruned *)
     let lhs_np = not (List.mem (ConcretizedMT.rebase_variables lhs) !pruned) in
+    let rhs_np = not (List.mem (ConcretizedMT.rebase_variables rhs) !pruned) in
+    let np = lhs_np && rhs_np in
     (* no truth sides *)
     let nt = ConcretizedMT.non_trivial lhs rhs in
     (* non-empty variable intersection *)
@@ -102,12 +105,20 @@ let process_pair (lhs : ConcretizedMT.t)
     (* sides aren't contained in the other *)
     let nc = not (ConcretizedMT.containment_check lhs rhs) in
     (* now see if we should proceed *)
-    if lhs_np && nc && (!abduce_flag || wc) then begin
+    if np && nc && (!abduce_flag || wc) then begin
         (* get results! finally! *)
         let var_order, results = check lhs rhs in
+        let _ = noisy_print ("\t" ^ (results_to_string results)) in
         if equivalent results then begin
-            if !prune_flag then
-                pruned := Aux.append !pruned (ConcretizedMT.rebase_variables rhs);
+            if !prune_flag then begin
+                let crhs = ConcretizedMT.rebase_variables rhs in
+                let clhs = ConcretizedMT.rebase_variables lhs in
+                if (Pervasives.compare crhs clhs) != 0 then begin
+                    pruned := Aux.append !pruned crhs;
+                    noisy_print ("PRUNED: " ^ (ConcretizedMT.to_string clhs) ^
+                                " < " ^ (ConcretizedMT.to_string crhs));
+                end;
+            end;
             okay_to_report := true;
             direction := " === ";
         end else if left_impl results && nt then begin
@@ -148,7 +159,7 @@ let _ =
     noisy_print "Starting iteration...";
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
-    let seen = ref ([LiftedMT.Truth] : LiftedMT.t list) in
+    let seen = ref ([] : LiftedMT.t list) in
     (* and now we loop *)
     while true do
         (* push an abstract mt off the frontier *)

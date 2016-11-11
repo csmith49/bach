@@ -348,10 +348,14 @@ module ConcretizedMT = struct
                 let vars = all_but_output i in
                 List.mem o vars)
             roots)
-    let well_constrained (l : t) (r : t) : bool =
-        let lvars = variables l in
-        let rvars = variables r in
-        (List.length (Aux.intersect lvars rvars)) > 0
+    let well_constrained (l : t) (r : t) : bool = match l with
+        | Truth -> true
+        | Concretized _ -> match r with
+            | Truth -> true
+            | Concretized _ ->
+                let lvars = variables l in
+                let rvars = variables r in
+                (List.length (Aux.intersect lvars rvars)) > 0
     let non_trivial (l : t) (r : t) : bool =
         match l with
             | Truth -> false
