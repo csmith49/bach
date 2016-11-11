@@ -74,7 +74,7 @@ def int_gen():
 def int_gen():
     from random import randint
     while True:
-        yield randint(0, 10)
+        yield randint(0, 2)
 
 @add_generator('fp17')
 def fp_gen():
@@ -92,7 +92,7 @@ def string_gen():
 def list_gen():
     from random import randint
     while True:
-        yield [randint(0,10) for r in range(randint(1, 5))]
+        yield [randint(0,2) for r in range(randint(1, 3))]
 
 if __name__ == "__main__":
     main()
