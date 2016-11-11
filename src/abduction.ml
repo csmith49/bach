@@ -84,7 +84,7 @@ module Guard = struct
                     Path (pos', neg', label))
             g in
         ()
-    let decides g = true
+    let decides g = (List.length g) > 0
 end
 
 (* types and stuff for predicates we're searching over *)
