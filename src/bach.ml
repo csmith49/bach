@@ -145,7 +145,7 @@ let process_pair (lhs : ConcretizedMT.t)
         (* now we can see how well we did *)
         let s = score counts !guard lhs rhs in
         (* if the results are worth reporting, print 'em *)
-        if !okay_to_report && (s > 1.0) then begin
+        if !okay_to_report && (s >= 0.0) then begin
             print_endline (pair_string !direction);
             noisy_print ("\t" ^ (counts_to_string counts));
             noisy_print ("\t" ^ (string_of_float s));
