@@ -59,7 +59,8 @@ let load_fact_data (fact_dir : string) =
 (* once we have our concretized stuff, we want to print it out *)
 let to_souffle (lhs : ConcretizedMT.t)
                (rhs : ConcretizedMT.t)
-               (filename : string): var list = begin
+               (filename : string)
+               (abduction : bool): var list = begin
 
     (* first, might as well grab the variables *)
     let total_vars = List.sort_uniq
@@ -73,6 +74,8 @@ let to_souffle (lhs : ConcretizedMT.t)
     let total_sorts = List.sort_uniq
             Pervasives.compare
         (List.map Variables.get_sort total_vars) in
+
+    let out_type = if abduction then " output" else " printsize" in
 
     (* and now we'll define pos, lneg, rneg *)
     let pos = Relation ("pos", total_vars) in
@@ -131,7 +134,7 @@ let to_souffle (lhs : ConcretizedMT.t)
     (* now let's define positive evidence *)
     write "\n// POS EVIDENCE";
     (* which we declare *)
-    write ((decl_rel pos) ^ " output");
+    write ((decl_rel pos) ^ out_type);
     (* and then construct *)
     let hd = Relation.to_string pos in
     let bdy = Aux.concat
@@ -141,7 +144,7 @@ let to_souffle (lhs : ConcretizedMT.t)
     (* and left neg next *)
     write "\n// LNEG EVIDENCE";
     (* declare again *)
-    write ((decl_rel lneg) ^ " output");
+    write ((decl_rel lneg) ^ out_type);
     (* save the hd string, we'll need it a bit *)
     let hd = Relation.to_string lneg in
     (* neg parts a list of lists *)
@@ -156,7 +159,7 @@ let to_souffle (lhs : ConcretizedMT.t)
     (* symmetrically for right *)
     write "\n// RNEG EVIDENCE";
     (* declare again *)
-    write ((decl_rel rneg) ^ " output");
+    write ((decl_rel rneg) ^ out_type);
     (* save the hd string, we'll need it a bit *)
     let hd = Relation.to_string rneg in
     (* neg parts a list of lists *)
@@ -177,12 +180,15 @@ let run_souffle souffle work_dir in_file =
     (* we build up a souffle command *)
     let cmd = souffle ^ " -D " ^ work_dir ^ " " in
     (* and then we shia just do it *)
-    let _ = Aux.syscall (cmd ^ in_file) in
-    ()
+    Aux.syscall (cmd ^ in_file)
+
+type counts = Counts of int StrMap.t
+type values = Nothing | Values of (string list) list StrMap.t
 
 (* finally, bundle it all up in a checker *)
 let check (lhs : ConcretizedMT.t)
-          (rhs : ConcretizedMT.t): (var list) * ((string list) list StrMap.t) =
+          (rhs : ConcretizedMT.t)
+          (abduction : bool): (var list) * counts * values =
     let work_dir = !Problem.work_globals.work_dir in
     let filename = !Problem.work_globals.work_file in
     let souffle = !Problem.work_globals.souffle in
@@ -190,11 +196,21 @@ let check (lhs : ConcretizedMT.t)
         let lines = Aux.load_lines (work_dir ^ n) in
         List.map parse_line lines
     in
-    begin
-        let vars = to_souffle lhs rhs (work_dir ^ filename) in
-        run_souffle souffle work_dir (work_dir ^ filename);
-        let results = List.fold_left (fun m n ->
-                StrMap.add n (process_output_file (n ^ ".csv")) m)
-            StrMap.empty ["pos"; "lneg"; "rneg"] in
-        vars, results
-    end
+        let vars = to_souffle lhs rhs (work_dir ^ filename) abduction in
+        let output = run_souffle souffle work_dir (work_dir ^ filename) in
+        if abduction then begin
+            let vals = List.fold_left (fun m n ->
+                        StrMap.add n (process_output_file (n ^ ".csv")) m)
+                    StrMap.empty ["pos";"lneg";"rneg"] in
+            let cnts = StrMap.map List.length vals in
+            vars, (Counts cnts), (Values vals)
+        end else begin
+            let lines = Str.split (Str.regexp "\n") output in
+            let pairs = List.map (fun l -> Str.split (Str.regexp "\t") l) lines in
+            let cnts = List.fold_left (fun m l ->
+                    let k = List.nth l 0 in
+                    let v = int_of_string (List.nth l 1) in
+                    StrMap.add k v m)
+                StrMap.empty pairs in
+            vars, (Counts cnts), Nothing
+        end
