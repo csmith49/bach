@@ -33,6 +33,8 @@ type work_params = {
     souffle : string;
     work_dir : string [@default "/tmp/"];
     work_file : string [@default "tmp.dl"];
+    scope_size : int [@default 1000];
+    max_file_size : int [@default 1000];
 } [@@deriving of_sexp]
 
 module WorkParams = struct
@@ -44,6 +46,8 @@ let work_globals = ref {
     souffle = "";
     work_dir = "/tmp/";
     work_file = "tmp.dl";
+    scope_size = 1000;
+    max_file_size = 1000;
 }
 
 let parse_work_file fname =

@@ -20,7 +20,7 @@ let decl_rel r = match r with
         ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
 (* we're gonna parse all the fact files, and we're gonna make souffle pay for it *)
-let load_fact_data (fact_dir : string) (scope_size : int) =
+let load_fact_data (fact_dir : string) =
     let quote s = "\"" ^ s ^ "\"" in
     let sort_values = ref SortMap.empty in
     let handle_fact_file (s : symbol) = match s with
@@ -52,7 +52,9 @@ let load_fact_data (fact_dir : string) (scope_size : int) =
                 let rel_name = "scope_" ^ k in
                 let proc_val v = rel_name ^ "(" ^ v ^ ")." in
                 let vs' = List.sort_uniq Pervasives.compare vs in
-                let rand_vs = Aux.take_upto (Aux.shuffle vs') scope_size in
+                let rand_vs = Aux.take_upto
+                    (Aux.shuffle vs')
+                    !Problem.work_globals.scope_size in
                 String.concat "\n" (List.map proc_val rand_vs))
             !sort_values;
     end
@@ -194,7 +196,9 @@ let check (lhs : ConcretizedMT.t)
     let filename = !Problem.work_globals.work_file in
     let souffle = !Problem.work_globals.souffle in
     let process_output_file n =
-        let lines = Aux.load_lines (work_dir ^ n) in
+        let lines = Aux.load_upto
+            (work_dir ^ n)
+            !Problem.work_globals.max_file_size in
         List.map parse_line lines
     in
         let vars = to_souffle lhs rhs (work_dir ^ filename) abduction in
