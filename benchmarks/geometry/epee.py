@@ -75,8 +75,8 @@ def norm_int(mean, std):
 def int_gen():
     from random import randint
     while True:
-        x = norm_int(0, 3)
-        y = norm_int(0, 3)
+        x = norm_int(0, 2)
+        y = norm_int(0, 2)
         yield (x,y)
 
 @add_generator('rect')
@@ -85,24 +85,23 @@ def fp_gen():
     from sympy import geometry
 
     while True:
-        x = norm_int(0, 3)
-        y = norm_int(0, 3)
-        size = abs(norm_int(0,5))
-        if size == 0: size = 1
+        x = randint(-1, 1)
+        y = x
+        size = randint(1,6)
         yield (x, y, size)
 
 @add_generator('int')
 def fp_gen():
     from random import randint
     while True:
-        a = norm_int(0, 3)
+        a = norm_int(0, 2)
         yield a
 
 @add_generator('posint')
 def fp_gen():
     from random import randint
     while True:
-        a = randint(1, 4)
+        a = randint(1, 3)
         yield a
 
 
