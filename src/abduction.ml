@@ -85,6 +85,7 @@ module Guard = struct
             g in
         ()
     let decides g = (List.length g) > 0
+    let empty = []
 end
 
 (* types and stuff for predicates we're searching over *)

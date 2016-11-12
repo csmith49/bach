@@ -373,6 +373,16 @@ module ConcretizedMT = struct
             | Truth -> false
             | Concretized rs ->
                 (Aux.contains rs ls) || (Aux.contains ls rs)
+    let equal_variables (l : t) (r : t) : bool = match l with
+        | Truth -> begin match r with
+            | Truth -> true
+            | _ -> false end
+        | Concretized ls -> match r with
+            | Truth -> false
+            | Concretized rs ->
+                let sls = List.sort_uniq Pervasives.compare ls in
+                let srs = List.sort_uniq Pervasives.compare rs in
+                sls = srs
 end
 
 module LiftedMT = struct

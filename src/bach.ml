@@ -33,48 +33,52 @@ let noisy_print s = if !noisy then print_endline s else ()
 
 (* utility functions for connecting all the pieces together *)
 (* specifially here for modifying results *)
-let results_to_string res =
-    let g s =
-        let ev = StrMap.find s res in
-        let count = List.length ev in
-        s ^ ": " ^ (string_of_int count)
-    in
-    let summary = List.map g ["pos"; "lneg"; "rneg"] in
-    Aux.concat summary
-let learn vs res =
-    let pos_ev = StrMap.find "pos" res in
-    let lneg_ev = StrMap.find "lneg" res in
-    let rneg_ev = StrMap.find "rneg" res in
-    let pos = List.map (fun v -> (v, true)) pos_ev in
-    let neg = List.map (fun v -> (v, false)) (lneg_ev @ rneg_ev) in
-    let var_order = List.fold_left (fun m p ->
-            let (i, v) = p in
-            VarMap.add v i m)
-        VarMap.empty (List.mapi (fun i v ->
-                (i, v))
-            vs) in
-    abduce var_order !Problem.globals.variables (pos @ neg)
+let counts_to_string res = match res with
+    Counts cts -> let g s =
+                    let count = StrMap.find s cts in
+                    s ^ ": " ^ (string_of_int count)
+        in let summary = List.map g ["pos"; "lneg"; "rneg"] in
+        Aux.concat summary
+let learn vs res = match res with
+    | Values vals ->
+        let pos_ev = StrMap.find "pos" vals in
+        let lneg_ev = StrMap.find "lneg" vals in
+        let rneg_ev = StrMap.find "rneg" vals in
+        let pos = List.map (fun v -> (v, true)) pos_ev in
+        let neg = List.map (fun v -> (v, false)) (lneg_ev @ rneg_ev) in
+        let var_order = List.fold_left (fun m p ->
+                let (i, v) = p in
+                VarMap.add v i m)
+            VarMap.empty (List.mapi (fun i v ->
+                    (i, v))
+                vs) in
+        abduce var_order !Problem.globals.variables (pos @ neg)
+    | Nothing -> Guard.empty
 
 (* and here for checking how good the results are *)
-let equivalent res =
-    let pos_ev = StrMap.find "pos" res in
-    let neg_ev = (StrMap.find "lneg" res) @ (StrMap.find "rneg" res) in
-    (List.length pos_ev) > 0 && (List.length neg_ev) = 0
-let left_impl res =
-    let pos_ev = StrMap.find "pos" res in
-    let lneg_ev = (StrMap.find "lneg" res) in
-    (List.length pos_ev) > 0 && (List.length lneg_ev) = 0
-let right_impl res =
-    let pos_ev = StrMap.find "pos" res in
-    let rneg_ev = (StrMap.find "rneg" res) in
-    (List.length pos_ev) > 0 && (List.length rneg_ev) = 0
+let equivalent res = match res with
+    Counts cts ->
+        let pos_ev = StrMap.find "pos" cts in
+        let neg_ev = (StrMap.find "lneg" cts) + (StrMap.find "rneg" cts) in
+        (pos_ev > 0) && (neg_ev = 0)
+let left_impl res = match res with
+    Counts cts ->
+        let pos_ev = StrMap.find "pos" cts in
+        let neg_ev = StrMap.find "lneg" cts in
+        (pos_ev > 0) && (neg_ev = 0)
+let right_impl res = match res with
+    Counts cts ->
+        let pos_ev = StrMap.find "pos" cts in
+        let neg_ev = StrMap.find "rneg" cts in
+        (pos_ev > 0) && (neg_ev = 0)
 
 (* and finally for scoring the function as best we can *)
-let score res g lhs rhs =
-    let pos_ev = float (List.length (StrMap.find "pos" res)) in
-    let g_score = float (Guard.metric g) in
-    let t_score = float ((ConcretizedMT.metric lhs) + (ConcretizedMT.metric rhs)) in
-    (pos_ev /. (!scalar *. (g_score +. t_score)))
+let score res g lhs rhs = match res with
+    Counts cts ->
+        let pos_ev = float (StrMap.find "pos" cts) in
+        let g_score = float (Guard.metric g) in
+        let t_score = float ((ConcretizedMT.metric lhs) + (ConcretizedMT.metric rhs)) in
+        (pos_ev /. (!scalar *. (g_score +. t_score)))
 
 (* now we need to actually process pairs of mts and stuff *)
 let process_pair (lhs : ConcretizedMT.t)
@@ -110,9 +114,9 @@ let process_pair (lhs : ConcretizedMT.t)
     (* now see if we should proceed *)
     if np && nc && (!abduce_flag || wc) then begin
         (* get results! finally! *)
-        let var_order, results = check lhs rhs in
-        let _ = noisy_print ("\t" ^ (results_to_string results)) in
-        if equivalent results then begin
+        let var_order, counts, values = check lhs rhs !abduce_flag in
+        let _ = noisy_print ("\t" ^ (counts_to_string counts)) in
+        if equivalent counts then begin
             if !prune_flag then begin
                 let crhs = ConcretizedMT.rebase_variables rhs in
                 let clhs = ConcretizedMT.rebase_variables lhs in
@@ -124,14 +128,14 @@ let process_pair (lhs : ConcretizedMT.t)
             end;
             okay_to_report := true;
             direction := " === ";
-        end else if left_impl results && nt then begin
+        end else if left_impl counts && nt then begin
             okay_to_report := true;
             direction := " ==> ";
-        end else if right_impl results && nt then begin
+        end else if right_impl counts && nt then begin
             okay_to_report := true;
             direction := " <== ";
         end else if !abduce_flag then begin
-            guard := learn var_order results;
+            guard := learn var_order values;
             let _ = noisy_print ("\tFOUND: " ^ (Guard.to_string !guard)) in
             if Guard.decides !guard then begin
                 okay_to_report := true;
@@ -139,11 +143,11 @@ let process_pair (lhs : ConcretizedMT.t)
             end
         end;
         (* now we can see how well we did *)
-        let s = score results !guard lhs rhs in
+        let s = score counts !guard lhs rhs in
         (* if the results are worth reporting, print 'em *)
         if !okay_to_report && (s > 1.0) then begin
             print_endline (pair_string !direction);
-            noisy_print ("\t" ^ (results_to_string results));
+            noisy_print ("\t" ^ (counts_to_string counts));
             noisy_print ("\t" ^ (string_of_float s));
         end;
         (* now clean up the rhs *)
