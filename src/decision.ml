@@ -8,6 +8,8 @@ type 'a idtree = Attribute of 'a * ('a idtree) * ('a idtree)
 module type DECIDABLE = sig
     type elt
     type tag
+    val elt_to_string : elt -> string
+    val tag_to_string : tag -> string
 end
 
 module IDTree = functor (D : DECIDABLE) -> struct
@@ -119,15 +121,25 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
         Conjunct (l, r) -> List.length (l @ r)
     (* a simple aux function  *)
     let empty_conjunct = Conjunct ([], [])
+    let to_string (c : conjunct) : string = match c with
+        Conjunct (l, r) ->
+            let ls = List.map (fun a -> D.tag_to_string (description a)) l in
+            let rs = List.map (fun a -> "!" ^ (D.tag_to_string (description a))) r in
+            Aux.concat (ls @ rs)
     (* lift application to positive and negative instances *)
     let apply_conjunct (c : conjunct) (e : elt) : bool = match c with
         Conjunct (l, r) ->
             let pos = List.for_all (fun a -> apply a e) l in
-            let neg = List.for_all (fun a -> not (apply a e)) r in
-            pos && neg
+            (* let neg = List.for_all (fun a -> not (apply a e)) r in
+            pos && neg *)
+            pos
     (* and lift application to labeled lists *)
     let check (c : conjunct) (ls : labeled list) : bool =
         List.for_all (fun (e, l) -> (apply_conjunct c e) = l) ls
+    let summary (c : conjunct) (ls : labeled list) : string =
+        let ps = List.length (List.filter (fun l -> apply_conjunct c (fst l)) ls) in
+        let ns = (List.length ls) - ps in
+        (string_of_int ps) ^ "/" ^ (string_of_int ns)
     (* we put together all conjuncts below a certain size *)
     (* TODO : wow, this is so inefficient *)
     let construct_conjuncts (atts : attribute list) (max_size : int) : conjunct list =
@@ -139,14 +151,23 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
             Conjunct (l, r) -> List.map (fun a ->
                     (Conjunct (l, Aux.append r a)))
                 atts in
-        List.fold_left (fun acc _ ->
+        let ans = List.fold_left (fun acc _ ->
                 acc @ (Aux.flat_map to_left acc) @ (Aux.flat_map to_right acc))
             [empty_conjunct]
-            (Aux.upto (max_size - 1))
+            (Aux.upto (max_size - 1)) in
+        let _ = print_endline ("made " ^ (string_of_int (List.length ans)) ^ " conjuncts") in
+        ans
     (* now, this is what we came for *)
     let learn (atts : attribute list) (ls : labeled list) (max_size : int) : conjunct option =
+        (* printing, to learn *)
+        let ps = List.length (List.filter snd ls) in
+        let ns = (List.length ls) - ps in
+        let _ = print_endline ("pos : " ^ (string_of_int ps) ^ ", neg : " ^ (string_of_int ns)) in
+        (* now actually do things *)
         let conjuncts = construct_conjuncts atts max_size in
-        List.fold_left (fun a c -> match a with
+        List.fold_left (fun a c ->
+            let _ = print_endline ("checking " ^ (to_string c) ^ " | " ^ (summary c ls)) in
+            match a with
                 | Some a' -> a
                 | None -> if check c ls
                     then Some c

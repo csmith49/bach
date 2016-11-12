@@ -143,6 +143,7 @@ let process_pair (lhs : ConcretizedMT.t)
         end;
         (* now clean up the rhs *)
         let clean = ConcretizedMT.rebase_variables rhs in
+        let _ = Aux.wait () in
         Some (clean)
     end else None
 
@@ -168,15 +169,12 @@ let _ =
         noisy_print ("CONCRETIZING...");
         (* how do we actually compare? *)
         let compare_with_symbolic c =
-            print_endline ("length " ^ (string_of_int ((LiftedMT.length c) + (LiftedMT.length e))));
             (* minimum depth check *)
             if ((LiftedMT.length c) + (LiftedMT.length e)) < !mindepth then
                 []
             else begin
                 let symbolic_sorts = (LiftedMT.sort_list c) @ (LiftedMT.sort_list e) in
-                let _ = print_endline  "start vars" in
                 let vars = Variables.valid_assignments symbolic_sorts in
-                let _ = print_endline  "end vars" in
                 (* now we concretize *)
                 let concs = List.rev (List.rev_map (fun vs ->
                         let lhs, vs' = LiftedMT.concretize c vs in

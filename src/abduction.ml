@@ -18,12 +18,16 @@ module AbductionLearner =
     IDTree(struct
         type elt = string list
         type tag = relation
+        let elt_to_string = Aux.concat
+        let tag_to_string = Relation.to_string
     end)
 
 module ConjunctLearner =
     Conjuncts(struct
         type elt = string list
         type tag = relation
+        let elt_to_string = Aux.concat
+        let tag_to_string = Relation.to_string
     end)
 
 (* to convert our learned tree into something reasonable, we should convert to labeled paths *)
