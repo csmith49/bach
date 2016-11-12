@@ -1,29 +1,39 @@
 from z3 import *
 
-x = Int('x')
-y = Int('y')
-z = Int('z')
-w = Int('w')
-a = Int('a')
-vs = [x,y,z,w,a]
+d = FiniteDomainSort('D', 2)
 
-valid = Function('valid', IntSort(),  IntSort())
-sat = Function('sat', IntSort(), IntSort())
-f_neg = Function('f_neg', IntSort(), IntSort())
-f_and = Function('and', IntSort(), IntSort(), IntSort())
-f_or = Function('or', IntSort(), IntSort(), IntSort())
-ff_mult_inv = Function('f_mult_inv', IntSort(),  IntSort())
-ff_add_inv = Function('f_add_inv', IntSort(),  IntSort())
-ff_mult = Function('f_mult', IntSort(), IntSort(),  IntSort())
-ff_add = Function('f_add', IntSort(), IntSort(),  IntSort())
-hd = Function('hd', IntSort(),  IntSort())
-concat = Function('concat', IntSort(), IntSort(), IntSort())
-cons = Function('cons', IntSort(), IntSort(), IntSort())
+x = Const(1, BitVecSort(8))
+y = Const(2, BitVecSort(8))
+z = Const(3, BitVecSort(8))
+w = Const(4, BitVecSort(8))
+a = Const(5, BitVecSort(8))
+m = Const(6, BitVecSort(8))
+n = Const(7, BitVecSort(8))
+t = Const(8, BitVecSort(8))
+vs = [x,y,n,z,t,w,a,m]
 
+valid = Function('valid', BitVecSort(8), BitVecSort(8))
+sat = Function('sat', BitVecSort(8), BitVecSort(8))
+f_neg = Function('f_neg', BitVecSort(8), BitVecSort(8))
+f_and = Function('and', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+f_or = Function('or', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+ff_mult_inv = Function('f_mult_inv', BitVecSort(8), BitVecSort(8))
+ff_add_inv = Function('f_add_inv', BitVecSort(8), BitVecSort(8))
+ff_mult = Function('f_mult', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+ff_add = Function('f_add', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+hd = Function('hd', BitVecSort(8), BitVecSort(8))
+concat = Function('concat', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+cons = Function('cons', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+geometry_encloses = Function('geometry_encloses', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+geometry_encloses_point = Function('geometry_encloses_point', BitVecSort(8), BitVecSort(8), BitVecSort(8))
+trig_sin = Function('trig_sin', BitVecSort(8), BitVecSort(8))
+trig_arcsin = Function('trig_arcsin', BitVecSort(8), BitVecSort(8))
+trig_cos = Function('trig_cos', BitVecSort(8), BitVecSort(8))
+trig_arccos = Function('trig_arccos', BitVecSort(8), BitVecSort(8))
 
-f = open('specs.out','r')
 allforms = {}
 
+f = open('specs.out','r')
 
 for l in f:
     print l
@@ -75,7 +85,7 @@ def conjAll():
 
 def impl(f1,f2):
     s = Solver()
-    s.set(auto_config=False, mbqi=False)
+    #s.set(auto_config=False, mbqi=False)
     s.set("timeout", 2000)
 
     f1 = ForAll(vs,f1)
@@ -88,6 +98,7 @@ def impl(f1,f2):
         print "tru done caalling z3"
         return True
     
+
     print "done caalling z3"
     return False
 
@@ -95,14 +106,14 @@ def impl(f1,f2):
 unique = {}
 for l in allforms:
     there = False
-    for u in unique:
+    for l2 in unique:
         #print "checking", l
         #print "  and", u
 
 
         #print "z3 :checking", allforms[l]
         #print "z3 :   and", unique[u]
-        if impl(unique[u], allforms[l]):
+        if impl(unique[l2], allforms[l]):
             #print "true"
             there = True
             break
@@ -126,7 +137,7 @@ f.close()
 #coremap = {}
 #i = 0
 #for l in allforms:
-#    b = Bool('b'+str(i))
+#    b = Const('b'+str(i))
 #    i = i +1
 #    core.append(b)
 #    coremap[l] = b
