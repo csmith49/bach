@@ -60,6 +60,11 @@ module Aux = struct
     let rec take_from l i = if i == 0
         then []
         else (List.hd l) :: (take_from (List.tl l) (i - 1))
+    let rec take_upto l i = if i = 0
+        then []
+        else match l with
+            | [] -> []
+            | x :: xs -> x :: (take_upto xs (i - 1))
     let rec rev_cons ls = match ls with
         | [] -> invalid_arg "rev_cons"
         | x :: [] -> ([], x)
@@ -83,6 +88,10 @@ module Aux = struct
             if v == i then v :: []
             else v :: (upto' (v + 1))
         in upto' 0
+    let shuffle l =
+        let nd = List.map (fun c -> (Random.bits (), c)) l in
+        let sond = List.sort Pervasives.compare nd in
+        List.map snd sond
 end
 
 (* string aliases for type safety *)

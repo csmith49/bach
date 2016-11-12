@@ -12,6 +12,8 @@ let prune_flag = ref true
 
 let mindepth = ref 0
 let set_mindepth n = mindepth := n
+let scope = ref 1000
+let set_scope n = scope := n
 let pruned = ref []
 
 let spec_list = [
@@ -24,7 +26,8 @@ let spec_list = [
         end),
     " Runs the named benchmark.");
     ("-abduce", Arg.Set abduce_flag, " Turns on abduction.");
-    ("-mindepth", Arg.Int (set_mindepth), " Minimum size of specs.")
+    ("-mindepth", Arg.Int (set_mindepth), " Minimum size of specs.");
+    ("-scope", Arg.Int (set_scope), " Scope size.")
 ]
 
 let usage_msg = "todo"
@@ -153,7 +156,7 @@ let _ =
     (* load config options *)
     parse_work_file "config.sexp";
     (* load fact files *)
-    load_fact_data !Problem.fact_dir;
+    load_fact_data !Problem.fact_dir !scope;
     (* now we search *)
     noisy_print "Starting iteration...";
     (* construct the frontier and history *)
