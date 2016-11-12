@@ -10,6 +10,8 @@ let scalar = ref 1.0
 let abduce_flag = ref false
 let prune_flag = ref true
 
+let mindepth = ref 0
+let set_mindepth n = mindepth := n
 let pruned = ref []
 
 let spec_list = [
@@ -21,7 +23,8 @@ let spec_list = [
             Problem.fact_dir := ("./benchmarks/" ^ s ^ "/facts/");
         end),
     " Runs the named benchmark.");
-    ("-abduce", Arg.Set abduce_flag, " Turns on abduction.")
+    ("-abduce", Arg.Set abduce_flag, " Turns on abduction.");
+    ("-mindepth", Arg.Int (set_mindepth), " Minimum size of specs.")
 ]
 
 let usage_msg = "todo"
@@ -174,20 +177,28 @@ let _ =
         noisy_print ("CONCRETIZING...");
         (* how do we actually compare? *)
         let compare_with_symbolic c =
-            let symbolic_sorts = (LiftedMT.sort_list c) @ (LiftedMT.sort_list e) in
-            let vars = Variables.valid_assignments symbolic_sorts in
-            (* now we concretize *)
-            let concs = List.map (fun vs ->
-                    let lhs, vs' = LiftedMT.concretize c vs in
-                    let rhs, _ = LiftedMT.concretize e vs' in
-                    (lhs, rhs))
-                vars in
-            List.fold_left (fun l (lhs, rhs) ->
-                    match (process_pair lhs rhs) with
-                        | None -> l
-                        | Some conc -> Aux.append l conc)
+            print_endline ("length " ^ (string_of_int ((LiftedMT.length c) + (LiftedMT.length e))));
+            (* minimum depth check *)
+            if ((LiftedMT.length c) + (LiftedMT.length e)) < !mindepth then 
                 []
-                concs
+            else begin
+                let symbolic_sorts = (LiftedMT.sort_list c) @ (LiftedMT.sort_list e) in
+                let _ = print_endline  "start vars" in
+                let vars = Variables.valid_assignments symbolic_sorts in
+                let _ = print_endline  "end vars" in
+                (* now we concretize *)
+                let concs = List.rev (List.rev_map (fun vs ->
+                        let lhs, vs' = LiftedMT.concretize c vs in
+                        let rhs, _ = LiftedMT.concretize e vs' in
+                        (lhs, rhs))
+                    vars) in
+                List.fold_left (fun l (lhs, rhs) ->
+                        match (process_pair lhs rhs) with
+                            | None -> l
+                            | Some conc -> Aux.append l conc)
+                    []
+                    concs
+            end
         in begin
             seen := Aux.append !seen e;
             List.iter (fun c -> let _ = compare_with_symbolic c in ()) !seen;
