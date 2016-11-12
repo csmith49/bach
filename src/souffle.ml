@@ -211,7 +211,8 @@ let check (lhs : ConcretizedMT.t)
             vars, (Counts cnts), (Values vals)
         end else begin
             let lines = Str.split (Str.regexp "\n") output in
-            let pairs = List.map (fun l -> Str.split (Str.regexp "\t") l) lines in
+            let pairs' = List.map (fun l -> Str.split (Str.regexp "\t") l) lines in
+            let pairs = List.filter (fun l -> (List.length l) = 2) pairs' in
             let cnts = List.fold_left (fun m l ->
                     let k = List.nth l 0 in
                     let v = int_of_string (List.nth l 1) in
