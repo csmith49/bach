@@ -20,7 +20,7 @@ let decl_rel r = match r with
         ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
 (* we're gonna parse all the fact files, and we're gonna make souffle pay for it *)
-let load_fact_data (fact_dir : string) =
+let load_fact_data (fact_dir : string) (scope_size : int) =
     let quote s = "\"" ^ s ^ "\"" in
     let sort_values = ref SortMap.empty in
     let handle_fact_file (s : symbol) = match s with
@@ -52,7 +52,8 @@ let load_fact_data (fact_dir : string) =
                 let rel_name = "scope_" ^ k in
                 let proc_val v = rel_name ^ "(" ^ v ^ ")." in
                 let vs' = List.sort_uniq Pervasives.compare vs in
-                String.concat "\n" (List.map proc_val vs'))
+                let rand_vs = Aux.take_upto (Aux.shuffle vs') scope_size in
+                String.concat "\n" (List.map proc_val rand_vs))
             !sort_values;
     end
 
