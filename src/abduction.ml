@@ -1,6 +1,7 @@
 open Core
 open Decision
 open Problem
+open Souffle
 
 let global_preds = ref []
 
@@ -15,6 +16,12 @@ let usable_preds var_sorts =
 (* we now make our special instance of the id3 module *)
 module AbductionLearner =
     IDTree(struct
+        type elt = string list
+        type tag = relation
+    end)
+
+module ConjunctLearner =
+    Conjuncts(struct
         type elt = string list
         type tag = relation
     end)
@@ -121,10 +128,26 @@ let create_attributes (preds : predicate list)
         (Aux.cart_prod (vars_from_sorts (Symbol.sorts (snd p)))) in
     Aux.flat_map make_attrs preds
 
+(* have to convert the evidence that we expect to see into usable forms *)
+let create_evidence (pos_list : string list)
+                    (neg_list : string list)
+                    (results : (string list) list StrMap.t) : (string list * bool) list =
+    let pos_ev = List.map (fun v -> (v, true))
+        (Aux.flat_map (fun p -> StrMap.find p results) pos_list) in
+    let neg_ev = List.map (fun v -> (v, false))
+        (Aux.flat_map (fun n -> StrMap.find n results) neg_list) in
+    pos_ev @ neg_ev
+
 (* and apply it to abduction in the obvious way *)
 let abduce (var_order : int VarMap.t)
-           (var_sorts : (sort * var list) list)
            (evidence : AbductionLearner.labeled list) =
+    let var_sorts = !Problem.globals.variables in
     let attributes = create_attributes (usable_preds var_sorts) var_order var_sorts in
     let classifier = AbductionLearner.learn_to_depth attributes evidence !Problem.globals.abduction_depth in
     Guard.clean (Guard.paths classifier)
+
+let simple_abduce (var_order : int VarMap.t)
+                  (evidence : ConjunctLearner.labeled list) =
+    let var_sorts = !Problem.globals.variables in
+    let attributes = create_attributes (usable_preds var_sorts) var_order var_sorts in
+    ConjunctLearner.learn attributes evidence !Problem.globals.abduction_depth

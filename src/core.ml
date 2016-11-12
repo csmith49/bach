@@ -78,6 +78,11 @@ module Aux = struct
         | (x::xs) :: xss ->
             (x :: List.map List.hd xss) :: transpose (xs :: List.map List.tl xss)
     let contains l r = List.for_all (fun e -> List.mem e l) r
+    let upto i =
+        let rec upto' v =
+            if v == i then v :: []
+            else v :: (upto' (v + 1))
+        in upto' 0
 end
 
 (* string aliases for type safety *)

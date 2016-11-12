@@ -101,3 +101,57 @@ module IDTree = functor (D : DECIDABLE) -> struct
         let ans = Attribute (a, (learn' p), (learn' n)) in
         ans
 end
+
+module Conjuncts = functor (D : DECIDABLE) -> struct
+    type elt = D.elt
+    type labeled = elt * bool
+    type tag = D.tag
+    type attribute = (elt -> bool) * tag
+
+    (* for manipulating attributes *)
+    let apply (a : attribute) (e : elt) : bool = (fst a) e
+    let description (a : attribute) : tag = snd a
+
+    (* the thing we want to learn *)
+    type conjunct = Conjunct of attribute list * attribute list
+    (* so we can filter things out *)
+    let length (c : conjunct) : int = match c with
+        Conjunct (l, r) -> List.length (l @ r)
+    (* a simple aux function  *)
+    let empty_conjunct = Conjunct ([], [])
+    (* lift application to positive and negative instances *)
+    let apply_conjunct (c : conjunct) (e : elt) : bool = match c with
+        Conjunct (l, r) ->
+            let pos = List.for_all (fun a -> apply a e) l in
+            let neg = List.for_all (fun a -> not (apply a e)) r in
+            pos && neg
+    (* and lift application to labeled lists *)
+    let check (c : conjunct) (ls : labeled list) : bool =
+        List.for_all (fun (e, l) -> (apply_conjunct c e) = l) ls
+    (* we put together all conjuncts below a certain size *)
+    (* TODO : wow, this is so inefficient *)
+    let construct_conjuncts (atts : attribute list) (max_size : int) : conjunct list =
+        let to_left c = match c with
+            Conjunct (l, r) -> List.map (fun a ->
+                    (Conjunct (Aux.append l a, r)))
+                atts in
+        let to_right c = match c with
+            Conjunct (l, r) -> List.map (fun a ->
+                    (Conjunct (l, Aux.append r a)))
+                atts in
+        List.fold_left (fun acc _ ->
+                acc @ (Aux.flat_map to_left acc) @ (Aux.flat_map to_right acc))
+            [empty_conjunct]
+            (Aux.upto (max_size - 1))
+    (* now, this is what we came for *)
+    let learn (atts : attribute list) (ls : labeled list) (max_size : int) : conjunct option =
+        let conjuncts = construct_conjuncts atts max_size in
+        List.fold_left (fun a c -> match a with
+                | Some a' -> a
+                | None -> if check c ls
+                    then Some c
+                    else None)
+            None conjuncts
+    let conjunct_description (c : conjunct): tag list * tag list = match c with
+        Conjunct (l, r) -> (List.map description l), (List.map description r)
+end
