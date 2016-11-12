@@ -418,6 +418,9 @@ module LiftedMT = struct
     let to_string (lmt : t) : string = match lmt with
         | Truth -> "T"
         | Lifted mt -> Aux.concat (List.map SortTerm.to_string mt)
+    let length (lmt : t) : int = match lmt with
+        | Truth -> 0
+        | Lifted m -> fst(Multiterm.metric m)
 end
 
 module AbstractSearch = Deadbeat(LiftedMT)
