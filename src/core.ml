@@ -38,6 +38,18 @@ module Aux = struct
         with End_of_file ->
             close_in chan;
             List.rev !lines
+    let load_upto fname size =
+        let lines = ref [] in
+        let channel = open_in fname in
+        try
+            while (List.length !lines) < size; do
+                lines := input_line channel :: !lines
+            done;
+            close_in channel;
+            List.rev !lines
+        with End_of_file ->
+            close_in channel;
+            List.rev !lines
     let delete_at l i =
         if i < 0 || i >= (List.length l) then
             invalid_arg "delete_at"
