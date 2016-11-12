@@ -11,9 +11,9 @@ let _ = register_predicate "lte1" ["int"] (fun xs -> (int_of_string (List.hd xs)
 let _ = register_predicate "invr" ["rad";"rad"] (fun xs -> (int_of_string (List.nth xs 0)) = -1*(int_of_string (List.nth xs 1)))
 let _ = register_predicate "invi" ["int";"int"] (fun xs -> (int_of_string (List.nth xs 0)) = -1*(int_of_string (List.nth xs 1)))
 let _ = register_predicate "m1" ["rad"; "rad"] (
-   
-    fun xs ->  
-    (*fun xs -> if (((List.nth xs 0) = "Error") ||  ((List.nth xs 1) = "Error")) then 
+
+    fun xs ->
+    (*fun xs -> if (((List.nth xs 0) = "Error") ||  ((List.nth xs 1) = "Error")) then
         true
     else*)
         let x = (int_of_string (List.nth xs 0)) in
