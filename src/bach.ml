@@ -183,13 +183,15 @@ let _ =
                 []
             else begin
                 let symbolic_sorts = (LiftedMT.sort_list c) @ (LiftedMT.sort_list e) in
+                let _ = print_endline  "start vars" in
                 let vars = Variables.valid_assignments symbolic_sorts in
+                let _ = print_endline  "end vars" in
                 (* now we concretize *)
-                let concs = List.map (fun vs ->
+                let concs = List.rev (List.rev_map (fun vs ->
                         let lhs, vs' = LiftedMT.concretize c vs in
                         let rhs, _ = LiftedMT.concretize e vs' in
                         (lhs, rhs))
-                    vars in
+                    vars) in
                 List.fold_left (fun l (lhs, rhs) ->
                         match (process_pair lhs rhs) with
                             | None -> l
