@@ -373,16 +373,10 @@ module ConcretizedMT = struct
             | Truth -> false
             | Concretized rs ->
                 (Aux.contains rs ls) || (Aux.contains ls rs)
-    let equal_variables (l : t) (r : t) : bool = match l with
-        | Truth -> begin match r with
-            | Truth -> true
-            | _ -> false end
-        | Concretized ls -> match r with
-            | Truth -> false
-            | Concretized rs ->
-                let sls = List.sort_uniq Pervasives.compare ls in
-                let srs = List.sort_uniq Pervasives.compare rs in
-                sls = srs
+    let var_symmetric_diff (l : t) (r : t) : var list =
+        let lvars = List.sort_uniq Pervasives.compare (variables l) in
+        let rvars = List.sort_uniq Pervasives.compare (variables r) in
+        (Aux.subtract lvars rvars) @ (Aux.subtract rvars lvars)
 end
 
 module LiftedMT = struct
