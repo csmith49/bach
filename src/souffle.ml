@@ -20,7 +20,10 @@ let decl_rel r = match r with
         ".decl " ^ n ^ "(" ^ (String.concat ", " vars) ^ ")"
 
 (* we're gonna parse all the fact files, and we're gonna make souffle pay for it *)
-let load_fact_data (fact_dir : string) =
+let load_fact_data_long (fact_dir : string)
+                        (int_start : int)
+                        (int_end : int)
+                        (int_exclude : bool) =
     let quote s = "\"" ^ s ^ "\"" in
     let sort_values = ref SortMap.empty in
     let handle_fact_file (s : symbol) = match s with
