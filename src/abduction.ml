@@ -20,6 +20,7 @@ module AbductionLearner =
         type tag = relation
         let elt_to_string = Aux.concat
         let tag_to_string = Relation.to_string
+        let is_error = List.mem "Error"
     end)
 
 module ConjunctLearner =
@@ -28,6 +29,7 @@ module ConjunctLearner =
         type tag = relation
         let elt_to_string = Aux.concat
         let tag_to_string = Relation.to_string
+        let is_error = List.mem "Error"
     end)
 
 (* to convert our learned tree into something reasonable, we should convert to labeled paths *)
