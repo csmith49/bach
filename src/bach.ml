@@ -16,6 +16,7 @@ let souffle_count = ref 0
 let mindepth = ref 0
 let pruned = ref []
 
+let sample_count = ref 0
 let interval_start = ref 0
 let interval_end = ref 10000
 let interval_exclude = ref false
@@ -35,7 +36,8 @@ let spec_list = [
     ("-interval",
         Arg.Tuple [Arg.Set_int interval_start; Arg.Set_int interval_end],
         " Selects/blocks a range of values.");
-    ("-exclude", Arg.Set interval_exclude, " Turns interval selection to exclusion.")
+    ("-exclude", Arg.Set interval_exclude, " Turns interval selection to exclusion.");
+    ("-sample", Arg.Set_int sample_count, " Samples k values from the chosen interval.")
 ]
 
 let usage_msg = "todo"
@@ -198,7 +200,12 @@ let _ =
     (* load config options *)
     parse_work_file "config.sexp";
     (* load fact files *)
-    load_fact_data_long !Problem.fact_dir !interval_start !interval_end !interval_exclude;
+    load_fact_data_long
+        !Problem.fact_dir
+        !interval_start
+        !interval_end
+        !interval_exclude
+        !sample_count;
     (* now we search *)
     noisy_print "Starting iteration...";
     (* set the time! *)
