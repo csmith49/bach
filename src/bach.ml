@@ -12,10 +12,13 @@ let prune_flag = ref true
 let times_flag = ref false
 let time = ref 0.0
 let souffle_count = ref 0
+let csv_flag = ref false
 
 let mindepth = ref 0
+let maxdepth = ref 9999
 let pruned = ref []
 
+let sample_count = ref 0
 let interval_start = ref 0
 let interval_end = ref 10000
 let interval_exclude = ref false
@@ -35,7 +38,10 @@ let spec_list = [
     ("-interval",
         Arg.Tuple [Arg.Set_int interval_start; Arg.Set_int interval_end],
         " Selects/blocks a range of values.");
-    ("-exclude", Arg.Set interval_exclude, " Turns interval selection to exclusion.")
+    ("-exclude", Arg.Set interval_exclude, " Turns interval selection to exclusion.");
+    ("-sample", Arg.Set_int sample_count, " Samples k values from the chosen interval.");
+    ("-csv", Arg.Set csv_flag, " Enables tab-separated output.");
+    ("-maxdepth", Arg.Set_int maxdepth, " Maximum size of specs.")
 ]
 
 let usage_msg = "todo"
@@ -127,7 +133,7 @@ let process_pair (lhs : ConcretizedMT.t)
         let _ = noisy_print ("\t" ^ (counts_to_string counts)) in
         let _ = incr souffle_count in
         let _ = if !times_flag then
-            let t = (Sys.time ()) -. !time in
+            let t = (Unix.gettimeofday ()) -. !time in
             print_endline ("TIME:\t" ^ (string_of_float t) ^ "\t" ^ (string_of_int !souffle_count)) in
         if equivalent counts then begin
             if !prune_flag then begin
@@ -155,13 +161,19 @@ let process_pair (lhs : ConcretizedMT.t)
             let lguard = left_learn var_order values in
             let rguard = right_learn var_order values in
 
+            let g_list = if nt
+                then
+                    [(eguard, " === "); (lguard, " ==> "); (rguard, " <== ")]
+                else
+                    [(eguard, " === ")] in
+
             let guard, dir = List.hd (List.sort (fun x y ->
                     match fst x with
                         | None -> -1
                         | Some (c, xv) -> match fst y with
                             | None -> 1
                             | Some (c', yv) -> -1 * (Pervasives.compare xv yv))
-                [(eguard, " === "); (lguard, " ==> "); (rguard, " <== ")]) in
+                g_list) in
 
             match guard with
                 | Some (c, v) -> begin
@@ -176,9 +188,16 @@ let process_pair (lhs : ConcretizedMT.t)
         let s = score !pos lhs rhs in
         (* if the results are worth reporting, print 'em *)
         if !okay_to_report && (s > 0.0) then begin
-            print_endline (pair_string !direction);
-            noisy_print ("\t" ^ (counts_to_string counts));
-            noisy_print ("\t" ^ (string_of_float s));
+            if !csv_flag then begin
+                let formula = pair_string !direction in
+                let s_string = string_of_float s in
+                let p_string = string_of_int !pos in
+                print_endline (String.concat "\t" [formula;s_string;p_string]);
+            end else begin
+                print_endline (pair_string !direction);
+                noisy_print ("\t" ^ (counts_to_string counts));
+                noisy_print ("\t" ^ (string_of_float s));
+            end
         end;
         (* now clean up the rhs *)
         let clean = ConcretizedMT.rebase_variables rhs in
@@ -192,16 +211,22 @@ let _ =
     (* load config options *)
     parse_work_file "config.sexp";
     (* load fact files *)
-    load_fact_data_long !Problem.fact_dir !interval_start !interval_end !interval_exclude;
+    load_fact_data_long
+        !Problem.fact_dir
+        !interval_start
+        !interval_end
+        !interval_exclude
+        !sample_count;
     (* now we search *)
     noisy_print "Starting iteration...";
     (* set the time! *)
-    time := Sys.time ();
+    time := Unix.gettimeofday ();
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
     let seen = ref ([] : LiftedMT.t list) in
+    let running = ref true in
     (* and now we loop *)
-    while true do
+    while !running do
         (* push an abstract mt off the frontier *)
         let e, frontier' = AbstractSearch.next !frontier in
         frontier := frontier';
@@ -211,6 +236,9 @@ let _ =
         let compare_with_symbolic c =
             (* minimum depth check *)
             if ((LiftedMT.length c) + (LiftedMT.length e)) < !mindepth then
+                []
+            else if ((LiftedMT.length c) + (LiftedMT.length e)) > !maxdepth then
+                let _ = running := false in
                 []
             else begin
                 let symbolic_sorts = (LiftedMT.sort_list c) @ (LiftedMT.sort_list e) in

@@ -20,5 +20,3 @@ let _ = register_predicate "m1" ["rad"; "rad"] (
         let y = (int_of_string (List.nth xs 1)) in
         (x - y) mod 2 = 0
 )
-
-let _ = print_endline "Predicates registered."

@@ -23,14 +23,19 @@ let decl_rel r = match r with
 let load_fact_data_long (fact_dir : string)
                         (int_start : int)
                         (int_end : int)
-                        (int_exclude : bool) =
+                        (int_exclude : bool)
+                        (sample_count : int) =
     let quote s = "\"" ^ s ^ "\"" in
     let sort_values = ref SortMap.empty in
     let handle_fact_file (s : symbol) = match s with
         Symbol (name, sorts) -> begin
                 (* load the data as rows *)
                 let raw_lines' = Aux.load_lines (fact_dir ^ name ^ ".facts") in
-                let raw_lines = Aux.interval raw_lines' int_start int_end int_exclude in
+                let intermediate = Aux.interval raw_lines' int_start int_end int_exclude in
+                let raw_lines = if sample_count = 0
+                    then intermediate
+                    else Aux.take_upto (Aux.shuffle intermediate) sample_count
+                in
                 let data = List.map (fun l ->
                         List.map quote (parse_line l))
                     raw_lines in

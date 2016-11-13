@@ -5,7 +5,8 @@ import csv
 
 def do_it(cmd, seconds):
     try:
-         check_output(cmd, stderr=STDOUT, timeout=seconds, shell=True)
+         output = check_output(cmd, stderr=STDOUT, timeout=seconds, shell=True)
+         return output.decode(sys.stdout.encoding)
     except TimeoutExpired as e:
         return e.output.decode(sys.stdout.encoding)
 
