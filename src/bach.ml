@@ -15,7 +15,7 @@ let souffle_count = ref 0
 let csv_flag = ref false
 
 let mindepth = ref 0
-let maxdepth = ref 0
+let maxdepth = ref 9999
 let pruned = ref []
 
 let sample_count = ref 0
