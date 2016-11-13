@@ -9,6 +9,9 @@ let noisy = ref false
 let scalar = ref 1.0
 let abduce_flag = ref false
 let prune_flag = ref true
+let times_flag = ref false
+let time = ref 0.0
+let souffle_count = ref 0
 
 let mindepth = ref 0
 let set_mindepth n = mindepth := n
@@ -25,6 +28,7 @@ let spec_list = [
     " Runs the named benchmark.");
     ("-abduce", Arg.Set abduce_flag, " Turns on abduction.");
     ("-mindepth", Arg.Int (set_mindepth), " Minimum size of specs.");
+    ("-times", Arg.Set times_flag, " Records time taken between Souffle calls.")
 ]
 
 let usage_msg = "todo"
@@ -105,6 +109,10 @@ let process_pair (lhs : ConcretizedMT.t)
         (* get results! finally! *)
         let var_order, counts, values = check lhs rhs !abduce_flag in
         let _ = noisy_print ("\t" ^ (counts_to_string counts)) in
+        let _ = incr souffle_count in
+        let _ = if !times_flag then
+            let t = (Sys.time ()) -. !time in
+            print_endline ("TIME:\t" ^ (string_of_float t) ^ "\t" ^ (string_of_int !souffle_count)) in
         if equivalent counts then begin
             if !prune_flag then begin
                 let crhs = ConcretizedMT.rebase_variables rhs in
@@ -159,6 +167,8 @@ let _ =
     load_fact_data !Problem.fact_dir;
     (* now we search *)
     noisy_print "Starting iteration...";
+    (* set the time! *)
+    time := Sys.time ();
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
     let seen = ref ([] : LiftedMT.t list) in
