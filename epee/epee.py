@@ -86,7 +86,18 @@ def fp_gen():
 def string_gen():
     from random import randint
     while True:
-        yield str(randint(0, 100))
+        size = randint(0,3)
+        s = ""
+        for i in range(1,size+1):
+            x = randint(0, 2)
+            if x == 0: 
+                s += "1"
+            if x == 1:
+                s += "a"
+            if x == 2:
+                s += "A"
+        if s == "": s = "@"
+        yield s
 
 @add_generator('list')
 def list_gen():

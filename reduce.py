@@ -2,34 +2,41 @@ from z3 import *
 
 d = FiniteDomainSort('D', 2)
 
-x = Const(1, BitVecSort(8))
-y = Const(2, BitVecSort(8))
-z = Const(3, BitVecSort(8))
-w = Const(4, BitVecSort(8))
-a = Const(5, BitVecSort(8))
-m = Const(6, BitVecSort(8))
-n = Const(7, BitVecSort(8))
-t = Const(8, BitVecSort(8))
-vs = [x,y,n,z,t,w,a,m]
+x = Const(1, BitVecSort(3))
+y = Const(2, BitVecSort(3))
+z = Const(3, BitVecSort(3))
+w = Const(4, BitVecSort(3))
+a = Const(5, BitVecSort(3))
+m = Const(6, BitVecSort(3))
+n = Const(7, BitVecSort(3))
+t = Const(8, BitVecSort(3))
+p = Const(9, BitVecSort(3))
+q = Const(10, BitVecSort(3))
+r = Const(11, BitVecSort(3))
+vs = [x,y,n,z,t,w,a,m,p,q,r]
 
-valid = Function('valid', BitVecSort(8), BitVecSort(8))
-sat = Function('sat', BitVecSort(8), BitVecSort(8))
-f_neg = Function('f_neg', BitVecSort(8), BitVecSort(8))
-f_and = Function('and', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-f_or = Function('or', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-ff_mult_inv = Function('f_mult_inv', BitVecSort(8), BitVecSort(8))
-ff_add_inv = Function('f_add_inv', BitVecSort(8), BitVecSort(8))
-ff_mult = Function('f_mult', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-ff_add = Function('f_add', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-hd = Function('hd', BitVecSort(8), BitVecSort(8))
-concat = Function('concat', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-cons = Function('cons', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-geometry_encloses = Function('geometry_encloses', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-geometry_encloses_point = Function('geometry_encloses_point', BitVecSort(8), BitVecSort(8), BitVecSort(8))
-trig_sin = Function('trig_sin', BitVecSort(8), BitVecSort(8))
-trig_arcsin = Function('trig_arcsin', BitVecSort(8), BitVecSort(8))
-trig_cos = Function('trig_cos', BitVecSort(8), BitVecSort(8))
-trig_arccos = Function('trig_arccos', BitVecSort(8), BitVecSort(8))
+valid = Function('valid', BitVecSort(3), BitVecSort(3))
+sat = Function('sat', BitVecSort(3), BitVecSort(3))
+f_neg = Function('f_neg', BitVecSort(3), BitVecSort(3))
+f_and = Function('and', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+f_or = Function('or', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+ff_mult_inv = Function('f_mult_inv', BitVecSort(3), BitVecSort(3))
+ff_add_inv = Function('f_add_inv', BitVecSort(3), BitVecSort(3))
+ff_mult = Function('f_mult', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+ff_add = Function('f_add', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+hd = Function('hd', BitVecSort(3), BitVecSort(3))
+concat = Function('concat', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+cons = Function('cons', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+geometry_encloses = Function('geometry_encloses', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+geometry_encloses_point = Function('geometry_encloses_point', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+trig_sin = Function('trig_sin', BitVecSort(3), BitVecSort(3))
+trig_arcsin = Function('trig_arcsin', BitVecSort(3), BitVecSort(3))
+trig_cos = Function('trig_cos', BitVecSort(3), BitVecSort(3))
+trig_arccos = Function('trig_arccos', BitVecSort(3), BitVecSort(3))
+matrix_mult = Function('matrix_mult', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+set_difference = Function('set_difference', BitVecSort(3), BitVecSort(3), BitVecSort(3))
+set_issubset = Function('set_issubset', BitVecSort(3),  BitVecSort(3), BitVecSort(3))
+set_issuperset = Function('set_issuperset', BitVecSort(3), BitVecSort(3), BitVecSort(3))
 
 allforms = {}
 
@@ -37,6 +44,7 @@ f = open('specs.out','r')
 
 for l in f:
     print l
+    l = l.replace("|","")
     bi = "b"
     if "===" in l:
         zstr = l.split("===")
@@ -98,7 +106,14 @@ def impl(f1,f2):
         print "tru done caalling z3"
         return True
     
-
+    s.reset()
+    s.set("timeout", 2000)
+    s.add(Not(f2))
+    print "calling z3--checking taautology"
+    if s.check() == unsat:
+        print "tru done caalling z3"
+        return True
+   
     print "done caalling z3"
     return False
 
