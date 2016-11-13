@@ -75,7 +75,7 @@ def norm_int(mean, std):
 def int_gen():
     from random import randint
     while True:
-        x1 = randint(-1,1)
+        x1 = randint(-1,2)
         y1 = randint(-1,1)
         #z1 = randint(0,1)
 

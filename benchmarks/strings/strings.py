@@ -1,5 +1,8 @@
 def concat(x : "string", y : "string"):
-    return x + y
+    res = x + y
+    res.replace("@","")
+    if res == "": return "@"
+    return res
 
 def reverse(x : "string"):
     return ''.join(reversed(x))
@@ -17,10 +20,25 @@ def to_lower(x : "string"):
     return x.lower()
 
 def left_strip(x : "string"):
-    return x.lstrip()
+    xn = x.replace("1"," ")
+    res = xn.lstrip()
+    res = res.replace(" ","1")
+    if res == "": return "@"
+    return res
 
 def right_strip(x : "string"):
-    return x.rstrip()
+    xn = x.replace("1"," ")
+    res = xn.rstrip()
+    res = res.replace(" ","1")
+    if res == "": return "@"
+    return res
+
 
 def all_strip(x : "string"):
-    return x.strip()
+    x = x.replace("@","")
+    xn = x.replace("1"," ")
+    res = xn.strip()
+    res = res.replace(" ","1")
+    if res == "": return "@"
+    return res
+

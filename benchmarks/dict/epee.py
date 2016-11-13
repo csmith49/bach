@@ -90,7 +90,7 @@ def fp_gen():
             d[randint(0,2)] = randint(0,1)
         yield d
 
-@add_generator('posint')
+@add_generator('int')
 def fp_gen():
     from random import randint
     while True:

@@ -77,10 +77,10 @@ def norm_int(mean, std):
 def fp_gen():
     from random import randint
     while True:
-        size = abs(norm_int(0,3))
+        size = randint(0,3)
         s = []
         for i in range(1,size+1):
-            s.append(randint(0,2))
+            s.append(randint(0,1))
 
         yield s
 
@@ -88,7 +88,7 @@ def fp_gen():
 def fp_gen():
     from random import randint
     while True:
-        a = norm_int(0, 2)
+        a = randint(0, 1)
         yield a
 
 

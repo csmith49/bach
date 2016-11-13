@@ -27,7 +27,7 @@ def trig_arcsin(x : "int"):
     if (round(res,2) == -3.14):
         return  -2
 
-    return res
+    return int(res)
 
 def trig_arccos(x : "int"):
     if x > 1 or x < -1: return "Error" 

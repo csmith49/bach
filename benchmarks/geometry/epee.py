@@ -75,8 +75,8 @@ def norm_int(mean, std):
 def int_gen():
     from random import randint
     while True:
-        x = norm_int(0, 2)
-        y = norm_int(0, 2)
+        x = randint(-1, 1)
+        y = x
         yield (x,y)
 
 @add_generator('rect')
