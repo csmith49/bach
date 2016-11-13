@@ -14,8 +14,11 @@ let time = ref 0.0
 let souffle_count = ref 0
 
 let mindepth = ref 0
-let set_mindepth n = mindepth := n
 let pruned = ref []
+
+let interval_start = ref 0
+let interval_end = ref 10000
+let interval_exclude = ref false
 
 let spec_list = [
     ("-noisy", Arg.Set noisy, " Print additional information.");
@@ -27,8 +30,12 @@ let spec_list = [
         end),
     " Runs the named benchmark.");
     ("-abduce", Arg.Set abduce_flag, " Turns on abduction.");
-    ("-mindepth", Arg.Int (set_mindepth), " Minimum size of specs.");
-    ("-times", Arg.Set times_flag, " Records time taken between Souffle calls.")
+    ("-mindepth", Arg.Set_int mindepth, " Minimum size of specs.");
+    ("-times", Arg.Set times_flag, " Records time taken between Souffle calls.");
+    ("-interval",
+        Arg.Tuple [Arg.Set_int interval_start; Arg.Set_int interval_end],
+        " Selects/blocks a range of values.");
+    ("-exclude", Arg.Set interval_exclude, " Turns interval selection to exclusion.")
 ]
 
 let usage_msg = "todo"
@@ -52,7 +59,16 @@ let learn var_order results = match results with
         let evidence = create_evidence ["pos"] ["lneg";"rneg"] vals in
         simple_abduce (list_to_varmap var_order) evidence
     | Nothing -> None
-
+let left_learn var_order results = match results with
+    | Values vals ->
+        let evidence = create_evidence ["pos"] ["lneg"] vals in
+        simple_abduce (list_to_varmap var_order) evidence
+    | Nothing -> None
+let right_learn var_order results = match results with
+    | Values vals ->
+        let evidence = create_evidence ["pos"] ["rneg"] vals in
+        simple_abduce (list_to_varmap var_order) evidence
+    | Nothing -> None
 (* and here for checking how good the results are *)
 let equivalent res = match res with
     Counts cts ->
@@ -135,10 +151,22 @@ let process_pair (lhs : ConcretizedMT.t)
             direction := " <== ";
             pos := get_pos counts;
         end else if !abduce_flag then begin
-            let guard = learn var_order values in match guard with
+            let eguard = learn var_order values in
+            let lguard = left_learn var_order values in
+            let rguard = right_learn var_order values in
+
+            let guard, dir = List.hd (List.sort (fun x y ->
+                    match fst x with
+                        | None -> -1
+                        | Some (c, xv) -> match fst y with
+                            | None -> 1
+                            | Some (c', yv) -> -1 * (Pervasives.compare xv yv))
+                [(eguard, " === "); (lguard, " ==> "); (rguard, " <== ")]) in
+
+            match guard with
                 | Some (c, v) -> begin
                     okay_to_report := true;
-                    direction := " === ";
+                    direction := dir;
                     guard_string := ConjunctLearner.to_string c;
                     pos := v;
                 end
@@ -164,7 +192,7 @@ let _ =
     (* load config options *)
     parse_work_file "config.sexp";
     (* load fact files *)
-    load_fact_data !Problem.fact_dir;
+    load_fact_data_long !Problem.fact_dir !interval_start !interval_end !interval_exclude;
     (* now we search *)
     noisy_print "Starting iteration...";
     (* set the time! *)
