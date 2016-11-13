@@ -52,7 +52,16 @@ let learn var_order results = match results with
         let evidence = create_evidence ["pos"] ["lneg";"rneg"] vals in
         simple_abduce (list_to_varmap var_order) evidence
     | Nothing -> None
-
+let left_learn var_order results = match results with
+    | Values vals ->
+        let evidence = create_evidence ["pos"] ["lneg"] vals in
+        simple_abduce (list_to_varmap var_order) evidence
+    | Nothing -> None
+let right_learn var_order results = match results with
+    | Values vals ->
+        let evidence = create_evidence ["pos"] ["rneg"] vals in
+        simple_abduce (list_to_varmap var_order) evidence
+    | Nothing -> None
 (* and here for checking how good the results are *)
 let equivalent res = match res with
     Counts cts ->
@@ -135,10 +144,22 @@ let process_pair (lhs : ConcretizedMT.t)
             direction := " <== ";
             pos := get_pos counts;
         end else if !abduce_flag then begin
-            let guard = learn var_order values in match guard with
+            let eguard = learn var_order values in
+            let lguard = left_learn var_order values in
+            let rguard = right_learn var_order values in
+
+            let guard, dir = List.hd (List.sort (fun x y ->
+                    match fst x with
+                        | None -> -1
+                        | Some (c, xv) -> match fst y with
+                            | None -> 1
+                            | Some (c', yv) -> -1 * (Pervasives.compare xv yv))
+                [(eguard, " === "); (lguard, " ==> "); (rguard, " <== ")]) in
+
+            match guard with
                 | Some (c, v) -> begin
                     okay_to_report := true;
-                    direction := " === ";
+                    direction := dir;
                     guard_string := ConjunctLearner.to_string c;
                     pos := v;
                 end
