@@ -10,6 +10,7 @@ module type DECIDABLE = sig
     type tag
     val elt_to_string : elt -> string
     val tag_to_string : tag -> string
+    val is_error : elt -> bool
 end
 
 module IDTree = functor (D : DECIDABLE) -> struct
@@ -127,7 +128,9 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
             let rs = List.map (fun a -> "!" ^ (D.tag_to_string (description a))) r in
             Aux.concat (ls @ rs)
     (* lift application to positive and negative instances *)
-    let apply_conjunct (c : conjunct) (e : elt) : bool = match c with
+    let apply_conjunct (c : conjunct) (e : elt) : bool =
+        if D.is_error e then false
+        else match c with
         Conjunct (l, r) ->
             let pos = List.for_all (fun a -> apply a e) l in
             let neg = List.for_all (fun a -> not (apply a e)) r in
