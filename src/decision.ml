@@ -130,12 +130,17 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
     let apply_conjunct (c : conjunct) (e : elt) : bool = match c with
         Conjunct (l, r) ->
             let pos = List.for_all (fun a -> apply a e) l in
-            (* let neg = List.for_all (fun a -> not (apply a e)) r in
-            pos && neg *)
-            pos
+            let neg = List.for_all (fun a -> not (apply a e)) r in
+            pos && neg
     (* and lift application to labeled lists *)
     let check (c : conjunct) (ls : labeled list) : bool =
         List.for_all (fun (e, l) -> (apply_conjunct c e) = l) ls
+    let partial_check (c : conjunct) (ls : labeled list) : int option =
+        let gt = List.filter snd ls in
+        let ps = List.filter (fun l -> apply_conjunct c (fst l)) ls in
+        if Aux.contains gt ps
+            then Some (List.length ps)
+            else None
     let summary (c : conjunct) (ls : labeled list) : string =
         let ps = List.length (List.filter (fun l -> apply_conjunct c (fst l)) ls) in
         let ns = (List.length ls) - ps in
@@ -151,28 +156,35 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
             Conjunct (l, r) -> List.map (fun a ->
                     (Conjunct (l, Aux.append r a)))
                 atts in
-        let ans = List.fold_left (fun acc _ ->
+        List.fold_left (fun acc _ ->
                 acc @ (Aux.flat_map to_left acc) @ (Aux.flat_map to_right acc))
             [empty_conjunct]
-            (Aux.upto (max_size - 1)) in
-        let _ = print_endline ("made " ^ (string_of_int (List.length ans)) ^ " conjuncts") in
-        ans
+            (Aux.upto (max_size - 1))
     (* now, this is what we came for *)
     let learn (atts : attribute list) (ls : labeled list) (max_size : int) : conjunct option =
-        (* printing, to learn *)
-        let ps = List.length (List.filter snd ls) in
-        let ns = (List.length ls) - ps in
-        let _ = print_endline ("pos : " ^ (string_of_int ps) ^ ", neg : " ^ (string_of_int ns)) in
-        (* now actually do things *)
         let conjuncts = construct_conjuncts atts max_size in
         List.fold_left (fun a c ->
-            let _ = print_endline ("checking " ^ (to_string c) ^ " | " ^ (summary c ls)) in
             match a with
                 | Some a' -> a
                 | None -> if check c ls
                     then Some c
                     else None)
             None conjuncts
+    let partial_learn (atts : attribute list)
+                      (ls : labeled list)
+                      (max_size : int) : (conjunct * int) option =
+        let conjuncts = construct_conjuncts atts max_size in
+        let scores = List.map (fun c -> (c, partial_check c ls)) conjuncts in
+        let ranked_scores = List.sort_uniq
+            (fun p p' -> Pervasives.compare (snd p) (snd p'))
+            (Aux.flat_map (fun p ->
+                    match snd p with
+                        | None -> []
+                        | Some v -> [(fst p, v)])
+                scores) in
+        match ranked_scores with
+            | [] -> None
+            | _ -> Some (List.hd (List.rev ranked_scores))
     let conjunct_description (c : conjunct): tag list * tag list = match c with
         Conjunct (l, r) -> (List.map description l), (List.map description r)
 end

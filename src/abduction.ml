@@ -154,4 +154,4 @@ let simple_abduce (var_order : int VarMap.t)
                   (evidence : ConjunctLearner.labeled list) =
     let var_sorts = !Problem.globals.variables in
     let attributes = create_attributes (usable_preds var_sorts) var_order var_sorts in
-    ConjunctLearner.learn attributes evidence !Problem.globals.abduction_depth
+    ConjunctLearner.partial_learn attributes evidence !Problem.globals.abduction_depth

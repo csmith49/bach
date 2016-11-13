@@ -65,13 +65,14 @@ let right_impl res = match res with
         let pos_ev = StrMap.find "pos" cts in
         let neg_ev = StrMap.find "rneg" cts in
         (pos_ev > 0) && (neg_ev = 0)
+let get_pos = function
+    Counts cts -> StrMap.find "pos" cts
 
 (* and finally for scoring the function as best we can *)
-let score res lhs rhs = match res with
-    Counts cts ->
-        let pos_ev = float (StrMap.find "pos" cts) in
-        let t_score = float ((ConcretizedMT.metric lhs) + (ConcretizedMT.metric rhs)) in
-        (pos_ev /. (!scalar *. t_score))
+let score pos lhs rhs =
+    let pos_ev = float pos in
+    let t_score = float ((ConcretizedMT.metric lhs) + (ConcretizedMT.metric rhs)) in
+    (pos_ev /. (!scalar *. t_score))
 
 (* now we need to actually process pairs of mts and stuff *)
 let process_pair (lhs : ConcretizedMT.t)
@@ -81,6 +82,7 @@ let process_pair (lhs : ConcretizedMT.t)
     let okay_to_report = ref false in
     let direction = ref " ? " in
     let guard_string = ref "" in
+    let pos = ref 0 in
     (* eases printing throughout *)
     let pair_string d =
         let l = ConcretizedMT.to_string lhs in
@@ -115,35 +117,35 @@ let process_pair (lhs : ConcretizedMT.t)
             end;
             okay_to_report := true;
             direction := " === ";
+            pos := get_pos counts;
         end else if left_impl counts && nt then begin
             okay_to_report := true;
             direction := " ==> ";
+            pos := get_pos counts;
         end else if right_impl counts && nt then begin
             okay_to_report := true;
             direction := " <== ";
+            pos := get_pos counts;
         end else if !abduce_flag then begin
             let guard = learn var_order values in match guard with
-                | Some c -> begin
+                | Some (c, v) -> begin
                     okay_to_report := true;
                     direction := " === ";
-                    let l, r = ConjunctLearner.conjunct_description c in
-                    let ls = Aux.concat (List.map Relation.to_string l) in
-                    let rs = Aux.concat (List.map Relation.to_string r) in
-                    guard_string := "(" ^ ls ^ ") & !(" ^ rs ^ ")"
+                    guard_string := ConjunctLearner.to_string c;
+                    pos := v;
                 end
                 | _ -> ()
         end;
         (* now we can see how well we did *)
-        let s = score counts lhs rhs in
+        let s = score !pos lhs rhs in
         (* if the results are worth reporting, print 'em *)
-        if !okay_to_report && (s >= 0.0) then begin
+        if !okay_to_report && (s > 0.0) then begin
             print_endline (pair_string !direction);
             noisy_print ("\t" ^ (counts_to_string counts));
             noisy_print ("\t" ^ (string_of_float s));
         end;
         (* now clean up the rhs *)
         let clean = ConcretizedMT.rebase_variables rhs in
-        let _ = Aux.wait () in
         Some (clean)
     end else None
 
