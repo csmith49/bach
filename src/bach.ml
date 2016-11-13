@@ -127,7 +127,7 @@ let process_pair (lhs : ConcretizedMT.t)
         let _ = noisy_print ("\t" ^ (counts_to_string counts)) in
         let _ = incr souffle_count in
         let _ = if !times_flag then
-            let t = (Sys.time ()) -. !time in
+            let t = (Unix.gettimeofday ()) -. !time in
             print_endline ("TIME:\t" ^ (string_of_float t) ^ "\t" ^ (string_of_int !souffle_count)) in
         if equivalent counts then begin
             if !prune_flag then begin
@@ -196,7 +196,7 @@ let _ =
     (* now we search *)
     noisy_print "Starting iteration...";
     (* set the time! *)
-    time := Sys.time ();
+    time := Unix.gettimeofday ();
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
     let seen = ref ([] : LiftedMT.t list) in
