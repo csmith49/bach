@@ -29,7 +29,8 @@ let load_fact_data_long (fact_dir : string)
     let handle_fact_file (s : symbol) = match s with
         Symbol (name, sorts) -> begin
                 (* load the data as rows *)
-                let raw_lines = Aux.load_lines (fact_dir ^ name ^ ".facts") in
+                let raw_lines' = Aux.load_lines (fact_dir ^ name ^ ".facts") in
+                let raw_lines = Aux.interval raw_lines' int_start int_end int_exclude in
                 let data = List.map (fun l ->
                         List.map quote (parse_line l))
                     raw_lines in

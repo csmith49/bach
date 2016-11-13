@@ -104,6 +104,14 @@ module Aux = struct
         let nd = List.map (fun c -> (Random.bits (), c)) l in
         let sond = List.sort Pervasives.compare nd in
         List.map snd sond
+    let interval li i_start i_end i_exclude =
+        let labeled = List.mapi (fun i v -> (i, v)) li in
+        let selected = List.filter (fun (i, v) ->
+                if i_exclude
+                    then i < i_start || i >= i_end
+                    else i >= i_start && i < i_end)
+            labeled in
+        snd (List.split selected)
 end
 
 (* string aliases for type safety *)
