@@ -155,13 +155,19 @@ let process_pair (lhs : ConcretizedMT.t)
             let lguard = left_learn var_order values in
             let rguard = right_learn var_order values in
 
+            let g_list = if nt
+                then
+                    [(eguard, " === "); (lguard, " ==> "); (rguard, " <== ")]
+                else
+                    [(eguard, " === ")] in
+
             let guard, dir = List.hd (List.sort (fun x y ->
                     match fst x with
                         | None -> -1
                         | Some (c, xv) -> match fst y with
                             | None -> 1
                             | Some (c', yv) -> -1 * (Pervasives.compare xv yv))
-                [(eguard, " === "); (lguard, " ==> "); (rguard, " <== ")]) in
+                g_list) in
 
             match guard with
                 | Some (c, v) -> begin
