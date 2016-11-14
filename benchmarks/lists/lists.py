@@ -1,5 +1,8 @@
 def hd(x : "list"):
-    return x[0]
+    if x == []:
+        return "Error"
+    else:
+        return x[0]
 
 def tl(x : "list"):
     return x[1:]
