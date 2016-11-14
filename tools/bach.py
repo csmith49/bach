@@ -78,11 +78,12 @@ class Results(object):
         items = line.split("\t")
         self.formula = items[0]
         self.positive_evidence = int(items[1])
-        self.num_vars = int(items[2])
-        self.num_holes = int(items[3])
-        self.abducible_size = int(items[4])
+        self.size = int(items[2])
+        self.num_vars = int(items[3])
+        self.num_holes = int(items[4])
+        self.abducible_size = int(items[5])
     def score(self):
-        return self.positive_evidence
+        return self.positive_evidence / self.size
     def __repr__(self):
         return self.formula
 
