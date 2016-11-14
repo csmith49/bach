@@ -38,23 +38,37 @@ set_difference = Function('set_difference', BitVecSort(3), BitVecSort(3), BitVec
 set_issubset = Function('set_issubset', BitVecSort(3),  BitVecSort(3), BitVecSort(3))
 set_issuperset = Function('set_issuperset', BitVecSort(3), BitVecSort(3), BitVecSort(3))
 
+left_strip = Function('left_strip', BitVecSort(3), BitVecSort(3))
+right_strip = Function('right_strip', BitVecSort(3), BitVecSort(3))
+reverse = Function('reverse', BitVecSort(3), BitVecSort(3))
+all_strip = Function('all_strip', BitVecSort(3), BitVecSort(3))
+length = Function('length', BitVecSort(3), BitVecSort(3))
+
 allforms = {}
 
 f = open('specs.out','r')
 
 for l in f:
     print l
-    l = l.replace("|","")
+    ln = l.split("|")
+    print ln
     bi = "b"
-    if "===" in l:
-        zstr = l.split("===")
-    elif "<==" in l:
+    if "===" in ln[0]:
+        zstr = ln[0].split("===")
+    elif "<==" in ln[0]:
         bi = "r"
-        zstr = l.split("<==")
+        zstr = ln[0].split("<==")
     else:
         bi = "l"
-        zstr = l.split("==>")
+        zstr = ln[0].split("==>")
     
+    print zstr
+
+    g = ln[1].replace("=","==")
+    print "g: ", g
+    if g == "\n": g = True
+    else: g = eval("And("+g+")")
+    print "ng: ", g
 
     zstr[0] = zstr[0].replace("=","==")
     zstr[1] = zstr[1].replace("=","==")
@@ -72,6 +86,7 @@ for l in f:
     else:
         form = Implies(right,left)
 
+    form = Implies(g,form)
     allforms[l] = form
  
 unique = {}
@@ -93,7 +108,7 @@ def conjAll():
 
 def impl(f1,f2):
     s = Solver()
-    #s.set(auto_config=False, mbqi=False)
+    s.set(auto_config=False, mbqi=False)
     s.set("timeout", 2000)
 
     f1 = ForAll(vs,f1)
@@ -106,14 +121,6 @@ def impl(f1,f2):
         print "tru done caalling z3"
         return True
     
-    s.reset()
-    s.set("timeout", 2000)
-    s.add(Not(f2))
-    print "calling z3--checking taautology"
-    if s.check() == unsat:
-        print "tru done caalling z3"
-        return True
-   
     print "done caalling z3"
     return False
 
@@ -129,6 +136,9 @@ for l in allforms:
         #print "z3 :checking", allforms[l]
         #print "z3 :   and", unique[u]
         if impl(unique[l2], allforms[l]):
+            print "sub"
+            print unique[l2]
+            print allforms[l]
             #print "true"
             there = True
             break
