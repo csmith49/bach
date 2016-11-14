@@ -12,11 +12,6 @@
     (signature
         (
             (Symbol geometry_encloses (rect rect bool))
-            (Symbol geometry_area (rect int))
-            (Symbol geometry_encloses_point (rect point bool))
-            (Symbol geometry_rotate (rect rad rect))
-            (Symbol geometry_scale (rect int rect))
-            (Symbol geometry_translate (rect int rect))
         )
     )
 )

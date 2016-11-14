@@ -67,7 +67,7 @@ def main():
                 csvwriter.writerow(inputs + [output])
 
 # sample generators go here
-@add_generator('int')
+@add_generator('arc')
 def int_gen():
     from random import randint
     while True:
