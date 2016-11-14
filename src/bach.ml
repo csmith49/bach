@@ -196,11 +196,12 @@ let process_pair (lhs : ConcretizedMT.t)
             if !csv_flag then begin
                 let fs = pair_string !direction in
                 let ps = string_of_int !pos in
+                let ss = string_of_int ((ConcretizedMT.metric lhs) + (ConcretizedMT.metric rhs)) in
                 let vars_used = (ConcretizedMT.variables lhs) @ (ConcretizedMT.variables rhs) in
                 let vs = string_of_int (List.length (List.sort_uniq Pervasives.compare vars_used)) in
                 let hs = string_of_int (List.length vars_used) in
                 let gs = string_of_int !guard_size in
-                print_endline (String.concat "\t" [fs;ps;vs;hs;gs]);
+                print_endline (String.concat "\t" [fs;ps;ss;vs;hs;gs]);
             end else begin
                 print_endline (pair_string !direction);
                 noisy_print ("\t" ^ (counts_to_string counts));
@@ -216,6 +217,8 @@ let process_pair (lhs : ConcretizedMT.t)
 let _ =
     (* parse command line options *)
     Arg.parse (Arg.align spec_list) anon_fun usage_msg;
+    (* initialize rng *)
+    Random.self_init ();
     (* load config options *)
     parse_work_file "config.sexp";
     (* load fact files *)
