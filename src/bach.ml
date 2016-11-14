@@ -11,6 +11,7 @@ let abduce_flag = ref false
 let prune_flag = ref true
 let times_flag = ref false
 let time = ref 0.0
+let souffle_time = ref 0.0
 let souffle_count = ref 0
 let csv_flag = ref false
 
@@ -109,6 +110,7 @@ let process_pair (lhs : ConcretizedMT.t)
     let direction = ref " ? " in
     let guard_string = ref "" in
     let pos = ref 0 in
+    let guard_size = ref 0 in
     (* eases printing throughout *)
     let pair_string d =
         let l = ConcretizedMT.to_string lhs in
@@ -129,12 +131,14 @@ let process_pair (lhs : ConcretizedMT.t)
     (* now see if we should proceed *)
     if np && nc && (!abduce_flag || wc) then begin
         (* get results! finally! *)
+        let s_time = Unix.gettimeofday () in
         let var_order, counts, values = check lhs rhs !abduce_flag in
+        let _ = souffle_time := !souffle_time +. ((Unix.gettimeofday ()) -. s_time) in
         let _ = noisy_print ("\t" ^ (counts_to_string counts)) in
         let _ = incr souffle_count in
         let _ = if !times_flag then
             let t = (Unix.gettimeofday ()) -. !time in
-            print_endline ("TIME:\t" ^ (string_of_float t) ^ "\t" ^ (string_of_int !souffle_count)) in
+            print_endline ("TIME:\t" ^ (string_of_float t) ^ "\t" ^ (string_of_float !souffle_time) ^ "\t" ^ (string_of_int !souffle_count)) in
         if equivalent counts then begin
             if !prune_flag then begin
                 let crhs = ConcretizedMT.rebase_variables rhs in
@@ -180,6 +184,7 @@ let process_pair (lhs : ConcretizedMT.t)
                     okay_to_report := true;
                     direction := dir;
                     guard_string := ConjunctLearner.to_string c;
+                    guard_size := ConjunctLearner.length c;
                     pos := v;
                 end
                 | _ -> ()
@@ -189,10 +194,13 @@ let process_pair (lhs : ConcretizedMT.t)
         (* if the results are worth reporting, print 'em *)
         if !okay_to_report && (s > 0.0) then begin
             if !csv_flag then begin
-                let formula = pair_string !direction in
-                let s_string = string_of_float s in
-                let p_string = string_of_int !pos in
-                print_endline (String.concat "\t" [formula;s_string;p_string]);
+                let fs = pair_string !direction in
+                let ps = string_of_int !pos in
+                let vars_used = (ConcretizedMT.variables lhs) @ (ConcretizedMT.variables rhs) in
+                let vs = string_of_int (List.length (List.sort_uniq Pervasives.compare vars_used)) in
+                let hs = string_of_int (List.length vars_used) in
+                let gs = string_of_int !guard_size in
+                print_endline (String.concat "\t" [fs;ps;vs;hs;gs]);
             end else begin
                 print_endline (pair_string !direction);
                 noisy_print ("\t" ^ (counts_to_string counts));
