@@ -1,0 +1,18 @@
+True === True | 	0.5	1
+matrix_inv(x) = y === matrix_inv(y) = x | 	10.	40
+matrix_transpose(x) = y === matrix_transpose(y) = x | 	27.	108
+matrix_det(x) = a === matrix_det(matrix_inv(x)) = a | 	8.	40
+matrix_det(x) = a === matrix_det(matrix_transpose(x)) = a | 	21.6	108
+True === matrix_inv(matrix_inv(x)) = x | 	10.	40
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_inv(y)) = x | 	6.66666666667	40
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(y)) = x | 	6.66666666667	40
+matrix_is_lower(x) = p === matrix_is_lower(matrix_inv(x)) = p | 	8.	40
+matrix_is_upper(x) = p === matrix_is_lower(matrix_transpose(x)) = p | 	21.6	108
+matrix_is_symmetric(x) = p === matrix_is_symmetric(matrix_inv(x)) = p | 	8.	40
+matrix_is_symmetric(x) = p === matrix_is_symmetric(matrix_transpose(x)) = p | 	21.6	108
+matrix_is_upper(x) = p === matrix_is_upper(matrix_inv(x)) = p | 	8.	40
+matrix_is_lower(x) = p === matrix_is_upper(matrix_transpose(x)) = p | 	21.6	108
+matrix_inv(matrix_transpose(x)) = x === matrix_transpose(matrix_inv(x)) = x | 	1.33333333333	8
+matrix_inv(matrix_transpose(x)) = y === matrix_transpose(matrix_inv(x)) = y | 	6.66666666667	40
+True === matrix_transpose(matrix_transpose(x)) = x | 	27.	108
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_transpose(x)) = y | 	6.66666666667	40
