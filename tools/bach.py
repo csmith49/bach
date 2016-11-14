@@ -100,14 +100,17 @@ def gather_results(output):
 # ----------------------------------------
 # now we do the fun stuff
 # ----------------------------------------
-CMD = "./bach.native -induct /tmp/tmp.sexp -fact {fact_dir} -maxdepth {depth} -csv"
+CMD = "./bach.native -induct /tmp/tmp.sexp -fact {fact_dir} -mindepth {depth} -csv"
 
-def bach(config, fact_dir, depth, time):
+def bach(config, fact_dir, depth, time, abduce):
     cmd = CMD.format(fact_dir=fact_dir, depth=depth)
+    if abduce:
+        cmd += " -abduce"
     with open(config) as f:
         signature = f.read()
     result_strings = []
     for sexp in split_signature(signature):
+        print ("running combo")
         with open("/tmp/tmp.sexp", "w") as f:
             f.write(sexp)
         result_strings.append(do_it(cmd, time))
@@ -122,11 +125,12 @@ if __name__ == "__main__":
     parser.add_argument("grammar")
     parser.add_argument("facts")
     parser.add_argument("-t", "--timeout", default=1000)
-    parser.add_argument("-d", "--depth", default=7)
+    parser.add_argument("-d", "--depth", default=0)
+    parser.add_argument("-a", "--abduce", default=False)
 
     args = parser.parse_args()
 
-    results = bach(args.grammar, args.facts, args.depth, args.timeout)
+    results = bach(args.grammar, args.facts, args.depth, float(args.timeout), args.abduce)
 
     for result in sorted(results, key=lambda r: r.score(), reverse=True):
         print(repr(result))
