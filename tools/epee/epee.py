@@ -80,7 +80,7 @@ def int_gen():
 def fp_gen():
     from random import randint
     while True:
-        yield randint(0, 16)
+        yield randint(0, 198)
 
 @add_generator('string')
 def string_gen():
