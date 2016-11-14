@@ -25,7 +25,7 @@ def geometry_encloses(r1 : "rect", r2: "rect"):
 
     return poly1.encloses(poly2)
 
-def geometry_rotate(r : "rect", angle: "int"):
+def geometry_rotate(r : "rect", angle: "rad"):
     from sympy import pi
     x,y,size = r
     poly = createPoly(x,y,size)
