@@ -1,0 +1,1921 @@
+
+ff_mult_inv(x) = y <== ff_mult_inv(y) = x, ff_mult_inv(z) = z | 	396	6	3	5	0
+True === ff_add_inv(ff_add_inv(x)) = x | 	199	4	1	1	0
+ff_add_inv(x) = x <== ff_add_inv(y) = z | eq0(x)	199	4	3	3	1
+ff_add_inv(x) = y ==> ff_add_inv(z) = z | eq0(z)	199	4	3	3	1
+ff_add_inv(x) = y === ff_add_inv(y) = x | 	199	4	2	4	0
+True === ff_mult_inv(ff_mult_inv(x)) = x | 	198	4	1	1	0
+ff_add_inv(x) = x <== ff_mult_inv(y) = z | eq0(x)	198	4	3	3	1
+ff_mult_inv(x) = y ==> ff_add_inv(z) = z | eq0(z)	198	4	3	3	1
+ff_mult_inv(x) = y === ff_mult_inv(y) = x | 	198	4	2	4	0
+True === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(x)	199	5	3	3	1
+ff_add_inv(x) = x <== ff_add_inv(ff_add_inv(y)) = z | eq0(x)	199	5	3	3	1
+True === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(z)	199	5	3	3	1
+ff_add_inv(ff_add_inv(x)) = y ==> ff_add_inv(z) = z | eq0(z)	199	5	3	3	1
+ff_add_inv(ff_mult_inv(x)) = y ==> ff_add_inv(z) = z | eq0(z)	198	5	3	3	1
+ff_add_inv(x) = x <== ff_mult_inv(ff_mult_inv(y)) = z | eq0(x)	198	5	3	3	1
+ff_add_inv(x) = x <== ff_mult_inv(ff_add_inv(y)) = z | eq0(x)	198	5	3	3	1
+ff_add_inv(x) = x <== ff_add_inv(ff_mult_inv(y)) = z | eq0(x)	198	5	3	3	1
+ff_add(x, y) = x === ff_add(z, y) = z | 	225	6	3	4	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(z) = y | 	199	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(x) = z, ff_add_inv(y) = x | 	199	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(z) = z | 	199	6	3	5	0
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(x)	199	6	3	3	1
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(y) = z | 	199	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(z) = x | 	199	6	3	5	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(y)) = x | 	199	6	2	4	0
+ff_mult_inv(x) = y <== ff_mult_inv(y) = x, ff_mult_inv(z) = x | 	198	6	3	5	0
+ff_mult_inv(x) = y <== ff_mult_inv(y) = x, ff_mult_inv(y) = z | 	198	6	3	5	0
+ff_add_inv(ff_add_inv(x)) = y === ff_mult_inv(ff_mult_inv(x)) = y | 	198	6	2	4	0
+ff_mult_inv(ff_mult_inv(x)) = y === ff_mult_inv(ff_mult_inv(y)) = x | 	198	6	2	4	0
+ff_add_inv(ff_mult_inv(x)) = y === ff_add_inv(ff_mult_inv(y)) = x | 	198	6	2	4	0
+ff_mult_inv(x) = y <== ff_mult_inv(x) = z, ff_mult_inv(y) = x | 	198	6	3	5	0
+ff_mult_inv(x) = y <== ff_mult_inv(y) = x, ff_mult_inv(z) = y | 	198	6	3	5	0
+ff_add_inv(ff_mult_inv(x)) = y === ff_mult_inv(ff_add_inv(x)) = y | 	198	6	2	4	0
+ff_mult(x, y) = y === ff_mult(x, z) = z | Not(eq0(y)), Not(eq0(z))	196	6	3	4	2
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(x) = z, ff_add_inv(z) = y | 	199	7	3	5	0
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(z) = x, ff_add_inv(z) = y | 	199	7	3	5	0
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(x) = z, ff_add_inv(y) = z | 	199	7	3	5	0
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(y) = z, ff_add_inv(z) = x | 	199	7	3	5	0
+ff_mult(ff_mult_inv(x), x) = y === ff_mult(ff_mult_inv(z), z) = y | 	225	8	3	4	0
+ff_mult(x, y) = z === ff_mult(y, x) = z | 	130	6	3	6	0
+ff_mult(x, y) = x <== ff_mult(ff_mult_inv(z), z) = y | 	135	7	3	4	0
+ff_add(x, y) = x ==> ff_mult(z, y) = y | 	105	6	3	4	0
+ff_mult(x, y) = z === ff_mult(ff_mult_inv(x), z) = y | 	116	7	3	6	0
+ff_add(x, y) = z === ff_add(ff_add_inv(x), z) = y | 	100	7	3	6	0
+ff_add(x, y) = z === ff_add(y, x) = z | 	81	6	3	6	0
+ff_mult(x, y) = x === ff_mult(z, y) = z | Not(eq0(x)), Not(eq0(z))	81	6	3	4	2
+ff_mult(x, y) = z === ff_mult(z, ff_mult_inv(x)) = y | 	92	7	3	6	0
+ff_add(x, y) = z === ff_add(z, ff_add_inv(x)) = y | 	92	7	3	6	0
+ff_add(x, ff_mult_inv(y)) = z === ff_add(ff_mult_inv(y), x) = z | 	79	8	3	6	0
+ff_mult(x, y) = x === ff_mult(x, z) = x | eq0(x)	49	6	3	4	1
+ff_mult(x, y) = y === ff_mult(z, y) = y | eq0(y)	49	6	3	4	1
+ff_mult_inv(x) = x ==> ff_add(y, z) = y | eq0(z)	30	5	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, z) = z | eq0(x)	21	5	3	3	1
+True === ff_add(x, y) = x | eq0(y)	15	4	2	2	1
+ff_mult(x, y) = x ==> ff_add_inv(z) = z | eq0(z)	16	5	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, z) = y | eq0(x)	16	5	3	3	1
+ff_mult_inv(x) = x ==> ff_add(y, z) = z | eq0(y)	16	5	3	3	1
+ff_mult_inv(x) = y ==> ff_add(y, z) = y | eq0(z)	15	5	3	4	1
+ff_mult_inv(x) = y ==> ff_add(x, z) = x | eq0(z)	15	5	3	4	1
+True === ff_add(x, ff_add_inv(y)) = x | eq0(y)	15	5	2	2	1
+ff_add_inv(x) = x === ff_add(y, x) = y | 	15	5	2	3	0
+ff_add(x, y) = z ==> ff_add_inv(y) = y | eq0(y)	15	5	3	4	1
+ff_add_inv(x) = x <== ff_add(y, x) = z | eq0(x)	15	5	3	4	1
+ff_mult_inv(x) = x ==> ff_mult(y, z) = z | eq0(z)	14	5	3	3	1
+ff_mult_inv(x) = x ==> ff_mult(y, z) = y | eq0(y)	14	5	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, z) = x | eq0(x)	14	5	3	4	1
+ff_mult(x, y) = z ==> ff_add_inv(z) = z | eq0(z)	14	5	3	4	1
+ff_mult_inv(x) = x <== ff_mult(x, y) = y | Not(eq0(y))	14	5	2	3	1
+ff_add_inv(x) = y === ff_add(ff_add_inv(x), z) = y | eq0(z)	15	6	3	5	1
+ff_add(x, y) = z === ff_mult_inv(ff_mult_inv(x)) = z | eq0(y)	15	6	3	5	1
+ff_add_inv(x) = x <== ff_add(y, ff_add_inv(x)) = z | eq0(x)	15	6	3	4	1
+ff_add(x, y) = z === ff_add_inv(ff_add_inv(x)) = z | eq0(y)	15	6	3	5	1
+ff_mult_inv(x) = y === ff_add(ff_mult_inv(x), z) = y | eq0(z)	15	6	3	5	1
+ff_add(x, y) = z === ff_add_inv(ff_add_inv(z)) = x | eq0(y)	15	6	3	5	1
+ff_mult_inv(x) = x <== ff_mult(ff_mult_inv(y), y) = x | 	15	6	2	3	0
+ff_add_inv(x) = x === ff_add(y, ff_add_inv(x)) = y | 	15	6	2	3	0
+ff_add(x, y) = x <== ff_add(x, y) = z | eq0(y)	15	6	3	5	1
+ff_add(x, y) = x === ff_add(x, z) = x | eq0(y), eq0(z)	15	6	3	4	2
+ff_add(x, y) = z === ff_mult_inv(ff_mult_inv(z)) = x | eq0(y)	15	6	3	5	1
+ff_mult_inv(x) = y === ff_add(ff_mult_inv(y), z) = x | eq0(z)	15	6	3	5	1
+ff_add(x, y) = x <== ff_mult_inv(ff_mult_inv(z)) = x | eq0(y)	15	6	3	4	1
+ff_add(x, y) = z === ff_add(z, y) = x | eq0(y)	15	6	3	6	1
+ff_add(x, y) = x <== ff_mult_inv(ff_mult_inv(x)) = z | eq0(y)	15	6	3	4	1
+ff_add_inv(x) = x <== ff_add(ff_add_inv(y), x) = z | eq0(x)	15	6	3	4	1
+ff_add(x, y) = z ==> ff_add(z, y) = z | eq0(y)	15	6	3	5	1
+ff_mult_inv(x) = x <== ff_mult(y, ff_mult_inv(y)) = x | 	15	6	2	3	0
+ff_add(x, y) = x <== ff_add(z, y) = x | eq0(y)	15	6	3	5	1
+ff_add(x, y) = z ==> ff_add(x, y) = x | eq0(y)	15	6	3	5	1
+ff_add_inv(x) = y === ff_add(ff_add_inv(y), z) = x | eq0(z)	15	6	3	5	1
+ff_mult_inv(x) = x <== ff_mult(ff_mult_inv(x), y) = y | Not(eq0(y))	14	6	2	3	1
+ff_mult_inv(x) = x ==> ff_mult(y, ff_mult_inv(z)) = y | eq0(y)	14	6	3	3	1
+ff_mult_inv(x) = x ==> ff_mult(ff_mult_inv(y), z) = z | eq0(z)	14	6	3	3	1
+True === ff_mult(x, y) = z | eq0(z)	9	4	3	3	1
+ff_add(x, x) = y ==> ff_add_inv(z) = z | eq0(z)	11	5	3	3	1
+ff_add_inv(x) = x <== ff_add(y, y) = z | eq0(x)	11	5	3	3	1
+ff_add(x, y) = z === ff_add(x, ff_add_inv(y)) = z | eq0(y)	15	7	3	6	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(z), y) = x | eq0(y)	15	7	3	5	1
+True === ff_add(x, y) = y | eq0(x)	8	4	2	2	1
+ff_mult_inv(x) = x <== ff_mult(y, x) = y | Not(eq0(y))	9	5	2	3	1
+True === ff_mult(x, y) = y | eq0(y)	7	4	2	2	1
+True === ff_mult(x, y) = x | eq0(x)	7	4	2	2	1
+ff_add_inv(x) = x <== ff_add(ff_add_inv(y), z) = y | eq0(x)	10	6	3	3	1
+ff_add_inv(x) = x <== ff_add(y, ff_add_inv(z)) = z | eq0(x)	10	6	3	3	1
+ff_add(x, y) = z === ff_add_inv(y) = x | eq0(z)	8	5	3	5	1
+True === ff_add(ff_add_inv(x), x) = y | eq0(y)	8	5	2	2	1
+ff_add(x, y) = z ==> ff_add_inv(x) = x | eq0(x)	8	5	3	4	1
+True === ff_add(x, ff_add_inv(x)) = y | eq0(y)	8	5	2	2	1
+ff_add_inv(x) = x === ff_add(x, y) = y | 	8	5	2	3	0
+ff_add_inv(x) = x <== ff_add(x, y) = z | eq0(x)	8	5	3	4	1
+ff_add(x, y) = z ==> ff_add_inv(z) = z | eq0(z)	8	5	3	4	1
+True === ff_add(ff_add_inv(x), y) = y | eq0(x)	8	5	2	2	1
+ff_add(x, y) = z === ff_add_inv(x) = y | eq0(z)	8	5	3	5	1
+ff_mult_inv(x) = y ==> ff_add(z, x) = x | eq0(z)	8	5	3	4	1
+ff_mult_inv(x) = y ==> ff_add(z, y) = y | eq0(z)	8	5	3	4	1
+ff_add_inv(x) = x <== ff_add(y, z) = x | eq0(x)	8	5	3	4	1
+ff_add_inv(x) = y === ff_add(y, x) = z | eq0(z)	8	5	3	5	1
+ff_add_inv(x) = y === ff_add(x, y) = z | eq0(z)	8	5	3	5	1
+ff_mult_inv(x) = x <== ff_mult(y, ff_mult_inv(x)) = y | Not(eq0(y))	9	6	2	3	1
+ff_add(x, ff_add(y, x)) = x === ff_add(z, ff_add(y, x)) = z | 	15	10	3	5	0
+True === ff_mult(x, ff_mult_inv(y)) = x | eq0(x)	7	5	2	2	1
+ff_mult_inv(x) = y ==> ff_mult(y, z) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = x === ff_mult(y, x) = z | eq0(x), eq0(z)	7	5	3	4	2
+ff_add_inv(x) = y === ff_mult(x, z) = y | eq0(x)	7	5	3	5	1
+ff_add_inv(x) = y ==> ff_mult(x, z) = z | eq0(z)	7	5	3	4	1
+ff_mult(x, y) = z === ff_add_inv(z) = x | eq0(x)	7	5	3	5	1
+ff_mult(x, y) = z === ff_add_inv(y) = z | eq0(y)	7	5	3	5	1
+ff_add_inv(x) = x === ff_mult(x, y) = z | eq0(x), eq0(z)	7	5	3	4	2
+ff_mult(x, y) = x === ff_add_inv(z) = x | eq0(x), eq0(z)	7	5	3	4	2
+ff_mult(x, y) = x <== ff_add_inv(x) = x | 	7	5	2	3	0
+ff_add_inv(x) = y ==> ff_mult(y, z) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = x ==> ff_mult(y, x) = x | 	7	5	2	3	0
+ff_mult(x, y) = z === ff_add_inv(x) = z | eq0(x)	7	5	3	5	1
+ff_mult_inv(x) = y ==> ff_mult(x, z) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = y === ff_mult(z, y) = y | eq0(x), eq0(y)	7	5	3	4	2
+ff_mult(x, y) = x <== ff_add_inv(y) = z | eq0(x)	7	5	3	4	1
+ff_mult(x, y) = z === ff_add_inv(y) = y | eq0(y), eq0(z)	7	5	3	4	2
+ff_mult(x, y) = x <== ff_add_inv(z) = y | eq0(x)	7	5	3	4	1
+ff_mult(x, y) = z === ff_add_inv(x) = x | eq0(x), eq0(z)	7	5	3	4	2
+True === ff_mult(ff_mult_inv(x), y) = y | eq0(y)	7	5	2	2	1
+ff_mult(x, y) = z === ff_add_inv(z) = y | eq0(y)	7	5	3	5	1
+ff_mult_inv(x) = y ==> ff_mult(z, y) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = x ==> ff_mult(x, y) = x | 	7	5	2	3	0
+ff_add_inv(x) = y ==> ff_mult(z, x) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = y === ff_mult(y, z) = x | eq0(y)	7	5	3	5	1
+ff_add_inv(x) = y === ff_mult(z, x) = y | eq0(x)	7	5	3	5	1
+ff_add_inv(x) = y === ff_mult(y, z) = y | eq0(x), eq0(y)	7	5	3	4	2
+ff_add_inv(x) = y === ff_mult(z, x) = x | eq0(x), eq0(y)	7	5	3	4	2
+ff_mult(x, y) = x === ff_add_inv(x) = z | eq0(x), eq0(z)	7	5	3	4	2
+ff_add_inv(x) = y === ff_mult(x, z) = x | eq0(x), eq0(y)	7	5	3	4	2
+ff_mult_inv(x) = y ==> ff_mult(z, x) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = y === ff_mult(z, y) = x | eq0(y)	7	5	3	5	1
+ff_add_inv(x) = y ==> ff_mult(z, y) = z | eq0(z)	7	5	3	4	1
+ff_add_inv(x) = x <== ff_add(ff_add_inv(y), z) = x | eq0(x)	8	6	3	4	1
+ff_add(x, y) = z === ff_mult_inv(ff_mult_inv(y)) = z | eq0(x)	8	6	3	5	1
+ff_add_inv(x) = x === ff_add(ff_add_inv(x), y) = y | 	8	6	2	3	0
+ff_add(x, y) = z === ff_add_inv(ff_add_inv(y)) = z | eq0(x)	8	6	3	5	1
+ff_mult_inv(x) = y === ff_add(z, ff_mult_inv(y)) = x | eq0(z)	8	6	3	5	1
+ff_mult_inv(x) = y === ff_add(z, ff_mult_inv(x)) = y | eq0(z)	8	6	3	5	1
+ff_add_inv(x) = x <== ff_add(ff_add_inv(x), y) = z | eq0(x)	8	6	3	4	1
+ff_add(x, y) = z === ff_add(x, z) = y | eq0(x)	8	6	3	6	1
+True === ff_add(x, ff_add(x, y)) = y | eq0(x)	8	6	2	2	1
+ff_add_inv(x) = x <== ff_add(x, ff_add_inv(y)) = z | eq0(x)	8	6	3	4	1
+ff_add_inv(x) = x <== ff_add(y, ff_add_inv(z)) = x | eq0(x)	8	6	3	4	1
+ff_add(x, y) = z === ff_mult_inv(ff_mult_inv(z)) = y | eq0(x)	8	6	3	5	1
+ff_add_inv(x) = x === ff_add(y, ff_add_inv(y)) = x | 	8	6	2	3	0
+ff_add_inv(x) = x === ff_add(ff_add_inv(y), y) = x | 	8	6	2	3	0
+True === ff_add(x, ff_add(y, z)) = z | eq0(x), eq0(y)	8	6	3	3	2
+ff_add_inv(x) = y === ff_add(z, ff_add_inv(x)) = y | eq0(z)	8	6	3	5	1
+ff_add(x, y) = z === ff_add_inv(ff_add_inv(z)) = y | eq0(x)	8	6	3	5	1
+ff_add_inv(x) = y === ff_add(z, ff_add_inv(y)) = x | eq0(z)	8	6	3	5	1
+ff_mult(x, y) = x === ff_mult(x, ff_mult_inv(y)) = x | 	9	7	2	4	0
+ff_mult(x, y) = x === ff_mult(z, y) = x | eq0(z)	7	6	3	5	1
+ff_mult(x, y) = z === ff_mult(x, z) = z | eq0(y)	7	6	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(x, z) = y | eq0(x)	7	6	3	5	1
+ff_mult(x, y) = x === ff_mult(x, y) = z | eq0(x), eq0(z)	7	6	3	5	2
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(z, y) = y | eq0(x), eq0(y)	7	6	3	4	2
+ff_mult_inv(x) = y ==> ff_mult(z, ff_mult_inv(y)) = z | eq0(z)	7	6	3	4	1
+ff_mult(x, y) = z === ff_mult(z, y) = z | eq0(x)	7	6	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(z, x) = y | eq0(x)	7	6	3	5	1
+ff_mult(x, y) = z === ff_mult(x, y) = y | eq0(y), eq0(z)	7	6	3	5	2
+ff_mult(x, y) = y === ff_mult(x, y) = z | eq0(y), eq0(z)	7	6	3	5	2
+ff_add_inv(ff_add_inv(x)) = y ==> ff_mult(x, z) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(y, z) = x | eq0(y)	7	6	3	5	1
+ff_mult_inv(x) = y ==> ff_mult(ff_mult_inv(y), z) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y ==> ff_mult(y, z) = z | eq0(z)	7	6	3	4	1
+ff_mult(x, y) = x <== ff_mult_inv(ff_mult_inv(y)) = z | eq0(x)	7	6	3	4	1
+ff_mult_inv(x) = y ==> ff_mult(ff_mult_inv(x), z) = z | eq0(z)	7	6	3	4	1
+ff_mult(x, y) = z === ff_mult(z, y) = x | eq0(x)	7	6	3	6	1
+ff_mult(x, y) = z === ff_mult(x, z) = y | eq0(y)	7	6	3	6	1
+ff_mult(x, y) = y === ff_mult(x, z) = y | eq0(z)	7	6	3	5	1
+ff_mult_inv(x) = y ==> ff_mult(z, ff_mult_inv(x)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(z, y) = x | eq0(y)	7	6	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(x, z) = x | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(y, z) = y | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(ff_add_inv(x)) = y ==> ff_mult(z, y) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_mult(z, x) = x | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(ff_add_inv(x)) = y ==> ff_mult(z, x) = z | eq0(z)	7	6	3	4	1
+ff_mult(x, y) = x <== ff_mult_inv(ff_mult_inv(z)) = y | eq0(x)	7	6	3	4	1
+ff_mult(x, y) = z === ff_mult(x, y) = x | eq0(x), eq0(z)	7	6	3	5	2
+ff_add(x, y) = z <== ff_add_inv(y) = x, ff_add_inv(z) = z | 	8	7	3	6	0
+ff_add(x, y) = z <== ff_add_inv(x) = y, ff_add_inv(z) = z | 	8	7	3	6	0
+ff_add(x, y) = z === ff_add(ff_add_inv(x), y) = z | eq0(x)	8	7	3	6	1
+ff_add(x, y) = z === ff_add_inv(x) = y, ff_add_inv(y) = x | eq0(z)	8	7	3	5	1
+ff_mult(x, y) = z <== ff_add_inv(z) = y, ff_add_inv(z) = z | 	7	7	3	5	0
+ff_mult(x, y) = x <== ff_add_inv(x) = x, ff_add_inv(z) = z | 	7	7	3	4	0
+ff_mult(x, y) = z <== ff_add_inv(x) = z, ff_add_inv(z) = z | 	7	7	3	5	0
+ff_mult(x, y) = z === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(x)	7	7	3	5	1
+ff_mult(x, y) = z <== ff_add_inv(x) = x, ff_add_inv(z) = x | 	7	7	3	5	0
+ff_mult(x, y) = z <== ff_add_inv(x) = x, ff_add_inv(x) = z | 	7	7	3	5	0
+ff_mult(x, y) = z === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(y)	7	7	3	5	1
+ff_mult(x, y) = z <== ff_add_inv(y) = y, ff_add_inv(y) = z | 	7	7	3	5	0
+True === ff_mult(ff_mult_inv(x), y) = z | eq0(z)	5	5	3	3	1
+True === ff_add(x, y) = z | eq0(z)	4	4	3	3	1
+ff_mult(x, y) = z <== ff_add_inv(x) = x, ff_add_inv(z) = z | 	7	7	3	5	0
+ff_mult(x, y) = z <== ff_add_inv(y) = y, ff_add_inv(z) = y | 	7	7	3	5	0
+ff_add(x, y) = z === ff_add(x, ff_add(x, z)) = y | eq0(x)	8	8	3	6	1
+ff_mult(x, y) = z <== ff_add_inv(y) = y, ff_add_inv(z) = z | 	7	7	3	5	0
+ff_mult(x, y) = x <== ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(x)	7	7	3	4	1
+ff_mult(x, y) = z <== ff_add_inv(y) = z, ff_add_inv(z) = z | 	7	7	3	5	0
+ff_mult(x, y) = x <== ff_add_inv(x) = x, ff_add_inv(z) = x | 	7	7	3	4	0
+ff_mult(x, y) = x === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(x), eq0(z)	7	7	3	4	2
+ff_mult(x, y) = x <== ff_add_inv(z) = x, ff_add_inv(z) = z | 	7	7	3	4	0
+ff_mult(x, y) = x <== ff_add_inv(x) = z, ff_add_inv(z) = z | 	7	7	3	4	0
+ff_mult(x, y) = z <== ff_add_inv(z) = x, ff_add_inv(z) = z | 	7	7	3	5	0
+ff_mult(x, y) = x <== ff_add_inv(x) = x, ff_add_inv(y) = z | 	7	7	3	5	0
+ff_mult(x, y) = x <== ff_add_inv(x) = x, ff_add_inv(x) = z | 	7	7	3	4	0
+ff_mult(x, y) = x <== ff_add_inv(x) = x, ff_add_inv(z) = y | 	7	7	3	5	0
+ff_add(x, y) = z === ff_add(x, ff_add(x, y)) = z | eq0(x)	8	8	3	6	1
+True === ff_add(ff_add_inv(x), y) = z | eq0(z)	4	5	3	3	1
+True === ff_mult(x, ff_mult_inv(y)) = z | eq0(z)	4	5	3	3	1
+True === ff_add(x, ff_add_inv(y)) = z | eq0(z)	4	5	3	3	1
+True === ff_add(ff_mult_inv(x), y) = z | eq0(z)	4	5	3	3	1
+ff_add(x, ff_add(x, y)) = z === ff_add(x, ff_add(x, z)) = y | 	8	10	3	6	0
+True === ff_add(x, ff_mult_inv(y)) = z | eq0(z)	4	5	3	3	1
+ff_add_inv(x) = y === ff_mult_inv(z) = z | eq0(y)	2	4	3	3	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y | eq0(y)	2	4	2	2	1
+ff_add_inv(x) = x <== ff_mult_inv(y) = y | eq0(x)	2	4	2	2	1
+ff_mult_inv(x) = x === ff_add_inv(y) = z | eq0(z)	2	4	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, y) = z | eq0(x)	2	5	3	3	1
+ff_mult_inv(x) = x === ff_add_inv(ff_add_inv(y)) = z | eq0(z)	2	5	3	3	1
+ff_mult(x, x) = y ==> ff_add_inv(z) = z | eq0(z)	2	5	3	3	1
+ff_add(x, ff_add(x, y)) = z === ff_add(x, ff_add(y, x)) = z | 	4	10	3	6	0
+True === ff_add_inv(x) = y | eq0(y)	1	3	2	2	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(y)	2	6	3	4	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y, ff_add_inv(z) = y | eq0(y)	2	6	3	3	1
+True === ff_add(x, ff_add(y, z)) = y | eq0(x), eq0(z)	2	6	3	3	2
+ff_mult_inv(x) = x ==> ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(z)	2	6	3	4	1
+ff_mult_inv(x) = y <== ff_mult_inv(y) = x, ff_mult_inv(y) = y | 	2	6	2	4	0
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y, ff_add_inv(z) = z | eq0(y)	2	6	3	3	1
+ff_mult_inv(x) = x <== ff_mult_inv(x) = y, ff_mult_inv(y) = y | 	2	6	2	3	0
+ff_add(x, y) = z === ff_add(y, z) = x | eq0(y)	2	6	3	6	1
+ff_add(x, y) = z ==> ff_add(z, x) = z | eq0(x)	2	6	3	5	1
+ff_add(x, y) = z === ff_add(z, x) = y | eq0(x)	2	6	3	6	1
+ff_add(x, y) = z ==> ff_add(y, x) = y | eq0(x)	2	6	3	5	1
+ff_add(x, y) = x === ff_add(y, x) = x | 	2	6	2	4	0
+ff_mult_inv(x) = y <== ff_mult_inv(x) = x, ff_mult_inv(y) = x | 	2	6	2	4	0
+ff_mult_inv(x) = x <== ff_mult_inv(y) = x, ff_mult_inv(y) = y | 	2	6	2	3	0
+ff_add(x, y) = x <== ff_add(y, z) = x | eq0(y)	2	6	3	5	1
+True === ff_add_inv(x) = x | eq0(x)	1	3	1	1	1
+ff_mult_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(z)	2	6	3	3	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = z, ff_add_inv(z) = z | eq0(z)	2	6	3	3	1
+True === ff_add(x, ff_add(y, x)) = y | eq0(x)	2	6	2	2	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(y)	2	6	3	3	1
+ff_add(x, y) = x <== ff_add(y, x) = z | eq0(y)	2	6	3	5	1
+ff_mult(x, y) = x === ff_mult(ff_mult_inv(y), x) = x | 	2	7	2	4	0
+ff_add(x, y) = x <== ff_add(y, ff_mult_inv(z)) = x | eq0(y)	2	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(x), y) = z | eq0(y)	2	7	3	5	1
+ff_add(x, y) = z === ff_add(y, ff_add_inv(x)) = z | eq0(x)	2	7	3	6	1
+ff_mult(x, y) = z === ff_add(x, ff_add(z, y)) = y | eq0(x)	2	8	3	6	1
+ff_add(x, y) = x === ff_add(y, ff_add(y, x)) = x | 	2	8	2	4	0
+ff_add(x, y) = x <== ff_add(y, ff_add(y, x)) = z | eq0(y)	2	8	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = x | eq0(y)	1	4	2	3	1
+ff_add_inv(x) = x === ff_add_inv(x) = y | eq0(y)	1	4	2	3	1
+ff_add(x, y) = z === ff_add(x, ff_add(y, x)) = z | eq0(x)	2	8	3	6	1
+ff_add_inv(x) = y === ff_add_inv(z) = x | eq0(x)	1	4	3	4	1
+True === ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	4	2	2	1
+ff_add(x, y) = x === ff_add(y, ff_add(z, x)) = x | eq0(z)	2	8	3	5	1
+ff_add(x, y) = x === ff_add(y, ff_add(x, z)) = x | eq0(z)	2	8	3	5	1
+ff_add(x, y) = z === ff_add(y, ff_add(x, y)) = z | eq0(y)	2	8	3	6	1
+ff_add(x, y) = x === ff_add(z, ff_add(y, x)) = x | eq0(z)	2	8	3	5	1
+ff_mult(x, y) = z === ff_add(z, ff_add(x, y)) = y | eq0(x)	2	8	3	6	1
+ff_add(x, y) = x <== ff_add(y, ff_add(x, y)) = z | eq0(y)	2	8	3	5	1
+ff_add(x, y) = z === ff_add(x, ff_add(z, x)) = y | eq0(x)	2	8	3	6	1
+ff_add_inv(x) = x === ff_add_inv(y) = y | eq0(x), eq0(y)	1	4	2	2	2
+ff_add(x, y) = z === ff_add(y, ff_add(y, x)) = z | eq0(y)	2	8	3	6	1
+ff_add_inv(x) = y === ff_add_inv(x) = x | eq0(y)	1	4	2	3	1
+ff_add(x, y) = z === ff_add(y, ff_add(y, z)) = x | eq0(y)	2	8	3	6	1
+ff_add_inv(x) = y === ff_add_inv(x) = z | eq0(x)	1	4	3	4	1
+ff_add(x, y) = x === ff_add(y, ff_add(x, y)) = x | 	2	8	2	4	0
+ff_add_inv(x) = y === ff_add_inv(y) = z | eq0(y)	1	4	3	4	1
+ff_add(x, ff_mult_inv(x)) = y === ff_add(ff_mult_inv(x), x) = y | 	2	8	2	4	0
+ff_add_inv(x) = y === ff_add_inv(z) = y | eq0(y)	1	4	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = y | eq0(x)	1	4	2	3	1
+ff_add(x, y) = z === ff_add(y, ff_add(z, y)) = x | eq0(y)	2	8	3	6	1
+ff_add(x, y) = x <== ff_add(y, ff_add(z, y)) = x | eq0(y)	2	8	3	5	1
+ff_add(x, y) = x <== ff_add(y, ff_add(y, z)) = x | eq0(y)	2	8	3	5	1
+ff_add(x, y) = x === ff_add(z, ff_add(x, y)) = x | eq0(z)	2	8	3	5	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(y)) = x | eq0(x)	1	5	2	4	1
+ff_add_inv(x) = x === ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	5	2	3	1
+True === ff_add_inv(x) = x, ff_add_inv(x) = y | eq0(x)	1	5	2	2	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = z | eq0(y)	1	5	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = y | eq0(x)	1	5	2	3	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(x)) = y | eq0(x)	1	5	2	4	1
+True === ff_add_inv(x) = y, ff_add_inv(y) = x | eq0(y)	1	5	2	2	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	5	3	4	1
+True === ff_add_inv(x) = x, ff_add_inv(y) = x | eq0(x)	1	5	2	2	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = z | eq0(x)	1	5	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	5	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(z) = x | eq0(x)	1	5	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	5	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(z) = y | eq0(y)	1	5	3	4	1
+True === ff_add_inv(x) = y, ff_add_inv(y) = y | eq0(y)	1	5	2	2	1
+True === ff_add_inv(x) = y, ff_add_inv(x) = z | eq0(z)	1	5	3	3	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	5	3	4	1
+True === ff_add_inv(x) = y, ff_add_inv(z) = x | eq0(z)	1	5	3	3	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y | eq0(x)	1	5	2	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = x | eq0(x)	1	5	2	4	1
+True === ff_add_inv(x) = x, ff_add_inv(y) = y | eq0(x)	1	5	2	2	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = x | eq0(y)	1	5	2	3	1
+True === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(z)	1	5	3	3	1
+True === ff_add_inv(x) = y, ff_add_inv(z) = y | eq0(z)	1	5	3	3	1
+ff_add_inv(x) = x === ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	5	2	3	1
+ff_add_inv(x) = x === ff_add_inv(x) = z, ff_add_inv(y) = x | eq0(z)	1	6	3	4	1
+ff_add(x, y) = x <== ff_mult(x, z) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(x) = y, ff_add_inv(y) = y | 	1	6	2	3	0
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(z) = y | eq0(x)	1	6	3	4	1
+ff_add(x, y) = x <== ff_add(z, x) = y | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(z) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y <== ff_add_inv(x) = x, ff_add_inv(y) = x | 	1	6	2	4	0
+ff_add_inv(x) = x === ff_add_inv(x) = z, ff_add_inv(y) = z | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x | 	1	6	2	4	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(y) = x | eq0(y)	1	6	2	3	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = y <== ff_add_inv(x) = x, ff_add_inv(y) = y | 	1	6	2	4	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(x) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(z) = x | eq0(z)	1	6	3	4	1
+ff_add(x, y) = x <== ff_mult(x, x) = z | eq0(y)	1	6	3	4	1
+ff_add(x, y) = x <== ff_add(z, z) = x | eq0(y)	1	6	3	4	1
+ff_mult(x, y) = x === ff_mult(y, x) = x | 	1	6	2	4	0
+ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(z) = z | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(z) = z | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(z) = z | eq0(z), eq0(x)	1	6	3	3	2
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(z) = z | eq0(x), eq0(y)	1	6	3	3	2
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(x)	1	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(z) = y | eq0(x), eq0(y)	1	6	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x), eq0(y)	1	6	3	3	2
+ff_add(x, y) = z ==> ff_add(y, z) = y | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = x <== ff_add_inv(y) = x, ff_add_inv(y) = y | 	1	6	2	3	0
+ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z | eq0(z)	1	6	3	4	1
+ff_add(x, x) = y ==> ff_add(y, z) = y | eq0(z)	1	6	3	4	1
+ff_add(x, y) = x === ff_mult(z, x) = y | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(z) = y | eq0(y)	1	6	3	5	1
+ff_add(x, y) = x === ff_mult(y, x) = y | 	1	6	2	4	0
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(y) = y | 	1	6	2	4	0
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(z)	1	6	3	4	1
+ff_add(x, y) = x === ff_mult(y, x) = z | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(z) = y | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(z) = z | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(y) = z | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(z) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(z) = y | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y | 	1	6	2	3	0
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(y) = z | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(x)	1	6	3	5	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(x)	1	6	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(z) = y, ff_add_inv(z) = z | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(x) = x, ff_add_inv(y) = x | 	1	7	2	4	0
+ff_mult(x, y) = x === ff_mult(ff_mult_inv(y), x) = z | eq0(x), eq0(z)	1	7	3	5	2
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = y, ff_add_inv(z) = y | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(y)	1	7	3	5	1
+ff_mult(x, y) = z === ff_mult(y, ff_mult_inv(x)) = z | eq0(y)	1	7	3	6	1
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(x) = y, ff_add_inv(y) = y | 	1	7	2	4	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(y)	1	7	3	5	1
+ff_mult(x, x) = y ==> ff_mult(z, ff_mult_inv(x)) = z | eq0(z)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y, ff_add_inv(x) = z | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = x, ff_add_inv(z) = x | eq0(y)	1	7	3	4	1
+ff_mult(x, y) = x ==> ff_mult(ff_mult_inv(x), z) = z | eq0(z)	1	7	3	4	1
+ff_mult(x, y) = x === ff_mult(ff_mult_inv(y), z) = x | eq0(z)	1	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(z), x) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y, ff_add_inv(z) = y | eq0(y)	1	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(x), z) = x | eq0(y)	1	7	3	4	1
+ff_add(x, y) = x <== ff_add(z, ff_mult_inv(z)) = x | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(x) = x, ff_add_inv(y) = y | 	1	7	2	4	0
+ff_add(x, y) = x <== ff_add(x, ff_mult_inv(x)) = z | eq0(y)	1	7	3	4	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(x), z) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y, ff_add_inv(z) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(x)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = z, ff_add_inv(z) = z | eq0(y)	1	7	3	4	1
+ff_mult(x, y) = x === ff_mult(x, ff_mult_inv(x)) = y | 	1	7	2	4	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = x, ff_add_inv(y) = z | eq0(y)	1	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(z), x) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(y)	1	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_mult_inv(z), z) = x | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(x)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = y, ff_add_inv(y) = x | eq0(x)	1	7	2	4	1
+ff_mult(x, y) = x <== ff_mult(ff_mult_inv(z), y) = z | eq0(x)	1	7	3	4	1
+ff_mult(x, y) = x <== ff_mult(y, ff_mult_inv(z)) = z | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = z, ff_add_inv(z) = z | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(z) = x, ff_add_inv(z) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = z, ff_add_inv(y) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = y, ff_add_inv(z) = z | eq0(x)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(x) = x, ff_add_inv(x) = y | 	1	7	2	4	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = x, ff_add_inv(z) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(x) = x, ff_add_inv(z) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y <== ff_add_inv(y) = x, ff_add_inv(y) = y | 	1	7	2	4	0
+ff_add(x, y) = x <== ff_add(z, ff_mult_inv(x)) = x | eq0(y)	1	7	3	4	1
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(y) = x, ff_add_inv(z) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x), eq0(z)	1	8	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(x), eq0(z)	1	8	3	5	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(y) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(z) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(y) = y | 	1	8	2	4	0
+ff_add(x, y) = x <== ff_add(z, ff_add(x, y)) = y | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(z) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(y) = x | 	1	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(z)	1	8	3	5	1
+ff_add(x, y) = z === ff_add(y, ff_add(x, y)) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(y) = z | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(y) = y | 	1	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(y) = y | 	1	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(z) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y), eq0(z)	1	8	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_add_inv(y) = x | 	1	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(x), eq0(z)	1	8	3	5	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	5	1
+ff_add(x, y) = x <== ff_add(x, ff_add(z, x)) = x | eq0(y)	1	8	3	4	1
+ff_mult(x, ff_mult_inv(y)) = y === ff_mult(ff_mult_inv(y), x) = y | 	1	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(y) = z | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(x) = z | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(z)	1	8	3	5	1
+ff_add(x, y) = z <== ff_add(x, ff_add(y, z)) = z | 	1	8	3	6	0
+ff_add(x, ff_add(y, x)) = x ==> ff_add(x, ff_add(y, z)) = x | 	1	10	3	5	0
+ff_add(x, ff_add(y, x)) = x === ff_add(x, ff_add(z, x)) = x | 	1	10	3	4	0
+ff_add(x, ff_add(y, x)) = x === ff_add(x, ff_add(y, z)) = z | 	1	10	3	5	0
+ff_mult_inv(x) = y ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	5	3	3	0
+ff_add_inv(x) = y ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	5	3	3	0
+ff_mult_inv(x) = y ==> ff_add_inv(ff_add_inv(z)) = z | 	1000	5	3	3	0
+ff_add_inv(x) = y ==> ff_add_inv(ff_add_inv(z)) = z | 	1000	5	3	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(ff_add_inv(y)) = z | 	1000	6	3	3	0
+ff_mult(x, y) = z ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	6	3	4	0
+ff_mult(x, y) = z ==> ff_mult_inv(ff_mult_inv(y)) = y | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult_inv(ff_add_inv(y)) = z | 	1000	6	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x === ff_mult_inv(ff_mult_inv(y)) = y | 	1000	6	2	2	0
+ff_add_inv(ff_add_inv(x)) = y ==> ff_add_inv(ff_add_inv(z)) = z | 	1000	6	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = y ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	6	3	3	0
+ff_add(x, x) = y ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	6	3	3	0
+ff_add(x, y) = z ==> ff_mult_inv(ff_mult_inv(y)) = y | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, z) = z | 	1000	6	3	3	0
+ff_mult(x, y) = z ==> ff_mult_inv(ff_mult_inv(x)) = x | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult_inv(ff_mult_inv(y)) = z | 	1000	6	3	3	0
+ff_add(x, y) = z ==> ff_add_inv(ff_add_inv(x)) = x | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, z) = x | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x === ff_add_inv(ff_add_inv(y)) = y | 	1000	6	2	2	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, x) = z | 	1000	6	3	4	0
+ff_add(x, x) = y ==> ff_add_inv(ff_add_inv(z)) = z | 	1000	6	3	3	0
+ff_add(x, y) = x ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	6	3	3	0
+ff_mult(x, y) = x ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	6	3	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, z) = y | 	1000	6	3	3	0
+ff_add(x, y) = z ==> ff_mult_inv(ff_mult_inv(z)) = z | 	1000	6	3	4	0
+ff_add(x, y) = z ==> ff_add_inv(ff_add_inv(y)) = y | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(x, y) = z | 	1000	6	3	4	0
+ff_add(x, y) = z ==> ff_mult_inv(ff_mult_inv(x)) = x | 	1000	6	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(ff_mult_inv(y)) = z | 	1000	6	3	3	0
+ff_add(x, y) = z ==> ff_add_inv(ff_add_inv(z)) = z | 	1000	6	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(ff_mult_inv(y)) = z | 	1000	6	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(y), z) = y | 	1000	7	3	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add(y, ff_add_inv(z)) = z | 	1000	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(x, ff_mult_inv(y)) = z | 	1000	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(y), y) = z | 	1000	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(y, ff_mult_inv(x)) = z | 	1000	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(y, ff_mult_inv(z)) = x | 	1000	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(ff_mult_inv(y), y) = z | 	1000	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(ff_mult_inv(y), z) = y | 	1000	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(y), z) = x | 	1000	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(x), y) = z | 	1000	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(y, ff_mult_inv(y)) = z | 	1000	7	3	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add(ff_add_inv(y), z) = y | 	1000	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(y), x) = z | 	1000	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(y, ff_mult_inv(z)) = z | 	1000	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(y, ff_mult_inv(z)) = z | 	1000	7	3	3	0
+ff_mult_inv(x) = x ==> ff_add_inv(ff_add_inv(y)) = y | 	398	5	2	2	0
+ff_mult_inv(x) = x ==> ff_mult_inv(ff_mult_inv(y)) = y | 	396	5	2	2	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, y) = z | 	398	6	3	3	0
+ff_mult(x, x) = y ==> ff_mult_inv(ff_mult_inv(z)) = z | 	396	6	3	3	0
+ff_add_inv(x) = y ==> ff_add_inv(ff_add_inv(x)) = x | 	199	5	2	3	0
+ff_mult_inv(x) = y ==> ff_add_inv(ff_add_inv(x)) = x | 	199	5	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y | 	199	5	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = x | 	199	5	2	3	0
+ff_add_inv(x) = y ==> ff_add_inv(ff_add_inv(y)) = y | 	199	5	2	3	0
+ff_add_inv(x) = x ==> ff_add_inv(ff_add_inv(y)) = y | 	199	5	2	2	0
+ff_mult_inv(x) = y ==> ff_mult_inv(ff_mult_inv(y)) = y | 	198	5	2	3	0
+ff_add_inv(x) = y ==> ff_mult_inv(ff_mult_inv(y)) = y | 	198	5	2	3	0
+ff_add_inv(x) = x ==> ff_mult_inv(ff_mult_inv(y)) = y | 	198	5	2	2	0
+ff_mult_inv(x) = y ==> ff_mult_inv(ff_mult_inv(x)) = x | 	198	5	2	3	0
+ff_mult_inv(x) = y ==> ff_add_inv(ff_add_inv(y)) = y | 	198	5	2	3	0
+ff_add_inv(x) = y ==> ff_mult_inv(ff_mult_inv(x)) = x | 	198	5	2	3	0
+ff_add_inv(ff_add_inv(x)) = y ==> ff_add_inv(ff_add_inv(x)) = x | 	199	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = y ==> ff_add_inv(ff_add_inv(y)) = y | 	199	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(ff_add_inv(x)) = y | 	199	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult_inv(ff_add_inv(x)) = y | 	199	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(ff_add_inv(y)) = x | 	199	6	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = y ==> ff_mult_inv(ff_mult_inv(x)) = x | 	198	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(ff_mult_inv(x)) = y | 	198	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(ff_mult_inv(y)) = x | 	198	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult_inv(ff_add_inv(y)) = x | 	198	6	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(ff_mult_inv(y)) = x | 	198	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x === ff_mult_inv(ff_mult_inv(x)) = x | 	198	6	1	2	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult_inv(ff_mult_inv(x)) = y | 	198	6	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = y ==> ff_mult_inv(ff_mult_inv(y)) = y | 	198	6	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(ff_mult_inv(x)) = y | 	198	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult_inv(ff_mult_inv(y)) = x | 	198	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = x, ff_add_inv(z) = y | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(x) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(y) = x | 	199	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = x, ff_add_inv(y) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(z) = x | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = x, ff_add_inv(y) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(z) = y | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = x, ff_add_inv(z) = x | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = z, ff_add_inv(y) = x | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(z) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = x, ff_add_inv(z) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(y) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, x) = x | 	21	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(x, y) = y | 	21	6	2	3	0
+ff_mult(x, y) = x <== ff_mult_inv(z) = z | eq0(x)	14	5	3	3	1
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(x, y) = x | 	16	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, x) = y | 	16	6	2	3	0
+ff_mult(x, y) = x ==> ff_mult_inv(ff_mult_inv(y)) = y | 	16	6	2	3	0
+ff_mult(x, y) = x ==> ff_mult_inv(y) = y, ff_mult_inv(z) = z | Not(eq0(x))	18	7	3	4	1
+ff_add(x, y) = x ==> ff_mult_inv(ff_mult_inv(x)) = x | 	15	6	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(ff_mult_inv(y), y) = x | 	15	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(ff_mult_inv(x), x) = y | 	15	7	2	3	0
+ff_add(x, x) = y ==> ff_mult_inv(ff_mult_inv(y)) = y | 	11	6	2	3	0
+ff_add(x, x) = y ==> ff_mult_inv(ff_mult_inv(x)) = x | 	11	6	2	3	0
+ff_add(x, x) = y ==> ff_add_inv(ff_add_inv(y)) = y | 	11	6	2	3	0
+ff_add(x, x) = y ==> ff_add_inv(ff_add_inv(x)) = x | 	11	6	2	3	0
+ff_mult(x, y) = x ==> ff_mult_inv(y) = y | Not(eq0(x))	9	5	2	3	1
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(x, ff_mult_inv(x)) = y | 	12	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(y), y) = x | 	12	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(y, ff_mult_inv(y)) = x | 	12	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(x), x) = y | 	12	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(ff_mult_inv(y), x) = y | 	11	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(ff_mult_inv(x), y) = x | 	11	7	2	3	0
+ff_mult(x, y) = x ==> ff_mult_inv(ff_mult_inv(x)) = x | 	9	6	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(y), x) = y | 	10	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add(x, ff_add_inv(y)) = y | 	10	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add(y, ff_add_inv(x)) = x | 	10	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(ff_mult_inv(x), y) = x | 	10	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add(ff_add_inv(y), x) = y | 	10	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add(ff_add_inv(x), y) = x | 	10	7	2	3	0
+ff_mult(x, y) = x <== ff_mult_inv(y) = z | eq0(x)	7	5	3	4	1
+ff_mult(x, y) = x <== ff_mult_inv(z) = y | eq0(x)	7	5	3	4	1
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(y, ff_mult_inv(x)) = x | 	9	7	2	3	0
+ff_mult(x, y) = x ==> ff_mult_inv(y) = y, ff_mult_inv(y) = z | Not(eq0(x))	9	7	3	4	1
+ff_mult(x, y) = x ==> ff_mult_inv(y) = y, ff_mult_inv(z) = y | Not(eq0(x))	9	7	3	4	1
+ff_mult(x, y) = x ==> ff_mult_inv(y) = y, ff_mult_inv(z) = x | Not(eq0(x))	9	7	3	5	1
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult(x, ff_mult_inv(y)) = y | 	9	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(y, ff_mult_inv(x)) = x | 	8	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_add(x, ff_mult_inv(y)) = y | 	8	7	2	3	0
+ff_mult(x, y) = x <== ff_mult_inv(y) = z, ff_mult_inv(z) = y | eq0(x)	7	7	3	4	1
+ff_mult_inv(x) = x ==> ff_add_inv(ff_add_inv(x)) = x | 	2	5	1	2	0
+ff_mult_inv(x) = x ==> ff_mult_inv(ff_mult_inv(x)) = x | 	2	5	1	2	0
+ff_mult(x, x) = y ==> ff_mult_inv(ff_mult_inv(x)) = x | 	2	6	2	3	0
+ff_mult(x, x) = y ==> ff_mult_inv(ff_mult_inv(y)) = y | 	2	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(x, x) = y | 	2	6	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_mult(y, y) = x | 	2	6	2	3	0
+ff_add_inv(x) = x ==> ff_add_inv(ff_add_inv(x)) = x | 	1	5	1	2	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = x | 	1	5	1	2	0
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(z) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(z) = z | eq0(y), eq0(x)	1	6	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(y), eq0(x)	1	6	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(y) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(z) = y | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(z), eq0(y)	1	6	3	4	2
+ff_add_inv(x) = x ==> ff_add_inv(y) = z, ff_add_inv(z) = z | eq0(y), eq0(z)	1	6	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(z) = y | eq0(y), eq0(x)	1	6	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(y), eq0(x)	1	6	3	4	2
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = y, ff_add_inv(y) = y | 	1	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = x, ff_add_inv(y) = x | 	1	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = x, ff_add_inv(x) = y | 	1	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = x, ff_add_inv(y) = y | 	1	7	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = x, ff_add_inv(y) = y | 	1	7	2	3	0
+ff_add(x, y) = x ==> ff_add_inv(ff_add_inv(z)) = z | 	1000	6	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = x, ff_mult_inv(y) = z | 	398	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = y | 	199	5	2	2	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y | 	198	5	2	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = z, ff_add_inv(y) = y | 	199	7	3	4	0
+ff_add(x, y) = x === ff_add_inv(y) = z | eq0(z)	15	5	3	4	1
+ff_add(x, y) = x <== ff_add_inv(x) = z | eq0(y)	15	5	3	4	1
+ff_add(x, y) = x === ff_add_inv(z) = y | eq0(z)	15	5	3	4	1
+ff_add(x, y) = x <== ff_add_inv(z) = x | eq0(y)	15	5	3	4	1
+ff_add(x, y) = x === ff_add_inv(y) = y | 	15	5	2	3	0
+ff_add(x, y) = x === ff_add_inv(ff_add_inv(y)) = z | eq0(z)	15	6	3	4	1
+ff_add(x, y) = x === ff_add_inv(ff_add_inv(z)) = y | eq0(z)	15	6	3	4	1
+ff_add(x, y) = x ==> ff_add_inv(ff_add_inv(y)) = y | 	15	6	2	3	0
+ff_add(x, y) = x <== ff_add_inv(ff_add_inv(z)) = x | eq0(y)	15	6	3	4	1
+ff_add(x, y) = x ==> ff_add_inv(ff_add_inv(x)) = x | 	15	6	2	3	0
+ff_add(x, y) = x <== ff_add_inv(ff_add_inv(x)) = z | eq0(y)	15	6	3	4	1
+ff_add(x, y) = x <== ff_add_inv(y) = y, ff_add_inv(z) = x | 	15	7	3	5	0
+ff_add(x, y) = x <== ff_add_inv(y) = y, ff_add_inv(y) = z | 	15	7	3	4	0
+ff_add(x, y) = x <== ff_add_inv(y) = z, ff_add_inv(z) = z | 	15	7	3	4	0
+ff_add(x, y) = x <== ff_add_inv(z) = y, ff_add_inv(z) = z | 	15	7	3	4	0
+ff_add(x, y) = x <== ff_add_inv(y) = y, ff_add_inv(z) = z | 	15	7	3	4	0
+ff_add(x, y) = x === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(z)	15	7	3	4	1
+ff_add(x, y) = x <== ff_add(x, ff_add_inv(y)) = z | eq0(y)	15	7	3	5	1
+ff_add(x, y) = x <== ff_add_inv(y) = y, ff_add_inv(z) = y | 	15	7	3	4	0
+ff_add(x, y) = x <== ff_add(ff_add_inv(z), y) = x | eq0(y)	15	7	3	5	1
+ff_add(x, y) = x <== ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(y)	15	7	3	4	1
+ff_add(x, y) = x <== ff_add(z, ff_add_inv(y)) = x | eq0(y)	15	7	3	5	1
+ff_add(x, y) = x <== ff_add_inv(x) = z, ff_add_inv(y) = y | 	15	7	3	5	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = x, ff_mult_inv(y) = y | 	4	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = x | 	2	5	1	2	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = x, ff_mult_inv(y) = x | 	2	7	2	3	0
+ff_add(x, y) = x <== ff_add(y, ff_add_inv(z)) = x | eq0(y)	2	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_add_inv(y), z) = x | eq0(y)	2	7	3	5	1
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = x, ff_mult_inv(x) = y | 	2	7	2	3	0
+ff_add(x, y) = x <== ff_add(ff_add_inv(y), x) = z | eq0(y)	2	7	3	5	1
+ff_add(x, y) = x <== ff_add(z, ff_add_inv(x)) = x | eq0(y)	1	7	3	4	1
+ff_add(x, y) = x <== ff_add(ff_add_inv(z), x) = y | eq0(y)	1	7	3	5	1
+ff_add(x, y) = x <== ff_add(ff_add_inv(x), z) = y | eq0(y)	1	7	3	5	1
+ff_mult(x, y) = y <== ff_mult(ff_mult_inv(z), z) = x | 	210	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = y, ff_add_inv(z) = y | 	199	7	3	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(x) = z, ff_add_inv(y) = z | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = y, ff_add_inv(z) = x | 	199	7	3	4	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = y, ff_add_inv(z) = z | 	199	7	3	3	0
+ff_add_inv(ff_add_inv(x)) = x <== ff_add_inv(y) = y, ff_add_inv(y) = z | 	199	7	3	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y, ff_mult_inv(x) = z | 	198	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y, ff_mult_inv(y) = x | 	198	7	2	3	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y, ff_mult_inv(z) = x | 	198	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y, ff_mult_inv(y) = z | 	198	7	3	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y, ff_mult_inv(z) = y | 	198	7	3	4	0
+ff_add(x, y) = x === ff_add(z, ff_add_inv(z)) = y | 	120	7	3	4	0
+ff_add(x, y) = x <== ff_mult_inv(z) = z | eq0(y)	30	5	3	3	1
+ff_mult(x, y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(z) = z | Not(eq0(y))	28	7	3	4	1
+ff_add(x, y) = y <== ff_mult_inv(z) = z | eq0(x)	16	5	3	3	1
+ff_add(x, y) = x <== ff_mult_inv(x) = z | eq0(y)	15	5	3	4	1
+ff_add(x, y) = x <== ff_mult_inv(z) = x | eq0(y)	15	5	3	4	1
+ff_mult(x, y) = y <== ff_mult_inv(z) = z | eq0(y)	14	5	3	3	1
+ff_mult(x, y) = y ==> ff_mult_inv(x) = x | Not(eq0(y))	14	5	2	3	1
+ff_add(x, y) = x === ff_add(x, ff_add_inv(y)) = x | 	15	7	2	4	0
+ff_add(x, y) = x <== ff_mult_inv(x) = z, ff_mult_inv(z) = x | eq0(y)	15	7	3	4	1
+ff_mult(x, y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(z) = y | Not(eq0(y))	14	7	3	5	1
+ff_mult(x, y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(x) = z | Not(eq0(y))	14	7	3	4	1
+ff_mult(x, y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(y) = z | Not(eq0(y))	14	7	3	5	1
+ff_mult(x, y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(z) = x | Not(eq0(y))	14	7	3	4	1
+ff_add(x, y) = y <== ff_mult_inv(z) = y | eq0(x)	8	5	3	4	1
+ff_add(x, y) = y <== ff_mult_inv(y) = z | eq0(x)	8	5	3	4	1
+ff_add(x, y) = y === ff_add_inv(x) = z | eq0(z)	8	5	3	4	1
+ff_add(x, y) = y === ff_add_inv(z) = x | eq0(z)	8	5	3	4	1
+ff_add(x, y) = y <== ff_add_inv(z) = y | eq0(x)	8	5	3	4	1
+ff_add(x, y) = y <== ff_add_inv(y) = z | eq0(x)	8	5	3	4	1
+ff_mult(x, y) = y <== ff_mult_inv(x) = z | eq0(y)	7	5	3	4	1
+ff_mult(x, y) = y <== ff_mult_inv(z) = x | eq0(y)	7	5	3	4	1
+ff_add(x, y) = y === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(z)	8	7	3	4	1
+ff_add(x, y) = y <== ff_add(x, ff_mult_inv(z)) = y | eq0(x)	8	7	3	5	1
+ff_add(x, y) = y <== ff_add_inv(x) = x, ff_add_inv(z) = y | 	8	7	3	5	0
+ff_add(x, y) = y <== ff_add(ff_add_inv(x), y) = z | eq0(x)	8	7	3	5	1
+ff_add(x, y) = y <== ff_add_inv(x) = x, ff_add_inv(z) = x | 	8	7	3	4	0
+ff_add(x, y) = y <== ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(x)	8	7	3	4	1
+ff_add(x, y) = y <== ff_add_inv(x) = x, ff_add_inv(y) = z | 	8	7	3	5	0
+ff_add(x, y) = y <== ff_add_inv(x) = z, ff_add_inv(z) = z | 	8	7	3	4	0
+ff_add(x, y) = y <== ff_mult_inv(y) = z, ff_mult_inv(z) = y | eq0(x)	8	7	3	4	1
+ff_add(x, y) = y <== ff_add_inv(z) = x, ff_add_inv(z) = z | 	8	7	3	4	0
+ff_add(x, y) = y <== ff_add_inv(x) = x, ff_add_inv(x) = z | 	8	7	3	4	0
+ff_add(x, y) = y <== ff_add_inv(x) = x, ff_add_inv(z) = z | 	8	7	3	4	0
+ff_add(x, y) = y <== ff_add(x, ff_add_inv(z)) = y | eq0(x)	8	7	3	5	1
+ff_add(x, y) = y <== ff_add(ff_add_inv(x), z) = y | eq0(x)	8	7	3	5	1
+ff_mult(x, y) = y <== ff_mult_inv(x) = z, ff_mult_inv(z) = x | eq0(y)	7	7	3	4	1
+ff_add(x, y) = y <== ff_add(x, ff_add(x, z)) = y | eq0(x)	8	8	3	5	1
+ff_add(x, y) = y === ff_add(z, ff_add(x, y)) = y | eq0(z)	8	8	3	5	1
+ff_add(x, y) = y === ff_add(x, ff_add(z, y)) = y | eq0(z)	8	8	3	5	1
+ff_add(x, y) = y <== ff_add(x, ff_add(x, y)) = z | eq0(x)	8	8	3	5	1
+ff_add(x, y) = y <== ff_add(z, ff_add_inv(x)) = y | eq0(x)	2	7	3	5	1
+ff_add(x, y) = y <== ff_add(ff_mult_inv(z), x) = y | eq0(x)	2	7	3	5	1
+ff_add(x, y) = y <== ff_add(y, ff_add_inv(x)) = z | eq0(x)	2	7	3	5	1
+ff_add(x, y) = x === ff_add(ff_add_inv(y), x) = x | 	2	7	2	4	0
+ff_mult_inv(ff_mult_inv(x)) = x <== ff_mult_inv(x) = y, ff_mult_inv(y) = y | 	2	7	2	3	0
+ff_add(x, y) = y <== ff_add(x, ff_add_inv(y)) = z | eq0(x)	2	7	3	5	1
+ff_add(x, y) = y <== ff_add(ff_add_inv(z), x) = y | eq0(x)	2	7	3	5	1
+ff_mult(x, y) = x === ff_add(z, ff_add(x, y)) = y | eq0(z)	2	8	3	5	1
+ff_mult(x, y) = x === ff_add(x, ff_add(z, y)) = y | eq0(z)	2	8	3	5	1
+ff_mult(x, y) = x <== ff_add(x, ff_add(x, z)) = y | eq0(x)	2	8	3	5	1
+ff_add(x, y) = y <== ff_add(x, ff_add(y, x)) = z | eq0(x)	2	8	3	5	1
+ff_add(x, y) = y <== ff_add(x, ff_add(z, x)) = y | eq0(x)	2	8	3	5	1
+ff_add(x, y) = y === ff_add(z, ff_add(y, x)) = y | eq0(z)	2	8	3	5	1
+ff_add(x, y) = y ==> ff_add(x, ff_add(y, z)) = y | 	2	8	3	5	0
+ff_mult(x, y) = x <== ff_add(x, ff_add(x, y)) = z | eq0(x)	2	8	3	5	1
+ff_add(x, ff_add(y, z)) = y === ff_add(z, ff_add(y, x)) = y | 	2	10	3	6	0
+ff_add(x, x) = y ==> ff_add(y, ff_add_inv(z)) = y | eq0(z)	1	7	3	4	1
+ff_mult(x, y) = y === ff_mult(z, ff_mult_inv(x)) = y | eq0(z)	1	7	3	5	1
+ff_add(x, y) = y <== ff_add(z, ff_mult_inv(y)) = x | eq0(x)	1	7	3	5	1
+ff_mult(x, y) = y <== ff_mult(ff_mult_inv(x), x) = z | eq0(y)	1	7	3	4	1
+ff_mult(x, y) = y === ff_mult(y, ff_mult_inv(x)) = z | eq0(y), eq0(z)	1	7	3	5	2
+ff_add(x, y) = x === ff_add(ff_add_inv(x), x) = y | 	1	7	2	4	0
+ff_add(x, y) = y <== ff_add(ff_mult_inv(y), y) = z | eq0(x)	1	7	3	4	1
+ff_add(x, y) = y <== ff_add(ff_mult_inv(y), z) = x | eq0(x)	1	7	3	5	1
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(z) = z | 	398	6	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(z) = z ==> ff_mult_inv(y) = x | 	396	6	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(y) = z ==> ff_mult_inv(z) = y | 	396	6	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(z) = z | 	398	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(z) = z | 	398	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = x <== ff_mult_inv(x) = y, ff_mult_inv(z) = z | 	396	8	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(y) = z === ff_mult_inv(x) = x, ff_mult_inv(z) = y | 	396	8	3	6	0
+ff_mult_inv(x) = y, ff_mult_inv(z) = z ==> ff_mult_inv(x) = y, ff_mult_inv(y) = x | 	396	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(z) = z === ff_mult_inv(y) = x, ff_mult_inv(z) = z | 	396	8	3	6	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = x <== ff_mult_inv(y) = x, ff_mult_inv(z) = z | 	396	8	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(y) = z ==> ff_mult_inv(y) = z, ff_mult_inv(z) = y | 	396	8	3	5	0
+ff_add_inv(x) = x <== ff_add_inv(ff_add_inv(ff_add_inv(y))) = z | eq0(x)	199	6	3	3	1
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_add_inv(z) = z | eq0(z)	199	6	3	3	1
+ff_add_inv(x) = y === ff_add_inv(ff_add_inv(ff_add_inv(x))) = y | 	199	6	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = z ==> ff_add_inv(z) = y | 	199	6	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(z) = y | 	199	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(x) = z | 	199	6	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z ==> ff_add_inv(y) = x | 	199	6	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = z ==> ff_add_inv(y) = x | 	199	6	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(y) = x | 	199	6	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z ==> ff_add_inv(z) = x | 	199	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(y) = z | 	199	6	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = z ==> ff_mult_inv(z) = y | 	198	6	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(x) = z ==> ff_mult_inv(y) = x | 	198	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(z) = x | 	198	6	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = z ==> ff_mult_inv(y) = x | 	198	6	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(x) = z ==> ff_mult_inv(z) = x | 	198	6	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(z) = y | 	198	6	3	5	0
+ff_mult(x, ff_mult_inv(x)) = y === ff_mult(z, ff_mult_inv(z)) = y | 	225	8	3	4	0
+ff_mult(x, ff_mult_inv(x)) = y === ff_mult(ff_mult_inv(z), z) = y | 	225	8	3	4	0
+ff_mult(x, ff_mult_inv(x)) = y ==> ff_mult(ff_mult_inv(y), z) = z | 	210	8	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_add_inv(x) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = z ==> ff_add_inv(x) = y, ff_add_inv(y) = x | 	199	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(z) = y | 	199	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_add_inv(y) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_add_inv(z) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(x) = y, ff_add_inv(y) = x | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(z) = x | 	199	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(y) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_add_inv(y) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = z ==> ff_add_inv(y) = z, ff_add_inv(z) = y | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(x) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(y) = z | 	199	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(x) = z ==> ff_add_inv(x) = y, ff_add_inv(y) = x | 	199	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add_inv(ff_add_inv(y))) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z ==> ff_add_inv(x) = z, ff_add_inv(z) = x | 	199	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(y) = z, ff_add_inv(z) = y | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = x, ff_add_inv(z) = x | 	199	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_add_inv(z) = z | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = x, ff_add_inv(z) = z | 	199	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(y) = z | 	199	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add_inv(ff_add_inv(z))) = y | 	199	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(x) = z | 	199	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = z ==> ff_mult_inv(y) = z, ff_mult_inv(z) = y | 	198	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(z) = x | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = z ==> ff_mult_inv(x) = y, ff_mult_inv(y) = x | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = x <== ff_mult_inv(x) = y, ff_mult_inv(x) = z | 	198	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(z) = y | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(x) = z === ff_mult_inv(y) = x, ff_mult_inv(z) = x | 	198	8	3	6	0
+ff_mult_inv(x) = y, ff_mult_inv(x) = z ==> ff_mult_inv(x) = z, ff_mult_inv(z) = x | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = z === ff_mult_inv(y) = x, ff_mult_inv(y) = z | 	198	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(z) = x | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = x <== ff_mult_inv(x) = y, ff_mult_inv(y) = z | 	198	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(z) = y | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = x <== ff_mult_inv(y) = x, ff_mult_inv(y) = z | 	198	8	3	5	0
+ff_mult_inv(x) = y, ff_mult_inv(x) = z === ff_mult_inv(x) = y, ff_mult_inv(z) = x | 	198	8	3	6	0
+ff_mult_inv(x) = y, ff_mult_inv(x) = z ==> ff_mult_inv(x) = y, ff_mult_inv(y) = x | 	198	8	3	5	0
+ff_mult(ff_mult_inv(x), y) = y === ff_mult(ff_mult_inv(x), z) = z | Not(eq0(y)), Not(eq0(z))	196	8	3	4	2
+ff_add_inv(ff_mult(x, y)) = x === ff_add_inv(ff_mult(z, y)) = z | Not(eq0(x)), Not(eq0(z))	169	8	3	4	2
+ff_add_inv(ff_mult(x, y)) = y === ff_add_inv(ff_mult(z, x)) = z | Not(eq0(y)), Not(eq0(z))	143	8	3	4	2
+ff_add_inv(ff_mult(x, y)) = x === ff_add_inv(ff_mult(y, z)) = z | Not(eq0(x)), Not(eq0(z))	143	8	3	4	2
+ff_add_inv(ff_mult(x, y)) = x === ff_mult(y, ff_add_inv(z)) = z | Not(eq0(x)), Not(eq0(z))	143	8	3	4	2
+ff_mult(x, ff_mult_inv(y)) = z === ff_mult(ff_mult_inv(y), x) = z | 	130	8	3	6	0
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(y, x)) = z | 	130	8	3	6	0
+ff_add(x, ff_add_inv(y)) = z === ff_add(x, ff_add_inv(z)) = y | 	122	8	3	6	0
+ff_add_inv(ff_mult(x, y)) = y === ff_add_inv(ff_mult(x, z)) = z | Not(eq0(y)), Not(eq0(z))	121	8	3	4	2
+ff_add(x, ff_add_inv(x)) = y === ff_add(z, ff_add_inv(y)) = z | 	120	8	3	4	0
+ff_mult(x, ff_mult_inv(y)) = z === ff_mult(x, ff_mult_inv(z)) = y | 	97	8	3	6	0
+ff_add_inv(ff_mult(x, y)) = z === ff_mult(x, ff_add_inv(y)) = z | 	91	8	3	6	0
+ff_add(x, ff_add_inv(y)) = z === ff_add(ff_add_inv(y), x) = z | 	81	8	3	6	0
+ff_add(x, ff_add_inv(x)) = y === ff_add(z, ff_add_inv(z)) = y | 	64	8	3	4	0
+ff_add(x, ff_add_inv(x)) = y === ff_add(ff_add_inv(y), z) = z | 	64	8	3	4	0
+ff_add_inv(ff_mult(x, y)) = y === ff_add_inv(ff_mult(z, y)) = y | eq0(y)	49	8	3	4	1
+ff_add_inv(ff_mult(x, y)) = x === ff_mult(z, ff_add_inv(x)) = x | eq0(x)	49	8	3	4	1
+ff_add_inv(ff_mult(x, y)) = y === ff_add_inv(ff_mult(y, z)) = y | eq0(y)	49	8	3	4	1
+ff_add_inv(ff_mult(x, y)) = x === ff_add_inv(ff_mult(z, x)) = x | eq0(x)	49	8	3	4	1
+ff_add_inv(ff_mult(x, y)) = x === ff_add_inv(ff_mult(x, z)) = x | eq0(x)	49	8	3	4	1
+ff_mult(ff_mult_inv(x), y) = y === ff_mult(ff_mult_inv(z), y) = y | eq0(y)	49	8	3	4	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(z) = z | Not(eq0(y))	28	8	3	4	1
+ff_add_inv(x) = x <== ff_mult(ff_add_inv(y), z) = z | eq0(x)	21	6	3	3	1
+ff_add_inv(x) = x <== ff_mult(ff_add_inv(y), z) = y | eq0(x)	20	6	3	3	1
+ff_add_inv(x) = x <== ff_add_inv(ff_mult(y, z)) = y | eq0(x)	20	6	3	3	1
+ff_add_inv(x) = x <== ff_add_inv(ff_mult(y, z)) = z | eq0(x)	18	6	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, ff_add_inv(z)) = z | eq0(x)	18	6	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, ff_add_inv(z)) = y | eq0(x)	16	6	3	3	1
+ff_mult(x, ff_mult_inv(x)) = y ==> ff_mult_inv(y) = y | 	15	6	2	3	0
+ff_add_inv(x) = x <== ff_mult(ff_add_inv(y), z) = x | eq0(x)	14	6	3	4	1
+ff_add_inv(x) = x <== ff_mult(y, ff_add_inv(z)) = x | eq0(x)	14	6	3	4	1
+ff_mult(ff_mult_inv(x), y) = y <== ff_mult_inv(z) = z | eq0(y)	14	6	3	3	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult_inv(x) = x | Not(eq0(y))	14	6	2	3	1
+ff_add_inv(x) = x <== ff_add_inv(ff_mult(y, z)) = x | eq0(x)	14	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add(z, x)) = y | 	15	8	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add(y, x)) = z | 	15	8	3	6	0
+ff_add(x, ff_add_inv(y)) = z === ff_add(z, ff_add_inv(y)) = x | eq0(y)	15	8	3	6	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(y) = z | Not(eq0(y))	14	8	3	5	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(x) = z | Not(eq0(y))	14	8	3	4	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(z) = y | Not(eq0(y))	14	8	3	5	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult_inv(x) = x, ff_mult_inv(z) = x | Not(eq0(y))	14	8	3	4	1
+ff_add_inv(x) = x <== ff_mult(ff_add_inv(y), y) = z | eq0(x)	10	6	3	3	1
+ff_add_inv(x) = x <== ff_mult(y, ff_add_inv(y)) = z | eq0(x)	10	6	3	3	1
+ff_add(x, ff_add_inv(x)) = y === ff_add_inv(y) = y | 	8	6	2	3	0
+ff_add(x, ff_mult_inv(y)) = z === ff_mult_inv(y) = z | eq0(x)	8	6	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(z) = x | eq0(y)	8	6	3	4	1
+ff_add(x, ff_add_inv(x)) = y === ff_add_inv(z) = y | eq0(z)	8	6	3	4	1
+ff_add(x, ff_add_inv(y)) = z === ff_add_inv(y) = z | eq0(x)	8	6	3	5	1
+ff_add(x, ff_mult_inv(y)) = z === ff_mult_inv(z) = y | eq0(x)	8	6	3	5	1
+ff_add(x, ff_add_inv(y)) = z === ff_add_inv(z) = y | eq0(x)	8	6	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(x) = z | eq0(y)	8	6	3	4	1
+ff_add(x, ff_add_inv(x)) = y === ff_add_inv(y) = z | eq0(z)	8	6	3	4	1
+ff_add_inv(x) = y === ff_mult(x, ff_add_inv(z)) = x | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(x) = y === ff_add_inv(ff_mult(x, z)) = x | eq0(x)	7	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(z, y)) = x | eq0(y)	7	6	3	5	1
+ff_add_inv(x) = y === ff_mult(z, ff_add_inv(y)) = y | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(x) = x === ff_add_inv(ff_mult(y, x)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = y ==> ff_mult(z, ff_add_inv(y)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(z, x)) = x | eq0(x)	7	6	3	4	1
+ff_add_inv(x) = y === ff_mult(y, ff_add_inv(z)) = y | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(x) = y === ff_mult(y, ff_add_inv(z)) = x | eq0(y)	7	6	3	5	1
+ff_add_inv(x) = y ==> ff_mult(x, ff_add_inv(z)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = y ==> ff_mult(z, ff_add_inv(x)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = y === ff_mult(z, ff_add_inv(y)) = x | eq0(y)	7	6	3	5	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(z, y)) = y | eq0(y)	7	6	3	4	1
+ff_add_inv(x) = y ==> ff_mult(y, ff_add_inv(z)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(y, z)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = x ==> ff_mult(ff_add_inv(y), x) = x | 	7	6	2	3	0
+ff_add_inv(x) = y === ff_add_inv(ff_mult(z, x)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(ff_mult(x, y)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = x === ff_mult(x, ff_add_inv(y)) = z | eq0(x), eq0(z)	7	6	3	4	2
+ff_add_inv(x) = y === ff_mult(x, ff_add_inv(z)) = y | eq0(x)	7	6	3	5	1
+ff_add_inv(x) = x ==> ff_add_inv(ff_mult(x, y)) = x | 	7	6	2	3	0
+ff_add_inv(x) = y === ff_add_inv(ff_mult(z, y)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = x ==> ff_mult(ff_add_inv(x), y) = x | 	7	6	2	3	0
+ff_add_inv(x) = y === ff_add_inv(ff_mult(x, z)) = y | eq0(y)	7	6	3	5	1
+ff_add_inv(x) = x === ff_mult(y, ff_add_inv(x)) = z | eq0(x), eq0(z)	7	6	3	4	2
+ff_add_inv(x) = y === ff_add_inv(ff_mult(x, z)) = z | eq0(z)	7	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(y, z)) = y | eq0(y)	7	6	3	4	1
+ff_add_inv(x) = y === ff_mult(z, ff_add_inv(x)) = y | eq0(x)	7	6	3	5	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(y, z)) = x | eq0(y)	7	6	3	5	1
+ff_add_inv(x) = x ==> ff_mult(y, ff_add_inv(x)) = x | 	7	6	2	3	0
+ff_add_inv(x) = x ==> ff_mult(x, ff_add_inv(y)) = x | 	7	6	2	3	0
+ff_mult(ff_mult_inv(x), y) = y <== ff_mult_inv(z) = x | eq0(y)	7	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(ff_mult(z, x)) = y | eq0(y)	7	6	3	5	1
+ff_add_inv(x) = x === ff_mult(ff_add_inv(y), x) = z | eq0(x), eq0(z)	7	6	3	4	2
+ff_add_inv(x) = y === ff_mult(z, ff_add_inv(x)) = x | eq0(x), eq0(y)	7	6	3	4	2
+ff_add_inv(x) = x ==> ff_add_inv(ff_mult(y, x)) = x | 	7	6	2	3	0
+ff_mult(ff_mult_inv(x), y) = y <== ff_mult_inv(x) = z | eq0(y)	7	6	3	4	1
+ff_add_inv(x) = x === ff_mult(ff_add_inv(x), y) = z | eq0(x), eq0(z)	7	6	3	4	2
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(y) = y, ff_add_inv(z) = x | 	8	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add(z, y)) = x | 	8	8	3	6	0
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(y) = y, ff_add_inv(z) = y | 	8	8	3	4	0
+ff_add(x, ff_add_inv(y)) = z === ff_add(y, ff_add_inv(x)) = z | eq0(z)	8	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add(x, z)) = y | 	8	8	3	6	0
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(y) = y, ff_add_inv(y) = z | 	8	8	3	4	0
+ff_add(x, ff_add_inv(y)) = z === ff_add_inv(ff_add(x, z)) = y | eq0(x)	8	8	3	6	1
+ff_add(x, ff_add_inv(x)) = y === ff_add(x, ff_add_inv(x)) = z | eq0(y), eq0(z)	8	8	3	4	2
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(z) = y, ff_add_inv(z) = z | 	8	8	3	4	0
+ff_add(x, ff_add_inv(y)) = z <== ff_add_inv(x) = x, ff_add_inv(z) = y | 	8	8	3	6	0
+ff_add(x, ff_mult_inv(y)) = z === ff_mult_inv(y) = z, ff_mult_inv(z) = y | eq0(x)	8	8	3	5	1
+ff_add(x, ff_add_inv(y)) = z ==> ff_add(x, ff_add_inv(x)) = z | eq0(z)	8	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(z, ff_add_inv(x)) = y | eq0(y)	8	8	3	5	1
+ff_add(x, ff_add_inv(y)) = z === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(x)	8	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(z)	8	8	3	4	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(x, ff_add_inv(z)) = y | eq0(y)	8	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(ff_add(x, z)) = y | eq0(y)	8	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(y)	8	8	3	4	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(x) = z, ff_add_inv(y) = y | 	8	8	3	5	0
+ff_add(x, ff_add_inv(y)) = z <== ff_add_inv(x) = x, ff_add_inv(y) = z | 	8	8	3	6	0
+ff_add(x, ff_add_inv(y)) = z ==> ff_add(y, ff_add_inv(y)) = z | eq0(z)	8	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(y) = z, ff_add_inv(z) = z | 	8	8	3	4	0
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(y) = y, ff_add_inv(z) = z | 	8	8	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add(y, z)) = x | 	8	8	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_add(x, y)) = z | 	8	8	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(y, z)) = x | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(z, x)) = x | 	7	8	3	4	0
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(z, y)) = x | eq0(x)	7	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_mult(y, ff_add_inv(z)) = z | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(y), z) = y | 	7	8	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(x, ff_add_inv(z)) = y | eq0(x)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(ff_add_inv(y), x) = x | 	7	8	3	5	0
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(z, y)) = z | eq0(x)	7	8	3	5	1
+ff_add_inv(ff_mult(x, y)) = x === ff_add_inv(ff_mult(z, y)) = x | eq0(z)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(x, ff_add_inv(y)) = x | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(y, ff_add_inv(z)) = x | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(z, ff_add_inv(x)) = x | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(z, x)) = y | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(z, y)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_mult(x, y)) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(ff_add_inv(z), x) = x | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_mult(x, ff_add_inv(z)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(y, z)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(x, ff_add_inv(z)) = y | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(ff_mult(x, z)) = z | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(x), z) = x | 	7	8	3	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(z, ff_add_inv(y)) = x | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_mult(z, ff_add_inv(y)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(ff_mult(x, y)) = y === ff_add_inv(ff_mult(x, y)) = z | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(x, z)) = y | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(z, ff_add_inv(x)) = y | eq0(x)	7	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(ff_mult(z, x)) = z | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_mult(z, ff_add_inv(y)) = z | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(z), x) = y | 	7	8	3	5	0
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(x, y)) = y | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(z, ff_add_inv(x)) = x | 	7	8	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(x, z)) = x | eq0(x)	7	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(x), z) = y | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(ff_mult(z, y)) = z | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(z, ff_add_inv(y)) = y | 	7	8	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(z, x)) = x | eq0(x)	7	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(y, ff_add_inv(z)) = y | eq0(x), eq0(y)	7	8	3	4	2
+ff_add_inv(ff_mult(x, y)) = y === ff_mult(x, ff_add_inv(y)) = z | eq0(y), eq0(z)	7	8	3	5	2
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_mult(z, ff_add_inv(x)) = z | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_mult(z, ff_add_inv(x)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(x, ff_add_inv(z)) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(z), y) = x | 	7	8	3	5	0
+ff_add_inv(ff_mult(x, y)) = y === ff_add_inv(ff_mult(x, z)) = y | eq0(z)	7	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_mult(x, ff_add_inv(z)) = z | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(z, y)) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(y), z) = x | 	7	8	3	5	0
+ff_add_inv(ff_mult(x, y)) = y === ff_mult(x, ff_add_inv(z)) = y | eq0(z)	7	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(ff_mult(y, z)) = z | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(z, ff_add_inv(y)) = y | eq0(x), eq0(y)	7	8	3	4	2
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(z, y)) = x | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_mult(y, x)) = x | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(z, x)) = z | eq0(z)	7	8	3	4	1
+ff_mult(x, ff_mult_inv(y)) = z === ff_mult(z, ff_mult_inv(y)) = x | eq0(x)	7	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(x, ff_add_inv(z)) = x | eq0(x), eq0(y)	7	8	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(z, y)) = y | 	7	8	3	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(y, z)) = y | 	7	8	3	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(x, ff_add_inv(z)) = x | 	7	8	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(ff_add_inv(x), y) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(z), y) = y | 	7	8	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_mult(y, ff_add_inv(z)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(ff_add_inv(z), x) = x | 	7	8	3	4	0
+ff_mult(ff_mult_inv(x), y) = y <== ff_mult_inv(x) = z, ff_mult_inv(z) = x | eq0(y)	7	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(z, ff_add_inv(y)) = x | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(y, z)) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_mult(x, z)) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(z, ff_add_inv(x)) = y | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(ff_add_inv(x), z) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_mult(y, ff_add_inv(x)) = x | 	7	8	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(z, x)) = y | 	7	8	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(x, z)) = y | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_mult(z, ff_add_inv(x)) = x | eq0(x), eq0(y)	7	8	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(y, ff_add_inv(z)) = y | 	7	8	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(y, z)) = y | eq0(y)	7	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(x, z)) = z | eq0(z)	7	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(ff_mult(z, y)) = y | eq0(y)	7	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_mult(y, ff_add_inv(z)) = x | 	7	8	3	5	0
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(x, z)) = y | eq0(y)	7	8	3	6	1
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(x, y)) = x | eq0(x)	7	8	3	5	1
+ff_add_inv(ff_mult(x, y)) = z === ff_add_inv(ff_mult(x, z)) = z | eq0(y)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_mult(x, z)) = x | 	7	8	3	4	0
+ff_add_inv(ff_mult(x, y)) = y === ff_mult(x, ff_add_inv(y)) = y | 	7	8	2	4	0
+ff_add_inv(ff_mult(x, y)) = x === ff_add_inv(ff_mult(x, y)) = z | eq0(x)	7	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(ff_mult(z, x)) = x | 	7	8	3	5	0
+ff_add_inv(ff_mult(x, y)) = x === ff_mult(x, ff_add_inv(y)) = x | 	3	8	2	4	0
+ff_add_inv(x) = y ==> ff_add_inv(z) = z, ff_mult_inv(x) = x | eq0(z)	2	6	3	4	1
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(y) = y | 	2	6	2	4	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(x) = x | 	2	6	2	4	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult_inv(z) = z | eq0(y)	2	6	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_mult_inv(y) = y | eq0(x)	2	6	3	3	1
+ff_add_inv(x) = x <== ff_add_inv(ff_mult(y, y)) = z | eq0(x)	2	6	3	3	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult_inv(z) = z | eq0(x), eq0(y)	2	6	3	3	2
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult_inv(y) = y | 	2	6	2	3	0
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult_inv(z) = z | eq0(y)	2	6	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_mult_inv(z) = z | eq0(y)	2	6	3	4	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult_inv(y) = x | 	2	6	2	4	0
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_mult_inv(z) = z | eq0(x)	2	6	3	3	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_mult_inv(z) = z | eq0(x)	2	6	3	4	1
+ff_add_inv(x) = y ==> ff_add_inv(z) = z, ff_mult_inv(y) = y | eq0(z)	2	6	3	4	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = y <== ff_mult_inv(x) = x, ff_mult_inv(x) = y | 	2	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z <== ff_add_inv(z) = y, ff_mult_inv(y) = y | eq0(x)	2	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z <== ff_add_inv(x) = y, ff_mult_inv(y) = y | eq0(z)	2	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_add_inv(z) = z, ff_mult_inv(y) = y | eq0(z)	2	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(x) = x | 	2	8	2	4	0
+ff_add(x, ff_add_inv(y)) = z === ff_add(ff_add_inv(x), y) = z | eq0(z)	2	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_mult_inv(z) = z | eq0(x)	2	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z <== ff_add_inv(y) = z, ff_mult_inv(y) = y | eq0(x)	2	8	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y === ff_mult_inv(x) = x, ff_mult_inv(y) = x | 	2	8	2	4	0
+ff_add(x, ff_add_inv(x)) = y === ff_add(ff_add_inv(x), x) = y | 	2	8	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(x) = x | 	2	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y <== ff_add_inv(x) = y, ff_mult_inv(z) = z | eq0(x)	2	8	3	5	1
+ff_add_inv(ff_mult(x, y)) = x === ff_mult(z, ff_add_inv(y)) = x | eq0(z)	2	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = y, ff_mult_inv(y) = y | 	2	8	2	4	0
+ff_add(x, ff_add_inv(y)) = z === ff_add_inv(ff_add(x, y)) = z | eq0(x)	2	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z <== ff_add_inv(y) = x, ff_mult_inv(y) = y | eq0(z)	2	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y <== ff_add_inv(y) = y, ff_mult_inv(z) = z | eq0(x)	2	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z <== ff_add_inv(x) = y, ff_mult_inv(x) = x | eq0(z)	2	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z <== ff_add_inv(y) = z, ff_mult_inv(z) = z | eq0(x)	2	8	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y === ff_mult_inv(y) = x, ff_mult_inv(y) = y | 	2	8	2	4	0
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult_inv(x) = x, ff_mult_inv(y) = y | 	2	8	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_add_inv(z) = z, ff_mult_inv(x) = x | eq0(z)	2	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y <== ff_add_inv(x) = x, ff_mult_inv(z) = z | eq0(y)	2	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z <== ff_add_inv(y) = x, ff_mult_inv(x) = x | eq0(z)	2	8	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y === ff_mult_inv(x) = y, ff_mult_inv(y) = y | 	2	8	2	4	0
+ff_mult_inv(x) = y, ff_mult_inv(y) = x <== ff_mult_inv(x) = x, ff_mult_inv(x) = y | 	2	8	2	4	0
+ff_add_inv(ff_mult(x, y)) = x === ff_mult(x, ff_add_inv(y)) = z | eq0(x), eq0(z)	2	8	3	5	2
+ff_add(x, ff_add_inv(y)) = z === ff_add_inv(ff_add(z, x)) = y | eq0(x)	2	8	3	6	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult_inv(x) = y, ff_mult_inv(y) = x | 	2	8	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_mult_inv(z) = z | eq0(y)	2	8	3	4	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(ff_add_inv(x), z) = y | eq0(y)	2	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(y) = x, ff_mult_inv(y) = y | 	2	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_mult_inv(z) = z | eq0(x)	2	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(ff_add(z, x)) = y | eq0(y)	2	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z <== ff_add_inv(z) = y, ff_mult_inv(z) = z | eq0(x)	2	8	3	5	1
+ff_add_inv(x) = x, ff_mult_inv(y) = y === ff_add_inv(x) = z, ff_mult_inv(y) = y | eq0(z)	2	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(ff_add_inv(z), x) = y | eq0(y)	2	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(z) = y | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(z) = x | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y | eq0(x)	1	6	2	3	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(z) = x | eq0(x)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(z) = y | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = z | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = x === ff_add_inv(ff_add_inv(ff_add_inv(x))) = y | eq0(y)	1	6	2	3	1
+ff_add_inv(x) = x === ff_add_inv(ff_add_inv(ff_add_inv(y))) = x | eq0(y)	1	6	2	3	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = x | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = y | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z | eq0(x), eq0(z)	1	6	3	3	2
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = z | eq0(x)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = x === ff_add_inv(ff_add_inv(ff_add_inv(x))) = x | 	1	6	1	2	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = z | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = z | eq0(x)	1	6	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z | eq0(z)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = z | eq0(y)	1	6	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y | eq0(z)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z | eq0(y)	1	6	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x | eq0(y)	1	6	2	3	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(y)	1	8	3	4	1
+ff_add_inv(ff_mult(x, x)) = y ==> ff_add_inv(ff_mult(y, z)) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = z, ff_add_inv(y) = z | eq0(x)	1	8	3	6	1
+ff_mult(x, ff_mult_inv(x)) = y ==> ff_mult(ff_mult_inv(x), z) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(y)	1	8	3	6	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add_inv(ff_add(z, y)) = x | eq0(y)	1	8	3	5	1
+ff_add(x, ff_add_inv(y)) = y ==> ff_add(y, ff_add_inv(y)) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(ff_add_inv(ff_add_inv(x))) = z | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(x)	1	8	3	4	1
+ff_add_inv(ff_mult(x, x)) = y ==> ff_mult(y, ff_add_inv(z)) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(x) = y | eq0(z)	1	8	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(ff_add_inv(x), z) = x | eq0(y)	1	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(x) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = x, ff_add_inv(y) = z | eq0(x)	1	8	3	6	1
+ff_add_inv(ff_mult(x, y)) = y <== ff_add_inv(ff_mult(x, z)) = x | eq0(y)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_add_inv(ff_add_inv(x))) = y | 	1	8	2	4	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = x, ff_add_inv(z) = y | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(z) = y | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(x) = y | eq0(x), eq0(z)	1	8	3	5	2
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(y)	1	8	3	6	1
+ff_mult(x, ff_mult_inv(x)) = y === ff_mult(x, ff_mult_inv(y)) = x | 	1	8	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(x) = z | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(y) = z | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(ff_add_inv(ff_add_inv(y))) = x | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(z) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(ff_add_inv(ff_add_inv(z))) = x | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x), eq0(y)	1	8	3	5	2
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(ff_add_inv(ff_add_inv(z))) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(ff_add_inv(ff_add_inv(y))) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(z)	1	8	3	5	1
+ff_add_inv(ff_mult(x, y)) = x ==> ff_add_inv(ff_mult(x, z)) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(z) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(ff_mult(x, y)) = y <== ff_add_inv(ff_mult(z, z)) = x | eq0(y)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(z) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = z, ff_add_inv(z) = x | eq0(x)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(ff_add_inv(ff_add_inv(x))) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(x) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(y)	1	8	3	6	1
+ff_add_inv(ff_mult(x, y)) = x ==> ff_mult(x, ff_add_inv(z)) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(x)	1	8	3	6	1
+ff_add(x, ff_add_inv(y)) = z === ff_add(ff_add_inv(x), z) = y | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x <== ff_add_inv(x) = x, ff_add_inv(x) = y | 	1	8	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(z) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = y, ff_add_inv(y) = z | eq0(y)	1	8	3	6	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(ff_add_inv(x), y) = z | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(x)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(z) = y | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(y) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(ff_add_inv(ff_add_inv(z))) = y | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = z, ff_add_inv(z) = y | eq0(z)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(y)	1	8	3	5	1
+ff_mult(x, ff_mult_inv(y)) = y ==> ff_mult(ff_mult_inv(x), z) = z | eq0(z)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(ff_add_inv(ff_add_inv(y))) = x | 	1	8	2	4	0
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(z) = y | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(y) = z | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(y) = z | eq0(x)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(x) = z | eq0(x)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(ff_add_inv(ff_add_inv(x))) = y | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(z) = z | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(x)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(z) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(y) = x | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(z) = y | eq0(z)	1	8	3	6	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(z, ff_add_inv(x)) = x | eq0(y)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(y) = z | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(y) = y | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	8	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = z, ff_add_inv(z) = x | eq0(z)	1	8	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(x) = z | eq0(y)	1	8	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = x, ff_add_inv(z) = z | eq0(y)	1	8	3	6	1
+ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = z | 	1000	7	3	5	0
+ff_add_inv(x) = x, ff_mult_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	398	9	3	4	0
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(y), eq0(x)	199	7	3	3	2
+ff_add_inv(x) = y <== ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = x | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = z | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = z | 	199	7	3	5	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	199	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	199	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(x)	199	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = y | 	199	7	2	4	0
+ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = x | 	199	7	2	4	0
+ff_add_inv(x) = y <== ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = z | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = y | 	199	7	3	5	0
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	199	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	199	7	3	3	1
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | 	199	7	3	5	0
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(x), eq0(y)	199	7	3	3	2
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	199	7	3	4	1
+ff_add_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	199	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x)	199	7	3	3	1
+ff_add_inv(x) = y <== ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = y | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | 	199	7	3	5	0
+ff_add_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	199	7	3	3	1
+ff_add_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	199	7	3	4	1
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | 	199	7	3	5	0
+ff_add_inv(x) = y <== ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | 	199	7	3	5	0
+ff_mult(x, ff_mult_inv(x)) = y ==> ff_mult(y, ff_mult(y, z)) = z | 	210	9	3	4	0
+ff_add_inv(x) = x, ff_mult_inv(x) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | 	199	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = x | 	199	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = x, ff_mult_inv(y) = z ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	199	9	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(x)	199	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = y | 	199	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | 	199	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = x | 	199	9	3	6	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	199	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = y | 	199	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	199	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	199	9	2	3	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = y | 	199	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	199	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | 	199	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = z | 	199	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	199	9	3	3	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = z ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | 	199	9	3	4	0
+ff_add_inv(x) = x, ff_mult_inv(y) = z ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	199	9	3	5	0
+ff_add_inv(x) = x, ff_mult_inv(y) = z ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | 	198	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | 	199	10	3	6	0
+ff_add(x, ff_add_inv(x)) = y === ff_add(y, ff_add(y, z)) = z | 	64	9	3	4	0
+ff_add(x, ff_add(x, y)) = y === ff_add(x, ff_add(x, z)) = z | 	64	10	3	4	0
+ff_mult_inv(x) = x ==> ff_add(y, ff_add(y, z)) = z | eq0(y)	16	7	3	3	1
+ff_add(x, ff_add_inv(x)) = y === ff_add(y, ff_add(z, y)) = z | 	16	9	3	4	0
+ff_mult(x, ff_mult_inv(x)) = y === ff_mult(y, ff_mult(z, y)) = z | 	15	9	3	4	0
+ff_mult_inv(x) = x, ff_mult_inv(y) = x ==> ff_mult(y, ff_mult(x, z)) = z | 	14	9	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult(x, ff_mult(y, z)) = z | 	14	9	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult(y, ff_mult(x, z)) = z | 	14	9	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(y) = x ==> ff_mult(x, ff_mult(y, z)) = z | 	14	9	3	5	0
+ff_add(x, ff_add(x, y)) = y === ff_add(y, ff_mult(z, x)) = y | 	14	10	3	5	0
+ff_add(x, ff_add(x, y)) = y ==> ff_add(y, ff_mult(x, z)) = y | 	14	10	3	5	0
+ff_add_inv(x) = x <== ff_add(x, ff_add(x, y)) = z | eq0(x)	8	7	3	4	1
+ff_add_inv(x) = x === ff_add(x, ff_add(y, z)) = z | eq0(y)	8	7	3	4	1
+ff_add_inv(x) = x === ff_add(y, ff_add(x, z)) = z | eq0(y)	8	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(z, y) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(z, x) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult(z, x) = x | eq0(y), eq0(x)	7	7	3	4	2
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_mult(y, x) = x | eq0(x)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(z, x) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(y, z) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult(y, z) = y | eq0(y), eq0(x)	7	7	3	3	2
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(y, z) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(z, x) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult(x, z) = y | eq0(y), eq0(x)	7	7	3	4	2
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult(z, x) = y | eq0(y), eq0(x)	7	7	3	4	2
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(z, y) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(z, y) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = y, ff_mult(z, y) = x | 	7	7	3	4	0
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult(z, y) = y | eq0(y), eq0(x)	7	7	3	3	2
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_mult(z, x) = x | eq0(x)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(x, z) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(y, z) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(x, z) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(x, z) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(z, y) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_mult(x, z) = x | eq0(x)	7	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = y, ff_mult(y, z) = x | 	7	7	3	4	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(z, x) = y | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_mult(x, z) = x | eq0(y), eq0(x)	7	7	3	4	2
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_mult(x, z) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_mult(x, y) = x | eq0(x)	7	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_mult(y, z) = x | eq0(y)	7	7	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add(y, ff_add(x, z)) = z | 	8	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add(x, ff_add(y, z)) = z | 	8	9	3	5	0
+ff_add(ff_add_inv(x), y) = y === ff_add(z, ff_add(x, y)) = y | eq0(z)	8	9	3	5	1
+ff_add(ff_add_inv(x), y) = y === ff_add(x, ff_add(z, y)) = y | eq0(z)	8	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add(y, ff_add(x, z)) = z | 	8	9	3	5	0
+ff_add(ff_add_inv(x), y) = z === ff_add(x, ff_add(x, z)) = y | eq0(x)	8	9	3	6	1
+ff_add(ff_add_inv(x), y) = z === ff_add(x, ff_add(x, y)) = z | eq0(x)	8	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add(y, ff_add(x, z)) = z | 	8	9	3	5	0
+ff_add(x, ff_mult_inv(y)) = z ==> ff_add(x, ff_add(x, z)) = z | eq0(x)	8	9	3	5	1
+ff_add(ff_add_inv(x), y) = y <== ff_add(x, ff_add(x, y)) = z | eq0(x)	8	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add(x, ff_add(y, z)) = z | 	8	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add(x, ff_add(y, z)) = z | 	8	9	3	5	0
+ff_add(ff_add_inv(x), y) = y <== ff_add(x, ff_add(x, z)) = y | eq0(x)	8	9	3	5	1
+ff_add(x, ff_add(x, y)) = y === ff_add(z, ff_add(z, y)) = y | eq0(x), eq0(z)	8	10	3	4	2
+ff_add(x, ff_add(x, y)) = y === ff_add(z, ff_mult(x, z)) = z | 	8	10	3	4	0
+ff_add(x, ff_add(x, y)) = y <== ff_add(x, ff_add(x, z)) = y | 	8	10	3	5	0
+ff_add(x, ff_add(x, y)) = z ==> ff_add(x, ff_add(x, z)) = z | 	8	10	3	5	0
+ff_add(x, ff_add(x, y)) = y <== ff_add(x, ff_add(z, y)) = y | 	8	10	3	5	0
+ff_add(x, ff_add(x, y)) = y === ff_add(z, ff_add(x, y)) = y | eq0(z)	8	10	3	5	1
+ff_add(x, ff_add(x, y)) = y <== ff_add(x, ff_add(x, y)) = z | eq0(x)	8	10	3	5	1
+ff_add(x, ff_add(x, y)) = z ==> ff_add(x, ff_add(x, y)) = y | eq0(x)	8	10	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_mult(y, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_mult(ff_add_inv(x), y) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(z, y) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_mult(z, y) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_mult(x, ff_add_inv(y)) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | 	7	9	3	5	0
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(y, ff_mult(z, x)) = x | eq0(x)	7	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_mult(x, z) = x | 	7	9	3	4	0
+ff_mult(x, ff_add_inv(y)) = y <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(z, x) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_mult(x, z) = x | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_mult(z, x) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(y, ff_mult(x, z)) = x | eq0(x)	7	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_mult(x, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(x, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(z, y) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_mult(ff_add_inv(x), y) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(x, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_mult(z, x) = x | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(z, x) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(z, ff_mult(y, x)) = x | eq0(x)	7	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(z, y) = y | 	7	9	3	5	0
+ff_add_inv(ff_mult(x, y)) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_mult(z, x) = x | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(z, x) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_mult(x, ff_add_inv(y)) = y <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | 	7	9	3	5	0
+ff_mult(ff_add_inv(x), y) = y <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_mult(x, z) = x | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(x, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(y, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(y, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(z, y) = x | 	7	9	3	5	0
+ff_add_inv(ff_mult(x, y)) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_mult(z, y) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_mult(z, y) = y | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(z, x) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(x, z) = x | 	7	9	3	5	0
+ff_mult(ff_mult_inv(x), y) = y === ff_mult(z, ff_mult(y, x)) = y | eq0(y)	7	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(z, y) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(y, z) = y | 	7	9	3	5	0
+ff_add_inv(ff_mult(x, y)) = y <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_mult(y, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(z, y) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_mult(z, y) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_mult(y, z) = y | 	7	9	3	4	0
+ff_mult(ff_add_inv(x), y) = y <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | 	7	9	3	5	0
+ff_add_inv(ff_mult(x, y)) = y <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_mult(x, ff_add_inv(y)) = x <== ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_mult(z, x) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_mult(z, y) = y | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_mult(z, x) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_mult(z, y) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(z, y) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_mult(y, z) = y | 	7	9	3	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_mult(y, z) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_mult(z, y) = y | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_mult(x, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_mult(y, z) = x | 	7	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_mult(x, z) = y | 	7	9	3	5	0
+ff_mult_inv(x) = x ==> ff_add(y, ff_add(z, y)) = z | eq0(y)	4	7	3	3	1
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(x, ff_mult(z, y)) = x | eq0(x)	5	9	3	5	1
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(x, ff_mult(y, z)) = x | eq0(x)	3	9	3	5	1
+ff_mult(ff_mult_inv(x), y) = y === ff_mult(y, ff_mult(x, z)) = y | eq0(y)	3	9	3	5	1
+ff_mult(ff_mult_inv(x), y) = y === ff_mult(y, ff_mult(z, x)) = y | eq0(y)	3	9	3	5	1
+ff_add_inv(x) = x <== ff_add(x, ff_add(y, x)) = z | eq0(x)	2	7	3	4	1
+ff_mult_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	7	3	5	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_add_inv(ff_mult_inv(y)) = z | eq0(x)	2	7	3	3	1
+ff_mult_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	7	3	5	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	2	7	3	4	1
+ff_add_inv(x) = x === ff_add(x, ff_add(y, z)) = y | eq0(z)	2	7	3	4	1
+ff_add_inv(x) = x === ff_add(y, ff_add(z, x)) = z | eq0(y)	2	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = z, ff_add_inv(ff_mult_inv(z)) = y | eq0(x)	2	7	3	3	1
+ff_mult_inv(x) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	2	7	3	4	1
+ff_add(x, ff_add_inv(y)) = z === ff_add(y, ff_add(x, y)) = z | eq0(y)	2	9	3	6	1
+ff_add(x, ff_add_inv(y)) = x === ff_add(y, ff_add(z, x)) = x | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = x, ff_mult_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	2	9	2	3	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add(x, ff_add(z, y)) = z | 	2	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add(x, ff_add(z, y)) = z | 	2	9	3	5	0
+ff_mult_inv(ff_mult_inv(ff_mult_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(x)	2	9	3	5	1
+ff_add_inv(ff_add_inv(ff_mult_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	2	9	3	4	1
+ff_add(ff_add_inv(x), y) = y <== ff_add(x, ff_add(z, x)) = y | eq0(x)	2	9	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(x) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	2	9	3	4	1
+ff_add_inv(ff_mult_inv(ff_add_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = x <== ff_add(y, ff_add(y, z)) = x | eq0(y)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = x <== ff_add(y, ff_add(y, x)) = z | eq0(y)	2	9	3	5	1
+ff_mult_inv(ff_add_inv(ff_add_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = x === ff_add(z, ff_add(y, x)) = x | eq0(z)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = x <== ff_add(y, ff_add(z, y)) = x | eq0(y)	2	9	3	5	1
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(y, ff_mult(y, x)) = x | 	2	9	2	4	0
+ff_mult_inv(ff_add_inv(ff_add_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	2	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add(y, ff_add(z, x)) = z | 	2	9	3	5	0
+ff_mult_inv(ff_add_inv(ff_add_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	2	9	3	4	1
+ff_mult_inv(ff_mult_inv(ff_mult_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	2	9	3	4	1
+ff_add_inv(x) = y, ff_mult_inv(y) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	2	9	3	3	1
+ff_add_inv(ff_mult_inv(ff_add_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	2	9	3	4	1
+ff_add_inv(x) = x, ff_mult_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x), eq0(z)	2	9	3	3	2
+ff_add(x, ff_add_inv(y)) = x === ff_add(y, ff_add(x, z)) = x | eq0(z)	2	9	3	5	1
+ff_add(x, ff_mult_inv(y)) = z ==> ff_add(x, ff_add(z, x)) = z | eq0(x)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = z === ff_add(y, ff_add(z, y)) = x | eq0(y)	2	9	3	6	1
+ff_add_inv(ff_add_inv(ff_mult_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_mult_inv(x) = y, ff_mult_inv(y) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = z ==> ff_mult(z, ff_mult(z, y)) = z | 	2	9	3	5	0
+ff_add(ff_add_inv(x), y) = z === ff_add(x, ff_add(z, x)) = y | eq0(x)	2	9	3	6	1
+ff_add(x, ff_add_inv(y)) = x === ff_add(z, ff_add(x, y)) = x | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add(y, ff_add(z, x)) = z | 	2	9	3	5	0
+ff_mult_inv(x) = x, ff_mult_inv(y) = z ==> ff_mult(y, ff_mult(y, z)) = y | 	2	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add(y, ff_add(z, x)) = z | 	2	9	3	5	0
+ff_add(ff_add_inv(x), y) = y <== ff_add(x, ff_add(y, x)) = z | eq0(x)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = z === ff_add(y, ff_add(y, z)) = x | eq0(y)	2	9	3	6	1
+ff_add_inv(x) = x, ff_mult_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	2	9	2	4	0
+ff_add_inv(x) = x, ff_mult_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x), eq0(z)	2	9	3	4	2
+ff_mult_inv(x) = x, ff_mult_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = x <== ff_add(y, ff_add(x, y)) = z | eq0(y)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	2	9	3	4	1
+ff_add(ff_add_inv(x), y) = z === ff_add(x, ff_add(y, x)) = z | eq0(x)	2	9	3	6	1
+ff_mult_inv(ff_mult_inv(ff_mult_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	2	9	3	4	1
+ff_add_inv(x) = y, ff_mult_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	2	9	3	5	1
+ff_add(ff_add_inv(x), y) = y === ff_add(z, ff_add(y, x)) = y | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = x, ff_mult_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(x), eq0(z)	2	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add(x, ff_add(z, y)) = z | 	2	9	3	5	0
+ff_add_inv(ff_mult_inv(ff_add_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	2	9	3	4	1
+ff_add_inv(x) = y, ff_mult_inv(y) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	2	9	3	4	1
+ff_add(ff_add_inv(x), y) = y ==> ff_add(x, ff_add(y, z)) = y | 	2	9	3	5	0
+ff_add(ff_mult_inv(x), y) = z ==> ff_add(y, ff_add(z, y)) = z | eq0(y)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(y) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	2	9	3	4	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_mult_inv(x) = y, ff_mult_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_mult_inv(x) = y, ff_mult_inv(y) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	2	9	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_add(x, ff_add_inv(y)) = z === ff_add(y, ff_add(y, x)) = z | eq0(y)	2	9	3	6	1
+ff_mult_inv(ff_mult_inv(ff_mult_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(x) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	2	9	3	3	1
+ff_add_inv(x) = y, ff_mult_inv(x) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	2	9	3	4	1
+ff_add(ff_mult_inv(x), y) = z ==> ff_add(y, ff_add(y, z)) = z | eq0(y)	2	9	3	5	1
+ff_add_inv(ff_add_inv(ff_mult_inv(x))) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	2	9	3	4	1
+ff_mult_inv(x) = y, ff_mult_inv(y) = x ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_mult_inv(ff_add_inv(ff_add_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	2	9	3	4	1
+ff_add_inv(ff_mult_inv(ff_add_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	2	9	3	5	1
+ff_add_inv(ff_add_inv(ff_mult_inv(x))) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	2	9	3	5	1
+ff_add_inv(x) = y, ff_mult_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	2	9	3	5	1
+ff_add(x, ff_add(x, y)) = y <== ff_add(z, ff_add(y, x)) = y | 	2	10	3	5	0
+ff_add(x, ff_add(x, y)) = y ==> ff_add(x, ff_add(y, z)) = y | 	2	10	3	5	0
+ff_add(x, ff_add(x, y)) = y <== ff_add(x, ff_add(z, x)) = y | eq0(x)	2	10	3	5	1
+ff_add(x, ff_add(y, z)) = y ==> ff_add(z, ff_add(z, y)) = y | 	2	10	3	5	0
+ff_add(x, ff_add(x, y)) = y === ff_add(x, ff_add(y, x)) = y | 	2	10	2	4	0
+ff_add(x, ff_add(x, y)) = y <== ff_add(x, ff_add(y, x)) = z | eq0(x)	2	10	3	5	1
+ff_add(x, ff_add(y, z)) = y <== ff_add(x, ff_add(x, y)) = y | 	2	10	3	5	0
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	7	3	4	1
+ff_mult_inv(x) = x ==> ff_mult(y, ff_mult(z, x)) = y | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = y | 	1	7	2	3	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	7	2	3	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x), eq0(y)	1	7	2	2	2
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | eq0(z), eq0(y)	1	7	3	4	2
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = y | eq0(z), eq0(x)	1	7	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = z | eq0(z), eq0(x)	1	7	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z), eq0(y)	1	7	3	4	2
+ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	7	3	5	1
+ff_mult_inv(x) = x ==> ff_mult(y, ff_mult(x, z)) = y | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x <== ff_add(y, ff_add(z, y)) = y | eq0(x)	1	7	3	3	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(x), eq0(y)	1	7	3	3	2
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z), eq0(y)	1	7	3	4	2
+ff_add_inv(x) = x <== ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = y | 	1	7	2	3	0
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(x), eq0(y)	1	7	3	3	2
+ff_add_inv(x) = x <== ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = x | 	1	7	2	3	0
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x ==> ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = z | eq0(y), eq0(z)	1	7	3	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y), eq0(x)	1	7	3	4	2
+ff_add_inv(x) = x <== ff_add(y, ff_add(z, x)) = x | eq0(x)	1	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	7	2	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x)	1	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = x | 	1	7	2	3	0
+ff_add_inv(x) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	7	2	3	1
+ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	7	2	3	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	7	3	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	7	2	3	1
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | eq0(y)	1	7	3	4	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x), eq0(y)	1	7	2	3	2
+ff_add_inv(x) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	7	2	3	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(y), eq0(x)	1	7	3	3	2
+ff_add_inv(x) = x ==> ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = y | eq0(y), eq0(z)	1	7	3	3	2
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | eq0(z), eq0(y)	1	7	3	4	2
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y), eq0(x)	1	7	3	4	2
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	7	2	4	1
+ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = x <== ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = x | 	1	7	2	3	0
+ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	7	3	5	1
+ff_add_inv(x) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(y), eq0(x)	1	7	3	3	2
+ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	7	2	3	1
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	7	3	4	1
+ff_add_inv(x) = x <== ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = y | 	1	7	2	3	0
+ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	7	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z), eq0(x)	1	9	3	3	2
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	2	4	1
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(y, ff_mult(y, x)) = z | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z), eq0(x)	1	9	3	4	2
+ff_add(x, ff_add_inv(x)) = y <== ff_add(x, ff_add(z, y)) = y | 	1	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	4	1
+ff_add(ff_add_inv(x), x) = y ==> ff_add(x, ff_add(z, x)) = x | 	1	9	3	4	0
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	1	2	0
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	9	3	4	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = x ==> ff_mult(x, ff_mult(z, y)) = z | 	1	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(x), eq0(z)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	3	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z), eq0(x)	1	9	3	3	2
+ff_add(x, ff_add_inv(y)) = x <== ff_add(x, ff_add(z, x)) = x | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	3	0
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(y), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add(ff_add_inv(x), y) = z === ff_add(x, ff_add(z, y)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_mult(x, ff_mult_inv(y)) = z === ff_mult(y, ff_mult(y, z)) = x | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	3	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_mult(x, ff_mult_inv(y)) = x === ff_mult(y, ff_mult(y, z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	6	1
+ff_add(ff_mult_inv(x), x) = y ==> ff_add(z, ff_add(z, x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(y), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add(x, ff_mult_inv(x)) = y ==> ff_add(y, ff_add(z, y)) = x | 	1	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x), eq0(z)	1	9	3	3	2
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	3	0
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add(z, ff_add(y, x)) = x | 	1	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add(z, ff_add(y, z)) = z | 	1	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(x), eq0(z)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	3	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	3	0
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	2	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_mult(ff_mult_inv(x), y) = y ==> ff_mult(z, ff_mult(x, y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult(y, ff_mult(z, x)) = z | 	1	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	9	2	3	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x), eq0(z)	1	9	3	3	2
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(x), eq0(z)	1	9	3	5	2
+ff_add(ff_add_inv(x), x) = y <== ff_add(z, ff_add(x, y)) = y | 	1	9	3	5	0
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z), eq0(y)	1	9	3	3	2
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	6	1
+ff_mult(x, ff_mult_inv(y)) = z === ff_mult(y, ff_mult(y, x)) = z | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(x)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add(y, ff_add(z, x)) = x | 	1	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(x), eq0(z)	1	9	3	4	2
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(x)	1	9	3	6	1
+ff_add(x, ff_add_inv(y)) = x <== ff_add(z, ff_add(x, y)) = y | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add(x, ff_add_inv(x)) = y <== ff_add(z, ff_add(x, z)) = z | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = z ==> ff_add(y, ff_add(z, y)) = y | 	1	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x), eq0(z)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	3	0
+ff_add(ff_mult_inv(x), y) = z ==> ff_add(z, ff_add(z, x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(ff_add_inv(ff_add_inv(x))) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(x)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	2	3	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z), eq0(x)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = x | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(x), eq0(z)	1	9	3	3	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(x) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x)	1	9	3	4	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(x), eq0(z)	1	9	3	4	2
+ff_add_inv(x) = y, ff_add_inv(y) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	3	0
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(y) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	3	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = x, ff_add_inv(y) = y ==> ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = x | eq0(x)	1	9	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = x ==> ff_mult(y, ff_mult(z, x)) = z | 	1	9	3	5	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	6	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = z ==> ff_mult(z, ff_mult(y, x)) = x | 	1	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z), eq0(x)	1	9	3	3	2
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add(x, ff_mult_inv(y)) = z ==> ff_add(z, ff_add(z, y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(x)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_mult_inv(x) = x, ff_mult_inv(x) = y ==> ff_mult(x, ff_mult(z, y)) = z | 	1	9	3	5	0
+ff_add(ff_add_inv(x), y) = z === ff_add(z, ff_add(x, z)) = z | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_mult(x, ff_mult_inv(x)) = y ==> ff_mult(x, ff_mult(x, z)) = z | eq0(z)	1	9	3	4	1
+ff_mult_inv(x) = x, ff_mult_inv(y) = z ==> ff_mult(y, ff_mult(z, x)) = x | 	1	9	3	6	0
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(y) = y === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z), eq0(y)	1	9	3	4	2
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(x), eq0(z)	1	9	3	5	2
+ff_add_inv(x) = y, ff_add_inv(y) = z === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_mult_inv(x) = y ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	3	0
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = y, ff_add_inv(z) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = x | eq0(y)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(z) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = y, ff_add_inv(ff_add_inv(x)) = x | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(y) = x, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(z) = y, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = x ==> ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = y | 	1	9	2	4	0
+ff_add_inv(x) = x, ff_add_inv(y) = x === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(z)) = y | eq0(z)	1	9	3	5	1
+ff_add_inv(x) = x, ff_add_inv(y) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	9	3	6	1
+ff_add_inv(x) = y, ff_add_inv(z) = y === ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z | eq0(z)	1	9	3	6	1
+ff_add_inv(x) = x, ff_add_inv(y) = y === ff_add_inv(y) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(x) = y === ff_add_inv(x) = z, ff_add_inv(ff_add_inv(z)) = z | eq0(z)	1	9	3	4	1
+ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(y)) = x | eq0(y)	1	10	3	6	1
+ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(x)) = z | eq0(z)	1	10	3	6	1
+ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z === ff_add_inv(y) = y, ff_add_inv(ff_add_inv(z)) = x | eq0(z)	1	10	3	6	1
+ff_add_inv(x) = x, ff_add_inv(ff_add_inv(y)) = z === ff_add_inv(z) = z, ff_add_inv(ff_add_inv(x)) = y | eq0(y)	1	10	3	6	1

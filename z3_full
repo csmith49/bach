@@ -1,0 +1,1068 @@
+
+and(x, y) = x <== and(and(z, y), w) = x | 	1000	8	4	6	0
+and(x, y) = x <== and(and(y, z), w) = x | 	1000	8	4	6	0
+and(x, y) = x <== and(and(z, w), y) = x | 	1000	8	4	6	0
+and(x, y) = x <== and(z, and(w, y)) = x | 	968	8	4	6	0
+and(x, y) = x <== and(z, and(y, w)) = x | 	965	8	4	6	0
+and(x, y) = x <== and(y, and(z, w)) = x | 	964	8	4	6	0
+and(x, and(y, z)) = w === and(x, and(z, y)) = w | 	1000	10	4	8	0
+and(x, and(y, z)) = w ==> and(x, and(y, w)) = w | 	975	10	4	7	0
+and(x, and(y, z)) = w ==> and(y, and(x, w)) = w | 	975	10	4	7	0
+and(x, and(y, z)) = w ==> and(w, and(y, z)) = w | 	968	10	4	7	0
+and(x, and(y, z)) = x <== and(w, and(y, z)) = x | 	968	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(w, z), y) = w | 	965	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(w, y), z) = w | 	965	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(w, z), x) = w | 	964	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(w, x), z) = w | 	964	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(w, y), x) = w | 	962	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(w, x), y) = w | 	962	10	4	7	0
+and(x, and(y, z)) = w ==> and(x, and(w, z)) = w | 	961	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(x, w), z) = w | 	961	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(y, w), z) = w | 	959	10	4	7	0
+and(x, and(y, z)) = w ==> and(y, and(w, z)) = w | 	959	10	4	7	0
+and(x, and(y, z)) = w ==> and(x, and(w, y)) = w | 	958	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(x, w), y) = w | 	958	10	4	7	0
+and(x, and(y, z)) = w ==> and(y, and(w, x)) = w | 	955	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(y, w), x) = w | 	955	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(y, z), w) = w | 	944	10	4	7	0
+and(x, and(y, z)) = w === and(and(x, y), z) = w | 	890	10	4	8	0
+and(x, and(y, z)) = w === and(y, and(x, z)) = w | 	865	10	4	8	0
+and(x, and(y, z)) = w ==> and(x, and(z, w)) = w | 	862	10	4	7	0
+and(x, and(y, z)) = w ==> and(z, and(y, w)) = w | 	862	10	4	7	0
+and(x, and(y, z)) = w ==> and(z, and(x, w)) = w | 	862	10	4	7	0
+and(x, and(y, z)) = w ==> and(y, and(z, w)) = w | 	862	10	4	7	0
+and(x, and(y, z)) = w ==> and(z, and(w, y)) = w | 	861	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(z, w), y) = w | 	861	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(z, w), x) = w | 	860	10	4	7	0
+and(x, and(y, z)) = w ==> and(z, and(w, x)) = w | 	860	10	4	7	0
+and(x, and(y, z)) = w ==> and(w, and(z, y)) = w | 	853	10	4	7	0
+and(x, and(y, z)) = x <== and(w, and(z, y)) = x | 	853	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(z, y), w) = w | 	846	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(x, y), w) = w | 	807	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(y, x), w) = w | 	804	10	4	7	0
+and(x, and(y, z)) = w ==> and(w, and(x, y)) = w | 	793	10	4	7	0
+and(x, and(y, z)) = x <== and(y, and(z, w)) = x | 	793	10	4	7	0
+and(x, and(y, z)) = x <== and(z, and(y, w)) = x | 	790	10	4	7	0
+and(x, and(y, z)) = w ==> and(w, and(y, x)) = w | 	790	10	4	7	0
+and(x, and(y, z)) = w ==> and(w, and(x, z)) = w | 	784	10	4	7	0
+and(x, and(y, z)) = x <== and(y, and(w, z)) = x | 	784	10	4	7	0
+and(x, and(y, z)) = w === and(z, and(x, y)) = w | 	775	10	4	8	0
+and(x, and(y, z)) = w === and(y, and(z, x)) = w | 	775	10	4	8	0
+and(x, and(y, z)) = w === and(z, and(y, x)) = w | 	770	10	4	8	0
+and(x, and(y, z)) = w ==> and(and(x, z), w) = w | 	764	10	4	7	0
+and(x, and(y, z)) = w ==> and(w, and(z, x)) = w | 	716	10	4	7	0
+and(x, and(y, z)) = x <== and(z, and(w, y)) = x | 	716	10	4	7	0
+and(x, and(y, z)) = w ==> and(and(z, x), w) = w | 	713	10	4	7	0
+and(x, x) = y <== and(y, y) = x, and(z, w) = w | 	588	9	4	6	0
+and(x, x) = y <== and(y, y) = x, and(z, w) = z | 	588	9	4	6	0
+and(x, y) = x <== and(and(x, y), z) = x | 	351	8	3	5	0
+and(x, y) = x <== and(and(x, z), y) = x | 	351	8	3	5	0
+and(x, x) = y <== and(x, w) = y, and(y, z) = x | 	351	9	4	6	0
+and(x, x) = y <== and(x, z) = y, and(y, w) = x | 	351	9	4	6	0
+and(x, y) = x <== and(z, and(x, y)) = x | 	300	8	3	5	0
+and(x, y) = x <== and(and(z, x), y) = x | 	300	8	3	5	0
+and(x, y) = x <== and(y, and(x, z)) = x | 	298	8	3	5	0
+and(x, y) = x <== and(and(y, x), z) = x | 	298	8	3	5	0
+and(x, x) = y <== and(w, y) = x, and(x, z) = y | 	300	9	4	6	0
+and(x, x) = y <== and(w, x) = y, and(y, z) = x | 	300	9	4	6	0
+and(x, y) = x <== and(y, and(z, x)) = x | 	257	8	3	5	0
+and(x, y) = x <== and(z, and(y, x)) = x | 	257	8	3	5	0
+and(x, y) = x <== and(x, and(z, y)) = x | 	225	8	3	5	0
+and(x, y) = x <== and(x, and(y, z)) = x | 	224	8	3	5	0
+and(x, y) = x <== and(and(z, y), x) = x | 	212	8	3	5	0
+and(x, y) = x <== and(and(y, z), x) = x | 	211	8	3	5	0
+and(x, and(y, z)) = x === and(and(x, y), z) = x | 	224	10	3	6	0
+and(x, and(y, z)) = x === and(and(y, x), z) = x | 	222	10	3	6	0
+and(x, and(y, z)) = x === and(y, and(x, z)) = x | 	222	10	3	6	0
+and(x, y) = z === and(y, x) = z | 	130	6	3	6	0
+and(x, and(y, z)) = x === and(and(y, z), x) = x | 	211	10	3	6	0
+True === and(x, x) = x, and(y, y) = y | 	144	7	2	2	0
+and(x, and(y, z)) = x === and(x, and(z, y)) = x | 	200	10	3	6	0
+and(x, and(y, z)) = x === and(y, and(z, x)) = x | 	199	10	3	6	0
+and(x, y) = z === and(and(x, x), y) = z | 	159	8	3	6	0
+and(x, x) = y <== and(y, y) = x, and(y, z) = w | 	159	9	4	6	0
+and(x, x) = y <== and(x, z) = w, and(y, y) = x | 	159	9	4	6	0
+and(x, y) = z === and(x, and(y, y)) = z | 	137	8	3	6	0
+and(x, y) = x <== and(z, y) = x | 	100	6	3	5	0
+and(x, y) = z ==> and(z, y) = z | 	100	6	3	5	0
+and(x, y) = x <== and(y, z) = x | 	99	6	3	5	0
+and(x, y) = z ==> and(z, x) = z | 	99	6	3	5	0
+and(x, x) = y ==> and(x, y) = y, and(z, z) = z | 	144	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, z) = w | 	144	9	4	6	0
+and(x, x) = y ==> and(y, x) = y, and(z, z) = z | 	144	9	3	5	0
+and(x, x) = y === and(y, y) = x, and(z, z) = z | 	144	9	3	5	0
+and(x, x) = y ==> and(y, x) = x, and(z, z) = z | 	144	9	3	5	0
+and(x, x) = y ==> and(x, y) = x, and(z, z) = z | 	144	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, x) = w | 	137	9	4	6	0
+and(x, x) = y <== and(y, y) = x, and(z, y) = w | 	137	9	4	6	0
+and(x, y) = z === and(x, and(x, y)) = z | 	105	8	3	6	0
+and(x, y) = x <== and(and(z, z), y) = x | 	100	8	3	5	0
+and(x, y) = z === and(and(x, y), y) = z | 	100	8	3	6	0
+and(x, y) = z ==> and(and(x, y), z) = z | 	100	8	3	6	0
+and(x, y) = z ==> and(z, and(x, y)) = z | 	100	8	3	6	0
+and(x, y) = x <== and(and(z, y), y) = x | 	100	8	3	5	0
+and(x, y) = x <== and(and(z, y), z) = x | 	99	8	3	5	0
+and(x, y) = z ==> and(x, and(z, y)) = z | 	99	8	3	6	0
+and(x, y) = x <== and(and(y, z), z) = x | 	99	8	3	5	0
+and(x, y) = x <== and(and(y, z), y) = x | 	99	8	3	5	0
+and(x, y) = z ==> and(and(z, y), x) = z | 	99	8	3	6	0
+and(x, y) = z === and(and(x, y), x) = z | 	99	8	3	6	0
+and(x, y) = z ==> and(and(x, z), y) = z | 	99	8	3	6	0
+and(x, y) = z ==> and(and(z, x), y) = z | 	99	8	3	6	0
+and(x, y) = x <== and(and(y, y), z) = x | 	99	8	3	5	0
+and(x, y) = x <== and(z, and(z, y)) = x | 	99	8	3	5	0
+and(x, y) = x <== and(y, and(y, z)) = x | 	98	8	3	5	0
+and(x, y) = x <== and(z, and(y, y)) = x | 	93	8	3	5	0
+and(x, y) = x <== and(y, and(z, z)) = x | 	92	8	3	5	0
+and(x, y) = x <== and(y, and(z, y)) = x | 	91	8	3	5	0
+and(x, y) = z ==> and(x, and(y, z)) = z | 	90	8	3	6	0
+and(x, y) = z ==> and(y, and(x, z)) = z | 	90	8	3	6	0
+and(x, y) = z ==> and(y, and(z, x)) = z | 	90	8	3	6	0
+and(x, y) = z === and(x, and(y, x)) = z | 	90	8	3	6	0
+and(x, y) = z ==> and(z, and(y, x)) = z | 	90	8	3	6	0
+and(x, y) = x <== and(z, and(y, z)) = x | 	90	8	3	5	0
+and(x, y) = z ==> and(and(y, x), z) = z | 	90	8	3	6	0
+and(x, y) = z ==> and(and(y, z), x) = z | 	90	8	3	6	0
+and(x, x) = y <== and(w, z) = x, and(x, z) = y | 	100	9	4	6	0
+and(x, x) = y <== and(y, y) = x, and(z, w) = y | 	100	9	4	6	0
+and(x, x) = y <== and(w, z) = y, and(y, z) = x | 	100	9	4	6	0
+and(x, x) = y <== and(y, y) = x, and(z, w) = x | 	100	9	4	6	0
+and(x, x) = y <== and(y, z) = x, and(z, w) = y | 	99	9	4	6	0
+and(x, x) = y <== and(x, z) = y, and(z, w) = x | 	99	9	4	6	0
+and(x, y) = x === and(y, x) = x | 	43	6	2	4	0
+and(x, y) = x === and(and(x, y), y) = x | 	49	8	2	4	0
+and(x, y) = x === and(and(x, y), x) = x | 	49	8	2	4	0
+and(x, y) = x === and(and(x, x), y) = x | 	49	8	2	4	0
+and(x, y) = x === and(x, and(x, y)) = x | 	49	8	2	4	0
+and(x, y) = x === and(x, and(y, y)) = x | 	44	8	2	4	0
+and(x, x) = y <== and(y, y) = x, and(y, z) = z | 	49	9	3	5	0
+and(x, x) = y <== and(x, z) = x, and(x, z) = y | 	49	9	3	5	0
+and(x, x) = y <== and(x, y) = y, and(y, z) = x | 	49	9	3	5	0
+and(x, x) = y <== and(x, z) = y, and(y, z) = x | 	49	9	3	5	0
+and(x, x) = y <== and(y, x) = y, and(y, z) = x | 	49	9	3	5	0
+and(x, x) = y <== and(x, z) = y, and(y, y) = x | 	49	9	3	5	0
+and(x, x) = y <== and(x, z) = z, and(y, y) = x | 	49	9	3	5	0
+and(x, x) = y <== and(y, z) = x, and(y, z) = y | 	49	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(y, z) = y | 	49	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(y, z) = x | 	49	9	3	5	0
+and(x, x) = y <== and(x, z) = y, and(y, x) = x | 	49	9	3	5	0
+and(x, x) = y <== and(x, z) = x, and(y, y) = x | 	49	9	3	5	0
+and(x, x) = y <== and(x, y) = x, and(x, z) = y | 	49	9	3	5	0
+and(x, y) = x === and(and(y, x), x) = x | 	43	8	2	4	0
+and(x, y) = x === and(and(y, x), y) = x | 	43	8	2	4	0
+and(x, y) = x === and(y, and(y, x)) = x | 	43	8	2	4	0
+and(x, y) = x === and(x, and(y, x)) = x | 	43	8	2	4	0
+and(x, y) = x === and(y, and(x, x)) = x | 	43	8	2	4	0
+and(x, y) = x === and(and(y, y), x) = x | 	43	8	2	4	0
+and(x, y) = x === and(y, and(x, y)) = x | 	43	8	2	4	0
+and(x, x) = y <== and(x, y) = x, and(z, x) = y | 	44	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, y) = x | 	44	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, x) = x | 	44	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, y) = z | 	44	9	3	5	0
+and(x, x) = y <== and(y, x) = x, and(z, x) = y | 	44	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, x) = y | 	44	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, y) = y | 	44	9	3	5	0
+and(x, x) = y <== and(x, y) = y, and(z, y) = x | 	44	9	3	5	0
+and(x, x) = y <== and(y, y) = x, and(z, x) = z | 	44	9	3	5	0
+and(x, x) = y <== and(y, x) = y, and(z, y) = x | 	44	9	3	5	0
+and(x, x) = y <== and(y, z) = x, and(z, x) = y | 	43	9	3	5	0
+and(x, x) = y <== and(x, z) = y, and(z, y) = x | 	43	9	3	5	0
+and(x, x) = y <== and(x, z) = y, and(z, x) = x | 	43	9	3	5	0
+and(x, x) = y <== and(x, z) = x, and(z, x) = y | 	43	9	3	5	0
+and(x, x) = y <== and(y, z) = x, and(z, y) = y | 	43	9	3	5	0
+True === and(x, x) = x | 	12	4	1	1	0
+and(x, x) = y ==> and(y, x) = x | 	12	6	2	4	0
+True === and(and(x, x), x) = x | 	12	6	1	1	0
+and(x, x) = y ==> and(x, y) = x | 	12	6	2	4	0
+and(x, y) = x <== and(y, y) = x | 	12	6	2	4	0
+and(x, x) = y ==> and(x, y) = y | 	12	6	2	4	0
+True === and(x, and(x, x)) = x | 	12	6	1	1	0
+and(x, x) = y ==> and(y, x) = y | 	12	6	2	4	0
+and(x, x) = y === and(y, y) = x | 	12	6	2	4	0
+and(x, y) = x <== and(x, x) = y | 	12	6	2	4	0
+and(x, x) = y ==> and(x, and(x, y)) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(and(x, x), y) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(y, and(x, x)) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(and(y, x), y) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(x, and(y, x)) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(and(x, y), y) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(and(y, x), y) = x | 	12	8	2	4	0
+and(x, x) = y === and(and(x, x), x) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(x, and(y, x)) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(y, and(y, x)) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(and(y, x), x) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(x, and(y, y)) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(and(y, y), x) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(x, and(x, y)) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(and(x, y), y) = x | 	12	8	2	4	0
+and(x, x) = y === and(x, and(x, x)) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(and(x, y), x) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(and(x, y), x) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(and(y, y), x) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(y, and(y, x)) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(y, and(x, y)) = y | 	12	8	2	4	0
+and(x, x) = y ==> and(and(x, x), y) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(and(y, x), x) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(y, and(x, x)) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(y, and(x, y)) = x | 	12	8	2	4	0
+and(x, x) = y ==> and(x, and(y, y)) = y | 	12	8	2	4	0
+and(x, x) = y === and(y, x) = y, and(y, y) = x | 	12	9	2	4	0
+and(x, x) = y ==> and(y, x) = x, and(y, y) = y | 	12	9	2	4	0
+and(x, x) = y === and(x, y) = x, and(y, x) = y | 	12	9	2	4	0
+and(x, x) = y <== and(x, x) = z, and(z, x) = y | 	12	9	3	5	0
+and(x, x) = y === and(x, y) = x, and(y, y) = x | 	12	9	2	4	0
+and(x, x) = y ==> and(x, x) = x, and(y, x) = y | 	12	9	2	4	0
+and(x, x) = y === and(y, x) = x, and(y, x) = y | 	12	9	2	4	0
+and(x, x) = y === and(x, x) = x, and(y, y) = x | 	12	9	2	4	0
+and(x, x) = y <== and(x, z) = y, and(z, z) = x | 	12	9	3	5	0
+and(x, x) = y <== and(x, x) = z, and(x, z) = y | 	12	9	3	5	0
+and(x, x) = y <== and(y, y) = z, and(z, y) = x | 	12	9	3	5	0
+and(x, x) = y ==> and(x, x) = x, and(x, y) = y | 	12	9	2	4	0
+and(x, x) = y === and(x, y) = x, and(x, y) = y | 	12	9	2	4	0
+and(x, x) = y <== and(y, y) = x, and(z, z) = y | 	12	9	3	5	0
+and(x, x) = y === and(x, y) = y, and(y, x) = x | 	12	9	2	4	0
+and(x, x) = y <== and(x, y) = z, and(y, y) = x | 	12	9	3	5	0
+and(x, x) = y ==> and(x, x) = x, and(y, x) = x | 	12	9	2	4	0
+and(x, x) = y ==> and(x, y) = y, and(y, y) = y | 	12	9	2	4	0
+and(x, x) = y ==> and(y, x) = y, and(y, y) = y | 	12	9	2	4	0
+and(x, x) = y <== and(y, y) = z, and(y, z) = x | 	12	9	3	5	0
+and(x, x) = y ==> and(x, y) = x, and(y, x) = x | 	12	9	2	4	0
+and(x, x) = y === and(y, y) = x, and(y, y) = y | 	12	9	2	4	0
+and(x, x) = y <== and(y, y) = x, and(y, y) = z | 	12	9	3	5	0
+and(x, x) = y ==> and(x, y) = y, and(y, x) = y | 	12	9	2	4	0
+and(x, x) = y ==> and(x, x) = x, and(x, y) = x | 	12	9	2	4	0
+and(x, x) = y <== and(x, x) = z, and(z, z) = y | 	12	9	3	5	0
+and(x, x) = y === and(x, y) = y, and(y, y) = x | 	12	9	2	4	0
+and(x, x) = y <== and(y, y) = x, and(z, z) = x | 	12	9	3	5	0
+and(x, x) = y === and(y, x) = x, and(y, y) = x | 	12	9	2	4	0
+and(x, x) = y ==> and(x, y) = x, and(y, y) = y | 	12	9	2	4	0
+and(x, x) = y <== and(y, x) = z, and(y, y) = x | 	12	9	3	5	0
+and(x, x) = y <== and(y, y) = z, and(z, z) = x | 	12	9	3	5	0
+and(x, x) = y <== and(y, z) = x, and(z, z) = y | 	12	9	3	5	0
+and(x, x) = y <== and(x, x) = z, and(y, y) = z | 	12	9	3	5	0
+and(x, x) = y <== and(x, x) = z, and(y, y) = x | 	12	9	3	5	0
+and(x, x) = x <== and(y, z) = w | 	1000	6	4	4	0
+and(x, y) = z ==> and(w, w) = w | 	1000	6	4	4	0
+and(x, x) = x <== and(and(x, y), z) = w | 	1000	8	4	5	0
+and(x, x) = x <== and(and(y, z), z) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(y, and(z, z)) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(and(y, z), x) = w | 	1000	8	4	5	0
+and(x, x) = x <== and(y, and(z, y)) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(and(y, z), w) = z | 	1000	8	4	4	0
+and(x, x) = x <== and(x, and(y, z)) = w | 	1000	8	4	5	0
+and(x, x) = x <== and(and(y, z), w) = x | 	1000	8	4	5	0
+and(x, x) = x <== and(and(y, x), z) = w | 	1000	8	4	5	0
+and(x, x) = x <== and(and(y, y), z) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(y, and(x, z)) = w | 	1000	8	4	5	0
+and(x, x) = x <== and(y, and(z, w)) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(y, and(z, w)) = z | 	1000	8	4	4	0
+and(x, x) = x <== and(and(y, z), y) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(and(y, z), w) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(and(y, z), w) = y | 	1000	8	4	4	0
+and(x, x) = x <== and(y, and(z, w)) = y | 	1000	8	4	4	0
+and(x, x) = x <== and(y, and(y, z)) = w | 	1000	8	4	4	0
+and(x, x) = x <== and(y, and(z, x)) = w | 	1000	8	4	5	0
+and(x, x) = x <== and(y, and(z, w)) = x | 	968	8	4	5	0
+and(x, y) = x ==> and(z, z) = z | 	588	6	3	3	0
+and(x, x) = x <== and(y, z) = z | 	588	6	3	3	0
+and(x, x) = x <== and(y, z) = y | 	588	6	3	3	0
+and(x, x) = x <== and(and(y, y), z) = y | 	588	8	3	3	0
+and(x, x) = x <== and(and(y, z), z) = y | 	588	8	3	3	0
+and(x, x) = x <== and(and(y, z), y) = y | 	588	8	3	3	0
+and(x, x) = x <== and(and(y, y), z) = z | 	588	8	3	3	0
+and(x, x) = x <== and(y, and(y, z)) = y | 	588	8	3	3	0
+and(x, x) = x <== and(y, and(y, z)) = z | 	588	8	3	3	0
+and(x, x) = x <== and(and(y, z), z) = z | 	528	8	3	3	0
+and(x, x) = x <== and(y, and(z, z)) = y | 	528	8	3	3	0
+and(x, x) = x <== and(y, and(z, z)) = z | 	528	8	3	3	0
+and(x, x) = x <== and(y, and(z, y)) = y | 	528	8	3	3	0
+and(x, x) = x <== and(y, and(z, y)) = z | 	516	8	3	3	0
+and(x, x) = x <== and(and(y, z), y) = z | 	516	8	3	3	0
+and(x, x) = x <== and(and(x, y), z) = x | 	351	8	3	4	0
+and(x, x) = x <== and(and(y, x), z) = y | 	305	8	3	4	0
+and(x, x) = x <== and(and(y, z), x) = y | 	305	8	3	4	0
+and(x, x) = x <== and(x, and(y, z)) = y | 	300	8	3	4	0
+and(x, x) = x <== and(and(y, x), z) = x | 	300	8	3	4	0
+and(x, x) = x <== and(and(x, y), z) = y | 	300	8	3	4	0
+and(x, x) = x <== and(y, and(x, z)) = x | 	300	8	3	4	0
+and(x, x) = x <== and(x, and(y, z)) = z | 	277	8	3	4	0
+and(x, x) = x <== and(y, and(x, z)) = z | 	277	8	3	4	0
+and(x, x) = x <== and(y, and(z, x)) = z | 	262	8	3	4	0
+and(x, x) = x <== and(and(y, z), x) = z | 	262	8	3	4	0
+and(x, x) = x <== and(y, and(z, x)) = x | 	260	8	3	4	0
+and(x, x) = x <== and(and(x, y), z) = z | 	228	8	3	4	0
+and(x, x) = x <== and(x, and(y, z)) = x | 	225	8	3	4	0
+and(x, x) = x <== and(y, and(x, z)) = y | 	225	8	3	4	0
+and(x, x) = x <== and(and(y, x), z) = z | 	216	8	3	4	0
+and(x, x) = x <== and(and(y, z), x) = x | 	214	8	3	4	0
+and(x, y) = z ==> and(x, x) = x | 	159	6	3	4	0
+and(x, x) = x <== and(x, y) = z | 	159	6	3	4	0
+and(x, x) = x <== and(y, and(z, x)) = y | 	206	8	3	4	0
+and(x, x) = y ==> and(z, z) = z | 	144	6	3	3	0
+and(x, x) = x === and(y, y) = y | 	144	6	2	2	0
+and(x, x) = x <== and(y, y) = z | 	144	6	3	3	0
+and(x, y) = z ==> and(y, y) = y | 	137	6	3	4	0
+and(x, x) = x <== and(y, x) = z | 	137	6	3	4	0
+and(x, x) = x <== and(and(x, x), y) = z | 	159	8	3	4	0
+and(x, x) = x <== and(y, and(y, y)) = z | 	144	8	3	3	0
+and(x, x) = x <== and(and(y, y), y) = z | 	144	8	3	3	0
+and(x, x) = x <== and(and(y, y), x) = z | 	137	8	3	4	0
+and(x, x) = x <== and(y, and(x, x)) = z | 	137	8	3	4	0
+and(x, x) = x <== and(x, and(y, y)) = z | 	137	8	3	4	0
+and(x, y) = z ==> and(z, z) = z | 	100	6	3	4	0
+and(x, x) = x <== and(y, z) = x | 	100	6	3	4	0
+and(x, x) = x <== and(x, and(x, y)) = z | 	105	8	3	4	0
+and(x, x) = x <== and(and(y, z), z) = x | 	100	8	3	4	0
+and(x, x) = x <== and(and(x, y), y) = z | 	100	8	3	4	0
+and(x, x) = x <== and(and(y, y), z) = x | 	100	8	3	4	0
+and(x, x) = x <== and(y, and(y, z)) = x | 	99	8	3	4	0
+and(x, x) = x <== and(and(y, z), y) = x | 	99	8	3	4	0
+and(x, x) = x <== and(and(x, y), x) = z | 	99	8	3	4	0
+and(x, x) = x <== and(and(y, x), x) = z | 	93	8	3	4	0
+and(x, x) = x <== and(y, and(z, z)) = x | 	93	8	3	4	0
+and(x, x) = x <== and(y, and(y, x)) = z | 	93	8	3	4	0
+and(x, x) = x <== and(x, and(y, x)) = z | 	92	8	3	4	0
+and(x, x) = x <== and(y, and(x, y)) = z | 	92	8	3	4	0
+and(x, x) = x <== and(and(y, x), y) = z | 	92	8	3	4	0
+and(x, x) = x <== and(y, and(z, y)) = x | 	91	8	3	4	0
+and(x, y) = x ==> and(x, x) = x | 	49	6	2	3	0
+and(x, x) = x <== and(x, y) = y | 	49	6	2	3	0
+and(x, x) = x <== and(x, y) = x | 	49	6	2	3	0
+and(x, x) = x <== and(y, x) = y | 	44	6	2	3	0
+and(x, y) = x ==> and(y, y) = y | 	44	6	2	3	0
+and(x, x) = x <== and(y, x) = x | 	44	6	2	3	0
+and(x, x) = x <== and(and(x, x), y) = x | 	49	8	2	3	0
+and(x, x) = x <== and(and(x, y), x) = x | 	49	8	2	3	0
+and(x, x) = x <== and(x, and(x, y)) = x | 	49	8	2	3	0
+and(x, x) = x <== and(x, and(x, y)) = y | 	49	8	2	3	0
+and(x, x) = x <== and(and(x, y), y) = x | 	49	8	2	3	0
+and(x, x) = x <== and(and(x, x), y) = y | 	49	8	2	3	0
+and(x, x) = x <== and(x, and(y, y)) = x | 	44	8	2	3	0
+and(x, x) = x <== and(y, and(x, x)) = x | 	44	8	2	3	0
+and(x, x) = x <== and(y, and(x, x)) = y | 	44	8	2	3	0
+and(x, x) = x <== and(and(y, y), x) = y | 	44	8	2	3	0
+and(x, x) = x <== and(x, and(y, y)) = y | 	44	8	2	3	0
+and(x, x) = x <== and(y, and(y, x)) = y | 	44	8	2	3	0
+and(x, x) = x <== and(and(y, x), y) = y | 	44	8	2	3	0
+and(x, x) = x <== and(x, and(y, x)) = x | 	44	8	2	3	0
+and(x, x) = x <== and(y, and(x, y)) = y | 	44	8	2	3	0
+and(x, x) = x <== and(and(y, x), x) = y | 	44	8	2	3	0
+and(x, x) = x <== and(and(y, y), x) = x | 	44	8	2	3	0
+and(x, x) = x <== and(and(x, y), y) = y | 	44	8	2	3	0
+and(x, x) = x <== and(y, and(y, x)) = x | 	44	8	2	3	0
+and(x, x) = x <== and(and(y, x), x) = x | 	44	8	2	3	0
+and(x, x) = x <== and(and(y, x), y) = x | 	43	8	2	3	0
+and(x, x) = x <== and(and(x, y), x) = y | 	43	8	2	3	0
+and(x, x) = x <== and(x, and(y, x)) = y | 	43	8	2	3	0
+and(x, x) = x <== and(y, and(x, y)) = x | 	43	8	2	3	0
+and(x, x) = x <== and(x, x) = y | 	12	6	2	3	0
+and(x, x) = y ==> and(x, x) = x | 	12	6	2	3	0
+and(x, x) = x <== and(y, y) = x | 	12	6	2	3	0
+and(x, x) = y ==> and(y, y) = y | 	12	6	2	3	0
+and(x, x) = x <== and(and(x, x), x) = y | 	12	8	2	3	0
+and(x, x) = x <== and(y, and(y, y)) = x | 	12	8	2	3	0
+and(x, x) = x <== and(x, and(x, x)) = y | 	12	8	2	3	0
+and(x, x) = x <== and(and(y, y), y) = x | 	12	8	2	3	0
+and(x, x) = x === and(x, and(x, x)) = x | 	12	8	1	2	0
+and(x, x) = x === and(and(x, x), x) = x | 	12	8	1	2	0
+and(x, y) = y <== and(and(x, z), w) = y | 	1000	8	4	6	0
+and(x, y) = y <== and(x, and(z, w)) = y | 	990	8	4	6	0
+and(x, y) = y <== and(and(z, x), w) = y | 	990	8	4	6	0
+and(x, y) = y <== and(z, and(x, w)) = y | 	988	8	4	6	0
+and(x, y) = y <== and(and(z, w), x) = y | 	937	8	4	6	0
+and(x, x) = x <== and(y, y) = y, and(z, x) = w | 	1000	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, z) = z | 	1000	9	4	4	0
+and(x, x) = x <== and(y, z) = w, and(z, y) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(x, y) = y, and(z, w) = z | 	1000	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, w) = x | 	1000	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, w) = w | 	1000	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, w) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(y, x) = x, and(z, w) = w | 	1000	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, w) = w | 	1000	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, w) = z | 	1000	9	4	5	0
+and(x, x) = x <== and(w, w) = w, and(y, x) = z | 	1000	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(y, z) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(y, y) = y, and(z, y) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(y, x) = x, and(z, w) = z | 	1000	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, w) = y | 	1000	9	4	4	0
+and(x, x) = x <== and(y, y) = y, and(z, w) = z | 	1000	9	4	4	0
+and(x, x) = x <== and(y, y) = y, and(z, z) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(w, w) = w, and(y, z) = x | 	1000	9	4	5	0
+and(x, x) = x <== and(w, w) = w, and(x, y) = z | 	1000	9	4	5	0
+and(x, x) = x <== and(w, w) = w, and(y, z) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(w, y) = w, and(y, z) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(y, w) = w, and(y, z) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(y, x) = y, and(z, w) = z | 	1000	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, w) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(w, w) = w, and(y, y) = z | 	1000	9	4	4	0
+and(x, x) = x === and(y, y) = y, and(z, z) = z | 	1000	9	3	3	0
+and(x, x) = x <== and(w, z) = w, and(y, z) = w | 	1000	9	4	4	0
+and(x, x) = x <== and(x, z) = w, and(y, y) = y | 	1000	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, w) = w | 	1000	9	4	5	0
+and(x, y) = y <== and(z, and(w, x)) = y | 	874	8	4	6	0
+and(x, x) = x <== and(x, y) = z, and(z, w) = z | 	840	9	4	5	0
+and(x, x) = x <== and(x, w) = x, and(y, z) = x | 	840	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, w) = x | 	840	9	4	5	0
+and(x, x) = x <== and(y, x) = z, and(z, w) = z | 	766	9	4	5	0
+and(x, x) = x <== and(w, z) = z, and(x, y) = z | 	743	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, w) = y | 	743	9	4	5	0
+and(x, x) = x <== and(x, w) = w, and(y, z) = w | 	743	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, w) = y | 	727	9	4	5	0
+and(x, x) = x <== and(w, x) = w, and(y, z) = w | 	727	9	4	5	0
+and(x, x) = x <== and(w, x) = x, and(y, z) = x | 	718	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, w) = x | 	718	9	4	5	0
+and(x, x) = x <== and(x, w) = x, and(x, y) = z | 	668	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(x, z) = w | 	668	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(x, z) = w | 	668	9	4	5	0
+and(x, x) = x <== and(x, w) = w, and(x, y) = z | 	668	9	4	5	0
+and(x, x) = x <== and(w, z) = z, and(y, x) = z | 	664	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(y, z) = w | 	598	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(y, z) = w | 	598	9	4	5	0
+and(x, x) = x <== and(w, x) = x, and(x, y) = z | 	589	9	4	5	0
+and(x, x) = x <== and(w, x) = w, and(x, y) = z | 	589	9	4	5	0
+and(x, x) = x <== and(x, z) = w, and(y, x) = y | 	589	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(y, z) = w | 	589	9	4	5	0
+and(x, x) = x <== and(x, z) = w, and(y, x) = x | 	589	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(y, z) = w | 	589	9	4	5	0
+and(x, x) = x <== and(y, y) = z, and(z, w) = z | 	588	9	4	4	0
+and(x, x) = x <== and(w, w) = y, and(y, z) = w | 	588	9	4	4	0
+and(x, x) = x <== and(y, y) = y, and(y, z) = z | 	588	9	3	3	0
+and(x, x) = x <== and(x, y) = y, and(z, z) = w | 	588	9	4	5	0
+and(x, x) = x <== and(y, y) = x, and(z, w) = z | 	588	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(y, z) = y | 	588	9	4	4	0
+and(x, x) = x <== and(y, w) = w, and(y, y) = z | 	588	9	4	4	0
+and(x, x) = x <== and(w, z) = y, and(y, z) = w | 	588	9	4	4	0
+and(x, x) = x <== and(y, w) = y, and(y, z) = w | 	588	9	4	4	0
+and(x, x) = x <== and(y, y) = z, and(z, w) = w | 	588	9	4	4	0
+and(x, x) = x <== and(x, z) = z, and(y, y) = y | 	588	9	3	4	0
+and(x, x) = x <== and(y, z) = w, and(y, z) = z | 	588	9	4	4	0
+and(x, x) = x <== and(y, w) = z, and(y, y) = z | 	588	9	4	4	0
+and(x, x) = x <== and(w, y) = y, and(y, z) = w | 	588	9	4	4	0
+and(x, x) = x <== and(x, w) = x, and(y, y) = z | 	588	9	4	5	0
+and(x, x) = x <== and(y, y) = x, and(z, w) = w | 	588	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, z) = z | 	588	9	3	4	0
+and(x, x) = x <== and(x, z) = x, and(y, y) = y | 	588	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, z) = z | 	588	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, w) = w | 	588	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(z, w) = z | 	588	9	4	5	0
+and(x, x) = x <== and(y, w) = y, and(y, y) = z | 	588	9	4	4	0
+and(x, x) = x <== and(y, w) = z, and(y, z) = w | 	588	9	4	4	0
+and(x, x) = x <== and(y, y) = z, and(z, w) = y | 	588	9	4	4	0
+and(x, x) = x <== and(y, y) = y, and(y, z) = y | 	588	9	3	3	0
+and(x, x) = x <== and(y, y) = w, and(y, z) = w | 	588	9	4	4	0
+and(x, x) = x <== and(x, y) = x, and(z, z) = w | 	588	9	4	5	0
+and(x, x) = x <== and(x, w) = w, and(y, y) = z | 	588	9	4	5	0
+and(x, x) = x <== and(y, w) = w, and(y, x) = z | 	574	9	4	5	0
+and(x, x) = x <== and(y, w) = y, and(y, x) = z | 	574	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, x) = w | 	564	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, x) = w | 	564	9	4	5	0
+and(x, x) = x <== and(x, w) = w, and(y, x) = z | 	564	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, w) = w | 	564	9	4	5	0
+and(x, x) = x <== and(x, w) = x, and(y, x) = z | 	564	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, w) = y | 	564	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, y) = w | 	562	9	4	5	0
+and(x, x) = x <== and(w, y) = y, and(x, y) = z | 	562	9	4	5	0
+and(x, x) = x <== and(w, y) = w, and(x, y) = z | 	562	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, y) = w | 	562	9	4	5	0
+and(x, x) = x <== and(x, z) = z, and(y, z) = w | 	562	9	4	5	0
+and(x, x) = x <== and(x, z) = x, and(y, z) = w | 	562	9	4	5	0
+and(x, x) = x <== and(x, w) = z, and(x, y) = z | 	545	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, y) = z | 	528	9	3	3	0
+and(x, x) = x <== and(w, x) = w, and(y, y) = z | 	528	9	4	5	0
+and(x, x) = x <== and(w, y) = y, and(y, y) = z | 	528	9	4	4	0
+and(x, x) = x <== and(w, z) = z, and(y, z) = w | 	528	9	4	4	0
+and(x, x) = x <== and(y, y) = y, and(z, x) = z | 	528	9	3	4	0
+and(x, x) = x <== and(w, x) = x, and(y, y) = z | 	528	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, z) = z | 	528	9	3	4	0
+and(x, x) = x <== and(w, z) = z, and(y, y) = z | 	528	9	4	4	0
+and(x, x) = x <== and(w, y) = w, and(y, y) = z | 	528	9	4	4	0
+and(x, x) = x <== and(w, z) = w, and(y, y) = z | 	528	9	4	4	0
+and(x, x) = x <== and(y, z) = w, and(z, z) = w | 	528	9	4	4	0
+and(x, x) = x <== and(y, x) = x, and(z, z) = w | 	528	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, x) = x | 	528	9	3	4	0
+and(x, x) = x <== and(y, y) = y, and(z, y) = y | 	528	9	3	3	0
+and(x, x) = x <== and(w, z) = y, and(y, y) = z | 	528	9	4	4	0
+and(x, x) = x <== and(y, z) = w, and(z, w) = z | 	528	9	4	4	0
+and(x, x) = x <== and(w, y) = z, and(y, y) = z | 	528	9	4	4	0
+and(x, x) = x <== and(w, w) = z, and(y, z) = w | 	528	9	4	4	0
+and(x, x) = x <== and(y, x) = y, and(z, z) = w | 	528	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, z) = z | 	528	9	3	4	0
+and(x, x) = x <== and(y, z) = w, and(z, w) = y | 	516	9	4	4	0
+and(x, x) = x <== and(w, y) = z, and(y, z) = w | 	516	9	4	4	0
+and(x, x) = x <== and(y, z) = w, and(z, y) = z | 	516	9	4	4	0
+and(x, x) = x <== and(y, z) = w, and(z, y) = y | 	516	9	4	4	0
+and(x, x) = x <== and(y, x) = y, and(z, x) = w | 	507	9	4	5	0
+and(x, x) = x <== and(w, y) = w, and(y, x) = z | 	507	9	4	5	0
+and(x, x) = x <== and(w, y) = y, and(y, x) = z | 	507	9	4	5	0
+and(x, x) = x <== and(w, x) = x, and(y, x) = z | 	507	9	4	5	0
+and(x, x) = x <== and(w, x) = w, and(y, x) = z | 	507	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, x) = w | 	507	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, x) = x | 	506	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, y) = w | 	506	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, y) = w | 	506	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, x) = z | 	506	9	4	5	0
+and(x, x) = x <== and(y, w) = z, and(y, x) = z | 	469	9	4	5	0
+and(x, x) = x <== and(y, x) = w, and(y, z) = w | 	469	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, w) = z | 	453	9	4	5	0
+and(x, x) = x <== and(x, z) = w, and(y, z) = w | 	453	9	4	5	0
+and(x, x) = x <== and(w, y) = z, and(x, y) = z | 	453	9	4	5	0
+and(x, x) = x <== and(x, w) = z, and(y, x) = z | 	453	9	4	5	0
+and(x, x) = x <== and(x, y) = w, and(y, z) = w | 	453	9	4	5	0
+and(x, x) = x <== and(w, x) = z, and(x, y) = z | 	453	9	4	5	0
+and(x, x) = x <== and(w, y) = y, and(y, z) = x | 	430	9	4	5	0
+and(x, x) = x <== and(w, x) = z, and(y, x) = z | 	407	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, x) = w | 	405	9	4	5	0
+and(x, x) = x <== and(w, y) = z, and(y, x) = z | 	405	9	4	5	0
+and(x, x) = x <== and(w, z) = z, and(y, z) = x | 	404	9	4	5	0
+and(x, x) = x <== and(w, y) = x, and(y, z) = x | 	398	9	4	5	0
+and(x, x) = x <== and(w, z) = w, and(y, z) = x | 	393	9	4	5	0
+and(x, x) = x <== and(w, y) = w, and(y, z) = x | 	387	9	4	5	0
+and(x, x) = x <== and(w, z) = x, and(y, z) = x | 	368	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(x, z) = x | 	351	9	3	4	0
+and(x, x) = x <== and(x, w) = y, and(y, z) = x | 	351	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(x, z) = z | 	351	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, w) = x | 	351	9	4	5	0
+and(x, y) = y <== and(x, and(y, z)) = y | 	300	8	3	5	0
+and(x, y) = y <== and(and(x, y), z) = y | 	300	8	3	5	0
+and(x, y) = y <== and(and(y, z), x) = y | 	298	8	3	5	0
+and(x, y) = y <== and(and(y, x), z) = y | 	298	8	3	5	0
+and(x, y) = y <== and(x, and(z, y)) = y | 	277	8	3	5	0
+and(x, y) = y <== and(z, and(x, y)) = y | 	277	8	3	5	0
+and(x, x) = x <== and(y, x) = y, and(y, z) = y | 	305	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, w) = y | 	305	9	4	5	0
+and(x, x) = x <== and(w, x) = y, and(y, z) = w | 	305	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(y, z) = z | 	305	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, x) = x | 	300	9	3	4	0
+and(x, x) = x <== and(x, z) = z, and(y, x) = y | 	300	9	3	4	0
+and(x, x) = x <== and(x, w) = z, and(y, z) = x | 	300	9	4	5	0
+and(x, x) = x <== and(w, z) = x, and(x, y) = z | 	300	9	4	5	0
+and(x, x) = x <== and(y, x) = z, and(z, w) = x | 	300	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, x) = z | 	300	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, z) = z | 	300	9	3	4	0
+and(x, x) = x <== and(x, w) = y, and(y, z) = w | 	300	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(y, z) = y | 	300	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, w) = y | 	300	9	4	5	0
+and(x, x) = x <== and(x, z) = x, and(y, x) = x | 	300	9	3	4	0
+and(x, x) = x <== and(w, x) = y, and(y, z) = x | 	300	9	4	5	0
+and(x, y) = y <== and(and(z, y), x) = y | 	257	8	3	5	0
+and(x, y) = y <== and(z, and(y, x)) = y | 	257	8	3	5	0
+and(x, x) = x <== and(x, y) = y, and(z, y) = y | 	277	9	3	4	0
+and(x, x) = x <== and(x, w) = z, and(y, z) = w | 	277	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, y) = z | 	277	9	3	4	0
+and(x, x) = x <== and(w, z) = y, and(x, y) = z | 	277	9	4	5	0
+and(x, x) = x <== and(w, x) = z, and(y, z) = w | 	262	9	4	5	0
+and(x, x) = x <== and(w, z) = y, and(y, x) = z | 	262	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, y) = z | 	262	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(z, y) = y | 	262	9	3	4	0
+and(x, x) = x <== and(w, x) = z, and(y, z) = x | 	260	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, x) = x | 	260	9	3	4	0
+and(x, x) = x <== and(w, z) = x, and(y, x) = z | 	260	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, x) = z | 	260	9	3	4	0
+and(x, y) = y <== and(and(x, z), y) = y | 	227	8	3	5	0
+and(x, y) = y <== and(y, and(x, z)) = y | 	222	8	3	5	0
+and(x, y) = y <== and(and(z, x), y) = y | 	214	8	3	5	0
+and(x, x) = x <== and(x, y) = y, and(z, w) = x | 	228	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, w) = w | 	228	9	4	5	0
+and(x, x) = x <== and(x, w) = w, and(y, z) = x | 	228	9	4	5	0
+and(x, y) = y <== and(y, and(z, x)) = y | 	201	8	3	5	0
+and(x, x) = x <== and(w, z) = w, and(x, y) = z | 	225	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, w) = y | 	225	9	4	5	0
+and(x, x) = x <== and(x, w) = x, and(y, z) = w | 	225	9	4	5	0
+and(x, x) = x <== and(y, x) = z, and(z, w) = w | 	216	9	4	5	0
+and(x, x) = x <== and(w, x) = w, and(y, z) = x | 	215	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, w) = x | 	215	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, w) = y | 	214	9	4	5	0
+and(x, x) = x <== and(w, x) = x, and(y, z) = w | 	214	9	4	5	0
+and(x, x) = x <== and(w, z) = w, and(y, x) = z | 	206	9	4	5	0
+and(x, x) = x <== and(x, x) = w, and(x, y) = z | 	159	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(y, z) = w | 	159	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(x, z) = w | 	159	9	4	5	0
+and(x, x) = x <== and(w, w) = x, and(x, y) = z | 	159	9	4	5	0
+and(x, x) = x <== and(x, z) = w, and(y, y) = x | 	159	9	4	5	0
+and(x, x) = x <== and(y, y) = x, and(y, z) = w | 	159	9	4	5	0
+and(x, x) = x <== and(x, y) = w, and(x, y) = z | 	159	9	4	5	0
+and(x, x) = x <== and(y, y) = z, and(z, y) = z | 	144	9	3	3	0
+and(x, x) = x <== and(w, w) = y, and(y, y) = z | 	144	9	4	4	0
+and(x, x) = x <== and(x, x) = w, and(y, y) = z | 	144	9	4	5	0
+and(x, x) = x <== and(y, y) = z, and(z, z) = w | 	144	9	4	4	0
+and(x, x) = x <== and(w, w) = x, and(y, y) = z | 	144	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, z) = y | 	144	9	3	3	0
+and(x, x) = x <== and(y, y) = w, and(y, y) = z | 	144	9	4	4	0
+and(x, x) = x <== and(y, y) = z, and(z, z) = z | 	144	9	3	3	0
+and(x, x) = x <== and(y, z) = w, and(z, z) = y | 	144	9	4	4	0
+and(x, x) = x <== and(y, y) = z, and(z, y) = w | 	144	9	4	4	0
+and(x, x) = x <== and(x, x) = z, and(y, y) = y | 	144	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(y, z) = z | 	144	9	3	3	0
+and(x, x) = x <== and(y, y) = z, and(y, z) = w | 	144	9	4	4	0
+and(x, x) = x <== and(w, w) = z, and(y, y) = z | 	144	9	4	4	0
+and(x, x) = x <== and(y, y) = x, and(z, z) = w | 	144	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(z, z) = w | 	144	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, z) = x | 	144	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(z, y) = y | 	144	9	3	3	0
+and(x, x) = x <== and(y, y) = x, and(z, z) = z | 	144	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(y, z) = y | 	144	9	3	3	0
+and(x, x) = x <== and(y, y) = z, and(z, z) = y | 	144	9	3	3	0
+and(x, x) = x <== and(x, x) = y, and(z, z) = z | 	144	9	3	4	0
+and(x, x) = x <== and(y, y) = y, and(y, y) = z | 	144	9	3	3	0
+and(x, x) = x <== and(x, x) = w, and(y, x) = z | 	137	9	4	5	0
+and(x, x) = x <== and(y, x) = w, and(y, x) = z | 	137	9	4	5	0
+and(x, x) = x <== and(y, y) = z, and(z, x) = w | 	137	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, y) = w | 	137	9	4	5	0
+and(x, x) = x <== and(x, x) = z, and(y, z) = w | 	137	9	4	5	0
+and(x, x) = x <== and(y, x) = w, and(y, y) = z | 	137	9	4	5	0
+and(x, x) = x <== and(x, y) = w, and(y, y) = z | 	137	9	4	5	0
+and(x, x) = x <== and(w, w) = y, and(x, y) = z | 	137	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(z, y) = w | 	137	9	4	5	0
+and(x, x) = x <== and(x, z) = w, and(y, y) = z | 	137	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, y) = y | 	137	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(y, y) = y | 	137	9	3	4	0
+and(x, x) = x <== and(w, w) = y, and(y, x) = z | 	137	9	4	5	0
+and(x, x) = x <== and(y, x) = z, and(y, y) = w | 	137	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, z) = x | 	137	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(z, x) = w | 	137	9	4	5	0
+and(x, x) = x <== and(w, w) = x, and(y, x) = z | 	137	9	4	5	0
+and(x, x) = x <== and(y, y) = x, and(z, x) = w | 	137	9	4	5	0
+and(x, x) = x <== and(y, y) = x, and(z, y) = w | 	137	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(x, z) = x | 	132	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(x, z) = z | 	132	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, x) = w | 	130	9	4	5	0
+and(x, x) = x <== and(x, y) = w, and(y, x) = z | 	130	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, x) = z | 	130	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(y, z) = z | 	122	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(y, z) = z | 	122	9	3	4	0
+and(x, x) = x <== and(x, z) = z, and(y, x) = x | 	122	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(z, x) = x | 	122	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, y) = y | 	122	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, z) = y | 	122	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, x) = z | 	122	9	3	4	0
+and(x, x) = x <== and(x, z) = x, and(y, x) = y | 	122	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(y, z) = y | 	122	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(z, y) = z | 	122	9	3	4	0
+and(x, y) = y <== and(and(x, x), z) = y | 	105	8	3	5	0
+and(x, y) = y <== and(x, and(x, z)) = y | 	105	8	3	5	0
+and(x, x) = x <== and(y, x) = y, and(z, x) = x | 	114	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(z, x) = z | 	114	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(z, y) = z | 	113	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(z, y) = y | 	113	9	3	4	0
+and(x, y) = y <== and(and(x, z), z) = y | 	99	8	3	5	0
+and(x, y) = y <== and(and(x, z), x) = y | 	98	8	3	5	0
+and(x, x) = x <== and(x, y) = z, and(x, z) = z | 	105	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(x, z) = y | 	105	9	3	4	0
+and(x, x) = x <== and(x, w) = y, and(x, y) = z | 	105	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(x, z) = w | 	105	9	4	5	0
+and(x, y) = y <== and(x, and(z, z)) = y | 	93	8	3	5	0
+and(x, y) = y <== and(and(z, z), x) = y | 	92	8	3	5	0
+and(x, y) = y <== and(z, and(x, x)) = y | 	92	8	3	5	0
+and(x, y) = y <== and(x, and(z, x)) = y | 	92	8	3	5	0
+and(x, y) = y <== and(and(z, x), x) = y | 	91	8	3	5	0
+and(x, y) = y <== and(and(z, x), z) = y | 	90	8	3	5	0
+and(x, y) = y <== and(z, and(z, x)) = y | 	90	8	3	5	0
+and(x, y) = y <== and(z, and(x, z)) = y | 	90	8	3	5	0
+and(x, x) = x <== and(x, z) = y, and(y, z) = w | 	100	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(y, z) = x | 	100	9	4	5	0
+and(x, x) = x <== and(x, w) = z, and(y, y) = z | 	100	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(z, y) = x | 	100	9	3	4	0
+and(x, x) = x <== and(w, w) = y, and(y, z) = x | 	100	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, y) = z | 	100	9	3	4	0
+and(x, x) = x <== and(y, y) = y, and(y, z) = x | 	100	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, w) = y | 	100	9	4	5	0
+and(x, x) = x <== and(y, w) = x, and(y, y) = z | 	100	9	4	5	0
+and(x, x) = x <== and(w, w) = x, and(y, z) = x | 	100	9	4	5	0
+and(x, x) = x <== and(w, z) = x, and(y, z) = w | 	100	9	4	5	0
+and(x, x) = x <== and(x, z) = y, and(y, y) = y | 	100	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, w) = y | 	100	9	4	5	0
+and(x, x) = x <== and(x, x) = w, and(y, z) = x | 	100	9	4	5	0
+and(x, x) = x <== and(y, y) = z, and(z, w) = x | 	100	9	4	5	0
+and(x, x) = x <== and(y, y) = x, and(z, w) = x | 	100	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, y) = w | 	100	9	4	5	0
+and(x, x) = x <== and(w, w) = z, and(x, y) = z | 	100	9	4	5	0
+and(x, x) = x <== and(w, z) = y, and(y, z) = x | 	100	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, z) = z | 	100	9	3	4	0
+and(x, x) = x <== and(x, w) = y, and(y, y) = z | 	100	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, z) = w | 	100	9	4	5	0
+and(x, x) = x <== and(x, x) = w, and(y, z) = w | 	100	9	4	5	0
+and(x, x) = x <== and(w, y) = x, and(x, y) = z | 	100	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(z, w) = x | 	100	9	4	5	0
+and(x, x) = x <== and(w, w) = x, and(y, z) = w | 	100	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(y, z) = x | 	99	9	3	4	0
+and(x, x) = x <== and(x, z) = y, and(y, x) = y | 	99	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, w) = x | 	99	9	4	5	0
+and(x, x) = x <== and(y, w) = x, and(y, x) = z | 	99	9	4	5	0
+and(x, x) = x <== and(w, y) = x, and(y, z) = w | 	99	9	4	5	0
+and(x, x) = x <== and(x, y) = x, and(y, z) = x | 	99	9	3	4	0
+and(x, x) = x <== and(x, w) = y, and(y, x) = z | 	99	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, x) = w | 	99	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(z, x) = z | 	99	9	3	4	0
+and(x, x) = x <== and(y, w) = x, and(y, z) = w | 	99	9	4	5	0
+and(x, x) = x <== and(y, x) = y, and(z, x) = y | 	93	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, x) = w | 	93	9	4	5	0
+and(x, x) = x <== and(w, x) = y, and(y, y) = z | 	93	9	4	5	0
+and(x, x) = x <== and(w, x) = y, and(y, x) = z | 	93	9	4	5	0
+and(x, x) = x <== and(w, y) = x, and(y, y) = z | 	93	9	4	5	0
+and(x, x) = x <== and(w, z) = x, and(y, y) = z | 	93	9	4	5	0
+and(x, x) = x <== and(y, x) = z, and(y, z) = z | 	93	9	3	4	0
+and(x, x) = x <== and(w, w) = z, and(y, z) = x | 	93	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, y) = x | 	93	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(y, z) = w | 	93	9	4	5	0
+and(x, x) = x <== and(y, y) = y, and(z, x) = y | 	93	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, x) = z | 	93	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, z) = z | 	93	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, z) = w | 	93	9	4	5	0
+and(x, x) = x <== and(w, x) = z, and(y, y) = z | 	93	9	4	5	0
+and(x, x) = x <== and(w, w) = z, and(y, x) = z | 	93	9	4	5	0
+and(x, x) = x <== and(x, y) = z, and(y, z) = z | 	92	9	3	4	0
+and(x, x) = x <== and(x, z) = w, and(y, x) = z | 	92	9	4	5	0
+and(x, x) = x <== and(y, x) = z, and(z, y) = w | 	92	9	4	5	0
+and(x, x) = x <== and(x, y) = y, and(z, x) = y | 	92	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, z) = w | 	92	9	4	5	0
+and(x, x) = x <== and(w, x) = y, and(x, y) = z | 	92	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, x) = y | 	92	9	4	5	0
+and(x, x) = x <== and(x, z) = z, and(y, x) = z | 	92	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, y) = z | 	92	9	3	4	0
+and(x, x) = x <== and(w, y) = z, and(y, z) = x | 	91	9	4	5	0
+and(x, x) = x <== and(y, x) = x, and(z, y) = x | 	91	9	3	4	0
+and(x, x) = x <== and(w, y) = x, and(y, x) = z | 	91	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, w) = x | 	91	9	4	5	0
+and(x, x) = x <== and(y, z) = w, and(z, y) = x | 	90	9	4	5	0
+and(x, x) = x <== and(x, x) = y, and(x, z) = y | 	49	9	3	4	0
+and(x, x) = x <== and(x, z) = x, and(y, y) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, x) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, z) = y, and(y, y) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(x, y) = y | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(x, y) = z | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(x, y) = z | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(x, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(y, z) = y | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, y) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(x, z) = z | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(x, z) = y | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, z) = z | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(x, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(y, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, z) = z, and(y, y) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, z) = y | 	49	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(y, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(x, y) = x | 	49	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(y, z) = z | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(x, z) = y | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(z, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, z) = y, and(y, x) = x | 	49	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(y, z) = x | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(x, y) = z | 	49	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(z, z) = x | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(y, z) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, y) = x | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(z, x) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, z) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(y, y) = y | 	44	9	2	3	0
+and(x, x) = x <== and(y, x) = y, and(z, y) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, z) = z, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, y) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(y, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(z, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, x) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, x) = x | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(y, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, y) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(y, x) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(y, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, y) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(y, y) = y | 	44	9	2	3	0
+and(x, x) = x <== and(y, x) = y, and(z, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(z, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(z, x) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, y) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, x) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(y, z) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = z, and(y, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(z, y) = x | 	44	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(z, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(z, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(z, z) = x | 	44	9	3	4	0
+and(x, x) = x <== and(x, z) = x, and(y, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(y, x) = x, and(y, x) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, y) = y | 	44	9	2	3	0
+and(x, x) = x <== and(x, y) = y, and(y, y) = y | 	44	9	2	3	0
+and(x, x) = x <== and(x, y) = y, and(z, y) = x | 	44	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(z, z) = y | 	44	9	3	4	0
+and(x, x) = x <== and(x, z) = x, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, z) = y, and(y, y) = z | 	44	9	3	4	0
+and(x, x) = x <== and(x, z) = y, and(y, x) = z | 	43	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, x) = x | 	43	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(y, x) = y | 	43	9	2	3	0
+and(x, x) = x <== and(x, y) = z, and(y, z) = x | 	43	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, x) = x | 	43	9	2	3	0
+and(x, x) = x <== and(x, y) = y, and(y, x) = z | 	43	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, x) = z | 	43	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(y, x) = y | 	43	9	3	4	0
+and(x, x) = x <== and(x, y) = z, and(z, x) = y | 	43	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(z, y) = x | 	43	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(x, y) = x | 	12	9	2	3	0
+and(x, x) = x <== and(x, x) = y, and(y, x) = x | 	12	9	2	3	0
+and(x, x) = x <== and(x, y) = x, and(y, x) = y | 	12	9	2	3	0
+and(x, x) = x <== and(x, y) = z, and(y, y) = x | 	12	9	3	4	0
+and(x, x) = x <== and(x, y) = y, and(y, y) = x | 	12	9	2	3	0
+and(x, x) = x <== and(x, y) = y, and(y, x) = x | 	12	9	2	3	0
+and(x, x) = x <== and(y, y) = x, and(y, y) = z | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, x) = z | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, y) = x | 	12	9	2	3	0
+and(x, x) = x <== and(x, x) = z, and(y, y) = x | 	12	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(y, y) = y | 	12	9	2	3	0
+and(x, x) = x <== and(x, x) = y, and(z, z) = y | 	12	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, z) = y | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(x, y) = z | 	12	9	3	4	0
+and(x, x) = x <== and(y, y) = x, and(z, z) = x | 	12	9	3	4	0
+and(x, x) = x <== and(y, x) = y, and(y, y) = x | 	12	9	2	3	0
+and(x, x) = x <== and(x, x) = y, and(z, z) = x | 	12	9	3	4	0
+and(x, x) = x <== and(x, y) = x, and(y, y) = x | 	12	9	2	3	0
+and(x, x) = x <== and(x, y) = x, and(x, y) = y | 	12	9	2	3	0
+and(x, x) = x <== and(x, x) = z, and(y, y) = z | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, y) = z | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(x, y) = y | 	12	9	2	3	0
+and(x, x) = x <== and(y, y) = z, and(y, z) = x | 	12	9	3	4	0
+and(x, x) = x <== and(y, x) = z, and(y, y) = x | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(x, x) = z | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, y) = y | 	12	9	2	3	0
+and(x, x) = x <== and(y, y) = z, and(z, z) = x | 	12	9	3	4	0
+and(x, x) = x <== and(y, y) = z, and(z, y) = x | 	12	9	3	4	0
+and(x, x) = x <== and(x, x) = y, and(y, x) = y | 	12	9	2	3	0
+and(x, x) = x <== and(y, x) = x, and(y, x) = y | 	12	9	2	3	0
+and(x, x) = x <== and(y, x) = x, and(y, y) = x | 	12	9	2	3	0
+and(x, and(x, x)) = x <== and(y, and(z, w)) = y | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(and(y, y), z) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(and(y, z), w) = y | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(y, and(z, w)) = z | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(y, and(z, z)) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(and(y, z), w) = x | 	1000	10	4	5	0
+and(x, and(x, x)) = x <== and(and(y, z), z) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(y, and(z, w)) = w | 	1000	10	4	4	0
+and(x, and(x, y)) = z ==> and(w, and(w, w)) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(y, and(z, x)) = w | 	1000	10	4	5	0
+and(x, and(x, y)) = x <== and(and(y, z), w) = x | 	1000	10	4	6	0
+and(x, and(y, z)) = w ==> and(z, and(z, z)) = z | 	1000	10	4	5	0
+and(x, and(y, z)) = x ==> and(w, and(w, w)) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(y, and(x, z)) = w | 	1000	10	4	5	0
+and(x, and(x, y)) = x <== and(and(z, w), y) = x | 	1000	10	4	6	0
+and(x, and(x, x)) = x <== and(and(x, y), z) = w | 	1000	10	4	5	0
+and(x, and(x, x)) = x <== and(y, and(z, y)) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(and(y, z), w) = z | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(and(y, x), z) = w | 	1000	10	4	5	0
+and(x, and(x, x)) = x <== and(y, and(y, z)) = w | 	1000	10	4	4	0
+and(x, and(y, z)) = w ==> and(y, and(y, y)) = y | 	1000	10	4	5	0
+and(x, and(y, z)) = w ==> and(x, and(x, x)) = x | 	1000	10	4	5	0
+and(x, and(x, y)) = x <== and(and(z, y), w) = x | 	1000	10	4	6	0
+and(x, and(x, x)) = x <== and(and(y, z), w) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(x, and(y, z)) = w | 	1000	10	4	5	0
+and(x, and(x, x)) = x <== and(and(y, z), y) = w | 	1000	10	4	4	0
+and(x, and(x, x)) = x <== and(and(y, z), x) = w | 	1000	10	4	5	0
+and(x, and(x, y)) = x <== and(z, and(w, y)) = x | 	968	10	4	6	0
+and(x, and(y, z)) = w ==> and(w, and(w, z)) = w | 	968	10	4	6	0
+and(x, and(x, x)) = x <== and(y, and(z, w)) = x | 	968	10	4	5	0
+and(x, and(y, z)) = w ==> and(w, and(w, w)) = w | 	968	10	4	5	0
+and(x, and(x, y)) = x <== and(z, and(y, w)) = x | 	965	10	4	6	0
+and(x, and(y, z)) = w ==> and(w, and(w, y)) = w | 	965	10	4	6	0
+and(x, and(x, y)) = x <== and(y, and(z, w)) = x | 	964	10	4	6	0
+and(x, and(y, z)) = w ==> and(w, and(w, x)) = w | 	964	10	4	6	0
+and(x, and(x, x)) = x <== and(y, and(y, z)) = z | 	588	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, y), z) = y | 	588	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, z), y) = y | 	588	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, z), z) = y | 	588	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, y), z) = z | 	588	10	3	3	0
+and(x, and(x, y)) = x ==> and(z, and(z, z)) = z | 	588	10	3	3	0
+and(x, and(x, x)) = x <== and(y, and(y, z)) = y | 	588	10	3	3	0
+and(x, and(x, x)) = x <== and(y, and(z, z)) = y | 	528	10	3	3	0
+and(x, and(x, x)) = x <== and(y, and(z, z)) = z | 	528	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, z), z) = z | 	528	10	3	3	0
+and(x, and(x, x)) = x <== and(y, and(z, y)) = y | 	528	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, z), y) = z | 	516	10	3	3	0
+and(x, and(x, x)) = x <== and(y, and(z, y)) = z | 	516	10	3	3	0
+and(x, and(x, y)) = x <== and(and(x, y), z) = x | 	351	10	3	5	0
+and(x, and(x, y)) = x <== and(and(x, z), y) = x | 	351	10	3	5	0
+and(x, and(x, x)) = x <== and(and(x, y), z) = x | 	351	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, x), z) = y | 	305	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, z), x) = y | 	305	10	3	4	0
+and(x, and(x, y)) = x <== and(and(z, x), y) = x | 	300	10	3	5	0
+and(x, and(x, x)) = x <== and(x, and(y, z)) = y | 	300	10	3	4	0
+and(x, and(x, x)) = x <== and(and(x, y), z) = y | 	300	10	3	4	0
+and(x, and(x, y)) = x <== and(z, and(x, y)) = x | 	300	10	3	5	0
+and(x, and(x, x)) = x <== and(y, and(x, z)) = x | 	300	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, x), z) = x | 	300	10	3	4	0
+and(x, and(x, y)) = x <== and(y, and(x, z)) = x | 	298	10	3	5	0
+and(x, and(x, y)) = x <== and(and(y, x), z) = x | 	298	10	3	5	0
+and(x, and(x, x)) = x <== and(y, and(x, z)) = z | 	277	10	3	4	0
+and(x, and(x, x)) = x <== and(x, and(y, z)) = z | 	277	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, z), x) = z | 	262	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(z, x)) = z | 	262	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(z, x)) = x | 	260	10	3	4	0
+and(x, and(x, y)) = x <== and(y, and(z, x)) = x | 	257	10	3	5	0
+and(x, and(x, y)) = x <== and(z, and(y, x)) = x | 	257	10	3	5	0
+and(x, and(x, x)) = x <== and(and(x, y), z) = z | 	228	10	3	4	0
+and(x, and(y, z)) = x ==> and(x, and(x, x)) = x | 	225	10	3	4	0
+and(x, and(x, y)) = x <== and(x, and(z, y)) = x | 	225	10	3	5	0
+and(x, and(x, x)) = x <== and(y, and(x, z)) = y | 	225	10	3	4	0
+and(x, and(x, x)) = x <== and(x, and(y, z)) = x | 	225	10	3	4	0
+and(x, and(y, z)) = x ==> and(y, and(y, y)) = y | 	225	10	3	4	0
+and(x, and(y, z)) = x ==> and(x, and(x, z)) = x | 	225	10	3	5	0
+and(x, and(y, z)) = x ==> and(x, and(x, y)) = x | 	224	10	3	5	0
+and(x, and(x, y)) = x <== and(x, and(y, z)) = x | 	224	10	3	5	0
+and(x, and(x, x)) = x <== and(and(y, x), z) = z | 	216	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, z), x) = x | 	214	10	3	4	0
+and(x, and(x, y)) = x <== and(and(z, y), x) = x | 	212	10	3	5	0
+and(x, and(x, y)) = x <== and(and(y, z), x) = x | 	211	10	3	5	0
+and(x, and(y, z)) = x ==> and(z, and(z, z)) = z | 	206	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(z, x)) = y | 	206	10	3	4	0
+and(x, and(x, x)) = x <== and(and(x, x), y) = z | 	159	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(y, y)) = z | 	144	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, y), y) = z | 	144	10	3	3	0
+and(x, and(x, x)) = x === and(y, and(y, y)) = y | 	144	10	2	2	0
+and(x, and(x, x)) = y ==> and(z, and(z, z)) = z | 	144	10	3	3	0
+and(x, and(x, x)) = x <== and(and(y, y), x) = z | 	137	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(x, x)) = z | 	137	10	3	4	0
+and(x, and(x, x)) = x <== and(x, and(y, y)) = z | 	137	10	3	4	0
+and(x, x) = x <== and(x, z) = w, and(y, z) = x | 	100	9	4	5	0
+and(x, x) = x <== and(x, z) = x, and(y, z) = x | 	100	9	3	4	0
+and(x, x) = x <== and(x, y) = w, and(y, z) = x | 	99	9	4	5	0
+and(x, and(x, y)) = z ==> and(x, and(x, x)) = x | 	105	10	3	4	0
+and(x, and(x, y)) = z === and(and(x, x), y) = z | 	105	10	3	6	0
+and(x, and(x, x)) = x <== and(x, and(x, y)) = z | 	105	10	3	4	0
+and(x, and(x, y)) = x <== and(and(z, z), y) = x | 	100	10	3	5	0
+and(x, and(x, x)) = x <== and(and(x, y), y) = z | 	100	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, z), z) = x | 	100	10	3	4	0
+and(x, and(x, y)) = x <== and(and(z, y), y) = x | 	100	10	3	5	0
+and(x, and(x, x)) = x <== and(and(y, y), z) = x | 	100	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, z), y) = x | 	99	10	3	4	0
+and(x, and(x, y)) = x <== and(and(y, y), z) = x | 	99	10	3	5	0
+and(x, and(x, y)) = z ==> and(x, and(z, y)) = z | 	99	10	3	6	0
+and(x, and(x, y)) = z ==> and(and(x, z), y) = z | 	99	10	3	6	0
+and(x, and(x, y)) = x <== and(and(y, z), y) = x | 	99	10	3	5	0
+and(x, and(x, y)) = x <== and(and(z, y), z) = x | 	99	10	3	5	0
+and(x, and(x, y)) = x <== and(and(y, z), z) = x | 	99	10	3	5	0
+and(x, and(x, y)) = z ==> and(z, and(z, z)) = z | 	99	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(y, z)) = x | 	99	10	3	4	0
+and(x, and(x, y)) = z === and(and(x, y), y) = z | 	99	10	3	6	0
+and(x, and(x, x)) = x <== and(and(x, y), x) = z | 	99	10	3	4	0
+and(x, and(y, z)) = x <== and(y, and(y, z)) = x | 	99	10	3	6	0
+and(x, and(x, y)) = x <== and(z, and(z, y)) = x | 	99	10	3	5	0
+and(x, and(x, y)) = z ==> and(z, and(x, y)) = z | 	99	10	3	6	0
+and(x, and(x, y)) = z ==> and(and(x, y), z) = z | 	99	10	3	6	0
+and(x, and(x, y)) = z ==> and(z, and(z, y)) = z | 	99	10	3	5	0
+and(x, and(x, y)) = z ==> and(and(z, y), x) = z | 	98	10	3	6	0
+and(x, and(x, y)) = z ==> and(and(z, x), y) = z | 	98	10	3	6	0
+and(x, and(x, y)) = z === and(and(x, y), x) = z | 	98	10	3	6	0
+and(x, and(x, y)) = x <== and(y, and(y, z)) = x | 	98	10	3	5	0
+and(x, and(x, y)) = z ==> and(z, and(z, x)) = z | 	98	10	3	5	0
+and(x, and(x, y)) = z === and(x, and(y, y)) = z | 	93	10	3	6	0
+and(x, and(x, y)) = z ==> and(y, and(y, y)) = y | 	93	10	3	4	0
+and(x, and(x, y)) = x <== and(z, and(y, y)) = x | 	93	10	3	5	0
+and(x, and(x, x)) = x <== and(y, and(y, x)) = z | 	93	10	3	4	0
+and(x, and(x, x)) = x <== and(y, and(z, z)) = x | 	93	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, x), x) = z | 	93	10	3	4	0
+and(x, and(x, y)) = x <== and(y, and(z, z)) = x | 	92	10	3	5	0
+and(x, and(x, x)) = x <== and(y, and(x, y)) = z | 	92	10	3	4	0
+and(x, and(x, x)) = x <== and(x, and(y, x)) = z | 	92	10	3	4	0
+and(x, and(x, x)) = x <== and(and(y, x), y) = z | 	92	10	3	4	0
+and(x, and(x, y)) = x <== and(y, and(z, y)) = x | 	91	10	3	5	0
+and(x, and(x, x)) = x <== and(y, and(z, y)) = x | 	91	10	3	4	0
+and(x, and(x, y)) = z ==> and(x, and(y, z)) = z | 	90	10	3	6	0
+and(x, and(x, y)) = z === and(x, and(y, x)) = z | 	90	10	3	6	0
+and(x, and(x, y)) = x <== and(z, and(y, z)) = x | 	90	10	3	5	0
+and(x, and(x, y)) = z ==> and(y, and(x, z)) = z | 	90	10	3	6	0
+and(x, and(x, y)) = z ==> and(y, and(z, x)) = z | 	89	10	3	6	0
+and(x, and(x, y)) = z ==> and(and(y, x), z) = z | 	89	10	3	6	0
+and(x, and(x, y)) = z ==> and(and(y, z), x) = z | 	89	10	3	6	0
+and(x, and(y, z)) = x <== and(z, and(z, y)) = x | 	89	10	3	6	0
+and(x, and(x, y)) = z ==> and(z, and(y, x)) = z | 	89	10	3	6	0
+and(x, and(x, y)) = z === and(y, and(y, x)) = z | 	88	10	3	6	0
+and(x, x) = x <== and(x, z) = y, and(y, z) = x | 	49	9	3	4	0
+and(x, and(x, y)) = x === and(and(x, x), y) = x | 	49	10	2	4	0
+and(x, and(x, x)) = x <== and(and(x, x), y) = y | 	49	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(x, y)) = y | 	49	10	2	3	0
+and(x, and(x, x)) = x <== and(and(x, y), y) = x | 	49	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(x, y)) = x | 	49	10	2	3	0
+and(x, and(x, y)) = x === and(and(x, y), y) = x | 	49	10	2	4	0
+and(x, and(x, y)) = x === and(and(x, y), x) = x | 	49	10	2	4	0
+and(x, and(x, x)) = x <== and(and(x, x), y) = x | 	49	10	2	3	0
+and(x, and(x, y)) = x ==> and(x, and(x, x)) = x | 	49	10	2	3	0
+and(x, and(x, x)) = x <== and(and(x, y), x) = x | 	49	10	2	3	0
+and(x, and(x, x)) = x <== and(and(y, x), x) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(and(y, y), x) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(y, and(y, x)) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(y, and(x, x)) = x | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(y, and(y, x)) = x | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(y, x)) = x | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(and(y, x), y) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(and(y, x), x) = x | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(and(y, y), x) = x | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(and(x, y), y) = y | 	44	10	2	3	0
+and(x, and(x, y)) = x ==> and(y, and(y, y)) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(y, y)) = x | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(y, and(x, x)) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(y, and(x, y)) = y | 	44	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(y, y)) = y | 	44	10	2	3	0
+and(x, and(x, y)) = x === and(x, and(y, y)) = x | 	44	10	2	4	0
+and(x, and(x, y)) = x === and(and(y, x), x) = x | 	43	10	2	4	0
+and(x, and(x, y)) = x === and(and(y, x), y) = x | 	43	10	2	4	0
+and(x, and(x, y)) = x === and(and(y, y), x) = x | 	43	10	2	4	0
+and(x, and(x, x)) = x <== and(and(x, y), x) = y | 	43	10	2	3	0
+and(x, and(x, x)) = x <== and(and(y, x), y) = x | 	43	10	2	3	0
+and(x, and(x, y)) = x === and(y, and(x, x)) = x | 	43	10	2	4	0
+and(x, and(x, y)) = x === and(y, and(x, y)) = x | 	43	10	2	4	0
+and(x, and(x, y)) = x === and(x, and(y, x)) = x | 	43	10	2	4	0
+and(x, and(x, y)) = x === and(y, and(y, x)) = x | 	43	10	2	4	0
+and(x, and(x, x)) = x <== and(y, and(x, y)) = x | 	43	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(y, x)) = y | 	43	10	2	3	0
+and(x, and(x, y)) = x <== and(y, and(y, y)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(y, and(x, x)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(x, y)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(y, x)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(y, y)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = x <== and(y, and(y, y)) = x | 	12	10	2	3	0
+and(x, and(x, x)) = x <== and(x, and(x, x)) = y | 	12	10	2	3	0
+and(x, and(x, x)) = y ==> and(y, and(y, x)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(y, x), y) = y | 	12	10	2	4	0
+and(x, and(x, x)) = x <== and(and(x, x), x) = y | 	12	10	2	3	0
+and(x, and(x, x)) = y ==> and(y, and(y, y)) = y | 	12	10	2	3	0
+and(x, and(x, x)) = y ==> and(y, and(x, x)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(x, y), x) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(x, y), x) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(x, x)) = x | 	12	10	2	3	0
+and(x, and(x, x)) = y === and(and(x, x), x) = y | 	12	10	2	4	0
+and(x, and(x, y)) = x <== and(x, and(x, x)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(y, and(x, y)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(y, and(y, x)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = x === and(and(x, x), x) = x | 	12	10	1	2	0
+and(x, and(x, x)) = y ==> and(and(x, y), y) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(y, y)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(x, y)) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(x, x), y) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(y, x), x) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(y, y), x) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(y, and(x, y)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(x, x), y) = y | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(x, y), y) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y === and(y, and(y, y)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(x, and(y, x)) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(y, x), y) = x | 	12	10	2	4	0
+and(x, and(x, x)) = y ==> and(and(y, y), x) = y | 	12	10	2	4	0
+and(x, and(x, x)) = x <== and(and(y, y), y) = x | 	12	10	2	3	0
+and(x, and(x, x)) = y ==> and(and(y, x), x) = y | 	12	10	2	4	0

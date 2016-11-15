@@ -1,0 +1,1805 @@
+
+True === matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = p | Not(true(p))	856	5	3	3	1
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(y) = a | Not(gt(a, b)), Not(gt(b, a))	1000	6	4	6	2
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(y) = b | Not(gt(a, b)), Not(gt(b, a))	1000	6	4	5	2
+matrix_is_symmetric(x) = p ==> matrix_inv(matrix_inv(y)) = z | Not(true(p))	760	5	4	4	1
+matrix_transpose(x) = y <== matrix_transpose(matrix_inv(z)) = z | Not(identity(z))	756	5	3	3	1
+True === matrix_is_lower(x) = p, matrix_is_lower(y) = p | Not(true(p))	748	5	3	3	1
+matrix_is_lower(x) = p ==> matrix_mult(x, y) = z | Not(true(p))	722	5	4	5	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = q | Not(true(p)), Not(true(q))	856	6	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = p | Not(true(p)), Not(true(q))	856	6	4	6	2
+matrix_is_lower(x) = p ==> matrix_transpose(y) = z | Not(true(p))	568	4	4	4	1
+matrix_is_symmetric(x) = p ==> matrix_transpose(y) = z | Not(true(p))	568	4	4	4	1
+matrix_is_lower(x) = p ==> matrix_mult(y, z) = y | Not(true(p))	708	5	4	4	1
+matrix_is_symmetric(x) = p ==> matrix_mult(y, z) = y | Not(true(p))	708	5	4	4	1
+matrix_is_symmetric(x) = p ==> matrix_mult(y, y) = z | Not(true(p))	706	5	4	4	1
+matrix_is_symmetric(x) = p ==> matrix_mult(y, z) = z | Not(true(p))	704	5	4	4	1
+matrix_is_lower(x) = p ==> matrix_mult(y, z) = z | Not(true(p))	704	5	4	4	1
+matrix_is_lower(x) = p ==> matrix_mult(y, x) = z | Not(true(p))	699	5	4	5	1
+matrix_is_symmetric(x) = p ==> matrix_mult(y, x) = z | Not(true(p))	698	5	4	5	1
+matrix_is_symmetric(x) = p ==> matrix_mult(x, y) = z | Not(true(p))	688	5	4	5	1
+True === matrix_is_upper(x) = p, matrix_is_upper(y) = p | Not(true(p))	676	5	3	3	1
+matrix_transpose(x) = y <== matrix_is_lower(matrix_transpose(z)) = p | Not(true(p))	665	5	4	4	1
+matrix_is_lower(x) = p ==> matrix_mult(y, y) = z | Not(true(p))	664	5	4	4	1
+matrix_is_lower(x) = p ==> matrix_inv(matrix_inv(y)) = z | Not(true(p))	640	5	4	4	1
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = p | Not(true(p)), Not(true(q))	748	6	4	6	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = q | Not(true(p)), Not(true(q))	748	6	4	5	2
+matrix_is_symmetric(x) = p ==> matrix_mult(y, z) = x | Not(true(p))	620	5	4	5	1
+True === matrix_is_lower(x) = p, matrix_is_lower(y) = q | Not(true(p))	568	5	4	4	1
+matrix_is_lower(x) = p ==> matrix_transpose(matrix_transpose(y)) = z | Not(true(p))	568	5	4	4	1
+matrix_is_symmetric(x) = p ==> matrix_transpose(matrix_transpose(y)) = z | Not(true(p))	568	5	4	4	1
+True === matrix_is_upper(x) = p, matrix_is_upper(y) = q | Not(true(p))	568	5	4	4	1
+True === matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = q | Not(true(p))	568	5	4	4	1
+matrix_inv(x) = y <== matrix_is_symmetric(z) = p | Not(true(p))	453	4	4	4	1
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_is_upper(y) = p | Not(true(p)), Not(true(q))	676	6	4	6	2
+matrix_inv(x) = y <== matrix_is_lower(z) = p | Not(true(p))	449	4	4	4	1
+matrix_is_upper(x) = p ==> matrix_transpose(y) = z | true(p)	432	4	4	4	1
+matrix_is_lower(x) = p ==> matrix_mult(y, z) = x | Not(true(p))	524	5	4	5	1
+matrix_inv(x) = y <== matrix_transpose(matrix_inv(z)) = z | Not(identity(z))	490	5	3	3	1
+matrix_is_upper(x) = p ==> matrix_mult(y, z) = y | true(p)	489	5	4	4	1
+matrix_is_upper(x) = p ==> matrix_mult(y, z) = z | true(p)	482	5	4	4	1
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = z | Not(true(p))	568	6	4	4	1
+matrix_is_upper(x) = p ==> matrix_mult(y, z) = x | true(p)	470	5	4	5	1
+matrix_mult(x, y) = x === matrix_mult(z, y) = z | identity(y)	529	6	3	4	1
+True === matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = q | true(p)	432	5	4	4	1
+True === matrix_is_lower(x) = p, matrix_is_lower(y) = q | true(p)	432	5	4	4	1
+matrix_is_upper(x) = p ==> matrix_transpose(matrix_transpose(y)) = z | true(p)	432	5	4	4	1
+True === matrix_det(x) = a, matrix_det(y) = b | gt(a, b)	416	5	4	4	1
+matrix_det(x) = a ==> matrix_transpose(y) = z | gt0(a)	324	4	4	4	1
+matrix_is_upper(x) = p ==> matrix_inv(matrix_inv(y)) = z | true(p)	400	5	4	4	1
+matrix_det(x) = a ==> matrix_mult(y, x) = z | gt0(a)	394	5	4	5	1
+matrix_det(x) = a ==> matrix_mult(y, y) = z | gt0(a)	378	5	4	4	1
+matrix_det(x) = a ==> matrix_mult(x, y) = z | gt0(a)	365	5	4	5	1
+matrix_is_upper(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = z | true(p)	432	6	4	4	1
+matrix_is_upper(x) = p ==> matrix_mult(y, x) = z | true(p)	353	5	4	5	1
+matrix_is_upper(x) = p ==> matrix_mult(x, y) = z | true(p)	352	5	4	5	1
+matrix_is_upper(x) = p ==> matrix_mult(y, y) = z | true(p)	336	5	4	4	1
+matrix_transpose(x) = y <== matrix_is_upper(matrix_transpose(z)) = p | true(p)	335	5	4	4	1
+matrix_mult(x, y) = y === matrix_mult(z, x) = z | identity(x)	391	6	3	4	1
+matrix_mult(x, y) = x === matrix_mult(y, z) = z | identity(y)	391	6	3	4	1
+True === matrix_det(x) = a, matrix_det(y) = b | gt0(a)	324	5	4	4	1
+matrix_det(x) = a ==> matrix_transpose(matrix_transpose(y)) = z | gt0(a)	324	5	4	4	1
+matrix_det(x) = a ==> matrix_inv(matrix_inv(y)) = z | gt0(a)	320	5	4	4	1
+matrix_det(x) = a === matrix_mult(y, z) = y | identity(z)	315	5	4	4	1
+matrix_inv(x) = x ==> matrix_mult(y, z) = y | identity(z)	315	5	3	3	1
+matrix_transpose(x) = x ==> matrix_mult(y, z) = y | identity(z)	315	5	3	3	1
+True === matrix_det(x) = a, matrix_det(y) = a | gt0(a)	284	5	3	3	1
+matrix_inv(x) = y <== matrix_is_upper(z) = p | true(p)	227	4	4	4	1
+matrix_det(x) = a <== matrix_det(y) = b | gt0(b), Not(gt1(b))	221	4	4	4	2
+matrix_det(x) = a ==> matrix_inv(y) = z | gt0(a)	210	4	4	4	1
+True === matrix_is_lower(x) = p, matrix_is_lower(y) = p | true(p)	252	5	3	3	1
+matrix_mult(x, y) = y === matrix_mult(x, z) = z | identity(x)	289	6	3	4	1
+matrix_inv(x) = y <== matrix_is_symmetric(matrix_inv(z)) = p | true(p)	238	5	4	4	1
+matrix_inv(matrix_inv(x)) = y <== matrix_transpose(matrix_inv(z)) = z | Not(identity(z))	280	6	3	3	1
+matrix_det(x) = a ==> matrix_mult(y, z) = z | identity(y)	229	5	4	4	1
+matrix_transpose(x) = x ==> matrix_mult(y, z) = z | identity(y)	229	5	3	3	1
+matrix_inv(x) = x ==> matrix_mult(y, z) = z | identity(y)	229	5	3	3	1
+matrix_inv(x) = y <== matrix_is_lower(matrix_inv(z)) = p | true(p)	204	5	4	4	1
+matrix_inv(x) = y <== matrix_is_upper(matrix_inv(z)) = p | true(p)	204	5	4	4	1
+matrix_det(x) = a ==> matrix_mult(y, z) = x | gt0(a)	144	5	4	5	1
+True === matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = p | true(p)	144	5	3	3	1
+matrix_is_lower(x) = p <== matrix_is_upper(y) = q | true(p), identity(x)	108	4	4	4	2
+matrix_is_lower(x) = p <== matrix_is_symmetric(y) = q | true(p), identity(x)	108	4	4	4	2
+matrix_transpose(x) = x === matrix_transpose(y) = z | identity(x)	108	4	3	3	1
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q | identity(x), true(p)	108	4	4	4	2
+matrix_transpose(x) = y === matrix_transpose(y) = x | 	108	4	2	4	0
+True === matrix_transpose(matrix_transpose(x)) = x | 	108	4	1	1	0
+matrix_det(x) = a === matrix_det(x) = b | Not(gt(a, b)), Not(gt(b, a))	108	4	3	4	2
+matrix_is_lower(x) = p <== matrix_is_lower(matrix_transpose(y)) = q | identity(x), true(p)	108	5	4	4	2
+matrix_transpose(x) = x <== matrix_is_upper(matrix_transpose(y)) = p | identity(x)	108	5	3	3	1
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(z)) = z | identity(z)	108	5	3	3	1
+matrix_transpose(x) = x <== matrix_is_lower(matrix_transpose(y)) = p | identity(x)	108	5	3	3	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(matrix_transpose(x)) = p | 	108	5	2	4	0
+matrix_det(x) = a === matrix_det(matrix_transpose(x)) = a | 	108	5	2	4	0
+matrix_transpose(x) = x === matrix_transpose(matrix_transpose(y)) = z | identity(x)	108	5	3	3	1
+matrix_is_upper(x) = p === matrix_is_upper(x) = q | Not(true(p)), Not(true(q))	72	4	3	4	2
+matrix_is_lower(x) = p === matrix_is_lower(y) = p, matrix_is_lower(z) = q | identity(y)	108	6	5	6	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q | Not(true(p)), Not(true(q))	72	4	3	4	2
+matrix_det(x) = a <== matrix_is_upper(y) = p | true(p), gt1(a)	72	4	4	4	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q | Not(true(p)), Not(true(q))	72	4	3	4	2
+matrix_is_lower(matrix_transpose(x)) = p <== matrix_is_lower(matrix_transpose(y)) = q | identity(x), true(p)	108	6	4	4	2
+matrix_transpose(matrix_transpose(x)) = y === matrix_transpose(matrix_transpose(y)) = x | 	108	6	2	4	0
+matrix_det(x) = a === matrix_inv(y) = y | identity(y)	71	4	3	3	1
+matrix_transpose(x) = x <== matrix_mult(y, y) = z | identity(z)	72	5	3	3	1
+matrix_transpose(x) = x === matrix_inv(matrix_transpose(y)) = z | identity(x)	70	5	3	3	1
+matrix_inv(x) = y === matrix_inv(matrix_transpose(z)) = z | identity(z)	70	5	3	3	1
+matrix_inv(x) = y === matrix_inv(z) = z | identity(z)	48	4	3	3	1
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	72	6	3	4	2
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	72	6	3	4	2
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(z)) = z | identity(z)	70	6	3	3	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(matrix_transpose(y)) = z | identity(x)	70	6	3	3	1
+matrix_inv(x) = y === matrix_inv(y) = x | 	40	4	2	4	0
+True === matrix_inv(matrix_inv(x)) = x | 	40	4	1	1	0
+True === matrix_inv(x) = y, matrix_inv(z) = z | identity(z)	48	5	3	3	1
+matrix_is_lower(x) = p <== matrix_is_symmetric(y) = p | true(p), identity(x)	36	4	3	4	2
+matrix_is_lower(x) = p <== matrix_transpose(y) = y | true(p), identity(x)	36	4	3	3	2
+matrix_is_lower(x) = p <== matrix_is_lower(y) = p | identity(x), true(p)	36	4	3	4	2
+matrix_is_lower(x) = p <== matrix_is_upper(y) = p | identity(x), true(p)	36	4	3	4	2
+matrix_transpose(x) = x <== matrix_transpose(y) = y | identity(x)	36	4	2	2	1
+matrix_transpose(x) = y === matrix_transpose(z) = z | identity(y)	36	4	3	3	1
+matrix_is_upper(x) = p === matrix_transpose(y) = y | true(p), identity(x)	36	4	3	3	2
+matrix_inv(x) = x <== matrix_transpose(y) = y | identity(x)	36	4	2	2	1
+matrix_is_symmetric(x) = p === matrix_transpose(x) = x | true(p)	36	4	2	3	1
+matrix_is_upper(x) = p <== matrix_is_upper(y) = p | identity(x), true(p)	36	4	3	4	2
+matrix_mult(x, y) = x ==> matrix_mult(x, z) = x | identity(z)	49	6	3	4	1
+matrix_inv(x) = x <== matrix_is_symmetric(matrix_inv(y)) = p | identity(x)	40	5	3	3	1
+matrix_inv(x) = x <== matrix_is_upper(matrix_inv(y)) = p | identity(x)	40	5	3	3	1
+matrix_transpose(x) = x === matrix_inv(matrix_inv(y)) = z | identity(x)	40	5	3	3	1
+matrix_inv(x) = x <== matrix_is_lower(matrix_inv(y)) = p | identity(x)	40	5	3	3	1
+matrix_inv(x) = x === matrix_transpose(matrix_inv(y)) = z | identity(x)	40	5	3	3	1
+matrix_is_lower(x) = p === matrix_is_lower(matrix_inv(x)) = p | 	40	5	2	4	0
+matrix_transpose(x) = x === matrix_transpose(matrix_inv(y)) = z | identity(x)	40	5	3	3	1
+matrix_inv(x) = x === matrix_inv(matrix_inv(y)) = z | identity(x)	40	5	3	3	1
+matrix_is_upper(x) = p === matrix_is_upper(matrix_inv(x)) = p | 	40	5	2	4	0
+matrix_det(x) = a === matrix_det(matrix_inv(x)) = a | 	40	5	2	4	0
+matrix_is_symmetric(x) = p === matrix_is_symmetric(matrix_inv(x)) = p | 	40	5	2	4	0
+matrix_mult(x, x) = x ==> matrix_mult(y, z) = y | identity(z)	46	6	3	3	1
+matrix_mult(x, y) = x <== matrix_mult(z, z) = z | identity(y)	46	6	3	3	1
+matrix_mult(x, x) = y ==> matrix_mult(z, y) = z | identity(y)	46	6	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(z, z) = y | identity(y)	46	6	3	4	1
+matrix_mult(x, y) = y ==> matrix_mult(z, y) = y | identity(z)	45	6	3	4	1
+matrix_transpose(x) = x ==> matrix_inv(matrix_transpose(y)) = y | identity(y)	36	5	2	2	1
+matrix_transpose(x) = x ==> matrix_transpose(matrix_inv(y)) = y | identity(y)	36	5	2	2	1
+matrix_is_lower(x) = p <== matrix_is_lower(matrix_transpose(y)) = p | identity(x), true(p)	36	5	3	4	2
+matrix_is_upper(x) = p <== matrix_is_upper(matrix_transpose(y)) = p | identity(x), true(p)	36	5	3	4	2
+matrix_is_symmetric(x) = p ==> matrix_transpose(y) = y | identity(y)	28	4	3	3	1
+True === matrix_det(x) = a, matrix_det(x) = b | gt0(a)	35	5	3	3	1
+matrix_det(x) = a === matrix_transpose(y) = y | identity(y)	28	4	3	3	1
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(y)) = x | 	40	6	2	4	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(z)) = z | identity(z)	40	6	3	3	1
+matrix_inv(matrix_transpose(x)) = y === matrix_transpose(matrix_inv(x)) = y | 	40	6	2	4	0
+matrix_inv(matrix_transpose(x)) = x === matrix_transpose(matrix_inv(y)) = z | identity(x)	40	6	3	3	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_inv(y)) = x | 	40	6	2	4	0
+matrix_det(x) = a ==> matrix_det(y) = a | identity(x)	24	4	3	4	1
+matrix_is_lower(x) = p === matrix_is_lower(y) = p, matrix_is_lower(z) = p | identity(y)	36	6	4	5	1
+matrix_is_lower(matrix_transpose(x)) = p <== matrix_is_lower(matrix_transpose(y)) = p | identity(x), true(p)	36	6	3	4	2
+matrix_is_upper(matrix_transpose(x)) = p <== matrix_is_upper(matrix_transpose(y)) = p | identity(x), true(p)	36	6	3	4	2
+matrix_is_lower(x) = p <== matrix_is_lower(y) = p, matrix_is_lower(y) = q | true(p), identity(x)	36	6	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = p | identity(y)	36	6	4	5	1
+True === matrix_mult(x, y) = x | identity(y)	23	4	2	2	1
+matrix_mult(x, x) = y ==> matrix_mult(y, z) = z | identity(y)	34	6	3	4	1
+matrix_mult(x, x) = x ==> matrix_mult(y, z) = z | identity(y)	34	6	3	3	1
+matrix_mult(x, y) = y <== matrix_mult(z, z) = x | identity(x)	34	6	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(z, z) = z | identity(x)	34	6	3	3	1
+matrix_inv(x) = x === matrix_mult(y, y) = z | identity(z)	28	5	3	3	1
+matrix_mult(x, y) = y <== matrix_mult(y, z) = y | identity(x)	33	6	3	4	1
+matrix_mult(x, y) = x ==> matrix_mult(z, x) = x | identity(z)	33	6	3	4	1
+True === matrix_det(x) = a, matrix_det(x) = b | gt0(a), Not(gt1(a))	24	5	3	3	2
+matrix_is_symmetric(x) = p === matrix_mult(y, x) = y | true(p), identity(x)	23	5	3	4	2
+matrix_det(x) = a ==> matrix_mult(x, y) = x | identity(y)	23	5	3	4	1
+matrix_inv(x) = x === matrix_mult(y, x) = y | identity(x)	23	5	2	3	1
+matrix_transpose(x) = y ==> matrix_mult(y, z) = y | identity(z)	23	5	3	4	1
+matrix_is_upper(x) = p ==> matrix_mult(x, y) = x | identity(y)	23	5	3	4	1
+matrix_is_lower(x) = p === matrix_mult(y, x) = y | true(p), identity(x)	23	5	3	4	2
+matrix_transpose(x) = y === matrix_mult(x, z) = x | identity(z)	23	5	3	4	1
+matrix_det(x) = a ==> matrix_mult(y, x) = y | identity(x)	23	5	3	4	1
+matrix_transpose(x) = y === matrix_mult(z, y) = z | identity(x), identity(y)	23	5	3	4	2
+matrix_is_symmetric(x) = p ==> matrix_mult(x, y) = x | identity(y)	23	5	3	4	1
+matrix_is_lower(x) = p ==> matrix_mult(x, y) = x | identity(y)	23	5	3	4	1
+matrix_transpose(x) = x === matrix_mult(y, x) = z | identity(x)	23	5	3	4	1
+matrix_transpose(x) = y === matrix_mult(z, x) = z | identity(x)	23	5	3	4	1
+matrix_inv(x) = y === matrix_mult(z, x) = z | identity(x)	23	5	3	4	1
+matrix_is_upper(x) = p === matrix_mult(y, x) = y | true(p), identity(x)	23	5	3	4	2
+matrix_inv(x) = y === matrix_mult(z, y) = z | identity(x), identity(y)	23	5	3	4	2
+matrix_transpose(x) = x === matrix_mult(y, x) = y | identity(x)	23	5	2	3	1
+matrix_inv(x) = x === matrix_mult(y, x) = z | identity(x)	23	5	3	4	1
+matrix_inv(x) = y === matrix_transpose(z) = z | identity(z)	18	4	3	3	1
+True === matrix_mult(x, y) = y | identity(x)	17	4	2	2	1
+matrix_mult(x, y) = z === matrix_mult(x, y) = x | identity(y)	23	6	3	5	1
+matrix_mult(x, y) = x <== matrix_mult(z, y) = x | identity(y)	23	6	3	5	1
+matrix_mult(x, y) = x === matrix_mult(x, y) = z | identity(y)	23	6	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_mult(z, x) = z | identity(x), identity(y)	23	6	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_mult(z, y) = z | identity(x), identity(y)	23	6	3	4	2
+matrix_inv(x) = x ==> matrix_inv(y) = y | identity(y)	14	4	2	2	1
+matrix_is_symmetric(x) = p === matrix_mult(x, y) = y | true(p), identity(x)	17	5	3	4	2
+matrix_transpose(x) = y ==> matrix_mult(z, y) = y | identity(z)	17	5	3	4	1
+matrix_is_upper(x) = p ==> matrix_mult(y, x) = x | identity(y)	17	5	3	4	1
+matrix_transpose(x) = x === matrix_mult(x, y) = z | identity(x)	17	5	3	4	1
+matrix_inv(x) = x === matrix_mult(x, y) = z | identity(x)	17	5	3	4	1
+matrix_det(x) = a ==> matrix_mult(x, y) = y | identity(x)	17	5	3	4	1
+matrix_is_lower(x) = p ==> matrix_mult(y, x) = x | identity(y)	17	5	3	4	1
+matrix_det(x) = a ==> matrix_mult(y, x) = x | identity(y)	17	5	3	4	1
+matrix_transpose(x) = x === matrix_mult(x, y) = y | identity(x)	17	5	2	3	1
+matrix_is_lower(x) = p === matrix_mult(x, y) = y | true(p), identity(x)	17	5	3	4	2
+matrix_inv(x) = y === matrix_mult(y, z) = z | identity(x), identity(y)	17	5	3	4	2
+matrix_transpose(x) = y === matrix_mult(x, z) = z | identity(x), identity(y)	17	5	3	4	2
+matrix_is_upper(x) = p === matrix_mult(x, y) = y | true(p), identity(x)	17	5	3	4	2
+matrix_inv(x) = y === matrix_mult(x, z) = z | identity(x), identity(y)	17	5	3	4	2
+matrix_inv(x) = x === matrix_mult(x, y) = y | identity(x)	17	5	2	3	1
+matrix_transpose(x) = y === matrix_mult(y, z) = z | identity(x), identity(y)	17	5	3	4	2
+matrix_is_symmetric(x) = p ==> matrix_mult(y, x) = x | identity(y)	17	5	3	4	1
+matrix_transpose(x) = y ==> matrix_mult(z, x) = x | identity(z)	17	5	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(x, z) = z | identity(y)	18	6	3	4	1
+matrix_mult(x, y) = y ==> matrix_mult(x, z) = x | identity(z)	18	6	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(x, y) = z | identity(x)	17	6	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_mult(y, z) = z | identity(x), identity(y)	17	6	3	4	2
+matrix_mult(x, y) = y <== matrix_mult(x, z) = y | identity(x)	17	6	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_mult(x, z) = z | identity(x), identity(y)	17	6	3	4	2
+matrix_mult(x, y) = z ==> matrix_mult(x, y) = y | identity(x)	17	6	3	5	1
+matrix_inv(x) = x ==> matrix_inv(matrix_transpose(y)) = y | identity(y)	14	5	2	2	1
+True === matrix_inv(x) = x, matrix_inv(y) = y | identity(x)	14	5	2	2	1
+matrix_inv(x) = x ==> matrix_transpose(matrix_inv(y)) = y | identity(y)	14	5	2	2	1
+matrix_inv(x) = y === matrix_mult(x, z) = x | identity(z)	13	5	3	4	1
+matrix_inv(x) = x === matrix_transpose(y) = z | identity(z)	10	4	3	3	1
+matrix_is_symmetric(x) = p === matrix_is_upper(y) = q | true(q), identity(y)	10	4	4	4	2
+matrix_is_upper(x) = p === matrix_is_upper(y) = q | true(q), identity(y)	10	4	4	4	2
+matrix_inv(x) = x ==> matrix_is_lower(y) = p | true(p), identity(y)	10	4	3	3	2
+matrix_det(x) = a === matrix_is_lower(y) = p | true(p), identity(y)	10	4	4	4	2
+matrix_inv(x) = x === matrix_is_upper(y) = p | true(p), identity(y)	10	4	3	3	2
+matrix_inv(x) = x <== matrix_inv(x) = y, matrix_inv(y) = y | 	14	6	2	3	0
+matrix_inv(x) = x === matrix_inv(y) = z | identity(z)	9	4	3	3	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = q | true(q), identity(y)	9	4	4	4	2
+matrix_inv(x) = x === matrix_is_symmetric(y) = p | true(p), identity(y)	9	4	3	3	2
+matrix_det(x) = a === matrix_is_symmetric(y) = p | true(p), identity(y)	9	4	4	4	2
+matrix_is_upper(x) = p === matrix_is_upper(matrix_transpose(y)) = q | true(q), identity(y)	10	5	4	4	2
+matrix_det(x) = a ==> matrix_mult(x, x) = y | gt0(a)	9	5	3	4	1
+matrix_inv(x) = x === matrix_inv(matrix_transpose(y)) = z | identity(z)	9	5	3	3	1
+True === matrix_inv(x) = x, matrix_inv(y) = z | identity(y)	9	5	3	3	1
+matrix_mult(x, y) = x <== matrix_mult(z, x) = z | identity(y)	10	6	3	4	1
+matrix_mult(x, y) = x ==> matrix_mult(y, z) = y | identity(z)	10	6	3	4	1
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(matrix_transpose(y)) = q | true(q), identity(y)	10	6	4	4	2
+matrix_inv(x) = y ==> matrix_mult(z, x) = x | identity(z)	8	5	3	4	1
+matrix_transpose(x) = x ==> matrix_mult(x, y) = x | identity(y)	8	5	2	3	1
+matrix_mult(x, y) = y <== matrix_mult(y, z) = z | identity(x)	9	6	3	4	1
+matrix_mult(x, y) = y ==> matrix_mult(z, x) = x | identity(z)	9	6	3	4	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = q | identity(z)	9	6	5	6	1
+matrix_inv(x) = y ==> matrix_mult(y, z) = y | identity(z)	7	5	3	4	1
+matrix_inv(x) = y === matrix_mult(x, y) = z | identity(z)	7	5	3	5	1
+matrix_inv(x) = y === matrix_mult(y, x) = z | identity(z)	7	5	3	5	1
+matrix_transpose(x) = x === matrix_mult(y, z) = x | identity(x)	7	5	3	4	1
+matrix_inv(x) = x === matrix_mult(y, z) = x | identity(x)	7	5	3	4	1
+matrix_is_lower(x) = p ==> matrix_mult(x, x) = y | true(p)	7	5	3	4	1
+matrix_transpose(x) = x ==> matrix_mult(y, x) = x | identity(y)	7	5	2	3	1
+matrix_inv(matrix_transpose(x)) = x === matrix_transpose(matrix_inv(x)) = x | 	8	6	1	2	0
+matrix_inv(matrix_transpose(x)) = x ==> matrix_inv(matrix_transpose(y)) = y | identity(y)	8	6	2	2	1
+matrix_is_symmetric(x) = p ==> matrix_mult(x, x) = y | true(p)	6	5	3	4	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_mult(y, z) = y | identity(z)	7	6	3	4	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_mult(x, z) = x | identity(z)	7	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_mult(x, z) = y | identity(z)	7	6	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_mult(y, z) = x | identity(z)	7	6	3	5	1
+matrix_is_symmetric(x) = p ==> matrix_is_upper(y) = p | true(p), identity(y)	4	4	3	4	2
+matrix_mult(x, x) = y === matrix_mult(x, z) = x | identity(z)	6	6	3	4	1
+matrix_mult(x, y) = x ==> matrix_mult(z, y) = y | identity(z)	6	6	3	4	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p | true(p), identity(y)	4	4	3	4	2
+matrix_mult(x, y) = x === matrix_mult(x, x) = z | identity(y)	6	6	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(z, y) = z | identity(x)	6	6	3	4	1
+matrix_mult(x, y) = y === matrix_mult(y, y) = z | identity(x)	5	6	3	4	1
+matrix_mult(x, x) = y === matrix_mult(z, x) = x | identity(z)	5	6	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(y, z) = x | identity(y)	4	6	3	5	1
+matrix_mult(x, x) = x ==> matrix_mult(y, y) = z | identity(z)	4	6	3	3	1
+matrix_mult(x, x) = y <== matrix_mult(z, z) = z | identity(y)	4	6	3	3	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(y) = q | true(p), identity(y)	4	6	4	5	2
+matrix_mult(x, y) = y <== matrix_mult(z, x) = y | identity(x)	4	6	3	5	1
+matrix_mult(x, y) = x === matrix_mult(y, x) = x | identity(y)	4	6	2	4	1
+matrix_mult(x, y) = x <== matrix_mult(y, x) = z | identity(y)	4	6	3	5	1
+matrix_mult(x, y) = y === matrix_mult(y, x) = y | identity(x)	4	6	2	4	1
+matrix_mult(x, y) = y === matrix_mult(y, x) = z | identity(x)	4	6	3	5	1
+matrix_inv(x) = y ==> matrix_mult(z, y) = y | identity(z)	3	5	3	4	1
+matrix_inv(x) = x ==> matrix_mult(y, x) = x | identity(y)	3	5	2	3	1
+matrix_inv(x) = y ==> matrix_mult(z, y) = x | identity(z)	3	5	3	5	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_mult(z, x) = x | identity(z)	3	6	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(z, z) = x | identity(y)	3	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_mult(z, y) = x | identity(z)	3	6	3	5	1
+matrix_mult(x, y) = x <== matrix_mult(y, y) = x | 	3	6	2	4	0
+matrix_mult(x, y) = y <== matrix_mult(x, x) = y | 	3	6	2	4	0
+matrix_inv(matrix_inv(x)) = y === matrix_mult(z, x) = y | identity(z)	3	6	3	5	1
+matrix_mult(x, y) = y <== matrix_mult(z, z) = y | identity(x)	3	6	3	4	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_mult(z, y) = y | identity(z)	3	6	3	4	1
+True === matrix_mult(x, y) = z | identity(z)	2	4	3	3	1
+True === matrix_mult(x, x) = y | identity(y)	2	4	2	2	1
+matrix_mult(x, x) = y ==> matrix_mult(z, y) = y | identity(z)	3	6	3	4	1
+matrix_mult(x, x) = y ==> matrix_mult(y, y) = y | 	3	6	2	3	0
+matrix_mult(x, x) = x <== matrix_mult(y, y) = x | 	3	6	2	3	0
+matrix_mult(x, x) = y ==> matrix_mult(x, y) = y | 	3	6	2	4	0
+matrix_mult(x, x) = y ==> matrix_mult(y, z) = y | identity(z)	3	6	3	4	1
+matrix_mult(x, x) = y ==> matrix_mult(y, x) = y | 	3	6	2	4	0
+matrix_inv(x) = x <== matrix_mult(y, y) = x | identity(x)	2	5	2	3	1
+matrix_transpose(x) = x <== matrix_mult(y, y) = y | identity(x)	2	5	2	2	1
+matrix_is_upper(x) = p === matrix_mult(x, x) = y | true(p), identity(y)	2	5	3	4	2
+matrix_is_upper(x) = p <== matrix_mult(y, y) = y | true(p), identity(x)	2	5	3	3	2
+matrix_is_upper(x) = p <== matrix_mult(y, y) = x | true(p), identity(x)	2	5	3	4	2
+matrix_is_symmetric(x) = p === matrix_mult(y, y) = y | true(p), identity(x)	2	5	3	3	2
+matrix_transpose(x) = y <== matrix_mult(z, z) = x | identity(x)	2	5	3	4	1
+matrix_inv(x) = y === matrix_mult(z, z) = x | identity(x)	2	5	3	4	1
+matrix_inv(x) = y <== matrix_mult(x, x) = z | identity(z)	2	5	3	4	1
+matrix_inv(x) = y <== matrix_mult(y, y) = z | identity(z)	2	5	3	4	1
+matrix_transpose(x) = y <== matrix_mult(x, x) = z | identity(z)	2	5	3	4	1
+matrix_transpose(x) = y <== matrix_mult(z, z) = z | identity(y)	2	5	3	3	1
+matrix_inv(x) = x === matrix_mult(x, x) = y | identity(y)	2	5	2	3	1
+matrix_is_lower(x) = p <== matrix_mult(x, x) = x | true(p)	2	5	2	3	1
+matrix_inv(x) = x <== matrix_mult(y, y) = y | identity(x)	2	5	2	2	1
+matrix_transpose(x) = x <== matrix_mult(y, y) = x | identity(x)	2	5	2	3	1
+matrix_inv(x) = y === matrix_mult(z, z) = y | identity(y)	2	5	3	4	1
+matrix_transpose(x) = y <== matrix_mult(z, z) = y | identity(y)	2	5	3	4	1
+matrix_is_lower(x) = p <== matrix_mult(y, y) = x | true(p), identity(x)	2	5	3	4	2
+matrix_is_lower(x) = p <== matrix_mult(y, y) = y | true(p), identity(x)	2	5	3	3	2
+matrix_inv(x) = y === matrix_mult(z, z) = z | identity(y)	2	5	3	3	1
+matrix_transpose(x) = y <== matrix_mult(y, y) = z | identity(z)	2	5	3	4	1
+matrix_is_symmetric(x) = p === matrix_mult(y, y) = x | true(p), identity(x)	2	5	3	4	2
+True === matrix_inv(x) = y | identity(y)	1	3	2	2	1
+True === matrix_is_lower(x) = p | identity(x), true(p)	1	3	2	2	2
+matrix_inv(matrix_inv(x)) = y <== matrix_mult(x, x) = z | identity(z)	2	6	3	4	1
+True === matrix_transpose(x) = y | identity(y)	1	3	2	2	1
+True === matrix_is_upper(x) = p | identity(x), true(p)	1	3	2	2	2
+matrix_mult(x, y) = y <== matrix_mult(y, y) = y | identity(x)	2	6	2	3	1
+True === matrix_inv(x) = x | identity(x)	1	3	1	1	1
+matrix_mult(x, x) = y === matrix_mult(x, x) = z | identity(y), identity(z)	2	6	3	4	2
+matrix_mult(x, x) = x ==> matrix_mult(y, x) = x | identity(y)	2	6	2	3	1
+matrix_inv(matrix_inv(x)) = y <== matrix_mult(z, z) = x | identity(y)	2	6	3	4	1
+matrix_inv(matrix_inv(x)) = y <== matrix_mult(z, z) = y | identity(x), identity(y)	2	6	3	4	2
+matrix_inv(matrix_inv(x)) = y <== matrix_mult(z, z) = z | identity(y)	2	6	3	3	1
+True === matrix_transpose(x) = x | identity(x)	1	3	1	1	1
+matrix_mult(x, x) = x ==> matrix_mult(x, y) = x | identity(y)	2	6	2	3	1
+matrix_mult(x, y) = x <== matrix_mult(x, x) = x | identity(y)	2	6	2	3	1
+True === matrix_is_symmetric(x) = p | identity(x), true(p)	1	3	2	2	2
+matrix_inv(x) = y === matrix_transpose(x) = x | identity(y), identity(x)	1	4	2	3	2
+matrix_inv(x) = x === matrix_transpose(x) = y | identity(x)	1	4	2	3	1
+matrix_det(x) = a ==> matrix_transpose(x) = y | identity(x)	1	4	3	4	1
+matrix_is_symmetric(x) = p === matrix_transpose(x) = y | true(p), identity(x)	1	4	3	4	2
+matrix_inv(x) = x === matrix_is_upper(x) = p | identity(x), true(p)	1	4	2	3	2
+matrix_is_upper(x) = p === matrix_transpose(x) = x | identity(x), true(p)	1	4	2	3	2
+matrix_det(x) = a ==> matrix_is_upper(x) = p | true(p), identity(x)	1	4	3	4	2
+matrix_is_lower(x) = p ==> matrix_transpose(x) = y | identity(x), identity(y)	1	4	3	4	2
+matrix_inv(x) = y === matrix_transpose(z) = y | identity(y)	1	4	3	4	1
+matrix_transpose(x) = y === matrix_transpose(y) = y | identity(y), identity(x)	1	4	2	3	2
+True === matrix_is_upper(matrix_inv(x)) = p | identity(x), true(p)	1	4	2	2	2
+matrix_inv(x) = y === matrix_inv(x) = z | identity(x)	1	4	3	4	1
+matrix_inv(x) = y === matrix_transpose(x) = z | identity(x)	1	4	3	4	1
+matrix_transpose(x) = y === matrix_transpose(z) = y | identity(y)	1	4	3	4	1
+True === matrix_inv(matrix_transpose(x)) = x | identity(x)	1	4	1	1	1
+matrix_transpose(x) = y === matrix_transpose(y) = z | identity(y)	1	4	3	4	1
+True === matrix_is_symmetric(matrix_transpose(x)) = p | identity(x), true(p)	1	4	2	2	2
+matrix_transpose(x) = y === matrix_transpose(x) = x | identity(x)	1	4	2	3	1
+matrix_inv(x) = y === matrix_inv(x) = x | identity(x)	1	4	2	3	1
+True === matrix_transpose(matrix_transpose(x)) = y | identity(y)	1	4	2	2	1
+matrix_det(x) = a ==> matrix_inv(x) = x | identity(x)	1	4	2	3	1
+matrix_is_lower(x) = p === matrix_is_symmetric(x) = p | identity(x)	1	4	2	4	1
+matrix_is_symmetric(x) = p === matrix_transpose(y) = x | true(p), identity(x)	1	4	3	4	2
+True === matrix_transpose(matrix_inv(x)) = x | identity(x)	1	4	1	1	1
+matrix_is_lower(x) = p ==> matrix_is_upper(x) = q | true(q), identity(x)	1	4	3	4	2
+True === matrix_transpose(matrix_inv(x)) = y | identity(y)	1	4	2	2	1
+matrix_inv(x) = x === matrix_inv(y) = x | identity(x)	1	4	2	3	1
+True === matrix_is_lower(matrix_inv(x)) = p | identity(x), true(p)	1	4	2	2	2
+True === matrix_inv(matrix_inv(x)) = y | identity(y), identity(x)	1	4	2	2	2
+matrix_inv(x) = y === matrix_inv(y) = y | identity(y)	1	4	2	3	1
+matrix_inv(x) = y === matrix_is_upper(x) = p | true(p), identity(x)	1	4	3	4	2
+matrix_transpose(x) = y === matrix_transpose(x) = z | identity(x)	1	4	3	4	1
+matrix_inv(x) = y === matrix_transpose(y) = y | identity(y), identity(x)	1	4	2	3	2
+matrix_is_lower(x) = p ==> matrix_is_symmetric(x) = q | true(q), identity(x)	1	4	3	4	2
+matrix_is_lower(x) = p ==> matrix_transpose(y) = x | identity(x), identity(y)	1	4	3	4	2
+True === matrix_is_upper(matrix_transpose(x)) = p | identity(x), true(p)	1	4	2	2	2
+matrix_det(x) = a ==> matrix_inv(y) = x | identity(x)	1	4	3	4	1
+matrix_inv(x) = y === matrix_inv(y) = z | identity(y)	1	4	3	4	1
+matrix_det(x) = a ==> matrix_transpose(y) = x | identity(x)	1	4	3	4	1
+True === matrix_is_lower(matrix_transpose(x)) = p | identity(x), true(p)	1	4	2	2	2
+matrix_inv(x) = y === matrix_inv(z) = x | identity(x)	1	4	3	4	1
+matrix_transpose(x) = y === matrix_transpose(x) = x | identity(y), identity(x)	1	4	2	3	2
+True === matrix_is_symmetric(matrix_inv(x)) = p | identity(x), true(p)	1	4	2	2	2
+matrix_transpose(x) = x === matrix_transpose(x) = y | identity(y), identity(x)	1	4	2	3	2
+matrix_inv(x) = x === matrix_transpose(y) = x | identity(x)	1	4	2	3	1
+matrix_inv(x) = x === matrix_is_lower(x) = p | identity(x), true(p)	1	4	2	3	2
+matrix_inv(x) = y ==> matrix_is_lower(x) = p | true(p), identity(y)	1	4	3	4	2
+matrix_is_lower(x) = p === matrix_is_upper(x) = p | identity(x)	1	4	2	4	1
+matrix_inv(x) = y === matrix_transpose(y) = x | identity(x)	1	4	2	4	1
+matrix_inv(x) = y === matrix_is_upper(y) = p | true(p), identity(y)	1	4	3	4	2
+matrix_is_symmetric(x) = p === matrix_is_upper(x) = p | identity(x)	1	4	2	4	1
+matrix_inv(x) = y ==> matrix_is_lower(y) = p | true(p), identity(y)	1	4	3	4	2
+matrix_inv(x) = y === matrix_transpose(z) = x | identity(x)	1	4	3	4	1
+matrix_is_symmetric(x) = p ==> matrix_is_upper(x) = q | true(q), identity(x)	1	4	3	4	2
+matrix_is_lower(x) = p === matrix_transpose(x) = x | identity(x), true(p)	1	4	2	3	2
+matrix_is_upper(x) = p === matrix_transpose(y) = x | true(p), identity(x)	1	4	3	4	2
+matrix_inv(x) = x === matrix_is_symmetric(x) = p | identity(x), true(p)	1	4	2	3	2
+matrix_det(x) = a ==> matrix_inv(x) = y | identity(x)	1	4	3	4	1
+matrix_transpose(x) = y === matrix_transpose(z) = x | identity(x)	1	4	3	4	1
+matrix_inv(x) = y === matrix_transpose(x) = y | identity(x)	1	4	2	4	1
+matrix_inv(x) = x === matrix_transpose(x) = x | identity(x)	1	4	1	2	1
+True === matrix_inv(matrix_inv(x)) = y | identity(y)	1	4	2	2	1
+matrix_det(x) = a ==> matrix_transpose(x) = x | identity(x)	1	4	2	3	1
+True === matrix_inv(matrix_transpose(x)) = y | identity(y)	1	4	2	2	1
+matrix_inv(x) = y === matrix_transpose(y) = z | identity(y)	1	4	3	4	1
+matrix_is_upper(x) = p === matrix_transpose(x) = y | true(p), identity(x)	1	4	3	4	2
+matrix_transpose(x) = x === matrix_transpose(y) = x | identity(y), identity(x)	1	4	2	3	2
+matrix_inv(x) = x === matrix_inv(x) = y | identity(x)	1	4	2	3	1
+matrix_inv(x) = y === matrix_is_symmetric(y) = p | true(p), identity(y)	1	4	3	4	2
+matrix_det(x) = a ==> matrix_is_lower(x) = p | true(p), identity(x)	1	4	3	4	2
+matrix_inv(x) = y === matrix_is_symmetric(x) = p | true(p), identity(x)	1	4	3	4	2
+matrix_transpose(x) = x === matrix_transpose(x) = y | identity(x)	1	4	2	3	1
+matrix_det(x) = a ==> matrix_is_symmetric(x) = p | true(p), identity(x)	1	4	3	4	2
+matrix_transpose(x) = x === matrix_inv(matrix_inv(y)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = y === matrix_transpose(matrix_inv(x)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = y === matrix_transpose(matrix_inv(y)) = z | identity(x), identity(z)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(x)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_is_symmetric(x) = p === matrix_transpose(matrix_transpose(x)) = y | true(p), identity(x)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(y)) = z | identity(y)	1	5	3	4	1
+matrix_is_lower(x) = p ==> matrix_is_lower(matrix_transpose(x)) = q | true(q), identity(x)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_transpose(matrix_transpose(y)) = x | identity(x)	1	5	2	4	1
+matrix_inv(x) = y === matrix_inv(matrix_transpose(y)) = x | identity(x)	1	5	2	4	1
+matrix_is_upper(x) = p ==> matrix_is_upper(matrix_transpose(x)) = q | true(q), identity(x)	1	5	3	4	2
+matrix_inv(x) = y === matrix_inv(matrix_inv(z)) = x | identity(x)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(z)) = y | identity(y)	1	5	3	4	1
+matrix_inv(x) = y === matrix_inv(matrix_transpose(x)) = y | identity(x)	1	5	2	4	1
+matrix_inv(x) = x === matrix_transpose(matrix_inv(x)) = x | identity(x)	1	5	1	2	1
+matrix_det(x) = a ==> matrix_inv(matrix_inv(x)) = y | identity(x)	1	5	3	4	1
+matrix_inv(x) = y === matrix_transpose(matrix_inv(y)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_transpose(x) = x === matrix_is_upper(matrix_transpose(x)) = p | identity(x), true(p)	1	5	2	3	2
+matrix_is_upper(x) = p ==> matrix_inv(matrix_inv(x)) = y | identity(x), identity(y)	1	5	3	4	2
+matrix_inv(x) = y ==> matrix_is_lower(matrix_inv(x)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_det(x) = a ==> matrix_transpose(matrix_transpose(x)) = y | identity(x)	1	5	3	4	1
+matrix_inv(x) = x === matrix_inv(matrix_transpose(x)) = y | identity(x)	1	5	2	3	1
+matrix_inv(x) = y ==> matrix_is_upper(matrix_inv(y)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_inv(x) = y === matrix_is_symmetric(matrix_inv(y)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_transpose(x) = x === matrix_inv(matrix_transpose(x)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_is_upper(x) = p ==> matrix_inv(matrix_inv(y)) = x | identity(x), identity(y)	1	5	3	4	2
+matrix_inv(x) = y === matrix_inv(matrix_transpose(y)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = y === matrix_transpose(matrix_inv(x)) = z | identity(y), identity(x)	1	5	3	4	2
+matrix_inv(x) = y ==> matrix_is_upper(matrix_inv(x)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(x)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_transpose(x) = y === matrix_transpose(matrix_transpose(z)) = y | identity(y)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(y)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_is_upper(x) = p === matrix_transpose(matrix_transpose(y)) = x | true(p), identity(x)	1	5	3	4	2
+True === matrix_inv(x) = y, matrix_inv(x) = z | identity(z)	1	5	3	3	1
+matrix_transpose(x) = y === matrix_transpose(matrix_transpose(x)) = y | identity(x)	1	5	2	4	1
+matrix_inv(x) = x === matrix_is_symmetric(matrix_inv(x)) = p | identity(x), true(p)	1	5	2	3	2
+matrix_inv(x) = x === matrix_inv(matrix_transpose(y)) = x | identity(x)	1	5	2	3	1
+matrix_inv(x) = y === matrix_transpose(matrix_inv(x)) = y | identity(x)	1	5	2	4	1
+matrix_is_lower(x) = p ==> matrix_transpose(matrix_transpose(x)) = y | identity(x), identity(y)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(x)) = z | identity(x)	1	5	3	4	1
+matrix_is_lower(x) = p === matrix_is_lower(matrix_transpose(x)) = p | identity(x)	1	5	2	4	1
+matrix_inv(x) = x === matrix_inv(matrix_inv(y)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = y === matrix_inv(matrix_inv(x)) = z | identity(x)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_inv(matrix_inv(z)) = y | identity(y), identity(z)	1	5	3	4	2
+matrix_inv(x) = y === matrix_inv(matrix_transpose(x)) = z | identity(x)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_is_upper(matrix_transpose(x)) = p | true(p), identity(x)	1	5	3	4	2
+matrix_is_symmetric(x) = p === matrix_inv(matrix_inv(y)) = x | true(p), identity(x)	1	5	3	4	2
+matrix_inv(x) = y === matrix_is_symmetric(matrix_inv(x)) = p | true(p), identity(x)	1	5	3	4	2
+matrix_inv(x) = y === matrix_inv(matrix_transpose(z)) = x | identity(x)	1	5	3	4	1
+matrix_is_symmetric(x) = p === matrix_transpose(matrix_transpose(y)) = x | true(p), identity(x)	1	5	3	4	2
+matrix_inv(x) = y === matrix_inv(matrix_transpose(x)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = y ==> matrix_is_lower(matrix_inv(y)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_inv(x) = x === matrix_inv(matrix_inv(x)) = y | identity(x)	1	5	2	3	1
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(y)) = z | identity(x), identity(z)	1	5	3	4	2
+matrix_inv(x) = y === matrix_inv(matrix_transpose(y)) = z | identity(y)	1	5	3	4	1
+matrix_is_lower(x) = p ==> matrix_inv(matrix_inv(x)) = y | identity(x), identity(y)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_inv(y)) = z | identity(y), identity(z)	1	5	3	4	2
+True === matrix_inv(x) = x, matrix_inv(x) = y | identity(x)	1	5	2	2	1
+matrix_is_symmetric(x) = p === matrix_inv(matrix_inv(x)) = y | true(p), identity(x)	1	5	3	4	2
+matrix_is_lower(x) = p ==> matrix_transpose(matrix_transpose(y)) = x | identity(x), identity(y)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(z)) = x | identity(x)	1	5	3	4	1
+matrix_transpose(x) = x === matrix_transpose(matrix_inv(x)) = x | identity(x)	1	5	1	2	1
+True === matrix_inv(x) = y, matrix_inv(y) = y | identity(y)	1	5	2	2	1
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(y)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_transpose(x) = x === matrix_transpose(matrix_transpose(y)) = x | identity(y), identity(x)	1	5	2	3	2
+True === matrix_inv(x) = x, matrix_inv(y) = x | identity(x)	1	5	2	2	1
+matrix_inv(x) = y === matrix_inv(matrix_inv(z)) = y | identity(y)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(z)) = x | identity(y), identity(z)	1	5	3	4	2
+matrix_inv(x) = x === matrix_transpose(matrix_inv(y)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = x ==> matrix_mult(x, y) = x | identity(y)	1	5	2	3	1
+matrix_transpose(x) = y === matrix_inv(matrix_inv(x)) = z | identity(y), identity(z)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(x)) = y | identity(x)	1	5	2	4	1
+matrix_det(x) = a ==> matrix_inv(matrix_inv(y)) = x | identity(x)	1	5	3	4	1
+matrix_inv(x) = y === matrix_inv(matrix_inv(y)) = x | identity(x)	1	5	2	4	1
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(x)) = z | identity(y), identity(z)	1	5	3	4	2
+True === matrix_inv(x) = y, matrix_inv(z) = x | identity(z)	1	5	3	3	1
+matrix_transpose(x) = x === matrix_inv(matrix_inv(x)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_transpose(x) = x === matrix_inv(matrix_transpose(x)) = x | identity(x)	1	5	1	2	1
+matrix_transpose(x) = y === matrix_inv(matrix_inv(y)) = x | identity(x)	1	5	2	4	1
+matrix_transpose(x) = x === matrix_transpose(matrix_inv(x)) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_transpose(x) = x === matrix_transpose(matrix_inv(y)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(x) = y === matrix_transpose(matrix_inv(y)) = x | identity(x)	1	5	2	4	1
+matrix_inv(x) = y === matrix_inv(matrix_inv(x)) = y | identity(x)	1	5	2	4	1
+matrix_inv(x) = x === matrix_is_upper(matrix_inv(x)) = p | identity(x), true(p)	1	5	2	3	2
+matrix_transpose(x) = x === matrix_transpose(matrix_transpose(x)) = y | identity(y), identity(x)	1	5	2	3	2
+True === matrix_inv(x) = y, matrix_inv(y) = x | identity(y)	1	5	2	2	1
+matrix_transpose(x) = y ==> matrix_is_lower(matrix_transpose(x)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_inv(x) = x === matrix_is_lower(matrix_inv(x)) = p | identity(x), true(p)	1	5	2	3	2
+True === matrix_inv(x) = y, matrix_inv(y) = z | identity(z)	1	5	3	3	1
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(y)) = x | identity(x)	1	5	2	4	1
+matrix_transpose(x) = x === matrix_inv(matrix_transpose(y)) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_transpose(x) = y ==> matrix_is_lower(matrix_transpose(y)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_inv(x) = y === matrix_transpose(matrix_inv(z)) = x | identity(y), identity(x)	1	5	3	4	2
+matrix_is_lower(x) = p ==> matrix_inv(matrix_inv(y)) = x | identity(x), identity(y)	1	5	3	4	2
+matrix_inv(x) = y === matrix_transpose(matrix_inv(z)) = y | identity(x), identity(z)	1	5	3	4	2
+matrix_is_upper(x) = p === matrix_is_upper(matrix_transpose(x)) = p | identity(x)	1	5	2	4	1
+matrix_det(x) = a ==> matrix_transpose(matrix_transpose(y)) = x | identity(x)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_transpose(matrix_transpose(x)) = z | identity(x)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_inv(x)) = y | identity(x)	1	5	2	4	1
+matrix_transpose(x) = x === matrix_is_lower(matrix_transpose(x)) = p | identity(x), true(p)	1	5	2	3	2
+matrix_transpose(x) = y === matrix_transpose(matrix_transpose(y)) = z | identity(y)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_transpose(matrix_inv(z)) = y | identity(x), identity(z)	1	5	3	4	2
+matrix_is_upper(x) = p === matrix_transpose(matrix_transpose(x)) = y | true(p), identity(x)	1	5	3	4	2
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(x)) = y | identity(x)	1	5	2	4	1
+matrix_transpose(x) = y === matrix_inv(matrix_transpose(y)) = x | identity(x)	1	5	2	4	1
+matrix_inv(x) = x === matrix_transpose(matrix_inv(x)) = y | identity(x)	1	5	2	3	1
+matrix_transpose(x) = y === matrix_is_upper(matrix_transpose(y)) = p | true(p), identity(y)	1	5	3	4	2
+matrix_inv(x) = x === matrix_inv(matrix_transpose(x)) = x | identity(x)	1	5	1	2	1
+matrix_inv(x) = y === matrix_inv(matrix_inv(y)) = z | identity(y)	1	5	3	4	1
+matrix_transpose(x) = y === matrix_transpose(matrix_transpose(z)) = x | identity(x)	1	5	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(x)) = x | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(matrix_transpose(x)) = x === matrix_transpose(matrix_inv(x)) = y | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_inv(y)) = z | identity(y)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(x)) = y | identity(x)	1	6	2	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_inv(z)) = y | identity(y)	1	6	3	4	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_transpose(matrix_transpose(x)) = z | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(z)) = x | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(x)) = x | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_inv(x)) = z | identity(x)	1	6	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(x, z) = y | identity(y)	1	6	3	5	1
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(y)) = z | identity(y)	1	6	3	4	1
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(z)) = x | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(y)) = z | identity(y)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(y)) = y | identity(y), identity(x)	1	6	2	3	2
+matrix_is_upper(matrix_transpose(x)) = p === matrix_transpose(matrix_transpose(y)) = x | true(p), identity(x)	1	6	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(z)) = y | identity(y)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(x)) = z | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(y)) = z | identity(x), identity(z)	1	6	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(y)) = y | identity(y), identity(x)	1	6	2	3	2
+matrix_mult(x, y) = x <== matrix_mult(z, x) = y | identity(y)	1	6	3	5	1
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(x)) = z | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(z)) = x | identity(y), identity(x)	1	6	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(y)) = x | identity(x)	1	6	2	4	1
+matrix_is_upper(matrix_transpose(x)) = p === matrix_transpose(matrix_transpose(x)) = y | true(p), identity(x)	1	6	3	4	2
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(x)) = y | identity(x), identity(y)	1	6	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_inv(z)) = x | identity(x)	1	6	3	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(matrix_transpose(y)) = x | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(y) = x | identity(x)	1	6	2	3	1
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = x | identity(x), identity(y)	1	6	3	4	2
+matrix_inv(matrix_transpose(x)) = x === matrix_transpose(matrix_inv(y)) = x | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(x)) = y | identity(x)	1	6	2	4	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_transpose(matrix_transpose(z)) = y | identity(y)	1	6	3	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(matrix_transpose(x)) = y | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(x) = z | identity(y)	1	6	3	4	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_transpose(matrix_transpose(z)) = x | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(x)) = z | identity(y), identity(x)	1	6	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_inv(z)) = y | identity(x), identity(z)	1	6	3	4	2
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(y)) = y | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(matrix_transpose(y)) = x | identity(x)	1	6	2	4	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_transpose(matrix_transpose(y)) = z | identity(y)	1	6	3	4	1
+matrix_inv(matrix_transpose(x)) = y === matrix_inv(matrix_transpose(x)) = x | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(x) = y ==> matrix_transpose(matrix_transpose(z)) = z | 	1000	5	3	3	0
+matrix_is_lower(x) = p ==> matrix_inv(matrix_inv(y)) = y | 	1000	5	3	3	0
+matrix_is_upper(x) = p ==> matrix_inv(matrix_inv(y)) = y | 	1000	5	3	3	0
+matrix_is_symmetric(x) = p ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	5	3	3	0
+matrix_inv(x) = y ==> matrix_inv(matrix_inv(z)) = z | 	1000	5	3	3	0
+matrix_det(x) = a ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	5	3	3	0
+matrix_is_symmetric(x) = p ==> matrix_inv(matrix_inv(y)) = y | 	1000	5	3	3	0
+matrix_inv(x) = x ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	5	2	2	0
+matrix_transpose(x) = y ==> matrix_inv(matrix_inv(z)) = z | 	1000	5	3	3	0
+matrix_det(x) = a ==> matrix_inv(matrix_inv(y)) = y | 	1000	5	3	3	0
+matrix_transpose(x) = y ==> matrix_transpose(matrix_transpose(z)) = z | 	1000	5	3	3	0
+matrix_transpose(x) = x ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	5	2	2	0
+matrix_is_lower(x) = p ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	5	3	3	0
+matrix_transpose(x) = x ==> matrix_inv(matrix_inv(y)) = y | 	1000	5	2	2	0
+matrix_is_upper(x) = p ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	5	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_transpose(y)) = z | 	1000	6	3	3	0
+matrix_is_upper(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	6	3	3	0
+matrix_transpose(matrix_transpose(x)) = y ==> matrix_transpose(matrix_transpose(z)) = z | 	1000	6	3	3	0
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, z) = y | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = y ==> matrix_inv(matrix_inv(z)) = z | 	1000	6	3	3	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_transpose(matrix_transpose(y)) = z | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, z) = z | 	1000	6	3	3	0
+matrix_transpose(matrix_transpose(x)) = x === matrix_transpose(matrix_transpose(y)) = y | 	1000	6	2	2	0
+matrix_inv(matrix_inv(x)) = x === matrix_inv(matrix_inv(y)) = y | 	1000	6	2	2	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_inv(y)) = z | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_inv(y)) = z | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, y) = z | 	840	6	3	3	0
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(y) = q, matrix_is_symmetric(z) = p | Not(true(q))	748	6	5	6	1
+matrix_is_lower(x) = p === matrix_is_lower(y) = q, matrix_is_lower(z) = q | Not(true(q))	748	6	5	5	1
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(x, y) = z | 	698	6	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, x) = z | 	680	6	3	4	0
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_is_upper(y) = q | Not(true(p)), Not(true(q))	676	6	4	5	2
+matrix_inv(x) = x ==> matrix_inv(matrix_inv(y)) = y | 	560	5	2	2	0
+matrix_is_lower(x) = p === matrix_is_lower(y) = q, matrix_is_lower(z) = p | Not(true(q))	612	6	5	6	1
+matrix_inv(x) = y <== matrix_inv(y) = x, matrix_inv(z) = z | 	560	6	3	5	0
+matrix_is_symmetric(x) = p ==> matrix_inv(x) = x, matrix_inv(y) = z | Not(true(p))	490	6	4	5	1
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_inv(y)) = y | 	320	6	2	2	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_transpose(y)) = y | 	320	6	2	2	0
+matrix_is_upper(x) = p ==> matrix_inv(x) = x, matrix_inv(y) = z | Not(true(p))	298	6	4	5	1
+matrix_det(x) = a ==> matrix_det(y) = a, matrix_det(y) = b | gt0(b), Not(gt(b, a))	284	6	4	5	2
+matrix_is_lower(x) = p ==> matrix_inv(x) = x, matrix_inv(y) = z | Not(true(p))	280	6	4	5	1
+matrix_det(x) = a ==> matrix_det(y) = a, matrix_det(y) = b | gt0(a), Not(gt1(a))	240	6	4	5	2
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, z) = x | 	203	6	3	4	0
+matrix_transpose(x) = y ==> matrix_transpose(matrix_transpose(y)) = y | 	108	5	2	3	0
+matrix_is_lower(x) = p ==> matrix_transpose(matrix_transpose(x)) = x | 	108	5	2	3	0
+matrix_inv(x) = y ==> matrix_transpose(matrix_transpose(x)) = x | 	108	5	2	3	0
+matrix_is_upper(x) = p ==> matrix_transpose(matrix_transpose(x)) = x | 	108	5	2	3	0
+matrix_is_symmetric(x) = p ==> matrix_transpose(matrix_transpose(x)) = x | 	108	5	2	3	0
+matrix_transpose(x) = y ==> matrix_transpose(matrix_transpose(x)) = x | 	108	5	2	3	0
+matrix_det(x) = a ==> matrix_transpose(matrix_transpose(x)) = x | 	108	5	2	3	0
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(x)) = x | 	108	6	2	3	0
+matrix_is_upper(x) = p === matrix_is_lower(x) = p, matrix_is_lower(y) = q | identity(x)	108	6	4	6	1
+matrix_transpose(matrix_transpose(x)) = x <== matrix_transpose(matrix_transpose(y)) = x | 	108	6	2	3	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_transpose(matrix_transpose(x)) = y | 	108	6	2	3	0
+matrix_is_upper(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(x)) = x | 	108	6	2	3	0
+matrix_transpose(matrix_transpose(x)) = y ==> matrix_transpose(matrix_transpose(y)) = y | 	108	6	2	3	0
+matrix_transpose(matrix_transpose(x)) = y ==> matrix_transpose(matrix_transpose(x)) = x | 	108	6	2	3	0
+matrix_det(x) = a === matrix_det(y) = a, matrix_det(z) = a | gt0(a)	85	6	4	5	1
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, y) = y | 	80	6	2	2	0
+matrix_inv(x) = x ==> matrix_inv(y) = y, matrix_inv(z) = z | identity(z)	71	6	3	3	1
+matrix_is_lower(x) = p ==> matrix_inv(x) = y, matrix_inv(x) = z | Not(true(p))	52	6	4	5	1
+matrix_det(x) = a ==> matrix_inv(matrix_inv(x)) = x | 	40	5	2	3	0
+matrix_inv(x) = y ==> matrix_transpose(matrix_transpose(y)) = y | 	40	5	2	3	0
+matrix_is_upper(x) = p ==> matrix_inv(matrix_inv(x)) = x | 	40	5	2	3	0
+matrix_transpose(x) = y ==> matrix_inv(matrix_inv(y)) = y | 	40	5	2	3	0
+matrix_is_symmetric(x) = p ==> matrix_inv(matrix_inv(x)) = x | 	40	5	2	3	0
+matrix_is_lower(x) = p ==> matrix_inv(matrix_inv(x)) = x | 	40	5	2	3	0
+matrix_inv(x) = y ==> matrix_inv(matrix_inv(x)) = x | 	40	5	2	3	0
+matrix_transpose(x) = y ==> matrix_inv(matrix_inv(x)) = x | 	40	5	2	3	0
+matrix_inv(x) = y ==> matrix_inv(matrix_inv(y)) = y | 	40	5	2	3	0
+matrix_is_symmetric(x) = p ==> matrix_inv(x) = y, matrix_inv(x) = z | Not(true(p))	44	6	4	5	1
+matrix_transpose(x) = x ==> matrix_transpose(matrix_transpose(x)) = x | 	36	5	1	2	0
+matrix_inv(x) = y <== matrix_inv(x) = z, matrix_inv(y) = x | 	40	6	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_transpose(y)) = x | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_inv(y)) = x | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_inv(x)) = y | 	40	6	2	3	0
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(z) = y | identity(x)	40	6	3	3	1
+matrix_inv(x) = y <== matrix_inv(y) = x, matrix_inv(z) = x | 	40	6	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_transpose(x)) = y | 	40	6	2	3	0
+matrix_inv(x) = y <== matrix_inv(y) = x, matrix_inv(z) = y | 	40	6	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, x) = y | 	40	6	2	3	0
+matrix_inv(x) = y <== matrix_inv(y) = x, matrix_inv(y) = z | 	40	6	3	5	0
+matrix_inv(matrix_inv(x)) = y ==> matrix_inv(matrix_inv(x)) = x | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_inv(y)) = x | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_inv(x)) = y | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = y ==> matrix_inv(matrix_inv(y)) = y | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(x, y) = y | 	38	6	2	3	0
+matrix_is_upper(x) = p === matrix_is_lower(x) = p, matrix_is_lower(y) = p | identity(x)	36	6	3	5	1
+matrix_is_upper(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = p | identity(x), true(p)	36	6	4	6	2
+matrix_is_upper(x) = p === matrix_is_upper(y) = p, matrix_is_upper(y) = q | true(q), identity(x)	36	6	4	5	2
+matrix_is_upper(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = q | identity(x), true(p)	28	6	4	5	2
+matrix_mult(x, y) = z ==> matrix_mult(z, y) = z | identity(y)	23	6	3	5	1
+matrix_mult(x, y) = z === matrix_mult(z, y) = x | identity(y)	23	6	3	6	1
+matrix_is_upper(x) = p ==> matrix_inv(x) = y, matrix_inv(x) = z | true(p)	18	6	4	5	1
+matrix_mult(x, y) = z ==> matrix_mult(x, z) = z | identity(x)	17	6	3	5	1
+matrix_mult(x, y) = z === matrix_mult(x, z) = y | identity(x)	17	6	3	6	1
+matrix_transpose(x) = x ==> matrix_inv(matrix_inv(x)) = x | 	14	5	1	2	0
+matrix_inv(x) = x ==> matrix_inv(matrix_inv(x)) = x | 	14	5	1	2	0
+matrix_inv(x) = x ==> matrix_transpose(matrix_transpose(x)) = x | 	14	5	1	2	0
+matrix_inv(x) = y <== matrix_inv(x) = x, matrix_inv(y) = x | 	14	6	2	4	0
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(z) = z | identity(x)	14	6	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(z) = x | identity(z)	14	6	3	4	1
+matrix_inv(x) = x <== matrix_inv(y) = x, matrix_inv(y) = y | 	14	6	2	3	0
+matrix_is_upper(x) = p === matrix_inv(x) = x, matrix_inv(y) = y | true(p), identity(x)	14	6	3	4	2
+matrix_inv(x) = y <== matrix_inv(y) = x, matrix_inv(y) = y | 	14	6	2	4	0
+matrix_is_lower(x) = p === matrix_inv(x) = x, matrix_inv(y) = y | true(p), identity(x)	14	6	3	4	2
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(z) = y | identity(x)	14	6	3	3	1
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(y) = z | identity(x)	14	6	3	3	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(z) = z | identity(x)	14	6	3	3	1
+matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(z) = z | identity(y)	14	6	3	4	1
+matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(z) = z | identity(x)	14	6	3	4	1
+matrix_is_symmetric(x) = p === matrix_inv(x) = x, matrix_inv(y) = y | true(p), identity(x)	14	6	3	4	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(z) = z | identity(y)	14	6	3	4	1
+matrix_inv(x) = x === matrix_inv(x) = z, matrix_inv(y) = y | identity(z)	14	6	3	4	1
+matrix_inv(x) = x === matrix_transpose(matrix_transpose(y)) = z | identity(z)	10	5	3	3	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(matrix_transpose(x)) = x | 	8	6	1	2	0
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_inv(x)) = x | 	8	6	1	2	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(x, x) = y | 	7	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(x, y) = x | 	7	6	2	3	0
+matrix_mult(x, y) = z === matrix_mult(y, z) = x | identity(y)	4	6	3	6	1
+matrix_mult(x, y) = z === matrix_mult(y, x) = x | identity(y)	4	6	3	5	1
+matrix_mult(x, y) = z ==> matrix_mult(z, x) = z | identity(x)	4	6	3	5	1
+matrix_mult(x, y) = z === matrix_mult(z, x) = y | identity(x)	4	6	3	6	1
+matrix_mult(x, y) = z ==> matrix_mult(y, z) = z | identity(y)	4	6	3	5	1
+matrix_mult(x, y) = z === matrix_mult(y, x) = z | identity(x)	4	6	3	6	1
+matrix_mult(x, y) = z ==> matrix_mult(y, x) = y | identity(x)	4	6	3	5	1
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, x) = x | 	3	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_mult(y, y) = x | 	2	6	2	3	0
+matrix_is_symmetric(x) = p === matrix_inv(x) = x | identity(x), true(p)	1	4	2	3	2
+matrix_is_upper(x) = p === matrix_inv(x) = y | true(p), identity(x)	1	4	3	4	2
+matrix_is_symmetric(x) = p === matrix_inv(x) = y | true(p), identity(x)	1	4	3	4	2
+matrix_is_lower(x) = p ==> matrix_inv(x) = y | identity(x), identity(y)	1	4	3	4	2
+matrix_is_upper(x) = p ==> matrix_is_lower(x) = q | true(q), identity(x)	1	4	3	4	2
+matrix_is_upper(x) = p === matrix_is_lower(x) = p | identity(x)	1	4	2	4	1
+matrix_is_upper(x) = p === matrix_inv(x) = x | identity(x), true(p)	1	4	2	3	2
+matrix_is_lower(x) = p === matrix_inv(x) = x | identity(x), true(p)	1	4	2	3	2
+matrix_inv(x) = x === matrix_transpose(matrix_transpose(x)) = y | identity(x)	1	5	2	3	1
+matrix_inv(x) = x === matrix_transpose(matrix_transpose(y)) = x | identity(x)	1	5	2	3	1
+matrix_transpose(x) = x === matrix_transpose(matrix_transpose(x)) = y | identity(x)	1	5	2	3	1
+matrix_inv(x) = y === matrix_transpose(matrix_transpose(y)) = z | identity(y)	1	5	3	4	1
+matrix_inv(x) = y === matrix_transpose(matrix_transpose(x)) = y | identity(x)	1	5	2	4	1
+matrix_inv(x) = y === matrix_transpose(matrix_transpose(y)) = x | identity(x)	1	5	2	4	1
+matrix_inv(x) = y === matrix_transpose(matrix_transpose(x)) = z | identity(x)	1	5	3	4	1
+matrix_inv(x) = y === matrix_transpose(matrix_transpose(z)) = x | identity(x)	1	5	3	4	1
+matrix_inv(x) = y === matrix_transpose(matrix_transpose(z)) = y | identity(y)	1	5	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(y) = z | identity(z)	1	6	3	4	1
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(z) = x | identity(y)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(y) = z | identity(y)	1	6	3	5	1
+matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(z) = y | identity(y)	1	6	3	4	1
+matrix_is_lower(x) = p ==> matrix_inv(x) = y, matrix_inv(y) = x | identity(x), identity(y)	1	6	3	4	2
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(z) = x | identity(z)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(z) = z | identity(y)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(z) = x | identity(y)	1	6	3	5	1
+matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(y) = z | identity(x)	1	6	3	5	1
+matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(z) = x | identity(y), identity(x)	1	6	3	5	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(z) = y | identity(y)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(z) = x | identity(x)	1	6	3	4	1
+matrix_is_upper(x) = p === matrix_inv(x) = y, matrix_inv(y) = x | true(p), identity(x)	1	6	3	4	2
+matrix_is_lower(x) = p ==> matrix_inv(x) = y, matrix_inv(y) = y | identity(x), identity(y)	1	6	3	4	2
+matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(z) = y | identity(y)	1	6	3	5	1
+matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(y) = z | identity(y)	1	6	3	4	1
+matrix_mult(x, y) = z ==> matrix_mult(y, z) = y | identity(z)	1	6	3	5	1
+matrix_is_upper(x) = p === matrix_inv(x) = y, matrix_inv(y) = y | true(p), identity(x)	1	6	3	4	2
+matrix_is_upper(x) = p === matrix_inv(x) = x, matrix_inv(y) = x | true(p), identity(x)	1	6	3	4	2
+matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(x) = z | identity(x)	1	6	3	4	1
+matrix_is_upper(x) = p === matrix_inv(x) = x, matrix_inv(x) = y | true(p), identity(x)	1	6	3	4	2
+matrix_is_lower(x) = p === matrix_inv(x) = x, matrix_inv(x) = y | true(p), identity(x)	1	6	3	4	2
+matrix_is_upper(x) = p === matrix_is_lower(x) = p, matrix_is_lower(x) = q | true(q), identity(x)	1	6	3	5	2
+matrix_mult(x, y) = z ==> matrix_mult(x, z) = x | identity(z)	1	6	3	5	1
+matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(z) = x | identity(x)	1	6	3	4	1
+matrix_is_symmetric(x) = p === matrix_inv(x) = x, matrix_inv(x) = y | true(p), identity(x)	1	6	3	4	2
+matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(z) = z | identity(x)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(y) = y | identity(x)	1	6	3	5	1
+matrix_is_lower(x) = p === matrix_inv(x) = x, matrix_inv(y) = x | true(p), identity(x)	1	6	3	4	2
+matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(z) = z | identity(x)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(z) = y | identity(y)	1	6	3	5	1
+matrix_is_symmetric(x) = p === matrix_inv(x) = y, matrix_inv(y) = x | true(p), identity(x)	1	6	3	4	2
+matrix_inv(x) = x === matrix_inv(x) = z, matrix_inv(y) = x | identity(z)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(z) = y | identity(x)	1	6	3	5	1
+matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(z) = z | identity(y)	1	6	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(z) = x | identity(z)	1	6	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(z) = y | identity(z)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(y) = y | identity(y), identity(x)	1	6	2	4	2
+matrix_is_symmetric(x) = p === matrix_inv(x) = x, matrix_inv(y) = x | true(p), identity(x)	1	6	3	4	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(y) = z | identity(y)	1	6	3	4	1
+matrix_inv(x) = x === matrix_inv(x) = z, matrix_inv(y) = z | identity(z)	1	6	3	4	1
+matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(z) = y | identity(y)	1	6	3	4	1
+matrix_mult(x, y) = y ==> matrix_transpose(matrix_transpose(z)) = z | 	1000	6	3	3	0
+matrix_is_symmetric(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	6	3	3	0
+matrix_mult(x, y) = z ==> matrix_transpose(matrix_transpose(x)) = x | 	1000	6	3	4	0
+matrix_det(matrix_inv(x)) = a ==> matrix_inv(matrix_inv(y)) = y | 	1000	6	3	3	0
+matrix_mult(x, y) = x ==> matrix_transpose(matrix_transpose(z)) = z | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_is_lower(matrix_inv(y)) = p | 	1000	6	3	3	0
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(z)) = z | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_transpose(y)) = z | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_is_symmetric(matrix_inv(y)) = p | 	1000	6	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_is_upper(matrix_inv(y)) = p | 	1000	6	3	3	0
+matrix_det(matrix_transpose(x)) = a ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	6	3	3	0
+matrix_mult(x, y) = z ==> matrix_transpose(matrix_transpose(y)) = y | 	1000	6	3	4	0
+matrix_mult(x, y) = z ==> matrix_transpose(matrix_transpose(z)) = z | 	992	6	3	4	0
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q, matrix_is_lower(z) = q | Not(true(q))	748	6	5	5	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = q, matrix_is_symmetric(z) = p | Not(true(q))	748	6	5	6	1
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q, matrix_is_lower(z) = p | Not(true(q))	612	6	5	6	1
+matrix_is_symmetric(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(y)) = z | Not(true(p))	568	6	4	4	1
+matrix_det(matrix_inv(x)) = a ==> matrix_inv(matrix_inv(y)) = z | gt0(a)	560	6	4	4	1
+matrix_inv(matrix_inv(x)) = y <== matrix_is_symmetric(matrix_inv(z)) = p | true(p)	350	6	4	4	1
+matrix_det(matrix_transpose(x)) = a ==> matrix_transpose(matrix_transpose(y)) = z | gt0(a)	324	6	4	4	1
+matrix_inv(matrix_inv(x)) = y <== matrix_is_lower(matrix_inv(z)) = p | true(p)	300	6	4	4	1
+matrix_inv(matrix_inv(x)) = y <== matrix_is_upper(matrix_inv(z)) = p | true(p)	300	6	4	4	1
+matrix_det(x) = a ==> matrix_det(y) = a, matrix_det(y) = b | gt0(a), Not(gt(a, b))	284	6	4	5	2
+matrix_det(matrix_transpose(x)) = a <== matrix_det(matrix_transpose(y)) = b | gt0(b), Not(gt1(b))	221	6	4	4	2
+matrix_mult(x, x) = x ==> matrix_transpose(matrix_transpose(y)) = y | 	216	6	2	2	0
+matrix_is_symmetric(matrix_transpose(x)) = p ==> matrix_transpose(matrix_transpose(x)) = x | 	108	6	2	3	0
+matrix_det(matrix_transpose(x)) = a ==> matrix_transpose(matrix_transpose(x)) = x | 	108	6	2	3	0
+matrix_det(matrix_transpose(x)) = a === matrix_det(matrix_transpose(x)) = b | Not(gt(a, b)), Not(gt(b, a))	108	6	3	4	2
+matrix_mult(x, y) = y ==> matrix_transpose(matrix_transpose(y)) = y | 	74	6	2	3	0
+matrix_mult(x, y) = y ==> matrix_transpose(matrix_transpose(x)) = x | 	74	6	2	3	0
+matrix_mult(x, y) = x ==> matrix_transpose(matrix_transpose(y)) = y | 	73	6	2	3	0
+matrix_mult(x, y) = x ==> matrix_transpose(matrix_transpose(x)) = x | 	73	6	2	3	0
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	72	6	3	4	2
+matrix_transpose(x) = x === matrix_inv(x) = x, matrix_inv(y) = z | identity(x)	70	6	3	4	1
+matrix_is_upper(x) = p <== matrix_is_lower(y) = p | identity(x), true(p)	36	4	3	4	2
+matrix_det(matrix_inv(x)) = a ==> matrix_inv(matrix_inv(x)) = x | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x === matrix_transpose(matrix_transpose(x)) = x | 	40	6	1	2	0
+matrix_det(matrix_inv(x)) = a === matrix_det(matrix_inv(x)) = b | Not(gt(a, b)), Not(gt(b, a))	40	6	3	4	2
+matrix_inv(matrix_inv(x)) = x <== matrix_is_symmetric(matrix_inv(x)) = p | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_transpose(y)) = x | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = y === matrix_transpose(matrix_transpose(x)) = y | 	40	6	2	4	0
+matrix_is_upper(matrix_inv(x)) = p <== matrix_is_upper(matrix_inv(y)) = q | identity(x), true(p)	40	6	4	4	2
+matrix_det(matrix_inv(x)) = a ==> matrix_det(matrix_inv(y)) = b | identity(x)	40	6	4	4	1
+matrix_inv(matrix_inv(x)) = x <== matrix_transpose(matrix_transpose(x)) = y | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_is_lower(matrix_inv(x)) = p | 	40	6	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_is_upper(matrix_inv(x)) = p | 	40	6	2	3	0
+matrix_is_lower(matrix_inv(x)) = p <== matrix_is_lower(matrix_inv(y)) = q | identity(x), true(p)	40	6	4	4	2
+matrix_is_lower(matrix_inv(x)) = p === matrix_is_lower(matrix_inv(x)) = q | Not(true(p)), Not(true(q))	28	6	3	4	2
+matrix_is_upper(matrix_inv(x)) = p === matrix_is_upper(matrix_inv(x)) = q | Not(true(p)), Not(true(q))	28	6	3	4	2
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_is_symmetric(matrix_inv(x)) = q | Not(true(p)), Not(true(q))	26	6	3	4	2
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_is_symmetric(matrix_inv(y)) = q | true(q), identity(y)	25	6	4	4	2
+matrix_det(matrix_transpose(x)) = a ==> matrix_det(matrix_transpose(y)) = a | identity(x)	24	6	3	4	1
+matrix_mult(x, y) = x === matrix_transpose(matrix_transpose(y)) = z | identity(y)	23	6	3	4	1
+matrix_mult(x, y) = x <== matrix_transpose(matrix_transpose(z)) = x | identity(y)	23	6	3	4	1
+matrix_mult(x, y) = z === matrix_transpose(matrix_transpose(z)) = x | identity(y)	23	6	3	5	1
+matrix_mult(x, y) = x === matrix_transpose(matrix_transpose(x)) = z | identity(y)	23	6	3	4	1
+matrix_mult(x, y) = z === matrix_transpose(matrix_transpose(x)) = z | identity(y)	23	6	3	5	1
+matrix_mult(x, y) = x === matrix_transpose(matrix_transpose(z)) = y | identity(y), identity(z)	23	6	3	4	2
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(x)) = x | 	21	6	2	3	0
+matrix_det(matrix_inv(x)) = a ==> matrix_det(matrix_inv(y)) = a | identity(y), gt0(a)	20	6	3	4	2
+matrix_mult(x, y) = z === matrix_transpose(matrix_transpose(z)) = y | identity(x)	17	6	3	5	1
+matrix_mult(x, y) = y === matrix_transpose(matrix_transpose(z)) = x | identity(x), identity(z)	17	6	3	4	2
+matrix_mult(x, y) = z === matrix_transpose(matrix_transpose(y)) = z | identity(x)	17	6	3	5	1
+matrix_mult(x, y) = y <== matrix_transpose(matrix_transpose(z)) = y | identity(x)	17	6	3	4	1
+matrix_mult(x, y) = y === matrix_transpose(matrix_transpose(x)) = z | identity(x), identity(z)	17	6	3	4	2
+matrix_mult(x, y) = y <== matrix_transpose(matrix_transpose(y)) = z | identity(x)	17	6	3	4	1
+matrix_transpose(x) = x === matrix_inv(x) = x, matrix_inv(y) = y | identity(x)	14	6	2	3	1
+matrix_is_symmetric(matrix_inv(x)) = p ==> matrix_is_symmetric(matrix_inv(y)) = p | true(p), identity(y)	14	6	3	4	2
+matrix_is_upper(matrix_inv(x)) = p ==> matrix_is_upper(matrix_inv(y)) = p | true(p), identity(y)	12	6	3	4	2
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_is_lower(matrix_inv(y)) = p | true(p), identity(y)	12	6	3	4	2
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(matrix_transpose(y)) = q | true(q), identity(y)	9	6	4	4	2
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(y)) = y | 	8	6	2	3	0
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(matrix_transpose(y)) = p | true(p), identity(y)	4	6	3	4	2
+matrix_mult(x, x) = x ==> matrix_transpose(matrix_transpose(x)) = x | 	2	6	1	2	0
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(z)) = y | identity(y)	2	6	3	4	1
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(y)) = z | identity(y)	2	6	3	4	1
+matrix_mult(x, x) = x ==> matrix_transpose(matrix_transpose(y)) = z | identity(z)	2	6	3	3	1
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(z)) = x | identity(y)	2	6	3	4	1
+matrix_mult(x, x) = y ==> matrix_transpose(matrix_transpose(x)) = z | identity(y)	2	6	3	4	1
+matrix_transpose(x) = x === matrix_inv(x) = x | identity(x)	1	4	1	2	1
+matrix_transpose(x) = x === matrix_inv(x) = y | identity(y), identity(x)	1	4	2	3	2
+matrix_transpose(x) = x === matrix_inv(x) = x, matrix_inv(y) = x | identity(x)	1	6	2	3	1
+matrix_det(matrix_inv(x)) = a ==> matrix_inv(matrix_inv(y)) = x | identity(x), identity(y)	1	6	3	4	2
+matrix_det(matrix_transpose(x)) = a ==> matrix_transpose(matrix_transpose(x)) = y | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_is_lower(matrix_inv(x)) = p | true(p), identity(y)	1	6	3	4	2
+matrix_transpose(x) = x === matrix_inv(x) = y, matrix_inv(y) = z | identity(y)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_is_upper(matrix_inv(x)) = p | true(p), identity(y)	1	6	3	4	2
+matrix_is_symmetric(x) = p === matrix_inv(x) = y, matrix_inv(y) = y | true(p), identity(x)	1	6	3	4	2
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_transpose(matrix_transpose(x)) = y | true(p), identity(x)	1	6	3	4	2
+matrix_transpose(x) = x === matrix_inv(x) = y, matrix_inv(y) = y | identity(y), identity(x)	1	6	2	3	2
+matrix_det(matrix_transpose(x)) = a ==> matrix_transpose(matrix_transpose(y)) = x | identity(x)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y ==> matrix_is_lower(matrix_inv(y)) = p | true(p), identity(y)	1	6	3	4	2
+matrix_transpose(x) = x === matrix_inv(x) = y, matrix_inv(z) = x | identity(y)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_is_symmetric(matrix_inv(x)) = p | true(p), identity(x)	1	6	3	4	2
+matrix_transpose(x) = x === matrix_inv(x) = y, matrix_inv(x) = z | identity(y)	1	6	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_is_symmetric(matrix_inv(y)) = p | true(p), identity(y)	1	6	3	4	2
+matrix_inv(matrix_inv(x)) = y ==> matrix_is_upper(matrix_inv(y)) = p | true(p), identity(y)	1	6	3	4	2
+matrix_det(matrix_inv(x)) = a ==> matrix_inv(matrix_inv(x)) = y | identity(x)	1	6	3	4	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_transpose(matrix_transpose(y)) = x | true(p), identity(x)	1	6	3	4	2
+matrix_transpose(x) = x === matrix_inv(x) = x, matrix_inv(x) = y | identity(x)	1	6	2	3	1
+matrix_transpose(x) = x === matrix_inv(x) = y, matrix_inv(y) = x | identity(y), identity(x)	1	6	2	3	2
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = z | 	1000	5	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = z, matrix_inv(z) = y | 	1000	7	3	3	0
+matrix_det(matrix_transpose(x)) = a <== matrix_det(x) = a, matrix_det(y) = a | 	1000	7	3	5	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(x, matrix_transpose(y)) = z | 	1000	7	3	4	0
+matrix_det(matrix_transpose(x)) = a <== matrix_det(x) = a, matrix_det(y) = b | 	1000	7	4	6	0
+matrix_det(matrix_transpose(x)) = a === matrix_det(x) = b, matrix_det(y) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(z)) = z | 	1000	7	3	3	0
+matrix_is_symmetric(matrix_transpose(x)) = p <== matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = q | 	1000	7	4	6	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = y, matrix_inv(z) = z | 	1000	7	3	3	0
+matrix_det(matrix_inv(x)) = a <== matrix_det(x) = a, matrix_det(y) = b | 	1000	7	4	6	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = x, matrix_inv(y) = z | 	1000	7	3	4	0
+matrix_det(matrix_transpose(x)) = a === matrix_det(x) = b, matrix_det(y) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+matrix_is_symmetric(matrix_transpose(x)) = p <== matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = p | 	1000	7	3	5	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(x)) = z | 	1000	7	3	4	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(z)) = y | 	1000	7	3	3	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(y)) = z | 	1000	7	3	3	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(z)) = x | 	992	7	3	4	0
+matrix_det(matrix_inv(x)) = a <== matrix_det(x) = a, matrix_det(y) = a | 	960	7	3	5	0
+matrix_det(matrix_inv(x)) = a === matrix_det(x) = b, matrix_det(y) = b | Not(gt(a, b)), Not(gt(b, a))	960	7	4	5	2
+matrix_det(matrix_inv(x)) = a === matrix_det(x) = b, matrix_det(y) = a | Not(gt(a, b)), Not(gt(b, a))	960	7	4	6	2
+matrix_mult(x, x) = y ==> matrix_is_symmetric(x) = p, matrix_is_symmetric(z) = p | Not(true(p))	892	7	4	5	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = q | Not(true(p)), Not(true(q))	856	7	4	5	2
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = p | Not(true(p)), Not(true(q))	856	7	4	6	2
+matrix_mult(x, x) = x ==> matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = p | Not(true(p))	856	7	4	4	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = y | 	560	5	2	2	0
+matrix_mult(x, x) = y ==> matrix_is_lower(y) = p, matrix_is_lower(z) = q | true(p)	756	7	5	6	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(y) = q, matrix_is_symmetric(z) = p | Not(true(q))	748	7	5	6	1
+matrix_mult(x, x) = y ==> matrix_is_lower(x) = p, matrix_is_lower(z) = p | Not(true(p))	748	7	4	5	1
+matrix_mult(x, x) = x ==> matrix_is_upper(y) = p, matrix_is_upper(z) = p | Not(true(p))	676	7	4	4	1
+matrix_mult(x, x) = y ==> matrix_is_symmetric(x) = q, matrix_is_symmetric(z) = p | Not(true(q))	676	7	5	6	1
+matrix_mult(x, x) = y ==> matrix_is_symmetric(x) = p, matrix_is_symmetric(z) = q | Not(true(p))	676	7	5	6	1
+matrix_mult(x, x) = y === matrix_is_upper(x) = p, matrix_is_upper(z) = p | Not(true(p))	676	7	4	5	1
+matrix_mult(x, x) = y ==> matrix_is_lower(x) = p, matrix_is_lower(z) = q | Not(true(p))	648	7	5	6	1
+matrix_mult(x, x) = y === matrix_is_upper(y) = q, matrix_is_upper(z) = p | true(q)	648	7	5	6	1
+matrix_mult(x, x) = y === matrix_is_upper(y) = p, matrix_is_upper(z) = q | true(p)	648	7	5	6	1
+matrix_mult(x, x) = y ==> matrix_is_lower(x) = q, matrix_is_lower(z) = p | Not(true(q))	648	7	5	6	1
+matrix_mult(x, x) = x === matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = q | Not(true(p))	568	7	5	5	1
+matrix_mult(x, x) = x <== matrix_is_lower(y) = p, matrix_is_lower(z) = q | Not(true(p))	568	7	5	5	1
+matrix_mult(x, x) = x ==> matrix_is_upper(y) = p, matrix_is_upper(z) = q | Not(true(p))	568	7	5	5	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = z, matrix_inv(z) = z | 	560	7	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = y, matrix_inv(y) = z | 	560	7	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = y, matrix_inv(z) = y | 	560	7	3	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(z) = z | 	560	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = z, matrix_inv(y) = y | 	560	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = x, matrix_inv(z) = z | 	560	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = y, matrix_inv(z) = x | 	560	7	3	4	0
+matrix_mult(x, x) = y ==> matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = q | true(p)	540	7	5	6	1
+matrix_mult(x, y) = x === matrix_mult(z, matrix_transpose(y)) = z | identity(y)	529	7	3	4	1
+matrix_det(matrix_inv(x)) = a ==> matrix_det(y) = a, matrix_det(y) = b | gt0(a)	480	7	4	5	1
+matrix_mult(x, x) = y === matrix_is_upper(x) = p, matrix_is_upper(z) = q | Not(true(p))	460	7	5	6	1
+matrix_mult(x, x) = y === matrix_det(x) = a, matrix_det(z) = b | gt0(a)	460	7	5	6	1
+matrix_mult(x, x) = y === matrix_is_upper(x) = q, matrix_is_upper(z) = p | Not(true(q))	460	7	5	6	1
+matrix_mult(x, y) = y === matrix_mult(z, matrix_transpose(x)) = z | identity(x)	391	7	3	4	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = x, matrix_inv(y) = z | true(p)	368	7	4	5	1
+matrix_mult(x, x) = x === matrix_det(y) = a, matrix_det(z) = b | gt0(a)	324	7	5	5	1
+matrix_is_upper(matrix_inv(x)) = p ==> matrix_inv(x) = x, matrix_inv(y) = z | Not(true(p))	298	7	4	5	1
+matrix_mult(x, x) = x ==> matrix_det(y) = a, matrix_det(z) = a | gt0(a)	284	7	4	4	1
+matrix_mult(x, x) = x ==> matrix_is_lower(y) = p, matrix_is_lower(z) = p | true(p)	252	7	4	4	1
+matrix_mult(x, x) = y ==> matrix_is_lower(y) = p, matrix_is_lower(z) = p | true(p)	252	7	4	5	1
+matrix_det(matrix_transpose(x)) = a ==> matrix_det(y) = a, matrix_det(y) = b | gt0(a), Not(gt1(a))	240	7	4	5	2
+matrix_mult(x, x) = y <== matrix_is_upper(y) = p, matrix_is_upper(z) = p | true(p)	216	7	4	5	1
+matrix_mult(x, x) = x ==> matrix_is_lower(x) = q, matrix_is_lower(y) = p | true(q)	216	7	4	5	1
+matrix_mult(x, x) = x ==> matrix_is_lower(x) = p, matrix_is_lower(y) = q | true(p)	216	7	4	5	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = x, matrix_inv(y) = y | 	196	7	2	3	0
+matrix_mult(x, x) = y === matrix_det(x) = a, matrix_det(z) = a | gt0(a)	186	7	4	5	1
+matrix_mult(x, y) = x <== matrix_mult(y, matrix_transpose(z)) = z | identity(y)	161	7	3	4	1
+matrix_is_symmetric(matrix_inv(x)) = p ==> matrix_inv(x) = x, matrix_inv(y) = z | true(p)	158	7	4	5	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(x) = p | 	108	5	2	4	0
+matrix_is_lower(matrix_transpose(x)) = p <== matrix_is_lower(y) = q | identity(x), true(p)	108	5	4	4	2
+matrix_det(matrix_transpose(x)) = a === matrix_det(x) = a | 	108	5	2	4	0
+matrix_mult(x, y) = y <== matrix_mult(x, matrix_transpose(z)) = z | identity(x)	119	7	3	4	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = x, matrix_inv(y) = y | true(p)	112	7	3	4	1
+matrix_is_symmetric(matrix_transpose(x)) = p <== matrix_is_symmetric(x) = p, matrix_is_symmetric(x) = q | 	108	7	3	5	0
+matrix_mult(x, x) = x ==> matrix_is_upper(x) = p, matrix_is_upper(y) = q | Not(true(p))	108	7	4	5	1
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(x) = p, matrix_is_lower(y) = q | identity(x)	108	7	4	6	1
+matrix_det(matrix_transpose(x)) = a <== matrix_det(x) = a, matrix_det(x) = b | 	108	7	3	5	0
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(y) = p, matrix_is_lower(z) = q | identity(y)	108	7	5	6	1
+matrix_mult(x, x) = x ==> matrix_is_upper(x) = q, matrix_is_upper(y) = p | Not(true(q))	108	7	4	5	1
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(x) = p, matrix_is_upper(y) = q | identity(x)	108	7	4	6	1
+matrix_mult(x, x) = x ==> matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = p | Not(true(q))	108	7	4	5	1
+matrix_mult(x, x) = x ==> matrix_is_symmetric(x) = p, matrix_is_symmetric(y) = q | Not(true(p))	108	7	4	5	1
+matrix_det(matrix_transpose(x)) = a === matrix_det(y) = a, matrix_det(z) = a | gt0(a)	85	7	4	5	1
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(x)) = y | 	73	7	2	3	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(x, matrix_transpose(y)) = x | 	73	7	2	3	0
+matrix_mult(x, x) = y === matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = p | identity(y)	72	7	4	5	1
+matrix_mult(x, x) = x ==> matrix_is_lower(x) = p, matrix_is_lower(y) = p | true(p)	72	7	3	4	1
+matrix_mult(x, x) = x ==> matrix_det(y) = a, matrix_det(y) = b | gt0(a)	70	7	4	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = x, matrix_inv(y) = z | identity(x)	70	7	3	4	1
+matrix_det(matrix_inv(x)) = a === matrix_det(x) = a | 	40	5	2	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = x | 	40	5	2	3	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(z) = z | identity(z)	40	5	3	3	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y | 	40	5	2	3	0
+matrix_is_upper(matrix_transpose(x)) = p <== matrix_is_upper(y) = p | identity(x), true(p)	36	5	3	4	2
+matrix_is_lower(matrix_transpose(x)) = p <== matrix_is_lower(y) = p | identity(x), true(p)	36	5	3	4	2
+matrix_mult(x, y) = x ==> matrix_mult(x, matrix_transpose(z)) = x | identity(z)	49	7	3	4	1
+matrix_mult(x, x) = y ==> matrix_mult(z, matrix_transpose(y)) = z | identity(y)	46	7	3	4	1
+matrix_mult(x, x) = x ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	46	7	3	3	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(x) = z | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(x) = z, matrix_inv(z) = y | 	40	7	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(y) = x | 	40	7	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = z, matrix_inv(z) = x | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = z, matrix_inv(y) = x | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(y) = z, matrix_inv(z) = x | 	40	7	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = x, matrix_inv(z) = y | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(z) = y | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(x) = z, matrix_inv(y) = z | 	40	7	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = z, matrix_inv(y) = z | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = x, matrix_inv(y) = z | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(z) = x | 	40	7	3	4	0
+matrix_det(matrix_inv(x)) = a <== matrix_det(x) = a, matrix_det(x) = b | 	40	7	3	5	0
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(z) = x, matrix_inv(z) = y | 	40	7	3	5	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = x, matrix_inv(z) = x | 	40	7	3	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(y) = z | 	40	7	3	4	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(x)) = x | 	38	7	2	3	0
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(x, matrix_transpose(y)) = y | 	38	7	2	3	0
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_is_lower(x) = q, matrix_is_lower(y) = q | identity(x), true(q)	36	7	4	5	2
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(x) = q, matrix_is_upper(y) = p | identity(x), true(p)	36	7	4	6	2
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_is_lower(x) = q, matrix_is_lower(y) = p | identity(x), true(q)	36	7	4	6	2
+matrix_is_lower(matrix_transpose(x)) = p <== matrix_is_lower(y) = p, matrix_is_lower(y) = q | true(p), identity(x)	36	7	4	5	2
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(x) = p, matrix_is_lower(y) = p | identity(x)	36	7	3	5	1
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(y) = p, matrix_is_lower(z) = p | identity(y)	36	7	4	5	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = p | identity(y)	36	7	4	5	1
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(y) = p, matrix_is_upper(y) = q | true(q), identity(x)	36	7	4	5	2
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(x) = p, matrix_is_upper(y) = p | identity(x)	36	7	3	5	1
+matrix_mult(x, y) = y <== matrix_mult(y, matrix_transpose(z)) = y | identity(x)	33	7	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(z, matrix_transpose(y)) = y | identity(x)	29	7	3	4	1
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(x) = q, matrix_is_upper(y) = q | identity(x), true(p)	28	7	4	5	2
+matrix_mult(x, y) = z === matrix_mult(x, matrix_transpose(y)) = z | identity(y)	23	7	3	6	1
+matrix_mult(x, y) = z ==> matrix_mult(z, matrix_transpose(y)) = z | identity(y)	23	7	3	5	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_mult(z, matrix_transpose(y)) = z | identity(x), identity(y)	23	7	3	4	2
+matrix_mult(x, y) = x === matrix_mult(x, matrix_transpose(y)) = z | identity(y)	23	7	3	5	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_mult(x, matrix_transpose(z)) = x | identity(z)	23	7	3	4	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_mult(y, matrix_transpose(z)) = x | identity(z)	23	7	3	5	1
+matrix_mult(x, y) = x === matrix_mult(x, matrix_transpose(y)) = x | identity(y)	23	7	2	4	1
+matrix_transpose(matrix_transpose(x)) = y ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	23	7	3	4	1
+matrix_mult(x, y) = z === matrix_mult(x, matrix_transpose(y)) = x | identity(y)	23	7	3	5	1
+matrix_mult(x, y) = z === matrix_mult(z, matrix_transpose(y)) = x | identity(y)	23	7	3	6	1
+matrix_mult(x, y) = x <== matrix_mult(z, matrix_transpose(y)) = x | identity(y)	23	7	3	5	1
+matrix_mult(x, y) = x <== matrix_mult(z, matrix_transpose(z)) = y | identity(y)	23	7	3	4	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_mult(x, matrix_transpose(z)) = y | identity(z)	23	7	3	5	1
+matrix_transpose(matrix_transpose(x)) = y === matrix_mult(z, matrix_transpose(x)) = z | identity(x)	23	7	3	4	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = x | 	14	5	1	2	0
+matrix_mult(x, y) = y ==> matrix_mult(x, matrix_transpose(z)) = x | identity(z)	18	7	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(z, matrix_transpose(x)) = x | identity(y)	18	7	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(x, matrix_transpose(z)) = y | identity(x)	17	7	3	5	1
+matrix_mult(x, y) = y <== matrix_mult(z, matrix_transpose(z)) = x | identity(x)	17	7	3	4	1
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(x, matrix_transpose(x)) = y | 	15	7	2	3	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = y, matrix_inv(y) = y | 	14	7	2	3	0
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(x) = x, matrix_inv(x) = y | 	14	7	2	4	0
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(z) = z | identity(y)	14	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y, matrix_inv(z) = z | identity(y)	14	7	3	5	1
+matrix_is_upper(matrix_inv(x)) = p === matrix_inv(x) = x, matrix_inv(y) = y | true(p), identity(x)	14	7	3	4	2
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = x, matrix_inv(y) = x | 	14	7	2	3	0
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(y) = q | true(q), identity(y)	10	5	4	4	2
+matrix_is_symmetric(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(x) = z | true(p)	14	7	4	5	1
+matrix_inv(matrix_transpose(x)) = x <== matrix_inv(x) = x, matrix_inv(y) = y | identity(x)	14	7	2	3	1
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(x) = x, matrix_inv(y) = x | 	14	7	2	4	0
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(x) = x, matrix_inv(x) = y | 	14	7	2	3	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = x, matrix_inv(z) = z | identity(y)	14	7	3	5	1
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = x, matrix_inv(y) = y | true(p), identity(x)	14	7	3	4	2
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(x) = y, matrix_inv(y) = y | 	14	7	2	4	0
+matrix_inv(matrix_inv(x)) = y <== matrix_inv(y) = x, matrix_inv(y) = y | 	14	7	2	4	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = y, matrix_inv(z) = z | identity(y)	14	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x, matrix_inv(z) = z | identity(x)	14	7	3	4	1
+matrix_inv(matrix_inv(x)) = x <== matrix_inv(y) = x, matrix_inv(y) = y | 	14	7	2	3	0
+matrix_mult(x, x) = y <== matrix_det(x) = a | gt0(a)	9	5	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(x, matrix_transpose(z)) = z | identity(y)	12	7	3	4	1
+matrix_is_upper(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(x) = z | true(p)	12	7	4	5	1
+matrix_mult(x, y) = x <== matrix_mult(z, matrix_transpose(x)) = z | identity(y)	12	7	3	4	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(x) = z | true(p)	12	7	4	5	1
+matrix_mult(x, y) = x ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	10	7	3	4	1
+matrix_is_upper(matrix_transpose(x)) = p ==> matrix_is_upper(y) = p, matrix_is_upper(z) = q | identity(z)	10	7	5	6	1
+matrix_mult(x, x) = y <== matrix_is_lower(x) = p | true(p)	7	5	3	4	1
+matrix_mult(x, x) = y <== matrix_det(x) = a, matrix_det(x) = b | gt0(a)	9	7	4	5	1
+matrix_mult(x, y) = y <== matrix_mult(x, matrix_transpose(y)) = z | identity(x)	9	7	3	5	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = q | identity(z)	9	7	5	6	1
+matrix_mult(x, x) = y <== matrix_is_symmetric(x) = p | true(p)	6	5	3	4	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = x, matrix_inv(y) = x | true(p)	8	7	3	4	1
+matrix_mult(x, y) = x ==> matrix_mult(y, matrix_transpose(x)) = z | Not(identity(y))	8	7	3	5	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = x, matrix_inv(x) = y | true(p)	8	7	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(z, matrix_transpose(y)) = z | identity(x)	8	7	3	4	1
+matrix_mult(x, y) = y <== matrix_mult(y, matrix_transpose(z)) = z | identity(x)	7	7	3	4	1
+matrix_transpose(matrix_transpose(x)) = y <== matrix_mult(y, matrix_transpose(z)) = z | identity(x), identity(y)	7	7	3	4	2
+matrix_mult(x, x) = y <== matrix_is_lower(x) = p, matrix_is_lower(x) = q | true(p)	7	7	4	5	1
+matrix_transpose(matrix_transpose(x)) = y <== matrix_mult(x, matrix_transpose(z)) = z | identity(x), identity(y)	7	7	3	4	2
+matrix_mult(x, y) = y <== matrix_mult(x, matrix_transpose(y)) = y | identity(x)	7	7	2	4	1
+matrix_mult(x, x) = y === matrix_mult(x, matrix_transpose(z)) = x | identity(z)	6	7	3	4	1
+matrix_mult(x, x) = y <== matrix_is_symmetric(x) = p, matrix_is_symmetric(x) = q | true(p)	6	7	4	5	1
+matrix_mult(x, y) = x === matrix_mult(x, matrix_transpose(x)) = z | identity(y)	5	7	3	4	1
+matrix_transpose(matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(y)) = x | 	5	7	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(x, matrix_transpose(z)) = x | identity(z)	5	8	3	4	1
+matrix_mult(x, y) = z === matrix_mult(z, matrix_transpose(x)) = y | identity(x)	4	7	3	6	1
+matrix_mult(x, y) = y <== matrix_mult(z, matrix_transpose(x)) = y | identity(x)	4	7	3	5	1
+matrix_is_symmetric(matrix_transpose(x)) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(y) = q | true(p), identity(y)	4	7	4	5	2
+matrix_mult(x, y) = z === matrix_mult(y, matrix_transpose(x)) = z | identity(x)	4	7	3	6	1
+matrix_mult(x, y) = x <== matrix_mult(y, matrix_transpose(z)) = x | identity(y)	4	7	3	5	1
+matrix_mult(x, y) = y === matrix_mult(y, matrix_transpose(x)) = y | identity(x)	4	7	2	4	1
+matrix_mult(x, y) = y === matrix_mult(y, matrix_transpose(y)) = z | identity(x)	4	7	3	4	1
+matrix_mult(x, y) = y === matrix_mult(y, matrix_transpose(x)) = z | identity(x)	4	7	3	5	1
+matrix_mult(x, y) = z ==> matrix_mult(y, matrix_transpose(x)) = y | identity(x)	4	7	3	5	1
+matrix_mult(x, y) = z ==> matrix_mult(z, matrix_transpose(x)) = z | identity(x)	4	7	3	5	1
+matrix_mult(x, x) = y <== matrix_mult(z, matrix_transpose(x)) = x | identity(z)	3	7	3	4	1
+matrix_mult(x, x) = y ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	3	7	3	4	1
+matrix_mult(x, x) = x ==> matrix_is_lower(y) = p | true(p), identity(y)	2	5	3	3	2
+matrix_mult(x, x) = y === matrix_is_upper(x) = p | true(p), identity(y)	2	5	3	4	2
+matrix_mult(x, x) = y === matrix_is_symmetric(y) = p | true(p), identity(y)	2	5	3	4	2
+matrix_mult(x, x) = x ==> matrix_is_upper(y) = p | true(p), identity(y)	2	5	3	3	2
+matrix_mult(x, x) = x === matrix_is_symmetric(y) = p | true(p), identity(y)	2	5	3	3	2
+matrix_mult(x, x) = y ==> matrix_is_lower(y) = p | true(p), identity(y)	2	5	3	4	2
+matrix_mult(x, x) = y ==> matrix_is_upper(y) = p | true(p), identity(y)	2	5	3	4	2
+matrix_mult(x, x) = x ==> matrix_is_lower(x) = p | true(p)	2	5	2	3	1
+matrix_mult(x, x) = x ==> matrix_mult(y, matrix_transpose(y)) = z | identity(z)	2	7	3	3	1
+matrix_mult(x, x) = y <== matrix_is_upper(x) = p, matrix_is_upper(x) = q | true(p), identity(y)	2	7	4	5	2
+matrix_mult(x, x) = y ==> matrix_is_upper(x) = p, matrix_is_upper(y) = p | true(p), identity(y)	2	7	3	5	2
+matrix_mult(x, x) = x ==> matrix_mult(x, matrix_transpose(y)) = x | identity(y)	2	7	2	3	1
+matrix_mult(x, x) = x ==> matrix_is_lower(x) = p, matrix_is_lower(x) = q | true(p), true(q)	2	7	3	4	2
+matrix_mult(x, x) = x <== matrix_is_symmetric(y) = p, matrix_is_symmetric(y) = q | identity(y)	2	7	4	4	1
+matrix_mult(x, y) = x <== matrix_mult(y, matrix_transpose(x)) = x | identity(y)	2	7	2	4	1
+matrix_mult(x, x) = y ==> matrix_mult(y, matrix_transpose(x)) = y | 	2	7	2	4	0
+matrix_mult(x, x) = y <== matrix_is_symmetric(y) = p, matrix_is_symmetric(y) = q | identity(y)	2	7	4	5	1
+matrix_mult(x, y) = x <== matrix_mult(z, matrix_transpose(z)) = x | identity(y)	2	7	3	4	1
+matrix_mult(x, x) = y ==> matrix_mult(x, matrix_transpose(y)) = y | 	2	7	2	4	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(z) = x | identity(x)	1	5	3	4	1
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = x | identity(x), true(p)	1	5	2	3	2
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(x) = p | identity(x)	1	5	2	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = z | identity(x)	1	5	3	4	1
+matrix_is_lower(matrix_transpose(x)) = p ==> matrix_is_lower(x) = q | true(q), identity(x)	1	5	3	4	2
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = y | true(p), identity(x)	1	5	3	4	2
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = x | identity(x)	1	5	1	2	1
+matrix_is_lower(matrix_inv(x)) = p === matrix_inv(x) = x | identity(x), true(p)	1	5	2	3	2
+matrix_is_upper(matrix_inv(x)) = p === matrix_inv(x) = x | identity(x), true(p)	1	5	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y | identity(x)	1	5	2	4	1
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(x) = p | identity(x)	1	5	2	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(y) = x | identity(y), identity(x)	1	5	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(z) = y | identity(y)	1	5	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = x | identity(x)	1	5	2	4	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = y | identity(x), identity(y)	1	5	3	4	2
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y | identity(y), identity(x)	1	5	2	3	2
+matrix_is_upper(matrix_inv(x)) = p ==> matrix_inv(x) = y | identity(x), identity(y)	1	5	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = z | identity(y)	1	5	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x | identity(x)	1	5	2	3	1
+matrix_is_upper(matrix_transpose(x)) = p ==> matrix_is_upper(x) = q | true(q), identity(x)	1	5	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x, matrix_inv(y) = z | identity(x)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = x, matrix_inv(z) = x | identity(y)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y, matrix_inv(y) = x | identity(x)	1	7	2	4	1
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = x, matrix_inv(x) = y | true(p), identity(x)	1	7	3	4	2
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = y, matrix_inv(y) = y | true(p), identity(x)	1	7	3	4	2
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = x, matrix_inv(x) = y | identity(y), identity(x)	1	7	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(z) = x, matrix_inv(z) = z | identity(x)	1	7	3	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = z, matrix_inv(y) = x | identity(z)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x, matrix_inv(z) = x | identity(x)	1	7	3	4	1
+matrix_mult(x, x) = x === matrix_mult(x, matrix_transpose(x)) = x | 	1	7	1	2	0
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = x, matrix_inv(y) = x | identity(y), identity(x)	1	7	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = z, matrix_inv(y) = x | identity(y)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = z, matrix_inv(z) = z | identity(x)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = x, matrix_inv(y) = z | identity(y)	1	7	3	5	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(y) = x, matrix_inv(y) = y | identity(y), identity(x)	1	7	2	3	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = x, matrix_inv(z) = y | identity(y)	1	7	3	5	1
+matrix_is_upper(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(y) = y | identity(x), identity(y)	1	7	3	4	2
+matrix_is_upper(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(y) = x | identity(x), identity(y)	1	7	3	4	2
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(y) = x, matrix_inv(y) = z | identity(z)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x, matrix_inv(z) = y | identity(x)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x, matrix_inv(x) = z | identity(x)	1	7	3	4	1
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = x, matrix_inv(y) = x | true(p), identity(x)	1	7	3	4	2
+matrix_is_lower(matrix_transpose(x)) = p === matrix_is_lower(x) = p, matrix_is_lower(x) = q | true(q), identity(x)	1	7	3	5	2
+matrix_mult(x, y) = y <== matrix_mult(y, matrix_transpose(y)) = x | 	1	7	2	4	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = z, matrix_inv(z) = x | identity(x)	1	7	3	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(y) = x | identity(y), identity(x)	1	7	2	3	2
+matrix_mult(x, y) = x <== matrix_mult(y, matrix_transpose(y)) = x | 	1	7	2	4	0
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(z) = y | identity(y)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y, matrix_inv(z) = x | identity(y)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y, matrix_inv(x) = z | identity(y)	1	7	3	5	1
+matrix_mult(x, x) = y <== matrix_mult(y, matrix_transpose(y)) = x | 	1	7	2	4	0
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y, matrix_inv(y) = z | identity(y)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = z, matrix_inv(y) = y | identity(y), identity(x)	1	7	3	5	2
+matrix_transpose(matrix_transpose(x)) = y <== matrix_mult(z, matrix_transpose(z)) = x | identity(x)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = y, matrix_inv(z) = x | identity(y), identity(x)	1	7	3	5	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = y, matrix_inv(z) = y | identity(x), identity(z)	1	7	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = z, matrix_inv(z) = y | identity(y)	1	7	3	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(y) = y | identity(y), identity(x)	1	7	2	3	2
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(y) = y | identity(x), identity(y)	1	7	3	4	2
+matrix_is_upper(matrix_inv(x)) = p === matrix_inv(x) = x, matrix_inv(y) = x | true(p), identity(x)	1	7	3	4	2
+matrix_mult(x, x) = x <== matrix_mult(y, matrix_transpose(y)) = x | 	1	7	2	3	0
+matrix_transpose(matrix_transpose(x)) = y <== matrix_mult(y, matrix_transpose(y)) = z | identity(z)	1	7	3	4	1
+matrix_mult(x, x) = x ==> matrix_mult(y, matrix_transpose(x)) = x | identity(y)	1	7	2	3	1
+matrix_transpose(matrix_transpose(x)) = y <== matrix_mult(x, matrix_transpose(x)) = z | identity(z)	1	7	3	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(y) = z | identity(y)	1	7	3	4	1
+matrix_mult(x, y) = x <== matrix_mult(x, matrix_transpose(z)) = y | identity(y)	1	7	3	5	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = y, matrix_inv(y) = z | identity(x), identity(z)	1	7	3	4	2
+matrix_mult(x, y) = x <== matrix_mult(z, matrix_transpose(x)) = y | identity(y)	1	7	3	5	1
+matrix_mult(x, x) = x ==> matrix_mult(y, matrix_transpose(x)) = z | identity(y)	1	7	3	4	1
+matrix_is_symmetric(matrix_inv(x)) = p === matrix_inv(x) = y, matrix_inv(y) = x | true(p), identity(x)	1	7	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = y, matrix_inv(z) = y | identity(y)	1	7	3	5	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(x) = z | identity(y)	1	7	3	4	1
+matrix_mult(x, y) = z ==> matrix_mult(x, matrix_transpose(z)) = x | identity(z)	1	7	3	5	1
+matrix_mult(x, x) = y === matrix_mult(x, matrix_transpose(x)) = y | identity(y)	1	7	2	4	1
+matrix_inv(matrix_transpose(x)) = x === matrix_inv(x) = y, matrix_inv(z) = x | identity(y)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(z) = y, matrix_inv(z) = z | identity(x), identity(z)	1	7	3	4	2
+matrix_transpose(matrix_transpose(x)) = y <== matrix_mult(z, matrix_transpose(z)) = y | identity(y)	1	7	3	4	1
+matrix_is_lower(matrix_inv(x)) = p ==> matrix_inv(x) = y, matrix_inv(y) = x | identity(x), identity(y)	1	7	3	4	2
+matrix_is_upper(matrix_transpose(x)) = p === matrix_is_upper(x) = p, matrix_is_upper(x) = q | true(q), identity(x)	1	7	3	5	2
+matrix_mult(x, y) = y <== matrix_mult(z, matrix_transpose(z)) = y | identity(x)	1	7	3	4	1
+matrix_inv(matrix_inv(x)) = y === matrix_inv(y) = z, matrix_inv(z) = z | identity(x), identity(z)	1	7	3	4	2
+matrix_mult(x, y) = z <== matrix_mult(z, matrix_transpose(z)) = y | identity(x)	1	7	3	5	1
+matrix_mult(x, x) = y === matrix_mult(x, matrix_transpose(x)) = z | identity(y), identity(z)	1	7	3	4	2
+matrix_inv(matrix_inv(x)) = y === matrix_inv(x) = x, matrix_inv(y) = y | identity(y), identity(x)	1	7	2	4	2
+matrix_is_upper(matrix_inv(x)) = p === matrix_inv(x) = x, matrix_inv(x) = y | true(p), identity(x)	1	7	3	4	2
+matrix_mult(x, y) = z ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	1	7	3	5	1
+matrix_mult(x, y) = z ==> matrix_mult(y, matrix_transpose(y)) = z | identity(z)	1	7	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(x, matrix_transpose(x)) = z | identity(y), identity(z)	1	8	3	4	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = p, matrix_is_lower(y) = q | Not(true(p)), Not(true(q))	748	8	4	7	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = q, matrix_is_lower(y) = q | Not(true(p)), Not(true(q))	748	8	4	6	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = p, matrix_is_lower(y) = p | Not(true(p)), Not(true(q))	748	8	4	6	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = q, matrix_is_lower(y) = p | Not(true(p)), Not(true(q))	748	8	4	7	2
+matrix_inv(x) = x, matrix_inv(y) = z ==> matrix_inv(z) = y | 	560	6	3	5	0
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = p, matrix_is_upper(y) = p | Not(true(p)), Not(true(q))	676	8	4	6	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = q, matrix_is_upper(y) = q | Not(true(p)), Not(true(q))	676	8	4	6	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = q, matrix_is_upper(y) = p | Not(true(p)), Not(true(q))	676	8	4	7	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = p, matrix_is_upper(y) = q | Not(true(p)), Not(true(q))	676	8	4	7	2
+matrix_is_upper(x) = p === matrix_is_upper(y) = q, matrix_is_upper(z) = p | true(q)	496	6	5	6	1
+matrix_inv(x) = x, matrix_inv(y) = z ==> matrix_inv(y) = z, matrix_inv(z) = y | 	560	8	3	5	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(z) = y | 	560	8	3	6	0
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(z, matrix_transpose(y)) = z | identity(y)	529	8	3	4	1
+matrix_is_upper(x) = p === matrix_is_upper(y) = q, matrix_is_upper(z) = q | true(q)	324	6	5	5	1
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(matrix_transpose(y), z) = z | identity(y)	391	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(z), y) = z | identity(y)	184	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(z, matrix_transpose(x)) = z | identity(x)	161	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_transpose(z)) = z | identity(y)	161	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = z | identity(z)	71	6	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(x) = x, matrix_inv(z) = z | identity(z)	71	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(y) = y, matrix_inv(z) = z | identity(z)	71	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(x, matrix_transpose(z)) = x | identity(z)	49	8	3	4	1
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(y) = p | identity(x), true(p)	36	6	4	5	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(y) = p | true(p), identity(x)	36	6	4	5	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(y) = p, matrix_is_lower(y) = q | true(p), identity(x)	36	8	4	6	2
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(matrix_transpose(z), x) = x | identity(z)	33	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(x), z) = x | identity(y)	30	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(z), y) = x | identity(y)	23	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = z === matrix_mult(x, matrix_transpose(y)) = x | identity(y)	23	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	23	8	3	3	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(z)) = z | identity(y)	23	8	3	3	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(y)) = x | identity(y)	23	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(z)) = y | identity(y)	23	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = z === matrix_mult(z, matrix_transpose(y)) = x | identity(y)	23	8	3	6	1
+matrix_mult(x, matrix_transpose(y)) = z ==> matrix_mult(z, matrix_transpose(y)) = z | identity(y)	23	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(x, matrix_transpose(y)) = z | identity(y)	23	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_transpose(y)) = z | identity(y)	23	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_transpose(x)) = x | 	22	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(matrix_transpose(x), y) = x | 	22	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(x, matrix_transpose(y)) = x | 	22	8	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(z) = z | identity(z)	14	6	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = y | identity(z)	14	6	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = z | identity(z)	14	6	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y | identity(y)	14	6	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = y | 	14	6	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z | identity(y)	14	6	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z | identity(x)	14	6	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = x | 	14	6	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x | identity(x)	14	6	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	18	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(x)) = x | identity(y)	18	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(y, matrix_transpose(y)) = y | 	17	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(y), z) = z | identity(y)	17	8	3	4	1
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(matrix_transpose(y), x) = x | 	17	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_transpose(x)) = x | 	17	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(matrix_transpose(y), z) = z | identity(y)	17	8	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = x, matrix_inv(x) = z | identity(y)	14	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(z) = x | identity(x)	14	8	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(y) = x | 	14	8	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = y, matrix_inv(z) = z | identity(z)	14	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(y) = y | identity(y)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = y, matrix_inv(z) = x | identity(x)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = y, matrix_inv(y) = z | identity(x)	14	8	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = y, matrix_inv(z) = z | identity(z)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = y, matrix_inv(z) = z | identity(y)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(y) = y | 	14	8	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(y) = y | 	14	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(y) = y | identity(x)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = x, matrix_inv(z) = z | identity(z)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(z) = z | identity(z)	14	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = x, matrix_inv(y) = z | identity(y)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(z) = z | identity(y)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y <== matrix_inv(x) = x, matrix_inv(x) = y | 	14	8	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = y, matrix_inv(y) = x | 	14	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(z) = y | identity(y)	14	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(z) = z | identity(y)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z ==> matrix_inv(y) = y, matrix_inv(y) = z | identity(z)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = x, matrix_inv(y) = y | 	14	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(z) = z | identity(z)	14	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = x, matrix_inv(z) = y | identity(y)	14	8	3	5	1
+matrix_is_upper(x) = p ==> matrix_is_upper(y) = p, matrix_is_upper(z) = q | identity(z)	10	6	5	6	1
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	12	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_transpose(z)) = z | identity(y)	12	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(x, matrix_transpose(z)) = x | identity(z)	12	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(x)) = z | identity(y)	12	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(x), z) = z | identity(y)	10	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(matrix_transpose(x), y) = z | identity(y)	10	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = z === matrix_mult(x, matrix_transpose(z)) = y | identity(x)	9	8	3	6	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(x), y) = x | identity(y)	8	8	2	4	1
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(matrix_transpose(z), y) = y | identity(z)	8	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(z), x) = z | identity(y)	7	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(matrix_transpose(x), y) = y | identity(x)	7	8	2	4	1
+matrix_mult(x, matrix_transpose(y)) = y === matrix_mult(z, matrix_transpose(y)) = y | identity(x), identity(z)	7	8	3	4	2
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_transpose(x)) = y | 	6	8	2	4	0
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_transpose(x)) = x | 	6	8	2	4	0
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(matrix_transpose(x), x) = y | 	6	8	2	4	0
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(x, matrix_transpose(x)) = z | identity(y)	5	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(matrix_transpose(y), x) = x | identity(y)	4	8	2	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_transpose(z)) = x | identity(y)	4	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = z ==> matrix_mult(z, matrix_transpose(x)) = z | identity(x)	4	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(matrix_transpose(z), x) = x | identity(z)	4	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = z ==> matrix_mult(y, matrix_transpose(x)) = y | identity(x)	4	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(y), x) = z | identity(y)	4	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(y), z) = x | identity(y)	4	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_transpose(x)) = z | identity(y)	4	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_transpose(y)) = z | identity(x)	3	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = z === matrix_mult(y, matrix_transpose(x)) = z | identity(z)	3	8	3	6	1
+matrix_mult(x, matrix_transpose(x)) = y <== matrix_mult(z, matrix_transpose(x)) = x | identity(z)	3	8	3	4	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(y), z) = y | identity(z)	2	8	3	4	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	2	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(x), z) = y | identity(y)	2	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(z)) = x | identity(y)	2	8	3	4	1
+matrix_mult(x, matrix_transpose(y)) = z <== matrix_mult(y, matrix_transpose(x)) = x | identity(y)	2	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_transpose(x)) = z | identity(x)	2	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = x | identity(x)	1	6	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y | identity(x)	1	6	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y | identity(y)	1	6	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z | identity(x)	1	6	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y | identity(y), identity(x)	1	6	2	4	2
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x | identity(y), identity(x)	1	6	2	4	2
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = z | identity(x)	1	6	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z | identity(y)	1	6	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x | identity(x)	1	6	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(z) = x | identity(x), identity(z)	1	6	3	5	2
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_transpose(y)) = x | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = x, matrix_inv(z) = x | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(y) = z | identity(x)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y <== matrix_mult(z, matrix_transpose(z)) = z | identity(y)	1	8	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(y) = z | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_transpose(y)) = y | 	1	8	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(z) = z | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = x, matrix_inv(y) = z | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = z, matrix_inv(y) = y | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(z) = x | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_transpose(y)) = x | 	1	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(y, matrix_transpose(y)) = x | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(y) = x | identity(y), identity(x)	1	8	2	4	2
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(y) = z | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_transpose(x)) = y | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(y) = x | identity(x)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(y) = z | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(y, matrix_transpose(y)) = x | 	1	8	2	4	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_transpose(x)) = x | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(x) = z | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(y) = x | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_transpose(y)) = z | identity(z)	1	8	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(x) = z | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_transpose(x)) = y | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_transpose(y)) = x | identity(z)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = z ==> matrix_mult(y, matrix_transpose(z)) = y | identity(z)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y <== matrix_mult(matrix_transpose(z), x) = y | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_transpose(z)) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(x) = z | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(z) = y | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(z) = x | identity(y), identity(x)	1	8	3	5	2
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(y), x) = y | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = x, matrix_inv(z) = z | identity(x)	1	8	3	6	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_transpose(y)) = y | identity(z)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(z) = x | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(z), y) = y | identity(z)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(z) = x, matrix_inv(z) = y | identity(x), identity(z)	1	8	3	6	2
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(y) = z | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(z) = x | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(matrix_transpose(y), y) = x | 	1	8	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y <== matrix_mult(matrix_transpose(x), z) = x | identity(z)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(z) = x | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(x) = z | identity(x)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(z) = x | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y <== matrix_mult(matrix_transpose(x), z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(y) = z | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(z) = x | identity(x)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = z, matrix_inv(z) = x | identity(x), identity(z)	1	8	3	6	2
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(matrix_transpose(y), y) = z | identity(z)	1	8	3	3	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(z) = y | identity(x)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(z) = y | identity(y)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(y) = z | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(matrix_transpose(z), x) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(x), y) = y | 	1	8	2	4	0
+matrix_mult(x, matrix_transpose(y)) = z <== matrix_mult(z, matrix_transpose(z)) = y | identity(x)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(y), x) = x | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = z, matrix_inv(z) = y | identity(x)	1	8	3	6	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(z), y) = x | identity(z)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = y, matrix_inv(z) = x | identity(y), identity(x)	1	8	3	6	2
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(z) = x | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = z, matrix_inv(y) = x | identity(x)	1	8	3	6	1
+matrix_mult(x, matrix_transpose(x)) = x === matrix_mult(matrix_transpose(x), x) = x | 	1	8	1	2	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(y) = y | identity(x)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(x) = y | identity(x)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = z ==> matrix_mult(x, matrix_transpose(z)) = x | identity(z)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(z) = x | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(z) = y | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(y) = z | identity(y)	1	8	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = z, matrix_inv(y) = z | identity(x)	1	8	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(y) = x, matrix_inv(z) = y | identity(x)	1	8	3	6	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(matrix_transpose(x), y) = x | 	1	8	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(x) = z | identity(x)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(y) = x | identity(y)	1	8	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(z, matrix_transpose(z)) = y | identity(x)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(y) = z | identity(x)	1	8	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = z, matrix_inv(z) = x | identity(x)	1	8	3	5	1
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(matrix_transpose(y)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+matrix_det(x) = a <== matrix_det(y) = a, matrix_det(matrix_transpose(x)) = a | 	1000	7	3	5	0
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(y) = p, matrix_is_symmetric(matrix_transpose(x)) = p | 	1000	7	3	5	0
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(y) = q, matrix_is_symmetric(matrix_transpose(x)) = p | 	1000	7	4	6	0
+matrix_det(x) = a <== matrix_det(y) = b, matrix_det(matrix_transpose(x)) = a | 	1000	7	4	6	0
+matrix_det(x) = a <== matrix_det(y) = a, matrix_det(matrix_transpose(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+matrix_det(x) = a <== matrix_det(y) = b, matrix_det(matrix_transpose(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(matrix_transpose(y)) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+matrix_det(x) = a <== matrix_det(y) = a, matrix_det(matrix_inv(x)) = b | Not(gt(a, b)), Not(gt(b, a))	960	7	4	6	2
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(matrix_inv(y)) = a | Not(gt(a, b)), Not(gt(b, a))	960	7	4	6	2
+matrix_det(x) = a <== matrix_det(y) = a, matrix_det(matrix_inv(x)) = a | 	960	7	3	5	0
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(matrix_inv(y)) = b | Not(gt(a, b)), Not(gt(b, a))	960	7	4	5	2
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = p, matrix_is_symmetric(y) = q | 	1000	8	4	6	0
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = p, matrix_is_lower(z) = p | true(p), true(q)	1000	8	5	7	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = q, matrix_is_lower(z) = q | true(p), true(q)	1000	8	5	6	2
+matrix_det(x) = a <== matrix_det(x) = b, matrix_det(y) = a, matrix_det(y) = b | 	1000	8	4	6	0
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = p | true(p), true(q)	1000	8	5	7	2
+matrix_is_lower(x) = p <== matrix_is_lower(x) = q, matrix_is_lower(y) = p, matrix_is_lower(y) = q | 	1000	8	4	6	0
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = p, matrix_is_lower(z) = q | true(p), true(q)	1000	8	5	7	2
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(y) = a, matrix_det(z) = a | Not(gt(a, b)), Not(gt(b, a))	1000	8	5	7	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(y) = q, matrix_is_lower(z) = p | true(p), true(q)	1000	8	5	7	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = p, matrix_is_symmetric(z) = q | true(p), true(q)	1000	8	5	7	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(y) = q, matrix_is_symmetric(z) = p | true(p), true(q)	1000	8	5	7	2
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(y) = p, matrix_is_symmetric(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	856	7	4	6	2
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(y) = q, matrix_is_symmetric(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	856	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	856	7	4	6	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	856	7	4	5	2
+matrix_inv(x) = x, matrix_inv(y) = z ==> matrix_inv(x) = x, matrix_inv(matrix_inv(x)) = x | 	1000	9	3	4	0
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = z | 	1000	9	3	4	0
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = z | 	1000	9	3	4	0
+matrix_is_lower(x) = p === matrix_is_lower(y) = q, matrix_is_lower(matrix_transpose(z)) = q | Not(true(q))	748	7	5	5	1
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	748	7	4	6	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	748	7	4	5	2
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(y) = q, matrix_is_symmetric(matrix_transpose(z)) = p | Not(true(q))	748	7	5	6	1
+matrix_is_upper(x) = p ==> matrix_is_upper(y) = q, matrix_is_upper(matrix_transpose(z)) = q | Not(true(q))	676	7	5	5	1
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	676	7	4	6	2
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	676	7	4	5	2
+matrix_is_lower(x) = p === matrix_is_lower(y) = q, matrix_is_lower(matrix_transpose(z)) = p | Not(true(q))	612	7	5	6	1
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	748	9	4	7	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = p, matrix_is_lower(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	748	9	4	7	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	748	9	4	6	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = p, matrix_is_lower(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	748	9	4	6	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = p, matrix_is_upper(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	676	9	4	6	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = p, matrix_is_upper(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	676	9	4	7	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(y)) = p | Not(true(p)), Not(true(q))	676	9	4	7	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(y)) = q | Not(true(p)), Not(true(q))	676	9	4	6	2
+matrix_is_upper(x) = p ==> matrix_is_upper(y) = q, matrix_is_upper(matrix_transpose(z)) = p | Not(true(q))	504	7	5	6	1
+matrix_det(x) = a ==> matrix_det(y) = a, matrix_det(matrix_inv(y)) = b | gt0(a), Not(gt1(a))	480	7	4	5	2
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = z | 	560	9	3	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = z | 	560	9	3	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = z | 	560	9	3	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = z | 	560	9	3	5	0
+matrix_inv(x) = x, matrix_inv(y) = z ==> matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = z | 	560	9	3	5	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = z | 	560	9	3	5	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = z | 	560	9	3	5	0
+matrix_inv(x) = x, matrix_inv(y) = z ==> matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = y | 	560	9	3	5	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = z | 	560	9	3	5	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = z | 	560	9	3	4	0
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(y, matrix_mult(y, z)) = z | identity(y)	391	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_mult(x, z)) = x | 	374	9	3	4	0
+matrix_det(x) = a ==> matrix_det(y) = a, matrix_det(matrix_transpose(y)) = b | gt0(a), Not(gt1(a))	240	7	4	5	2
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_mult(z, x)) = x | 	289	9	3	4	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(x, matrix_mult(y, z)) = x | 	284	9	3	4	0
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = x | 	196	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(x) = x, matrix_inv(matrix_inv(x)) = x | 	196	9	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(y) = y, matrix_inv(matrix_inv(y)) = y | 	196	9	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = y ==> matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = y | 	196	9	2	4	0
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q, matrix_is_lower(matrix_transpose(x)) = p | identity(x)	108	7	4	6	1
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(x) = q, matrix_is_symmetric(matrix_transpose(x)) = p | 	108	7	3	5	0
+matrix_det(x) = a <== matrix_det(x) = b, matrix_det(matrix_transpose(x)) = a | 	108	7	3	5	0
+matrix_is_lower(x) = p === matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(z)) = q | identity(y)	108	7	5	6	1
+matrix_is_upper(x) = p === matrix_is_upper(y) = q, matrix_is_upper(matrix_transpose(x)) = p | identity(x)	108	7	4	6	1
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(matrix_transpose(x)) = b | Not(gt(a, b)), Not(gt(b, a))	108	7	3	4	2
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(x, matrix_mult(x, z)) = z | identity(x)	119	9	3	4	1
+matrix_det(x) = a === matrix_det(y) = a, matrix_det(matrix_transpose(z)) = a | gt0(a)	85	7	4	5	1
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = z | identity(y)	80	7	3	3	1
+matrix_det(x) = a === matrix_det(x) = b, matrix_mult(x, y) = y | Not(gt(a, b)), Not(gt(b, a))	74	7	4	5	2
+matrix_det(x) = a === matrix_det(x) = b, matrix_mult(x, y) = x | Not(gt(a, b)), Not(gt(b, a))	73	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_is_symmetric(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	72	7	3	4	2
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q, matrix_is_lower(matrix_transpose(y)) = q | identity(x), true(p)	60	7	4	4	2
+matrix_is_upper(x) = p === matrix_is_upper(y) = q, matrix_is_upper(matrix_transpose(y)) = q | true(p), identity(x)	60	7	4	4	2
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(x)) = x | identity(z)	71	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(z)) = z | identity(z)	71	9	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(y)) = y | identity(z)	71	9	3	4	1
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_mult(x, y) = x | true(p), true(q)	49	7	4	5	2
+matrix_is_upper(x) = p <== matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	48	7	3	4	2
+matrix_is_lower(x) = p <== matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	48	7	3	4	2
+matrix_is_upper(x) = p <== matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(x)) = p | Not(true(p)), Not(true(q))	48	7	3	5	2
+matrix_is_lower(x) = p <== matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(x)) = p | Not(true(p)), Not(true(q))	48	7	3	5	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_mult(x, y) = y | true(p), true(q)	48	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_mult(x, y) = y | Not(true(p)), Not(true(q))	41	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_mult(x, y) = x | true(p), true(q)	40	7	4	5	2
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = z | identity(x)	40	7	3	4	1
+matrix_det(x) = a <== matrix_det(x) = b, matrix_det(matrix_inv(x)) = a | 	40	7	3	5	0
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = z | identity(y)	40	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = z | identity(x)	40	7	3	3	1
+matrix_det(x) = a === matrix_det(y) = a, matrix_det(matrix_inv(z)) = a | gt0(a)	40	7	4	5	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = y | identity(x)	40	7	3	3	1
+matrix_det(x) = a === matrix_det(x) = b, matrix_det(matrix_inv(x)) = b | Not(gt(a, b)), Not(gt(b, a))	40	7	3	4	2
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_mult(x, y) = y | true(p), true(q)	39	7	4	5	2
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(z, z)) = x | identity(y)	50	9	3	4	1
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = p, matrix_is_upper(matrix_transpose(x)) = p | Not(true(p)), Not(true(q))	48	9	3	5	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = p, matrix_is_lower(matrix_transpose(x)) = p | Not(true(p)), Not(true(q))	48	9	3	5	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(x)) = p | Not(true(p)), Not(true(q))	48	9	3	6	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = q, matrix_is_lower(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	48	9	3	5	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = p, matrix_is_upper(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	48	9	3	6	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(x)) = p | Not(true(p)), Not(true(q))	48	9	3	6	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(x) = q, matrix_is_upper(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	48	9	3	5	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(x) = p, matrix_is_lower(matrix_transpose(x)) = q | Not(true(p)), Not(true(q))	48	9	3	6	2
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_mult(x, y) = x | true(p), true(q)	37	7	4	5	2
+matrix_is_lower(x) = p === matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(z)) = p | identity(y)	36	7	4	5	1
+matrix_is_upper(x) = p <== matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(x)) = p | identity(x)	36	7	3	5	1
+matrix_is_lower(x) = p <== matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(y)) = q | true(p), identity(x)	36	7	4	5	2
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q, matrix_is_lower(matrix_transpose(x)) = q | identity(x), true(p)	36	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(matrix_transpose(z)) = p | identity(y)	36	7	4	5	1
+matrix_is_lower(x) = p <== matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(x)) = q | true(p), identity(x)	36	7	4	6	2
+matrix_is_upper(x) = p === matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(y)) = q | identity(x), true(p)	36	7	4	5	2
+matrix_is_lower(x) = p <== matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(x)) = p | identity(x)	36	7	3	5	1
+matrix_is_upper(x) = p === matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(x)) = q | identity(x), true(p)	36	7	4	6	2
+matrix_is_lower(x) = p <== matrix_is_lower(y) = q, matrix_is_lower(matrix_transpose(y)) = p | true(p), identity(x)	36	7	4	5	2
+matrix_is_upper(x) = p === matrix_is_upper(y) = q, matrix_is_upper(matrix_transpose(y)) = p | identity(x), true(p)	36	7	4	5	2
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(z, z)) = z | identity(y)	46	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = z | identity(y)	40	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = z | identity(y)	40	9	3	5	1
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(x)) = q | true(p), identity(x)	36	9	4	7	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(x)) = p | identity(x)	36	9	4	6	1
+matrix_is_upper(x) = p === matrix_is_upper(y) = q, matrix_is_upper(matrix_transpose(x)) = q | identity(x), true(p)	28	7	4	5	2
+matrix_is_lower(x) = p, matrix_is_lower(x) = q <== matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(x)) = q | true(p), identity(x)	36	9	4	7	2
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(x)) = p | identity(x)	36	9	4	6	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(x, matrix_mult(x, y)) = y | 	33	9	2	4	0
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(z, matrix_mult(z, x)) = x | identity(z)	33	9	3	4	1
+matrix_det(x) = a ==> matrix_det(y) = a, matrix_det(matrix_transpose(y)) = a | identity(x)	24	7	3	4	1
+matrix_det(x) = a <== matrix_det(y) = a, matrix_det(matrix_inv(y)) = a | identity(y)	24	7	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(x, matrix_mult(z, y)) = y | identity(z)	29	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(x, y)) = x | identity(y)	29	9	3	5	1
+matrix_det(x) = a === matrix_det(x) = b, matrix_mult(x, x) = y | Not(gt(a, b)), Not(gt(b, a))	21	7	4	5	2
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(x, matrix_mult(y, z)) = y | identity(x)	26	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(x, z)) = x | identity(y)	26	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(x, x)) = x | identity(y)	24	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(y, x)) = x | identity(y)	24	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(z, x)) = x | identity(y)	24	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(z, matrix_mult(x, x)) = z | identity(y)	23	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(x, z)) = z | identity(y)	22	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = x === matrix_mult(x, matrix_mult(x, y)) = x | 	22	9	2	3	0
+matrix_is_symmetric(x) = p === matrix_is_symmetric(x) = q, matrix_mult(x, x) = y | Not(true(p)), Not(true(q))	15	7	4	5	2
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = x | identity(z)	14	7	3	4	1
+matrix_inv(x) = x <== matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = y | 	14	7	2	3	0
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = z | identity(z)	14	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = z | identity(x)	14	7	3	3	1
+matrix_inv(x) = x <== matrix_inv(y) = y, matrix_inv(matrix_inv(y)) = x | 	14	7	2	3	0
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(y)) = z | identity(x)	14	7	3	3	1
+matrix_inv(x) = x <== matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = x | 	14	7	2	3	0
+matrix_inv(x) = x <== matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = y | 	14	7	2	3	0
+matrix_inv(x) = x <== matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = x | 	14	7	2	3	0
+matrix_inv(x) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = y | identity(x)	14	7	3	3	1
+matrix_inv(x) = x <== matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = y | 	14	7	2	3	0
+matrix_inv(x) = x ==> matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = x | identity(y)	14	7	2	3	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = y | identity(x)	14	7	3	3	1
+matrix_inv(x) = x ==> matrix_inv(y) = y, matrix_inv(matrix_inv(y)) = y | identity(y)	14	7	2	2	1
+matrix_is_lower(x) = p === matrix_is_lower(x) = q, matrix_mult(x, x) = y | Not(true(p)), Not(true(q))	14	7	4	5	2
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_mult(y, z)) = z | identity(y)	17	9	3	3	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(x, matrix_mult(y, y)) = y | 	17	9	2	4	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_mult(y, x)) = x | 	17	9	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_mult(y, y)) = y | 	17	9	3	4	0
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(y, matrix_mult(x, x)) = x | 	17	9	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_mult(y, y)) = x | 	17	9	3	5	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_mult(y, x)) = x | 	17	9	3	5	0
+matrix_mult(x, matrix_transpose(x)) = x === matrix_mult(x, matrix_mult(y, x)) = x | 	17	9	2	3	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_mult(y, x)) = y | 	17	9	3	5	0
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(y, z)) = z | identity(y)	17	9	3	4	1
+matrix_is_lower(x) = p ==> matrix_is_lower(y) = p, matrix_is_lower(matrix_transpose(y)) = p | true(p), identity(y)	12	7	3	4	2
+matrix_is_upper(x) = p <== matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(y)) = p | identity(x), true(p)	12	7	3	4	2
+matrix_is_upper(x) = p === matrix_is_upper(x) = q, matrix_mult(x, x) = y | Not(true(p)), Not(true(q))	11	7	4	5	2
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(z) = z, matrix_inv(matrix_inv(x)) = y | identity(z)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = z | identity(x)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(x)) = x | identity(x)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(y)) = y | identity(y)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(z) = z, matrix_inv(matrix_inv(y)) = x | identity(z)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(z)) = z | identity(y)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = y | identity(x)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(x)) = x | identity(z)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = z, matrix_inv(matrix_inv(z)) = z | identity(z)	14	9	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = z | identity(z)	14	9	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = y | identity(y)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(z) = z, matrix_inv(matrix_inv(x)) = y | identity(z)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(z)) = z | identity(x)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = z, matrix_inv(matrix_inv(y)) = y | identity(z)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(y)) = x | identity(x)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = y | identity(x)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(matrix_inv(x)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(x) = x, matrix_inv(matrix_inv(x)) = x | 	14	9	2	3	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(y)) = y | identity(z)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = y, matrix_inv(matrix_inv(y)) = y | 	14	9	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = x | identity(x)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(x)) = y | identity(x)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(z) = z, matrix_inv(matrix_inv(y)) = x | identity(z)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = y | identity(z)	14	9	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = y | identity(y), identity(z)	14	9	3	5	2
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = x | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y ==> matrix_inv(x) = x, matrix_inv(matrix_inv(x)) = x | 	14	9	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(x)) = x | identity(x)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = z, matrix_inv(matrix_inv(z)) = z | identity(z)	14	9	3	3	1
+matrix_inv(x) = x, matrix_inv(y) = x ==> matrix_inv(y) = y, matrix_inv(matrix_inv(y)) = y | 	14	9	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = x | identity(y)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = y | 	14	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(z)) = z | identity(x)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = x | identity(y)	14	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = z | identity(y)	14	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = z, matrix_inv(matrix_inv(x)) = x | identity(z)	14	9	3	4	1
+matrix_is_upper(x) = p ==> matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(z)) = q | identity(z)	10	7	5	6	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(x, z)) = z | identity(y)	12	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(z, y)) = z | identity(y)	12	9	3	5	1
+matrix_is_upper(x) = p, matrix_is_upper(x) = q <== matrix_is_upper(y) = p, matrix_is_upper(matrix_transpose(y)) = p | identity(x), true(p)	12	9	4	5	2
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(y, z)) = z | identity(y)	12	9	3	5	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = q, matrix_is_symmetric(matrix_transpose(y)) = q | true(q), identity(y)	9	7	4	4	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(matrix_transpose(z)) = q | identity(z)	9	7	5	6	1
+matrix_det(x) = a === matrix_det(y) = a, matrix_det(matrix_transpose(z)) = b | identity(z)	9	7	5	6	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = x | identity(z)	9	7	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(z, z)) = z | identity(y)	11	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(x, y)) = z | identity(y)	10	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(y, matrix_mult(y, x)) = x | 	8	9	2	4	0
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(z, matrix_mult(z, y)) = y | identity(z)	8	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(z, x)) = z | identity(y)	7	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(x, matrix_mult(x, y)) = z | identity(y)	6	9	3	5	1
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(matrix_transpose(y)) = q | true(p), identity(y)	4	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = q, matrix_is_symmetric(matrix_transpose(y)) = p | true(q), identity(y)	4	7	4	5	2
+matrix_is_symmetric(x) = p === matrix_is_symmetric(y) = p, matrix_is_symmetric(matrix_transpose(y)) = p | true(p), identity(y)	4	7	3	4	2
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(z, y)) = x | identity(y)	5	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(z, matrix_mult(z, x)) = x | identity(z)	4	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(y, z)) = x | identity(y)	4	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(y, x)) = z | identity(y)	4	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x ==> matrix_mult(x, matrix_mult(y, y)) = x | 	4	9	2	3	0
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(x, y)) = z | identity(y)	4	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(z, y)) = x | identity(y)	4	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(y, z)) = x | identity(y)	3	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(x, matrix_mult(z, x)) = y | identity(z)	3	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(y, x)) = z | identity(y)	3	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(x, matrix_mult(y, y)) = x | 	3	9	2	4	0
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(x, x)) = z | identity(y)	3	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(x, x)) = z | identity(y)	3	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x ==> matrix_mult(y, matrix_mult(x, x)) = x | Not(identity(y))	3	9	2	4	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(z, z)) = x | identity(y)	3	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y === matrix_mult(y, matrix_mult(x, y)) = z | identity(x)	3	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x === matrix_mult(y, matrix_mult(x, y)) = x | 	3	9	2	3	0
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(z, y)) = x | identity(y)	3	9	3	5	1
+matrix_is_lower(x) = p <== matrix_is_lower(x) = q, matrix_mult(x, x) = x | true(p)	2	7	3	4	1
+matrix_det(x) = a <== matrix_det(x) = b, matrix_mult(x, x) = x | Not(gt(a, b)), Not(gt(b, a))	2	7	3	4	2
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_mult(x, x)) = y | 	2	9	2	4	0
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(y, y)) = x | 	2	9	2	3	0
+matrix_mult(x, matrix_transpose(y)) = x === matrix_mult(z, matrix_mult(y, y)) = x | identity(z)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(x, matrix_mult(y, x)) = z | identity(x)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(x, matrix_mult(z, z)) = y | identity(x)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(x, matrix_mult(x, z)) = y | identity(z)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(y, z)) = x | identity(z)	2	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(z, z)) = x | identity(y)	2	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(x, matrix_mult(x, z)) = z | identity(y)	2	9	3	4	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_mult(x, z)) = y | identity(z)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(y, x)) = z | identity(y)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y <== matrix_mult(x, matrix_mult(z, x)) = y | identity(x)	2	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(y, z)) = x | identity(y)	2	9	3	5	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = x | identity(z)	1	7	3	4	1
+matrix_is_symmetric(x) = p <== matrix_is_symmetric(x) = q, matrix_mult(x, x) = x | true(p), true(q)	1	7	3	4	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = x | identity(x)	1	7	2	3	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = y | identity(x)	1	7	2	3	1
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = x | identity(y)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = y | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = y | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = z | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = z | identity(y)	1	7	3	4	1
+matrix_is_upper(x) = p <== matrix_is_upper(x) = q, matrix_mult(x, x) = x | true(p), true(q)	1	7	3	4	2
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = y | identity(x)	1	7	2	3	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = z | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = x | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = z | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = x | identity(z)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = y | identity(y)	1	7	3	4	1
+matrix_inv(x) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = x | identity(x)	1	7	2	3	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	9	3	5	2
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(x, matrix_mult(x, x)) = y | 	1	9	2	3	0
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = z | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(z, matrix_mult(y, z)) = x | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(x, matrix_mult(y, y)) = x | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(x, y)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = z | identity(x), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = z | identity(x)	1	9	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(x, x)) = x | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(z, x)) = y | identity(z)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(z, matrix_mult(x, x)) = y | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = z | identity(x)	1	9	3	6	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = z | identity(y)	1	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(x, z)) = y | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(z)) = z | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = y | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = y | identity(x)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(z)) = z | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(x)) = x | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = y | identity(x)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = y | identity(x), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = y | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(y)) = y | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = y | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = y | identity(y), identity(x)	1	9	2	4	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(y)) = y | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(matrix_inv(z)) = y | identity(x), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(x, x)) = z | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = x | identity(y), identity(x)	1	9	2	4	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(x)) = x | identity(x)	1	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(z, matrix_mult(x, z)) = y | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(x, matrix_mult(y, y)) = y | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = z | identity(x)	1	9	3	6	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(x, y)) = z | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(x)) = x | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = y | identity(y), identity(z)	1	9	3	5	2
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(y, matrix_mult(z, y)) = x | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(y, matrix_mult(z, x)) = y | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(x, z)) = x | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(x, matrix_mult(z, x)) = y | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(x, matrix_mult(z, y)) = y | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = z | identity(y), identity(x)	1	9	3	5	2
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(x, x)) = y | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = x | identity(y), identity(x)	1	9	2	4	2
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(z)) = z | identity(y)	1	9	3	4	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(x, matrix_mult(z, y)) = x | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(z)) = z | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = y | identity(x)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(y, x)) = x | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x === matrix_mult(x, matrix_mult(x, x)) = x | 	1	9	1	2	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	9	3	5	2
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(y, z)) = x | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_mult(z, y)) = x | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = x | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = x | identity(x)	1	9	3	6	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(x)) = x | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(z, matrix_mult(x, z)) = y | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y ==> matrix_mult(y, matrix_mult(y, x)) = z | identity(x)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = y | identity(x)	1	9	3	6	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(y, matrix_mult(z, x)) = x | identity(z)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(z, matrix_mult(z, y)) = y | identity(z)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = y | identity(x)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(z, matrix_mult(x, x)) = x | identity(z)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = y === matrix_mult(x, matrix_mult(y, y)) = z | identity(x)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = y, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(z) = x, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = z === matrix_inv(x) = y, matrix_inv(matrix_inv(x)) = x | identity(x)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = y | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(y) = y, matrix_inv(matrix_inv(x)) = z | identity(y), identity(x)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = x, matrix_inv(matrix_inv(y)) = z | identity(x), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(y)) = y | identity(y), identity(x)	1	9	2	4	2
+matrix_mult(x, matrix_transpose(x)) = y === matrix_mult(x, matrix_mult(x, x)) = y | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(z)) = y | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = x <== matrix_mult(y, matrix_mult(z, y)) = x | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = y, matrix_inv(matrix_inv(z)) = z | identity(y)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = z, matrix_inv(matrix_inv(x)) = z | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(x)) = y ==> matrix_mult(x, matrix_mult(x, y)) = y | 	1	9	2	4	0
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(x) = z, matrix_inv(matrix_inv(z)) = z | identity(x)	1	9	3	4	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(y) = x, matrix_inv(matrix_inv(z)) = y | identity(y), identity(z)	1	9	3	5	2
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(x)) = y | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = y === matrix_inv(x) = y, matrix_inv(matrix_inv(z)) = x | identity(y)	1	9	3	5	1
+matrix_mult(x, matrix_transpose(y)) = x <== matrix_mult(y, matrix_mult(z, x)) = y | identity(z)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(x) = y === matrix_inv(z) = x, matrix_inv(matrix_inv(y)) = z | identity(y)	1	9	3	5	1
+matrix_inv(x) = x, matrix_inv(y) = x === matrix_inv(x) = z, matrix_inv(matrix_inv(y)) = y | identity(x)	1	9	3	5	1

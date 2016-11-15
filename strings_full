@@ -1,0 +1,2147 @@
+
+all_strip(x) = y <== length(z) = a | gt1(a)	963	4	4	4	1
+left_strip(x) = y <== length(z) = a | gt1(a)	963	4	4	4	1
+True === length(x) = a, length(y) = a | gt1(a)	984	5	3	3	1
+True === is_prefix(x, left_strip(y)) = p | Not(true(p))	946	5	3	3	1
+True === is_prefix(x, right_strip(y)) = p | Not(true(p))	939	5	3	3	1
+left_strip(x) = y <== length(left_strip(z)) = a | gt1(a)	878	5	4	4	1
+length(x) = a <== length(left_strip(y)) = b | gt1(b)	878	5	4	4	1
+right_strip(x) = y <== length(right_strip(z)) = a | gt1(a)	870	5	4	4	1
+length(x) = a <== length(right_strip(y)) = b | gt1(b)	870	5	4	4	1
+length(x) = a ==> concat(y, y) = z | gt1(a)	856	5	4	4	1
+is_prefix(x, y) = p ==> is_prefix(z, z) = q | true(q)	1000	6	5	5	1
+to_caps(x) = x <== to_caps(y) = y, to_caps(z) = x | 	1000	6	3	4	0
+is_prefix(x, x) = p <== is_prefix(y, z) = q | true(p)	1000	6	5	5	1
+length(x) = a === length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	1000	6	4	5	2
+to_caps(x) = x <== to_caps(y) = x, to_caps(z) = z | 	1000	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(z) = z | 	1000	6	3	4	0
+length(x) = a === length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	1000	6	4	6	2
+all_strip(x) = x <== all_strip(y) = y, all_strip(z) = x | 	1000	6	3	4	0
+length(x) = a ==> reverse(y) = z | gt1(a)	664	4	4	4	1
+length(x) = a ==> right_strip(y) = z | gt1(a)	661	4	4	4	1
+length(x) = a ==> length(y) = a, length(z) = a | gt1(a)	984	6	4	5	1
+length(x) = a ==> to_caps(y) = z | gt1(a)	655	4	4	4	1
+length(x) = a ==> to_lower(y) = z | gt1(a)	643	4	4	4	1
+left_strip(x) = x ==> is_prefix(y, left_strip(z)) = p | Not(true(p))	946	6	4	4	1
+right_strip(x) = x ==> is_prefix(y, right_strip(z)) = p | Not(true(p))	939	6	4	4	1
+all_strip(x) = y <== length(all_strip(z)) = a | gt1(a)	760	5	4	4	1
+length(x) = a <== length(all_strip(y)) = b | gt1(b)	760	5	4	4	1
+length(left_strip(x)) = a <== length(left_strip(y)) = b | gt1(b)	878	6	4	4	1
+length(right_strip(x)) = a <== length(right_strip(y)) = b | gt1(b)	870	6	4	4	1
+is_prefix(x, x) = p <== is_prefix(y, left_strip(z)) = q | true(p)	1000	7	5	5	1
+is_prefix(x, x) = p <== is_prefix(y, right_strip(z)) = q | true(p)	1000	7	5	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_lower(z)) = q | true(p)	1000	7	5	5	1
+is_prefix(x, x) = p <== is_prefix(y, reverse(z)) = q | true(p)	1000	7	5	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_caps(z)) = q | true(p)	1000	7	5	5	1
+to_lower(x) = y ==> is_prefix(z, z) = p | true(p)	714	5	4	4	1
+left_strip(x) = y ==> is_prefix(z, z) = p | true(p)	702	5	4	4	1
+to_caps(x) = y ==> is_prefix(z, z) = p | true(p)	690	5	4	4	1
+length(x) = a ==> reverse(reverse(y)) = z | gt1(a)	682	5	4	4	1
+right_strip(x) = y ==> is_prefix(z, z) = p | true(p)	678	5	4	4	1
+is_prefix(x, y) = p <== is_prefix(z, right_strip(z)) = p | Not(true(p))	948	7	4	5	1
+is_prefix(x, y) = p <== is_prefix(z, to_caps(z)) = p | Not(true(p))	943	7	4	5	1
+reverse(x) = y ==> is_prefix(z, z) = p | true(p)	672	5	4	4	1
+is_prefix(x, y) = p <== is_prefix(z, reverse(z)) = p | Not(true(p))	935	7	4	5	1
+True === length(x) = a, length(y) = b | gt1(a)	667	5	4	4	1
+length(x) = a ==> is_prefix(y, y) = p | true(p)	666	5	4	4	1
+all_strip(x) = y ==> is_prefix(z, z) = p | true(p)	666	5	4	4	1
+length(x) = a ==> to_lower(to_lower(y)) = z | gt1(a)	664	5	4	4	1
+length(x) = a ==> to_caps(to_caps(y)) = z | gt1(a)	664	5	4	4	1
+length(x) = a ==> right_strip(right_strip(y)) = z | gt1(a)	661	5	4	4	1
+is_prefix(x, y) = p <== is_prefix(z, to_lower(z)) = p | Not(true(p))	905	7	4	5	1
+is_prefix(x, y) = p <== is_prefix(z, left_strip(z)) = p | Not(true(p))	890	7	4	5	1
+length(all_strip(x)) = a <== length(all_strip(y)) = b | gt1(b)	760	6	4	4	1
+is_prefix(x, to_caps(y)) = p <== is_prefix(z, to_caps(z)) = p | Not(true(p))	979	8	4	5	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(z) = x | 	716	6	3	4	0
+is_prefix(x, left_strip(y)) = p === is_prefix(x, left_strip(y)) = q | Not(true(p)), Not(true(q))	946	8	4	6	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(y, left_strip(z)) = q | Not(true(q))	946	8	5	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(y, right_strip(z)) = q | Not(true(q))	939	8	5	5	1
+is_prefix(x, right_strip(y)) = p === is_prefix(x, right_strip(y)) = q | Not(true(p)), Not(true(q))	939	8	4	6	2
+is_prefix(x, to_caps(x)) = p ==> is_prefix(y, to_caps(z)) = p | Not(true(p))	916	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> is_prefix(y, reverse(z)) = p | Not(true(p))	868	8	4	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(y, right_strip(z)) = p | Not(true(p))	866	8	4	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(y, to_lower(z)) = p | Not(true(p))	859	8	4	5	1
+is_prefix(x, x) = p <== reverse(reverse(y)) = z | true(p)	636	6	4	4	1
+right_strip(x) = y <== is_prefix(z, right_strip(z)) = p | Not(true(p))	636	6	4	4	1
+is_prefix(x, to_lower(y)) = p <== is_prefix(z, to_lower(z)) = p | Not(true(p))	845	8	4	5	1
+is_prefix(x, y) = p === is_prefix(x, y) = q | Not(true(p)), Not(true(q))	614	6	4	6	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(y, left_strip(z)) = p | Not(true(p))	805	8	4	5	1
+reverse(x) = y <== is_prefix(z, reverse(z)) = p | Not(true(p))	582	6	4	4	1
+length(x) = a ==> concat(y, x) = z | gt1(a)	474	5	4	5	1
+length(x) = a ==> concat(x, y) = z | gt1(a)	472	5	4	5	1
+left_strip(x) = x ==> is_prefix(y, y) = p | true(p)	468	5	3	3	1
+is_prefix(x, y) = p <== is_prefix(z, right_strip(z)) = q | Not(true(q))	636	7	5	5	1
+right_strip(x) = x ==> is_prefix(y, y) = p | true(p)	444	5	3	3	1
+reverse(reverse(x)) = y <== is_prefix(z, reverse(z)) = p | Not(true(p))	582	7	4	4	1
+is_prefix(x, y) = p <== is_prefix(z, reverse(z)) = q | Not(true(q))	582	7	5	5	1
+is_prefix(x, y) = p <== is_prefix(z, to_caps(z)) = q | Not(true(q))	572	7	5	5	1
+to_caps(x) = y <== is_prefix(z, to_caps(z)) = p | Not(true(p))	460	6	4	4	1
+is_prefix(x, to_caps(y)) = p === is_prefix(x, to_caps(y)) = q | Not(true(p)), Not(true(q))	605	8	4	6	2
+all_strip(x) = x <== all_strip(y) = x, all_strip(z) = x | 	451	6	3	4	0
+is_prefix(x, reverse(y)) = p === is_prefix(x, reverse(y)) = q | Not(true(p)), Not(true(q))	600	8	4	6	2
+to_lower(x) = y <== is_prefix(z, to_lower(z)) = p | Not(true(p))	444	6	4	4	1
+is_prefix(x, to_caps(y)) = p <== is_prefix(z, to_caps(z)) = q | Not(true(q))	572	8	5	5	1
+is_prefix(x, to_lower(y)) = p === is_prefix(x, to_lower(y)) = q | Not(true(p)), Not(true(q))	560	8	4	6	2
+True === length(x) = a, length(y) = b | Not(gt1(a))	333	5	4	4	1
+is_prefix(x, y) = p <== is_prefix(z, to_lower(z)) = q | Not(true(q))	444	7	5	5	1
+all_strip(x) = x ==> is_prefix(y, y) = p | true(p)	312	5	3	3	1
+left_strip(x) = y <== is_prefix(z, left_strip(z)) = p | Not(true(p))	351	6	4	4	1
+is_prefix(x, x) = p <== is_prefix(y, right_strip(z)) = p | true(p)	402	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, left_strip(z)) = p | true(p)	390	7	4	5	1
+is_prefix(x, to_lower(y)) = p <== is_prefix(z, to_lower(z)) = q | Not(true(q))	444	8	5	5	1
+is_prefix(x, y) = p <== is_prefix(z, left_strip(z)) = q | Not(true(q))	375	7	5	5	1
+right_strip(x) = x <== concat(y, right_strip(z)) = x | 	284	6	3	4	0
+is_prefix(x, y) = p ==> is_prefix(z, z) = p | true(p)	270	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, z) = p | true(p)	270	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(x, right_strip(y)) = q | true(p)	282	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_lower(z)) = p | true(p)	282	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(x, left_strip(y)) = q | true(p)	271	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, reverse(z)) = p | true(p)	264	7	4	5	1
+to_lower(x) = x ==> is_prefix(y, y) = p | true(p)	180	5	3	3	1
+to_caps(x) = x ==> is_prefix(y, y) = p | true(p)	180	5	3	3	1
+is_prefix(x, x) = p <== is_prefix(y, to_caps(z)) = p | true(p)	252	7	4	5	1
+concat(x, y) = z ==> is_prefix(y, y) = p | true(p)	198	6	4	5	1
+concat(x, y) = z ==> is_prefix(x, x) = p | true(p)	195	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, right_strip(x)) = q | true(p)	227	7	4	5	1
+is_prefix(x, y) = p ==> is_prefix(x, x) = q | true(q)	194	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(x, y) = q | true(p)	194	6	4	5	1
+is_prefix(x, y) = p ==> is_prefix(y, y) = q | true(q)	191	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, x) = q | true(p)	191	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, left_strip(x)) = q | true(p)	217	7	4	5	1
+left_strip(x) = y <== is_prefix(y, left_strip(z)) = p | true(p)	183	6	4	5	1
+left_strip(x) = y ==> left_strip(y) = y | 	117	4	2	3	0
+left_strip(x) = x <== left_strip(y) = x | 	117	4	2	3	0
+reverse(x) = x ==> is_prefix(y, y) = p | true(p)	144	5	3	3	1
+right_strip(x) = y ==> right_strip(y) = y | 	113	4	2	3	0
+right_strip(x) = x <== right_strip(y) = x | 	113	4	2	3	0
+is_prefix(x, x) = p <== is_prefix(x, to_caps(y)) = q | true(p)	197	7	4	5	1
+to_caps(x) = y ==> to_caps(y) = y | 	112	4	2	3	0
+to_lower(x) = x <== to_lower(y) = x | 	112	4	2	3	0
+to_caps(x) = x <== to_caps(y) = x | 	112	4	2	3	0
+to_lower(x) = y ==> to_lower(y) = y | 	112	4	2	3	0
+length(x) = a === length(x) = b | Not(gt(a, b)), Not(gt(b, a))	111	4	3	4	2
+all_strip(x) = y ==> all_strip(y) = y | 	111	4	2	3	0
+all_strip(x) = x <== all_strip(y) = x | 	111	4	2	3	0
+is_prefix(x, x) = p <== is_prefix(y, reverse(x)) = q | true(p)	191	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_caps(x)) = q | true(p)	191	7	4	5	1
+all_strip(x) = y ==> left_strip(y) = y | 	109	4	2	3	0
+is_prefix(x, x) = p <== is_prefix(x, reverse(y)) = q | true(p)	190	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_lower(x)) = q | true(p)	189	7	4	5	1
+all_strip(x) = y ==> right_strip(y) = y | 	107	4	2	3	0
+reverse(x) = y === reverse(y) = x | 	106	4	2	4	0
+True === reverse(reverse(x)) = x | 	106	4	1	1	0
+is_prefix(x, x) = p <== is_prefix(x, to_lower(y)) = q | true(p)	179	7	4	5	1
+left_strip(x) = x <== left_strip(to_lower(y)) = x | 	119	5	2	3	0
+left_strip(x) = x <== left_strip(left_strip(y)) = x | 	117	5	2	3	0
+left_strip(x) = y === left_strip(left_strip(x)) = y | 	117	5	2	4	0
+all_strip(x) = x <== all_strip(to_lower(y)) = x | 	117	5	2	3	0
+left_strip(x) = x <== to_lower(left_strip(y)) = x | 	115	5	2	3	0
+all_strip(x) = x <== all_strip(left_strip(y)) = x | 	114	5	2	3	0
+left_strip(x) = x <== to_caps(left_strip(y)) = x | 	113	5	2	3	0
+to_caps(x) = x <== to_caps(left_strip(y)) = x | 	113	5	2	3	0
+right_strip(x) = x <== right_strip(to_caps(y)) = x | 	113	5	2	3	0
+right_strip(x) = y === right_strip(right_strip(x)) = y | 	113	5	2	4	0
+to_caps(x) = x <== right_strip(to_caps(y)) = x | 	113	5	2	3	0
+right_strip(x) = x <== right_strip(right_strip(y)) = x | 	113	5	2	3	0
+left_strip(x) = x <== right_strip(left_strip(y)) = x | 	112	5	2	3	0
+left_strip(x) = x <== left_strip(to_caps(y)) = x | 	112	5	2	3	0
+to_caps(x) = x <== left_strip(to_caps(y)) = x | 	112	5	2	3	0
+to_caps(x) = x <== to_caps(to_caps(y)) = x | 	112	5	2	3	0
+to_lower(x) = x <== to_lower(to_lower(y)) = x | 	112	5	2	3	0
+right_strip(x) = x <== right_strip(left_strip(y)) = x | 	112	5	2	3	0
+to_lower(x) = y === to_lower(to_lower(x)) = y | 	112	5	2	4	0
+to_caps(x) = y === to_caps(to_caps(x)) = y | 	112	5	2	4	0
+to_lower(x) = x <== left_strip(to_lower(y)) = x | 	112	5	2	3	0
+all_strip(x) = x <== all_strip(all_strip(y)) = x | 	111	5	2	3	0
+to_caps(x) = x <== to_caps(to_lower(y)) = x | 	111	5	2	3	0
+all_strip(x) = y === all_strip(all_strip(x)) = y | 	111	5	2	4	0
+to_caps(x) = y === to_caps(to_lower(x)) = y | 	111	5	2	4	0
+all_strip(x) = x <== to_caps(all_strip(y)) = x | 	110	5	2	3	0
+to_caps(x) = x <== to_caps(all_strip(y)) = x | 	110	5	2	3	0
+to_caps(x) = x <== to_caps(right_strip(y)) = x | 	110	5	2	3	0
+right_strip(x) = x <== left_strip(right_strip(y)) = x | 	110	5	2	3	0
+to_lower(x) = x <== all_strip(to_lower(y)) = x | 	110	5	2	3	0
+left_strip(x) = x <== left_strip(right_strip(y)) = x | 	110	5	2	3	0
+all_strip(x) = y ==> left_strip(left_strip(y)) = y | 	109	5	2	3	0
+all_strip(x) = x <== to_lower(all_strip(y)) = x | 	109	5	2	3	0
+to_lower(x) = x <== to_lower(left_strip(y)) = x | 	109	5	2	3	0
+all_strip(x) = y === all_strip(left_strip(x)) = y | 	109	5	2	4	0
+all_strip(x) = y === left_strip(all_strip(x)) = y | 	109	5	2	4	0
+right_strip(x) = x <== to_caps(right_strip(y)) = x | 	109	5	2	3	0
+all_strip(x) = x <== left_strip(all_strip(y)) = x | 	109	5	2	3	0
+right_strip(x) = x <== right_strip(to_lower(y)) = x | 	108	5	2	3	0
+left_strip(x) = x <== left_strip(reverse(y)) = x | 	108	5	2	3	0
+to_caps(x) = x <== reverse(to_caps(y)) = x | 	108	5	2	3	0
+to_lower(x) = y === to_lower(to_caps(x)) = y | 	107	5	2	4	0
+all_strip(x) = x <== right_strip(all_strip(y)) = x | 	107	5	2	3	0
+all_strip(x) = y ==> right_strip(right_strip(y)) = y | 	107	5	2	3	0
+all_strip(x) = y === right_strip(all_strip(x)) = y | 	107	5	2	4	0
+all_strip(x) = x <== reverse(all_strip(y)) = x | 	106	5	2	3	0
+all_strip(x) = x <== all_strip(right_strip(y)) = x | 	106	5	2	3	0
+length(x) = a === length(to_lower(x)) = a | 	106	5	2	4	0
+right_strip(x) = x <== right_strip(reverse(y)) = x | 	105	5	2	3	0
+all_strip(x) = x <== all_strip(to_caps(y)) = x | 	105	5	2	3	0
+to_lower(x) = x <== to_lower(reverse(y)) = x | 	105	5	2	3	0
+to_lower(x) = x <== to_lower(right_strip(y)) = x | 	105	5	2	3	0
+to_caps(x) = x <== all_strip(to_caps(y)) = x | 	105	5	2	3	0
+right_strip(x) = x <== to_lower(right_strip(y)) = x | 	104	5	2	3	0
+all_strip(x) = x <== all_strip(reverse(y)) = x | 	104	5	2	3	0
+to_caps(x) = x <== to_caps(reverse(y)) = x | 	104	5	2	3	0
+all_strip(x) = y === all_strip(right_strip(x)) = y | 	103	5	2	4	0
+to_lower(x) = x <== to_lower(all_strip(y)) = x | 	103	5	2	3	0
+length(x) = a === length(to_caps(x)) = a | 	101	5	2	4	0
+to_lower(x) = x <== right_strip(to_lower(y)) = x | 	101	5	2	3	0
+to_lower(x) = x <== to_lower(to_caps(y)) = x | 	101	5	2	3	0
+length(x) = a === length(reverse(x)) = a | 	97	5	2	4	0
+left_strip(to_lower(x)) = y === to_lower(left_strip(x)) = y | 	115	6	2	4	0
+right_strip(to_caps(x)) = y ==> right_strip(to_caps(y)) = y | 	113	6	2	3	0
+left_strip(to_caps(x)) = x <== to_caps(left_strip(y)) = x | 	113	6	2	3	0
+right_strip(to_caps(x)) = x <== right_strip(to_caps(y)) = x | 	113	6	2	3	0
+to_lower(x) = x <== reverse(to_lower(y)) = x | 	94	5	2	3	0
+to_caps(x) = x <== to_caps(y) = x, to_caps(z) = y | 	112	6	3	4	0
+to_caps(x) = x <== to_caps(x) = z, to_caps(y) = x | 	112	6	3	4	0
+left_strip(to_lower(x)) = x <== left_strip(to_lower(y)) = x | 	112	6	2	3	0
+left_strip(right_strip(x)) = x <== right_strip(left_strip(y)) = x | 	112	6	2	3	0
+left_strip(to_caps(x)) = y ==> left_strip(to_caps(y)) = y | 	112	6	2	3	0
+left_strip(to_lower(x)) = y ==> left_strip(to_lower(y)) = y | 	112	6	2	3	0
+to_caps(x) = x <== to_caps(x) = y, to_caps(z) = x | 	112	6	3	4	0
+to_caps(x) = x <== to_caps(y) = x, to_caps(y) = z | 	112	6	3	4	0
+left_strip(to_caps(x)) = x <== left_strip(to_caps(y)) = x | 	112	6	2	3	0
+all_strip(x) = y <== all_strip(x) = z, all_strip(z) = y | 	111	6	3	5	0
+all_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	111	6	3	5	0
+all_strip(x) = x <== all_strip(x) = z, all_strip(y) = x | 	111	6	3	4	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(z) = x | 	111	6	3	4	0
+all_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	111	6	3	5	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	111	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(z) = y | 	111	6	3	4	0
+all_strip(x) = x <== all_strip(y) = z, all_strip(z) = x | 	111	6	3	4	0
+length(left_strip(x)) = a === length(left_strip(x)) = b | Not(gt(a, b)), Not(gt(b, a))	110	6	3	4	2
+left_strip(right_strip(x)) = x <== left_strip(right_strip(y)) = x | 	110	6	2	3	0
+all_strip(to_caps(x)) = x <== to_caps(all_strip(y)) = x | 	110	6	2	3	0
+all_strip(to_lower(x)) = y ==> all_strip(to_lower(y)) = y | 	110	6	2	3	0
+all_strip(to_lower(x)) = x <== all_strip(to_lower(y)) = x | 	110	6	2	3	0
+left_strip(right_strip(x)) = y ==> left_strip(right_strip(y)) = y | 	110	6	2	3	0
+left_strip(to_lower(x)) = x <== to_lower(left_strip(y)) = x | 	109	6	2	3	0
+left_strip(right_strip(x)) = y === right_strip(left_strip(x)) = y | 	109	6	2	4	0
+right_strip(x) = y <== is_prefix(y, right_strip(z)) = p | true(p)	109	6	4	5	1
+to_lower(x) = y <== is_prefix(y, to_lower(z)) = p | true(p)	109	6	4	5	1
+right_strip(to_caps(x)) = x <== to_caps(right_strip(y)) = x | 	109	6	2	3	0
+left_strip(to_caps(x)) = y === to_caps(left_strip(x)) = y | 	109	6	2	4	0
+all_strip(to_lower(x)) = y === to_lower(all_strip(x)) = y | 	108	6	2	4	0
+length(right_strip(x)) = a === length(right_strip(x)) = b | Not(gt(a, b)), Not(gt(b, a))	108	6	3	4	2
+right_strip(to_caps(x)) = y === to_caps(right_strip(x)) = y | 	106	6	2	4	0
+reverse(reverse(x)) = y === reverse(reverse(y)) = x | 	106	6	2	4	0
+length(all_strip(x)) = a === length(all_strip(x)) = b | Not(gt(a, b)), Not(gt(b, a))	106	6	3	4	2
+all_strip(to_caps(x)) = x <== all_strip(to_caps(y)) = x | 	105	6	2	3	0
+all_strip(to_caps(x)) = y ==> all_strip(to_caps(y)) = y | 	105	6	2	3	0
+right_strip(to_lower(x)) = y === to_lower(right_strip(x)) = y | 	104	6	2	4	0
+all_strip(to_lower(x)) = x <== to_lower(all_strip(y)) = x | 	103	6	2	3	0
+right_strip(to_lower(x)) = y ==> right_strip(to_lower(y)) = y | 	101	6	2	3	0
+right_strip(to_lower(x)) = x <== right_strip(to_lower(y)) = x | 	101	6	2	3	0
+all_strip(to_caps(x)) = y === to_caps(all_strip(x)) = y | 	99	6	2	4	0
+reverse(to_caps(x)) = y === to_caps(reverse(x)) = y | 	99	6	2	4	0
+right_strip(to_lower(x)) = x <== to_lower(right_strip(y)) = x | 	98	6	2	3	0
+all_strip(reverse(x)) = y === reverse(all_strip(x)) = y | 	96	6	2	4	0
+left_strip(x) = x === left_strip(left_strip(x)) = x | 	78	5	1	2	0
+reverse(to_lower(x)) = y === to_lower(reverse(x)) = y | 	90	6	2	4	0
+right_strip(x) = x === right_strip(right_strip(x)) = x | 	74	5	1	2	0
+length(x) = a <== is_prefix(y, z) = p | true(p)	68	5	5	5	1
+left_strip(x) = x <== left_strip(x) = y, left_strip(y) = x | 	78	6	2	3	0
+all_strip(x) = x ==> left_strip(x) = x | 	50	4	1	2	0
+right_strip(x) = x <== right_strip(x) = y, right_strip(y) = x | 	74	6	2	3	0
+all_strip(x) = x ==> right_strip(x) = x | 	48	4	1	2	0
+is_prefix(x, left_strip(x)) = p ==> is_prefix(x, left_strip(y)) = p | Not(true(p))	90	8	3	5	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(x, left_strip(x)) = q | Not(true(p)), Not(true(q))	90	8	4	5	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(x, left_strip(y)) = q | Not(true(p)), Not(true(q))	90	8	4	5	2
+is_prefix(x, left_strip(y)) = p <== is_prefix(x, left_strip(x)) = p | Not(true(p))	90	8	3	5	1
+right_strip(x) = y <== is_prefix(x, right_strip(z)) = p | true(p)	67	6	4	5	1
+left_strip(x) = x <== is_prefix(x, left_strip(y)) = p | true(p)	65	6	3	4	1
+left_strip(x) = y <== is_prefix(x, left_strip(z)) = p | true(p)	63	6	4	5	1
+all_strip(x) = x === all_strip(all_strip(x)) = x | 	52	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(y, reverse(y)) = q | true(p)	72	7	4	4	1
+all_strip(x) = x === all_strip(left_strip(x)) = x | 	50	5	1	2	0
+all_strip(x) = x ==> left_strip(left_strip(x)) = x | 	50	5	1	2	0
+all_strip(x) = x === left_strip(all_strip(x)) = x | 	50	5	1	2	0
+all_strip(x) = x === right_strip(all_strip(x)) = x | 	48	5	1	2	0
+right_strip(x) = x <== right_strip(left_strip(x)) = x | 	48	5	1	2	0
+right_strip(x) = x <== left_strip(right_strip(x)) = x | 	48	5	1	2	0
+left_strip(x) = x <== right_strip(left_strip(x)) = x | 	48	5	1	2	0
+left_strip(x) = x <== left_strip(right_strip(x)) = x | 	48	5	1	2	0
+all_strip(x) = x === all_strip(right_strip(x)) = x | 	48	5	1	2	0
+all_strip(x) = x ==> right_strip(right_strip(x)) = x | 	48	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(y, right_strip(y)) = q | true(p)	66	7	4	4	1
+right_strip(x) = y <== is_prefix(z, right_strip(x)) = p | true(p)	55	6	4	5	1
+right_strip(x) = y <== is_prefix(z, right_strip(y)) = p | true(p)	55	6	4	5	1
+all_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	52	6	2	4	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	52	6	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	52	6	2	3	0
+left_strip(x) = y <== is_prefix(z, left_strip(y)) = p | true(p)	51	6	4	5	1
+left_strip(x) = y <== is_prefix(z, left_strip(x)) = p | true(p)	51	6	4	5	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(x, to_caps(y)) = p | Not(true(p))	67	8	3	5	1
+is_prefix(x, to_caps(y)) = p <== is_prefix(x, to_caps(x)) = p | Not(true(p))	67	8	3	5	1
+is_prefix(x, to_caps(y)) = p <== is_prefix(x, to_caps(x)) = q | Not(true(p)), Not(true(q))	67	8	4	5	2
+is_prefix(x, to_caps(x)) = p ==> is_prefix(x, to_caps(y)) = q | Not(true(p)), Not(true(q))	67	8	4	5	2
+left_strip(right_strip(x)) = x === right_strip(left_strip(x)) = x | 	48	6	1	2	0
+concat(x, x) = y ==> is_prefix(z, z) = p | true(p)	48	6	4	4	1
+is_prefix(x, x) = p <== is_prefix(x, right_strip(y)) = p | true(p)	55	7	3	5	1
+to_lower(x) = x <== is_prefix(x, to_lower(y)) = p | true(p)	47	6	3	4	1
+to_lower(x) = y <== is_prefix(z, to_lower(x)) = p | true(p)	47	6	4	5	1
+to_lower(x) = y <== is_prefix(z, to_lower(y)) = p | true(p)	47	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_lower(y)) = q | true(p)	54	7	4	4	1
+is_prefix(x, to_lower(y)) = p <== is_prefix(x, to_lower(x)) = q | Not(true(p)), Not(true(q))	61	8	4	5	2
+is_prefix(x, to_lower(y)) = p <== is_prefix(x, to_lower(x)) = p | Not(true(p))	61	8	3	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(x, to_lower(y)) = p | Not(true(p))	61	8	3	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(x, to_lower(y)) = q | Not(true(p)), Not(true(q))	61	8	4	5	2
+is_prefix(x, x) = p <== is_prefix(x, left_strip(y)) = p | true(p)	52	7	3	5	1
+to_caps(x) = x <== is_prefix(x, to_caps(y)) = p | true(p)	42	6	3	4	1
+is_prefix(x, x) = p <== is_prefix(y, left_strip(y)) = q | true(p)	48	7	4	4	1
+is_prefix(x, x) = p === is_prefix(y, y) = q | true(p), true(q)	36	6	4	4	2
+to_caps(x) = x === to_caps(to_caps(x)) = x | 	30	5	1	2	0
+is_prefix(x, x) = p === is_prefix(y, y) = p | 	36	6	3	4	0
+concat(x, x) = y <== is_prefix(x, z) = p | true(p)	36	6	4	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_caps(y)) = q | true(p)	42	7	4	4	1
+to_lower(x) = x === to_lower(to_lower(x)) = x | 	30	5	1	2	0
+is_prefix(x, y) = p ==> is_prefix(x, x) = p | true(p)	35	6	3	5	1
+is_prefix(x, x) = p <== is_prefix(x, y) = p | true(p)	35	6	3	5	1
+to_lower(x) = x === to_lower(to_caps(x)) = x | 	28	5	1	2	0
+to_caps(x) = x === to_caps(to_lower(x)) = x | 	28	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(x, to_caps(y)) = p | true(p)	38	7	3	5	1
+all_strip(x) = y ==> is_prefix(y, y) = p | true(p)	27	5	3	4	1
+to_caps(x) = x <== to_caps(x) = y, to_caps(y) = x | 	30	6	2	3	0
+to_caps(x) = x <== to_caps(y) = x, to_caps(y) = y | 	30	6	2	3	0
+is_prefix(x, x) = p <== is_prefix(x, reverse(y)) = p | true(p)	34	7	3	5	1
+concat(x, y) = z ==> is_prefix(z, y) = p | Not(true(p))	29	6	4	6	1
+concat(x, y) = z ==> is_prefix(z, x) = p | Not(true(p))	29	6	4	6	1
+is_prefix(x, x) = p <== is_prefix(x, to_lower(y)) = p | true(p)	33	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_lower(y)) = p | true(p)	30	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(y, reverse(y)) = p | true(p)	30	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(y, left_strip(y)) = p | true(p)	30	7	3	4	1
+concat(x, y) = z ==> is_prefix(x, z) = p | true(p)	25	6	4	6	1
+reverse(x) = x <== reverse(x) = y, reverse(y) = y | 	24	6	2	3	0
+concat(x, y) = z <== is_prefix(x, y) = p | true(p)	23	6	4	6	1
+left_strip(x) = y ==> is_prefix(y, y) = p | true(p)	18	5	3	4	1
+is_prefix(x, x) = p <== is_prefix(y, right_strip(y)) = p | true(p)	24	7	3	4	1
+concat(x, y) = z <== is_prefix(y, x) = p | true(p)	20	6	4	6	1
+all_strip(x) = x <== reverse(all_strip(x)) = x | 	16	5	1	2	0
+right_strip(x) = x <== right_strip(reverse(x)) = x | 	16	5	1	2	0
+reverse(x) = x <== right_strip(reverse(x)) = x | 	16	5	1	2	0
+left_strip(x) = x <== left_strip(to_caps(x)) = x | 	16	5	1	2	0
+reverse(x) = x <== all_strip(reverse(x)) = x | 	16	5	1	2	0
+left_strip(x) = x <== to_caps(left_strip(x)) = x | 	16	5	1	2	0
+right_strip(x) = x <== reverse(right_strip(x)) = x | 	16	5	1	2	0
+to_caps(x) = x <== to_caps(left_strip(x)) = x | 	16	5	1	2	0
+True === length(x) = a, length(y) = a | Not(gt1(a))	16	5	3	3	1
+reverse(x) = x <== reverse(right_strip(x)) = x | 	16	5	1	2	0
+all_strip(x) = x <== all_strip(reverse(x)) = x | 	16	5	1	2	0
+reverse(x) = x <== reverse(all_strip(x)) = x | 	16	5	1	2	0
+to_caps(x) = x <== left_strip(to_caps(x)) = x | 	16	5	1	2	0
+left_strip(x) = x <== left_strip(reverse(x)) = x | 	15	5	1	2	0
+right_strip(x) = y ==> is_prefix(y, y) = p | true(p)	15	5	3	4	1
+left_strip(x) = x <== to_lower(left_strip(x)) = x | 	15	5	1	2	0
+to_lower(x) = x <== left_strip(to_lower(x)) = x | 	15	5	1	2	0
+left_strip(x) = x <== left_strip(to_lower(x)) = x | 	15	5	1	2	0
+right_strip(x) = x <== to_caps(right_strip(x)) = x | 	15	5	1	2	0
+left_strip(x) = y ==> is_prefix(y, left_strip(x)) = p | true(p)	18	6	3	5	1
+to_lower(x) = x <== to_lower(left_strip(x)) = x | 	15	5	1	2	0
+reverse(x) = x <== left_strip(reverse(x)) = x | 	15	5	1	2	0
+left_strip(x) = y ==> is_prefix(y, left_strip(y)) = p | true(p)	18	6	3	4	1
+to_caps(x) = x <== to_caps(right_strip(x)) = x | 	15	5	1	2	0
+to_caps(x) = x <== right_strip(to_caps(x)) = x | 	15	5	1	2	0
+reverse(x) = x <== reverse(left_strip(x)) = x | 	15	5	1	2	0
+right_strip(x) = x <== right_strip(to_caps(x)) = x | 	15	5	1	2	0
+left_strip(x) = x <== reverse(left_strip(x)) = x | 	15	5	1	2	0
+reverse(right_strip(x)) = x === right_strip(reverse(x)) = x | 	16	6	1	2	0
+all_strip(reverse(x)) = x === reverse(all_strip(x)) = x | 	16	6	1	2	0
+left_strip(to_caps(x)) = x === to_caps(left_strip(x)) = x | 	16	6	1	2	0
+to_lower(x) = x <== right_strip(to_lower(x)) = x | 	13	5	1	2	0
+to_lower(x) = x <== to_lower(reverse(x)) = x | 	13	5	1	2	0
+reverse(x) = x <== to_lower(reverse(x)) = x | 	13	5	1	2	0
+to_lower(x) = x <== to_lower(right_strip(x)) = x | 	13	5	1	2	0
+to_lower(x) = x <== reverse(to_lower(x)) = x | 	13	5	1	2	0
+reverse(x) = x <== reverse(to_lower(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== to_lower(right_strip(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== right_strip(to_lower(x)) = x | 	13	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(y, to_caps(y)) = p | true(p)	18	7	3	4	1
+left_strip(reverse(x)) = x === reverse(left_strip(x)) = x | 	15	6	1	2	0
+right_strip(x) = y ==> is_prefix(y, right_strip(x)) = p | true(p)	15	6	3	5	1
+left_strip(to_lower(x)) = x === to_lower(left_strip(x)) = x | 	15	6	1	2	0
+right_strip(x) = y ==> is_prefix(y, right_strip(y)) = p | true(p)	15	6	3	4	1
+right_strip(to_caps(x)) = x === to_caps(right_strip(x)) = x | 	15	6	1	2	0
+to_caps(x) = x <== to_caps(reverse(x)) = x | 	11	5	1	2	0
+reverse(x) = x <== to_caps(reverse(x)) = x | 	11	5	1	2	0
+to_caps(x) = x <== reverse(to_caps(x)) = x | 	11	5	1	2	0
+reverse(x) = x <== reverse(to_caps(x)) = x | 	11	5	1	2	0
+right_strip(to_lower(x)) = x === to_lower(right_strip(x)) = x | 	13	6	1	2	0
+reverse(to_lower(x)) = x === to_lower(reverse(x)) = x | 	13	6	1	2	0
+to_lower(x) = y ==> is_prefix(y, y) = p | true(p)	10	5	3	4	1
+reverse(to_caps(x)) = x === to_caps(reverse(x)) = x | 	11	6	1	2	0
+all_strip(x) = x <== to_caps(all_strip(x)) = x | 	9	5	1	2	0
+all_strip(x) = x <== all_strip(to_caps(x)) = x | 	9	5	1	2	0
+to_caps(x) = x <== to_caps(all_strip(x)) = x | 	9	5	1	2	0
+to_caps(x) = x <== all_strip(to_caps(x)) = x | 	9	5	1	2	0
+to_lower(x) = y ==> is_prefix(y, to_lower(x)) = p | true(p)	10	6	3	5	1
+to_lower(x) = y ==> is_prefix(y, to_lower(y)) = p | true(p)	10	6	3	4	1
+all_strip(x) = x <== to_lower(all_strip(x)) = x | 	8	5	1	2	0
+to_lower(x) = x <== to_lower(all_strip(x)) = x | 	8	5	1	2	0
+to_lower(x) = x <== all_strip(to_lower(x)) = x | 	8	5	1	2	0
+all_strip(x) = x <== all_strip(to_lower(x)) = x | 	8	5	1	2	0
+True === is_prefix(x, x) = p | true(p)	6	4	2	2	1
+all_strip(to_caps(x)) = x === to_caps(all_strip(x)) = x | 	9	6	1	2	0
+concat(x, x) = y <== is_prefix(z, x) = p | true(p)	8	6	4	5	1
+all_strip(to_lower(x)) = x === to_lower(all_strip(x)) = x | 	8	6	1	2	0
+to_caps(x) = y ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+right_strip(x) = y ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+left_strip(x) = y ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+length(x) = a ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+to_lower(x) = y ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+reverse(x) = y ==> is_prefix(y, y) = p | true(p)	6	5	3	4	1
+reverse(x) = y ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+all_strip(x) = y ==> is_prefix(x, x) = p | true(p)	6	5	3	4	1
+reverse(x) = x <== concat(y, reverse(y)) = x | 	7	6	2	3	0
+right_strip(x) = x <== concat(y, right_strip(y)) = x | 	7	6	2	3	0
+reverse(x) = y ==> is_prefix(x, reverse(y)) = p | true(p)	6	6	3	5	1
+to_lower(x) = x ==> is_prefix(x, x) = p | true(p)	5	5	2	3	1
+reverse(x) = y ==> is_prefix(y, reverse(x)) = p | true(p)	6	6	3	5	1
+is_prefix(x, y) = p <== reverse(reverse(y)) = x | true(p)	6	6	3	5	1
+is_prefix(x, x) = p <== reverse(reverse(y)) = x | true(p)	6	6	3	4	1
+is_prefix(x, x) = p <== reverse(reverse(x)) = y | true(p)	6	6	3	4	1
+is_prefix(x, x) = p === is_prefix(x, x) = q | true(p), true(q)	6	6	3	4	2
+is_prefix(x, x) = p <== is_prefix(y, x) = p | true(p)	6	6	3	5	1
+is_prefix(x, y) = p <== reverse(reverse(x)) = y | true(p)	6	6	3	5	1
+left_strip(x) = x ==> is_prefix(x, x) = p | true(p)	5	5	2	3	1
+reverse(x) = x ==> is_prefix(x, x) = p | true(p)	5	5	2	3	1
+is_prefix(x, y) = p ==> is_prefix(y, y) = p | true(p)	6	6	3	5	1
+is_prefix(x, x) = p <== is_prefix(y, to_caps(x)) = p | true(p)	7	7	3	5	1
+length(x) = a ==> reverse(x) = x | Not(gt1(a))	4	4	2	3	1
+is_prefix(x, reverse(x)) = p === is_prefix(x, reverse(x)) = q | Not(true(p)), Not(true(q))	7	8	3	4	2
+is_prefix(x, right_strip(x)) = p === is_prefix(x, right_strip(x)) = q | Not(true(p)), Not(true(q))	7	8	3	4	2
+is_prefix(x, x) = p <== is_prefix(x, to_lower(x)) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(y, to_lower(x)) = p | true(p)	6	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(x, right_strip(x)) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(x, left_strip(x)) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(x, reverse(x)) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(y, left_strip(x)) = p | true(p)	6	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(y, right_strip(x)) = p | true(p)	6	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(y, reverse(x)) = p | true(p)	6	7	3	5	1
+reverse(x) = x === is_prefix(x, reverse(x)) = p | true(p)	5	6	2	3	1
+left_strip(x) = x === is_prefix(x, left_strip(x)) = p | true(p)	5	6	2	3	1
+to_lower(x) = x === is_prefix(to_lower(x), x) = p | true(p)	5	6	2	3	1
+to_lower(x) = x === is_prefix(x, to_lower(x)) = p | true(p)	5	6	2	3	1
+length(x) = a ==> length(right_strip(x)) = a | Not(gt1(a))	4	5	2	4	1
+length(x) = a ==> length(right_strip(x)) = b | Not(gt(a, b)), Not(gt1(b))	4	5	3	4	2
+True === length(x) = a, length(x) = b | Not(gt(a, b)), Not(gt1(b))	4	5	3	3	2
+right_strip(x) = x ==> is_prefix(x, x) = p | true(p)	4	5	2	3	1
+to_caps(x) = y ==> is_prefix(y, y) = p | true(p)	4	5	3	4	1
+length(x) = a ==> length(all_strip(x)) = a | Not(gt1(a))	4	5	2	4	1
+length(x) = a ==> length(left_strip(x)) = b | Not(gt(a, b)), Not(gt1(b))	4	5	3	4	2
+all_strip(x) = x ==> is_prefix(x, x) = p | true(p)	4	5	2	3	1
+length(x) = a ==> length(all_strip(x)) = b | Not(gt(a, b)), Not(gt1(b))	4	5	3	4	2
+length(x) = a ==> length(left_strip(x)) = a | Not(gt1(a))	4	5	2	4	1
+is_prefix(x, x) = p <== is_prefix(x, to_lower(x)) = p | true(p)	5	7	2	4	1
+is_prefix(x, x) = p <== is_prefix(x, left_strip(x)) = p | true(p)	5	7	2	4	1
+is_prefix(x, x) = p <== is_prefix(x, reverse(x)) = p | true(p)	5	7	2	4	1
+right_strip(x) = x === is_prefix(x, right_strip(x)) = p | true(p)	4	6	2	3	1
+concat(x, x) = y ==> is_prefix(x, x) = p | true(p)	4	6	3	4	1
+to_caps(x) = y ==> is_prefix(y, to_caps(x)) = p | true(p)	4	6	3	5	1
+to_caps(x) = y ==> is_prefix(y, to_caps(y)) = p | true(p)	4	6	3	4	1
+is_prefix(x, to_lower(x)) = p === is_prefix(x, to_lower(x)) = q | true(p), true(q)	5	8	3	4	2
+is_prefix(x, left_strip(x)) = p === is_prefix(x, left_strip(x)) = q | true(p), true(q)	5	8	3	4	2
+to_caps(x) = x ==> is_prefix(x, x) = p | true(p)	3	5	2	3	1
+is_prefix(x, x) = p <== is_prefix(x, to_caps(x)) = q | true(p)	4	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(x, right_strip(x)) = p | true(p)	4	7	2	4	1
+is_prefix(x, to_caps(x)) = p === is_prefix(x, to_caps(x)) = q | Not(true(p)), Not(true(q))	4	8	3	4	2
+to_caps(x) = x === is_prefix(x, to_caps(x)) = p | true(p)	3	6	2	3	1
+concat(x, x) = y ==> is_prefix(y, x) = p | Not(true(p))	3	6	3	5	1
+concat(x, x) = y ==> is_prefix(x, y) = p | true(p)	3	6	3	5	1
+is_prefix(x, x) = p <== is_prefix(x, to_caps(x)) = p | true(p)	3	7	2	4	1
+concat(x, y) = z ==> is_prefix(z, z) = p | true(p)	2	6	4	5	1
+reverse(x) = y ==> reverse(reverse(z)) = z | 	1000	5	3	3	0
+all_strip(x) = x ==> reverse(reverse(y)) = y | 	1000	5	2	2	0
+to_caps(x) = y ==> reverse(reverse(z)) = z | 	1000	5	3	3	0
+to_caps(x) = x ==> reverse(reverse(y)) = y | 	1000	5	2	2	0
+to_lower(x) = y ==> reverse(reverse(z)) = z | 	1000	5	3	3	0
+length(x) = a ==> reverse(reverse(y)) = y | 	1000	5	3	3	0
+left_strip(x) = x ==> reverse(reverse(y)) = y | 	1000	5	2	2	0
+right_strip(x) = x ==> reverse(reverse(y)) = y | 	1000	5	2	2	0
+right_strip(x) = y ==> reverse(reverse(z)) = z | 	1000	5	3	3	0
+to_lower(x) = x ==> reverse(reverse(y)) = y | 	1000	5	2	2	0
+left_strip(x) = y ==> reverse(reverse(z)) = z | 	1000	5	3	3	0
+all_strip(x) = y ==> reverse(reverse(z)) = z | 	1000	5	3	3	0
+reverse(x) = x ==> reverse(reverse(y)) = y | 	1000	5	2	2	0
+reverse(reverse(x)) = x <== to_caps(reverse(y)) = y | 	1000	6	2	2	0
+left_strip(x) = x <== left_strip(y) = y, left_strip(z) = x | 	1000	6	3	4	0
+reverse(reverse(x)) = x <== reverse(right_strip(y)) = y | 	1000	6	2	2	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = y | 	1000	6	2	3	0
+reverse(reverse(x)) = x <== reverse(to_lower(y)) = z | 	1000	6	3	3	0
+left_strip(reverse(x)) = y ==> reverse(reverse(z)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== reverse(to_caps(y)) = y | 	1000	6	2	2	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = z | 	1000	6	3	4	0
+right_strip(x) = x <== right_strip(y) = y, right_strip(z) = x | 	1000	6	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(z) = z | 	1000	6	3	4	0
+reverse(reverse(x)) = x === reverse(reverse(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== reverse(to_caps(y)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== to_caps(reverse(y)) = z | 	1000	6	3	3	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = y | 	1000	6	2	3	0
+reverse(reverse(x)) = y ==> reverse(reverse(z)) = z | 	1000	6	3	3	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = z | 	1000	6	3	4	0
+is_prefix(x, y) = p ==> reverse(reverse(z)) = z | 	1000	6	4	4	0
+reverse(reverse(x)) = x <== right_strip(reverse(y)) = z | 	1000	6	3	3	0
+all_strip(reverse(x)) = x ==> reverse(reverse(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== reverse(reverse(y)) = z | 	1000	6	3	3	0
+reverse(left_strip(x)) = y ==> reverse(reverse(z)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== to_lower(reverse(y)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== right_strip(reverse(y)) = y | 	1000	6	2	2	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(z) = z | 	1000	6	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(z) = z | 	1000	6	3	4	0
+left_strip(reverse(x)) = x ==> reverse(reverse(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== reverse(to_lower(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== to_lower(reverse(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== reverse(right_strip(y)) = z | 	1000	6	3	3	0
+all_strip(reverse(x)) = y ==> reverse(reverse(z)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== is_prefix(y, reverse(z)) = p | 	1000	7	4	4	0
+reverse(reverse(x)) = x <== is_prefix(y, reverse(y)) = p | 	1000	7	3	3	0
+concat(x, x) = y ==> reverse(reverse(z)) = z | 	848	6	3	3	0
+to_caps(x) = y <== is_prefix(to_caps(z), z) = p | Not(true(p))	700	6	4	4	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(z, right_strip(z)) = p | Not(true(p))	932	8	4	5	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(z, left_strip(z)) = p | Not(true(p))	855	8	4	5	1
+concat(x, y) = z ==> reverse(reverse(x)) = x | 	641	6	3	4	0
+concat(x, y) = z ==> reverse(reverse(y)) = y | 	636	6	3	4	0
+is_prefix(x, x) = p ==> reverse(reverse(y)) = y | 	636	6	3	3	0
+is_prefix(x, y) = p ==> reverse(reverse(y)) = y | 	628	6	3	4	0
+is_prefix(x, y) = p ==> reverse(reverse(x)) = x | 	626	6	3	4	0
+length(x) = a === length(y) = a, length(z) = b | gt1(a)	556	6	5	6	1
+reverse(reverse(x)) = x <== is_prefix(y, reverse(x)) = p | 	628	7	3	4	0
+reverse(reverse(x)) = x <== is_prefix(x, reverse(y)) = p | 	612	7	3	4	0
+to_lower(x) = y <== is_prefix(to_lower(z), z) = p | Not(true(p))	500	6	4	4	1
+right_strip(x) = x <== all_strip(y) = x, all_strip(z) = x | 	447	6	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(z) = x | 	231	6	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(z) = x | 	227	6	3	4	0
+is_prefix(x, x) = p <== is_prefix(to_lower(x), y) = q | true(p)	192	7	4	5	1
+right_strip(x) = x <== all_strip(y) = x | 	107	4	2	3	0
+concat(x, y) = z ==> reverse(reverse(z)) = z | 	136	6	3	4	0
+to_caps(x) = y ==> reverse(reverse(y)) = y | 	111	5	2	3	0
+left_strip(x) = y ==> reverse(reverse(y)) = y | 	108	5	2	3	0
+all_strip(x) = y ==> reverse(reverse(y)) = y | 	106	5	2	3	0
+reverse(x) = y ==> reverse(reverse(y)) = y | 	106	5	2	3	0
+right_strip(x) = y ==> reverse(reverse(y)) = y | 	106	5	2	3	0
+reverse(x) = y ==> reverse(reverse(x)) = x | 	106	5	2	3	0
+to_lower(x) = y ==> reverse(reverse(x)) = x | 	105	5	2	3	0
+left_strip(x) = y ==> reverse(reverse(x)) = x | 	102	5	2	3	0
+to_caps(x) = y ==> reverse(reverse(x)) = x | 	101	5	2	3	0
+right_strip(x) = y ==> reverse(reverse(x)) = x | 	100	5	2	3	0
+length(x) = a ==> reverse(reverse(x)) = x | 	100	5	2	3	0
+all_strip(x) = y ==> reverse(reverse(x)) = x | 	99	5	2	3	0
+left_strip(x) = x <== left_strip(x) = y, left_strip(z) = x | 	117	6	3	4	0
+left_strip(x) = x <== left_strip(x) = z, left_strip(y) = x | 	117	6	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(y) = z | 	117	6	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(z) = y | 	117	6	3	4	0
+right_strip(x) = x <== right_strip(x) = z, right_strip(y) = x | 	113	6	3	4	0
+right_strip(x) = x <== right_strip(x) = y, right_strip(z) = x | 	113	6	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(z) = y | 	113	6	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(y) = z | 	113	6	3	4	0
+to_caps(x) = y <== to_caps(z) = x, to_caps(z) = y | 	112	6	3	5	0
+to_caps(x) = y <== to_caps(y) = x, to_caps(z) = y | 	112	6	3	5	0
+to_caps(x) = y <== to_caps(x) = z, to_caps(z) = y | 	112	6	3	5	0
+to_caps(x) = x <== to_caps(y) = z, to_caps(z) = x | 	112	6	3	4	0
+reverse(reverse(x)) = x <== reverse(to_caps(y)) = x | 	111	6	2	3	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = x | 	109	6	2	3	0
+reverse(left_strip(x)) = y ==> reverse(reverse(y)) = y | 	108	6	2	3	0
+right_strip(x) = x <== all_strip(x) = y, all_strip(z) = x | 	107	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	107	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(z) = y | 	107	6	3	4	0
+right_strip(x) = x <== all_strip(x) = z, all_strip(y) = x | 	107	6	3	4	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = x | 	107	6	2	3	0
+reverse(x) = y <== reverse(y) = x, reverse(z) = x | 	106	6	3	5	0
+reverse(reverse(x)) = x <== reverse(right_strip(y)) = x | 	106	6	2	3	0
+reverse(x) = y <== reverse(x) = z, reverse(y) = x | 	106	6	3	5	0
+reverse(x) = y <== reverse(y) = x, reverse(z) = y | 	106	6	3	5	0
+reverse(x) = y <== reverse(y) = x, reverse(y) = z | 	106	6	3	5	0
+reverse(reverse(x)) = x <== reverse(reverse(x)) = y | 	106	6	2	3	0
+reverse(reverse(x)) = y ==> reverse(reverse(x)) = x | 	106	6	2	3	0
+reverse(reverse(x)) = y ==> reverse(reverse(y)) = y | 	106	6	2	3	0
+reverse(reverse(x)) = x <== reverse(reverse(y)) = x | 	106	6	2	3	0
+left_strip(reverse(x)) = y ==> reverse(reverse(y)) = y | 	105	6	2	3	0
+reverse(reverse(x)) = x <== to_lower(reverse(x)) = y | 	105	6	2	3	0
+reverse(reverse(x)) = x <== to_caps(reverse(y)) = x | 	103	6	2	3	0
+reverse(left_strip(x)) = y ==> reverse(reverse(x)) = x | 	102	6	2	3	0
+left_strip(reverse(x)) = y ==> reverse(reverse(x)) = x | 	102	6	2	3	0
+reverse(reverse(x)) = x <== right_strip(reverse(y)) = x | 	102	6	2	3	0
+all_strip(reverse(x)) = y ==> reverse(reverse(y)) = y | 	102	6	2	3	0
+to_lower(x) = y ==> reverse(reverse(y)) = y | 	85	5	2	3	0
+reverse(reverse(x)) = x <== to_caps(reverse(x)) = y | 	101	6	2	3	0
+reverse(reverse(x)) = x <== right_strip(reverse(x)) = y | 	100	6	2	3	0
+reverse(reverse(x)) = x <== reverse(right_strip(x)) = y | 	100	6	2	3	0
+all_strip(reverse(x)) = y ==> reverse(reverse(x)) = x | 	99	6	2	3	0
+reverse(reverse(x)) = x <== reverse(to_caps(x)) = y | 	98	6	2	3	0
+reverse(reverse(x)) = x <== reverse(to_lower(x)) = y | 	87	6	2	3	0
+reverse(reverse(x)) = x <== reverse(to_lower(y)) = x | 	85	6	2	3	0
+left_strip(x) = x ==> reverse(reverse(x)) = x | 	69	5	1	2	0
+reverse(reverse(x)) = x <== to_lower(reverse(y)) = x | 	82	6	2	3	0
+right_strip(x) = x ==> reverse(reverse(x)) = x | 	67	5	1	2	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(y) = y | 	78	6	2	3	0
+left_strip(x) = x <== all_strip(x) = x | 	50	4	1	2	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(y) = y | 	74	6	2	3	0
+right_strip(x) = x <== all_strip(x) = x | 	48	4	1	2	0
+all_strip(x) = x ==> reverse(reverse(x)) = x | 	47	5	1	2	0
+left_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	50	6	2	3	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(x) = y | 	50	6	2	3	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	48	6	2	3	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(x) = y | 	48	6	2	3	0
+right_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	48	6	2	3	0
+to_caps(x) = x ==> reverse(reverse(x)) = x | 	29	5	1	2	0
+to_caps(x) = y <== to_caps(y) = x, to_caps(y) = y | 	30	6	2	4	0
+to_lower(x) = x ==> reverse(reverse(x)) = x | 	25	5	1	2	0
+reverse(x) = x ==> reverse(reverse(x)) = x | 	24	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(to_lower(x), y) = p | true(p)	32	7	3	5	1
+reverse(x) = y <== reverse(x) = x, reverse(y) = x | 	24	6	2	4	0
+reverse(x) = x <== reverse(y) = x, reverse(y) = y | 	24	6	2	3	0
+reverse(x) = y <== reverse(y) = x, reverse(y) = y | 	24	6	2	4	0
+reverse(reverse(x)) = x <== right_strip(reverse(x)) = x | 	16	6	1	2	0
+all_strip(reverse(x)) = x ==> reverse(reverse(x)) = x | 	16	6	1	2	0
+reverse(reverse(x)) = x <== reverse(right_strip(x)) = x | 	16	6	1	2	0
+left_strip(reverse(x)) = x ==> reverse(reverse(x)) = x | 	15	6	1	2	0
+reverse(reverse(x)) = x <== reverse(to_lower(x)) = x | 	13	6	1	2	0
+reverse(reverse(x)) = x <== to_lower(reverse(x)) = x | 	13	6	1	2	0
+reverse(reverse(x)) = x <== to_caps(reverse(x)) = x | 	11	6	1	2	0
+reverse(reverse(x)) = x <== reverse(to_caps(x)) = x | 	11	6	1	2	0
+reverse(reverse(x)) = x <== is_prefix(x, reverse(x)) = p | 	12	7	2	3	0
+to_lower(x) = y ==> is_prefix(to_lower(x), y) = p | true(p)	10	6	3	5	1
+to_lower(x) = y ==> is_prefix(to_lower(y), y) = p | true(p)	10	6	3	4	1
+concat(x, x) = y ==> reverse(reverse(x)) = x | 	8	6	2	3	0
+concat(x, x) = y ==> reverse(reverse(y)) = y | 	6	6	2	3	0
+is_prefix(x, x) = p ==> reverse(reverse(x)) = x | 	6	6	2	3	0
+is_prefix(x, x) = p <== is_prefix(to_lower(x), x) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(to_lower(x), x) = p | true(p)	5	7	2	4	1
+to_caps(x) = y ==> is_prefix(to_caps(x), y) = p | true(p)	4	6	3	5	1
+to_caps(x) = y ==> is_prefix(to_caps(y), y) = p | true(p)	4	6	3	4	1
+is_prefix(x, x) = p <== is_prefix(to_caps(x), x) = q | true(p)	4	7	3	4	1
+to_caps(x) = x === is_prefix(to_caps(x), x) = p | true(p)	3	6	2	3	1
+is_prefix(x, x) = p <== is_prefix(to_caps(x), x) = p | true(p)	3	7	2	4	1
+left_strip(left_strip(x)) = y ==> reverse(reverse(z)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== right_strip(right_strip(y)) = y | 	1000	6	2	2	0
+length(reverse(x)) = a ==> reverse(reverse(y)) = y | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== to_caps(to_caps(y)) = z | 	1000	6	3	3	0
+reverse(reverse(x)) = x <== to_lower(to_lower(y)) = z | 	1000	6	3	3	0
+left_strip(left_strip(x)) = x ==> reverse(reverse(y)) = y | 	1000	6	2	2	0
+all_strip(all_strip(x)) = y ==> reverse(reverse(z)) = z | 	1000	6	3	3	0
+reverse(x) = y <== reverse(y) = x, reverse(z) = z | 	1000	6	3	5	0
+reverse(reverse(x)) = x <== to_caps(to_caps(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== to_lower(to_lower(y)) = y | 	1000	6	2	2	0
+all_strip(all_strip(x)) = x ==> reverse(reverse(y)) = y | 	1000	6	2	2	0
+reverse(reverse(x)) = x <== right_strip(right_strip(y)) = z | 	1000	6	3	3	0
+length(to_lower(x)) = a ==> to_lower(to_lower(y)) = z | gt1(a)	888	6	4	4	1
+left_strip(left_strip(x)) = y <== length(left_strip(z)) = a | gt1(a)	878	6	4	4	1
+left_strip(left_strip(x)) = x ==> is_prefix(y, left_strip(z)) = p | Not(true(p))	946	7	4	4	1
+length(to_caps(x)) = a ==> to_caps(to_caps(y)) = z | gt1(a)	776	6	4	4	1
+all_strip(all_strip(x)) = y <== length(all_strip(z)) = a | gt1(a)	760	6	4	4	1
+is_prefix(x, x) = p <== left_strip(left_strip(y)) = z | true(p)	702	6	4	4	1
+length(reverse(x)) = a ==> reverse(reverse(y)) = z | gt1(a)	682	6	4	4	1
+is_prefix(x, x) = p <== right_strip(right_strip(y)) = z | true(p)	678	6	4	4	1
+is_prefix(x, x) = p <== to_caps(to_caps(y)) = z | true(p)	672	6	4	4	1
+is_prefix(x, x) = p <== to_lower(to_lower(y)) = z | true(p)	672	6	4	4	1
+all_strip(all_strip(x)) = y ==> is_prefix(z, z) = p | true(p)	666	6	4	4	1
+length(to_caps(x)) = a <== length(to_caps(y)) = b | gt(b, a), gt1(a)	576	6	4	4	2
+right_strip(right_strip(x)) = y <== is_prefix(z, right_strip(z)) = p | Not(true(p))	636	7	4	4	1
+is_prefix(x, x) = p <== left_strip(left_strip(y)) = y | true(p)	468	6	3	3	1
+is_prefix(x, x) = p <== right_strip(right_strip(y)) = y | true(p)	444	6	3	3	1
+length(right_strip(x)) = a ==> right_strip(right_strip(y)) = z | gt1(a)	435	6	4	4	1
+to_caps(to_caps(x)) = y <== is_prefix(z, to_caps(z)) = p | Not(true(p))	448	7	4	4	1
+to_lower(to_lower(x)) = y <== is_prefix(z, to_lower(z)) = p | Not(true(p))	444	7	4	4	1
+all_strip(all_strip(x)) = x ==> is_prefix(y, y) = p | true(p)	312	6	3	3	1
+left_strip(left_strip(x)) = y <== is_prefix(z, left_strip(z)) = p | Not(true(p))	351	7	4	4	1
+length(to_lower(x)) = a ==> length(to_lower(y)) = b | gt(b, a), gt1(a)	269	6	4	4	2
+is_prefix(x, x) = p <== to_caps(to_caps(y)) = y | true(p)	180	6	3	3	1
+is_prefix(x, x) = p <== to_lower(to_lower(y)) = y | true(p)	180	6	3	3	1
+left_strip(left_strip(x)) = y <== is_prefix(y, left_strip(z)) = p | true(p)	202	7	4	5	1
+right_strip(right_strip(x)) = y <== is_prefix(y, right_strip(z)) = p | true(p)	168	7	4	5	1
+left_strip(left_strip(x)) = x <== left_strip(to_lower(y)) = x | 	119	6	2	3	0
+left_strip(left_strip(x)) = y ==> left_strip(left_strip(y)) = y | 	117	6	2	3	0
+left_strip(left_strip(x)) = x <== left_strip(left_strip(y)) = x | 	117	6	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(to_lower(y)) = x | 	117	6	2	3	0
+left_strip(x) = x <== left_strip(y) = z, left_strip(z) = x | 	117	6	3	4	0
+length(to_lower(x)) = a === length(to_lower(x)) = b | Not(gt(a, b)), Not(gt(b, a))	115	6	3	4	2
+left_strip(left_strip(x)) = x <== to_lower(left_strip(y)) = x | 	115	6	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(left_strip(y)) = x | 	114	6	2	3	0
+right_strip(right_strip(x)) = x <== right_strip(right_strip(y)) = x | 	113	6	2	3	0
+right_strip(to_caps(x)) = y ==> to_caps(to_caps(y)) = y | 	113	6	2	3	0
+left_strip(left_strip(x)) = x <== to_caps(left_strip(y)) = x | 	113	6	2	3	0
+right_strip(right_strip(x)) = y ==> right_strip(right_strip(y)) = y | 	113	6	2	3	0
+right_strip(right_strip(x)) = x <== right_strip(to_caps(y)) = x | 	113	6	2	3	0
+left_strip(left_strip(x)) = x <== right_strip(left_strip(y)) = x | 	112	6	2	3	0
+to_lower(to_lower(x)) = x <== to_lower(to_lower(y)) = x | 	112	6	2	3	0
+left_strip(to_lower(x)) = y ==> to_lower(to_lower(y)) = y | 	112	6	2	3	0
+to_lower(to_lower(x)) = y ==> to_lower(to_lower(y)) = y | 	112	6	2	3	0
+to_caps(to_caps(x)) = y ==> to_caps(to_caps(y)) = y | 	112	6	2	3	0
+to_caps(to_caps(x)) = x <== to_caps(to_caps(y)) = x | 	112	6	2	3	0
+left_strip(left_strip(x)) = x <== left_strip(to_caps(y)) = x | 	112	6	2	3	0
+left_strip(to_caps(x)) = y ==> to_caps(to_caps(y)) = y | 	112	6	2	3	0
+all_strip(all_strip(x)) = y ==> all_strip(all_strip(y)) = y | 	111	6	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(all_strip(y)) = x | 	111	6	2	3	0
+to_caps(to_caps(x)) = x <== to_caps(to_lower(y)) = x | 	111	6	2	3	0
+left_strip(left_strip(x)) = x <== left_strip(right_strip(y)) = x | 	110	6	2	3	0
+all_strip(all_strip(x)) = x <== to_caps(all_strip(y)) = x | 	110	6	2	3	0
+left_strip(right_strip(x)) = y ==> right_strip(right_strip(y)) = y | 	110	6	2	3	0
+all_strip(to_lower(x)) = y ==> to_lower(to_lower(y)) = y | 	110	6	2	3	0
+all_strip(all_strip(x)) = y === all_strip(left_strip(x)) = y | 	109	6	2	4	0
+right_strip(right_strip(x)) = x <== to_caps(right_strip(y)) = x | 	109	6	2	3	0
+length(to_caps(x)) = a === length(to_caps(x)) = b | Not(gt(a, b)), Not(gt(b, a))	109	6	3	4	2
+all_strip(all_strip(x)) = y ==> left_strip(left_strip(y)) = y | 	109	6	2	3	0
+all_strip(all_strip(x)) = x <== to_lower(all_strip(y)) = x | 	109	6	2	3	0
+all_strip(all_strip(x)) = y === left_strip(all_strip(x)) = y | 	109	6	2	4	0
+all_strip(all_strip(x)) = x <== left_strip(all_strip(y)) = x | 	109	6	2	3	0
+reverse(reverse(x)) = x <== to_caps(to_caps(y)) = x | 	108	6	2	3	0
+to_caps(to_caps(x)) = y === to_caps(to_lower(x)) = y | 	108	6	2	4	0
+left_strip(left_strip(x)) = y ==> reverse(reverse(y)) = y | 	108	6	2	3	0
+right_strip(right_strip(x)) = x <== right_strip(to_lower(y)) = x | 	108	6	2	3	0
+reverse(to_caps(x)) = y ==> to_caps(to_caps(y)) = y | 	108	6	2	3	0
+left_strip(left_strip(x)) = x <== left_strip(reverse(y)) = x | 	108	6	2	3	0
+all_strip(all_strip(x)) = y ==> right_strip(right_strip(y)) = y | 	107	6	2	3	0
+all_strip(all_strip(x)) = x <== right_strip(all_strip(y)) = x | 	107	6	2	3	0
+all_strip(all_strip(x)) = y === right_strip(all_strip(x)) = y | 	107	6	2	4	0
+all_strip(all_strip(x)) = x <== all_strip(right_strip(y)) = x | 	106	6	2	3	0
+all_strip(all_strip(x)) = x <== reverse(all_strip(y)) = x | 	106	6	2	3	0
+all_strip(all_strip(x)) = y ==> reverse(reverse(y)) = y | 	106	6	2	3	0
+to_lower(to_caps(x)) = y ==> to_lower(to_caps(y)) = y | 	106	6	2	3	0
+to_lower(to_caps(x)) = x <== to_lower(to_caps(y)) = x | 	106	6	2	3	0
+reverse(reverse(x)) = x <== right_strip(right_strip(y)) = x | 	106	6	2	3	0
+length(reverse(x)) = a === length(reverse(x)) = b | Not(gt(a, b)), Not(gt(b, a))	105	6	3	4	2
+right_strip(reverse(x)) = y ==> right_strip(right_strip(y)) = y | 	105	6	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(to_caps(y)) = x | 	105	6	2	3	0
+all_strip(to_caps(x)) = y ==> to_caps(to_caps(y)) = y | 	105	6	2	3	0
+right_strip(right_strip(x)) = x <== to_lower(right_strip(y)) = x | 	104	6	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(reverse(y)) = x | 	104	6	2	3	0
+all_strip(all_strip(x)) = y === all_strip(right_strip(x)) = y | 	103	6	2	4	0
+left_strip(left_strip(x)) = y ==> reverse(reverse(x)) = x | 	102	6	2	3	0
+to_lower(to_caps(x)) = x <== to_lower(to_lower(y)) = x | 	101	6	2	3	0
+right_strip(to_lower(x)) = y ==> to_lower(to_lower(y)) = y | 	101	6	2	3	0
+to_lower(to_caps(x)) = y === to_lower(to_lower(x)) = y | 	101	6	2	4	0
+reverse(reverse(x)) = x <== right_strip(right_strip(x)) = y | 	100	6	2	3	0
+reverse(reverse(x)) = x <== to_caps(to_caps(x)) = y | 	100	6	2	3	0
+length(reverse(x)) = a ==> reverse(reverse(x)) = x | 	100	6	2	3	0
+all_strip(all_strip(x)) = y ==> reverse(reverse(x)) = x | 	99	6	2	3	0
+reverse(reverse(x)) = x <== to_lower(to_lower(x)) = y | 	99	6	2	3	0
+reverse(to_lower(x)) = y ==> to_lower(to_lower(y)) = y | 	94	6	2	3	0
+to_lower(to_lower(x)) = y <== is_prefix(y, to_lower(z)) = p | true(p)	109	7	4	5	1
+reverse(reverse(x)) = x <== to_lower(to_lower(y)) = x | 	85	6	2	3	0
+left_strip(left_strip(x)) = x ==> reverse(reverse(x)) = x | 	69	6	1	2	0
+reverse(reverse(x)) = x <== right_strip(right_strip(x)) = x | 	67	6	1	2	0
+right_strip(right_strip(x)) = y <== is_prefix(x, right_strip(z)) = p | true(p)	67	7	4	5	1
+left_strip(left_strip(x)) = x <== is_prefix(x, left_strip(y)) = p | true(p)	65	7	3	4	1
+left_strip(left_strip(x)) = y <== is_prefix(x, left_strip(z)) = p | true(p)	63	7	4	5	1
+all_strip(all_strip(x)) = x === left_strip(all_strip(x)) = x | 	50	6	1	2	0
+all_strip(all_strip(x)) = x ==> left_strip(left_strip(x)) = x | 	50	6	1	2	0
+all_strip(all_strip(x)) = x === all_strip(left_strip(x)) = x | 	50	6	1	2	0
+all_strip(all_strip(x)) = x === right_strip(all_strip(x)) = x | 	48	6	1	2	0
+all_strip(all_strip(x)) = x === all_strip(right_strip(x)) = x | 	48	6	1	2	0
+all_strip(all_strip(x)) = x ==> right_strip(right_strip(x)) = x | 	48	6	1	2	0
+left_strip(left_strip(x)) = x <== left_strip(right_strip(x)) = x | 	48	6	1	2	0
+left_strip(right_strip(x)) = x ==> right_strip(right_strip(x)) = x | 	48	6	1	2	0
+left_strip(left_strip(x)) = x <== right_strip(left_strip(x)) = x | 	48	6	1	2	0
+all_strip(all_strip(x)) = x ==> reverse(reverse(x)) = x | 	47	6	1	2	0
+to_lower(to_lower(x)) = x <== is_prefix(x, to_lower(y)) = p | true(p)	47	7	3	4	1
+to_lower(to_lower(x)) = y <== is_prefix(z, to_lower(x)) = p | true(p)	47	7	4	5	1
+right_strip(right_strip(x)) = y <== is_prefix(z, right_strip(y)) = p | true(p)	43	7	4	5	1
+left_strip(left_strip(x)) = y <== is_prefix(z, left_strip(x)) = p | true(p)	43	7	4	5	1
+right_strip(right_strip(x)) = y <== is_prefix(z, right_strip(x)) = p | true(p)	43	7	4	5	1
+left_strip(left_strip(x)) = y <== is_prefix(z, left_strip(y)) = p | true(p)	43	7	4	5	1
+to_caps(to_caps(x)) = x <== is_prefix(x, to_caps(y)) = p | true(p)	42	7	3	4	1
+reverse(reverse(x)) = x <== to_caps(to_caps(x)) = x | 	29	6	1	2	0
+to_lower(to_caps(x)) = x === to_lower(to_lower(x)) = x | 	28	6	1	2	0
+to_caps(to_caps(x)) = x === to_caps(to_lower(x)) = x | 	28	6	1	2	0
+all_strip(all_strip(x)) = y ==> is_prefix(y, y) = p | true(p)	27	6	3	4	1
+reverse(reverse(x)) = x <== to_lower(to_lower(x)) = x | 	25	6	1	2	0
+is_prefix(x, x) = p <== left_strip(left_strip(y)) = x | true(p)	18	6	3	4	1
+all_strip(all_strip(x)) = x <== reverse(all_strip(x)) = x | 	16	6	1	2	0
+left_strip(left_strip(x)) = x <== left_strip(to_caps(x)) = x | 	16	6	1	2	0
+all_strip(all_strip(x)) = x <== all_strip(reverse(x)) = x | 	16	6	1	2	0
+left_strip(left_strip(x)) = x <== to_caps(left_strip(x)) = x | 	16	6	1	2	0
+left_strip(to_caps(x)) = x ==> to_caps(to_caps(x)) = x | 	16	6	1	2	0
+reverse(right_strip(x)) = x ==> right_strip(right_strip(x)) = x | 	16	6	1	2	0
+left_strip(left_strip(x)) = y ==> is_prefix(y, left_strip(x)) = p | true(p)	18	7	3	5	1
+left_strip(left_strip(x)) = y ==> is_prefix(y, left_strip(y)) = p | true(p)	18	7	3	4	1
+right_strip(right_strip(x)) = x <== right_strip(to_caps(x)) = x | 	15	6	1	2	0
+left_strip(left_strip(x)) = x <== left_strip(reverse(x)) = x | 	15	6	1	2	0
+left_strip(to_lower(x)) = x ==> to_lower(to_lower(x)) = x | 	15	6	1	2	0
+left_strip(left_strip(x)) = x <== to_lower(left_strip(x)) = x | 	15	6	1	2	0
+is_prefix(x, x) = p <== right_strip(right_strip(y)) = x | true(p)	15	6	3	4	1
+right_strip(to_caps(x)) = x ==> to_caps(to_caps(x)) = x | 	15	6	1	2	0
+left_strip(left_strip(x)) = x <== left_strip(to_lower(x)) = x | 	15	6	1	2	0
+right_strip(right_strip(x)) = x <== to_caps(right_strip(x)) = x | 	15	6	1	2	0
+left_strip(left_strip(x)) = x <== reverse(left_strip(x)) = x | 	15	6	1	2	0
+right_strip(right_strip(x)) = x <== right_strip(to_lower(x)) = x | 	13	6	1	2	0
+right_strip(right_strip(x)) = x <== to_lower(right_strip(x)) = x | 	13	6	1	2	0
+reverse(to_lower(x)) = x ==> to_lower(to_lower(x)) = x | 	13	6	1	2	0
+right_strip(to_lower(x)) = x ==> to_lower(to_lower(x)) = x | 	13	6	1	2	0
+right_strip(right_strip(x)) = y ==> is_prefix(y, right_strip(y)) = p | true(p)	15	7	3	4	1
+right_strip(right_strip(x)) = y ==> is_prefix(y, right_strip(x)) = p | true(p)	15	7	3	5	1
+reverse(to_caps(x)) = x ==> to_caps(to_caps(x)) = x | 	11	6	1	2	0
+is_prefix(x, x) = p <== to_lower(to_lower(y)) = x | true(p)	10	6	3	4	1
+all_strip(all_strip(x)) = x <== all_strip(to_caps(x)) = x | 	9	6	1	2	0
+all_strip(to_caps(x)) = x ==> to_caps(to_caps(x)) = x | 	9	6	1	2	0
+all_strip(all_strip(x)) = x <== to_caps(all_strip(x)) = x | 	9	6	1	2	0
+to_lower(to_lower(x)) = y ==> is_prefix(y, to_lower(y)) = p | true(p)	10	7	3	4	1
+to_lower(to_lower(x)) = y ==> is_prefix(y, to_lower(x)) = p | true(p)	10	7	3	5	1
+all_strip(all_strip(x)) = x <== all_strip(to_lower(x)) = x | 	8	6	1	2	0
+all_strip(to_lower(x)) = x ==> to_lower(to_lower(x)) = x | 	8	6	1	2	0
+all_strip(all_strip(x)) = x <== to_lower(all_strip(x)) = x | 	8	6	1	2	0
+is_prefix(x, x) = p <== to_lower(to_lower(x)) = y | true(p)	6	6	3	4	1
+is_prefix(x, x) = p <== to_caps(to_caps(x)) = y | true(p)	6	6	3	4	1
+is_prefix(x, x) = p <== right_strip(right_strip(x)) = y | true(p)	6	6	3	4	1
+is_prefix(x, x) = p <== left_strip(left_strip(x)) = y | true(p)	6	6	3	4	1
+all_strip(all_strip(x)) = y ==> is_prefix(x, x) = p | true(p)	6	6	3	4	1
+is_prefix(x, x) = p <== left_strip(left_strip(x)) = x | true(p)	5	6	2	3	1
+is_prefix(x, x) = p <== to_lower(to_lower(x)) = x | true(p)	5	6	2	3	1
+to_lower(to_lower(x)) = x === is_prefix(x, to_lower(x)) = p | true(p)	5	7	2	3	1
+left_strip(left_strip(x)) = x === is_prefix(x, left_strip(x)) = p | true(p)	5	7	2	3	1
+all_strip(all_strip(x)) = x ==> is_prefix(x, x) = p | true(p)	4	6	2	3	1
+is_prefix(x, x) = p <== to_caps(to_caps(y)) = x | true(p)	4	6	3	4	1
+is_prefix(x, x) = p <== right_strip(right_strip(x)) = x | true(p)	4	6	2	3	1
+to_caps(to_caps(x)) = y ==> is_prefix(y, to_caps(x)) = p | true(p)	4	7	3	5	1
+right_strip(right_strip(x)) = x === is_prefix(x, right_strip(x)) = p | true(p)	4	7	2	3	1
+to_caps(to_caps(x)) = y ==> is_prefix(y, to_caps(y)) = p | true(p)	4	7	3	4	1
+is_prefix(x, x) = p <== to_caps(to_caps(x)) = x | true(p)	3	6	2	3	1
+to_caps(to_caps(x)) = x === is_prefix(x, to_caps(x)) = p | true(p)	3	7	2	3	1
+reverse(reverse(x)) = x <== reverse(y) = y | 	1000	5	2	2	0
+concat(x, x) = y <== length(z) = a | gt1(a)	856	5	4	4	1
+is_prefix(x, x) = p <== all_strip(y) = y, all_strip(z) = z | true(p)	1000	7	4	4	1
+length(to_lower(x)) = a === length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+to_caps(to_caps(x)) = y <== to_caps(x) = y, to_caps(z) = z | 	1000	7	3	5	0
+reverse(reverse(x)) = x <== reverse(y) = y, reverse(z) = y | 	1000	7	3	3	0
+to_caps(to_caps(x)) = x <== to_caps(y) = y, to_caps(z) = x | 	1000	7	3	4	0
+reverse(reverse(x)) = x <== is_prefix(reverse(y), z) = p | 	1000	7	4	4	0
+reverse(reverse(x)) = x <== is_prefix(reverse(y), y) = p | 	1000	7	3	3	0
+is_prefix(x, x) = p <== is_prefix(to_lower(y), z) = q | true(p)	1000	7	5	5	1
+to_caps(to_lower(x)) = y <== to_caps(x) = y, to_caps(z) = z | 	1000	7	3	5	0
+all_strip(right_strip(x)) = x <== all_strip(x) = x, all_strip(y) = y | 	1000	7	2	3	0
+to_caps(to_lower(x)) = x <== to_caps(y) = x, to_caps(z) = z | 	1000	7	3	4	0
+all_strip(left_strip(x)) = x <== all_strip(x) = x, all_strip(y) = z | 	1000	7	3	4	0
+all_strip(all_strip(x)) = x <== all_strip(x) = x, all_strip(y) = y | 	1000	7	2	3	0
+reverse(reverse(x)) = x <== concat(y, reverse(y)) = z | 	1000	7	3	3	0
+is_prefix(x, x) = p <== is_prefix(left_strip(y), z) = q | true(p)	1000	7	5	5	1
+length(to_caps(x)) = a === length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+length(to_lower(x)) = a <== length(x) = a, length(y) = b | 	1000	7	4	6	0
+right_strip(right_strip(x)) = x <== right_strip(x) = x, right_strip(y) = z | 	1000	7	3	4	0
+all_strip(right_strip(x)) = x <== all_strip(y) = x, all_strip(z) = z | 	1000	7	3	4	0
+right_strip(right_strip(x)) = y <== right_strip(x) = y, right_strip(z) = z | 	1000	7	3	5	0
+right_strip(right_strip(x)) = x <== right_strip(y) = y, right_strip(z) = x | 	1000	7	3	4	0
+length(to_lower(x)) = a === length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+right_strip(right_strip(x)) = x <== right_strip(y) = x, right_strip(z) = z | 	1000	7	3	4	0
+length(reverse(x)) = a === length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+to_caps(to_caps(x)) = x <== to_caps(x) = x, to_caps(y) = z | 	1000	7	3	4	0
+length(reverse(x)) = a === length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+left_strip(left_strip(x)) = x <== left_strip(y) = x, left_strip(z) = z | 	1000	7	3	4	0
+to_caps(to_lower(x)) = x <== to_caps(x) = x, to_caps(y) = z | 	1000	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = x, reverse(y) = z | 	1000	7	3	4	0
+length(reverse(x)) = a <== length(x) = a, length(y) = a | 	1000	7	3	5	0
+right_strip(right_strip(x)) = x <== right_strip(x) = x, right_strip(y) = y | 	1000	7	2	3	0
+reverse(reverse(x)) = x <== reverse(y) = x, reverse(z) = z | 	1000	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(z) = z | 	1000	7	3	4	0
+is_prefix(x, x) = p <== is_prefix(reverse(y), z) = q | true(p)	1000	7	5	5	1
+is_prefix(x, x) = p <== all_strip(y) = y, all_strip(z) = x | true(p)	1000	7	4	5	1
+all_strip(right_strip(x)) = x <== all_strip(x) = x, all_strip(y) = z | 	1000	7	3	4	0
+reverse(reverse(x)) = x <== reverse(y) = y, reverse(z) = z | 	1000	7	3	3	0
+length(to_caps(x)) = a === length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+is_prefix(x, x) = p <== is_prefix(right_strip(y), z) = q | true(p)	1000	7	5	5	1
+to_caps(to_lower(x)) = x <== to_caps(y) = y, to_caps(z) = x | 	1000	7	3	4	0
+is_prefix(x, x) = p <== all_strip(y) = x, all_strip(z) = z | true(p)	1000	7	4	5	1
+all_strip(all_strip(x)) = x <== all_strip(y) = y, all_strip(z) = x | 	1000	7	3	4	0
+left_strip(left_strip(x)) = y <== left_strip(x) = y, left_strip(z) = z | 	1000	7	3	5	0
+length(to_caps(x)) = a <== length(x) = a, length(y) = b | 	1000	7	4	6	0
+is_prefix(x, x) = p <== length(y) = a, length(z) = a | true(p)	1000	7	5	5	1
+to_caps(to_caps(x)) = x <== to_caps(y) = x, to_caps(z) = z | 	1000	7	3	4	0
+all_strip(left_strip(x)) = x <== all_strip(x) = x, all_strip(y) = y | 	1000	7	2	3	0
+length(reverse(x)) = a <== length(x) = a, length(y) = b | 	1000	7	4	6	0
+reverse(reverse(x)) = x <== reverse(x) = z, reverse(y) = y | 	1000	7	3	4	0
+reverse(reverse(x)) = x <== reverse(y) = y, reverse(y) = z | 	1000	7	3	3	0
+all_strip(all_strip(x)) = y <== all_strip(x) = y, all_strip(z) = z | 	1000	7	3	5	0
+reverse(reverse(x)) = x <== reverse(y) = y, reverse(z) = x | 	1000	7	3	4	0
+left_strip(left_strip(x)) = x <== left_strip(x) = x, left_strip(y) = z | 	1000	7	3	4	0
+is_prefix(x, x) = p <== length(y) = a, length(z) = b | true(p)	1000	7	6	6	1
+left_strip(left_strip(x)) = x <== left_strip(y) = y, left_strip(z) = x | 	1000	7	3	4	0
+length(to_caps(x)) = a <== length(x) = a, length(y) = a | 	1000	7	3	5	0
+is_prefix(x, x) = p <== is_prefix(to_caps(y), z) = q | true(p)	1000	7	5	5	1
+all_strip(all_strip(x)) = x <== all_strip(y) = x, all_strip(z) = z | 	1000	7	3	4	0
+left_strip(left_strip(x)) = x <== left_strip(x) = x, left_strip(y) = y | 	1000	7	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(x) = x, all_strip(y) = z | 	1000	7	3	4	0
+length(to_lower(x)) = a <== length(x) = a, length(y) = a | 	1000	7	3	5	0
+length(to_lower(x)) = a ==> length(y) = a, length(z) = a | gt1(a)	984	7	4	5	1
+length(reverse(x)) = a ==> length(y) = a, length(z) = a | gt1(a)	984	7	4	5	1
+length(to_caps(x)) = a ==> length(y) = a, length(z) = a | gt1(a)	968	7	4	5	1
+is_prefix(x, y) = p <== is_prefix(to_caps(z), z) = p | Not(true(p))	958	7	4	5	1
+length(right_strip(x)) = a ==> length(y) = a, length(y) = b | gt1(a)	948	7	4	5	1
+length(right_strip(x)) = a ==> length(x) = b, length(y) = a | gt1(a)	948	7	4	6	1
+right_strip(right_strip(x)) = x ==> is_prefix(y, right_strip(z)) = p | Not(true(p))	939	7	4	4	1
+is_prefix(x, y) = p <== is_prefix(reverse(z), z) = p | Not(true(p))	935	7	4	5	1
+is_prefix(x, x) = p <== length(y) = a | true(p)	666	5	4	4	1
+length(right_strip(x)) = a ==> length(y) = a, length(z) = a | gt1(a)	920	7	4	5	1
+right_strip(right_strip(x)) = x ==> is_prefix(right_strip(y), z) = p | Not(true(p))	916	7	4	4	1
+is_prefix(x, y) = p <== is_prefix(to_lower(z), z) = p | Not(true(p))	915	7	4	5	1
+to_caps(to_caps(x)) = x <== to_caps(x) = x, to_caps(y) = y | 	900	7	2	3	0
+concat(x, x) = y <== length(z) = a, length(z) = b | gt1(a)	856	7	5	5	1
+to_caps(to_lower(x)) = x <== to_caps(x) = x, to_caps(y) = y | 	840	7	2	3	0
+is_prefix(x, reverse(y)) = p <== is_prefix(z, reverse(z)) = p | Not(true(p))	935	8	4	5	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(to_caps(y), z) = p | Not(true(p))	920	8	4	5	1
+concat(x, x) = y ==> length(x) = a, length(z) = b | gt(b, a)	793	7	5	6	1
+concat(x, x) = y ==> length(x) = b, length(z) = a | gt(a, b)	793	7	5	6	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(z, right_strip(z)) = q | Not(true(p))	879	8	5	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(to_lower(y), z) = p | Not(true(p))	868	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> is_prefix(reverse(y), z) = p | Not(true(p))	865	8	4	5	1
+is_prefix(x, y) = p <== all_strip(x) = x, all_strip(z) = z | Not(true(p))	740	7	4	5	1
+to_caps(to_caps(x)) = x <== to_caps(y) = x, to_caps(z) = x | 	716	7	3	4	0
+to_caps(to_caps(x)) = y <== to_caps(x) = y, to_caps(z) = y | 	716	7	3	5	0
+to_caps(to_lower(x)) = y <== to_caps(x) = y, to_caps(z) = y | 	707	7	3	5	0
+is_prefix(x, y) = p <== is_prefix(to_caps(z), z) = q | Not(true(q))	700	7	5	5	1
+to_caps(to_caps(x)) = y <== is_prefix(to_caps(z), z) = p | Not(true(p))	700	7	4	4	1
+is_prefix(x, x) = p <== is_prefix(left_strip(y), z) = p | true(p)	696	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(right_strip(y), z) = p | true(p)	672	7	4	5	1
+to_caps(to_lower(x)) = x <== to_caps(y) = x, to_caps(z) = x | 	672	7	3	4	0
+length(all_strip(x)) = a ==> all_strip(x) = x, all_strip(y) = z | gt1(a)	667	7	4	5	1
+length(right_strip(x)) = a ==> length(x) = a, length(y) = b | gt1(a)	667	7	4	6	1
+is_prefix(x, x) = p <== length(y) = a, length(y) = b | true(p)	666	7	5	5	1
+is_prefix(x, x) = p <== length(x) = b, length(y) = a | true(p)	666	7	5	6	1
+is_prefix(x, x) = p <== length(x) = a, length(y) = b | true(p)	666	7	5	6	1
+is_prefix(x, x) = p <== all_strip(y) = y, all_strip(z) = y | true(p)	666	7	4	4	1
+length(right_strip(x)) = a ==> length(x) = b, length(y) = b | gt1(a)	663	7	4	5	1
+concat(x, y) = z <== length(x) = a | gt1(a)	472	5	4	5	1
+reverse(reverse(x)) = x <== concat(y, reverse(x)) = z | 	636	7	3	4	0
+reverse(reverse(x)) = x <== is_prefix(reverse(x), y) = p | 	626	7	3	4	0
+reverse(reverse(x)) = x <== concat(x, reverse(y)) = z | 	617	7	3	4	0
+reverse(reverse(x)) = x <== is_prefix(reverse(y), x) = p | 	606	7	3	4	0
+reverse(reverse(x)) = y <== is_prefix(reverse(z), z) = p | Not(true(p))	582	7	4	4	1
+is_prefix(x, y) = p <== is_prefix(reverse(z), z) = q | Not(true(q))	582	7	5	5	1
+reverse(reverse(x)) = x <== reverse(x) = x, reverse(y) = y | 	576	7	2	3	0
+length(to_lower(x)) = a === length(y) = a, length(z) = b | gt1(a)	556	7	5	6	1
+length(reverse(x)) = a === length(y) = a, length(z) = b | gt1(a)	556	7	5	6	1
+length(to_caps(x)) = a === length(y) = a, length(z) = b | gt1(a)	556	7	5	6	1
+concat(x, x) = y ==> length(y) = b, length(z) = a | gt1(b)	555	7	5	6	1
+concat(x, x) = y ==> length(y) = a, length(z) = b | gt1(a)	555	7	5	6	1
+is_prefix(x, reverse(y)) = p <== is_prefix(z, reverse(z)) = q | Not(true(q))	582	8	5	5	1
+is_prefix(x, y) = p <== is_prefix(to_lower(z), z) = q | Not(true(q))	500	7	5	5	1
+to_lower(to_lower(x)) = y <== is_prefix(to_lower(z), z) = p | Not(true(p))	500	7	4	4	1
+concat(x, y) = z <== length(x) = a, length(x) = b | gt1(a)	472	7	5	6	1
+all_strip(all_strip(x)) = y <== all_strip(x) = y, all_strip(z) = y | 	451	7	3	5	0
+all_strip(all_strip(x)) = x <== all_strip(y) = x, all_strip(z) = x | 	451	7	3	4	0
+all_strip(left_strip(x)) = x <== all_strip(y) = x, all_strip(z) = x | 	449	7	3	4	0
+all_strip(right_strip(x)) = x <== all_strip(y) = x, all_strip(z) = x | 	447	7	3	4	0
+is_prefix(x, x) = p <== all_strip(x) = x, all_strip(y) = z | true(p)	444	7	4	5	1
+is_prefix(x, y) = p <== length(x) = a, length(z) = b | gt1(a)	444	7	6	7	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(z, left_strip(z)) = q | Not(true(q))	375	8	5	5	1
+is_prefix(x, x) = p <== all_strip(y) = y, all_strip(y) = z | true(p)	312	7	4	4	1
+is_prefix(x, x) = p <== all_strip(x) = y, all_strip(z) = z | true(p)	312	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = z, all_strip(y) = y | true(p)	312	7	4	5	1
+is_prefix(x, x) = p <== all_strip(y) = z, all_strip(z) = y | true(p)	312	7	4	4	1
+right_strip(right_strip(x)) = x <== concat(y, right_strip(z)) = x | 	284	7	3	4	0
+is_prefix(x, x) = p <== is_prefix(reverse(y), z) = p | true(p)	270	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(left_strip(y), x) = q | true(p)	267	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(to_lower(y), z) = p | true(p)	264	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(right_strip(y), x) = q | true(p)	248	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(right_strip(x), y) = q | true(p)	247	7	4	5	1
+is_prefix(x, y) = p <== is_prefix(right_strip(z), z) = q | Not(true(p)), Not(true(q))	246	7	5	5	2
+is_prefix(x, x) = p <== is_prefix(to_caps(y), z) = p | true(p)	240	7	4	5	1
+is_prefix(x, y) = p <== length(x) = b, length(y) = a | gt(b, a), Not(true(p))	232	7	5	7	2
+is_prefix(x, y) = p <== length(x) = a, length(y) = b | gt(a, b), Not(true(p))	232	7	5	7	2
+left_strip(left_strip(x)) = y <== left_strip(x) = y, left_strip(z) = y | 	231	7	3	5	0
+left_strip(left_strip(x)) = x <== left_strip(y) = x, left_strip(z) = x | 	231	7	3	4	0
+right_strip(right_strip(x)) = x <== right_strip(y) = x, right_strip(z) = x | 	227	7	3	4	0
+right_strip(right_strip(x)) = y <== right_strip(x) = y, right_strip(z) = y | 	227	7	3	5	0
+is_prefix(x, x) = p <== is_prefix(left_strip(x), y) = q | true(p)	227	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(to_caps(y), x) = q | true(p)	225	7	4	5	1
+is_prefix(x, x) = p <== all_strip(y) = x, all_strip(z) = x | true(p)	215	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = x, all_strip(y) = y | true(p)	208	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(to_caps(x), y) = q | true(p)	200	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(reverse(x), y) = q | true(p)	193	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(reverse(y), x) = q | true(p)	182	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(to_lower(y), x) = q | true(p)	174	7	4	5	1
+left_strip(left_strip(x)) = y === left_strip(x) = y | 	117	5	2	4	0
+left_strip(left_strip(x)) = x <== left_strip(y) = x | 	117	5	2	3	0
+right_strip(right_strip(x)) = x <== right_strip(y) = x | 	113	5	2	3	0
+right_strip(right_strip(x)) = y === right_strip(x) = y | 	113	5	2	4	0
+to_caps(to_caps(x)) = x <== to_caps(y) = x | 	112	5	2	3	0
+to_caps(to_caps(x)) = y === to_caps(x) = y | 	112	5	2	4	0
+all_strip(all_strip(x)) = y === all_strip(x) = y | 	111	5	2	4	0
+all_strip(all_strip(x)) = x <== all_strip(y) = x | 	111	5	2	3	0
+reverse(reverse(x)) = x <== reverse(x) = y | 	106	5	2	3	0
+length(to_lower(x)) = a === length(x) = a | 	106	5	2	4	0
+reverse(reverse(x)) = x <== reverse(y) = x | 	106	5	2	3	0
+length(to_caps(x)) = a === length(x) = a | 	101	5	2	4	0
+is_prefix(x, y) = p ==> all_strip(x) = x, all_strip(z) = x | true(p)	139	7	4	5	1
+is_prefix(x, y) = p ==> length(y) = a, length(z) = a | true(p)	138	7	5	6	1
+reverse(reverse(x)) = x <== concat(y, reverse(z)) = x | 	136	7	3	4	0
+length(reverse(x)) = a === length(x) = a | 	97	5	2	4	0
+left_strip(left_strip(x)) = y <== left_strip(x) = y, left_strip(x) = z | 	117	7	3	5	0
+left_strip(left_strip(x)) = x <== left_strip(x) = x, left_strip(y) = x | 	117	7	2	3	0
+left_strip(left_strip(x)) = y <== left_strip(x) = y, left_strip(z) = x | 	117	7	3	5	0
+left_strip(left_strip(x)) = y <== left_strip(x) = y, left_strip(y) = z | 	117	7	3	5	0
+left_strip(left_strip(x)) = y <== left_strip(z) = x, left_strip(z) = y | 	117	7	3	5	0
+left_strip(left_strip(x)) = x <== left_strip(y) = z, left_strip(z) = x | 	117	7	3	4	0
+left_strip(left_strip(x)) = x <== left_strip(y) = x, left_strip(z) = y | 	117	7	3	4	0
+left_strip(left_strip(x)) = x <== left_strip(x) = z, left_strip(y) = x | 	117	7	3	4	0
+left_strip(left_strip(x)) = y <== left_strip(x) = z, left_strip(z) = y | 	117	7	3	5	0
+left_strip(left_strip(x)) = x <== left_strip(y) = x, left_strip(y) = z | 	117	7	3	4	0
+left_strip(left_strip(x)) = y === left_strip(x) = y, left_strip(y) = y | 	117	7	2	4	0
+left_strip(left_strip(x)) = x <== left_strip(x) = y, left_strip(z) = x | 	117	7	3	4	0
+left_strip(left_strip(x)) = y <== left_strip(y) = x, left_strip(z) = y | 	117	7	3	5	0
+right_strip(right_strip(x)) = y <== right_strip(x) = y, right_strip(y) = z | 	113	7	3	5	0
+right_strip(right_strip(x)) = y <== right_strip(z) = x, right_strip(z) = y | 	113	7	3	5	0
+right_strip(right_strip(x)) = y === right_strip(x) = y, right_strip(y) = y | 	113	7	2	4	0
+right_strip(right_strip(x)) = x <== right_strip(x) = y, right_strip(z) = x | 	113	7	3	4	0
+right_strip(right_strip(x)) = y <== right_strip(y) = x, right_strip(z) = y | 	113	7	3	5	0
+right_strip(right_strip(x)) = y <== right_strip(x) = y, right_strip(z) = x | 	113	7	3	5	0
+right_strip(right_strip(x)) = x <== right_strip(y) = x, right_strip(y) = z | 	113	7	3	4	0
+right_strip(right_strip(x)) = x <== right_strip(x) = x, right_strip(y) = x | 	113	7	2	3	0
+right_strip(right_strip(x)) = y <== right_strip(x) = z, right_strip(z) = y | 	113	7	3	5	0
+right_strip(right_strip(x)) = y <== right_strip(x) = y, right_strip(x) = z | 	113	7	3	5	0
+right_strip(right_strip(x)) = x <== right_strip(x) = z, right_strip(y) = x | 	113	7	3	4	0
+right_strip(right_strip(x)) = x <== right_strip(y) = x, right_strip(z) = y | 	113	7	3	4	0
+right_strip(right_strip(x)) = x <== right_strip(y) = z, right_strip(z) = x | 	113	7	3	4	0
+to_caps(to_caps(x)) = x <== to_caps(y) = z, to_caps(z) = x | 	112	7	3	4	0
+to_caps(to_caps(x)) = x <== to_caps(y) = x, to_caps(z) = y | 	112	7	3	4	0
+to_caps(to_caps(x)) = x <== to_caps(y) = x, to_caps(y) = z | 	112	7	3	4	0
+to_caps(to_caps(x)) = y <== to_caps(y) = x, to_caps(z) = y | 	112	7	3	5	0
+to_caps(to_caps(x)) = y <== to_caps(x) = z, to_caps(z) = y | 	112	7	3	5	0
+to_caps(to_caps(x)) = y === to_caps(x) = y, to_caps(y) = y | 	112	7	2	4	0
+to_caps(to_caps(x)) = y <== to_caps(z) = x, to_caps(z) = y | 	112	7	3	5	0
+to_caps(to_caps(x)) = y <== to_caps(x) = y, to_caps(y) = z | 	112	7	3	5	0
+left_strip(left_strip(x)) = x <== is_prefix(left_strip(y), x) = p | true(p)	112	7	3	4	1
+to_caps(to_caps(x)) = y <== to_caps(x) = y, to_caps(x) = z | 	112	7	3	5	0
+to_caps(to_caps(x)) = x <== to_caps(x) = y, to_caps(z) = x | 	112	7	3	4	0
+to_caps(to_caps(x)) = y <== to_caps(x) = y, to_caps(z) = x | 	112	7	3	5	0
+to_caps(to_caps(x)) = x <== to_caps(x) = x, to_caps(y) = x | 	112	7	2	3	0
+to_caps(to_caps(x)) = x <== to_caps(x) = z, to_caps(y) = x | 	112	7	3	4	0
+all_strip(all_strip(x)) = x <== all_strip(x) = z, all_strip(y) = x | 	111	7	3	4	0
+all_strip(all_strip(x)) = y <== all_strip(z) = x, all_strip(z) = y | 	111	7	3	5	0
+all_strip(all_strip(x)) = y <== all_strip(x) = y, all_strip(x) = z | 	111	7	3	5	0
+all_strip(all_strip(x)) = x <== all_strip(x) = x, all_strip(y) = x | 	111	7	2	3	0
+all_strip(all_strip(x)) = y <== all_strip(x) = z, all_strip(z) = y | 	111	7	3	5	0
+all_strip(all_strip(x)) = x <== all_strip(x) = y, all_strip(z) = x | 	111	7	3	4	0
+all_strip(all_strip(x)) = x <== all_strip(y) = x, all_strip(y) = z | 	111	7	3	4	0
+all_strip(all_strip(x)) = y <== all_strip(y) = x, all_strip(z) = y | 	111	7	3	5	0
+all_strip(all_strip(x)) = y <== all_strip(x) = y, all_strip(z) = x | 	111	7	3	5	0
+all_strip(all_strip(x)) = y === all_strip(x) = y, all_strip(y) = y | 	111	7	2	4	0
+to_caps(to_lower(x)) = y <== to_caps(x) = y, to_caps(x) = z | 	111	7	3	5	0
+all_strip(all_strip(x)) = y <== all_strip(x) = y, all_strip(y) = z | 	111	7	3	5	0
+all_strip(all_strip(x)) = x <== all_strip(y) = z, all_strip(z) = x | 	111	7	3	4	0
+all_strip(all_strip(x)) = x <== all_strip(y) = x, all_strip(z) = y | 	111	7	3	4	0
+left_strip(left_strip(x)) = x === left_strip(x) = x | 	78	5	1	2	0
+all_strip(left_strip(x)) = x <== all_strip(y) = x, all_strip(z) = y | 	109	7	3	4	0
+all_strip(left_strip(x)) = x <== all_strip(x) = y, all_strip(z) = x | 	109	7	3	4	0
+all_strip(left_strip(x)) = x <== all_strip(x) = x, all_strip(y) = x | 	109	7	2	3	0
+all_strip(left_strip(x)) = x <== all_strip(y) = x, all_strip(y) = z | 	109	7	3	4	0
+all_strip(left_strip(x)) = x <== all_strip(x) = z, all_strip(y) = x | 	109	7	3	4	0
+to_caps(to_lower(x)) = y <== to_caps(x) = y, to_caps(y) = z | 	108	7	3	5	0
+to_caps(to_lower(x)) = y <== to_caps(x) = z, to_caps(z) = y | 	108	7	3	5	0
+all_strip(right_strip(x)) = x <== all_strip(y) = x, all_strip(z) = y | 	107	7	3	4	0
+all_strip(right_strip(x)) = x <== all_strip(y) = x, all_strip(y) = z | 	107	7	3	4	0
+all_strip(right_strip(x)) = x <== all_strip(x) = z, all_strip(y) = x | 	107	7	3	4	0
+all_strip(right_strip(x)) = x <== all_strip(x) = y, all_strip(z) = x | 	107	7	3	4	0
+all_strip(right_strip(x)) = x <== all_strip(x) = x, all_strip(y) = x | 	107	7	2	3	0
+reverse(reverse(x)) = x <== reverse(x) = z, reverse(y) = z | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = z, reverse(y) = x | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(z) = x | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(y) = x, reverse(z) = y | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(z) = y | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(y) = x | 	106	7	2	3	0
+reverse(reverse(x)) = x <== reverse(y) = x, reverse(y) = z | 	106	7	3	4	0
+to_caps(to_lower(x)) = x <== to_caps(y) = x, to_caps(y) = z | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(x) = z | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(y) = z | 	106	7	3	4	0
+reverse(reverse(x)) = x <== reverse(y) = x, reverse(z) = x | 	106	7	3	4	0
+length(to_lower(x)) = a <== length(x) = a, length(x) = b | 	106	7	3	5	0
+right_strip(right_strip(x)) = x === right_strip(x) = x | 	74	5	1	2	0
+to_caps(to_lower(x)) = x <== to_caps(y) = x, to_caps(z) = y | 	103	7	3	4	0
+to_caps(to_lower(x)) = x <== to_caps(y) = z, to_caps(z) = x | 	103	7	3	4	0
+to_caps(to_lower(x)) = x <== to_caps(x) = y, to_caps(z) = x | 	103	7	3	4	0
+to_caps(to_lower(x)) = x <== to_caps(x) = x, to_caps(y) = x | 	103	7	2	3	0
+to_caps(to_lower(x)) = x <== to_caps(x) = z, to_caps(y) = x | 	103	7	3	4	0
+to_caps(to_lower(x)) = y <== to_caps(x) = y, to_caps(z) = x | 	103	7	3	5	0
+to_caps(to_lower(x)) = y <== to_caps(y) = x, to_caps(z) = y | 	103	7	3	5	0
+length(to_caps(x)) = a <== length(x) = a, length(x) = b | 	101	7	3	5	0
+concat(x, y) = z <== length(x) = a, length(y) = a | gt1(a)	99	7	4	6	1
+length(reverse(x)) = a <== length(x) = a, length(x) = b | 	97	7	3	5	0
+length(all_strip(x)) = a ==> all_strip(x) = y, all_strip(x) = z | gt1(a)	82	7	4	5	1
+length(all_strip(x)) = a ==> all_strip(x) = y, all_strip(y) = z | gt1(a)	82	7	4	5	1
+left_strip(left_strip(x)) = x <== left_strip(x) = x, left_strip(x) = y | 	78	7	2	3	0
+left_strip(left_strip(x)) = x <== left_strip(x) = y, left_strip(y) = x | 	78	7	2	3	0
+left_strip(left_strip(x)) = y <== left_strip(y) = x, left_strip(y) = y | 	78	7	2	4	0
+left_strip(left_strip(x)) = y <== left_strip(x) = y, left_strip(y) = x | 	78	7	2	4	0
+left_strip(left_strip(x)) = y <== left_strip(x) = x, left_strip(x) = y | 	78	7	2	4	0
+is_prefix(x, x) = p <== is_prefix(left_strip(y), y) = q | true(p)	78	7	4	4	1
+left_strip(left_strip(x)) = x <== left_strip(y) = x, left_strip(y) = y | 	78	7	2	3	0
+right_strip(right_strip(x)) = x <== right_strip(x) = x, right_strip(x) = y | 	74	7	2	3	0
+right_strip(right_strip(x)) = x <== right_strip(y) = x, right_strip(y) = y | 	74	7	2	3	0
+right_strip(right_strip(x)) = y <== right_strip(x) = x, right_strip(x) = y | 	74	7	2	4	0
+right_strip(right_strip(x)) = y <== right_strip(y) = x, right_strip(y) = y | 	74	7	2	4	0
+right_strip(right_strip(x)) = y <== right_strip(x) = y, right_strip(y) = x | 	74	7	2	4	0
+right_strip(right_strip(x)) = x <== right_strip(x) = y, right_strip(y) = x | 	74	7	2	3	0
+is_prefix(x, y) = p ==> all_strip(x) = x, all_strip(z) = y | true(p)	73	7	4	6	1
+all_strip(all_strip(x)) = x === all_strip(x) = x | 	52	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(reverse(y), y) = q | true(p)	72	7	4	4	1
+is_prefix(x, x) = p <== is_prefix(right_strip(y), y) = q | true(p)	66	7	4	4	1
+is_prefix(x, x) = p <== is_prefix(to_caps(y), y) = q | true(p)	60	7	4	4	1
+is_prefix(x, x) = p <== is_prefix(to_lower(y), y) = q | true(p)	60	7	4	4	1
+concat(x, x) = y <== length(x) = a, length(z) = a | gt1(a)	54	7	4	5	1
+all_strip(all_strip(x)) = y <== all_strip(x) = x, all_strip(x) = y | 	52	7	2	4	0
+is_prefix(x, x) = p <== length(x) = a, length(y) = a | true(p)	52	7	4	5	1
+all_strip(all_strip(x)) = y <== all_strip(x) = y, all_strip(y) = x | 	52	7	2	4	0
+all_strip(all_strip(x)) = x <== all_strip(y) = x, all_strip(y) = y | 	52	7	2	3	0
+all_strip(all_strip(x)) = x <== all_strip(x) = y, all_strip(y) = x | 	52	7	2	3	0
+all_strip(all_strip(x)) = y <== all_strip(y) = x, all_strip(y) = y | 	52	7	2	4	0
+all_strip(all_strip(x)) = x <== all_strip(x) = x, all_strip(x) = y | 	52	7	2	3	0
+all_strip(left_strip(x)) = x <== all_strip(y) = x, all_strip(y) = y | 	50	7	2	3	0
+all_strip(left_strip(x)) = x <== all_strip(x) = y, all_strip(y) = x | 	50	7	2	3	0
+all_strip(left_strip(x)) = x <== all_strip(x) = x, all_strip(x) = y | 	50	7	2	3	0
+is_prefix(x, x) = p <== is_prefix(right_strip(y), y) = p | true(p)	48	7	3	4	1
+all_strip(right_strip(x)) = x <== all_strip(x) = x, all_strip(x) = y | 	48	7	2	3	0
+all_strip(right_strip(x)) = x <== all_strip(y) = x, all_strip(y) = y | 	48	7	2	3	0
+all_strip(right_strip(x)) = x <== all_strip(x) = y, all_strip(y) = x | 	48	7	2	3	0
+is_prefix(x, y) = p ==> length(x) = a, length(z) = a | true(p)	42	7	5	6	1
+to_caps(to_caps(x)) = x === to_caps(x) = x | 	30	5	1	2	0
+is_prefix(x, x) = p <== all_strip(x) = z, all_strip(y) = z | true(p)	41	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = y, all_strip(z) = y | true(p)	41	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(to_caps(x), y) = p | true(p)	38	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(reverse(x), y) = p | true(p)	35	7	3	5	1
+reverse(reverse(x)) = x <== reverse(x) = x | 	24	5	1	2	0
+is_prefix(x, x) = p <== is_prefix(right_strip(x), y) = p | true(p)	33	7	3	5	1
+is_prefix(x, x) = p <== concat(y, concat(x, x)) = z | true(p)	36	8	4	5	1
+to_caps(to_caps(x)) = y <== to_caps(y) = x, to_caps(y) = y | 	30	7	2	4	0
+to_caps(to_caps(x)) = x <== to_caps(x) = y, to_caps(y) = x | 	30	7	2	3	0
+is_prefix(x, x) = p <== is_prefix(reverse(y), y) = p | true(p)	30	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(to_lower(y), y) = p | true(p)	30	7	3	4	1
+to_caps(to_caps(x)) = x <== to_caps(x) = x, to_caps(x) = y | 	30	7	2	3	0
+to_caps(to_caps(x)) = x <== to_caps(y) = x, to_caps(y) = y | 	30	7	2	3	0
+to_caps(to_caps(x)) = y <== to_caps(x) = x, to_caps(x) = y | 	30	7	2	4	0
+is_prefix(x, x) = p <== is_prefix(left_strip(y), y) = p | true(p)	30	7	3	4	1
+to_caps(to_caps(x)) = y <== to_caps(x) = y, to_caps(y) = x | 	30	7	2	4	0
+is_prefix(x, y) = p ==> all_strip(x) = x, all_strip(x) = z | true(p)	29	7	4	5	1
+to_caps(to_lower(x)) = x <== to_caps(y) = x, to_caps(y) = y | 	28	7	2	3	0
+to_caps(to_lower(x)) = x <== to_caps(x) = y, to_caps(y) = x | 	28	7	2	3	0
+to_caps(to_lower(x)) = y <== to_caps(x) = y, to_caps(y) = x | 	28	7	2	4	0
+to_caps(to_lower(x)) = y <== to_caps(y) = x, to_caps(y) = y | 	28	7	2	4	0
+to_caps(to_lower(x)) = x <== to_caps(x) = x, to_caps(x) = y | 	28	7	2	3	0
+to_caps(to_lower(x)) = y <== to_caps(x) = x, to_caps(x) = y | 	28	7	2	4	0
+is_prefix(x, y) = p ==> all_strip(x) = x, all_strip(y) = z | true(p)	28	7	4	6	1
+is_prefix(x, y) = p ==> concat(x, concat(x, x)) = z | true(p)	32	8	4	5	1
+is_prefix(x, x) = p <== all_strip(y) = x, all_strip(y) = z | true(p)	27	7	4	5	1
+is_prefix(x, x) = p <== all_strip(y) = z, all_strip(z) = x | true(p)	27	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = y, all_strip(z) = x | true(p)	27	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = z, all_strip(y) = x | true(p)	27	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = x, all_strip(y) = x | true(p)	27	7	3	4	1
+is_prefix(x, x) = p <== all_strip(y) = x, all_strip(z) = y | true(p)	27	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(left_strip(x), y) = p | true(p)	25	7	3	5	1
+reverse(reverse(x)) = x <== reverse(y) = x, reverse(y) = y | 	24	7	2	3	0
+reverse(reverse(x)) = x <== reverse(x) = x, reverse(x) = y | 	24	7	2	3	0
+reverse(reverse(x)) = x <== reverse(x) = y, reverse(y) = y | 	24	7	2	3	0
+reverse(reverse(x)) = x <== reverse(x) = x, reverse(y) = x | 	24	7	2	3	0
+is_prefix(x, x) = p <== concat(x, concat(x, y)) = z | true(p)	26	8	4	5	1
+is_prefix(x, x) = p <== concat(x, concat(y, x)) = z | true(p)	23	8	4	5	1
+left_strip(left_strip(x)) = y ==> is_prefix(left_strip(x), y) = p | true(p)	18	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(to_caps(y), y) = p | true(p)	18	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(left_strip(y), x) = p | true(p)	18	7	3	5	1
+length(right_strip(x)) = a <== length(x) = a, length(y) = a | Not(gt1(a))	16	7	3	5	1
+is_prefix(x, x) = p <== concat(y, concat(y, y)) = z | true(p)	18	8	4	4	1
+is_prefix(x, x) = p <== is_prefix(right_strip(y), x) = p | true(p)	15	7	3	5	1
+right_strip(right_strip(x)) = y ==> is_prefix(right_strip(x), y) = p | true(p)	15	7	3	5	1
+is_prefix(x, x) = p <== concat(y, concat(x, y)) = z | true(p)	17	8	4	5	1
+is_prefix(x, x) = p <== concat(y, concat(y, x)) = z | true(p)	15	8	4	5	1
+is_prefix(x, x) = p <== concat(x, concat(y, y)) = z | true(p)	14	8	4	5	1
+reverse(reverse(x)) = x <== is_prefix(reverse(x), x) = p | 	12	7	2	3	0
+reverse(reverse(x)) = x <== concat(x, reverse(x)) = y | 	12	7	2	3	0
+to_lower(to_lower(x)) = y ==> is_prefix(to_lower(y), y) = p | true(p)	10	7	3	4	1
+to_lower(to_lower(x)) = y ==> is_prefix(to_lower(x), y) = p | true(p)	10	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(to_lower(y), x) = p | true(p)	10	7	3	5	1
+is_prefix(x, x) = p <== length(x) = a | true(p)	6	5	3	4	1
+is_prefix(x, reverse(x)) = p === is_prefix(reverse(x), x) = p | 	9	8	2	4	0
+right_strip(right_strip(x)) = x <== concat(y, right_strip(y)) = x | 	7	7	2	3	0
+reverse(reverse(x)) = x <== concat(y, reverse(y)) = x | 	7	7	2	3	0
+is_prefix(x, to_lower(x)) = p === is_prefix(to_lower(x), x) = p | 	8	8	2	4	0
+is_prefix(x, y) = p ==> concat(y, concat(x, y)) = z | true(p)	8	8	4	6	1
+is_prefix(x, x) = p <== is_prefix(reverse(x), x) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== all_strip(x) = y, all_strip(y) = z | true(p)	6	7	4	5	1
+is_prefix(x, x) = p <== all_strip(x) = y, all_strip(x) = z | true(p)	6	7	4	5	1
+is_prefix(x, x) = p <== is_prefix(left_strip(x), x) = q | true(p)	6	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(reverse(y), x) = p | true(p)	6	7	3	5	1
+is_prefix(x, x) = p <== length(x) = a, length(x) = b | true(p)	6	7	4	5	1
+length(right_strip(x)) = a <== length(x) = a | Not(gt1(a))	4	5	2	4	1
+length(right_strip(x)) = a <== length(x) = b | Not(gt(a, b)), Not(gt1(b))	4	5	3	4	2
+is_prefix(x, y) = p ==> concat(x, concat(x, y)) = z | true(p)	6	8	4	6	1
+is_prefix(x, y) = p <== concat(x, concat(x, z)) = y | true(p)	6	8	4	6	1
+left_strip(left_strip(x)) = x === is_prefix(left_strip(x), x) = p | true(p)	5	7	2	3	1
+is_prefix(x, x) = p <== is_prefix(right_strip(x), x) = q | true(p)	5	7	3	4	1
+is_prefix(x, x) = p <== is_prefix(reverse(x), x) = p | true(p)	5	7	2	4	1
+to_lower(to_lower(x)) = x === is_prefix(to_lower(x), x) = p | true(p)	5	7	2	3	1
+is_prefix(x, x) = p <== is_prefix(left_strip(x), x) = p | true(p)	5	7	2	4	1
+is_prefix(x, to_caps(x)) = p === is_prefix(to_caps(x), x) = p | 	5	8	2	4	0
+is_prefix(x, x) = p <== is_prefix(to_caps(y), x) = p | true(p)	4	7	3	5	1
+right_strip(right_strip(x)) = x ==> is_prefix(right_strip(x), x) = p | true(p)	4	7	2	3	1
+length(right_strip(x)) = a <== length(x) = a, length(x) = b | Not(gt1(a))	4	7	3	5	1
+to_caps(to_caps(x)) = y ==> is_prefix(to_caps(x), y) = p | true(p)	4	7	3	5	1
+is_prefix(x, x) = p <== is_prefix(right_strip(x), x) = p | true(p)	4	7	2	4	1
+is_prefix(x, x) = p <== all_strip(x) = y, all_strip(y) = x | true(p)	4	7	3	4	1
+is_prefix(x, x) = p <== all_strip(y) = x, all_strip(y) = y | true(p)	4	7	3	4	1
+to_caps(to_caps(x)) = y ==> is_prefix(to_caps(y), y) = p | true(p)	4	7	3	4	1
+is_prefix(x, y) = p <== all_strip(x) = x, all_strip(x) = y | true(p)	4	7	3	5	1
+is_prefix(x, x) = p <== all_strip(x) = x, all_strip(x) = y | true(p)	4	7	3	4	1
+is_prefix(x, y) = p <== concat(x, concat(z, x)) = y | true(p)	4	8	4	6	1
+to_caps(to_caps(x)) = x === is_prefix(to_caps(x), x) = p | true(p)	3	7	2	3	1
+is_prefix(x, y) = p ==> concat(x, concat(y, y)) = z | true(p)	3	8	4	6	1
+is_prefix(x, y) = p <== concat(x, concat(z, z)) = y | true(p)	3	8	4	6	1
+is_prefix(x, x) = p <== concat(x, concat(x, x)) = y | true(p)	3	8	3	4	1
+is_prefix(x, y) = p <== concat(x, concat(x, x)) = y | true(p)	2	8	3	5	1
+is_prefix(x, x) = p <== concat(y, concat(z, y)) = x | true(p)	1	8	4	5	1
+reverse(x) = x, reverse(y) = z ==> reverse(z) = y | 	1000	6	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(z) = z | 	1000	8	3	5	0
+reverse(x) = x, reverse(y) = z ==> reverse(y) = z, reverse(z) = y | 	1000	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(z) = z | 	1000	8	3	5	0
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = x, left_strip(z) = z | true(p)	1000	8	4	5	1
+all_strip(x) = x, all_strip(y) = y <== all_strip(x) = x, all_strip(z) = y | 	1000	8	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(x) = x, to_caps(z) = y | 	1000	8	3	5	0
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = y, left_strip(z) = x | true(p)	1000	8	4	5	1
+to_caps(x) = x, to_caps(y) = y <== to_caps(y) = y, to_caps(z) = x | 	1000	8	3	5	0
+reverse(x) = x, reverse(y) = z === reverse(x) = x, reverse(z) = y | 	1000	8	3	6	0
+all_strip(x) = x, all_strip(y) = y <== all_strip(y) = y, all_strip(z) = x | 	1000	8	3	5	0
+is_prefix(right_strip(x), y) = p === is_prefix(right_strip(x), y) = q | Not(true(p)), Not(true(q))	916	8	4	6	2
+is_prefix(left_strip(x), y) = p === is_prefix(left_strip(x), y) = q | Not(true(p)), Not(true(q))	910	8	4	6	2
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), z) = p | Not(true(p))	888	8	4	5	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(right_strip(z), z) = p | Not(true(p))	800	8	4	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(y), z) = p | Not(true(p))	776	8	4	5	1
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(z), z) = p | Not(true(p))	744	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = z | Not(true(p))	552	6	4	4	1
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(z) = x | 	716	8	3	5	0
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), z) = p | Not(true(p))	652	8	4	5	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(z, right_strip(z)) = q | Not(true(q))	636	8	5	5	1
+is_prefix(to_lower(x), y) = p === is_prefix(to_lower(x), y) = q | Not(true(p)), Not(true(q))	622	8	4	6	2
+is_prefix(to_caps(x), y) = p === is_prefix(to_caps(x), y) = q | Not(true(p)), Not(true(q))	617	8	4	6	2
+is_prefix(x, to_caps(x)) = p ==> to_caps(y) = z | Not(true(p))	460	6	4	4	1
+is_prefix(x, to_lower(x)) = p === to_lower(x) = x, to_lower(y) = z | true(p)	595	8	4	5	1
+is_prefix(reverse(x), y) = p === is_prefix(reverse(x), y) = q | Not(true(p)), Not(true(q))	591	8	4	6	2
+is_prefix(x, left_strip(x)) = p === left_strip(x) = x, left_strip(y) = z | true(p)	585	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = z, reverse(z) = y | Not(true(p))	576	8	4	4	1
+is_prefix(x, reverse(x)) = p === reverse(x) = x, reverse(y) = z | true(p)	560	8	4	5	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(y) = z | Not(true(p))	405	6	4	4	1
+is_prefix(x, right_strip(x)) = p ==> right_strip(x) = y, right_strip(z) = z | Not(true(p))	518	8	4	5	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(y) = z | Not(true(p))	351	6	4	4	1
+is_prefix(x, right_strip(x)) = p === right_strip(x) = x, right_strip(y) = z | true(p)	452	8	4	5	1
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(z) = x | 	451	8	3	5	0
+is_prefix(x, to_caps(x)) = p ==> to_caps(y) = y, to_caps(z) = y | Not(true(p))	448	8	4	4	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(y) = z, to_caps(z) = z | Not(true(p))	448	8	4	4	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(y) = z, to_lower(z) = z | Not(true(p))	440	8	4	4	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(y) = y, to_lower(z) = y | Not(true(p))	440	8	4	4	1
+is_prefix(x, to_lower(y)) = p ==> to_lower(x) = x, to_lower(z) = z | true(p)	400	8	4	5	1
+is_prefix(x, left_strip(x)) = p <== left_strip(x) = x, left_strip(y) = y | true(p)	390	8	3	4	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(y) = z, left_strip(z) = z | Not(true(p))	351	8	4	4	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(y) = y, left_strip(z) = y | Not(true(p))	351	8	4	4	1
+is_prefix(x, to_caps(x)) = p === to_caps(x) = x, to_caps(y) = z | true(p)	345	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = x, to_lower(z) = z | true(p)	300	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = y, to_lower(z) = x | true(p)	300	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(x) = x, right_strip(y) = y | true(p)	296	8	3	4	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(right_strip(z), z) = q | Not(true(q))	273	8	5	5	1
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(z), z) = q | Not(true(q))	273	8	5	5	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(y) = z, left_strip(z) = y | Not(true(p))	234	8	4	4	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(x) = y, left_strip(z) = z | Not(true(p))	234	8	4	5	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(y) = y, left_strip(y) = z | Not(true(p))	234	8	4	4	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(x) = z, left_strip(y) = y | Not(true(p))	234	8	4	5	1
+is_prefix(x, reverse(y)) = p ==> reverse(x) = x, reverse(z) = z | true(p)	192	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = y, reverse(y) = z | Not(true(p))	168	8	4	4	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = z, reverse(z) = z | Not(true(p))	168	8	4	4	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = y, reverse(z) = x | Not(true(p))	168	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = y, reverse(z) = y | Not(true(p))	168	8	4	4	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = x, reverse(z) = z | Not(true(p))	168	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = y, reverse(z) = z | Not(true(p))	168	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = z, reverse(y) = y | Not(true(p))	168	8	4	5	1
+right_strip(x) = x <== right_strip(y) = z, right_strip(z) = x | 	113	6	3	4	0
+is_prefix(x, to_lower(x)) = p <== to_lower(x) = x, to_lower(y) = y | true(p)	150	8	3	4	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = x, to_caps(z) = z | true(p)	150	8	4	5	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(z) = z | true(p)	144	8	4	6	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(y) = z, to_lower(z) = y | Not(true(p))	120	8	4	4	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(x) = z, to_caps(y) = y | Not(true(p))	120	8	4	5	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(y) = z, to_caps(z) = y | Not(true(p))	120	8	4	4	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = x, to_caps(z) = z | true(p)	120	8	4	5	1
+is_prefix(x, reverse(x)) = p <== reverse(x) = x, reverse(y) = y | true(p)	120	8	3	4	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(y) = y, to_caps(y) = z | Not(true(p))	120	8	4	4	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(x) = z, to_lower(y) = y | Not(true(p))	120	8	4	5	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(x) = y, to_caps(z) = z | Not(true(p))	120	8	4	5	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(x) = y, to_lower(z) = z | Not(true(p))	120	8	4	5	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(y) = y, to_lower(y) = z | Not(true(p))	120	8	4	4	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = y, to_caps(z) = x | true(p)	120	8	4	5	1
+left_strip(x) = x, left_strip(x) = y <== left_strip(x) = y, left_strip(z) = x | 	117	8	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(z) = x, left_strip(z) = y | 	117	8	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(y) = x, left_strip(z) = y | 	117	8	3	5	0
+right_strip(x) = x, right_strip(y) = x <== right_strip(x) = y, right_strip(z) = x | 	113	8	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(z) = x, right_strip(z) = y | 	113	8	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(x) = y, right_strip(z) = x | 	113	8	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(y) = x, right_strip(z) = y | 	113	8	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(x) = y, to_caps(z) = x | 	112	8	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(x) = y, to_caps(z) = x | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(x) = y, to_caps(z) = x | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(y) = x, to_caps(z) = y | 	112	8	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(y) = x, to_caps(z) = y | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(y) = z | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(z) = y | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = x, to_caps(z) = y | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = x, to_caps(z) = y | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = z, to_caps(z) = x | 	112	8	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(z) = x, to_caps(z) = y | 	112	8	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(x) = z, to_caps(y) = x | 	112	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(z) = y | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = y <== all_strip(x) = y, all_strip(z) = x | 	111	8	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(x) = y, all_strip(z) = x | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = x, all_strip(z) = y | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = y <== all_strip(y) = x, all_strip(z) = y | 	111	8	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(x) = y, all_strip(z) = x | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(y) = z | 	111	8	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = z, all_strip(z) = x | 	111	8	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(x) = z, all_strip(y) = x | 	111	8	3	5	0
+is_prefix(x, to_lower(y)) = p ==> to_lower(x) = x, to_lower(z) = x | true(p)	109	8	4	5	1
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = x | 	78	6	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = y | 	78	6	2	3	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = x | 	74	6	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = y | 	74	6	2	3	0
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), x) = q | Not(true(p)), Not(true(q))	95	8	4	5	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), x) = p | Not(true(p))	95	8	3	5	1
+is_prefix(x, to_caps(x)) = p <== to_caps(x) = x, to_caps(y) = y | true(p)	90	8	3	4	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = y, to_caps(z) = z | true(p)	90	8	4	6	1
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), x) = p | Not(true(p))	87	8	3	5	1
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), x) = q | Not(true(p)), Not(true(q))	87	8	4	5	2
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(y), y) = q | Not(true(p)), Not(true(q))	87	8	4	5	2
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(y), y) = p | Not(true(p))	87	8	3	5	1
+is_prefix(x, left_strip(y)) = p ==> left_strip(x) = x | true(p)	65	6	3	4	1
+left_strip(x) = x, left_strip(x) = y === left_strip(y) = x, left_strip(y) = y | 	78	8	2	4	0
+left_strip(x) = x, left_strip(x) = y === left_strip(x) = y, left_strip(y) = x | 	78	8	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = y, left_strip(y) = y | 	78	8	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = x, left_strip(y) = x | 	78	8	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = x, left_strip(y) = y | 	78	8	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = x, right_strip(y) = x | 	74	8	2	4	0
+right_strip(x) = x, right_strip(x) = y === right_strip(y) = x, right_strip(y) = y | 	74	8	2	4	0
+right_strip(x) = x, right_strip(x) = y === right_strip(x) = y, right_strip(y) = x | 	74	8	2	4	0
+right_strip(x) = x, right_strip(y) = x <== right_strip(x) = x, right_strip(x) = y | 	74	8	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = y, right_strip(y) = y | 	74	8	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = x, right_strip(y) = y | 	74	8	2	4	0
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = x, left_strip(z) = x | true(p)	70	8	4	5	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = x, to_caps(z) = x | true(p)	70	8	4	5	1
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = x | 	52	6	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = y | 	52	6	2	3	0
+is_prefix(x, left_strip(y)) = p ==> left_strip(x) = x, left_strip(y) = z | true(p)	65	8	4	6	1
+is_prefix(x, left_strip(y)) = p ==> left_strip(x) = x, left_strip(x) = z | true(p)	65	8	4	5	1
+is_prefix(x, to_lower(y)) = p ==> to_lower(x) = x | true(p)	47	6	3	4	1
+is_prefix(x, right_strip(x)) = p <== right_strip(y) = x, right_strip(z) = x | true(p)	61	8	4	5	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = x | true(p)	42	6	3	4	1
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = x, all_strip(y) = y | 	52	8	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = y, all_strip(y) = y | 	52	8	2	4	0
+all_strip(x) = x, all_strip(x) = y === all_strip(x) = y, all_strip(y) = x | 	52	8	2	4	0
+all_strip(x) = x, all_strip(x) = y === all_strip(y) = x, all_strip(y) = y | 	52	8	2	4	0
+all_strip(x) = x, all_strip(y) = y <== all_strip(x) = x, all_strip(x) = y | 	52	8	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = x, all_strip(y) = x | 	52	8	2	4	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(x) = x, all_strip(x) = y | 	52	8	2	4	0
+is_prefix(x, to_lower(y)) = p ==> to_lower(x) = x, to_lower(y) = z | true(p)	47	8	4	6	1
+is_prefix(x, to_lower(y)) = p ==> to_lower(x) = x, to_lower(z) = y | true(p)	47	8	4	6	1
+is_prefix(x, to_lower(y)) = p ==> to_lower(x) = x, to_lower(x) = z | true(p)	47	8	4	5	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = x, to_caps(x) = z | true(p)	42	8	4	5	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = x, to_caps(z) = y | true(p)	42	8	4	6	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = x, to_caps(y) = z | true(p)	42	8	4	6	1
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = y | 	30	6	2	3	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = x | 	30	6	2	4	0
+is_prefix(x, reverse(y)) = p ==> reverse(x) = x, reverse(y) = z | true(p)	34	8	4	6	1
+is_prefix(x, reverse(y)) = p ==> reverse(x) = x, reverse(z) = x | true(p)	34	8	4	5	1
+is_prefix(x, reverse(y)) = p ==> reverse(x) = x, reverse(x) = z | true(p)	34	8	4	5	1
+is_prefix(x, reverse(y)) = p ==> reverse(x) = x, reverse(z) = y | true(p)	33	8	4	6	1
+reverse(x) = x, reverse(x) = y ==> reverse(y) = x | 	24	6	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(y) = y | 	24	6	2	3	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = x, to_caps(y) = x | 	30	8	2	4	0
+to_caps(x) = x, to_caps(x) = y === to_caps(x) = y, to_caps(y) = x | 	30	8	2	4	0
+to_caps(x) = x, to_caps(x) = y === to_caps(y) = x, to_caps(y) = y | 	30	8	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = y, to_caps(y) = y | 	30	8	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = x, to_caps(y) = y | 	30	8	2	4	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(x) = x, to_caps(x) = y | 	30	8	2	4	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(x) = x, to_caps(x) = y | 	30	8	2	4	0
+is_prefix(x, right_strip(x)) = p ==> right_strip(x) = y, right_strip(z) = y | Not(true(p))	29	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = x, to_lower(z) = x | true(p)	26	8	4	5	1
+reverse(x) = x, reverse(x) = y === reverse(x) = x, reverse(y) = x | 	24	8	2	4	0
+reverse(x) = x, reverse(x) = y === reverse(x) = y, reverse(y) = y | 	24	8	2	4	0
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = x | true(p)	18	6	3	4	1
+reverse(x) = x, reverse(x) = y ==> reverse(x) = y, reverse(y) = x | 	24	8	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = x, reverse(y) = y | 	24	8	2	4	0
+reverse(x) = x, reverse(x) = y === reverse(y) = x, reverse(y) = y | 	24	8	2	4	0
+reverse(x) = x, reverse(y) = y <== reverse(x) = x, reverse(x) = y | 	24	8	2	4	0
+is_prefix(x, right_strip(x)) = p <== right_strip(y) = x | true(p)	15	6	3	4	1
+is_prefix(x, left_strip(x)) = p <== left_strip(x) = z, left_strip(y) = x | true(p)	18	8	4	5	1
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = x, left_strip(y) = z | true(p)	18	8	4	5	1
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = x, left_strip(z) = y | true(p)	18	8	4	5	1
+is_prefix(x, left_strip(x)) = p <== left_strip(x) = x, left_strip(y) = x | true(p)	18	8	3	4	1
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = z, left_strip(z) = x | true(p)	18	8	4	5	1
+is_prefix(x, left_strip(x)) = p <== left_strip(x) = y, left_strip(z) = x | true(p)	18	8	4	5	1
+is_prefix(x, left_strip(y)) = p <== left_strip(x) = x, left_strip(y) = x | true(p)	18	8	3	5	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(x) = z, to_caps(y) = z | Not(true(p))	16	8	4	5	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(x) = y, to_caps(z) = y | Not(true(p))	16	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(y) = x, right_strip(y) = z | true(p)	15	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(x) = y, right_strip(z) = x | true(p)	15	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(y) = x, right_strip(z) = y | true(p)	15	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(x) = x, right_strip(y) = x | true(p)	15	8	3	4	1
+is_prefix(x, right_strip(x)) = p <== right_strip(x) = z, right_strip(y) = x | true(p)	15	8	4	5	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(x) = y, left_strip(z) = y | Not(true(p))	14	8	4	5	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(x) = z, left_strip(y) = z | Not(true(p))	14	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = x | true(p)	10	6	3	4	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(x) = z, to_lower(y) = z | Not(true(p))	12	8	4	5	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(x) = y, to_lower(z) = y | Not(true(p))	12	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(x) = z, to_lower(y) = x | true(p)	10	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = z, to_lower(z) = x | true(p)	10	8	4	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = x, to_lower(y) = z | true(p)	10	8	4	5	1
+is_prefix(x, to_lower(y)) = p <== to_lower(x) = x, to_lower(y) = x | true(p)	10	8	3	5	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = x, to_lower(z) = y | true(p)	10	8	4	5	1
+is_prefix(x, to_lower(y)) = p <== to_lower(x) = y, to_lower(z) = x | true(p)	10	8	4	6	1
+is_prefix(x, to_lower(x)) = p <== to_lower(x) = x, to_lower(y) = x | true(p)	10	8	3	4	1
+is_prefix(x, to_lower(x)) = p <== to_lower(x) = y, to_lower(z) = x | true(p)	10	8	4	5	1
+is_prefix(x, to_lower(y)) = p <== to_lower(x) = z, to_lower(y) = x | true(p)	10	8	4	6	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y | true(p)	6	6	3	5	1
+is_prefix(right_strip(x), x) = p === is_prefix(right_strip(x), x) = q | true(p), true(q)	8	8	3	4	2
+is_prefix(x, left_strip(x)) = p === is_prefix(left_strip(x), x) = p | 	8	8	2	4	0
+is_prefix(x, reverse(x)) = p ==> reverse(x) = y, reverse(y) = z | Not(true(p))	7	8	4	5	1
+is_prefix(x, right_strip(x)) = p ==> right_strip(x) = y, right_strip(y) = z | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = x, reverse(z) = x | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = z, reverse(y) = x | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = z, reverse(z) = x | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = x, reverse(z) = y | Not(true(p))	7	8	4	5	1
+is_prefix(x, right_strip(x)) = p ==> right_strip(x) = y, right_strip(x) = z | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(y) = x, reverse(y) = z | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = z, reverse(y) = z | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = y, reverse(x) = z | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = y, reverse(z) = y | Not(true(p))	7	8	4	5	1
+is_prefix(x, reverse(x)) = p ==> reverse(x) = y, reverse(z) = x | Not(true(p))	7	8	4	5	1
+is_prefix(x, to_lower(x)) = p === to_lower(x) = x | true(p)	5	6	2	3	1
+is_prefix(x, left_strip(x)) = p === left_strip(x) = x | true(p)	5	6	2	3	1
+is_prefix(x, reverse(x)) = p === reverse(x) = x | true(p)	5	6	2	3	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(z) = y | true(p)	6	8	4	6	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(x) = z | true(p)	6	8	4	6	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = x, to_caps(z) = x | true(p)	6	8	4	5	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(y) = x | true(p)	6	8	3	5	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(z) = x | true(p)	6	8	4	6	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(y) = z | true(p)	6	8	4	6	1
+is_prefix(x, right_strip(x)) = p === right_strip(x) = x | true(p)	4	6	2	3	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = x | true(p)	4	6	3	4	1
+is_prefix(x, left_strip(x)) = p <== left_strip(x) = x, left_strip(x) = y | true(p)	5	8	3	4	1
+is_prefix(x, left_strip(x)) = p <== left_strip(y) = x, left_strip(y) = y | true(p)	5	8	3	4	1
+is_prefix(x, reverse(x)) = p <== reverse(x) = x, reverse(y) = x | true(p)	5	8	3	4	1
+is_prefix(x, left_strip(y)) = p <== left_strip(x) = x, left_strip(x) = y | true(p)	5	8	3	5	1
+is_prefix(x, to_lower(y)) = p <== to_lower(x) = y, to_lower(y) = x | true(p)	5	8	3	5	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = x, reverse(x) = y | true(p)	5	8	3	5	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = y, reverse(y) = y | true(p)	5	8	3	5	1
+is_prefix(x, left_strip(x)) = p <== left_strip(x) = y, left_strip(y) = x | true(p)	5	8	3	4	1
+is_prefix(x, to_lower(x)) = p <== to_lower(x) = y, to_lower(y) = x | true(p)	5	8	3	4	1
+is_prefix(x, to_lower(x)) = p <== to_lower(y) = x, to_lower(y) = y | true(p)	5	8	3	4	1
+is_prefix(x, to_lower(y)) = p <== to_lower(x) = x, to_lower(x) = y | true(p)	5	8	3	5	1
+is_prefix(x, reverse(x)) = p <== reverse(x) = y, reverse(y) = y | true(p)	5	8	3	4	1
+is_prefix(x, to_lower(x)) = p <== to_lower(x) = x, to_lower(x) = y | true(p)	5	8	3	4	1
+is_prefix(x, reverse(y)) = p <== reverse(x) = x, reverse(y) = x | true(p)	5	8	3	5	1
+is_prefix(x, reverse(x)) = p <== reverse(y) = x, reverse(y) = y | true(p)	5	8	3	4	1
+is_prefix(x, reverse(x)) = p <== reverse(x) = x, reverse(x) = y | true(p)	5	8	3	4	1
+is_prefix(x, to_caps(y)) = p <== to_caps(x) = z, to_caps(y) = x | true(p)	4	8	4	6	1
+is_prefix(x, to_caps(y)) = p <== to_caps(x) = x, to_caps(y) = x | true(p)	4	8	3	5	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(x) = y, to_caps(y) = z | Not(true(p))	4	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(x) = y, right_strip(y) = x | true(p)	4	8	3	4	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(x) = y, to_lower(y) = z | Not(true(p))	4	8	4	5	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = x, to_caps(z) = y | true(p)	4	8	4	5	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = x, to_caps(y) = z | true(p)	4	8	4	5	1
+is_prefix(x, right_strip(x)) = p <== right_strip(x) = x, right_strip(x) = y | true(p)	4	8	3	4	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(x), x) = p | true(p)	4	8	2	4	1
+is_prefix(x, right_strip(x)) = p <== right_strip(y) = x, right_strip(y) = y | true(p)	4	8	3	4	1
+is_prefix(x, to_caps(x)) = p <== to_caps(x) = y, to_caps(z) = x | true(p)	4	8	4	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(x), x) = q | true(q), true(p)	4	8	3	4	2
+is_prefix(x, to_caps(x)) = p <== to_caps(x) = x, to_caps(y) = x | true(p)	4	8	3	4	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = y, to_caps(z) = y | true(p)	4	8	4	6	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = z, to_caps(z) = x | true(p)	4	8	4	5	1
+is_prefix(x, to_caps(x)) = p ==> to_caps(x) = y, to_caps(x) = z | Not(true(p))	4	8	4	5	1
+is_prefix(x, to_caps(x)) = p <== to_caps(x) = z, to_caps(y) = x | true(p)	4	8	4	5	1
+is_prefix(x, to_lower(x)) = p ==> to_lower(x) = y, to_lower(x) = z | Not(true(p))	4	8	4	5	1
+is_prefix(x, to_caps(y)) = p === to_caps(x) = y, to_caps(z) = x | true(p)	4	8	4	6	1
+is_prefix(x, to_caps(x)) = p === to_caps(x) = x | true(p)	3	6	2	3	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = y, to_caps(y) = z | true(p)	3	8	4	6	1
+is_prefix(x, to_caps(y)) = p ==> to_caps(x) = y, to_caps(x) = z | true(p)	3	8	4	6	1
+is_prefix(x, to_caps(x)) = p <== to_caps(x) = x, to_caps(x) = y | true(p)	3	8	3	4	1
+is_prefix(x, to_caps(x)) = p <== to_caps(x) = y, to_caps(y) = x | true(p)	3	8	3	4	1
+is_prefix(x, to_caps(y)) = p <== to_caps(x) = x, to_caps(x) = y | true(p)	3	8	3	5	1
+is_prefix(x, to_caps(x)) = p <== to_caps(y) = x, to_caps(y) = y | true(p)	3	8	3	4	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(x) = y, left_strip(x) = z | Not(true(p))	3	8	4	5	1
+is_prefix(x, left_strip(x)) = p ==> left_strip(x) = y, left_strip(y) = z | Not(true(p))	3	8	4	5	1
+is_prefix(x, to_caps(y)) = p <== to_caps(x) = y, to_caps(y) = x | true(p)	3	8	3	5	1
+length(x) = a <== length(y) = b, length(reverse(x)) = a | 	1000	7	4	6	0
+left_strip(x) = x <== left_strip(y) = y, left_strip(left_strip(x)) = x | 	1000	7	2	3	0
+all_strip(x) = x <== all_strip(y) = y, all_strip(all_strip(z)) = x | 	1000	7	3	4	0
+length(x) = a === length(x) = b, length(right_strip(y)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+length(x) = a <== length(y) = b, length(to_lower(x)) = a | 	1000	7	4	6	0
+left_strip(x) = x <== left_strip(y) = z, left_strip(left_strip(x)) = x | 	1000	7	3	4	0
+right_strip(x) = x <== right_strip(y) = y, right_strip(right_strip(x)) = x | 	1000	7	2	3	0
+length(x) = a <== length(y) = b, length(reverse(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+length(x) = a === length(x) = b, length(reverse(y)) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+right_strip(x) = x <== right_strip(y) = y, right_strip(right_strip(z)) = x | 	1000	7	3	4	0
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(z)) = z | 	1000	7	3	4	0
+length(x) = a === length(x) = b, length(to_lower(y)) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+to_lower(x) = y ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	1000	7	4	4	1
+length(x) = a <== length(y) = b, length(to_caps(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+all_strip(x) = x <== all_strip(y) = y, all_strip(all_strip(x)) = x | 	1000	7	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(z)) = z | 	1000	7	3	4	0
+length(x) = a <== length(y) = a, length(to_lower(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(z)) = z | 	1000	7	3	4	0
+length(x) = a <== length(y) = a, length(reverse(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+length(x) = a === length(x) = b, length(to_caps(y)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+length(x) = a <== length(y) = a, length(reverse(x)) = a | 	1000	7	3	5	0
+to_caps(x) = x <== to_caps(y) = z, to_caps(to_caps(x)) = x | 	1000	7	3	4	0
+right_strip(x) = x <== right_strip(y) = z, right_strip(right_strip(x)) = x | 	1000	7	3	4	0
+length(x) = a === length(x) = b, length(to_lower(y)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+length(x) = a <== length(y) = b, length(to_caps(x)) = a | 	1000	7	4	6	0
+to_caps(x) = x <== to_caps(y) = y, to_caps(to_caps(z)) = x | 	1000	7	3	4	0
+length(x) = a <== length(y) = a, length(to_caps(x)) = a | 	1000	7	3	5	0
+length(x) = a === length(x) = b, length(right_strip(y)) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+length(x) = a <== length(y) = b, length(to_lower(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+left_strip(x) = x <== left_strip(y) = y, left_strip(left_strip(z)) = x | 	1000	7	3	4	0
+length(x) = a === is_prefix(y, z) = p, length(x) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	6	7	2
+right_strip(x) = x ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	1000	7	3	3	1
+left_strip(x) = x ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	1000	7	3	3	1
+all_strip(x) = x <== all_strip(y) = z, all_strip(all_strip(x)) = x | 	1000	7	3	4	0
+length(x) = a <== length(y) = a, length(to_lower(x)) = a | 	1000	7	3	5	0
+length(x) = a === length(x) = b, length(to_caps(y)) = a | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(z)) = z | 	1000	7	3	4	0
+length(x) = a === length(x) = b, length(reverse(y)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	5	2
+length(x) = a <== length(y) = a, length(to_caps(x)) = b | Not(gt(a, b)), Not(gt(b, a))	1000	7	4	6	2
+length(x) = a ==> length(y) = a, length(to_caps(z)) = a | gt1(a)	984	7	4	5	1
+length(x) = a ==> length(y) = a, length(to_lower(z)) = a | gt1(a)	984	7	4	5	1
+length(x) = a ==> length(y) = a, length(reverse(z)) = a | gt1(a)	984	7	4	5	1
+length(x) = a ==> is_prefix(x, z) = p, length(y) = a | Not(true(p))	951	7	5	7	1
+length(x) = a === length(y) = a, length(right_strip(z)) = a | gt1(a)	948	7	4	5	1
+length(x) = a ==> is_prefix(z, x) = p, length(y) = a | Not(true(p))	924	7	5	7	1
+to_caps(x) = x <== to_caps(y) = y, to_caps(to_caps(x)) = x | 	900	7	2	3	0
+right_strip(x) = x ==> is_prefix(right_strip(y), right_strip(z)) = p | Not(true(p))	885	7	4	4	1
+left_strip(x) = x ==> is_prefix(left_strip(y), left_strip(z)) = p | Not(true(p))	849	7	4	4	1
+left_strip(x) = x, left_strip(x) = y ==> is_prefix(left_strip(z), left_strip(z)) = p | true(p)	1000	9	4	4	1
+reverse(x) = x, reverse(y) = z ==> reverse(z) = y, reverse(reverse(y)) = y | 	1000	9	3	5	0
+reverse(x) = x, reverse(y) = x ==> reverse(y) = y, reverse(reverse(z)) = z | 	1000	9	3	4	0
+is_prefix(left_strip(x), y) = p ==> is_prefix(left_strip(z), left_strip(z)) = q | true(q)	1000	9	5	5	1
+to_caps(x) = x, to_caps(y) = z ==> to_caps(z) = z, to_caps(to_caps(z)) = z | 	1000	9	3	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(x) = x, reverse(reverse(z)) = z | 	1000	9	3	4	0
+all_strip(x) = x, all_strip(y) = y === all_strip(x) = x, all_strip(all_strip(y)) = y | 	1000	9	2	4	0
+to_caps(x) = x, to_caps(y) = z === to_caps(x) = x, to_caps(to_caps(y)) = z | 	1000	9	3	6	0
+reverse(x) = x, reverse(y) = z ==> reverse(z) = y, reverse(reverse(x)) = x | 	1000	9	3	6	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = x, to_caps(to_caps(y)) = y | 	1000	9	3	5	0
+reverse(x) = x, reverse(y) = z ==> reverse(y) = z, reverse(reverse(y)) = y | 	1000	9	3	5	0
+reverse(x) = x, reverse(y) = x ==> reverse(y) = x, reverse(reverse(z)) = z | 	1000	9	3	5	0
+to_lower(x) = x, to_lower(y) = x ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	1000	9	4	4	1
+reverse(x) = x, reverse(x) = y ==> reverse(y) = x, reverse(reverse(z)) = z | 	1000	9	3	5	0
+is_prefix(x, left_strip(y)) = p ==> is_prefix(left_strip(z), left_strip(z)) = p | true(p)	1000	9	4	5	1
+reverse(x) = x, reverse(y) = y ==> reverse(y) = y, reverse(reverse(z)) = z | 	1000	9	3	4	0
+reverse(x) = x, reverse(y) = z ==> reverse(y) = z, reverse(reverse(z)) = z | 	1000	9	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(y) = y, to_caps(to_caps(z)) = x | 	1000	9	3	5	0
+is_prefix(x, reverse(y)) = p ==> is_prefix(z, reverse(reverse(z))) = q | true(q)	1000	9	5	5	1
+is_prefix(x, right_strip(y)) = p === is_prefix(x, right_strip(right_strip(y))) = p | 	1000	9	3	6	0
+reverse(x) = x, reverse(x) = y ==> reverse(y) = y, reverse(reverse(z)) = z | 	1000	9	3	4	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(x) = x, to_caps(to_caps(z)) = y | 	1000	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(to_caps(z)) = z | 	1000	9	3	5	0
+is_prefix(x, to_lower(y)) = p ==> is_prefix(to_lower(z), to_lower(z)) = q | true(q)	1000	9	5	5	1
+is_prefix(reverse(x), y) = p ==> is_prefix(z, reverse(reverse(z))) = q | true(q)	1000	9	5	5	1
+to_caps(x) = x, to_caps(y) = y ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	1000	9	4	4	1
+all_strip(x) = x, all_strip(y) = y ==> all_strip(x) = x, all_strip(all_strip(x)) = x | 	1000	9	2	3	0
+reverse(x) = x, reverse(y) = z ==> reverse(z) = y, reverse(reverse(z)) = z | 	1000	9	3	5	0
+to_lower(x) = x, to_lower(y) = y ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	1000	9	4	4	1
+is_prefix(x, right_strip(y)) = p ==> is_prefix(right_strip(z), right_strip(z)) = p | true(p)	1000	9	4	5	1
+is_prefix(right_strip(x), y) = p ==> is_prefix(right_strip(z), right_strip(z)) = q | true(q)	1000	9	5	5	1
+to_caps(x) = x, to_caps(y) = z === to_caps(y) = z, to_caps(to_caps(x)) = x | 	1000	9	3	6	0
+to_caps(x) = x, to_caps(y) = z ==> to_caps(x) = x, to_caps(to_caps(x)) = x | 	1000	9	3	4	0
+all_strip(x) = x, all_strip(y) = y <== all_strip(x) = x, all_strip(all_strip(z)) = y | 	1000	9	3	5	0
+reverse(x) = x, reverse(y) = z ==> reverse(y) = z, reverse(reverse(x)) = x | 	1000	9	3	6	0
+reverse(x) = x, reverse(y) = y ==> reverse(x) = x, reverse(reverse(z)) = z | 	1000	9	3	4	0
+left_strip(x) = x, left_strip(y) = x ==> is_prefix(left_strip(z), left_strip(z)) = p | true(p)	1000	9	4	4	1
+right_strip(x) = x, right_strip(y) = x ==> is_prefix(right_strip(z), right_strip(z)) = p | true(p)	1000	9	4	4	1
+right_strip(x) = x, right_strip(x) = y ==> is_prefix(right_strip(z), right_strip(z)) = p | true(p)	1000	9	4	4	1
+is_prefix(x, left_strip(y)) = p === is_prefix(x, left_strip(left_strip(y))) = p | 	1000	9	3	6	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = y, reverse(reverse(z)) = z | 	1000	9	3	5	0
+reverse(x) = x, reverse(y) = z ==> reverse(x) = x, reverse(reverse(y)) = y | 	1000	9	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = y, to_caps(to_caps(x)) = x | 	1000	9	3	5	0
+reverse(x) = x, reverse(y) = z ==> reverse(x) = x, reverse(reverse(x)) = x | 	1000	9	3	4	0
+is_prefix(right_strip(x), y) = p ==> is_prefix(right_strip(z), right_strip(z)) = p | true(p)	1000	9	4	5	1
+is_prefix(to_lower(x), y) = p ==> is_prefix(to_lower(z), to_lower(z)) = q | true(q)	1000	9	5	5	1
+reverse(x) = x, reverse(y) = y ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	1000	9	4	4	1
+is_prefix(x, right_strip(y)) = p ==> is_prefix(right_strip(z), right_strip(z)) = q | true(q)	1000	9	5	5	1
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = z, all_strip(all_strip(y)) = x | 	1000	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = z, to_caps(to_caps(y)) = x | 	1000	9	3	5	0
+is_prefix(left_strip(x), y) = p ==> is_prefix(left_strip(z), left_strip(z)) = p | true(p)	1000	9	4	5	1
+reverse(x) = x, reverse(y) = x ==> reverse(x) = y, reverse(reverse(z)) = z | 	1000	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(all_strip(z)) = z | 	1000	9	3	5	0
+is_prefix(to_caps(x), y) = p ==> is_prefix(to_caps(z), to_caps(z)) = q | true(q)	1000	9	5	5	1
+reverse(x) = x, reverse(y) = z ==> reverse(x) = x, reverse(reverse(z)) = z | 	1000	9	3	5	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = x, reverse(reverse(z)) = z | 	1000	9	3	4	0
+is_prefix(x, to_caps(y)) = p ==> is_prefix(to_caps(z), to_caps(z)) = q | true(q)	1000	9	5	5	1
+is_prefix(x, left_strip(y)) = p ==> is_prefix(left_strip(z), left_strip(z)) = q | true(q)	1000	9	5	5	1
+length(x) = a ==> is_prefix(y, z) = p, length(y) = a | gt1(a), Not(true(p))	747	7	5	6	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(y, left_strip(left_strip(z))) = q | Not(true(q))	946	9	5	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(y, right_strip(right_strip(z))) = q | Not(true(q))	939	9	5	5	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(left_strip(x), left_strip(y)) = p | Not(true(p))	936	9	3	6	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(z)) = x | 	716	7	3	4	0
+is_prefix(x, to_caps(x)) = p ==> is_prefix(y, to_caps(to_caps(z))) = p | Not(true(p))	916	9	4	5	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(left_strip(x), left_strip(y)) = q | Not(true(p)), Not(true(q))	908	9	4	6	2
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(x), right_strip(y)) = p | Not(true(p))	900	9	3	6	1
+to_caps(x) = x, to_caps(y) = y ==> to_caps(x) = x, to_caps(to_caps(x)) = x | 	900	9	2	3	0
+to_caps(x) = x, to_caps(y) = y ==> to_caps(y) = y, to_caps(to_caps(y)) = y | 	900	9	2	3	0
+is_prefix(left_strip(x), y) = p <== is_prefix(left_strip(x), left_strip(y)) = p | Not(true(p))	900	9	3	6	1
+to_caps(x) = x, to_caps(y) = y === to_caps(x) = x, to_caps(to_caps(y)) = y | 	900	9	2	4	0
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(x), right_strip(y)) = q | Not(true(p)), Not(true(q))	885	9	4	6	2
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), right_strip(z)) = q | Not(true(q))	885	9	5	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(y), right_strip(z)) = q | Not(true(q))	885	9	5	5	1
+is_prefix(reverse(x), x) = p ==> is_prefix(y, reverse(reverse(z))) = p | Not(true(p))	871	9	4	5	1
+is_prefix(x, reverse(x)) = p ==> is_prefix(y, reverse(reverse(z))) = p | Not(true(p))	871	9	4	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(y, right_strip(right_strip(z))) = p | Not(true(p))	866	9	4	5	1
+reverse(x) = y ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	672	7	4	4	1
+is_prefix(left_strip(x), y) = p <== is_prefix(left_strip(x), left_strip(y)) = q | Not(true(p)), Not(true(q))	861	9	4	6	2
+is_prefix(to_caps(x), x) = p ==> is_prefix(to_caps(y), to_caps(z)) = p | Not(true(p))	860	9	4	5	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(to_caps(y), to_caps(z)) = p | Not(true(p))	860	9	4	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(y, to_lower(to_lower(z))) = p | Not(true(p))	859	9	4	5	1
+length(x) = a ==> is_prefix(y, y) = p, length(x) = b | true(p)	666	7	5	6	1
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), left_strip(z)) = q | Not(true(q))	849	9	5	5	1
+is_prefix(left_strip(x), x) = p ==> is_prefix(left_strip(y), left_strip(z)) = q | Not(true(q))	849	9	5	5	1
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), right_strip(z)) = p | Not(true(p))	817	9	4	5	1
+length(x) = a <== is_prefix(y, x) = p, length(x) = b | Not(gt(a, b)), Not(gt(b, a))	634	7	5	6	2
+length(x) = a <== is_prefix(x, y) = p, length(x) = b | Not(gt(a, b)), Not(gt(b, a))	629	7	5	6	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(y, left_strip(left_strip(z))) = p | Not(true(p))	805	9	4	5	1
+is_prefix(left_strip(x), x) = p ==> is_prefix(left_strip(y), left_strip(z)) = p | Not(true(p))	757	9	4	5	1
+length(x) = a === length(y) = a, length(reverse(z)) = b | gt1(a)	580	7	5	6	1
+length(x) = a === length(y) = a, length(right_strip(z)) = b | gt1(a)	568	7	5	6	1
+length(x) = a === length(y) = a, length(to_caps(z)) = b | gt1(a)	564	7	5	6	1
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(to_caps(z)) = x | 	716	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = x, to_caps(to_caps(y)) = x | 	716	9	3	5	0
+length(x) = a === length(y) = a, length(to_lower(z)) = b | gt1(a)	540	7	5	6	1
+is_prefix(to_lower(x), x) = p ==> is_prefix(to_lower(y), to_lower(z)) = p | Not(true(p))	673	9	4	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(to_lower(y), to_lower(z)) = p | Not(true(p))	673	9	4	5	1
+is_prefix(left_strip(x), y) = p ==> is_prefix(left_strip(x), left_strip(x)) = q | true(q)	672	9	4	5	1
+is_prefix(x, to_caps(y)) = p === is_prefix(x, to_caps(to_caps(y))) = p | 	644	9	3	6	0
+is_prefix(x, left_strip(y)) = p ==> is_prefix(left_strip(y), left_strip(y)) = q | true(q)	642	9	4	5	1
+reverse(x) = y, reverse(y) = x ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	636	9	4	4	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(y), right_strip(z)) = p | Not(true(p))	634	9	4	5	1
+is_prefix(right_strip(x), y) = p ==> is_prefix(right_strip(x), right_strip(x)) = q | true(q)	633	9	4	5	1
+to_lower(x) = x, to_lower(y) = z ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	595	9	4	5	1
+is_prefix(x, to_lower(y)) = p === is_prefix(x, to_lower(to_lower(y))) = p | 	593	9	3	6	0
+to_caps(x) = y ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	460	7	4	4	1
+is_prefix(x, right_strip(y)) = p ==> is_prefix(right_strip(y), right_strip(y)) = q | true(q)	582	9	4	5	1
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(z)) = x | 	451	7	3	4	0
+reverse(x) = x, reverse(y) = y ==> reverse(y) = y, reverse(reverse(x)) = x | 	576	9	2	4	0
+reverse(x) = x, reverse(y) = y ==> reverse(y) = y, reverse(reverse(y)) = y | 	576	9	2	3	0
+reverse(x) = x, reverse(y) = y ==> reverse(x) = x, reverse(reverse(x)) = x | 	576	9	2	3	0
+reverse(x) = x, reverse(y) = y ==> reverse(x) = x, reverse(reverse(y)) = y | 	576	9	2	4	0
+reverse(x) = x, reverse(y) = z ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	560	9	4	5	1
+is_prefix(x, to_lower(y)) = p ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	470	9	4	5	1
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = x, all_strip(all_strip(y)) = x | 	451	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(all_strip(z)) = x | 	451	9	3	5	0
+to_caps(x) = x, to_caps(y) = x ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	448	9	4	4	1
+is_prefix(to_lower(x), y) = p ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	440	9	4	5	1
+is_prefix(left_strip(x), y) = p ==> is_prefix(left_strip(y), left_strip(y)) = q | true(q)	439	9	4	5	1
+length(x) = a ==> concat(y, concat(y, y)) = z | gt1(a)	321	7	4	4	1
+is_prefix(x, left_strip(y)) = p ==> is_prefix(left_strip(x), left_strip(x)) = q | true(q)	408	9	4	5	1
+is_prefix(x, right_strip(y)) = p ==> is_prefix(right_strip(x), right_strip(x)) = q | true(q)	397	9	4	5	1
+left_strip(x) = x, left_strip(y) = y ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	390	9	3	4	1
+to_lower(x) = x ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	300	7	3	3	1
+is_prefix(right_strip(x), y) = p ==> is_prefix(right_strip(y), right_strip(y)) = q | true(q)	362	9	4	5	1
+to_caps(x) = x, to_caps(y) = z ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	345	9	4	5	1
+is_prefix(to_caps(x), y) = p <== is_prefix(to_caps(x), to_caps(y)) = q | Not(true(p)), Not(true(q))	339	9	4	6	2
+is_prefix(to_caps(x), y) = p <== is_prefix(to_caps(x), to_caps(y)) = p | Not(true(p))	339	9	3	6	1
+is_prefix(x, to_caps(y)) = p <== is_prefix(to_caps(x), to_caps(y)) = p | Not(true(p))	335	9	3	6	1
+is_prefix(x, to_caps(y)) = p <== is_prefix(to_caps(x), to_caps(y)) = q | Not(true(p)), Not(true(q))	335	9	4	6	2
+length(x) = a, length(x) = b ==> concat(y, concat(y, y)) = z | gt1(a)	321	9	5	5	1
+is_prefix(to_lower(x), y) = p <== is_prefix(to_lower(x), to_lower(y)) = q | Not(true(p)), Not(true(q))	301	9	4	6	2
+is_prefix(to_lower(x), y) = p <== is_prefix(to_lower(x), to_lower(y)) = p | Not(true(p))	301	9	3	6	1
+to_lower(x) = x, to_lower(y) = z ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	300	9	4	5	1
+to_lower(x) = x, to_lower(x) = y ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	300	9	4	4	1
+to_lower(x) = x, to_lower(y) = z ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	300	9	4	5	1
+to_lower(x) = x, to_lower(y) = z === is_prefix(to_lower(z), to_lower(y)) = p | true(p)	300	9	4	6	1
+to_lower(x) = x, to_lower(y) = z === is_prefix(to_lower(y), to_lower(z)) = p | true(p)	300	9	4	6	1
+is_prefix(x, to_lower(y)) = p <== is_prefix(to_lower(x), to_lower(y)) = p | Not(true(p))	299	9	3	6	1
+is_prefix(x, to_lower(y)) = p <== is_prefix(to_lower(x), to_lower(y)) = q | Not(true(p)), Not(true(q))	299	9	4	6	2
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(z)) = x | 	231	7	3	4	0
+right_strip(x) = x, right_strip(y) = y ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	296	9	3	4	1
+right_strip(x) = x, right_strip(y) = y ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	296	9	3	4	1
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(z)) = x | 	227	7	3	4	0
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), left_strip(z)) = p | Not(true(p))	271	9	4	5	1
+is_prefix(reverse(x), y) = p ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	270	9	4	5	1
+is_prefix(x, reverse(y)) = p ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	264	9	4	5	1
+reverse(x) = x, reverse(y) = y <== is_prefix(x, reverse(reverse(z))) = p | true(p)	244	9	4	5	1
+is_prefix(left_strip(x), x) = p ==> is_prefix(left_strip(y), left_strip(y)) = q | true(q)	234	9	4	4	1
+to_lower(x) = x <== is_prefix(to_lower(y), to_lower(z)) = p | true(p)	180	7	4	4	1
+is_prefix(x, to_lower(y)) = p ==> is_prefix(to_lower(y), to_lower(y)) = q | true(q)	230	9	4	5	1
+is_prefix(to_lower(x), y) = p ==> is_prefix(to_lower(x), to_lower(x)) = q | true(q)	229	9	4	5	1
+is_prefix(to_lower(x), y) = p ==> is_prefix(to_lower(y), to_lower(y)) = q | true(q)	207	9	4	5	1
+left_strip(x) = x, left_strip(y) = x <== is_prefix(left_strip(y), left_strip(z)) = p | true(p)	202	9	4	5	1
+left_strip(x) = x, left_strip(y) = x <== is_prefix(left_strip(x), left_strip(z)) = p | true(p)	202	9	4	5	1
+is_prefix(to_caps(x), y) = p ==> is_prefix(to_caps(y), to_caps(y)) = q | true(q)	202	9	4	5	1
+is_prefix(x, to_lower(y)) = p ==> is_prefix(to_lower(x), to_lower(x)) = q | true(q)	200	9	4	5	1
+is_prefix(reverse(x), y) = p ==> is_prefix(x, reverse(reverse(x))) = q | true(q)	193	9	4	5	1
+is_prefix(x, reverse(y)) = p ==> is_prefix(y, reverse(reverse(y))) = q | true(q)	191	9	4	5	1
+is_prefix(x, reverse(y)) = p ==> is_prefix(x, reverse(reverse(x))) = q | true(q)	190	9	4	5	1
+reverse(x) = x ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	144	7	3	3	1
+is_prefix(x, to_caps(y)) = p ==> is_prefix(to_caps(x), to_caps(x)) = q | true(q)	182	9	4	5	1
+is_prefix(reverse(x), y) = p ==> is_prefix(y, reverse(reverse(y))) = q | true(q)	182	9	4	5	1
+to_lower(x) = x, to_lower(y) = y <== is_prefix(to_lower(y), to_lower(z)) = p | true(p)	181	9	4	5	1
+is_prefix(to_caps(x), y) = p ==> is_prefix(to_caps(x), to_caps(x)) = q | true(q)	175	9	4	5	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(left_strip(x), left_strip(z)) = q | true(q)	174	9	5	6	1
+is_prefix(left_strip(x), y) = p <== is_prefix(left_strip(y), left_strip(z)) = q | true(q)	168	9	5	6	1
+is_prefix(x, to_caps(y)) = p ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	168	9	4	5	1
+right_strip(x) = x, right_strip(y) = x <== is_prefix(right_strip(x), right_strip(z)) = p | true(p)	168	9	4	5	1
+right_strip(x) = x, right_strip(y) = x <== is_prefix(right_strip(y), right_strip(z)) = p | true(p)	168	9	4	5	1
+is_prefix(x, to_caps(y)) = p ==> is_prefix(to_caps(y), to_caps(y)) = q | true(q)	166	9	4	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(y), right_strip(y)) = q | true(q)	165	9	4	4	1
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), right_strip(y)) = q | true(q)	165	9	4	4	1
+is_prefix(to_caps(x), y) = p ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	160	9	4	5	1
+to_caps(x) = x ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	120	7	3	3	1
+is_prefix(left_strip(x), y) = p <== is_prefix(left_strip(x), left_strip(z)) = q | true(q)	153	9	5	6	1
+left_strip(x) = x <== left_strip(x) = y, left_strip(left_strip(z)) = x | 	117	7	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(x)) = x | 	117	7	2	3	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(z)) = y | 	117	7	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(y)) = z | 	117	7	3	4	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(y)) = x | 	117	7	2	3	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(x)) = z | 	117	7	3	4	0
+left_strip(x) = x <== left_strip(y) = z, left_strip(left_strip(z)) = x | 	117	7	3	4	0
+left_strip(x) = x <== left_strip(y) = z, left_strip(left_strip(y)) = x | 	117	7	3	4	0
+to_lower(x) = x, to_lower(y) = y ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	150	9	3	4	1
+to_lower(x) = x, to_lower(y) = y ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	150	9	3	4	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(left_strip(y), left_strip(z)) = q | true(q)	147	9	5	6	1
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(y)) = x | 	113	7	2	3	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(x)) = x | 	113	7	2	3	0
+right_strip(x) = x <== right_strip(y) = z, right_strip(right_strip(y)) = x | 	113	7	3	4	0
+right_strip(x) = x <== right_strip(y) = z, right_strip(right_strip(z)) = x | 	113	7	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(z)) = y | 	113	7	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(x)) = z | 	113	7	3	4	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(y)) = z | 	113	7	3	4	0
+right_strip(x) = x <== right_strip(x) = y, right_strip(right_strip(z)) = x | 	113	7	3	4	0
+reverse(x) = x, reverse(y) = z ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	144	9	4	5	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(y)) = x | 	112	7	2	3	0
+reverse(x) = x, reverse(x) = y ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	144	9	4	4	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(z)) = y | 	112	7	3	4	0
+to_caps(x) = x <== to_caps(y) = z, to_caps(to_caps(z)) = x | 	112	7	3	4	0
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(y)) = z | 	112	7	3	4	0
+reverse(x) = x, reverse(y) = z ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	144	9	4	5	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(x)) = x | 	112	7	2	3	0
+to_caps(x) = x <== to_caps(y) = z, to_caps(to_caps(y)) = x | 	112	7	3	4	0
+reverse(x) = x, reverse(y) = x ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	144	9	4	4	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(x)) = z | 	112	7	3	4	0
+to_caps(x) = x <== to_caps(x) = y, to_caps(to_caps(z)) = x | 	112	7	3	4	0
+reverse(x) = y, reverse(y) = y ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	144	9	4	4	1
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), left_strip(y)) = q | true(q)	144	9	4	4	1
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(y)) = x | 	111	7	2	3	0
+all_strip(x) = x <== all_strip(y) = z, all_strip(all_strip(y)) = x | 	111	7	3	4	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(all_strip(z)) = x | 	111	7	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(x)) = x | 	111	7	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(y)) = z | 	111	7	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(x)) = z | 	111	7	3	4	0
+all_strip(x) = x <== all_strip(y) = z, all_strip(all_strip(z)) = x | 	111	7	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(z)) = y | 	111	7	3	4	0
+is_prefix(x, right_strip(y)) = p <== is_prefix(right_strip(x), right_strip(z)) = q | true(q)	141	9	5	6	1
+to_lower(x) = y <== is_prefix(to_lower(x), to_lower(z)) = p | true(p)	109	7	4	5	1
+to_lower(x) = y <== is_prefix(to_lower(y), to_lower(z)) = p | true(p)	109	7	4	5	1
+to_lower(x) = y <== is_prefix(to_lower(z), to_lower(x)) = p | true(p)	109	7	4	5	1
+to_lower(x) = y <== is_prefix(to_lower(z), to_lower(y)) = p | true(p)	109	7	4	5	1
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(y), right_strip(z)) = q | true(q)	140	9	5	6	1
+length(x) = a === length(x) = b, length(to_lower(x)) = b | Not(gt(a, b)), Not(gt(b, a))	106	7	3	4	2
+length(x) = a <== length(x) = b, length(to_lower(x)) = a | 	106	7	3	5	0
+length(x) = a === length(x) = b, length(to_caps(x)) = b | Not(gt(a, b)), Not(gt(b, a))	101	7	3	4	2
+length(x) = a <== length(x) = b, length(to_caps(x)) = a | 	101	7	3	5	0
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(x), right_strip(z)) = q | true(q)	125	9	5	6	1
+length(x) = a <== length(x) = b, length(reverse(x)) = a | 	97	7	3	5	0
+length(x) = a === length(x) = b, length(reverse(x)) = b | Not(gt(a, b)), Not(gt(b, a))	97	7	3	4	2
+is_prefix(x, right_strip(y)) = p <== is_prefix(right_strip(y), right_strip(z)) = q | true(q)	124	9	5	6	1
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	120	9	3	4	1
+to_caps(x) = x, to_caps(x) = y ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	120	9	4	4	1
+to_caps(x) = x, to_caps(y) = z ==> is_prefix(to_caps(z), to_caps(y)) = p | true(p)	120	9	4	6	1
+to_caps(x) = x, to_caps(y) = z ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	120	9	4	5	1
+to_caps(x) = x, to_caps(y) = z ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	120	9	4	5	1
+reverse(x) = x, reverse(y) = y ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	120	9	3	4	1
+to_caps(x) = x, to_caps(y) = z ==> is_prefix(to_caps(y), to_caps(z)) = p | true(p)	120	9	4	6	1
+reverse(x) = x, reverse(y) = y ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	120	9	3	4	1
+left_strip(x) = x, left_strip(x) = y <== left_strip(y) = x, left_strip(left_strip(z)) = y | 	117	9	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(x) = y, left_strip(left_strip(z)) = x | 	117	9	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(z) = y, left_strip(left_strip(y)) = x | 	117	9	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(z) = x, left_strip(left_strip(z)) = y | 	117	9	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(z) = x, left_strip(left_strip(x)) = y | 	117	9	3	5	0
+left_strip(x) = x, left_strip(x) = y <== left_strip(z) = y, left_strip(left_strip(z)) = x | 	117	9	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(z) = y, right_strip(right_strip(z)) = x | 	113	9	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(z) = y, right_strip(right_strip(y)) = x | 	113	9	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(z) = x, right_strip(right_strip(z)) = y | 	113	9	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(z) = x, right_strip(right_strip(x)) = y | 	113	9	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(x) = y, right_strip(right_strip(z)) = x | 	113	9	3	5	0
+right_strip(x) = x, right_strip(x) = y <== right_strip(y) = x, right_strip(right_strip(z)) = y | 	113	9	3	5	0
+to_caps(x) = x, to_caps(y) = x ==> to_caps(x) = x, to_caps(to_caps(x)) = x | 	112	9	2	3	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = y, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = x, to_caps(to_caps(x)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(x) = z, to_caps(to_caps(y)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = x, to_caps(to_caps(x)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x === to_caps(y) = x, to_caps(to_caps(y)) = x | 	112	9	2	4	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = x, to_caps(to_caps(z)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(y) = x, to_caps(to_caps(z)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(to_caps(y)) = z | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(x) = y, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = z <== to_caps(y) = x, to_caps(to_caps(y)) = z | 	112	9	3	6	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(z) = y, to_caps(to_caps(y)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(x) = y, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(x) = y, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x === to_caps(y) = x, to_caps(to_caps(x)) = x | 	112	9	2	4	0
+left_strip(x) = x, left_strip(x) = y <== is_prefix(left_strip(z), left_strip(x)) = p | true(p)	112	9	4	5	1
+to_caps(x) = x, to_caps(y) = z <== to_caps(y) = z, to_caps(to_caps(y)) = x | 	112	9	3	6	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(y) = x, to_caps(to_caps(z)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = z <== to_caps(y) = x, to_caps(to_caps(x)) = z | 	112	9	3	6	0
+to_caps(x) = x, to_caps(y) = y <== to_caps(z) = y, to_caps(to_caps(y)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = z <== to_caps(y) = z, to_caps(to_caps(z)) = x | 	112	9	3	6	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = z, to_caps(to_caps(y)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = x, to_caps(to_caps(z)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(z) = x, to_caps(to_caps(z)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x === to_caps(x) = x, to_caps(to_caps(y)) = x | 	112	9	2	4	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(to_caps(x)) = z | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = x, to_caps(to_caps(y)) = z | 	112	9	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(z) = x, to_caps(to_caps(x)) = y | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = z <== to_caps(x) = z, to_caps(to_caps(y)) = x | 	112	9	3	6	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = z, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(x) = y <== to_caps(z) = y, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = y, to_caps(to_caps(z)) = x | 	112	9	3	5	0
+to_caps(x) = x, to_caps(y) = z <== to_caps(z) = x, to_caps(to_caps(y)) = z | 	112	9	3	6	0
+to_caps(x) = x, to_caps(y) = x <== to_caps(y) = x, to_caps(to_caps(z)) = y | 	112	9	3	5	0
+left_strip(x) = x, left_strip(x) = y <== is_prefix(left_strip(z), left_strip(y)) = p | true(p)	112	9	4	5	1
+to_caps(x) = x, to_caps(y) = x <== to_caps(z) = y, to_caps(to_caps(y)) = x | 	112	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(all_strip(x)) = z | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = x, all_strip(all_strip(z)) = y | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x === all_strip(x) = x, all_strip(all_strip(y)) = x | 	111	9	2	4	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = y, all_strip(all_strip(y)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(x) = y, all_strip(all_strip(z)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = y, all_strip(all_strip(z)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(all_strip(z)) = y | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x === all_strip(y) = x, all_strip(all_strip(y)) = x | 	111	9	2	4	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(y) = x, all_strip(all_strip(z)) = y | 	111	9	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(x) = y, all_strip(all_strip(z)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = z, all_strip(all_strip(z)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x === all_strip(y) = x, all_strip(all_strip(x)) = x | 	111	9	2	4	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(z) = x, all_strip(all_strip(z)) = y | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = x, all_strip(all_strip(x)) = y | 	111	9	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(z) = y, all_strip(all_strip(z)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = y <== all_strip(x) = y, all_strip(all_strip(z)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(z) = x, all_strip(all_strip(x)) = y | 	111	9	3	5	0
+all_strip(x) = x, all_strip(x) = y <== all_strip(z) = y, all_strip(all_strip(y)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = z, all_strip(all_strip(y)) = x | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(y) = x, all_strip(all_strip(y)) = z | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(z) = x, all_strip(all_strip(y)) = z | 	111	9	3	5	0
+all_strip(x) = x, all_strip(y) = x ==> all_strip(x) = x, all_strip(all_strip(x)) = x | 	111	9	2	3	0
+all_strip(x) = x, all_strip(y) = x <== all_strip(x) = z, all_strip(all_strip(y)) = x | 	111	9	3	5	0
+to_lower(x) = x, to_lower(y) = x <== is_prefix(to_lower(y), to_lower(z)) = p | true(p)	109	9	4	5	1
+to_lower(x) = x, to_lower(y) = x <== is_prefix(to_lower(z), to_lower(y)) = p | true(p)	109	9	4	5	1
+to_lower(x) = x, to_lower(y) = x <== is_prefix(to_lower(x), to_lower(z)) = p | true(p)	109	9	4	5	1
+to_lower(x) = x, to_lower(y) = x <== is_prefix(to_lower(z), to_lower(x)) = p | true(p)	109	9	4	5	1
+to_lower(x) = x, to_lower(y) = y <== is_prefix(to_lower(z), to_lower(y)) = p | true(p)	102	9	4	5	1
+left_strip(x) = x <== left_strip(x) = y, left_strip(left_strip(y)) = x | 	78	7	2	3	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(y)) = y | 	78	7	2	3	0
+left_strip(x) = x <== left_strip(x) = y, left_strip(left_strip(x)) = x | 	78	7	2	3	0
+left_strip(x) = x <== left_strip(y) = y, left_strip(left_strip(y)) = x | 	78	7	2	3	0
+left_strip(x) = x <== left_strip(y) = x, left_strip(left_strip(x)) = y | 	78	7	2	3	0
+is_prefix(to_lower(x), x) = p ==> is_prefix(to_lower(y), to_lower(y)) = q | true(q)	100	9	4	4	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(right_strip(z), right_strip(y)) = q | true(q)	98	9	5	6	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(left_strip(z), left_strip(y)) = q | true(q)	97	9	5	6	1
+left_strip(x) = x, left_strip(y) = x <== is_prefix(left_strip(z), left_strip(y)) = p | true(p)	97	9	4	5	1
+left_strip(x) = x, left_strip(y) = x <== is_prefix(left_strip(z), left_strip(x)) = p | true(p)	97	9	4	5	1
+right_strip(x) = x <== right_strip(y) = y, right_strip(right_strip(y)) = x | 	74	7	2	3	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(x)) = y | 	74	7	2	3	0
+right_strip(x) = x <== right_strip(y) = x, right_strip(right_strip(y)) = y | 	74	7	2	3	0
+right_strip(x) = x <== right_strip(x) = y, right_strip(right_strip(y)) = x | 	74	7	2	3	0
+right_strip(x) = x <== right_strip(x) = y, right_strip(right_strip(x)) = x | 	74	7	2	3	0
+is_prefix(left_strip(x), y) = p ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	94	9	3	5	1
+is_prefix(left_strip(x), y) = p <== is_prefix(left_strip(z), left_strip(y)) = q | true(q)	91	9	5	6	1
+is_prefix(right_strip(x), y) = p ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	91	9	3	5	1
+is_prefix(x, left_strip(x)) = p ==> is_prefix(x, left_strip(left_strip(y))) = q | Not(true(p)), Not(true(q))	90	9	4	5	2
+is_prefix(x, left_strip(x)) = p ==> is_prefix(x, left_strip(left_strip(y))) = p | Not(true(p))	90	9	3	5	1
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	90	9	3	4	1
+length(x) = a <== length(x) = b, length(right_strip(x)) = b | Not(gt(a, b)), Not(gt(b, a))	70	7	3	4	2
+length(x) = a <== length(x) = b, length(right_strip(x)) = a | Not(gt(b, a))	70	7	3	5	1
+to_caps(x) = x, to_caps(y) = y ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	90	9	3	4	1
+is_prefix(left_strip(x), x) = p ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	90	9	3	4	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(to_lower(y), to_lower(y)) = q | true(q)	90	9	4	4	1
+to_caps(x) = x, to_caps(y) = y ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	90	9	3	4	1
+right_strip(x) = x, right_strip(y) = x <== is_prefix(right_strip(z), right_strip(x)) = p | true(p)	89	9	4	5	1
+right_strip(x) = x, right_strip(y) = x <== is_prefix(right_strip(z), right_strip(y)) = p | true(p)	89	9	4	5	1
+is_prefix(left_strip(x), y) = p <== is_prefix(left_strip(z), left_strip(x)) = q | true(q)	86	9	5	6	1
+is_prefix(x, left_strip(y)) = p <== is_prefix(left_strip(z), left_strip(x)) = q | true(q)	81	9	5	6	1
+right_strip(x) = x, right_strip(x) = y <== is_prefix(right_strip(z), right_strip(y)) = p | true(p)	80	9	4	5	1
+right_strip(x) = x, right_strip(x) = y <== is_prefix(right_strip(z), right_strip(x)) = p | true(p)	80	9	4	5	1
+is_prefix(x, right_strip(y)) = p <== is_prefix(right_strip(z), right_strip(x)) = q | true(q)	80	9	5	6	1
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(z), right_strip(y)) = q | true(q)	79	9	5	6	1
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = y, left_strip(left_strip(x)) = x | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = x, left_strip(left_strip(y)) = y | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = x, left_strip(left_strip(x)) = x | 	78	9	2	3	0
+left_strip(x) = x, left_strip(x) = y === left_strip(x) = x, left_strip(left_strip(x)) = y | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = x, left_strip(left_strip(y)) = x | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = x, left_strip(left_strip(y)) = x | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = y, left_strip(left_strip(x)) = y | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = y, left_strip(left_strip(y)) = y | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y === left_strip(x) = y, left_strip(left_strip(y)) = x | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = y, left_strip(left_strip(y)) = y | 	78	9	2	3	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(y) = x, left_strip(left_strip(x)) = x | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y ==> left_strip(x) = y, left_strip(left_strip(x)) = y | 	78	9	2	4	0
+left_strip(x) = x, left_strip(x) = y === left_strip(x) = y, left_strip(left_strip(x)) = x | 	78	9	2	4	0
+is_prefix(right_strip(x), y) = p <== is_prefix(right_strip(z), right_strip(x)) = q | true(q)	75	9	5	6	1
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = y, right_strip(right_strip(y)) = y | 	74	9	2	3	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = x, right_strip(right_strip(y)) = y | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = y, right_strip(right_strip(x)) = y | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = x, right_strip(right_strip(x)) = x | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = y, right_strip(right_strip(x)) = x | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = x, right_strip(right_strip(y)) = x | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y === right_strip(x) = y, right_strip(right_strip(x)) = x | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y === right_strip(x) = x, right_strip(right_strip(x)) = y | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(y) = y, right_strip(right_strip(x)) = y | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = y, right_strip(right_strip(y)) = y | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y === right_strip(x) = y, right_strip(right_strip(y)) = x | 	74	9	2	4	0
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = x, right_strip(right_strip(x)) = x | 	74	9	2	3	0
+to_lower(x) = x, to_lower(y) = y <== is_prefix(to_lower(z), to_lower(x)) = p | true(p)	74	9	4	5	1
+right_strip(x) = x, right_strip(x) = y ==> right_strip(x) = x, right_strip(right_strip(y)) = x | 	74	9	2	4	0
+is_prefix(x, reverse(x)) = p ==> is_prefix(y, reverse(reverse(y))) = q | true(q)	72	9	4	4	1
+is_prefix(reverse(x), x) = p ==> is_prefix(y, reverse(reverse(y))) = q | true(q)	72	9	4	4	1
+to_caps(x) = x, to_caps(y) = x <== is_prefix(to_caps(x), to_caps(z)) = p | true(p)	70	9	4	5	1
+to_caps(x) = x, to_caps(y) = x <== is_prefix(to_caps(z), to_caps(x)) = p | true(p)	70	9	4	5	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(x, to_caps(to_caps(y))) = q | Not(true(p)), Not(true(q))	67	9	4	5	2
+is_prefix(x, to_caps(x)) = p ==> is_prefix(x, to_caps(to_caps(y))) = p | Not(true(p))	67	9	3	5	1
+all_strip(x) = x <== all_strip(y) = y, all_strip(all_strip(y)) = x | 	52	7	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(y)) = y | 	52	7	2	3	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(all_strip(y)) = x | 	52	7	2	3	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(all_strip(x)) = x | 	52	7	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(all_strip(x)) = y | 	52	7	2	3	0
+left_strip(x) = x, left_strip(x) = y <== is_prefix(left_strip(x), left_strip(z)) = p | true(p)	65	9	4	5	1
+left_strip(x) = x, left_strip(x) = y <== is_prefix(left_strip(y), left_strip(z)) = p | true(p)	65	9	4	5	1
+right_strip(x) = x, right_strip(y) = y <== is_prefix(right_strip(x), right_strip(z)) = p | true(p)	63	9	4	5	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(x, to_lower(to_lower(y))) = q | Not(true(p)), Not(true(q))	61	9	4	5	2
+is_prefix(x, to_lower(x)) = p ==> is_prefix(x, to_lower(to_lower(y))) = p | Not(true(p))	61	9	3	5	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	60	9	3	4	1
+is_prefix(x, right_strip(y)) = p ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	59	9	3	5	1
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = y, all_strip(all_strip(x)) = y | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = y, all_strip(all_strip(x)) = x | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = x, all_strip(all_strip(y)) = x | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = y, all_strip(all_strip(y)) = y | 	52	9	2	3	0
+all_strip(x) = x, all_strip(x) = y === all_strip(x) = y, all_strip(all_strip(y)) = x | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = x, all_strip(all_strip(y)) = y | 	52	9	2	4	0
+is_prefix(x, left_strip(y)) = p ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	52	9	3	5	1
+all_strip(x) = x, all_strip(x) = y === all_strip(x) = x, all_strip(all_strip(x)) = y | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y === all_strip(x) = y, all_strip(all_strip(x)) = x | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = y, all_strip(all_strip(x)) = y | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = y, all_strip(all_strip(y)) = y | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(x) = x, all_strip(all_strip(x)) = x | 	52	9	2	3	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = x, all_strip(all_strip(y)) = x | 	52	9	2	4	0
+all_strip(x) = x, all_strip(x) = y ==> all_strip(y) = x, all_strip(all_strip(x)) = x | 	52	9	2	4	0
+is_prefix(x, to_lower(x)) = p ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	50	9	3	4	1
+is_prefix(to_lower(x), x) = p ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	50	9	3	4	1
+right_strip(x) = x, right_strip(x) = y <== is_prefix(right_strip(y), right_strip(z)) = p | true(p)	48	9	4	5	1
+right_strip(x) = x, right_strip(x) = y <== is_prefix(right_strip(x), right_strip(z)) = p | true(p)	48	9	4	5	1
+to_lower(x) = x, to_lower(y) = z <== is_prefix(to_lower(x), to_lower(z)) = p | true(p)	47	9	4	6	1
+to_lower(x) = y, to_lower(y) = x <== is_prefix(to_lower(y), to_lower(z)) = p | true(p)	47	9	4	5	1
+to_lower(x) = x, to_lower(x) = y <== is_prefix(to_lower(x), to_lower(z)) = p | true(p)	47	9	4	5	1
+to_lower(x) = x, to_lower(x) = y <== is_prefix(to_lower(y), to_lower(z)) = p | true(p)	47	9	4	5	1
+to_lower(x) = y, to_lower(y) = x <== is_prefix(to_lower(x), to_lower(z)) = p | true(p)	47	9	4	5	1
+to_lower(x) = x, to_lower(y) = z <== is_prefix(to_lower(x), to_lower(y)) = p | true(p)	47	9	4	6	1
+to_caps(x) = x, to_caps(x) = y <== is_prefix(to_caps(x), to_caps(z)) = p | true(p)	42	9	4	5	1
+to_caps(x) = x, to_caps(y) = z <== is_prefix(to_caps(x), to_caps(z)) = p | true(p)	42	9	4	6	1
+to_caps(x) = x, to_caps(y) = z <== is_prefix(to_caps(x), to_caps(y)) = p | true(p)	42	9	4	6	1
+is_prefix(to_caps(x), x) = p ==> is_prefix(to_caps(y), to_caps(y)) = q | true(q)	40	9	4	4	1
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(x)) = y | 	30	7	2	3	0
+to_caps(x) = x <== to_caps(x) = y, to_caps(to_caps(y)) = x | 	30	7	2	3	0
+to_caps(x) = x <== to_caps(y) = y, to_caps(to_caps(y)) = x | 	30	7	2	3	0
+to_caps(x) = x <== to_caps(y) = x, to_caps(to_caps(y)) = y | 	30	7	2	3	0
+to_caps(x) = x <== to_caps(x) = y, to_caps(to_caps(x)) = x | 	30	7	2	3	0
+is_prefix(x, to_caps(y)) = p ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	38	9	3	5	1
+length(x) = a ==> concat(x, concat(y, y)) = z | gt1(a)	29	7	4	5	1
+is_prefix(to_lower(x), y) = p ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	36	9	3	5	1
+is_prefix(to_caps(x), y) = p ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	36	9	3	5	1
+is_prefix(reverse(x), y) = p ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	35	9	3	5	1
+is_prefix(x, reverse(y)) = p ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	34	9	3	5	1
+reverse(x) = x, reverse(y) = z <== is_prefix(x, reverse(reverse(z))) = p | true(p)	33	9	4	6	1
+reverse(x) = x, reverse(y) = z <== is_prefix(x, reverse(reverse(y))) = p | true(p)	33	9	4	6	1
+reverse(x) = x, reverse(y) = x <== is_prefix(x, reverse(reverse(z))) = p | true(p)	33	9	4	5	1
+is_prefix(x, to_lower(y)) = p ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	33	9	3	5	1
+reverse(x) = x, reverse(x) = y <== is_prefix(x, reverse(reverse(z))) = p | true(p)	33	9	4	5	1
+reverse(x) = x <== reverse(y) = y, reverse(reverse(y)) = x | 	24	7	2	3	0
+reverse(x) = x <== reverse(x) = y, reverse(reverse(y)) = x | 	24	7	2	3	0
+reverse(x) = x <== reverse(x) = y, reverse(reverse(x)) = y | 	24	7	2	3	0
+reverse(x) = x <== reverse(y) = x, reverse(reverse(y)) = x | 	24	7	2	3	0
+reverse(x) = x <== reverse(y) = x, reverse(reverse(x)) = y | 	24	7	2	3	0
+reverse(x) = x <== reverse(y) = y, reverse(reverse(x)) = y | 	24	7	2	3	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = y, to_caps(to_caps(y)) = y | 	30	9	2	3	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = y, to_caps(to_caps(x)) = y | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = x, to_caps(to_caps(x)) = x | 	30	9	2	3	0
+to_caps(x) = x, to_caps(x) = y === to_caps(x) = y, to_caps(to_caps(y)) = x | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = x, to_caps(to_caps(x)) = x | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y === to_caps(x) = x, to_caps(to_caps(x)) = y | 	30	9	2	4	0
+is_prefix(x, reverse(x)) = p ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	30	9	3	4	1
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = x, to_caps(to_caps(y)) = y | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y === to_caps(x) = y, to_caps(to_caps(x)) = x | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = x, to_caps(to_caps(y)) = x | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = y, to_caps(to_caps(y)) = y | 	30	9	2	4	0
+is_prefix(reverse(x), x) = p ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	30	9	3	4	1
+to_caps(x) = x, to_caps(x) = y ==> to_caps(y) = y, to_caps(to_caps(x)) = x | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = y, to_caps(to_caps(x)) = y | 	30	9	2	4	0
+to_caps(x) = x, to_caps(x) = y ==> to_caps(x) = x, to_caps(to_caps(y)) = x | 	30	9	2	4	0
+length(x) = a, length(x) = b ==> concat(x, concat(y, y)) = z | gt1(a)	29	9	5	6	1
+to_lower(x) = x, to_lower(x) = y <== is_prefix(to_lower(z), to_lower(x)) = p | true(p)	28	9	4	5	1
+to_lower(x) = x, to_lower(y) = z <== is_prefix(to_lower(z), to_lower(x)) = p | true(p)	28	9	4	6	1
+to_lower(x) = x, to_lower(y) = z <== is_prefix(to_lower(y), to_lower(x)) = p | true(p)	28	9	4	6	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(to_caps(y), to_caps(y)) = q | true(q)	28	9	4	4	1
+to_lower(x) = x, to_lower(x) = y <== is_prefix(to_lower(z), to_lower(y)) = p | true(p)	28	9	4	5	1
+reverse(x) = x, reverse(x) = y ==> reverse(y) = x, reverse(reverse(x)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = y, reverse(reverse(y)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(x) = x, reverse(reverse(x)) = x | 	24	9	2	3	0
+reverse(x) = x, reverse(x) = y === reverse(x) = y, reverse(reverse(x)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(x) = y, reverse(reverse(y)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(y) = y, reverse(reverse(y)) = y | 	24	9	2	3	0
+reverse(x) = x, reverse(y) = x ==> reverse(y) = y, reverse(reverse(x)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y === reverse(x) = y, reverse(reverse(y)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y === reverse(x) = x, reverse(reverse(x)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = x, reverse(reverse(y)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(x) = y, reverse(reverse(x)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(y) = y, reverse(reverse(y)) = y | 	24	9	2	3	0
+reverse(x) = x, reverse(y) = x ==> reverse(y) = x, reverse(reverse(x)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(y) = x, reverse(reverse(y)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(y) = x, reverse(reverse(y)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(y) = x ==> reverse(x) = x, reverse(reverse(y)) = y | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = x, reverse(reverse(x)) = x | 	24	9	2	3	0
+reverse(x) = x, reverse(x) = y === reverse(x) = x, reverse(reverse(y)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(x) = y, reverse(reverse(x)) = x | 	24	9	2	4	0
+reverse(x) = x, reverse(x) = y ==> reverse(y) = y, reverse(reverse(x)) = x | 	24	9	2	4	0
+to_caps(x) = x, to_caps(y) = z <== is_prefix(to_caps(y), to_caps(x)) = p | true(p)	21	9	4	6	1
+to_caps(x) = x, to_caps(x) = y <== is_prefix(to_caps(z), to_caps(x)) = p | true(p)	21	9	4	5	1
+to_caps(x) = x, to_caps(y) = z <== is_prefix(to_caps(z), to_caps(x)) = p | true(p)	21	9	4	6	1
+length(x) = a ==> concat(y, concat(x, y)) = z | Not(gt1(a))	16	7	4	5	1
+is_prefix(right_strip(x), y) = p ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	19	9	3	5	1
+left_strip(x) = x, left_strip(y) = x ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	18	9	3	4	1
+is_prefix(x, left_strip(y)) = p ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	18	9	3	5	1
+left_strip(x) = x, left_strip(y) = x ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	18	9	3	4	1
+left_strip(x) = x, left_strip(y) = x ==> is_prefix(left_strip(y), left_strip(x)) = p | true(p)	18	9	3	5	1
+is_prefix(left_strip(x), y) = p ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	18	9	3	5	1
+left_strip(x) = x, left_strip(y) = x ==> is_prefix(left_strip(x), left_strip(y)) = p | true(p)	18	9	3	5	1
+length(x) = a ==> concat(y, concat(y, x)) = z | Not(gt1(a))	13	7	4	5	1
+length(x) = a, length(x) = b ==> concat(y, concat(x, y)) = z | Not(gt1(a))	16	9	5	6	1
+to_caps(x) = x, to_caps(y) = y <== is_prefix(to_caps(x), to_caps(z)) = p | true(p)	16	9	4	5	1
+right_strip(x) = x, right_strip(y) = x ==> is_prefix(right_strip(x), right_strip(y)) = p | true(p)	15	9	3	5	1
+right_strip(x) = x, right_strip(y) = x ==> is_prefix(right_strip(y), right_strip(x)) = p | true(p)	15	9	3	5	1
+is_prefix(x, right_strip(y)) = p ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	15	9	3	5	1
+right_strip(x) = x, right_strip(y) = x ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	15	9	3	4	1
+right_strip(x) = x, right_strip(y) = x ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	15	9	3	4	1
+to_lower(x) = x, to_lower(y) = y <== is_prefix(to_lower(x), to_lower(z)) = p | true(p)	13	9	4	5	1
+length(x) = a, length(x) = b ==> concat(y, concat(y, x)) = z | Not(gt1(a))	13	9	5	6	1
+to_lower(x) = y ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	10	7	3	4	1
+to_lower(x) = y ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	10	7	3	4	1
+to_lower(x) = y ==> is_prefix(to_lower(y), to_lower(x)) = p | true(p)	10	7	3	5	1
+to_lower(x) = y ==> is_prefix(to_lower(x), to_lower(y)) = p | true(p)	10	7	3	5	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	12	9	3	4	1
+length(x) = a, length(y) = a <== concat(x, concat(x, x)) = z | Not(gt1(a))	12	9	4	5	1
+is_prefix(to_caps(x), x) = p ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	12	9	3	4	1
+is_prefix(left_strip(x), x) = p ==> is_prefix(left_strip(x), left_strip(x)) = q | true(q)	11	9	3	4	1
+is_prefix(x, right_strip(x)) = p === is_prefix(x, right_strip(right_strip(x))) = p | 	11	9	2	4	0
+is_prefix(x, to_lower(y)) = p ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	10	9	3	5	1
+to_lower(x) = x, to_lower(y) = x ==> is_prefix(to_lower(y), to_lower(x)) = p | true(p)	10	9	3	5	1
+to_lower(x) = y, to_lower(x) = z === is_prefix(to_lower(z), to_lower(x)) = p | true(p)	10	9	4	6	1
+is_prefix(to_lower(x), y) = p ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	10	9	3	5	1
+to_lower(x) = y, to_lower(x) = z === is_prefix(to_lower(z), to_lower(y)) = p | true(p)	10	9	4	6	1
+to_lower(x) = y, to_lower(x) = z === is_prefix(to_lower(y), to_lower(z)) = p | true(p)	10	9	4	6	1
+to_lower(x) = x, to_lower(y) = x ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	10	9	3	4	1
+to_lower(x) = x, to_lower(y) = x ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	10	9	3	4	1
+to_lower(x) = y, to_lower(x) = z === is_prefix(to_lower(x), to_lower(y)) = p | true(p)	10	9	4	6	1
+to_lower(x) = y, to_lower(x) = z === is_prefix(to_lower(y), to_lower(x)) = p | true(p)	10	9	4	6	1
+to_lower(x) = y, to_lower(x) = z ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	10	9	4	5	1
+to_lower(x) = y, to_lower(x) = z ==> is_prefix(to_lower(z), to_lower(z)) = p | true(p)	10	9	4	5	1
+to_caps(x) = x, to_caps(y) = y <== is_prefix(to_caps(z), to_caps(x)) = p | true(p)	10	9	4	5	1
+to_lower(x) = y, to_lower(x) = z === is_prefix(to_lower(x), to_lower(z)) = p | true(p)	10	9	4	6	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(x), right_strip(x)) = q | true(q)	10	9	3	4	1
+to_lower(x) = x, to_lower(y) = x ==> is_prefix(to_lower(x), to_lower(y)) = p | true(p)	10	9	3	5	1
+to_lower(x) = y, to_lower(x) = z ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	10	9	4	5	1
+is_prefix(x, to_lower(x)) = p === is_prefix(x, to_lower(to_lower(x))) = p | 	9	9	2	4	0
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(x), left_strip(x)) = q | true(q)	8	9	3	4	1
+is_prefix(x, left_strip(x)) = p === is_prefix(x, left_strip(left_strip(x))) = p | 	8	9	2	4	0
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(x), right_strip(x)) = q | true(q)	8	9	3	4	1
+reverse(x) = y ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	6	7	3	4	1
+length(x) = a <== is_prefix(x, x) = p, length(x) = b | Not(gt(a, b)), Not(gt(b, a))	6	7	4	5	2
+reverse(x) = y ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	6	7	3	4	1
+is_prefix(x, to_caps(x)) = p === is_prefix(x, to_caps(to_caps(x))) = p | 	7	9	2	4	0
+length(x) = a ==> concat(y, concat(x, x)) = z | gt1(a)	5	7	4	5	1
+reverse(x) = x ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	5	7	2	3	1
+to_lower(x) = x ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	5	7	2	3	1
+left_strip(x) = x ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	5	7	2	3	1
+is_prefix(x, reverse(y)) = p ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	6	9	3	5	1
+reverse(x) = y, reverse(x) = z ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	6	9	4	5	1
+reverse(x) = y, reverse(x) = z ==> is_prefix(z, reverse(reverse(y))) = p | true(p)	6	9	4	6	1
+reverse(x) = y, reverse(x) = z ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	6	9	4	5	1
+reverse(x) = y, reverse(y) = z ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	6	9	4	5	1
+is_prefix(reverse(x), y) = p ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	6	9	3	5	1
+is_prefix(x, reverse(x)) = p ==> is_prefix(x, reverse(reverse(x))) = q | true(q)	6	9	3	4	1
+is_prefix(reverse(x), x) = p ==> is_prefix(x, reverse(reverse(x))) = q | true(q)	6	9	3	4	1
+reverse(x) = y, reverse(y) = x ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	6	9	3	4	1
+reverse(x) = y, reverse(y) = x ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	6	9	3	4	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(to_lower(x), to_lower(x)) = q | true(q)	6	9	3	4	1
+reverse(x) = y, reverse(x) = z ==> is_prefix(z, reverse(reverse(z))) = p | true(p)	6	9	4	5	1
+reverse(x) = y, reverse(x) = z ==> is_prefix(y, reverse(reverse(z))) = p | true(p)	6	9	4	6	1
+is_prefix(to_lower(x), x) = p ==> is_prefix(to_lower(x), to_lower(x)) = q | true(q)	6	9	3	4	1
+to_caps(x) = y ==> is_prefix(to_caps(y), to_caps(x)) = p | true(p)	4	7	3	5	1
+right_strip(x) = x ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	4	7	2	3	1
+to_caps(x) = y ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	4	7	3	4	1
+to_caps(x) = y ==> is_prefix(to_caps(x), to_caps(y)) = p | true(p)	4	7	3	5	1
+to_caps(x) = y ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	4	7	3	4	1
+length(x) = a <== is_prefix(x, y) = p, length(y) = a | true(p), Not(gt1(a))	4	7	4	6	2
+to_lower(x) = y, to_lower(y) = x ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	5	9	3	4	1
+is_prefix(x, reverse(x)) = p ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	5	9	2	4	1
+reverse(x) = x, reverse(y) = x ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	5	9	3	4	1
+reverse(x) = y, reverse(y) = y ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	5	9	3	4	1
+left_strip(x) = x, left_strip(x) = y ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	5	9	3	4	1
+is_prefix(to_lower(x), x) = p ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	5	9	2	4	1
+is_prefix(right_strip(x), x) = p ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	5	9	2	4	1
+to_lower(x) = x, to_lower(x) = y ==> is_prefix(to_lower(x), to_lower(y)) = p | true(p)	5	9	3	5	1
+reverse(x) = x, reverse(x) = y ==> is_prefix(y, reverse(reverse(x))) = p | true(p)	5	9	3	5	1
+to_lower(x) = y, to_lower(y) = x ==> is_prefix(to_lower(x), to_lower(y)) = p | true(p)	5	9	3	5	1
+reverse(x) = x, reverse(y) = x ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	5	9	3	4	1
+to_lower(x) = x, to_lower(x) = y ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	5	9	3	4	1
+reverse(x) = x, reverse(x) = y ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	5	9	3	4	1
+is_prefix(reverse(x), x) = p ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	5	9	2	4	1
+reverse(x) = x, reverse(x) = y ==> is_prefix(y, reverse(reverse(y))) = p | true(p)	5	9	3	4	1
+to_lower(x) = y, to_lower(y) = x ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	5	9	3	4	1
+is_prefix(x, to_lower(x)) = p ==> is_prefix(to_lower(x), to_lower(x)) = p | true(p)	5	9	2	4	1
+left_strip(x) = x, left_strip(x) = y ==> is_prefix(left_strip(y), left_strip(y)) = p | true(p)	5	9	3	4	1
+to_lower(x) = x, to_lower(x) = y ==> is_prefix(to_lower(y), to_lower(y)) = p | true(p)	5	9	3	4	1
+to_lower(x) = y, to_lower(y) = x ==> is_prefix(to_lower(y), to_lower(x)) = p | true(p)	5	9	3	5	1
+reverse(x) = x, reverse(y) = x ==> is_prefix(x, reverse(reverse(y))) = p | true(p)	5	9	3	5	1
+reverse(x) = y, reverse(y) = y ==> is_prefix(x, reverse(reverse(x))) = p | true(p)	5	9	3	4	1
+reverse(x) = x, reverse(x) = y ==> is_prefix(x, reverse(reverse(y))) = p | true(p)	5	9	3	5	1
+left_strip(x) = x, left_strip(x) = y ==> is_prefix(left_strip(y), left_strip(x)) = p | true(p)	5	9	3	5	1
+reverse(x) = x, reverse(y) = x ==> is_prefix(y, reverse(reverse(x))) = p | true(p)	5	9	3	5	1
+to_lower(x) = x, to_lower(x) = y ==> is_prefix(to_lower(y), to_lower(x)) = p | true(p)	5	9	3	5	1
+reverse(x) = y, reverse(y) = y ==> is_prefix(x, reverse(reverse(y))) = p | true(p)	5	9	3	5	1
+reverse(x) = y, reverse(y) = y ==> is_prefix(y, reverse(reverse(x))) = p | true(p)	5	9	3	5	1
+is_prefix(x, left_strip(x)) = p ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	5	9	2	4	1
+is_prefix(left_strip(x), x) = p ==> is_prefix(left_strip(x), left_strip(x)) = p | true(p)	5	9	2	4	1
+length(x) = a, length(x) = b ==> concat(y, concat(x, x)) = z | gt1(a)	5	9	5	6	1
+left_strip(x) = x, left_strip(x) = y ==> is_prefix(left_strip(x), left_strip(y)) = p | true(p)	5	9	3	5	1
+is_prefix(to_caps(x), y) = p ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	4	9	3	5	1
+to_caps(x) = y, to_caps(x) = z === is_prefix(to_caps(x), to_caps(y)) = p | true(p)	4	9	4	6	1
+right_strip(x) = x, right_strip(x) = y ==> is_prefix(right_strip(y), right_strip(y)) = p | true(p)	4	9	3	4	1
+right_strip(x) = x, right_strip(x) = y ==> is_prefix(right_strip(x), right_strip(y)) = p | true(p)	4	9	3	5	1
+to_caps(x) = x, to_caps(y) = x ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	4	9	3	4	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(to_caps(x), to_caps(x)) = q | true(q)	4	9	3	4	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	4	9	4	5	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(y), to_caps(z)) = p | true(p)	4	9	4	6	1
+to_caps(x) = x, to_caps(y) = x ==> is_prefix(to_caps(y), to_caps(x)) = p | true(p)	4	9	3	5	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(z), to_caps(y)) = p | true(p)	4	9	4	6	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	4	9	4	5	1
+right_strip(x) = x, right_strip(x) = y ==> is_prefix(right_strip(y), right_strip(x)) = p | true(p)	4	9	3	5	1
+is_prefix(x, to_caps(y)) = p ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	4	9	3	5	1
+to_caps(x) = x, to_caps(y) = x ==> is_prefix(to_caps(x), to_caps(y)) = p | true(p)	4	9	3	5	1
+is_prefix(to_caps(x), x) = p ==> is_prefix(to_caps(x), to_caps(x)) = q | true(q)	4	9	3	4	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(z), to_caps(z)) = p | true(p)	4	9	4	5	1
+to_caps(x) = y, to_caps(x) = z === is_prefix(to_caps(y), to_caps(x)) = p | true(p)	4	9	4	6	1
+is_prefix(x, right_strip(x)) = p ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	4	9	2	4	1
+right_strip(x) = x, right_strip(x) = y ==> is_prefix(right_strip(x), right_strip(x)) = p | true(p)	4	9	3	4	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(z), to_caps(x)) = p | true(p)	4	9	4	6	1
+to_caps(x) = y, to_caps(x) = z ==> is_prefix(to_caps(x), to_caps(z)) = p | true(p)	4	9	4	6	1
+to_caps(x) = x, to_caps(y) = x ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	4	9	3	4	1
+to_caps(x) = x ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	3	7	2	3	1
+length(x) = a <== concat(x, concat(x, x)) = y | Not(gt1(a))	3	7	3	4	1
+to_caps(x) = y, to_caps(y) = x ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	3	9	3	4	1
+to_caps(x) = y, to_caps(y) = x ==> is_prefix(to_caps(x), to_caps(y)) = p | true(p)	3	9	3	5	1
+to_caps(x) = x, to_caps(x) = y ==> is_prefix(to_caps(y), to_caps(x)) = p | true(p)	3	9	3	5	1
+to_caps(x) = x, to_caps(x) = y ==> is_prefix(to_caps(y), to_caps(y)) = p | true(p)	3	9	3	4	1
+is_prefix(to_caps(x), x) = p ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	3	9	2	4	1
+to_caps(x) = y, to_caps(y) = x ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	3	9	3	4	1
+to_caps(x) = y, to_caps(y) = x ==> is_prefix(to_caps(y), to_caps(x)) = p | true(p)	3	9	3	5	1
+is_prefix(x, to_caps(x)) = p ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	3	9	2	4	1
+to_caps(x) = x, to_caps(x) = y ==> is_prefix(to_caps(x), to_caps(x)) = p | true(p)	3	9	3	4	1
+length(x) = a, length(x) = b <== concat(x, concat(x, x)) = y | Not(gt(a, b)), Not(gt1(b))	3	9	4	5	2
+to_caps(x) = x, to_caps(x) = y ==> is_prefix(to_caps(x), to_caps(y)) = p | true(p)	3	9	3	5	1

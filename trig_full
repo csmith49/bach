@@ -1,0 +1,1164 @@
+
+trig_sin(x) = z === trig_sin(y) = z | twoPiApart(x, y)	111	4	3	4	1
+trig_cos(x) = z === trig_cos(y) = z | twoPiApart(x, y)	111	4	3	4	1
+trig_sin(x) = z <== trig_cos(y) = w, trig_sin(y) = z | twoPiApart(x, y)	111	6	4	5	1
+trig_cos(x) = w, trig_cos(x) = z ==> trig_cos(y) = z | twoPiApart(x, y)	111	6	4	5	1
+trig_cos(x) = z <== trig_cos(x) = w, trig_cos(y) = z | twoPiApart(x, y)	111	6	4	6	1
+trig_cos(x) = w, trig_cos(x) = z ==> trig_cos(y) = w | twoPiApart(x, y)	111	6	4	5	1
+trig_cos(x) = z <== trig_cos(y) = z, trig_sin(x) = w | twoPiApart(x, y)	111	6	4	6	1
+trig_sin(x) = z <== trig_cos(x) = w, trig_sin(y) = z | twoPiApart(y, x)	111	6	4	6	1
+trig_cos(x) = z, trig_cos(y) = w ==> trig_cos(y) = z | twoPiApart(x, y)	111	6	4	6	1
+trig_cos(x) = z <== trig_cos(y) = w, trig_cos(y) = z | twoPiApart(x, y)	111	6	4	5	1
+trig_cos(x) = z, trig_cos(y) = w ==> trig_cos(x) = w | twoPiApart(x, y)	111	6	4	6	1
+trig_cos(x) = z <== trig_cos(y) = z, trig_sin(y) = w | twoPiApart(x, y)	111	6	4	5	1
+trig_arccos(z) = x ==> trig_sin(y) = w | 	63	4	4	4	0
+trig_sin(x) = z <== trig_arccos(w) = y | 	63	4	4	4	0
+trig_arccos(z) = x ==> trig_cos(y) = w | 	63	4	4	4	0
+trig_cos(x) = z <== trig_arccos(w) = y | 	63	4	4	4	0
+trig_cos(x) = w, trig_cos(x) = z === trig_cos(y) = w, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = w, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = w, trig_cos(x) = z ==> trig_cos(x) = z, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = w, trig_cos(x) = z ==> trig_cos(x) = w, trig_cos(y) = w | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_cos(y) = w === trig_cos(x) = w, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	8	1
+trig_cos(x) = w, trig_cos(x) = z === trig_cos(x) = z, trig_cos(y) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = w ==> trig_cos(x) = z, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = w, trig_cos(x) = z | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(y) = w, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_cos(y) = w === trig_cos(x) = w, trig_cos(x) = z | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = w ==> trig_cos(x) = w, trig_cos(y) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = w, trig_cos(x) = z === trig_cos(x) = w, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = z, trig_cos(y) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = w === trig_cos(y) = w, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	7	1
+trig_sin(x) = z <== trig_arcsin(z) = x, trig_sin(y) = w | 	63	6	4	6	0
+trig_cos(x) = z <== trig_arccos(z) = x, trig_cos(y) = w | 	63	6	4	6	0
+trig_sin(x) = z <== trig_arcsin(w) = y, trig_arcsin(z) = x | 	63	6	4	6	0
+trig_cos(x) = z <== trig_arccos(w) = y, trig_arccos(z) = x | 	63	6	4	6	0
+trig_arccos(trig_cos(x)) = x <== trig_arccos(w) = x, trig_arccos(z) = y | 	63	7	4	5	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(w) = y, trig_arcsin(z) = x | 	63	7	4	5	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(w) = x, trig_arcsin(z) = y | 	63	7	4	5	0
+trig_arccos(trig_cos(x)) = x <== trig_arccos(w) = y, trig_arccos(z) = x | 	63	7	4	5	0
+trig_arccos(trig_cos(x)) = x <== trig_arccos(z) = x, trig_cos(y) = w | 	63	7	4	5	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = x, trig_sin(y) = w | 	63	7	4	5	0
+trig_cos(x) = z, trig_cos(y) = z ==> trig_cos(x) = w | invi(z, w), Not(twoPiApart(x, y))	50	6	4	5	2
+trig_cos(x) = z <== trig_cos(x) = w, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	50	6	4	5	2
+trig_cos(x) = z, trig_cos(y) = z ==> trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	50	6	4	5	2
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(y) = w | 	63	8	4	8	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(x) = z | 	63	8	4	8	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(x) = z | 	63	8	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_sin(x) = z | 	63	8	4	8	0
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(z) = x, trig_cos(x) = z | 	63	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(y) = w | 	63	8	4	8	0
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(z) = x, trig_cos(y) = w | 	63	8	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_sin(y) = w | 	63	8	4	6	0
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(z) = x, trig_sin(y) = w | 	63	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(y) = w | 	63	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(x) = z | 	63	8	4	6	0
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(z) = x, trig_sin(x) = z | 	63	8	4	6	0
+trig_cos(x) = z, trig_cos(y) = z === trig_cos(x) = w, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	50	8	4	6	2
+trig_arcsin(z) = x ==> trig_cos(y) = w | invi(z, w)	21	4	4	4	1
+trig_sin(x) = z === trig_sin(y) = w | invr(x, y), invi(z, w)	21	4	4	4	2
+trig_cos(x) = z <== trig_arcsin(w) = y | invi(z, w)	21	4	4	4	1
+trig_cos(x) = z === trig_sin(y) = z | halfPiApart(x, y)	20	4	3	4	1
+trig_sin(x) = z === trig_cos(y) = z | halfPiApart(x, y)	20	4	3	4	1
+trig_cos(x) = z <== trig_arccos(z) = y | twoPiApart(x, y)	16	4	3	4	1
+trig_arccos(z) = x ==> trig_cos(y) = z | twoPiApart(x, y)	16	4	3	4	1
+trig_arcsin(z) = x ==> trig_sin(y) = z | twoPiApart(x, y)	15	4	3	4	1
+trig_sin(x) = z <== trig_arcsin(z) = y | twoPiApart(x, y)	15	4	3	4	1
+trig_arccos(trig_cos(x)) = x <== trig_arccos(trig_cos(y)) = x | 	21	6	2	3	0
+trig_sin(x) = z <== trig_arccos(w) = y, trig_arccos(z) = y | 	21	6	4	5	0
+trig_sin(x) = z <== trig_arcsin(z) = x, trig_sin(y) = z | 	21	6	3	5	0
+trig_cos(x) = z <== trig_arccos(w) = y, trig_arccos(z) = y | 	21	6	4	5	0
+trig_arcsin(trig_sin(x)) = y ==> trig_arcsin(trig_sin(y)) = y | 	21	6	2	3	0
+trig_cos(x) = z <== trig_arccos(z) = x, trig_cos(y) = z | 	21	6	3	5	0
+trig_arccos(trig_cos(x)) = y ==> trig_arccos(trig_cos(y)) = y | 	21	6	2	3	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(trig_sin(y)) = x | 	21	6	2	3	0
+trig_sin(x) = z <== trig_cos(x) = w, trig_cos(y) = z | halfPiApart(x, y)	20	6	4	6	1
+trig_sin(x) = z <== trig_cos(y) = z, trig_sin(x) = w | halfPiApart(y, x)	20	6	4	6	1
+trig_sin(x) = z <== trig_cos(y) = w, trig_cos(y) = z | halfPiApart(x, y)	20	6	4	5	1
+trig_cos(x) = z <== trig_cos(x) = w, trig_sin(y) = z | halfPiApart(y, x)	20	6	4	6	1
+trig_cos(x) = z <== trig_cos(y) = w, trig_sin(y) = z | halfPiApart(x, y)	20	6	4	5	1
+trig_sin(x) = z <== trig_cos(y) = z, trig_sin(y) = w | halfPiApart(x, y)	20	6	4	5	1
+trig_arccos(z) = x ==> trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	16	5	3	4	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(z) = y | twoPiApart(x, y)	16	5	3	4	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(w) = y, trig_arccos(z) = y | 	21	7	4	5	0
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(y)) = x | twoPiApart(x, y)	15	5	3	4	1
+trig_arccos(trig_cos(x)) = x <== trig_arccos(z) = x, trig_cos(y) = z | 	21	7	3	4	0
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = y, trig_sin(x) = z | 	21	7	3	5	0
+trig_arcsin(trig_cos(x)) = y <== trig_arcsin(z) = y, trig_cos(x) = z | 	21	7	3	5	0
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = y | twoPiApart(x, y)	15	5	3	4	1
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = x, trig_sin(y) = z | 	21	7	3	4	0
+trig_arccos(trig_cos(x)) = y <== trig_arccos(z) = y, trig_cos(x) = z | 	21	7	3	5	0
+trig_arccos(trig_sin(x)) = y <== trig_arccos(w) = y, trig_arccos(z) = y | 	21	7	4	5	0
+trig_arccos(trig_sin(x)) = y <== trig_arccos(z) = y, trig_sin(x) = z | 	21	7	3	5	0
+trig_cos(x) = z <== trig_arccos(z) = y, trig_cos(y) = w | twoPiApart(x, y)	16	6	4	5	1
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	16	6	4	6	1
+trig_sin(x) = z <== trig_arccos(w) = x, trig_sin(y) = z | twoPiApart(y, x)	16	6	4	6	1
+trig_cos(x) = z <== trig_arccos(z) = y, trig_cos(x) = w | twoPiApart(x, y)	16	6	4	6	1
+trig_sin(x) = z <== trig_arccos(w) = y, trig_sin(y) = z | twoPiApart(x, y)	16	6	4	5	1
+trig_cos(x) = z <== trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	16	6	4	6	1
+trig_cos(x) = z <== trig_arccos(w) = y, trig_cos(y) = z | twoPiApart(x, y)	16	6	4	5	1
+trig_cos(x) = z <== trig_arccos(z) = y, trig_cos(y) = z | twoPiApart(x, y)	16	6	3	4	1
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(z) = x, trig_sin(y) = z | 	21	8	3	5	0
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(z) = x, trig_sin(x) = z | 	21	8	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_sin(y) = w | 	21	8	4	7	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(y) = z | 	21	8	4	7	0
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(z) = x, trig_cos(y) = z | 	21	8	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(y) = z | 	21	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_sin(y) = z | 	21	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(y) = w | 	21	8	4	7	0
+trig_arccos(z) = x, trig_cos(y) = z ==> trig_arccos(z) = x, trig_cos(x) = z | 	21	8	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_sin(y) = z | 	21	8	4	7	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_sin(y) = w | 	21	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(y) = w | 	21	8	4	6	0
+trig_cos(x) = w, trig_cos(x) = z ==> trig_cos(x) = w, trig_sin(y) = w | halfPiApart(x, y)	20	8	4	6	1
+trig_cos(x) = w, trig_cos(x) = z === trig_cos(x) = z, trig_sin(y) = w | halfPiApart(x, y)	20	8	4	7	1
+trig_sin(x) = z <== trig_arcsin(z) = y, trig_sin(y) = z | twoPiApart(x, y)	15	6	3	4	1
+trig_cos(x) = z <== trig_arcsin(w) = x, trig_cos(y) = z | twoPiApart(x, y)	15	6	4	6	1
+trig_cos(x) = w, trig_cos(x) = z ==> trig_cos(x) = z, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	6	1
+trig_sin(x) = z <== trig_arcsin(w) = y, trig_arcsin(z) = y | twoPiApart(x, y)	15	6	4	5	1
+trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	6	4	6	1
+trig_sin(x) = z <== trig_arcsin(w) = y, trig_sin(y) = z | twoPiApart(y, x)	15	6	4	5	1
+trig_cos(x) = w, trig_cos(x) = z === trig_cos(x) = w, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	7	1
+trig_cos(x) = z <== trig_arcsin(w) = y, trig_cos(y) = z | twoPiApart(x, y)	15	6	4	5	1
+trig_sin(x) = z <== trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	6	4	6	1
+trig_sin(x) = z <== trig_arcsin(z) = y, trig_sin(y) = w | twoPiApart(y, x)	15	6	4	5	1
+trig_sin(x) = z <== trig_arcsin(z) = y, trig_sin(x) = w | twoPiApart(y, x)	15	6	4	6	1
+trig_sin(trig_arccos(z)) = w <== trig_arccos(z) = x, trig_sin(y) = w | twoPiApart(y, x)	16	7	4	6	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(z) = y, trig_cos(y) = z | twoPiApart(x, y)	16	7	3	4	1
+trig_cos(trig_arccos(z)) = w <== trig_arccos(z) = x, trig_cos(y) = w | twoPiApart(x, y)	16	7	4	6	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(z) = y, trig_cos(x) = w | twoPiApart(x, y)	16	7	4	6	1
+trig_cos(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	16	7	4	6	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(z) = y, trig_cos(y) = w | twoPiApart(x, y)	16	7	4	5	1
+trig_arccos(z) = x === trig_arccos(w) = y | 	9	4	4	4	0
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(z) = x, trig_sin(y) = w | twoPiApart(y, x)	15	7	4	6	1
+trig_cos(trig_arcsin(z)) = w <== trig_arcsin(z) = x, trig_cos(y) = w | twoPiApart(x, y)	15	7	4	6	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = y, trig_sin(x) = w | twoPiApart(y, x)	15	7	4	6	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(w) = y, trig_arcsin(z) = y | twoPiApart(x, y)	15	7	4	5	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = y, trig_sin(y) = w | twoPiApart(y, x)	15	7	4	5	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = y, trig_sin(y) = z | twoPiApart(x, y)	15	7	3	4	1
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	7	4	6	1
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(w) = x, trig_cos(x) = w | twoPiApart(x, y)	16	8	4	6	1
+trig_arccos(z) = x, trig_sin(y) = w === trig_arccos(z) = x, trig_sin(x) = w | twoPiApart(y, x)	16	8	4	7	1
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(w) = x, trig_cos(y) = w | twoPiApart(x, y)	16	8	4	7	1
+trig_arccos(z) = x, trig_cos(y) = w === trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	16	8	4	8	1
+trig_arccos(z) = x, trig_sin(x) = w === trig_arccos(z) = x, trig_sin(y) = w | twoPiApart(y, x)	16	8	4	7	1
+trig_arccos(z) = x, trig_cos(y) = z <== trig_arccos(z) = x, trig_cos(y) = w | twoPiApart(x, y)	16	8	4	7	1
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(z) = x, trig_cos(y) = z | twoPiApart(x, y)	16	8	4	7	1
+trig_arccos(z) = x, trig_cos(y) = z <== trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	16	8	4	7	1
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	16	8	4	6	1
+trig_arcsin(z) = x, trig_cos(x) = w === trig_arcsin(z) = x, trig_cos(y) = w | twoPiApart(x, y)	15	8	4	7	1
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	8	4	8	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(y) = w | twoPiApart(x, y)	15	8	4	6	1
+trig_arcsin(z) = x, trig_sin(y) = z <== trig_arcsin(z) = x, trig_sin(y) = w | twoPiApart(y, x)	15	8	4	7	1
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(z) = x, trig_sin(y) = z | twoPiApart(y, x)	15	8	4	7	1
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(w) = x, trig_sin(x) = w | twoPiApart(y, x)	15	8	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = x, trig_sin(y) = w | twoPiApart(y, x)	15	8	4	7	1
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	8	4	6	1
+trig_arcsin(z) = x, trig_sin(y) = z <== trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	8	4	7	1
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(w) = x, trig_sin(y) = w | twoPiApart(y, x)	15	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	15	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(y) = z | twoPiApart(x, y)	15	8	4	6	1
+trig_cos(x) = z <== trig_arcsin(w) = y, trig_arcsin(z) = y | invi(w, z)	10	6	4	5	1
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(x) = z | 	9	6	4	6	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(y) = w | 	9	6	4	4	0
+trig_arcsin(trig_cos(x)) = y <== trig_arcsin(w) = y, trig_arcsin(z) = y | invi(w, z)	10	7	4	5	1
+trig_arccos(trig_cos(x)) = x <== trig_arccos(w) = y, trig_arccos(z) = y | 	9	7	4	4	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_cos(y) = z | invi(w, z)	10	8	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_cos(y) = w | invi(w, z)	10	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_cos(y) = z | invi(w, z)	10	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_cos(y) = w | invi(w, z)	10	8	4	6	1
+trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_sin(y) = w | invi(w, z), Not(twoPiApart(x, y))	6	6	4	5	2
+trig_sin(x) = z <== trig_arcsin(w) = y, trig_sin(x) = w | invi(w, z), Not(twoPiApart(x, y))	6	6	4	5	2
+trig_sin(x) = z <== trig_arcsin(w) = x, trig_sin(y) = w | invi(w, z), Not(twoPiApart(x, y))	6	6	4	5	2
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_sin(y) = w | invi(w, z), Not(twoPiApart(x, y))	6	7	4	5	2
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(z) = x, trig_sin(y) = z | invi(w, z), Not(twoPiApart(x, y))	6	7	4	5	2
+trig_cos(x) = z <== trig_arccos(w) = y, trig_cos(x) = w | invi(z, w), Not(twoPiApart(x, y))	5	6	4	5	2
+trig_cos(x) = z <== trig_arccos(w) = x, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	5	6	4	5	2
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	5	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y | twoPiApart(x, y)	3	4	3	4	1
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(w) = x, trig_sin(x) = w | invi(w, z), Not(twoPiApart(x, y))	6	8	4	5	2
+trig_sin(x) = z <== trig_arcsin(z) = x | 	3	4	2	4	0
+True === trig_sin(trig_arcsin(z)) = z | 	3	4	1	1	0
+True === trig_cos(trig_arccos(z)) = z | 	3	4	1	1	0
+trig_cos(x) = z <== trig_arccos(z) = x | 	3	4	2	4	0
+trig_sin(x) = z <== trig_arcsin(w) = y | invr(x, y), invi(w, z)	3	4	4	4	2
+trig_arcsin(z) = x ==> trig_sin(x) = z | 	3	4	2	4	0
+trig_arcsin(z) = x === trig_arcsin(w) = y | invr(x, y), invi(w, z)	3	4	4	4	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(w) = x, trig_sin(y) = w | invi(w, z), Not(twoPiApart(x, y))	6	8	4	6	2
+trig_cos(x) = z <== trig_arcsin(z) = y | halfPiApart(x, y)	3	4	3	4	1
+trig_arcsin(z) = x ==> trig_sin(y) = w | invr(x, y), invi(w, z)	3	4	4	4	2
+trig_arccos(z) = x ==> trig_cos(x) = z | 	3	4	2	4	0
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(w) = x, trig_sin(y) = w | invi(w, z), Not(twoPiApart(x, y))	6	8	4	5	2
+trig_arcsin(z) = x === trig_arccos(z) = y | halfPiApart(x, y)	3	4	3	4	1
+trig_arccos(z) = x === trig_arccos(z) = y | twoPiApart(x, y)	3	4	3	4	1
+trig_sin(x) = z <== trig_arccos(z) = y | halfPiApart(x, y)	3	4	3	4	1
+trig_arcsin(z) = x ==> trig_cos(y) = z | halfPiApart(x, y)	3	4	3	4	1
+trig_arccos(z) = x ==> trig_sin(y) = z | halfPiApart(x, y)	3	4	3	4	1
+trig_arcsin(z) = x === trig_arcsin(w) = y | invr(y, x)	3	4	4	4	1
+trig_arccos(z) = x === trig_arcsin(z) = y | halfPiApart(x, y)	3	4	3	4	1
+trig_cos(trig_arccos(z)) = w <== trig_arccos(z) = x, trig_cos(y) = z | invi(z, w), Not(twoPiApart(x, y))	5	7	4	5	2
+trig_cos(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	5	7	4	5	2
+trig_arccos(z) = x, trig_cos(y) = z === trig_arccos(w) = x, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	5	8	4	6	2
+trig_arccos(z) = x, trig_cos(y) = z ==> trig_arccos(w) = x, trig_cos(x) = w | invi(z, w), Not(twoPiApart(x, y))	5	8	4	5	2
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(w) = x, trig_cos(y) = w | invi(z, w), Not(twoPiApart(x, y))	5	8	4	5	2
+trig_arcsin(trig_cos(x)) = y <== trig_arcsin(z) = y | halfPiApart(x, y)	3	5	3	4	1
+trig_arccos(z) = x ==> trig_arccos(trig_sin(y)) = x | halfPiApart(x, y)	3	5	3	4	1
+True === trig_arccos(z) = x, trig_cos(y) = w | halfPiApart(y, x)	3	5	4	4	1
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(y)) = y | invr(x, y)	3	5	3	3	1
+trig_arccos(z) = x ==> trig_arccos(trig_cos(x)) = x | 	3	5	2	3	0
+True === trig_arcsin(z) = x, trig_cos(y) = w | invr(x, y)	3	5	4	4	1
+trig_arcsin(z) = x ==> trig_arcsin(trig_cos(y)) = x | halfPiApart(x, y)	3	5	3	4	1
+True === trig_arcsin(z) = x, trig_sin(y) = w | invr(x, y)	3	5	4	4	1
+trig_arccos(trig_cos(x)) = x <== trig_arccos(z) = x | 	3	5	2	3	0
+True === trig_arccos(z) = x, trig_sin(y) = w | invr(x, y)	3	5	4	4	1
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(x)) = x | 	3	5	2	3	0
+trig_arccos(trig_sin(x)) = y <== trig_arccos(z) = y | halfPiApart(x, y)	3	5	3	4	1
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = x | 	3	5	2	3	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = y | invr(x, y)	3	5	3	3	1
+trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_cos(y) = z | halfPiApart(y, x)	3	6	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(z) = y | 	3	6	4	5	0
+trig_cos(x) = z <== trig_arccos(z) = x, trig_arccos(z) = y | 	3	6	3	5	0
+trig_cos(x) = z <== trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	6	4	6	1
+trig_sin(x) = z <== trig_arcsin(z) = x, trig_sin(x) = w | 	3	6	3	5	0
+trig_sin(trig_arcsin(z)) = w === trig_sin(trig_arcsin(w)) = z | 	3	6	2	4	0
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	6	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x | twoPiApart(y, x)	3	6	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y | twoPiApart(y, x)	3	6	4	5	1
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_arcsin(z) = y | halfPiApart(y, x)	3	6	4	6	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = y | 	3	6	4	5	0
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_sin(y) = z | halfPiApart(y, x)	3	6	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y | twoPiApart(x, y)	3	6	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y | 	3	6	4	5	0
+trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_sin(x) = z | 	3	6	3	5	0
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(w, z)	3	6	4	4	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(x) = z | invr(x, y), invi(w, z)	3	6	4	6	2
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(y) = z | 	3	6	4	5	0
+trig_sin(x) = z <== trig_arccos(z) = y, trig_sin(x) = w | halfPiApart(y, x)	3	6	4	6	1
+trig_sin(x) = z <== trig_arcsin(w) = x, trig_arcsin(z) = x | 	3	6	3	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(x) = w | 	3	6	4	5	0
+trig_cos(x) = z <== trig_arcsin(z) = y, trig_cos(x) = w | halfPiApart(y, x)	3	6	4	6	1
+trig_cos(x) = z <== trig_arccos(z) = x, trig_cos(x) = w | 	3	6	3	5	0
+trig_sin(x) = z <== trig_arcsin(z) = x, trig_arcsin(z) = y | 	3	6	3	5	0
+trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	6	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = x | twoPiApart(y, x)	3	6	4	6	1
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_sin(x) = w | 	3	6	4	6	0
+trig_sin(x) = z <== trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(z, w)	3	6	4	4	2
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(y) = z | 	3	6	4	5	0
+trig_sin(x) = z <== trig_arccos(z) = y, trig_sin(y) = w | halfPiApart(x, y)	3	6	4	5	1
+trig_arcsin(trig_sin(x)) = x === trig_arcsin(trig_sin(y)) = y | invr(x, y)	3	6	2	2	1
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(x) = w | 	3	6	4	6	0
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(y) = w | 	3	6	4	5	0
+trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = y | 	3	6	4	5	0
+trig_cos(trig_arccos(z)) = w === trig_cos(trig_arccos(w)) = z | 	3	6	2	4	0
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_sin(y) = w | 	3	6	4	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(x) = w | 	3	6	4	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y | twoPiApart(y, x)	3	6	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y | twoPiApart(y, x)	3	6	4	5	1
+trig_arcsin(trig_sin(x)) = y ==> trig_sin(trig_arcsin(z)) = w | invr(x, y)	3	6	4	4	1
+trig_arccos(z) = x <== trig_arccos(w) = y, trig_arccos(z) = y | twoPiApart(y, x)	3	6	4	5	1
+trig_cos(x) = z <== trig_arcsin(z) = y, trig_cos(y) = w | halfPiApart(x, y)	3	6	4	5	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = x | twoPiApart(x, y)	3	6	4	6	1
+trig_cos(x) = z <== trig_arccos(w) = x, trig_arccos(z) = x | 	3	6	3	5	0
+trig_sin(x) = z <== trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	6	4	6	1
+trig_arcsin(z) = x <== trig_arccos(w) = y, trig_arccos(z) = y | halfPiApart(x, y)	3	6	4	5	1
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_cos(x) = z | 	3	6	3	5	0
+trig_arcsin(z) = x === trig_arccos(z) = y, trig_arcsin(w) = x | halfPiApart(x, y)	3	6	4	6	1
+trig_arcsin(trig_cos(x)) = y === trig_arcsin(z) = y, trig_cos(x) = w | halfPiApart(y, x)	3	7	4	6	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(z) = x, trig_arccos(z) = y | 	3	7	3	5	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(w) = x, trig_arcsin(z) = x | 	3	7	3	4	0
+trig_arccos(trig_sin(x)) = y <== trig_arccos(z) = y, trig_sin(y) = w | halfPiApart(x, y)	3	7	4	5	1
+trig_arccos(trig_sin(x)) = y <== trig_arccos(z) = y, trig_sin(x) = w | halfPiApart(y, x)	3	7	4	6	1
+trig_arccos(trig_cos(x)) = y <== trig_arccos(w) = y, trig_arccos(z) = x | twoPiApart(x, y)	3	7	4	6	1
+trig_cos(trig_arccos(z)) = w <== trig_arccos(w) = y, trig_arccos(z) = x | twoPiApart(x, y)	3	7	4	6	1
+trig_cos(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	7	4	6	1
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = x, trig_sin(x) = w | 	3	7	3	4	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y)	3	7	3	3	1
+trig_cos(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_cos(x) = z | 	3	7	3	5	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = x, trig_arcsin(z) = y | 	3	7	3	4	0
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(z) = x, trig_sin(x) = w | 	3	7	3	5	0
+trig_cos(trig_arccos(z)) = w <== trig_arccos(z) = x, trig_cos(x) = w | 	3	7	3	5	0
+trig_cos(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_arccos(z) = x | 	3	7	3	5	0
+trig_arccos(trig_cos(x)) = x <== trig_arccos(z) = x, trig_cos(x) = z | 	3	7	2	3	0
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	7	4	6	1
+trig_arcsin(trig_cos(x)) = y === trig_arcsin(z) = y, trig_cos(y) = w | halfPiApart(y, x)	3	7	4	5	1
+trig_arccos(trig_cos(x)) = x <== trig_arccos(z) = x, trig_cos(x) = w | 	3	7	3	4	0
+trig_sin(trig_arccos(z)) = w <== trig_arccos(z) = x, trig_sin(x) = w | 	3	7	3	5	0
+trig_cos(trig_arcsin(z)) = w <== trig_arcsin(z) = x, trig_cos(x) = w | 	3	7	3	5	0
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_arcsin(z) = x | 	3	7	3	5	0
+trig_arccos(trig_cos(x)) = x <== trig_arccos(z) = x, trig_arccos(z) = y | 	3	7	3	4	0
+trig_arccos(trig_cos(x)) = y <== trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	7	4	6	1
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	7	4	6	1
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_sin(x) = z | 	3	7	3	5	0
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = x, trig_arcsin(z) = y | 	3	7	3	5	0
+trig_arcsin(trig_sin(x)) = x === trig_arcsin(z) = y, trig_sin(x) = w | invr(y, x)	3	7	4	5	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(w) = y, trig_arcsin(z) = x | twoPiApart(y, x)	3	7	4	6	1
+trig_arccos(trig_cos(x)) = x <== trig_arccos(w) = x, trig_arccos(z) = x | 	3	7	3	4	0
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = x, trig_sin(x) = z | 	3	7	2	3	0
+trig_arcsin(trig_sin(x)) = x === trig_arcsin(w) = y, trig_arcsin(z) = y | invr(y, x)	3	7	4	4	1
+trig_arcsin(trig_sin(x)) = x === trig_arcsin(z) = y, trig_sin(y) = w | invr(y, x)	3	7	4	4	1
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = y, trig_arcsin(z) = x | twoPiApart(y, x)	3	7	4	6	1
+True === trig_arccos(w) = y, trig_arccos(z) = x | twoPiApart(x, y), Not(invr(x, y))	2	5	4	4	2
+trig_arccos(z) = x, trig_arcsin(z) = y <== trig_arccos(w) = x, trig_arcsin(z) = y | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = y | 	3	8	4	6	0
+trig_arcsin(z) = x, trig_cos(y) = w === trig_arcsin(w) = x, trig_cos(y) = z | halfPiApart(y, x)	3	8	4	8	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = y | twoPiApart(y, x)	3	8	4	6	1
+trig_arccos(z) = x, trig_sin(y) = w ==> trig_arccos(w) = x, trig_sin(y) = w | halfPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_sin(x) = z | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_sin(y) = w === trig_arccos(w) = x, trig_sin(y) = z | halfPiApart(y, x)	3	8	4	8	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = x, trig_arccos(z) = x | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(x) = w | twoPiApart(x, y)	3	8	4	8	1
+trig_arccos(z) = x, trig_arcsin(w) = y ==> trig_arccos(z) = x, trig_arcsin(z) = y | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_cos(x) = z | 	3	8	3	5	0
+trig_arccos(z) = x, trig_sin(x) = w ==> trig_arccos(z) = x, trig_sin(y) = z | halfPiApart(x, y)	3	8	4	6	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x, trig_arccos(z) = x | 	3	8	4	6	0
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(w) = y, trig_sin(x) = z | invr(y, x)	3	8	4	8	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(x) = w | twoPiApart(y, x)	3	8	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(x) = w | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(y) = w | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = y, trig_arccos(z) = x | twoPiApart(x, y)	3	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(x) = w | 	3	8	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(y) = w | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(w) = y, trig_arcsin(z) = x | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(x) = z | 	3	8	4	7	0
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x, trig_arccos(z) = x | twoPiApart(y, x)	3	8	4	6	1
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(w, z)	3	8	4	6	2
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(y) = z | twoPiApart(x, y)	3	8	4	8	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_sin(x) = z | 	3	8	3	6	0
+trig_arccos(z) = x, trig_arcsin(w) = y ==> trig_arccos(w) = x, trig_arcsin(w) = y | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(x) = w | 	3	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arcsin(z) = y | halfPiApart(x, y)	3	8	4	6	1
+trig_arccos(z) = x, trig_arcsin(w) = y === trig_arccos(w) = x, trig_arcsin(z) = y | halfPiApart(y, x)	3	8	4	8	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = y, trig_arccos(z) = y | twoPiApart(y, x)	3	8	4	6	1
+trig_arcsin(z) = x, trig_cos(x) = w ==> trig_arcsin(z) = x, trig_cos(y) = z | halfPiApart(x, y)	3	8	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(z) = y | 	3	8	4	6	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(x) = z | 	3	8	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	8	4	8	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_sin(y) = z | 	3	8	3	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(y) = z | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(x) = w | twoPiApart(x, y)	3	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(w) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(z) = y | twoPiApart(y, x)	3	8	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = x, trig_arcsin(z) = y | halfPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(x) = w | 	3	8	4	7	0
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = x | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(x) = z | twoPiApart(x, y)	3	8	4	7	1
+trig_arcsin(z) = x, trig_cos(y) = w ==> trig_arcsin(w) = x, trig_cos(y) = w | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(x) = w | 	3	8	3	5	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_cos(y) = z | 	3	8	3	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_sin(y) = z | twoPiApart(y, x)	3	8	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(z) = x, trig_arcsin(w) = y | halfPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = x | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x <== trig_arcsin(w) = y, trig_arcsin(z) = x | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	8	4	8	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(w) = y | 	3	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = x, trig_cos(x) = z | 	3	8	3	6	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_cos(y) = z | 	3	8	3	5	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_sin(y) = z | 	3	8	3	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(y) = z | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(w) = y | twoPiApart(y, x)	3	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_sin(x) = w | twoPiApart(y, x)	3	8	4	8	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(y) = z | twoPiApart(y, x)	3	8	4	8	1
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_cos(x) = z | 	3	8	3	6	0
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(w, z)	3	8	4	4	2
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = x, trig_arccos(z) = x | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(x) = z | 	3	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(y) = z | twoPiApart(x, y)	3	8	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(y) = w | 	3	8	4	5	0
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(z) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = y, trig_arccos(z) = y | 	3	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(w) = y | twoPiApart(x, y)	3	8	4	7	1
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(x) = z | invr(x, y), invi(w, z)	3	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(x) = z | 	3	8	3	5	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_sin(x) = z | 	3	8	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_sin(x) = w | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(z) = y <== trig_arccos(z) = x, trig_arcsin(w) = y | halfPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(z) = x | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_sin(x) = z | 	3	8	3	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(y) = z | 	3	8	4	5	0
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x, trig_arccos(z) = y | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arcsin(w) = y | halfPiApart(x, y)	3	8	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = y | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(z) = y | twoPiApart(x, y)	3	8	4	7	1
+trig_cos(x) = z <== trig_arcsin(w) = x, trig_arcsin(z) = y | halfPiApart(y, x)	2	6	4	6	1
+trig_arcsin(z) = x === trig_arccos(z) = y, trig_arcsin(w) = y | halfPiApart(x, y)	2	6	4	5	1
+trig_arccos(z) = x === trig_arccos(z) = y, trig_arcsin(w) = y | twoPiApart(y, x)	2	6	4	5	1
+trig_arcsin(z) = x <== trig_arccos(w) = x, trig_arccos(z) = y | halfPiApart(y, x)	2	6	4	6	1
+trig_sin(x) = z <== trig_arccos(w) = x, trig_arccos(z) = y | halfPiApart(y, x)	2	6	4	6	1
+trig_arcsin(z) = x <== trig_arccos(w) = y, trig_arcsin(z) = y | twoPiApart(x, y)	2	6	4	5	1
+trig_arcsin(z) = x <== trig_arccos(w) = x, trig_arcsin(z) = y | twoPiApart(y, x)	2	6	4	6	1
+trig_arccos(z) = x <== trig_arccos(w) = y, trig_arcsin(z) = y | halfPiApart(x, y)	2	6	4	5	1
+trig_arccos(z) = x === trig_arccos(z) = y, trig_arcsin(w) = x | twoPiApart(y, x)	2	6	4	6	1
+trig_arcsin(trig_cos(x)) = y === trig_arcsin(w) = y, trig_arcsin(z) = x | halfPiApart(y, x)	2	7	4	6	1
+trig_sin(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_arccos(z) = y | halfPiApart(y, x)	2	7	4	6	1
+trig_arccos(trig_sin(x)) = y <== trig_arccos(w) = x, trig_arccos(z) = y | halfPiApart(y, x)	2	7	4	6	1
+trig_arccos(trig_sin(x)) = y <== trig_arccos(w) = y, trig_arccos(z) = x | halfPiApart(y, x)	2	7	4	6	1
+trig_arcsin(trig_cos(x)) = y ==> trig_arcsin(w) = x, trig_arcsin(z) = x | halfPiApart(x, y)	2	7	4	5	1
+trig_arccos(trig_cos(x)) = x ==> trig_arccos(z) = y, trig_cos(y) = w | halfPiApart(x, y)	2	7	4	4	1
+trig_arcsin(trig_cos(x)) = y ==> trig_arcsin(z) = x, trig_cos(x) = w | halfPiApart(x, y)	2	7	4	5	1
+trig_arccos(trig_cos(x)) = x ==> trig_arccos(z) = y, trig_cos(x) = w | halfPiApart(x, y)	2	7	4	5	1
+trig_arcsin(trig_cos(x)) = y === trig_arcsin(w) = x, trig_arcsin(z) = y | halfPiApart(y, x)	2	7	4	6	1
+trig_cos(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_arcsin(w) = y | invr(y, x), Not(invi(w, z))	2	7	4	5	2
+trig_cos(trig_arcsin(z)) = w <== trig_arcsin(w) = y, trig_arcsin(z) = x | halfPiApart(y, x)	2	7	4	6	1
+trig_cos(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_arcsin(z) = y | halfPiApart(y, x)	2	7	4	6	1
+trig_sin(trig_arccos(z)) = w <== trig_arccos(w) = y, trig_arccos(z) = x | halfPiApart(y, x)	2	7	4	6	1
+trig_arcsin(trig_cos(x)) = y ==> trig_arcsin(z) = x, trig_cos(y) = w | halfPiApart(x, y)	2	7	4	6	1
+trig_arccos(z) = x <== trig_arcsin(w) = y | invr(x, y), twoPiApart(y, x)	1	4	4	4	2
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(z) = y, trig_arcsin(w) = y | twoPiApart(x, y)	2	8	4	6	1
+trig_arccos(z) = x, trig_arcsin(w) = y === trig_arccos(z) = x, trig_arcsin(w) = x | twoPiApart(y, x)	2	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_cos(x) = w | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x === trig_arccos(w) = y, trig_arcsin(z) = y | halfPiApart(x, y)	2	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_cos(y) = z | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arcsin(z) = y | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(z) = y <== trig_arccos(w) = y, trig_arcsin(z) = y | halfPiApart(x, y)	2	8	4	6	1
+trig_arccos(z) = x, trig_arcsin(w) = y === trig_arccos(z) = y, trig_arcsin(w) = x | twoPiApart(y, x)	2	8	4	8	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(z) = x, trig_arcsin(w) = y | twoPiApart(y, x)	2	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(x) = w | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = y, trig_arcsin(z) = y | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = y === trig_arccos(z) = y, trig_arcsin(w) = y | twoPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(z) = x, trig_arcsin(w) = x | twoPiApart(x, y)	2	8	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_sin(x) = w | halfPiApart(y, x)	2	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_cos(x) = w | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x === trig_arccos(z) = x, trig_arcsin(w) = y | twoPiApart(y, x)	2	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(z) = x, trig_arcsin(w) = x | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(y) = z | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x === trig_arccos(z) = y, trig_arcsin(w) = x | twoPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x === trig_arccos(z) = y, trig_arcsin(w) = y | twoPiApart(x, y)	2	8	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arcsin(w) = x | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x ==> trig_arccos(w) = y, trig_arcsin(w) = x | halfPiApart(x, y)	2	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_cos(y) = z | halfPiApart(y, x)	2	8	4	7	1
+trig_arcsin(z) = x === trig_arcsin(z) = y | invr(x, y), twoPiApart(y, x)	1	4	3	4	2
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(z) = y, trig_arcsin(w) = x | twoPiApart(y, x)	2	8	4	7	1
+trig_arcsin(z) = x ==> trig_arccos(w) = y | invr(x, y), twoPiApart(y, x)	1	4	4	4	2
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_sin(y) = z | halfPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x ==> trig_arccos(z) = x, trig_arcsin(z) = y | halfPiApart(x, y)	2	8	4	6	1
+trig_arccos(z) = x, trig_arcsin(z) = y <== trig_arccos(z) = x, trig_arcsin(w) = x | halfPiApart(x, y)	2	8	4	6	1
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(y, x)	1	5	3	4	2
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = x | invr(x, y), twoPiApart(y, x)	1	5	3	4	2
+True === trig_arccos(z) = x, trig_arcsin(w) = y | twoPiApart(x, y), Not(invr(x, y))	1	5	4	4	2
+True === trig_arccos(w) = y, trig_arccos(z) = x | invr(x, y), twoPiApart(y, x)	1	5	4	4	2
+True === trig_arcsin(z) = x, trig_arcsin(z) = y | invr(x, y), twoPiApart(y, x)	1	5	3	3	2
+True === trig_arcsin(w) = y, trig_arcsin(z) = x | invr(x, y), twoPiApart(y, x)	1	5	4	4	2
+trig_sin(x) = z <== trig_arcsin(w) = x, trig_arcsin(w) = y | invr(x, y), invi(z, w)	1	6	4	5	2
+trig_arcsin(trig_sin(x)) = y === trig_arcsin(trig_sin(y)) = x | invr(y, x)	1	6	2	4	1
+trig_arcsin(trig_sin(x)) = y === trig_arcsin(trig_sin(x)) = x | invr(x, y), twoPiApart(y, x)	1	6	2	3	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(y) = w | invr(x, y), twoPiApart(y, x)	1	6	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(w) = y | invr(x, y), twoPiApart(x, y)	1	6	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(z) = y | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), twoPiApart(y, x)	1	6	4	6	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y), twoPiApart(y, x)	1	6	3	4	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y | invr(x, y), twoPiApart(y, x)	1	6	4	5	2
+trig_arcsin(trig_sin(x)) = x === trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(y, x)	1	6	2	3	2
+trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(w) = y | invr(x, y), twoPiApart(y, x)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_cos(x) = w | invr(x, y), twoPiApart(x, y)	1	6	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x | invr(x, y), invi(z, w)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), invi(z, w)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(y) = z | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y | invr(x, y), invi(z, w)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_cos(y) = w | invr(x, y), twoPiApart(x, y)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(x) = z | invr(x, y), twoPiApart(y, x)	1	6	3	5	2
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x | invr(x, y), twoPiApart(x, y)	1	6	4	5	2
+trig_arcsin(trig_sin(x)) = x === trig_arcsin(z) = y, trig_sin(x) = z | invr(x, y), twoPiApart(y, x)	1	7	3	4	2
+trig_cos(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_cos(y) = z | invr(x, y), twoPiApart(x, y)	1	7	4	6	2
+trig_arccos(trig_cos(x)) = y ==> trig_arccos(z) = x, trig_cos(x) = w | invr(x, y)	1	7	4	5	1
+trig_arccos(trig_cos(x)) = y ==> trig_arccos(z) = x, trig_cos(y) = w | invr(x, y)	1	7	4	6	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = x, trig_sin(y) = z | invr(y, x)	1	7	3	5	1
+trig_arcsin(trig_sin(x)) = y <== trig_arcsin(z) = x, trig_sin(x) = z | invr(x, y), twoPiApart(y, x)	1	7	3	4	2
+trig_arcsin(trig_sin(x)) = y === trig_arcsin(w) = x, trig_arcsin(z) = x | invr(x, y), invi(w, z)	1	7	4	5	2
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(w) = x, trig_arcsin(w) = y | invr(x, y), invi(z, w)	1	7	4	5	2
+trig_sin(trig_arccos(z)) = w <== trig_arccos(w) = x, trig_sin(y) = z | invr(x, y), Not(twoPiApart(x, y))	1	7	4	6	2
+trig_arccos(trig_sin(x)) = y <== trig_arccos(w) = x, trig_arccos(z) = x | invi(w, z), halfPiApart(x, y)	1	7	4	5	2
+trig_arcsin(trig_sin(x)) = y === trig_arcsin(z) = x, trig_sin(y) = w | invr(x, y), twoPiApart(x, y)	1	7	4	6	2
+trig_arccos(trig_cos(x)) = y ==> trig_arccos(w) = x, trig_arccos(z) = x | invr(x, y)	1	7	4	5	1
+trig_sin(trig_arcsin(z)) = w <== trig_arcsin(z) = x, trig_arcsin(z) = y | invr(x, y), invi(z, w)	1	7	4	5	2
+trig_arccos(trig_sin(x)) = y <== trig_arccos(z) = x, trig_sin(y) = w | invi(w, z), halfPiApart(x, y)	1	7	4	6	2
+trig_arcsin(trig_sin(x)) = y === trig_arcsin(z) = x, trig_sin(x) = w | invr(x, y), invi(w, z)	1	7	4	5	2
+trig_arcsin(z) = x, trig_cos(x) = w === trig_arcsin(z) = y, trig_cos(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y), invi(w, z)	1	8	4	5	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y), twoPiApart(y, x)	1	8	3	5	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(z) = y, trig_sin(x) = z | invr(y, x)	1	8	3	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = x, trig_arcsin(z) = y | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(z) = y, trig_sin(x) = z | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = x, trig_arcsin(w) = y | invr(x, y), invi(z, w)	1	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(z) = x, trig_cos(y) = w | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	8	2
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), invi(z, w)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), invi(z, w)	1	8	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(z) = y, trig_cos(y) = w | invr(x, y), twoPiApart(x, y)	1	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(z) = y, trig_cos(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), twoPiApart(y, x)	1	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x, trig_sin(x) = w | invr(x, y), invi(z, w)	1	8	4	5	2
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), invi(w, z)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(z, w)	1	8	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x, trig_sin(y) = z | invr(x, y), invi(z, w)	1	8	4	7	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_arcsin(z) = y | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(z) = x, trig_cos(x) = w === trig_arcsin(z) = y, trig_cos(y) = w | invr(x, y), twoPiApart(x, y)	1	8	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), twoPiApart(y, x)	1	8	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = y, trig_sin(x) = z | invr(x, y), invi(z, w)	1	8	4	7	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_sin(y) = w | invr(x, y), invi(z, w)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = y, trig_sin(x) = z | invr(x, y), twoPiApart(y, x)	1	8	3	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(x) = z | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(w) = y, trig_sin(x) = z | invr(x, y), invi(w, z)	1	8	4	7	2
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y), twoPiApart(y, x)	1	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = x, trig_arcsin(z) = x | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y), twoPiApart(y, x)	1	8	3	4	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(z) = x, trig_cos(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(x) = z | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(z) = y | invi(z, w)	1	8	4	6	1
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(z, w)	1	8	4	5	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_arcsin(w) = y | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = x, trig_sin(y) = w | invr(x, y), invi(w, z)	1	8	4	6	2
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_cos(y) = z | 	441	7	4	5	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_sin(y) = z | 	441	7	4	5	0
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = z, trig_sin(y) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = z, trig_sin(x) = w | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(y) = z, trig_sin(y) = w | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(y) = z, trig_sin(x) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_arcsin(z) = x ==> trig_sin(trig_arcsin(w)) = w | 	63	5	3	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x | 	63	5	3	3	0
+trig_arccos(z) = x ==> trig_cos(trig_arccos(w)) = w | 	63	5	3	3	0
+trig_sin(x) = z ==> trig_sin(trig_arcsin(w)) = w | 	63	5	3	3	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x | 	63	5	3	3	0
+trig_cos(x) = z ==> trig_cos(trig_arccos(w)) = w | 	63	5	3	3	0
+trig_arcsin(trig_sin(x)) = y ==> trig_sin(trig_arcsin(z)) = z | 	63	6	3	3	0
+trig_arccos(trig_cos(x)) = y ==> trig_cos(trig_arccos(z)) = z | 	63	6	3	3	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = y, trig_arccos(z) = x | 	63	7	4	5	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_arcsin(w) = y | 	63	7	4	4	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_sin(y) = w | 	63	7	4	4	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(z) = x, trig_sin(y) = w | 	63	7	4	5	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_arcsin(z) = y | 	63	7	4	5	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_arccos(w) = y | 	63	7	4	4	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(z) = x, trig_cos(y) = w | 	63	7	4	5	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = y, trig_arcsin(z) = x | 	63	7	4	5	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_cos(y) = w | 	63	7	4	4	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_arccos(z) = y | 	63	7	4	5	0
+trig_sin(x) = z <== trig_arcsin(w) = y | invi(z, w)	21	4	4	4	1
+trig_cos(x) = z ==> trig_cos(trig_arccos(z)) = z | 	21	5	2	3	0
+trig_sin(x) = z ==> trig_sin(trig_arcsin(z)) = z | 	21	5	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(z) = x, trig_sin(y) = z | 	21	7	3	4	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(z) = x, trig_cos(y) = z | 	21	7	3	4	0
+trig_cos(x) = z, trig_cos(y) = w ==> trig_cos(x) = z, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = w === trig_cos(x) = z, trig_sin(x) = w | halfPiApart(x, y)	20	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = w === trig_cos(y) = w, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	7	1
+trig_cos(x) = z, trig_cos(y) = w ==> trig_cos(y) = w, trig_sin(x) = w | halfPiApart(x, y)	20	8	4	7	1
+trig_arcsin(z) = x, trig_cos(y) = w === trig_arcsin(z) = x, trig_cos(x) = w | twoPiApart(x, y)	15	8	4	7	1
+trig_sin(trig_arcsin(z)) = z === trig_sin(trig_arcsin(w)) = w | 	9	6	2	2	0
+trig_arccos(trig_cos(x)) = x ==> trig_cos(trig_arccos(z)) = z | 	9	6	2	2	0
+trig_cos(trig_arccos(z)) = z === trig_cos(trig_arccos(w)) = w | 	9	6	2	2	0
+trig_arcsin(trig_sin(x)) = x ==> trig_sin(trig_arcsin(z)) = z | 	9	6	2	2	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_sin(x) = w | 	9	7	3	3	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_cos(x) = w | 	9	7	3	3	0
+trig_arcsin(z) = x ==> trig_sin(trig_arcsin(z)) = z | 	3	5	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(z) = x | 	3	5	2	3	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(z) = x | 	3	5	2	3	0
+trig_arccos(z) = x ==> trig_cos(trig_arccos(z)) = z | 	3	5	2	3	0
+trig_cos(trig_arccos(z)) = w ==> trig_cos(trig_arccos(z)) = z | 	3	6	2	3	0
+trig_cos(trig_arccos(z)) = z <== trig_cos(trig_arccos(w)) = z | 	3	6	2	3	0
+trig_cos(trig_arccos(z)) = z <== trig_cos(trig_arccos(z)) = w | 	3	6	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_sin(trig_arcsin(w)) = z | 	3	6	2	3	0
+trig_cos(trig_arccos(z)) = w ==> trig_cos(trig_arccos(w)) = w | 	3	6	2	3	0
+trig_sin(trig_arcsin(z)) = w ==> trig_sin(trig_arcsin(z)) = z | 	3	6	2	3	0
+trig_sin(trig_arcsin(z)) = w ==> trig_sin(trig_arcsin(w)) = w | 	3	6	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_sin(trig_arcsin(z)) = w | 	3	6	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_sin(x) = z | 	3	7	3	4	0
+trig_arcsin(trig_sin(x)) = x ==> trig_arcsin(w) = y, trig_arcsin(z) = y | twoPiApart(x, y)	3	7	4	4	1
+trig_arcsin(trig_sin(x)) = x ==> trig_arcsin(z) = y, trig_sin(x) = w | twoPiApart(x, y)	3	7	4	5	1
+trig_cos(trig_arccos(z)) = z <== trig_arccos(z) = x, trig_cos(x) = z | 	3	7	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(z) = x, trig_arcsin(z) = y | 	3	7	3	4	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(w) = x, trig_arcsin(z) = x | 	3	7	3	4	0
+trig_arccos(trig_cos(x)) = x ==> trig_arccos(z) = y, trig_cos(x) = w | twoPiApart(y, x)	3	7	4	5	1
+trig_cos(trig_arccos(z)) = z <== trig_arccos(z) = x, trig_arccos(z) = y | 	3	7	3	4	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_arccos(z) = x | 	3	7	3	4	0
+trig_arcsin(trig_sin(x)) = x ==> trig_arcsin(z) = y, trig_sin(y) = w | twoPiApart(x, y)	3	7	4	4	1
+trig_cos(trig_arccos(z)) = z <== trig_arccos(z) = x, trig_cos(x) = w | 	3	7	3	4	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(z) = x, trig_sin(x) = z | 	3	7	2	3	0
+trig_sin(trig_arcsin(z)) = z <== trig_arcsin(z) = x, trig_sin(x) = w | 	3	7	3	4	0
+trig_cos(trig_arccos(z)) = z <== trig_arccos(w) = x, trig_cos(x) = z | 	3	7	3	4	0
+trig_arccos(trig_cos(x)) = x ==> trig_arccos(z) = y, trig_cos(y) = w | twoPiApart(y, x)	3	7	4	4	1
+trig_arccos(z) = x, trig_sin(y) = z <== trig_arccos(w) = x, trig_sin(y) = z | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_sin(y) = z <== trig_arccos(z) = x, trig_sin(y) = w | halfPiApart(y, x)	3	8	4	7	1
+trig_arcsin(z) = x, trig_cos(y) = z <== trig_arcsin(z) = x, trig_cos(y) = w | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_sin(y) = z <== trig_arccos(z) = x, trig_sin(x) = w | halfPiApart(x, y)	3	8	4	6	1
+trig_arcsin(z) = x, trig_cos(y) = z <== trig_arcsin(w) = x, trig_cos(y) = z | halfPiApart(y, x)	3	8	4	7	1
+trig_arccos(z) = x, trig_sin(y) = w ==> trig_arccos(z) = x, trig_sin(y) = z | halfPiApart(y, x)	3	8	4	7	1
+trig_arcsin(z) = x, trig_cos(y) = z <== trig_arcsin(z) = x, trig_cos(x) = w | halfPiApart(x, y)	3	8	4	6	1
+trig_arcsin(z) = x, trig_cos(y) = w ==> trig_arcsin(z) = x, trig_cos(y) = z | halfPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y | invr(x, y), twoPiApart(x, y)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(x) = w | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(x) = w | invr(x, y), twoPiApart(x, y)	1	6	4	6	2
+trig_arccos(z) = x, trig_cos(y) = w <== trig_arccos(z) = y, trig_cos(y) = z | invr(x, y), twoPiApart(y, x)	1	8	4	6	2
+trig_arcsin(z) = x, trig_cos(y) = w === trig_arcsin(z) = y, trig_cos(x) = w | invr(x, y), twoPiApart(x, y)	1	8	4	8	2
+trig_arccos(z) = x, trig_cos(x) = z ==> trig_arccos(z) = y, trig_cos(x) = w | invr(x, y), twoPiApart(y, x)	1	8	4	6	2
+trig_arcsin(z) = x, trig_cos(y) = w === trig_arcsin(z) = y, trig_cos(y) = w | invr(x, y), twoPiApart(x, y)	1	8	4	7	2
+trig_arcsin(z) = x === trig_arcsin(w) = y | invr(x, y)	3	4	4	4	1
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(x) = z | invr(y, x)	3	6	4	6	1
+trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_cos(x) = w | halfPiApart(x, y)	2	6	4	5	1
+trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_cos(y) = z | halfPiApart(x, y)	2	6	4	5	1
+trig_cos(x) = z <== trig_arcsin(w) = y | invr(x, y), twoPiApart(y, x)	1	4	4	4	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(y) = w | invr(x, y), invi(w, z)	1	6	4	5	2
+trig_cos(x) = z, trig_sin(x) = w === trig_cos(x) = z, trig_sin(y) = w | twoPiApart(y, x)	111	8	4	7	1
+trig_cos(x) = z, trig_sin(y) = w === trig_cos(y) = z, trig_sin(x) = w | twoPiApart(y, x)	111	8	4	8	1
+trig_cos(x) = z, trig_sin(x) = w === trig_cos(y) = z, trig_sin(y) = w | twoPiApart(x, y)	111	8	4	6	1
+trig_cos(x) = z, trig_sin(x) = w === trig_cos(y) = z, trig_sin(x) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_sin(y) = w === trig_cos(y) = z, trig_sin(y) = w | twoPiApart(x, y)	111	8	4	7	1
+trig_cos(x) = z, trig_sin(y) = w === trig_cos(x) = z, trig_sin(x) = w | twoPiApart(y, x)	111	8	4	7	1
+trig_cos(x) = z, trig_sin(x) = w ==> trig_cos(y) = w, trig_sin(x) = w | halfPiApart(x, y)	20	8	4	6	1
+trig_cos(x) = z, trig_sin(y) = z <== trig_cos(y) = w, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	6	1
+trig_cos(x) = z, trig_sin(y) = w ==> trig_cos(x) = w, trig_sin(y) = w | halfPiApart(y, x)	20	8	4	7	1
+trig_cos(x) = z, trig_sin(y) = z <== trig_cos(x) = z, trig_sin(y) = w | halfPiApart(y, x)	20	8	4	7	1
+trig_cos(x) = z, trig_sin(y) = z <== trig_cos(x) = z, trig_sin(x) = w | halfPiApart(x, y)	20	8	4	6	1
+trig_cos(x) = z, trig_sin(y) = z <== trig_cos(x) = w, trig_sin(y) = z | halfPiApart(y, x)	20	8	4	7	1
+trig_cos(x) = z, trig_sin(x) = w === trig_cos(y) = w, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	6	1
+trig_cos(x) = z, trig_sin(y) = w === trig_cos(x) = w, trig_sin(y) = z | halfPiApart(y, x)	20	8	4	8	1
+trig_cos(x) = z, trig_sin(y) = w ==> trig_cos(x) = z, trig_sin(y) = z | halfPiApart(y, x)	20	8	4	7	1
+trig_cos(x) = z, trig_sin(x) = w ==> trig_cos(x) = z, trig_sin(y) = z | halfPiApart(x, y)	20	8	4	6	1
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(z, w)	3	6	4	4	2
+trig_arccos(trig_cos(x)) = x ==> trig_arccos(z) = y, trig_cos(y) = w | twoPiApart(x, y)	3	7	4	4	1
+trig_arccos(trig_cos(x)) = x ==> trig_arccos(z) = y, trig_cos(x) = w | twoPiApart(x, y)	3	7	4	5	1
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(x) = z | invr(x, y), invi(z, w)	3	8	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(z, w)	3	8	4	4	2
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(w) = y, trig_sin(y) = w | invr(x, y), invi(z, w)	3	8	4	6	2
+trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(w) = y | invr(x, y), twoPiApart(y, x)	1	6	4	5	2
+trig_arccos(z) = x ==> trig_arccos(w) = x, trig_sin(y) = w | invi(w, z), halfPiApart(x, y)	1	6	4	5	2
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x | invr(x, y), twoPiApart(y, x)	1	6	4	5	2
+trig_arcsin(trig_sin(x)) = x <== trig_arcsin(z) = y, trig_sin(x) = z | invr(y, x)	1	7	3	4	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(y) = z | invr(x, y), invi(z, w)	1	8	4	5	2
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = z | 	63	6	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(y) = w | 	63	6	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(y) = w | 	63	6	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = z | 	63	6	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(z))) = x | 	63	8	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(w))) = y | 	63	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(z))) = x | 	63	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(w))) = y | 	63	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(y) = w | 	21	6	4	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(y) = z | 	21	6	4	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = w, trig_cos(y) = z | 	21	8	4	7	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = z, trig_cos(y) = w | 	21	8	4	7	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = z, trig_cos(y) = z | 	21	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(y) = w, trig_cos(y) = z | 	21	8	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = w, trig_cos(y) = w | 	21	8	4	6	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(y) = z | twoPiApart(x, y)	15	6	4	5	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(y) = w | twoPiApart(x, y)	15	6	4	5	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = z, trig_sin(y) = w | twoPiApart(x, y)	15	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(y) = w, trig_sin(y) = z | twoPiApart(x, y)	15	8	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = w, trig_sin(y) = w | twoPiApart(x, y)	15	8	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = w, trig_sin(y) = z | twoPiApart(x, y)	15	8	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = z, trig_sin(y) = z | twoPiApart(x, y)	15	8	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = z, trig_cos(y) = w | 	9	8	4	8	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = z, trig_sin(y) = w | 	9	8	4	8	0
+trig_arcsin(z) = x === trig_arcsin(trig_sin(trig_arcsin(z))) = x | 	3	6	2	4	0
+trig_arccos(z) = x === trig_arccos(trig_cos(trig_arccos(z))) = x | 	3	6	2	4	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = w | twoPiApart(y, x)	3	6	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(y) = z | twoPiApart(x, y)	3	6	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = z | 	3	6	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = z | 	3	6	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = w | 	3	6	3	5	0
+trig_arcsin(z) = x === trig_arcsin(trig_sin(trig_arcsin(w))) = y | invr(x, y), invi(z, w)	3	6	4	4	2
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = w | twoPiApart(x, y)	3	6	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = w | 	3	6	3	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(y) = w, trig_cos(y) = z | twoPiApart(x, y)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = w, trig_sin(y) = z | twoPiApart(y, x)	3	8	4	8	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(z))) = x | 	3	8	3	5	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(w))) = x | 	3	8	3	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(z))) = y | twoPiApart(x, y)	3	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = z, trig_sin(y) = z | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(w))) = x | twoPiApart(y, x)	3	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(y) = w, trig_sin(y) = z | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_cos(x) = w, trig_cos(x) = z | 	3	8	3	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = z, trig_cos(y) = z | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = w, trig_cos(x) = z | twoPiApart(x, y)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(z))) = y | twoPiApart(y, x)	3	8	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(w))) = x | twoPiApart(x, y)	3	8	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(z))) = x | 	3	8	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = w, trig_sin(y) = w | twoPiApart(y, x)	3	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_sin(x) = w, trig_sin(x) = z | twoPiApart(y, x)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = w, trig_cos(y) = w | twoPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_cos(x) = w, trig_cos(y) = z | twoPiApart(x, y)	3	8	4	8	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_sin(x) = w, trig_sin(x) = z | 	3	8	3	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(w))) = x | 	3	8	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x <== trig_arccos(trig_cos(trig_arccos(w))) = y | invr(x, y), twoPiApart(y, x)	1	8	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(trig_arcsin(z))) = y | invr(x, y), invi(w, z)	1	8	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(trig_arcsin(w))) = y | invr(x, y), twoPiApart(y, x)	1	8	4	5	2
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_arccos(w) = y, trig_arccos(z) = y | 	327	8	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x <== trig_arccos(w) = x, trig_arccos(z) = x, trig_arccos(z) = y | 	327	10	4	8	0
+trig_arccos(w) = x, trig_arccos(z) = x <== trig_arccos(w) = x, trig_arccos(w) = y, trig_arccos(z) = y | 	327	10	4	7	0
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x, trig_arccos(w) = y, trig_arccos(z) = y | 	327	10	4	7	0
+trig_arccos(w) = x, trig_arccos(z) = x <== trig_arccos(w) = y, trig_arccos(z) = x, trig_arccos(z) = y | 	327	10	4	7	0
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(w) = x, trig_arccos(w) = y, trig_arccos(z) = x | 	327	10	4	7	0
+trig_arccos(w) = y, trig_arccos(z) = x <== trig_arccos(w) = x, trig_arccos(w) = y, trig_arccos(z) = y | 	327	10	4	8	0
+trig_cos(x) = z <== trig_cos(x) = w, trig_cos(y) = w, trig_cos(y) = z | 	161	8	4	6	0
+trig_cos(x) = z, trig_cos(y) = w <== trig_cos(x) = w, trig_cos(x) = z, trig_cos(y) = z | 	161	10	4	8	0
+trig_cos(x) = w, trig_cos(x) = z <== trig_cos(x) = w, trig_cos(y) = w, trig_cos(y) = z | 	161	10	4	7	0
+trig_cos(x) = z, trig_cos(y) = w <== trig_cos(x) = w, trig_cos(y) = w, trig_cos(y) = z | 	161	10	4	8	0
+trig_cos(x) = w, trig_cos(x) = z <== trig_cos(x) = z, trig_cos(y) = w, trig_cos(y) = z | 	161	10	4	7	0
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = w, trig_cos(x) = z, trig_cos(y) = w | 	161	10	4	7	0
+trig_cos(x) = z, trig_cos(y) = z <== trig_cos(x) = w, trig_cos(y) = w, trig_cos(y) = z | 	161	10	4	7	0
+trig_cos(x) = z, trig_sin(x) = w ==> trig_cos(x) = z, trig_cos(y) = z | twoPiApart(x, y)	111	8	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(w)) = w | 	63	9	4	7	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_sin(trig_arcsin(w)) = w | 	63	9	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | 	63	9	4	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(trig_arccos(z)) = z | 	63	9	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(trig_arccos(w)) = w | 	63	9	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_sin(trig_arcsin(w)) = w | 	63	9	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = y | 	63	9	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | 	63	9	4	7	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = x | 	63	9	4	6	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(w)) = w | 	63	9	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	63	9	4	7	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_cos(trig_arccos(w)) = w | 	63	9	4	6	0
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	63	9	4	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(trig_arccos(z)) = z | 	63	9	4	7	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_sin(trig_arcsin(z)) = z | 	63	9	4	7	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(z)) = z | 	63	9	4	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	63	9	4	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	63	9	4	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(y)) = y | 	63	9	4	6	0
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	63	9	4	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(x)) = x | 	63	9	4	7	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_cos(trig_arccos(w)) = w | 	63	9	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | 	63	9	4	7	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(trig_arccos(w)) = w | 	63	9	4	7	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(x)) = x | 	63	9	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | 	63	9	4	5	0
+trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | 	63	10	3	4	0
+trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | 	63	10	3	4	0
+trig_cos(x) = z, trig_sin(x) = w === trig_cos(x) = z, trig_cos(y) = w | halfPiApart(x, y)	20	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | 	21	9	4	6	0
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	21	9	3	4	0
+trig_arccos(z) = x, trig_cos(y) = z ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | 	21	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(y)) = x, trig_cos(x) = z | 	21	9	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(y)) = x, trig_cos(x) = w | 	21	9	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_sin(y)) = x | 	21	9	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | 	21	9	4	6	0
+trig_arccos(z) = x, trig_cos(y) = z ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	21	9	3	4	0
+trig_arcsin(z) = x, trig_cos(y) = z === trig_arcsin(z) = x, trig_arcsin(trig_cos(y)) = x | 	21	9	3	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | 	21	9	4	5	0
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | 	21	9	3	5	0
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | 	21	9	3	5	0
+trig_arccos(z) = x, trig_cos(y) = z === trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | 	21	9	3	6	0
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | 	21	9	3	6	0
+trig_arccos(z) = x, trig_sin(y) = z === trig_arccos(z) = x, trig_arccos(trig_sin(y)) = x | 	21	9	3	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_sin(y)) = x | 	21	9	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(x)) = x, trig_cos(y) = w | 	21	9	4	6	0
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | 	21	9	3	5	0
+trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	16	7	3	4	1
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(x, y)	15	7	3	4	1
+trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | 	21	10	2	3	0
+trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | 	21	10	2	3	0
+trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | 	21	10	2	3	0
+trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | 	21	10	2	3	0
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	16	9	4	5	1
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	16	9	4	7	1
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	16	9	4	6	1
+trig_arccos(trig_cos(trig_arccos(z))) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	16	9	3	4	1
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	16	9	4	7	1
+trig_arccos(z) = x, trig_cos(x) = z ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	16	9	3	4	1
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	16	9	4	6	1
+trig_arccos(z) = x, trig_cos(y) = w ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	16	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(y, x)	15	9	4	5	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(y)) = x, trig_sin(x) = z | twoPiApart(x, y)	15	9	4	6	1
+trig_arcsin(trig_sin(trig_arcsin(z))) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(x, y)	15	9	3	4	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	15	9	4	6	1
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(y, x)	15	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	15	9	4	6	1
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	15	9	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(x, y)	15	9	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(y)) = x, trig_sin(x) = w | twoPiApart(x, y)	15	9	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(x, y)	15	9	4	5	1
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	15	9	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(x, y)	15	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(x, y)	15	9	3	4	1
+trig_cos(x) = z <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	9	7	3	5	0
+trig_sin(x) = z <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | 	9	7	3	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(y)) = y | 	9	7	4	4	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(trig_arccos(w)) = w | 	9	7	4	4	0
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(trig_arccos(w)) = w | 	9	7	4	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(x)) = x | 	9	7	4	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(trig_arccos(z)) = z | 	9	7	4	5	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_cos(y)) = x | invi(w, z)	10	9	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(y)) = x | invi(w, z)	10	9	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(y)) = y, trig_cos(x) = z | 	9	9	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = y | 	9	9	4	6	0
+trig_arccos(trig_cos(trig_arccos(z))) = x <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	9	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	9	9	4	6	0
+trig_arccos(z) = x, trig_cos(x) = z === trig_arccos(z) = x, trig_cos(trig_arccos(w)) = w | 	9	9	3	5	0
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = x, trig_sin(trig_arcsin(w)) = w | 	9	9	3	5	0
+trig_sin(trig_arcsin(trig_sin(x))) = z <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | 	9	9	3	5	0
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	9	9	3	5	0
+trig_cos(trig_arccos(trig_cos(x))) = z <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	9	9	3	5	0
+trig_arcsin(trig_sin(trig_arcsin(z))) = x <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | 	9	9	3	5	0
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | 	9	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(y)) = y, trig_cos(x) = w | 	9	9	4	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | 	9	9	4	4	0
+trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	9	10	3	4	0
+trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	9	10	3	4	0
+trig_arcsin(z) = x <== trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | invi(w, z), Not(twoPiApart(x, y))	6	7	4	5	2
+trig_arccos(z) = x <== trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | invi(z, w), Not(twoPiApart(x, y))	5	7	4	5	2
+trig_sin(x) = w, trig_sin(x) = z <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | Not(twoPiApart(x, y))	6	9	4	5	1
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | Not(twoPiApart(x, y))	6	9	4	6	1
+trig_sin(x) = w, trig_sin(x) = z <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | Not(twoPiApart(x, y))	6	9	4	5	1
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | invi(w, z), Not(twoPiApart(x, y))	6	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | invi(w, z), Not(twoPiApart(x, y))	6	9	4	5	2
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | Not(twoPiApart(x, y))	6	9	4	6	1
+trig_cos(x) = z, trig_cos(y) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | Not(twoPiApart(x, y))	5	9	4	6	1
+trig_cos(x) = z, trig_cos(y) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | Not(twoPiApart(x, y))	5	9	4	6	1
+trig_arccos(z) = x, trig_cos(y) = z === trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | invi(z, w), Not(twoPiApart(x, y))	5	9	4	6	2
+trig_cos(x) = w, trig_cos(x) = z <== trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | Not(twoPiApart(x, y))	5	9	4	5	1
+trig_cos(x) = w, trig_cos(x) = z <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | Not(twoPiApart(x, y))	5	9	4	5	1
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | invi(z, w), Not(twoPiApart(x, y))	5	9	4	5	2
+trig_arccos(z) = x, trig_arcsin(w) = y ==> trig_arccos(w) = x | halfPiApart(y, x)	3	6	4	6	1
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_sin(trig_arccos(z)) = w | 	3	7	4	5	0
+trig_arccos(z) = x ==> trig_arccos(z) = y, trig_sin(trig_arccos(w)) = z | 	3	7	4	5	0
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(w, z)	3	7	4	4	2
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y)	3	7	3	3	1
+trig_arcsin(z) = x <== trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = x | 	3	7	3	5	0
+trig_arccos(z) = x <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	7	3	5	1
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	7	4	5	2
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	3	7	2	3	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(x)) = y | 	3	7	4	5	0
+trig_sin(x) = z <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	7	3	5	1
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), twoPiApart(y, x)	3	7	4	5	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), invi(w, z)	3	7	4	4	2
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_sin(y)) = x | 	3	7	4	5	0
+trig_arccos(z) = x <== trig_arccos(z) = y, trig_arccos(trig_cos(y)) = x | 	3	7	3	5	0
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), invi(z, w)	3	7	4	5	2
+trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	3	7	2	3	0
+trig_arcsin(z) = x <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	7	3	5	1
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(trig_arccos(w)) = z | 	3	7	4	5	0
+trig_cos(x) = z <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	7	3	5	1
+trig_sin(x) = z <== trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	7	4	5	2
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(y)) = x | 	3	7	4	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(trig_arccos(z)) = w | 	3	7	4	5	0
+trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_sin(x)) = y | 	3	7	4	5	0
+trig_arccos(z) = x, trig_arcsin(w) = y === trig_arccos(w) = x, trig_arccos(z) = x | halfPiApart(x, y)	3	8	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(trig_arccos(z)) = z | 	3	9	4	6	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | 	3	9	3	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(x)) = y | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(z) = x, trig_sin(y) = z <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	9	3	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	6	1
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x === trig_arccos(w) = x, trig_arccos(trig_cos(y)) = y | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | twoPiApart(y, x)	3	9	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_sin(trig_arcsin(trig_sin(x))) = z <== trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	9	4	5	2
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(y)) = y | 	3	9	4	5	0
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(z) = x, trig_arccos(trig_cos(x)) = x | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	9	4	7	2
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(x)) = x, trig_sin(x) = w | 	3	9	3	5	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | 	3	9	3	5	0
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(z) = x, trig_cos(trig_arccos(w)) = w | 	3	9	3	6	0
+trig_arccos(z) = x, trig_cos(x) = z === trig_arccos(z) = x, trig_cos(trig_arccos(z)) = z | 	3	9	2	4	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(z)) = z | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), invi(w, z)	3	9	4	4	2
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | twoPiApart(y, x)	3	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | twoPiApart(x, y)	3	9	4	6	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | 	3	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(y)) = x | 	3	9	4	6	0
+trig_arcsin(z) = x, trig_cos(x) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(y)) = x | halfPiApart(x, y)	3	9	4	6	1
+trig_cos(x) = z, trig_cos(y) = w <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_arccos(trig_sin(trig_arccos(z))) = x <== trig_arccos(z) = y, trig_arccos(trig_sin(y)) = x | 	3	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = x, trig_cos(trig_arccos(w)) = z | 	3	9	3	6	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | 	3	9	3	4	0
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(z) = x, trig_cos(trig_arccos(z)) = z | 	3	9	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = x | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(w)) = w | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(z)) = z | 	3	9	3	6	0
+trig_arccos(z) = x, trig_cos(x) = z === trig_arccos(z) = x, trig_arccos(trig_cos(x)) = x | 	3	9	2	4	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(x)) = y | 	3	9	4	6	0
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = x | 	3	9	3	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(trig_arccos(w)) = w | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = x | 	3	9	3	5	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	3	9	3	4	0
+trig_arccos(z) = x, trig_cos(y) = w <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_sin(trig_arcsin(z)) = z | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_cos(y) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_cos(y)) = x | halfPiApart(y, x)	3	9	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | twoPiApart(y, x)	3	9	4	7	1
+trig_cos(trig_arccos(trig_cos(x))) = z <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	3	5	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_sin(x) = z, trig_sin(y) = z <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	9	3	6	1
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), invi(z, w)	3	9	4	5	2
+trig_arccos(z) = x, trig_cos(x) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | twoPiApart(y, x)	3	9	4	4	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(x)) = x | 	3	9	3	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	3	9	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_sin(trig_arcsin(w)) = w | twoPiApart(y, x)	3	9	4	7	1
+trig_arcsin(z) = x, trig_sin(x) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y)	3	9	3	3	1
+trig_sin(x) = w, trig_sin(x) = z <== trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	3	9	3	4	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(w) = x, trig_cos(trig_arccos(z)) = z | 	3	9	3	6	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(trig_arccos(z)) = z | 	3	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(x)) = x, trig_cos(x) = w | 	3	9	3	5	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_cos(trig_arccos(z)) = z | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = x, trig_sin(trig_arcsin(z)) = z | 	3	9	2	4	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(trig_arccos(z)) = z | 	3	9	4	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = y | twoPiApart(y, x)	3	9	4	7	1
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(w, z)	3	9	4	4	2
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(x)) = y | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(trig_sin(trig_arcsin(z))) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	9	4	5	2
+trig_arcsin(z) = x, trig_cos(x) = w === trig_arcsin(z) = x, trig_cos(trig_arcsin(z)) = w | 	3	9	3	6	0
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(y, x)	3	9	4	4	1
+trig_arcsin(z) = x, trig_sin(x) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	3	9	2	3	0
+trig_arcsin(w) = x, trig_arcsin(z) = x <== trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(y, x)	3	9	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(x)) = x | 	3	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(trig_arccos(w)) = w | 	3	9	4	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | 	3	9	3	6	0
+trig_arcsin(trig_cos(trig_arcsin(z))) = x <== trig_arcsin(z) = y, trig_arcsin(trig_cos(y)) = x | 	3	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_cos(trig_arccos(w)) = w | 	3	9	4	5	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(w)) = w | 	3	9	3	6	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	3	9	3	4	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	3	9	3	4	0
+trig_arccos(z) = x, trig_cos(x) = w <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(z)) = z | 	3	9	3	5	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(y)) = x | 	3	9	4	6	0
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(y, x)	3	9	4	6	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = x | 	3	9	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_sin(trig_arcsin(z)) = z | twoPiApart(y, x)	3	9	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(x)) = y | twoPiApart(x, y)	3	9	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = x, trig_cos(trig_arccos(z)) = w | 	3	9	3	6	0
+trig_arccos(z) = x, trig_arcsin(w) = y === trig_arccos(z) = y | twoPiApart(y, x)	2	6	4	6	1
+trig_arccos(z) = x, trig_sin(y) = w ==> trig_arccos(z) = x, trig_arccos(trig_sin(y)) = x | halfPiApart(y, x)	3	9	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(y)) = y, trig_sin(x) = z | invr(x, y)	3	9	4	6	1
+trig_arcsin(z) = x, trig_cos(y) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(y)) = x | halfPiApart(y, x)	3	9	4	7	1
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = y | 	3	9	3	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(z)) = z | twoPiApart(y, x)	3	9	4	7	1
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_arccos(trig_cos(y)) = y | 	3	9	3	5	0
+trig_arcsin(trig_sin(trig_arcsin(z))) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	3	9	2	3	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(w)) = w | twoPiApart(y, x)	3	9	4	6	1
+trig_cos(x) = z, trig_cos(y) = z <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	3	6	1
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(y, x)	3	9	4	5	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(w)) = w | 	3	9	3	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(trig_cos(x)) = x, trig_cos(x) = z | 	3	9	3	5	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | twoPiApart(y, x)	3	9	4	7	1
+trig_arcsin(trig_cos(trig_arcsin(z))) = x <== trig_arcsin(w) = y, trig_arcsin(trig_cos(y)) = x | invi(z, w)	3	9	4	5	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(w)) = w | 	3	9	3	5	0
+trig_arccos(z) = x, trig_arcsin(w) = x === trig_arccos(z) = y | twoPiApart(y, x)	2	6	4	5	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_sin(trig_arcsin(z)) = w | 	3	9	3	6	0
+trig_arcsin(z) = x, trig_sin(y) = w <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(z, w)	3	9	4	7	2
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_cos(trig_arccos(z)) = z | 	3	9	3	5	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y)	3	9	4	6	1
+trig_arccos(z) = x, trig_cos(y) = z <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | twoPiApart(x, y)	3	9	3	6	1
+trig_arccos(z) = x, trig_sin(y) = w ==> trig_arccos(w) = x, trig_arccos(trig_sin(y)) = x | halfPiApart(y, x)	3	9	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = x | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_sin(y) = z <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | twoPiApart(x, y)	3	9	3	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(trig_arccos(w)) = w | 	3	9	3	5	0
+trig_arccos(z) = x, trig_sin(x) = w ==> trig_arccos(z) = x, trig_arccos(trig_sin(y)) = x | halfPiApart(x, y)	3	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = z <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	9	3	5	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	6	1
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	9	4	5	2
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	9	4	7	2
+trig_arccos(z) = x, trig_cos(x) = z <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	3	5	1
+trig_arcsin(z) = x, trig_sin(x) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | invr(y, x)	3	9	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_cos(x)) = y | 	3	9	4	6	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | 	3	9	3	5	0
+trig_arccos(z) = x, trig_cos(y) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | twoPiApart(y, x)	3	9	4	5	1
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(y)) = y, trig_sin(x) = w | invr(y, x)	3	9	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | 	3	9	4	6	0
+trig_arccos(trig_cos(trig_arccos(z))) = x <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	3	5	1
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(w) = x, trig_arccos(trig_cos(x)) = x | 	3	9	3	5	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = x | 	3	9	3	6	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = y | 	3	9	3	5	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(z) = x, trig_sin(x) = w <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(y, x)	3	9	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(trig_arccos(w)) = w | twoPiApart(x, y)	3	9	4	6	1
+trig_sin(x) = z, trig_sin(y) = z <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | twoPiApart(x, y)	3	9	3	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_cos(x)) = y | twoPiApart(x, y)	3	9	4	7	1
+trig_arccos(z) = x, trig_sin(x) = w === trig_arccos(z) = x, trig_sin(trig_arccos(z)) = w | 	3	9	3	6	0
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = y | twoPiApart(y, x)	3	9	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(y)) = x | twoPiApart(x, y)	3	9	4	7	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_cos(trig_arccos(w)) = w | 	3	9	3	6	0
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_cos(trig_arccos(z)) = z | twoPiApart(x, y)	3	9	4	6	1
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | 	3	9	3	6	0
+trig_arcsin(trig_sin(trig_arcsin(z))) = x <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	9	3	5	1
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(y, x)	3	9	4	4	1
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(w) = x, trig_cos(trig_arccos(w)) = w | 	3	9	3	5	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = y, trig_arccos(trig_cos(x)) = y | 	3	9	3	6	0
+trig_arccos(z) = x, trig_cos(y) = z <== trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	3	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = y | twoPiApart(y, x)	3	9	4	7	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = x | 	3	9	3	6	0
+trig_arcsin(trig_sin(trig_arcsin(z))) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y)	3	9	3	3	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | 	3	9	3	6	0
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_sin(trig_arcsin(w)) = z | 	3	9	3	6	0
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = x | 	3	9	2	4	0
+trig_sin(trig_arcsin(trig_sin(x))) = z <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	9	3	5	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = x | twoPiApart(y, x)	3	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(y)) = y | twoPiApart(x, y)	3	9	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x === trig_arccos(w) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(trig_arccos(z)) = z | twoPiApart(x, y)	3	9	4	7	1
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(z)) = z | 	3	9	3	6	0
+trig_arccos(z) = x, trig_cos(x) = z ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	3	9	2	3	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y)	3	9	4	6	1
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = y, trig_arccos(trig_cos(y)) = y | 	3	9	4	5	0
+trig_arccos(trig_sin(trig_arccos(z))) = x <== trig_arccos(w) = y, trig_arccos(trig_sin(y)) = x | invi(z, w)	3	9	4	5	1
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	3	9	3	4	0
+trig_arccos(trig_cos(trig_arccos(z))) = x ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | 	3	9	2	3	0
+trig_cos(x) = z, trig_cos(y) = z <== trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | twoPiApart(x, y)	3	9	3	6	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | 	3	9	3	4	0
+trig_arccos(z) = x, trig_arccos(z) = y ==> trig_arccos(z) = x, trig_arccos(trig_cos(x)) = x | 	3	9	3	5	0
+trig_arccos(z) = x, trig_arccos(z) = y === trig_arccos(z) = x, trig_arccos(trig_cos(x)) = y | 	3	9	3	6	0
+trig_arccos(z) = x, trig_arcsin(w) = x ==> trig_arccos(w) = y | halfPiApart(x, y)	2	6	4	5	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | 	3	9	3	4	0
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_cos(trig_arccos(z)) = z | 	3	9	3	6	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(trig_sin(x)) = x, trig_sin(x) = z | 	3	9	3	5	0
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | 	3	9	3	6	0
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_sin(trig_arcsin(z)) = z | 	3	9	3	5	0
+trig_cos(x) = w, trig_cos(x) = z <== trig_arccos(w) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	9	4	6	1
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(z, w)	3	9	4	7	2
+trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y === trig_arccos(z) = y, trig_arccos(trig_cos(x)) = x | twoPiApart(x, y)	3	10	3	6	1
+trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | twoPiApart(x, y)	3	10	3	5	1
+trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = x | twoPiApart(x, y)	3	10	3	5	1
+trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x === trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y)	3	10	2	2	1
+trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y ==> trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | twoPiApart(x, y)	3	10	3	5	1
+trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y === trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | twoPiApart(x, y)	3	10	3	6	1
+trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	3	10	4	6	2
+trig_arcsin(z) = x, trig_arcsin(trig_sin(y)) = y ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | twoPiApart(x, y)	3	10	3	5	1
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_cos(trig_arcsin(w)) = z | invr(x, y), twoPiApart(x, y)	2	7	4	5	2
+trig_sin(x) = z <== trig_arccos(z) = y, trig_arccos(trig_sin(y)) = x | halfPiApart(x, y)	2	7	3	5	1
+trig_cos(x) = z <== trig_arcsin(z) = y, trig_arcsin(trig_cos(y)) = x | halfPiApart(x, y)	2	7	3	5	1
+trig_arccos(z) = x, trig_arcsin(w) = x ==> trig_arccos(z) = x, trig_arccos(z) = y | twoPiApart(x, y)	2	8	4	6	1
+trig_arccos(z) = x, trig_arcsin(w) = y ==> trig_arccos(z) = x, trig_arccos(z) = y | twoPiApart(y, x)	2	8	4	7	1
+trig_arccos(z) = x, trig_arcsin(w) = x === trig_arccos(w) = y, trig_arccos(z) = x | halfPiApart(y, x)	2	8	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_cos(trig_arcsin(w)) = z | halfPiApart(y, x)	2	9	4	7	1
+trig_cos(x) = z, trig_cos(y) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = x | invr(x, y), twoPiApart(y, x)	2	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = x, trig_cos(trig_arcsin(w)) = z | invr(y, x), Not(invi(w, z))	2	9	4	6	2
+trig_cos(x) = w, trig_cos(x) = z <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | invr(x, y), twoPiApart(y, x)	2	9	4	4	2
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(trig_arccos(w)) = z | halfPiApart(y, x)	2	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_sin(trig_arccos(z)) = w | halfPiApart(y, x)	2	9	4	7	1
+trig_arccos(z) = x, trig_sin(y) = z <== trig_arccos(z) = x, trig_arccos(trig_sin(x)) = y | halfPiApart(x, y)	2	9	3	6	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_sin(y)) = x | halfPiApart(y, x)	2	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_sin(y)) = x | halfPiApart(y, x)	2	9	4	7	1
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(z) = y, trig_cos(trig_arcsin(w)) = z | invr(y, x), Not(invi(w, z))	2	9	4	6	2
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_cos(trig_arcsin(z)) = w | halfPiApart(y, x)	2	9	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_cos(trig_arcsin(w)) = z | halfPiApart(y, x)	2	9	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(trig_cos(y)) = x | halfPiApart(y, x)	2	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(w) = y, trig_arccos(trig_sin(x)) = y | halfPiApart(y, x)	2	9	4	7	1
+trig_sin(trig_arccos(trig_sin(x))) = z <== trig_arccos(z) = x, trig_arccos(trig_sin(x)) = y | halfPiApart(x, y)	2	9	3	5	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_sin(trig_arccos(z)) = w | halfPiApart(y, x)	2	9	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_cos(trig_arcsin(z)) = w | halfPiApart(y, x)	2	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_sin(x)) = y | halfPiApart(y, x)	2	9	4	7	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(x)) = y | halfPiApart(y, x)	2	9	4	7	1
+trig_arccos(w) = y, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_sin(trig_arccos(w)) = z | halfPiApart(y, x)	2	9	4	7	1
+trig_cos(x) = z, trig_cos(y) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(y)))) = y | invr(x, y), twoPiApart(y, x)	2	9	4	5	2
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(y)) = x | halfPiApart(y, x)	2	9	4	7	1
+trig_arcsin(z) = x, trig_cos(y) = z <== trig_arcsin(z) = x, trig_arcsin(trig_cos(x)) = y | halfPiApart(x, y)	2	9	3	6	1
+trig_arcsin(w) = y, trig_arcsin(z) = x ==> trig_arcsin(w) = y, trig_arcsin(trig_cos(x)) = y | halfPiApart(y, x)	2	9	4	7	1
+trig_cos(trig_arcsin(trig_cos(x))) = z <== trig_arcsin(z) = x, trig_arcsin(trig_cos(x)) = y | halfPiApart(x, y)	2	9	3	5	1
+trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	7	4	5	2
+trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = y | invr(x, y), twoPiApart(x, y)	1	7	4	5	2
+trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(y, x)	1	7	4	5	2
+trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_cos(x)) = y | invr(x, y), twoPiApart(x, y)	1	7	4	5	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(w, z)	1	7	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	7	3	4	2
+trig_arcsin(z) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), twoPiApart(y, x)	1	7	3	4	2
+trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = x | invr(x, y), invi(w, z)	1	7	4	5	2
+trig_sin(x) = z <== trig_arccos(w) = y, trig_arccos(trig_sin(y)) = x | invi(w, z), Not(halfPiApart(x, y))	1	7	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(y, x)	1	7	3	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), twoPiApart(y, x)	1	7	3	4	2
+trig_cos(x) = z <== trig_arcsin(w) = y, trig_arcsin(trig_cos(y)) = x | invi(w, z), Not(halfPiApart(x, y))	1	7	4	5	2
+trig_arcsin(z) = x === trig_arcsin(z) = y, trig_cos(trig_arcsin(z)) = w | invr(x, y), twoPiApart(x, y)	1	7	4	5	2
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(x)) = y, trig_sin(x) = z | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arccos(w) = x, trig_arccos(z) = x <== trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | invr(x, y)	1	9	4	5	1
+trig_arcsin(z) = x, trig_cos(y) = w ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	7	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(z) = x, trig_cos(trig_arcsin(z)) = w | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_cos(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = z ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), twoPiApart(y, x)	1	9	4	6	2
+trig_sin(x) = w, trig_sin(x) = z <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y), twoPiApart(y, x)	1	9	4	4	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(w, z)	1	9	4	5	2
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(w) = x, trig_arccos(trig_cos(y)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), invi(z, w)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(z) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), twoPiApart(y, x)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(x, y)	1	9	4	7	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(z)) = z | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(x)) = y, trig_sin(x) = w | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), invi(w, z)	1	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(z, w)	1	9	4	5	2
+trig_arcsin(trig_sin(trig_arcsin(z))) = x ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(z, w)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = x | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = x | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_sin(x) = w, trig_sin(x) = z <== trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_sin(x) = z, trig_sin(y) = z <== trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = x, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_cos(x) = w ==> trig_arcsin(z) = y, trig_cos(trig_arcsin(w)) = z | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arccos(z) = x, trig_cos(x) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | invr(x, y)	1	9	4	5	1
+trig_sin(trig_arccos(trig_sin(x))) = z <== trig_arccos(w) = x, trig_arccos(trig_sin(x)) = y | invi(w, z), Not(halfPiApart(x, y))	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(x, y)	1	9	4	7	2
+trig_cos(trig_arcsin(trig_cos(x))) = z <== trig_arcsin(w) = x, trig_arcsin(trig_cos(x)) = y | invi(w, z), Not(halfPiApart(x, y))	1	9	4	5	2
+trig_arccos(z) = x, trig_cos(x) = w ==> trig_arccos(z) = x, trig_arccos(trig_cos(y)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(w) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), invi(w, z)	1	9	4	5	2
+trig_arcsin(trig_sin(trig_arcsin(z))) = x ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), twoPiApart(y, x)	1	9	3	4	2
+trig_arccos(z) = x, trig_cos(y) = w <== trig_arccos(trig_cos(trig_arccos(trig_cos(x)))) = y | invr(x, y)	1	9	4	6	1
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(z) = y, trig_sin(trig_arccos(w)) = z | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = x | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_sin(trig_arcsin(trig_sin(x))) = z ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(y)) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(z) = x, trig_sin(y) = w === trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arccos(z) = x, trig_sin(y) = w ==> trig_arccos(w) = x, trig_arccos(trig_sin(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	7	2
+trig_arcsin(z) = x, trig_sin(y) = w ==> trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(x, y)	1	9	4	7	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(y, x)	1	9	3	5	1
+trig_arcsin(z) = x, trig_sin(x) = z ==> trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), twoPiApart(y, x)	1	9	3	4	2
+trig_arcsin(z) = x, trig_sin(x) = z === trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), twoPiApart(y, x)	1	9	3	5	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), invi(w, z)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_sin(x) = z, trig_sin(y) = w <== trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y <== trig_arcsin(z) = y, trig_cos(trig_arcsin(z)) = w | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(y) = z === trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = y | invr(x, y), twoPiApart(y, x)	1	9	3	4	2
+trig_arccos(z) = x, trig_sin(x) = w <== trig_arccos(z) = y, trig_sin(trig_arccos(w)) = z | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(z) = x, trig_arccos(trig_sin(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(z) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arccos(z) = x, trig_cos(x) = w <== trig_arccos(z) = y, trig_arccos(trig_cos(y)) = y | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x ==> trig_arcsin(z) = x, trig_arcsin(trig_cos(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(z) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(w, z)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_arcsin(trig_sin(y)) = y | invr(x, y), invi(w, z)	1	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(z) = y, trig_sin(trig_arcsin(w)) = w | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arccos(z) = x, trig_arccos(z) = y <== trig_arccos(z) = x, trig_sin(trig_arccos(w)) = z | invr(x, y), twoPiApart(x, y)	1	9	4	6	2
+trig_arccos(z) = x, trig_cos(x) = w <== trig_arccos(z) = y, trig_cos(trig_arccos(z)) = z | invr(x, y), twoPiApart(y, x)	1	9	4	5	2
+trig_arccos(z) = x, trig_sin(y) = w ==> trig_arccos(z) = x, trig_arccos(trig_sin(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	7	2
+trig_arcsin(z) = x, trig_cos(y) = w ==> trig_arcsin(w) = x, trig_arcsin(trig_cos(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	7	2
+trig_arccos(z) = x, trig_cos(x) = w <== trig_arccos(z) = y, trig_cos(trig_arccos(w)) = w | invr(x, y), twoPiApart(y, x)	1	9	4	6	2
+trig_arcsin(w) = x, trig_arcsin(z) = x === trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), invi(w, z)	1	9	4	5	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(w) = y, trig_sin(trig_arcsin(z)) = z | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arccos(w) = x, trig_arccos(z) = x ==> trig_arccos(w) = x, trig_arccos(trig_sin(x)) = y | invi(w, z), halfPiApart(x, y)	1	9	4	6	2
+trig_arcsin(z) = x, trig_sin(x) = w === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = y | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y ==> trig_arcsin(w) = x, trig_sin(trig_arcsin(w)) = w | invr(x, y), invi(z, w)	1	9	4	5	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_arcsin(trig_sin(y)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(z) = x, trig_arcsin(z) = y === trig_arcsin(w) = y, trig_arcsin(trig_sin(x)) = x | invr(x, y), invi(z, w)	1	9	4	6	2
+trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x === trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y | invr(x, y), twoPiApart(y, x)	1	10	2	3	2
+trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y === trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = x | invr(x, y), twoPiApart(y, x)	1	10	2	3	2
+trig_arcsin(trig_sin(trig_arcsin(trig_sin(x)))) = y === trig_arcsin(trig_sin(trig_arcsin(trig_sin(y)))) = x | invr(y, x)	1	10	2	4	1

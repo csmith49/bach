@@ -1,0 +1,884 @@
+
+length(x) = a ==> length(y) = b, length(z) = b | gt1(b)	952	6	5	5	1
+length(x) = a ==> length(y) = b, length(z) = a | gt1(b)	848	6	5	6	1
+hd(x) = a ==> hd(y) = b, hd(z) = b | gt0(a)	490	6	5	5	1
+hd(x) = a ==> hd(y) = b, hd(z) = a | gt0(a)	490	6	5	6	1
+hd(x) = a ==> hd(y) = a, hd(z) = b | gt0(a)	490	6	5	6	1
+hd(x) = a ==> cons(b, y) = z | gt0(a)	294	5	5	5	1
+hd(x) = a ==> hd(y) = b, hd(z) = b | gt(a, b)	245	6	5	5	1
+hd(x) = a ==> hd(y) = b, hd(z) = a | gt(a, b)	245	6	5	6	1
+True === hd(x) = a, hd(y) = b | Not(gt1(a))	196	5	4	4	1
+cons(a, x) = y <== cons(b, tl(z)) = z | gt0(b)	252	7	5	5	1
+length(x) = a ==> length(y) = a, length(z) = b | gt(a, b), gt1(b)	205	6	5	6	2
+True === length(x) = a, length(y) = b | gt1(a)	168	5	4	4	1
+length(x) = a ==> length(y) = b, length(z) = a | gt(a, b), gt1(b)	200	6	5	6	2
+cons(a, tl(x)) = y <== cons(b, tl(z)) = z | gt0(b)	216	8	5	5	1
+cons(a, tl(x)) = x ==> cons(b, tl(y)) = z | gt0(a)	216	8	5	5	1
+length(x) = a ==> cons(b, y) = z | gt(a, b), gt1(b)	112	5	5	5	2
+sort(x) = x <== sort(y) = y, sort(z) = x | 	126	6	3	4	0
+sort(x) = x <== sort(y) = x, sort(z) = z | 	126	6	3	4	0
+True === hd(x) = a, hd(y) = b | gt0(a)	98	5	4	4	1
+concat(x, x) = y <== hd(z) = a | gt0(a)	98	5	4	4	1
+hd(x) = a ==> concat(y, y) = z | gt0(a)	98	5	4	4	1
+hd(x) = a ==> concat(y, x) = z | gt0(a)	97	5	4	5	1
+hd(x) = a ==> concat(x, y) = z | gt0(a)	96	5	4	5	1
+rev(x) = y <== rev(y) = x, rev(z) = z | 	112	6	3	5	0
+length(x) = a ==> hd(y) = b, hd(z) = b | gt(a, b), Not(gt1(a))	98	6	5	5	2
+hd(x) = a === hd(x) = b, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	6	4	5	2
+hd(x) = a <== hd(x) = b, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	6	4	5	2
+hd(x) = a === hd(x) = b, hd(y) = a | Not(gt(a, b)), Not(gt(b, a))	98	6	4	6	2
+length(x) = a ==> hd(y) = b, hd(z) = a | gt(a, b), Not(gt1(a))	98	6	5	6	2
+hd(x) = a <== hd(x) = b, hd(y) = a | Not(gt(a, b)), Not(gt(b, a))	98	6	4	6	2
+length(x) = a ==> length(y) = b, length(z) = b | gt(a, b), gt1(b)	96	6	5	5	2
+True === length(x) = a, length(y) = a | gt1(a)	80	5	3	3	1
+length(x) = a <== length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	6	4	6	2
+length(x) = a === length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	6	4	6	2
+concat(x, x) = y <== hd(z) = a, hd(z) = b | gt0(a)	98	7	5	5	1
+length(x) = a <== length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	6	4	5	2
+concat(x, x) = y <== hd(x) = a, hd(z) = b | gt0(a)	98	7	5	6	1
+concat(x, x) = y <== hd(x) = b, hd(z) = a | gt0(b)	98	7	5	6	1
+length(x) = a === length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	6	4	5	2
+hd(sort(x)) = a <== hd(x) = a, hd(y) = b | Not(gt0(a))	98	7	4	6	1
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(y) = a | Not(gt(a, b)), Not(gt(b, a))	98	8	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(y) = a | Not(gt(a, b)), Not(gt(b, a))	98	8	4	6	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	8	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	8	4	6	2
+length(x) = a, length(x) = b <== length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	8	4	6	2
+length(x) = a, length(x) = b <== length(x) = a, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	8	4	6	2
+length(x) = a, length(x) = b <== length(x) = a, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	8	4	7	2
+length(x) = a, length(x) = b <== length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	8	4	7	2
+cons(hd(x), y) = x <== cons(hd(z), y) = x | 	84	8	3	5	0
+length(tl(x)) = a <== length(x) = b, length(y) = b | gt(b, a), gt1(a)	64	7	4	5	2
+cons(a, x) = y === cons(b, x) = y | Not(gt(a, b)), Not(gt(b, a))	42	6	4	6	2
+hd(sort(x)) = a <== hd(x) = b, hd(y) = a | Not(gt(a, b)), Not(gt0(b))	49	7	4	6	2
+hd(sort(x)) = a <== hd(x) = b, hd(y) = b | Not(gt(a, b)), Not(gt0(b))	49	7	4	5	2
+cons(a, x) = y ==> cons(b, x) = z | gt0(a), Not(gt1(a))	42	6	5	6	2
+hd(sort(x)) = a <== hd(x) = a, hd(y) = a | Not(gt0(a))	49	7	3	5	1
+length(x) = a ==> concat(y, x) = z | Not(gt1(a))	28	5	4	5	1
+length(x) = a ==> concat(y, y) = z | Not(gt1(a))	28	5	4	4	1
+length(x) = a ==> concat(x, y) = z | Not(gt1(a))	28	5	4	5	1
+concat(x, x) = y <== length(z) = a | Not(gt1(a))	28	5	4	4	1
+cons(a, rev(x)) = y === cons(b, rev(x)) = y | Not(gt(a, b)), Not(gt(b, a))	42	8	4	6	2
+cons(a, sort(x)) = y === cons(b, sort(x)) = y | Not(gt(a, b)), Not(gt(b, a))	42	8	4	6	2
+rev(x) = x <== length(x) = a, length(y) = b | Not(gt1(a))	28	6	4	5	1
+rev(x) = x <== length(x) = b, length(y) = a | Not(gt1(b))	28	6	4	5	1
+sort(x) = x <== length(x) = b, length(y) = a | Not(gt1(b))	28	6	4	5	1
+sort(x) = x <== sort(y) = x, sort(z) = x | 	28	6	3	4	0
+sort(x) = x <== length(x) = a, length(y) = b | Not(gt1(a))	28	6	4	5	1
+length(tl(x)) = a <== length(x) = b, length(y) = a | gt(b, a), gt1(a)	32	7	4	6	2
+concat(x, x) = y ==> length(x) = b, length(z) = a | gt(a, b), gt1(b)	32	7	5	6	2
+concat(x, x) = y ==> length(x) = a, length(z) = b | gt(b, a), gt1(a)	32	7	5	6	2
+cons(a, tl(x)) = y === cons(b, tl(x)) = y | Not(gt(a, b)), Not(gt(b, a))	36	8	4	6	2
+concat(x, x) = y <== length(z) = a, length(z) = b | Not(gt1(a))	28	7	5	5	1
+sort(x) = x <== sort(y) = x | 	14	4	2	3	0
+length(x) = a === length(x) = b | Not(gt(a, b)), Not(gt(b, a))	14	4	3	4	2
+hd(x) = a === hd(x) = b | Not(gt(a, b)), Not(gt(b, a))	14	4	3	4	2
+rev(x) = y === rev(y) = x | 	14	4	2	4	0
+sort(x) = y ==> sort(y) = y | 	14	4	2	3	0
+True === rev(rev(x)) = x | 	14	4	1	1	0
+cons(a, tl(x)) = x <== cons(a, tl(y)) = x | 	24	8	3	5	0
+cons(a, tl(x)) = y ==> cons(b, tl(y)) = y | Not(gt(a, b)), Not(gt(b, a))	24	8	4	5	2
+cons(a, tl(x)) = x <== cons(b, tl(y)) = x | Not(gt(a, b)), Not(gt(b, a))	24	8	4	5	2
+cons(a, tl(x)) = y ==> cons(a, tl(y)) = y | 	24	8	3	5	0
+sort(x) = y === sort(rev(x)) = y | 	14	5	2	4	0
+sort(x) = x <== sort(rev(y)) = x | 	14	5	2	3	0
+length(x) = a === length(sort(x)) = a | 	14	5	2	4	0
+length(x) = a === length(rev(x)) = a | 	14	5	2	4	0
+sort(x) = y === sort(sort(x)) = y | 	14	5	2	4	0
+sort(x) = x <== sort(sort(y)) = x | 	14	5	2	3	0
+hd(x) = a <== cons(b, y) = x | Not(gt(a, b)), Not(gt(b, a))	12	5	4	5	2
+hd(x) = a <== cons(a, y) = x | 	12	5	3	5	0
+sort(x) = x <== tl(sort(y)) = x | 	12	5	2	3	0
+sort(x) = x <== sort(tl(y)) = x | 	12	5	2	3	0
+tl(x) = y <== cons(a, y) = x | 	12	5	3	5	0
+sort(x) = x <== sort(x) = y, sort(z) = x | 	14	6	3	4	0
+sort(x) = x <== sort(y) = x, sort(y) = z | 	14	6	3	4	0
+sort(x) = x <== sort(x) = z, sort(y) = x | 	14	6	3	4	0
+rev(sort(x)) = x <== rev(sort(y)) = x | 	14	6	2	3	0
+sort(x) = y <== sort(y) = x, sort(z) = y | 	14	6	3	5	0
+rev(sort(x)) = y ==> rev(sort(y)) = y | 	14	6	2	3	0
+hd(rev(x)) = a === hd(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	14	6	3	4	2
+sort(x) = y <== sort(x) = z, sort(z) = y | 	14	6	3	5	0
+sort(x) = x <== sort(y) = z, sort(z) = x | 	14	6	3	4	0
+rev(rev(x)) = y === rev(rev(y)) = x | 	14	6	2	4	0
+sort(x) = x <== sort(y) = x, sort(z) = y | 	14	6	3	4	0
+hd(sort(x)) = a === hd(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	14	6	3	4	2
+rev(x) = y <== rev(y) = x, rev(z) = y | 	14	6	3	5	0
+rev(x) = y <== rev(y) = x, rev(y) = z | 	14	6	3	5	0
+rev(x) = y <== rev(y) = x, rev(z) = x | 	14	6	3	5	0
+rev(x) = y <== rev(x) = z, rev(y) = x | 	14	6	3	5	0
+sort(x) = y <== sort(z) = x, sort(z) = y | 	14	6	3	5	0
+length(tl(x)) = a ==> length(y) = b, length(z) = a | Not(gt(a, b)), Not(gt1(b))	16	7	5	6	2
+concat(x, x) = y ==> length(y) = b, length(z) = a | gt(a, b), gt1(b)	16	7	5	6	2
+length(tl(x)) = a ==> length(y) = b, length(z) = b | Not(gt(a, b)), Not(gt1(b))	16	7	5	5	2
+concat(x, x) = y ==> length(y) = a, length(z) = b | gt(b, a), gt1(a)	16	7	5	6	2
+hd(tl(x)) = a === hd(tl(x)) = b | Not(gt(a, b)), Not(gt(b, a))	12	6	3	4	2
+length(tl(x)) = a === length(tl(x)) = b | Not(gt(a, b)), Not(gt(b, a))	12	6	3	4	2
+sort(x) = x === sort(rev(x)) = x | 	9	5	1	2	0
+sort(x) = x === sort(sort(x)) = x | 	9	5	1	2	0
+cons(a, x) = y ==> cons(b, tl(y)) = y | Not(gt(a, b)), Not(gt(b, a))	12	7	4	5	2
+cons(a, x) = y ==> cons(a, tl(y)) = y | 	12	7	3	5	0
+cons(a, x) = y ==> cons(hd(y), x) = y | 	12	7	3	5	0
+sort(x) = x <== tl(tl(y)) = x | 	8	5	2	3	0
+length(x) = a <== tl(tl(y)) = x | Not(gt1(a))	8	5	3	4	1
+tl(x) = y ==> length(tl(y)) = a | Not(gt1(a))	8	5	3	4	1
+length(x) = a === length(tl(x)) = b | gt(a, b), gt1(b)	8	5	3	4	2
+rev(x) = x <== tl(tl(y)) = x | 	8	5	2	3	0
+length(tl(x)) = a === length(x) = b | gt(b, a), gt1(a)	8	5	3	4	2
+sort(x) = x <== sort(x) = y, sort(y) = x | 	9	6	2	3	0
+cons(a, tl(x)) = x === cons(b, tl(x)) = x | Not(gt(a, b)), Not(gt(b, a))	12	8	3	4	2
+sort(x) = x <== sort(y) = x, sort(y) = y | 	9	6	2	3	0
+sort(x) = y <== sort(y) = x, sort(y) = y | 	9	6	2	4	0
+hd(x) = a ==> hd(sort(x)) = a | Not(gt0(a))	7	5	2	4	1
+hd(x) = a ==> hd(sort(x)) = b | Not(gt(a, b)), Not(gt0(b))	7	5	3	4	2
+hd(sort(x)) = a <== hd(x) = b | Not(gt(a, b)), Not(gt0(b))	7	5	3	4	2
+hd(sort(x)) = a <== hd(x) = a | Not(gt0(a))	7	5	2	4	1
+rev(x) = y <== rev(y) = x, rev(y) = y | 	8	6	2	4	0
+rev(x) = x <== rev(y) = x, rev(y) = y | 	8	6	2	3	0
+rev(x) = x <== rev(x) = y, rev(y) = y | 	8	6	2	3	0
+rev(x) = y <== rev(x) = x, rev(y) = x | 	8	6	2	4	0
+length(x) = a ==> length(y) = a, length(z) = a | Not(gt1(a))	8	6	4	5	1
+sort(x) = x <== cons(a, sort(y)) = x | Not(gt0(a))	6	6	3	4	1
+hd(sort(x)) = a <== hd(x) = a, hd(x) = b | Not(gt0(a))	7	7	3	5	1
+cons(hd(x), y) = x <== cons(hd(y), y) = x | 	6	8	2	4	0
+cons(hd(x), x) = y ==> cons(hd(y), x) = y | 	6	8	2	4	0
+rev(x) = x <== length(x) = a, length(y) = a | Not(gt1(a))	4	6	3	4	1
+sort(x) = x <== length(x) = a, length(y) = a | Not(gt1(a))	4	6	3	4	1
+sort(x) = x <== hd(sort(x)) = a | gt0(a)	3	5	2	3	1
+sort(x) = x <== length(x) = a | Not(gt1(a))	2	4	2	3	1
+rev(x) = x <== length(x) = a | Not(gt1(a))	2	4	2	3	1
+length(x) = a ==> rev(x) = x | Not(gt1(a))	2	4	2	3	1
+length(x) = a ==> sort(x) = x | Not(gt1(a))	2	4	2	3	1
+length(x) = a ==> sort(sort(x)) = x | Not(gt1(a))	2	5	2	3	1
+tl(x) = y <== concat(y, y) = x | 	2	5	2	4	0
+sort(x) = x <== concat(y, y) = x | 	2	5	2	3	0
+rev(x) = x <== concat(y, y) = x | 	2	5	2	3	0
+rev(x) = x <== length(x) = a, length(x) = b | Not(gt1(a))	2	6	3	4	1
+sort(x) = x <== length(x) = a, length(x) = b | Not(gt1(a))	2	6	3	4	1
+sort(x) = x <== concat(y, sort(y)) = x | 	2	6	2	3	0
+rev(x) = x <== concat(y, rev(y)) = x | 	2	6	2	3	0
+rev(rev(x)) = x <== length(y) = a, length(z) = a | 	1000	7	4	4	0
+rev(rev(x)) = x <== length(y) = a, length(z) = b | 	1000	7	5	5	0
+length(x) = a ==> length(y) = b, length(z) = a | gt1(b), Not(gt(b, a))	672	6	5	6	2
+cons(a, x) = y ==> rev(rev(z)) = z | 	588	6	4	4	0
+length(x) = a ==> length(y) = b, length(z) = b | gt1(b), Not(gt(b, a))	536	6	5	5	2
+rev(rev(x)) = x <== cons(a, rev(y)) = z | 	588	7	4	4	0
+hd(x) = a ==> hd(y) = b, hd(z) = a | gt0(b), Not(gt(b, a))	245	6	5	6	2
+hd(x) = a ==> hd(y) = b, hd(z) = b | gt0(b), Not(gt(b, a))	245	6	5	5	2
+hd(x) = a ==> rev(rev(y)) = y | 	196	5	3	3	0
+tl(x) = y ==> rev(rev(z)) = z | 	196	5	3	3	0
+length(x) = a ==> rev(rev(y)) = y | 	196	5	3	3	0
+sort(x) = y ==> rev(rev(z)) = z | 	196	5	3	3	0
+rev(x) = y ==> rev(rev(z)) = z | 	196	5	3	3	0
+rev(rev(x)) = x <== length(y) = a | 	196	5	3	3	0
+rev(rev(x)) = x === rev(rev(y)) = y | 	196	6	2	2	0
+concat(x, x) = y ==> rev(rev(z)) = z | 	196	6	3	3	0
+hd(rev(x)) = a ==> rev(rev(y)) = y | 	196	6	3	3	0
+rev(rev(x)) = x <== rev(rev(y)) = z | 	196	6	3	3	0
+rev(rev(x)) = y ==> rev(rev(z)) = z | 	196	6	3	3	0
+rev(rev(x)) = x <== tl(rev(y)) = z | 	196	6	3	3	0
+rev(rev(x)) = x <== rev(sort(y)) = z | 	196	6	3	3	0
+concat(x, y) = z ==> rev(rev(x)) = x | 	193	6	3	4	0
+concat(x, y) = z ==> rev(rev(y)) = y | 	193	6	3	4	0
+rev(rev(x)) = x <== length(y) = a, length(y) = b | 	196	7	4	4	0
+rev(rev(x)) = x <== rev(tl(y)) = z | 	168	6	3	3	0
+rev(rev(x)) = x <== length(x) = b, length(y) = a | 	196	7	4	5	0
+rev(rev(x)) = x <== tl(tl(y)) = z | 	168	6	3	3	0
+rev(rev(x)) = x <== length(x) = a, length(y) = b | 	196	7	4	5	0
+sort(x) = x ==> rev(rev(y)) = y | 	126	5	2	2	0
+rev(x) = x ==> rev(rev(y)) = y | 	112	5	2	2	0
+rev(rev(x)) = x <== rev(sort(y)) = y | 	126	6	2	2	0
+length(x) = a ==> hd(y) = b, hd(z) = a | Not(gt(a, b)), Not(gt1(b))	98	6	5	6	2
+length(x) = a ==> hd(y) = b, hd(z) = b | Not(gt(a, b)), Not(gt1(b))	98	6	5	5	2
+rev(rev(x)) = x <== length(x) = a, length(y) = a | 	84	7	3	4	0
+cons(a, x) = y ==> rev(rev(x)) = x | 	42	6	3	4	0
+rev(rev(x)) = x <== cons(a, rev(x)) = y | 	42	7	3	4	0
+concat(x, y) = z ==> rev(rev(z)) = z | 	20	6	3	4	0
+tl(x) = y ==> rev(rev(x)) = x | 	14	5	2	3	0
+rev(x) = y ==> rev(rev(x)) = x | 	14	5	2	3	0
+rev(rev(x)) = x <== length(x) = a | 	14	5	2	3	0
+hd(x) = a ==> rev(rev(x)) = x | 	14	5	2	3	0
+sort(x) = y ==> rev(rev(y)) = y | 	14	5	2	3	0
+sort(x) = y ==> rev(rev(x)) = x | 	14	5	2	3	0
+rev(x) = y ==> rev(rev(y)) = y | 	14	5	2	3	0
+length(x) = a ==> rev(rev(x)) = x | 	14	5	2	3	0
+tl(x) = y ==> rev(rev(y)) = y | 	12	5	2	3	0
+rev(rev(x)) = x <== rev(sort(y)) = x | 	14	6	2	3	0
+concat(x, x) = y ==> rev(rev(x)) = x | 	14	6	2	3	0
+rev(rev(x)) = x <== rev(sort(x)) = y | 	14	6	2	3	0
+rev(rev(x)) = x <== tl(rev(x)) = y | 	14	6	2	3	0
+rev(rev(x)) = x <== rev(rev(x)) = y | 	14	6	2	3	0
+rev(rev(x)) = y ==> rev(rev(x)) = x | 	14	6	2	3	0
+rev(rev(x)) = x <== rev(rev(y)) = x | 	14	6	2	3	0
+hd(rev(x)) = a ==> rev(rev(x)) = x | 	14	6	2	3	0
+rev(rev(x)) = y ==> rev(rev(y)) = y | 	14	6	2	3	0
+cons(a, x) = y ==> rev(rev(y)) = y | 	12	6	3	4	0
+rev(rev(x)) = x <== rev(tl(y)) = x | 	12	6	2	3	0
+rev(rev(x)) = x <== tl(tl(x)) = y | 	12	6	2	3	0
+rev(rev(x)) = x <== length(x) = a, length(x) = b | 	14	7	3	4	0
+rev(rev(x)) = x <== rev(tl(x)) = y | 	12	6	2	3	0
+rev(rev(x)) = x <== tl(rev(y)) = x | 	12	6	2	3	0
+sort(x) = x ==> rev(rev(x)) = x | 	9	5	1	2	0
+rev(rev(x)) = x <== cons(a, rev(y)) = x | 	12	7	3	4	0
+rev(x) = x ==> rev(rev(x)) = x | 	8	5	1	2	0
+tl(tl(x)) = y ==> length(y) = a | Not(gt1(a))	8	5	3	4	1
+rev(rev(x)) = x <== rev(sort(x)) = x | 	9	6	1	2	0
+rev(rev(x)) = x <== tl(tl(y)) = x | 	8	6	2	3	0
+tl(tl(x)) = y ==> length(y) = a, length(y) = b | Not(gt(a, b)), Not(gt1(b))	8	7	4	5	2
+concat(x, x) = y ==> rev(rev(y)) = y | 	2	6	2	3	0
+rev(rev(x)) = x <== hd(y) = a, hd(z) = a | 	1000	7	4	4	0
+rev(rev(x)) = x <== hd(y) = a, hd(z) = b | 	1000	7	5	5	0
+length(x) = a ==> length(y) = b, length(z) = b | gt(b, a)	416	6	5	5	1
+length(x) = a ==> length(y) = b, length(z) = a | gt(a, b)	344	6	5	6	1
+length(tl(x)) = a ==> length(y) = b, length(z) = b | gt(b, a), Not(gt1(a))	320	7	5	5	2
+rev(rev(x)) = x <== hd(y) = a | 	196	5	3	3	0
+length(rev(x)) = a ==> rev(rev(y)) = y | 	196	6	3	3	0
+rev(rev(x)) = x <== sort(rev(y)) = z | 	196	6	3	3	0
+rev(rev(x)) = x <== sort(sort(y)) = z | 	196	6	3	3	0
+length(sort(x)) = a ==> length(y) = a, length(z) = b | gt(a, b), gt1(b)	205	7	5	6	2
+length(rev(x)) = a ==> length(y) = a, length(z) = b | gt(a, b), gt1(b)	205	7	5	6	2
+length(rev(x)) = a ==> length(y) = b, length(z) = a | gt(a, b), gt1(b)	200	7	5	6	2
+length(sort(x)) = a ==> length(y) = b, length(z) = a | gt(a, b), gt1(b)	200	7	5	6	2
+rev(rev(x)) = x <== hd(x) = b, hd(y) = a | 	196	7	4	5	0
+length(rev(x)) = a <== length(x) = a, length(y) = b | 	196	7	4	6	0
+rev(rev(x)) = x <== hd(y) = a, hd(y) = b | 	196	7	4	4	0
+length(sort(x)) = a <== length(x) = a, length(y) = b | 	196	7	4	6	0
+rev(rev(x)) = x <== hd(x) = a, hd(y) = b | 	196	7	4	5	0
+rev(rev(x)) = x <== sort(sort(y)) = y | 	126	6	2	2	0
+rev(rev(x)) = x <== sort(rev(y)) = y | 	126	6	2	2	0
+rev(rev(x)) = x <== hd(x) = a, hd(y) = a | 	98	7	3	4	0
+length(rev(x)) = a ==> length(y) = b, length(z) = b | gt(a, b), gt1(b)	96	7	5	5	2
+length(tl(x)) = a ==> length(y) = b, length(z) = a | gt(b, a), Not(gt1(a))	96	7	5	6	2
+length(sort(x)) = a ==> length(y) = b, length(z) = b | gt(a, b), gt1(b)	96	7	5	5	2
+length(rev(x)) = a <== length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+length(sort(x)) = a <== length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+length(rev(x)) = a <== length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+length(rev(x)) = a <== length(x) = a, length(y) = a | 	84	7	3	5	0
+length(sort(x)) = a <== length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+length(sort(x)) = a <== length(x) = a, length(y) = a | 	84	7	3	5	0
+cons(hd(x), y) = z ==> cons(hd(z), y) = z | 	84	8	3	5	0
+sort(sort(x)) = x <== length(x) = b, length(y) = a | Not(gt1(b))	28	7	4	5	1
+sort(sort(x)) = x <== length(x) = a, length(y) = b | Not(gt1(a))	28	7	4	5	1
+length(sort(x)) = a === length(x) = a | 	14	5	2	4	0
+length(rev(x)) = a === length(x) = a | 	14	5	2	4	0
+rev(rev(x)) = x <== hd(x) = a | 	14	5	2	3	0
+sort(rev(x)) = y ==> sort(rev(y)) = y | 	14	6	2	3	0
+sort(rev(x)) = y === sort(sort(x)) = y | 	14	6	2	4	0
+rev(rev(x)) = x <== sort(rev(x)) = y | 	14	6	2	3	0
+rev(rev(x)) = x <== sort(rev(y)) = x | 	14	6	2	3	0
+length(rev(x)) = a === length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	14	6	3	4	2
+length(sort(x)) = a === length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	14	6	3	4	2
+length(rev(x)) = a ==> rev(rev(x)) = x | 	14	6	2	3	0
+sort(rev(x)) = x <== sort(sort(y)) = x | 	14	6	2	3	0
+sort(sort(x)) = x <== sort(sort(y)) = x | 	14	6	2	3	0
+sort(sort(x)) = y ==> sort(sort(y)) = y | 	14	6	2	3	0
+rev(rev(x)) = x <== sort(sort(y)) = x | 	14	6	2	3	0
+sort(rev(x)) = x <== sort(rev(y)) = x | 	14	6	2	3	0
+rev(rev(x)) = x <== sort(sort(x)) = y | 	14	6	2	3	0
+length(rev(x)) = a <== length(x) = a, length(x) = b | 	14	7	3	5	0
+rev(rev(x)) = x <== hd(x) = a, hd(x) = b | 	14	7	3	4	0
+sort(sort(x)) = x <== tl(sort(y)) = x | 	12	6	2	3	0
+length(sort(x)) = a <== length(x) = a, length(x) = b | 	14	7	3	5	0
+sort(sort(x)) = x <== sort(tl(y)) = x | 	12	6	2	3	0
+sort(rev(x)) = x === sort(sort(x)) = x | 	9	6	1	2	0
+rev(rev(x)) = x <== sort(sort(x)) = x | 	9	6	1	2	0
+rev(rev(x)) = x <== sort(rev(x)) = x | 	9	6	1	2	0
+sort(sort(x)) = x <== tl(tl(y)) = x | 	8	6	2	3	0
+sort(sort(x)) = x <== cons(a, sort(y)) = x | Not(gt0(a))	6	7	3	4	1
+sort(sort(x)) = x <== length(x) = a, length(y) = a | Not(gt1(a))	4	7	3	4	1
+hd(sort(x)) = a ==> sort(sort(x)) = x | gt0(a)	3	6	2	3	1
+concat(x, x) = y ==> sort(sort(y)) = y | 	2	6	2	3	0
+length(sort(x)) = a ==> sort(sort(x)) = x | Not(gt1(a))	2	6	2	3	1
+sort(sort(x)) = x <== length(x) = a, length(x) = b | Not(gt1(a))	2	7	3	4	1
+concat(x, x) = y ==> concat(x, tl(y)) = y | 	2	7	2	4	0
+rev(rev(x)) = x <== rev(y) = y, rev(z) = z | 	896	7	3	3	0
+hd(x) = a, hd(y) = a === hd(x) = b, hd(z) = b | Not(gt(a, b)), Not(gt(b, a))	686	8	5	6	2
+hd(x) = a, hd(y) = a ==> hd(y) = b, hd(z) = a | Not(gt(a, b)), Not(gt(b, a))	686	8	5	7	2
+hd(x) = a, hd(y) = a ==> hd(y) = b, hd(z) = b | Not(gt(a, b)), Not(gt(b, a))	686	8	5	6	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(z) = a | Not(gt(a, b)), Not(gt(b, a))	686	8	5	7	2
+length(x) = a, length(y) = a === length(x) = b, length(z) = b | Not(gt(a, b)), Not(gt(b, a))	584	8	5	6	2
+length(x) = a, length(y) = a === length(x) = b, length(z) = a | Not(gt(a, b)), Not(gt(b, a))	584	8	5	7	2
+rev(rev(x)) = x <== rev(y) = z | 	196	5	3	3	0
+rev(rev(x)) = x <== rev(y) = z, rev(z) = y | 	196	7	3	3	0
+rev(rev(x)) = x <== concat(y, rev(y)) = z | 	196	7	3	3	0
+rev(rev(x)) = x <== concat(y, rev(x)) = z | 	193	7	3	4	0
+rev(rev(x)) = x <== concat(x, rev(y)) = z | 	193	7	3	4	0
+rev(rev(x)) = x <== rev(y) = y | 	112	5	2	2	0
+concat(x, y) = z <== hd(y) = a | gt0(a)	97	5	4	5	1
+concat(x, y) = z <== hd(x) = a | gt0(a)	96	5	4	5	1
+sort(sort(x)) = x <== sort(x) = x, sort(y) = z | 	126	7	3	4	0
+sort(sort(x)) = x <== sort(y) = x, sort(z) = z | 	126	7	3	4	0
+sort(sort(x)) = y <== sort(x) = y, sort(z) = z | 	126	7	3	5	0
+sort(sort(x)) = x <== sort(y) = y, sort(z) = x | 	126	7	3	4	0
+hd(x) = a, hd(y) = a ==> hd(x) = b | Not(gt(a, b)), Not(gt(b, a))	98	6	4	5	2
+hd(x) = a, hd(y) = a ==> hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	6	4	5	2
+rev(rev(x)) = x <== rev(y) = y, rev(y) = z | 	112	7	3	3	0
+rev(rev(x)) = x <== rev(y) = y, rev(z) = y | 	112	7	3	3	0
+rev(rev(x)) = x <== rev(y) = y, rev(z) = x | 	112	7	3	4	0
+rev(rev(x)) = x <== rev(x) = x, rev(y) = z | 	112	7	3	4	0
+rev(rev(x)) = x <== rev(y) = x, rev(z) = z | 	112	7	3	4	0
+rev(rev(x)) = x <== rev(y) = z, rev(z) = z | 	112	7	3	3	0
+rev(rev(x)) = x <== rev(x) = y, rev(z) = z | 	112	7	3	4	0
+rev(rev(x)) = x <== rev(x) = z, rev(y) = y | 	112	7	3	4	0
+concat(x, y) = z <== hd(y) = a, hd(y) = b | gt0(a)	97	7	5	6	1
+concat(x, y) = z <== hd(x) = a, hd(x) = b | gt0(a)	96	7	5	6	1
+concat(x, y) = z <== hd(x) = a, hd(y) = b | gt0(a)	96	7	5	7	1
+concat(x, y) = z <== hd(x) = b, hd(y) = a | gt0(b)	96	7	5	7	1
+hd(x) = a, hd(y) = a === hd(x) = b, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	8	4	6	2
+hd(x) = a, hd(y) = a === hd(x) = a, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	8	4	7	2
+hd(x) = a, hd(y) = a ==> hd(y) = a, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	98	8	4	6	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(y) = a | Not(gt(a, b)), Not(gt(b, a))	98	8	4	7	2
+hd(x) = a, hd(y) = a ==> hd(x) = a, hd(x) = b | Not(gt(a, b)), Not(gt(b, a))	98	8	4	6	2
+sort(sort(x)) = x <== sort(x) = x, sort(y) = y | 	81	7	2	3	0
+length(x) = a, length(y) = a === length(x) = b, length(y) = a | Not(gt(a, b)), Not(gt(b, a))	84	8	4	7	2
+length(x) = a, length(y) = a === length(x) = b, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	8	4	6	2
+length(x) = a, length(y) = a ==> length(y) = a, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	8	4	6	2
+length(x) = a, length(y) = a ==> length(x) = a, length(x) = b | Not(gt(a, b)), Not(gt(b, a))	84	8	4	6	2
+length(x) = a, length(y) = a === length(x) = a, length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	8	4	7	2
+rev(rev(x)) = x <== rev(x) = x, rev(y) = y | 	64	7	2	3	0
+cons(a, x) = y <== length(x) = b, length(z) = b | gt(b, a), gt1(a)	64	7	5	6	2
+concat(x, y) = z <== length(y) = a | Not(gt1(a))	28	5	4	5	1
+concat(x, y) = z <== length(x) = a | Not(gt1(a))	28	5	4	5	1
+concat(x, y) = z <== length(x) = b, length(y) = a | gt(b, a), gt1(a)	32	7	5	7	2
+concat(x, y) = z <== length(x) = a, length(y) = b | gt(a, b), gt1(b)	32	7	5	7	2
+sort(sort(x)) = x <== sort(y) = x, sort(z) = x | 	28	7	3	4	0
+concat(x, y) = z <== length(x) = a, length(x) = b | Not(gt1(a))	28	7	5	6	1
+sort(sort(x)) = y <== sort(x) = y, sort(z) = y | 	28	7	3	5	0
+concat(x, y) = z <== length(y) = a, length(y) = b | Not(gt1(a))	28	7	5	6	1
+rev(rev(x)) = x <== concat(y, rev(z)) = x | 	20	7	3	4	0
+rev(rev(x)) = x <== rev(x) = y | 	14	5	2	3	0
+sort(sort(x)) = x <== sort(y) = x | 	14	5	2	3	0
+rev(rev(x)) = x <== rev(y) = x | 	14	5	2	3	0
+sort(sort(x)) = y === sort(x) = y | 	14	5	2	4	0
+cons(a, x) = y ==> hd(y) = a | 	12	5	3	5	0
+cons(a, x) = y ==> tl(y) = x | 	12	5	3	5	0
+sort(sort(x)) = x <== sort(y) = x, sort(z) = y | 	14	7	3	4	0
+rev(rev(x)) = x <== rev(x) = z, rev(y) = x | 	14	7	3	4	0
+sort(sort(x)) = y <== sort(x) = z, sort(z) = y | 	14	7	3	5	0
+rev(rev(x)) = y <== rev(y) = z, rev(z) = x | 	14	7	3	5	0
+rev(rev(x)) = x <== rev(x) = z, rev(y) = z | 	14	7	3	4	0
+sort(sort(x)) = x <== sort(x) = z, sort(y) = x | 	14	7	3	4	0
+sort(sort(x)) = y <== sort(y) = x, sort(z) = y | 	14	7	3	5	0
+rev(rev(x)) = y <== rev(x) = z, rev(y) = z | 	14	7	3	5	0
+sort(sort(x)) = x <== sort(x) = x, sort(y) = x | 	14	7	2	3	0
+rev(rev(x)) = x <== rev(y) = x, rev(z) = x | 	14	7	3	4	0
+sort(sort(x)) = y <== sort(x) = y, sort(x) = z | 	14	7	3	5	0
+sort(sort(x)) = y <== sort(x) = y, sort(y) = z | 	14	7	3	5	0
+sort(sort(x)) = x <== sort(y) = z, sort(z) = x | 	14	7	3	4	0
+rev(rev(x)) = x <== rev(x) = y, rev(y) = x | 	14	7	2	3	0
+rev(rev(x)) = x <== rev(x) = y, rev(z) = y | 	14	7	3	4	0
+rev(rev(x)) = y <== rev(x) = z, rev(z) = y | 	14	7	3	5	0
+rev(rev(x)) = x <== rev(y) = x, rev(z) = y | 	14	7	3	4	0
+sort(sort(x)) = y <== sort(x) = y, sort(z) = x | 	14	7	3	5	0
+rev(rev(x)) = x <== rev(x) = y, rev(y) = z | 	14	7	3	4	0
+sort(sort(x)) = x <== sort(x) = y, sort(z) = x | 	14	7	3	4	0
+sort(sort(x)) = x <== sort(y) = x, sort(y) = z | 	14	7	3	4	0
+rev(rev(x)) = x <== rev(y) = z, rev(z) = x | 	14	7	3	4	0
+rev(rev(x)) = x <== rev(x) = y, rev(z) = x | 	14	7	3	4	0
+rev(rev(x)) = x <== rev(y) = x, rev(y) = z | 	14	7	3	4	0
+sort(sort(x)) = y <== sort(z) = x, sort(z) = y | 	14	7	3	5	0
+sort(sort(x)) = y === sort(x) = y, sort(y) = y | 	14	7	2	4	0
+rev(rev(x)) = x <== rev(x) = y, rev(x) = z | 	14	7	3	4	0
+rev(rev(x)) = x <== concat(x, rev(x)) = y | 	14	7	2	3	0
+rev(rev(x)) = y <== rev(z) = x, rev(z) = y | 	14	7	3	5	0
+sort(sort(x)) = x === sort(x) = x | 	9	5	1	2	0
+cons(a, x) = y ==> hd(y) = a, hd(y) = b | Not(gt(a, b)), Not(gt(b, a))	12	7	4	6	2
+rev(rev(x)) = x <== rev(x) = x | 	8	5	1	2	0
+sort(sort(x)) = x <== sort(x) = y, sort(y) = x | 	9	7	2	3	0
+sort(sort(x)) = x <== sort(y) = x, sort(y) = y | 	9	7	2	3	0
+sort(sort(x)) = y <== sort(y) = x, sort(y) = y | 	9	7	2	4	0
+sort(sort(x)) = y <== sort(x) = y, sort(y) = x | 	9	7	2	4	0
+sort(sort(x)) = y <== sort(x) = x, sort(x) = y | 	9	7	2	4	0
+sort(sort(x)) = x <== sort(x) = x, sort(x) = y | 	9	7	2	3	0
+rev(rev(x)) = x <== rev(x) = y, rev(y) = y | 	8	7	2	3	0
+rev(rev(x)) = x <== rev(x) = x, rev(x) = y | 	8	7	2	3	0
+rev(rev(x)) = y <== rev(x) = y, rev(y) = y | 	8	7	2	4	0
+rev(rev(x)) = y <== rev(x) = x, rev(x) = y | 	8	7	2	4	0
+rev(rev(x)) = x <== rev(y) = x, rev(y) = y | 	8	7	2	3	0
+rev(rev(x)) = x <== rev(x) = x, rev(y) = x | 	8	7	2	3	0
+rev(rev(x)) = y <== rev(y) = x, rev(y) = y | 	8	7	2	4	0
+rev(rev(x)) = y <== rev(x) = x, rev(y) = x | 	8	7	2	4	0
+length(x) = a, length(x) = b ==> length(y) = a, length(z) = b | Not(gt1(a))	8	8	5	7	1
+length(x) = a, length(x) = b ==> length(y) = a, length(z) = a | Not(gt1(a))	8	8	5	6	1
+length(x) = a, length(x) = b ==> length(y) = b, length(z) = a | Not(gt1(a))	8	8	5	7	1
+rev(rev(x)) = x <== concat(y, rev(y)) = x | 	2	7	2	3	0
+sort(sort(x)) = x <== concat(y, sort(y)) = x | 	2	7	2	3	0
+length(x) = a, length(y) = a ==> length(y) = b, length(z) = a | Not(gt(a, b)), Not(gt(b, a))	584	8	5	7	2
+length(x) = a, length(y) = a ==> length(y) = b, length(z) = b | Not(gt(a, b)), Not(gt(b, a))	584	8	5	6	2
+length(x) = a ==> length(y) = b, length(z) = b | Not(gt1(a))	168	6	5	5	1
+sort(x) = x, sort(y) = z ==> sort(z) = z | 	126	6	3	4	0
+rev(x) = x, rev(y) = z ==> rev(z) = y | 	112	6	3	5	0
+hd(x) = a, hd(y) = a === hd(x) = b | Not(gt(a, b)), Not(gt(b, a))	98	6	4	5	2
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(z) = z | 	126	8	3	5	0
+sort(x) = x, sort(y) = z ==> sort(x) = x, sort(z) = z | 	126	8	3	5	0
+sort(x) = x, sort(y) = y <== sort(x) = x, sort(z) = y | 	126	8	3	5	0
+sort(x) = x, sort(y) = z ==> sort(y) = z, sort(z) = z | 	126	8	3	5	0
+sort(x) = x, sort(y) = y <== sort(y) = y, sort(z) = x | 	126	8	3	5	0
+length(x) = a, length(y) = a ==> length(x) = b | Not(gt(a, b)), Not(gt(b, a))	84	6	4	5	2
+length(x) = a, length(y) = a ==> length(y) = b | Not(gt(a, b)), Not(gt(b, a))	84	6	4	5	2
+rev(x) = y, rev(y) = x <== rev(x) = y, rev(z) = z | 	112	8	3	5	0
+length(x) = a, length(y) = a === length(x) = b | Not(gt(a, b)), Not(gt(b, a))	84	6	4	5	2
+rev(x) = y, rev(y) = x <== rev(y) = x, rev(z) = z | 	112	8	3	5	0
+rev(x) = x, rev(y) = z === rev(x) = x, rev(z) = y | 	112	8	3	6	0
+rev(x) = x, rev(y) = z ==> rev(y) = z, rev(z) = y | 	112	8	3	5	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(z) = x | 	28	8	3	5	0
+rev(x) = y, rev(x) = z ==> rev(z) = x | 	14	6	3	5	0
+rev(x) = y, rev(x) = z ==> rev(y) = x | 	14	6	3	5	0
+rev(x) = y, rev(y) = z ==> rev(y) = x | 	14	6	3	5	0
+cons(length(x), x) = y ==> length(y) = a, length(z) = b | gt(b, a), gt1(a)	16	8	5	6	2
+cons(length(x), x) = y ==> length(y) = b, length(z) = a | gt(a, b), gt1(b)	16	8	5	6	2
+sort(x) = y, sort(x) = z ==> sort(x) = z, sort(y) = y | 	14	8	3	6	0
+sort(x) = x, sort(x) = y <== sort(x) = y, sort(z) = x | 	14	8	3	5	0
+sort(x) = y, sort(x) = z ==> sort(x) = z, sort(z) = z | 	14	8	3	5	0
+sort(x) = x, sort(y) = z <== sort(y) = x, sort(y) = z | 	14	8	3	6	0
+sort(x) = x, sort(y) = z <== sort(x) = z, sort(y) = x | 	14	8	3	6	0
+rev(x) = y, rev(y) = x <== rev(x) = y, rev(y) = z | 	14	8	3	5	0
+sort(x) = y, sort(x) = z ==> sort(x) = y, sort(z) = z | 	14	8	3	6	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(y) = z | 	14	8	3	5	0
+sort(x) = y, sort(x) = z ==> sort(x) = z, sort(y) = z | 	14	8	3	6	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(z) = y | 	14	8	3	5	0
+rev(x) = y, rev(x) = z ==> rev(x) = z, rev(z) = x | 	14	8	3	5	0
+sort(x) = y, sort(x) = z ==> sort(x) = y, sort(z) = y | 	14	8	3	6	0
+rev(x) = y, rev(y) = z ==> rev(x) = y, rev(y) = x | 	14	8	3	5	0
+sort(x) = x, sort(y) = z <== sort(y) = z, sort(z) = x | 	14	8	3	6	0
+sort(x) = y, sort(x) = z ==> sort(x) = y, sort(y) = y | 	14	8	3	5	0
+rev(x) = y, rev(y) = z === rev(y) = x, rev(y) = z | 	14	8	3	6	0
+rev(x) = y, rev(y) = x <== rev(y) = x, rev(y) = z | 	14	8	3	5	0
+rev(x) = y, rev(x) = z === rev(y) = x, rev(z) = x | 	14	8	3	6	0
+rev(x) = y, rev(y) = x <== rev(x) = y, rev(x) = z | 	14	8	3	5	0
+sort(x) = x, sort(x) = y <== sort(z) = x, sort(z) = y | 	14	8	3	5	0
+sort(x) = y, sort(x) = z === sort(x) = y, sort(y) = z | 	14	8	3	6	0
+sort(x) = x, sort(y) = x <== sort(y) = z, sort(z) = x | 	14	8	3	5	0
+sort(x) = x, sort(y) = y <== sort(z) = x, sort(z) = y | 	14	8	3	5	0
+sort(x) = x, sort(y) = x <== sort(x) = y, sort(z) = x | 	14	8	3	5	0
+sort(x) = x, sort(y) = x <== sort(x) = z, sort(y) = x | 	14	8	3	5	0
+rev(x) = y, rev(x) = z === rev(x) = y, rev(z) = x | 	14	8	3	6	0
+sort(x) = x, sort(y) = y <== sort(x) = y, sort(z) = x | 	14	8	3	5	0
+sort(x) = x, sort(y) = x <== sort(z) = x, sort(z) = y | 	14	8	3	5	0
+rev(x) = y, rev(x) = z ==> rev(x) = y, rev(y) = x | 	14	8	3	5	0
+sort(x) = x, sort(y) = y <== sort(y) = x, sort(z) = y | 	14	8	3	5	0
+sort(x) = x, sort(x) = y <== sort(y) = x, sort(z) = y | 	14	8	3	5	0
+cons(a, tl(x)) = x ==> tl(x) = z, tl(y) = z | gt0(a)	12	8	4	5	1
+cons(a, tl(x)) = x ==> tl(x) = y, tl(z) = y | gt0(a)	12	8	4	5	1
+sort(x) = x, sort(x) = y ==> sort(y) = y | 	9	6	2	3	0
+sort(x) = x, sort(x) = y ==> sort(y) = x | 	9	6	2	4	0
+rev(x) = x, rev(x) = y ==> rev(y) = y | 	8	6	2	3	0
+rev(x) = x, rev(x) = y ==> rev(y) = x | 	8	6	2	4	0
+sort(x) = x, sort(x) = y ==> sort(x) = x, sort(y) = x | 	9	8	2	4	0
+sort(x) = x, sort(x) = y ==> sort(x) = x, sort(y) = y | 	9	8	2	4	0
+sort(x) = x, sort(x) = y ==> sort(x) = y, sort(y) = y | 	9	8	2	4	0
+sort(x) = x, sort(y) = x <== sort(x) = x, sort(x) = y | 	9	8	2	4	0
+sort(x) = x, sort(x) = y === sort(x) = y, sort(y) = x | 	9	8	2	4	0
+sort(x) = x, sort(x) = y === sort(y) = x, sort(y) = y | 	9	8	2	4	0
+sort(x) = x, sort(y) = y <== sort(x) = x, sort(x) = y | 	9	8	2	4	0
+rev(x) = x, rev(x) = y === rev(x) = x, rev(y) = x | 	8	8	2	4	0
+cons(a, sort(x)) = y ==> sort(y) = y | Not(gt0(a))	6	6	3	4	1
+rev(x) = x, rev(x) = y ==> rev(x) = x, rev(y) = y | 	8	8	2	4	0
+rev(x) = x, rev(y) = y <== rev(x) = x, rev(x) = y | 	8	8	2	4	0
+rev(x) = x, rev(x) = y === rev(x) = y, rev(y) = y | 	8	8	2	4	0
+rev(x) = x, rev(x) = y ==> rev(x) = y, rev(y) = x | 	8	8	2	4	0
+rev(x) = x, rev(x) = y === rev(y) = x, rev(y) = y | 	8	8	2	4	0
+length(x) = a, length(x) = b ==> length(y) = b, length(z) = b | Not(gt1(a))	8	8	5	6	1
+rev(x) = y, rev(y) = x <== rev(x) = x, rev(x) = y | 	8	8	2	4	0
+cons(a, tl(x)) = x ==> tl(x) = y, tl(y) = z | gt0(a)	6	8	4	5	1
+cons(a, tl(x)) = x ==> tl(x) = y, tl(x) = z | gt0(a)	6	8	4	5	1
+concat(x, tl(y)) = y <== concat(tl(y), x) = y | 	4	8	2	4	0
+cons(a, tl(x)) = x ==> tl(x) = z, tl(y) = x | gt0(a)	4	8	4	5	1
+cons(a, tl(x)) = x ==> tl(x) = y, tl(z) = x | gt0(a)	4	8	4	5	1
+rev(x) = x, rev(y) = y ==> rev(y) = y, rev(rev(z)) = z | 	896	9	3	4	0
+rev(x) = x, rev(y) = y ==> rev(x) = x, rev(rev(z)) = z | 	896	9	3	4	0
+hd(x) = a === hd(x) = b, hd(y) = a, hd(z) = a | Not(gt(a, b)), Not(gt(b, a))	686	8	5	7	2
+hd(x) = a === hd(x) = b, hd(y) = b, hd(z) = b | Not(gt(a, b)), Not(gt(b, a))	686	8	5	6	2
+hd(x) = a === hd(x) = b, hd(y) = b, hd(z) = a | Not(gt(a, b)), Not(gt(b, a))	686	8	5	7	2
+hd(x) = a === hd(x) = b, hd(y) = a, hd(z) = b | Not(gt(a, b)), Not(gt(b, a))	686	8	5	7	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(sort(z)) = a | Not(gt(a, b)), Not(gt(b, a))	686	9	5	7	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(sort(z)) = b | Not(gt(a, b)), Not(gt(b, a))	686	9	5	6	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(rev(z)) = a | Not(gt(a, b)), Not(gt(b, a))	686	9	5	7	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(rev(z)) = b | Not(gt(a, b)), Not(gt(b, a))	686	9	5	6	2
+length(x) = a ==> length(y) = a, length(tl(z)) = b | gt(a, b), gt1(b)	506	7	5	6	2
+hd(x) = a, hd(y) = a ==> hd(y) = b, hd(tl(z)) = b | Not(gt(a, b)), Not(gt(b, a))	588	9	5	6	2
+hd(x) = a, hd(y) = a ==> hd(y) = b, hd(tl(z)) = a | Not(gt(a, b)), Not(gt(b, a))	588	9	5	7	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(tl(z)) = b | Not(gt(a, b)), Not(gt(b, a))	588	9	5	6	2
+hd(x) = a, hd(y) = a === hd(x) = b, hd(tl(z)) = a | Not(gt(a, b)), Not(gt(b, a))	588	9	5	7	2
+length(x) = a, length(y) = a <== length(z) = a, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	584	9	5	7	2
+length(x) = a, length(y) = a === length(x) = b, length(rev(z)) = a | Not(gt(a, b)), Not(gt(b, a))	584	9	5	7	2
+length(x) = a, length(y) = a ==> length(y) = b, length(sort(z)) = a | Not(gt(a, b)), Not(gt(b, a))	584	9	5	7	2
+length(x) = a, length(y) = a <== length(z) = a, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	584	9	5	7	2
+length(x) = a, length(y) = a === length(x) = b, length(sort(z)) = a | Not(gt(a, b)), Not(gt(b, a))	584	9	5	7	2
+length(x) = a, length(y) = a ==> length(y) = b, length(rev(z)) = a | Not(gt(a, b)), Not(gt(b, a))	584	9	5	7	2
+length(x) = a, length(y) = a <== length(z) = a, length(tl(x)) = b | gt(a, b), gt1(b)	512	9	5	7	2
+length(x) = a ==> length(y) = b, length(tl(z)) = b | gt(a, b), gt1(b)	256	7	5	5	2
+length(x) = a ==> length(y) = a, length(sort(z)) = b | gt(a, b), gt1(b)	206	7	5	6	2
+length(x) = a ==> length(y) = a, length(rev(z)) = b | gt(a, b), gt1(b)	205	7	5	6	2
+length(x) = a ==> length(y) = b, length(rev(z)) = a | gt(a, b), gt1(b)	200	7	5	6	2
+length(x) = a ==> length(y) = b, length(sort(z)) = a | gt(a, b), gt1(b)	200	7	5	6	2
+length(x) = a, length(y) = a <== length(z) = b, length(tl(x)) = b | gt(a, b), gt1(b)	256	9	5	6	2
+length(x) = a <== length(y) = b, length(rev(x)) = a | 	196	7	4	6	0
+length(x) = a <== length(y) = b, length(sort(x)) = a | 	196	7	4	6	0
+rev(x) = y === rev(y) = x, rev(rev(z)) = z | 	196	7	3	5	0
+sort(x) = x <== sort(y) = x, sort(sort(z)) = z | 	126	7	3	4	0
+sort(x) = x <== sort(y) = z, sort(sort(x)) = x | 	126	7	3	4	0
+sort(x) = x <== sort(y) = y, sort(sort(z)) = x | 	126	7	3	4	0
+length(x) = a, length(y) = a === length(x) = b, length(tl(z)) = b | Not(gt(a, b)), Not(gt(b, a))	144	9	5	6	2
+length(x) = a, length(y) = a === length(x) = b, length(tl(z)) = a | Not(gt(a, b)), Not(gt(b, a))	144	9	5	7	2
+length(x) = a, length(y) = b === length(x) = b, length(tl(z)) = b | Not(gt(a, b)), Not(gt(b, a))	144	9	5	7	2
+length(x) = a, length(y) = a ==> length(y) = b, length(tl(z)) = b | Not(gt(a, b)), Not(gt(b, a))	144	9	5	6	2
+length(x) = a, length(y) = b ==> length(y) = a, length(tl(z)) = a | Not(gt(a, b)), Not(gt(b, a))	144	9	5	7	2
+length(x) = a, length(y) = a ==> length(y) = b, length(tl(z)) = a | Not(gt(a, b)), Not(gt(b, a))	144	9	5	7	2
+length(x) = a, length(y) = b === length(x) = b, length(tl(z)) = a | Not(gt(a, b)), Not(gt(b, a))	144	9	5	8	2
+sort(x) = x, sort(y) = z ==> sort(x) = x, sort(sort(x)) = x | 	126	9	3	4	0
+sort(x) = y, sort(z) = z ==> sort(y) = y, sort(sort(y)) = y | 	126	9	3	4	0
+hd(x) = a <== hd(x) = b, hd(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	98	7	4	5	2
+hd(x) = a <== hd(x) = b, hd(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	98	7	4	5	2
+sort(x) = x, sort(y) = y <== sort(z) = x, sort(sort(y)) = y | 	126	9	3	5	0
+sort(x) = x, sort(y) = y <== sort(x) = x, sort(sort(z)) = y | 	126	9	3	5	0
+sort(x) = x, sort(y) = z === sort(x) = x, sort(sort(y)) = z | 	126	9	3	6	0
+sort(x) = y, sort(z) = z ==> sort(z) = z, sort(sort(z)) = z | 	126	9	3	4	0
+sort(x) = x, sort(y) = z ==> sort(z) = z, sort(sort(z)) = z | 	126	9	3	4	0
+hd(x) = a <== hd(x) = b, hd(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	98	7	4	6	2
+sort(x) = x, sort(y) = y <== sort(z) = y, sort(sort(x)) = x | 	126	9	3	5	0
+sort(x) = x, tl(y) = z ==> sort(x) = x, sort(sort(x)) = x | 	126	9	3	4	0
+sort(x) = x, sort(y) = z === sort(y) = z, sort(sort(x)) = x | 	126	9	3	6	0
+sort(x) = x, sort(y) = x <== sort(z) = z, sort(sort(y)) = x | 	126	9	3	5	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(sort(z)) = z | 	126	9	3	5	0
+sort(x) = x, sort(y) = y <== sort(y) = y, sort(sort(z)) = x | 	126	9	3	5	0
+hd(x) = a <== hd(x) = b, hd(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	98	7	4	6	2
+length(x) = a ==> length(y) = b, length(sort(z)) = b | gt(a, b), gt1(b)	96	7	5	5	2
+length(x) = a ==> length(y) = b, length(rev(z)) = b | gt(a, b), gt1(b)	96	7	5	5	2
+rev(x) = x, rev(y) = z ==> rev(y) = z, rev(rev(z)) = z | 	112	9	3	5	0
+rev(x) = x, rev(y) = x ==> rev(x) = x, rev(rev(z)) = z | 	112	9	3	4	0
+rev(x) = x, rev(x) = y ==> rev(x) = x, rev(rev(z)) = z | 	112	9	3	4	0
+rev(x) = x, rev(y) = z ==> rev(z) = y, rev(rev(x)) = x | 	112	9	3	6	0
+rev(x) = x, rev(y) = z ==> rev(z) = y, rev(rev(y)) = y | 	112	9	3	5	0
+rev(x) = x, rev(y) = x ==> rev(x) = y, rev(rev(z)) = z | 	112	9	3	5	0
+rev(x) = x, rev(y) = z ==> rev(x) = x, rev(rev(x)) = x | 	112	9	3	4	0
+rev(x) = x, rev(y) = z ==> rev(y) = z, rev(rev(x)) = x | 	112	9	3	6	0
+rev(x) = x, rev(x) = y ==> rev(y) = y, rev(rev(z)) = z | 	112	9	3	4	0
+rev(x) = x, rev(x) = y ==> rev(x) = y, rev(rev(z)) = z | 	112	9	3	5	0
+rev(x) = y, rev(y) = y ==> rev(x) = x, rev(rev(z)) = z | 	112	9	3	4	0
+rev(x) = x, rev(y) = x ==> rev(y) = x, rev(rev(z)) = z | 	112	9	3	5	0
+rev(x) = x, rev(x) = y ==> rev(y) = x, rev(rev(z)) = z | 	112	9	3	5	0
+rev(x) = x, rev(y) = z ==> rev(x) = x, rev(rev(z)) = z | 	112	9	3	5	0
+rev(x) = x, rev(y) = z ==> rev(y) = z, rev(rev(y)) = y | 	112	9	3	5	0
+rev(x) = x, rev(y) = x ==> rev(y) = y, rev(rev(z)) = z | 	112	9	3	4	0
+rev(x) = y, rev(y) = y ==> rev(y) = y, rev(rev(z)) = z | 	112	9	3	4	0
+rev(x) = x, rev(y) = z ==> rev(x) = x, rev(rev(y)) = y | 	112	9	3	5	0
+rev(x) = x, rev(y) = z ==> rev(z) = y, rev(rev(z)) = z | 	112	9	3	5	0
+hd(x) = a <== hd(x) = b, hd(y) = a, hd(y) = b | 	98	8	4	6	0
+length(x) = a <== length(y) = a, length(rev(x)) = a | 	84	7	3	5	0
+length(x) = a <== length(y) = a, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+length(x) = a <== length(y) = b, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+hd(x) = a <== hd(x) = b, hd(tl(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+length(x) = a <== length(y) = a, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+length(x) = a <== length(x) = b, length(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+hd(x) = a <== hd(x) = b, hd(tl(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+length(x) = a <== length(x) = b, length(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+length(x) = a <== length(y) = b, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	7	4	5	2
+length(x) = a <== length(x) = b, length(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+length(x) = a <== length(y) = a, length(sort(x)) = a | 	84	7	3	5	0
+length(x) = a <== length(x) = b, length(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	7	4	6	2
+sort(x) = x <== sort(y) = y, sort(sort(x)) = x | 	81	7	2	3	0
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	98	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	98	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	98	9	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	98	9	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	98	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	98	9	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	98	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	98	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = a, length(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(x) = b <== length(y) = a, length(rev(x)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(y) = a === length(y) = b, length(rev(x)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = a, length(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a ==> length(x) = a, length(rev(x)) = a | 	84	9	3	5	0
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(tl(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a === length(y) = a, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a ==> length(x) = a, length(sort(x)) = a | 	84	9	3	5	0
+length(x) = a, length(y) = a ==> length(y) = b, length(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	5	2
+length(x) = a, length(x) = b <== length(y) = b, length(rev(x)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(tl(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a === length(x) = a, length(rev(y)) = a | 	84	9	3	6	0
+length(x) = a, length(x) = b <== length(x) = a, length(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(x) = b <== length(y) = a, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = b, length(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a === length(x) = b, length(sort(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = b, length(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(y) = a ==> length(y) = b, length(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	5	2
+length(x) = a, length(y) = a === length(y) = a, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a === length(x) = a, length(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = b, length(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(y) = a === length(y) = b, length(sort(x)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(y) = b, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(x) = b <== length(y) = a, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a === length(x) = a, length(sort(y)) = a | 	84	9	3	6	0
+length(x) = a, length(x) = b <== length(y) = b, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(tl(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(y) = a ==> length(y) = a, length(rev(y)) = a | 	84	9	3	5	0
+length(x) = a, length(y) = a ==> length(x) = b, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	5	2
+length(x) = a, length(y) = a ==> length(y) = a, length(sort(y)) = a | 	84	9	3	5	0
+length(x) = a, length(x) = b <== length(x) = b, length(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a === length(x) = b, length(rev(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(tl(y)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a, length(x) = b <== length(x) = a, length(rev(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(y) = b, length(sort(x)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(y) = a ==> length(x) = b, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	5	2
+length(x) = a, length(y) = a === length(x) = a, length(sort(y)) = b | Not(gt(a, b)), Not(gt(b, a))	84	9	4	7	2
+length(x) = a, length(x) = b <== length(y) = a, length(sort(x)) = a | Not(gt(a, b)), Not(gt(b, a))	84	9	4	6	2
+length(x) = a <== length(y) = a, length(tl(x)) = b | gt(a, b), gt1(b)	64	7	4	6	2
+sort(x) = x, sort(y) = y ==> sort(y) = y, sort(sort(y)) = y | 	81	9	2	3	0
+sort(x) = x, sort(y) = y === sort(x) = x, sort(sort(y)) = y | 	81	9	2	4	0
+sort(x) = x, sort(y) = y ==> sort(x) = x, sort(sort(x)) = x | 	81	9	2	3	0
+length(x) = a, length(y) = a ==> length(y) = a, length(tl(y)) = b | gt(a, b), gt1(b)	64	9	4	6	2
+rev(x) = x, rev(y) = y ==> rev(x) = x, rev(rev(x)) = x | 	64	9	2	3	0
+rev(x) = x, rev(y) = y ==> rev(y) = y, rev(rev(x)) = x | 	64	9	2	4	0
+length(x) = a, length(y) = a === length(x) = a, length(tl(y)) = b | gt(a, b), gt1(b)	64	9	4	7	2
+rev(x) = x, rev(y) = y ==> rev(x) = x, rev(rev(y)) = y | 	64	9	2	4	0
+rev(x) = x, rev(y) = y ==> rev(y) = y, rev(rev(y)) = y | 	64	9	2	3	0
+length(x) = a, length(y) = a === length(y) = a, length(tl(x)) = b | gt(a, b), gt1(b)	64	9	4	7	2
+length(x) = a, length(y) = a ==> length(x) = a, length(tl(x)) = b | gt(a, b), gt1(b)	64	9	4	6	2
+hd(x) = a, hd(y) = a ==> cons(b, cons(a, x)) = z | Not(gt0(a))	63	9	5	7	1
+hd(x) = a <== hd(y) = b, hd(sort(x)) = a | gt0(a)	42	7	4	6	1
+length(x) = a <== length(x) = b, length(tl(y)) = a | Not(gt(a, b)), Not(gt(b, a))	40	7	4	6	2
+length(x) = a <== length(x) = b, length(tl(y)) = b | Not(gt(a, b)), Not(gt(b, a))	40	7	4	5	2
+hd(x) = a, hd(y) = a ==> hd(x) = a, hd(sort(y)) = b | Not(gt(a, b)), Not(gt0(b))	49	9	4	7	2
+hd(x) = a, hd(y) = a ==> hd(x) = b, hd(sort(x)) = a | Not(gt(a, b)), Not(gt0(b))	49	9	4	6	2
+hd(x) = a, hd(y) = a ==> hd(y) = a, hd(sort(y)) = b | Not(gt(a, b)), Not(gt0(b))	49	9	4	6	2
+hd(x) = a, hd(y) = a ==> hd(x) = b, hd(sort(x)) = b | Not(gt(a, b)), Not(gt0(b))	49	9	4	5	2
+hd(x) = a, hd(y) = a ==> hd(x) = a, hd(sort(x)) = a | Not(gt0(a))	49	9	3	5	1
+hd(x) = a, hd(y) = a ==> hd(x) = a, hd(sort(x)) = b | Not(gt(a, b)), Not(gt0(b))	49	9	4	6	2
+hd(x) = a, hd(y) = a ==> hd(y) = a, hd(sort(x)) = a | Not(gt0(a))	49	9	3	6	1
+hd(x) = a, hd(y) = a ==> hd(x) = a, hd(sort(y)) = a | Not(gt0(a))	49	9	3	6	1
+hd(x) = a, hd(y) = a ==> hd(x) = b, hd(sort(y)) = b | Not(gt(a, b)), Not(gt0(b))	49	9	4	6	2
+hd(x) = a, hd(y) = a ==> hd(y) = a, hd(sort(y)) = a | Not(gt0(a))	49	9	3	5	1
+hd(x) = a, hd(y) = a ==> hd(y) = a, hd(sort(x)) = b | Not(gt(a, b)), Not(gt0(b))	49	9	4	7	2
+hd(x) = a, hd(y) = a ==> hd(x) = b, hd(sort(y)) = a | Not(gt(a, b)), Not(gt0(b))	49	9	4	7	2
+hd(x) = a, hd(y) = a ==> cons(b, cons(b, x)) = z | Not(gt0(a))	42	9	5	6	1
+hd(x) = a, hd(y) = a ==> cons(a, cons(b, x)) = z | Not(gt0(a))	42	9	5	7	1
+hd(x) = a, hd(y) = b ==> cons(a, cons(b, x)) = z | Not(gt0(a))	42	9	5	8	1
+hd(x) = a, hd(y) = b ==> cons(a, cons(a, x)) = z | Not(gt0(a))	42	9	5	7	1
+length(x) = a <== length(y) = b, length(tl(x)) = b | gt(a, b), gt1(b)	32	7	4	5	2
+length(x) = a, length(x) = b <== length(x) = a, length(tl(y)) = b | Not(gt(a, b)), Not(gt(b, a))	40	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = a, length(tl(y)) = a | Not(gt(a, b)), Not(gt(b, a))	40	9	4	6	2
+length(x) = a, length(x) = b <== length(x) = b, length(tl(y)) = a | Not(gt(a, b)), Not(gt(b, a))	40	9	4	7	2
+length(x) = a, length(x) = b <== length(x) = b, length(tl(y)) = b | Not(gt(a, b)), Not(gt(b, a))	40	9	4	6	2
+length(x) = a <== concat(y, concat(x, x)) = z | Not(gt1(a))	28	7	4	5	1
+sort(x) = x <== sort(y) = x, sort(sort(z)) = x | 	28	7	3	4	0
+sort(x) = y <== sort(z) = y, sort(sort(x)) = y | 	28	7	3	5	0
+length(x) = a, length(y) = b ==> length(x) = a, length(tl(x)) = b | gt(a, b), gt1(b)	32	9	4	7	2
+length(x) = a, length(y) = b === length(x) = a, length(tl(y)) = a | gt(b, a), gt1(a)	32	9	4	7	2
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(sort(z)) = x | 	28	9	3	5	0
+sort(x) = y, sort(z) = y === sort(x) = y, sort(sort(z)) = y | 	28	9	3	6	0
+sort(x) = y, sort(y) = y <== sort(x) = y, sort(sort(z)) = y | 	28	9	3	5	0
+sort(x) = y, sort(y) = y <== sort(z) = y, sort(sort(x)) = y | 	28	9	3	5	0
+length(x) = a, length(x) = b <== concat(y, concat(x, x)) = z | Not(gt(a, b)), Not(gt1(b))	28	9	5	6	2
+length(x) = a, length(y) = b <== concat(x, concat(x, x)) = z | Not(gt1(a))	28	9	5	6	1
+sort(x) = x, sort(y) = x <== sort(z) = x, sort(sort(y)) = x | 	28	9	3	5	0
+sort(x) = y, sort(z) = y ==> sort(y) = y, sort(sort(y)) = y | 	28	9	3	4	0
+hd(x) = a <== hd(y) = a, hd(sort(x)) = b | gt0(a), gt0(b)	21	7	4	6	2
+hd(x) = a <== hd(y) = b, hd(sort(x)) = b | gt0(a), gt0(b)	21	7	4	5	2
+hd(x) = a <== hd(y) = a, hd(sort(x)) = a | gt0(a)	21	7	3	5	1
+hd(x) = a, hd(x) = b <== hd(y) = a, hd(sort(x)) = a | gt0(a), gt0(b)	21	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(y) = b, hd(sort(x)) = b | gt0(a), gt0(b)	21	9	4	6	2
+hd(x) = a, hd(x) = b <== hd(y) = b, hd(sort(x)) = a | gt0(a), gt0(b)	21	9	4	7	2
+hd(x) = a, hd(x) = b <== hd(y) = a, hd(sort(x)) = b | gt0(a), gt0(b)	21	9	4	7	2
+sort(x) = y <== sort(x) = z, sort(sort(z)) = y | 	14	7	3	5	0
+sort(x) = x <== sort(y) = x, sort(sort(x)) = z | 	14	7	3	4	0
+sort(x) = y <== sort(z) = x, sort(sort(z)) = y | 	14	7	3	5	0
+rev(x) = y <== rev(x) = z, rev(rev(z)) = y | 	14	7	3	5	0
+length(x) = a <== length(x) = b, length(rev(x)) = a | 	14	7	3	5	0
+rev(x) = y <== rev(y) = z, rev(rev(z)) = x | 	14	7	3	5	0
+sort(x) = y <== sort(z) = x, sort(sort(x)) = y | 	14	7	3	5	0
+length(x) = a <== length(x) = b, length(sort(x)) = a | 	14	7	3	5	0
+rev(x) = y <== rev(y) = x, rev(rev(z)) = x | 	14	7	3	5	0
+sort(x) = x <== sort(y) = z, sort(sort(y)) = x | 	14	7	3	4	0
+sort(x) = y <== sort(y) = z, sort(sort(x)) = y | 	14	7	3	5	0
+rev(x) = y === rev(y) = x, rev(rev(y)) = y | 	14	7	2	4	0
+rev(x) = y <== rev(z) = x, rev(rev(y)) = z | 	14	7	3	5	0
+sort(x) = x <== sort(y) = x, sort(sort(y)) = x | 	14	7	2	3	0
+length(x) = a === length(x) = b, length(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	14	7	3	4	2
+rev(x) = y <== rev(z) = x, rev(rev(z)) = y | 	14	7	3	5	0
+sort(x) = y <== sort(z) = y, sort(sort(y)) = x | 	14	7	3	5	0
+rev(x) = y <== rev(x) = z, rev(rev(y)) = z | 	14	7	3	5	0
+rev(x) = y <== rev(y) = x, rev(rev(y)) = z | 	14	7	3	5	0
+sort(x) = y <== sort(y) = x, sort(sort(z)) = y | 	14	7	3	5	0
+rev(x) = y <== rev(y) = x, rev(rev(x)) = z | 	14	7	3	5	0
+sort(x) = x <== sort(y) = x, sort(sort(x)) = x | 	14	7	2	3	0
+sort(x) = y <== sort(z) = y, sort(sort(x)) = z | 	14	7	3	5	0
+sort(x) = x <== sort(y) = x, sort(sort(z)) = y | 	14	7	3	4	0
+sort(x) = x <== sort(y) = x, sort(sort(y)) = z | 	14	7	3	4	0
+rev(x) = y <== rev(y) = z, rev(rev(x)) = z | 	14	7	3	5	0
+sort(x) = y <== sort(z) = y, sort(sort(z)) = x | 	14	7	3	5	0
+sort(x) = x <== sort(y) = z, sort(sort(z)) = x | 	14	7	3	4	0
+hd(x) = a ==> concat(y, concat(x, x)) = z | Not(gt0(a))	14	7	4	5	1
+length(x) = a === length(x) = b, length(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	14	7	3	4	2
+sort(x) = y ==> sort(y) = y, sort(sort(y)) = y | 	14	7	2	3	0
+rev(x) = y <== rev(z) = y, rev(rev(x)) = z | 	14	7	3	5	0
+sort(x) = x <== sort(x) = y, sort(sort(z)) = x | 	14	7	3	4	0
+rev(x) = y === rev(y) = x, rev(rev(x)) = x | 	14	7	2	4	0
+sort(x) = y <== sort(x) = z, sort(sort(x)) = y | 	14	7	3	5	0
+rev(x) = y <== rev(z) = y, rev(rev(z)) = x | 	14	7	3	5	0
+rev(x) = y <== rev(y) = x, rev(rev(z)) = y | 	14	7	3	5	0
+sort(x) = x, sort(y) = x <== sort(z) = x, sort(sort(y)) = z | 	14	9	3	5	0
+sort(x) = x, sort(y) = y <== sort(z) = y, sort(sort(y)) = x | 	14	9	3	5	0
+sort(x) = x, sort(y) = z <== sort(y) = x, sort(sort(y)) = z | 	14	9	3	6	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(sort(z)) = y | 	14	9	3	5	0
+rev(x) = y, rev(x) = z === rev(y) = x, rev(rev(y)) = z | 	14	9	3	6	0
+sort(x) = y, sort(z) = x ==> sort(y) = y, sort(sort(y)) = y | 	14	9	3	4	0
+length(x) = a, length(x) = b ==> length(x) = a, length(sort(x)) = a | 	14	9	3	5	0
+sort(x) = y, sort(y) = z ==> sort(x) = y, sort(sort(z)) = y | 	14	9	3	6	0
+sort(x) = x, sort(x) = y <== sort(z) = x, sort(sort(z)) = y | 	14	9	3	5	0
+sort(x) = x, sort(y) = x <== sort(x) = y, sort(sort(z)) = x | 	14	9	3	5	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(sort(y)) = z | 	14	9	3	5	0
+sort(x) = y, sort(x) = z ==> sort(x) = y, sort(sort(z)) = y | 	14	9	3	6	0
+sort(x) = x, sort(y) = y <== sort(z) = x, sort(sort(z)) = y | 	14	9	3	5	0
+sort(x) = x, sort(y) = y <== sort(z) = y, sort(sort(z)) = x | 	14	9	3	5	0
+sort(x) = x, sort(y) = x === sort(y) = x, sort(sort(y)) = x | 	14	9	2	4	0
+sort(x) = x, sort(y) = x === sort(x) = x, sort(sort(y)) = x | 	14	9	2	4	0
+sort(x) = x, sort(x) = y <== sort(z) = y, sort(sort(y)) = x | 	14	9	3	5	0
+sort(x) = y, sort(z) = x ==> sort(z) = y, sort(sort(x)) = y | 	14	9	3	6	0
+sort(x) = y, sort(x) = z === sort(y) = z, sort(sort(x)) = y | 	14	9	3	6	0
+rev(x) = y, rev(x) = z === rev(x) = y, rev(rev(z)) = y | 	14	9	3	6	0
+sort(x) = x, sort(y) = z <== sort(y) = x, sort(sort(x)) = z | 	14	9	3	6	0
+sort(x) = x, sort(y) = x <== sort(y) = x, sort(sort(x)) = z | 	14	9	3	5	0
+sort(x) = x, sort(y) = x <== sort(z) = x, sort(sort(x)) = y | 	14	9	3	5	0
+sort(x) = x, sort(y) = z <== sort(y) = z, sort(sort(y)) = x | 	14	9	3	6	0
+sort(x) = y, sort(y) = z ==> sort(z) = z, sort(sort(z)) = z | 	14	9	3	4	0
+sort(x) = y, sort(x) = z ==> sort(z) = y, sort(sort(x)) = y | 	14	9	3	6	0
+rev(x) = y, rev(x) = z === rev(x) = y, rev(rev(y)) = z | 	14	9	3	6	0
+sort(x) = y, sort(z) = x ==> sort(y) = x, sort(sort(z)) = x | 	14	9	3	6	0
+sort(x) = y, sort(y) = z ==> sort(y) = z, sort(sort(x)) = z | 	14	9	3	6	0
+sort(x) = y, sort(z) = x ==> sort(z) = x, sort(sort(y)) = x | 	14	9	3	6	0
+sort(x) = x, sort(y) = x <== sort(z) = y, sort(sort(z)) = x | 	14	9	3	5	0
+sort(x) = x, sort(y) = x === sort(y) = x, sort(sort(x)) = x | 	14	9	2	4	0
+sort(x) = y, sort(y) = z ==> sort(z) = y, sort(sort(x)) = y | 	14	9	3	6	0
+rev(x) = y, rev(x) = z === rev(y) = x, rev(rev(z)) = y | 	14	9	3	6	0
+sort(x) = y, sort(x) = z ==> sort(y) = z, sort(sort(x)) = z | 	14	9	3	6	0
+length(x) = a, length(x) = b === length(x) = a, length(sort(x)) = b | 	14	9	3	6	0
+sort(x) = x, sort(y) = x <== sort(y) = z, sort(sort(y)) = x | 	14	9	3	5	0
+sort(x) = x, sort(x) = y <== sort(x) = y, sort(sort(z)) = x | 	14	9	3	5	0
+length(x) = a, length(x) = b === length(x) = a, length(rev(x)) = b | 	14	9	3	6	0
+sort(x) = y, sort(z) = x ==> sort(x) = y, sort(sort(z)) = y | 	14	9	3	6	0
+sort(x) = x, sort(y) = z <== sort(y) = z, sort(sort(z)) = x | 	14	9	3	6	0
+hd(x) = a, hd(y) = b ==> concat(y, concat(x, x)) = z | Not(gt0(a))	14	9	5	7	1
+sort(x) = x, sort(y) = z <== sort(z) = x, sort(sort(y)) = z | 	14	9	3	6	0
+sort(x) = x, sort(y) = x <== sort(z) = x, sort(sort(z)) = y | 	14	9	3	5	0
+sort(x) = x, sort(y) = x <== sort(x) = z, sort(sort(y)) = x | 	14	9	3	5	0
+sort(x) = y, sort(y) = z ==> sort(y) = y, sort(sort(y)) = y | 	14	9	3	4	0
+sort(x) = x, sort(y) = z <== sort(x) = z, sort(sort(y)) = x | 	14	9	3	6	0
+sort(x) = y, sort(x) = z === sort(x) = y, sort(sort(y)) = z | 	14	9	3	6	0
+length(x) = a, length(x) = b ==> length(x) = b, length(rev(x)) = b | 	14	9	3	5	0
+sort(x) = y, sort(x) = z ==> sort(z) = z, sort(sort(z)) = z | 	14	9	3	4	0
+sort(x) = y, sort(x) = z ==> sort(y) = y, sort(sort(y)) = y | 	14	9	3	4	0
+sort(x) = y, sort(y) = y ==> sort(y) = y, sort(sort(y)) = y | 	14	9	2	3	0
+sort(x) = x, sort(x) = y <== sort(z) = y, sort(sort(z)) = x | 	14	9	3	5	0
+sort(x) = x, sort(y) = x ==> sort(x) = x, sort(sort(x)) = x | 	14	9	2	3	0
+sort(x) = y, sort(y) = z ==> sort(x) = z, sort(sort(y)) = z | 	14	9	3	6	0
+hd(x) = a, hd(y) = b ==> concat(x, concat(x, x)) = z | Not(gt0(a))	14	9	5	6	1
+sort(x) = x, sort(y) = y <== sort(z) = x, sort(sort(x)) = y | 	14	9	3	5	0
+sort(x) = y, sort(x) = z === sort(x) = y, sort(sort(x)) = z | 	14	9	3	6	0
+length(x) = a, length(x) = b ==> length(x) = a, length(rev(x)) = a | 	14	9	3	5	0
+sort(x) = y, tl(y) = z ==> sort(y) = y, sort(sort(y)) = y | 	14	9	3	4	0
+sort(x) = x, sort(y) = y <== sort(y) = x, sort(sort(z)) = y | 	14	9	3	5	0
+hd(x) = a, hd(x) = b ==> concat(y, concat(x, x)) = z | Not(gt0(a))	14	9	5	6	1
+sort(x) = x, sort(y) = x <== sort(z) = y, sort(sort(y)) = x | 	14	9	3	5	0
+sort(x) = x, sort(y) = x <== sort(y) = z, sort(sort(z)) = x | 	14	9	3	5	0
+sort(x) = y, sort(z) = x ==> sort(x) = x, sort(sort(x)) = x | 	14	9	3	4	0
+length(x) = a, length(x) = b ==> length(x) = b, length(sort(x)) = b | 	14	9	3	5	0
+sort(x) = y, sort(x) = z ==> sort(x) = z, sort(sort(y)) = z | 	14	9	3	6	0
+sort(x) = x, sort(y) = y <== sort(x) = y, sort(sort(z)) = x | 	14	9	3	5	0
+sort(x) = y, tl(x) = z ==> sort(y) = y, sort(sort(y)) = y | 	14	9	3	4	0
+sort(x) = x, sort(x) = y <== sort(y) = x, sort(sort(z)) = y | 	14	9	3	5	0
+sort(x) = x, sort(x) = y <== sort(z) = x, sort(sort(x)) = y | 	14	9	3	5	0
+hd(x) = a <== hd(x) = b, hd(sort(x)) = a | Not(gt(b, a))	10	7	3	5	1
+hd(x) = a <== hd(x) = b, hd(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	10	7	3	4	2
+sort(x) = y, tl(z) = x ==> sort(y) = y, sort(sort(y)) = y | 	12	9	3	4	0
+sort(x) = y, tl(z) = y ==> sort(y) = y, sort(sort(y)) = y | 	12	9	3	4	0
+sort(x) = y, tl(y) = z ==> sort(z) = z, sort(sort(z)) = z | 	12	9	3	4	0
+sort(x) = x <== sort(x) = y, sort(sort(y)) = x | 	9	7	2	3	0
+sort(x) = x <== sort(y) = x, sort(sort(x)) = y | 	9	7	2	3	0
+sort(x) = x <== sort(y) = y, sort(sort(y)) = x | 	9	7	2	3	0
+sort(x) = x <== sort(y) = x, sort(sort(y)) = y | 	9	7	2	3	0
+sort(x) = x <== sort(x) = y, sort(sort(x)) = x | 	9	7	2	3	0
+rev(x) = x <== rev(x) = y, rev(rev(x)) = y | 	8	7	2	3	0
+rev(x) = x <== rev(y) = y, rev(rev(x)) = y | 	8	7	2	3	0
+rev(x) = x <== rev(y) = y, rev(rev(y)) = x | 	8	7	2	3	0
+rev(x) = x <== rev(y) = x, rev(rev(y)) = x | 	8	7	2	3	0
+rev(x) = x <== rev(x) = y, rev(rev(y)) = x | 	8	7	2	3	0
+hd(x) = a <== hd(x) = b, hd(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	8	7	3	4	2
+rev(x) = x <== rev(y) = x, rev(rev(x)) = y | 	8	7	2	3	0
+hd(x) = a <== hd(x) = b, hd(rev(x)) = a | Not(gt(a, b)), Not(gt(b, a))	8	7	3	5	2
+hd(x) = a <== cons(a, cons(b, y)) = x | 	8	7	4	6	0
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(sort(x)) = b | Not(gt(a, b))	10	9	3	6	1
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(sort(x)) = b | Not(gt(a, b)), Not(gt(b, a))	10	9	3	5	2
+sort(x) = x, tl(y) = x ==> sort(x) = x, sort(sort(x)) = x | 	10	9	2	3	0
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(sort(x)) = a | Not(gt(b, a))	10	9	3	6	1
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(sort(x)) = a | Not(gt(a, b)), Not(gt(b, a))	10	9	3	5	2
+sort(x) = y, sort(y) = x ==> sort(y) = y, sort(sort(y)) = y | 	9	9	2	3	0
+sort(x) = x, sort(x) = y ==> sort(x) = x, sort(sort(y)) = x | 	9	9	2	4	0
+sort(x) = x, sort(x) = y ==> sort(y) = y, sort(sort(x)) = y | 	9	9	2	4	0
+sort(x) = x, sort(x) = y === sort(x) = y, sort(sort(y)) = x | 	9	9	2	4	0
+sort(x) = x, sort(x) = y ==> sort(x) = x, sort(sort(y)) = y | 	9	9	2	4	0
+sort(x) = x, sort(x) = y === sort(x) = x, sort(sort(x)) = y | 	9	9	2	4	0
+sort(x) = x, sort(x) = y ==> sort(x) = y, sort(sort(x)) = y | 	9	9	2	4	0
+sort(x) = x, sort(x) = y ==> sort(y) = y, sort(sort(x)) = x | 	9	9	2	4	0
+sort(x) = x, tl(x) = y ==> sort(x) = x, sort(sort(x)) = x | 	9	9	2	3	0
+sort(x) = x, sort(x) = y === sort(x) = y, sort(sort(x)) = x | 	9	9	2	4	0
+sort(x) = x, sort(x) = y ==> sort(y) = x, sort(sort(y)) = x | 	9	9	2	4	0
+sort(x) = x, sort(x) = y ==> sort(y) = y, sort(sort(y)) = y | 	9	9	2	3	0
+sort(x) = x, sort(x) = y ==> sort(x) = x, sort(sort(x)) = x | 	9	9	2	3	0
+sort(x) = x, sort(x) = y ==> sort(y) = x, sort(sort(x)) = x | 	9	9	2	4	0
+sort(x) = y, sort(y) = x ==> sort(x) = x, sort(sort(x)) = x | 	9	9	2	3	0
+sort(x) = x, sort(x) = y ==> sort(x) = y, sort(sort(y)) = y | 	9	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(x) = x, rev(rev(x)) = x | 	8	9	2	3	0
+rev(x) = x, rev(x) = y === rev(x) = y, rev(rev(x)) = y | 	8	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(y) = y, rev(rev(x)) = x | 	8	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(x) = y, rev(rev(x)) = x | 	8	9	2	4	0
+rev(x) = x, rev(x) = y === rev(x) = x, rev(rev(x)) = y | 	8	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(y) = x, rev(rev(y)) = y | 	8	9	2	4	0
+rev(x) = y, rev(y) = y ==> rev(y) = y, rev(rev(x)) = x | 	8	9	2	4	0
+rev(x) = x, rev(x) = y === rev(x) = y, rev(rev(y)) = x | 	8	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(x) = y, rev(rev(y)) = y | 	8	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(x) = x, rev(rev(y)) = y | 	8	9	2	4	0
+rev(x) = y, rev(y) = y ==> rev(x) = x, rev(rev(x)) = x | 	8	9	2	3	0
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	8	9	3	6	2
+rev(x) = x, rev(y) = x ==> rev(y) = y, rev(rev(y)) = y | 	8	9	2	3	0
+rev(x) = x, rev(x) = y ==> rev(y) = y, rev(rev(y)) = y | 	8	9	2	3	0
+rev(x) = x, rev(x) = y ==> rev(x) = y, rev(rev(x)) = x | 	8	9	2	4	0
+rev(x) = x, rev(x) = y === rev(x) = x, rev(rev(y)) = x | 	8	9	2	4	0
+rev(x) = x, rev(x) = y ==> rev(x) = y, rev(rev(y)) = y | 	8	9	2	4	0
+rev(x) = x, rev(y) = x ==> rev(y) = x, rev(rev(x)) = x | 	8	9	2	4	0
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(rev(x)) = b | Not(gt(a, b)), Not(gt(b, a))	8	9	3	5	2
+rev(x) = x, rev(x) = y ==> rev(y) = x, rev(rev(y)) = y | 	8	9	2	4	0
+rev(x) = x, rev(x) = y ==> rev(x) = x, rev(rev(x)) = x | 	8	9	2	3	0
+rev(x) = y, rev(y) = y ==> rev(y) = y, rev(rev(y)) = y | 	8	9	2	3	0
+rev(x) = x, rev(x) = y ==> rev(y) = y, rev(rev(x)) = x | 	8	9	2	4	0
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(rev(x)) = a | Not(gt(a, b)), Not(gt(b, a))	8	9	3	5	2
+rev(x) = x, rev(x) = y ==> rev(x) = x, rev(rev(y)) = y | 	8	9	2	4	0
+cons(a, tl(x)) = x <== cons(a, cons(b, y)) = x | 	8	9	4	6	0
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(rev(x)) = a | Not(gt(a, b)), Not(gt(b, a))	8	9	3	6	2
+rev(x) = x, rev(x) = y ==> rev(y) = x, rev(rev(x)) = x | 	8	9	2	4	0
+rev(x) = y, rev(y) = y ==> rev(x) = x, rev(rev(y)) = y | 	8	9	2	4	0
+hd(x) = a <== hd(x) = b, hd(tl(x)) = b | Not(gt(a, b)), Not(gt(b, a))	6	7	3	4	2
+hd(x) = a <== hd(x) = b, hd(tl(x)) = a | Not(gt(a, b)), Not(gt(b, a))	6	7	3	5	2
+sort(x) = x, tl(x) = y ==> sort(y) = y, sort(sort(y)) = y | 	7	9	2	3	0
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(tl(x)) = b | Not(gt(a, b)), Not(gt(b, a))	6	9	3	5	2
+hd(x) = a, hd(x) = b <== hd(x) = b, hd(tl(x)) = a | Not(gt(a, b)), Not(gt(b, a))	6	9	3	6	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(tl(x)) = a | Not(gt(a, b)), Not(gt(b, a))	6	9	3	5	2
+hd(x) = a, hd(x) = b <== hd(x) = a, hd(tl(x)) = b | Not(gt(a, b)), Not(gt(b, a))	6	9	3	6	2
+hd(x) = a <== cons(a, cons(a, y)) = x | 	4	7	3	5	0
+hd(x) = a <== cons(b, cons(b, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	7	4	5	2
+hd(x) = a <== cons(b, cons(a, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	7	4	6	2
+hd(x) = a, hd(y) = b ==> concat(x, concat(y, x)) = z | Not(gt(a, b)), Not(gt0(b))	5	9	5	7	2
+hd(x) = a, hd(y) = b ==> concat(x, concat(x, y)) = z | Not(gt(a, b)), Not(gt0(b))	5	9	5	7	2
+hd(x) = a, hd(x) = b <== cons(a, cons(a, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	9	4	6	2
+cons(a, tl(x)) = x <== cons(a, cons(a, y)) = x | 	4	9	3	5	0
+cons(a, tl(x)) = x <== cons(b, cons(b, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	9	4	5	2
+hd(x) = a, hd(x) = b <== cons(b, cons(b, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	9	4	6	2
+hd(x) = a, hd(x) = b <== cons(b, cons(a, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	9	4	7	2
+hd(x) = a, hd(x) = b <== cons(a, cons(b, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	9	4	7	2
+cons(a, tl(x)) = x <== cons(b, cons(a, y)) = x | Not(gt(a, b)), Not(gt(b, a))	4	9	4	6	2
+length(x) = a <== concat(x, concat(x, x)) = y | Not(gt1(a))	2	7	3	4	1
+sort(x) = x <== cons(a, cons(a, y)) = x | Not(gt0(a))	2	7	3	4	1
+sort(x) = x <== cons(a, cons(b, y)) = x | Not(gt(a, b)), Not(gt0(b))	2	7	4	5	2
+length(x) = a, length(x) = b <== concat(x, concat(x, x)) = y | Not(gt(a, b)), Not(gt1(b))	2	9	4	5	2
+concat(x, tl(y)) = y <== concat(x, concat(x, x)) = y | 	2	9	2	4	0
