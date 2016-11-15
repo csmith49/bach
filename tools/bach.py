@@ -85,7 +85,9 @@ class Results(object):
     def score(self):
         return self.positive_evidence / self.size
     def __repr__(self):
-        return self.formula
+        ret = [self.formula, self.positive_evidence, self.size, self.num_vars, self.num_holes, self.abducible_size]
+        ret = map(lambda x: str(x), ret)
+        return '\t'.join(ret)
 
 def gather_results(output):
     out = []
@@ -100,7 +102,8 @@ def gather_results(output):
 # ----------------------------------------
 # now we do the fun stuff
 # ----------------------------------------
-CMD = "gtimeout {time} ./bach.native -induct /tmp/tmp.sexp -fact {fact_dir} -mindepth {depth} -csv"
+
+CMD = "gtimeout {time} ./bach.native -induct /tmp/tmp.sexp -fact {fact_dir} -mindepth {depth} -csv -d {depth}"
 
 def bach(config, fact_dir, depth, time, abduce):
     cmd = CMD.format(fact_dir=fact_dir, depth=depth, time=time))
@@ -110,8 +113,7 @@ def bach(config, fact_dir, depth, time, abduce):
         signature = f.read()
     result_strings = []
     for sexp in split_signature(signature):
-        print ("running combo")
-        with open("/tmp/tmp.sexp", "w") as f:
+        with open("/tmp/tmp"+str(depth)+".sexp", "w") as f:
             f.write(sexp)
         result_strings.append(do_it(cmd))
     return gather_results("\n".join(result_strings))

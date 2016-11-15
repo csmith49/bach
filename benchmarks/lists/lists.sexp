@@ -8,7 +8,7 @@
     )
     (signature
         (
-            (Symbol hd (list list))
+            (Symbol hd (list int))
             (Symbol tl (list list))
             (Symbol sort (list list))
             (Symbol rev (list list))
