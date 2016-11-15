@@ -13,7 +13,7 @@ def trig_cos(x : "rad"):
         return 0
     else: return int(res)
 
-def trig_arcsin(x : "int"):
+def trig_arcsin(x : "arc"):
     if x > 1 or x < -1: return "Error" 
     res =  math.asin(x)
     
@@ -29,7 +29,7 @@ def trig_arcsin(x : "int"):
 
     return int(res)
 
-def trig_arccos(x : "int"):
+def trig_arccos(x : "arc"):
     if x > 1 or x < -1: return "Error" 
     res = math.acos(x)
 

@@ -3,15 +3,15 @@
     (variables
         (
             (rad (x y))
-            (int (z w))
+            (arc (z w))
         )
     )
     (signature
         (
-            (Symbol trig_sin (rad int))
-			(Symbol trig_cos (rad int))
-			(Symbol trig_arccos (int rad))
-			(Symbol trig_arcsin (int rad))
+            (Symbol trig_sin (rad arc))
+			(Symbol trig_cos (rad arc))
+			(Symbol trig_arccos (arc rad))
+			(Symbol trig_arcsin (arc rad))
         )
     )
 )

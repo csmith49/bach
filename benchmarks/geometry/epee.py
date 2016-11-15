@@ -97,6 +97,14 @@ def fp_gen():
         a = norm_int(0, 2)
         yield a
 
+@add_generator('rad')
+def fp_gen():
+    from random import randint
+    while True:
+        a = norm_int(0, 2)
+        yield a
+
+
 @add_generator('posint')
 def fp_gen():
     from random import randint

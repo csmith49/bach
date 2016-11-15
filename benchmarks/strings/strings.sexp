@@ -2,9 +2,9 @@
     (max_terms 4)
     (variables
         (
-            (string (x y))
+            (string (x y z))
             (int (a b))
-            (bool (p))
+            (bool (p q))
         )
     )
     (signature

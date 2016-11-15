@@ -86,7 +86,7 @@ def fp_gen():
 def string_gen():
     from random import randint
     while True:
-        size = randint(0,3)
+        size = randint(0,4)
         s = ""
         for i in range(1,size+1):
             x = randint(0, 2)
