@@ -38,9 +38,9 @@ def to_sexp(li):
     else:
         return "({})".format(" ".join(map(to_sexp, li)))
 
-def do_it(cmd, seconds):
+def do_it(cmd):
     try:
-         output = check_output(cmd, stderr=STDOUT, timeout=seconds, shell=True)
+         output = check_output(cmd, stderr=STDOUT, shell=True)
          return output.decode(sys.stdout.encoding)
     except TimeoutExpired as e:
         return e.output.decode(sys.stdout.encoding)
@@ -100,10 +100,10 @@ def gather_results(output):
 # ----------------------------------------
 # now we do the fun stuff
 # ----------------------------------------
-CMD = "./bach.native -induct /tmp/tmp.sexp -fact {fact_dir} -mindepth {depth} -csv"
+CMD = "gtimeout {time} ./bach.native -induct /tmp/tmp.sexp -fact {fact_dir} -mindepth {depth} -csv"
 
 def bach(config, fact_dir, depth, time, abduce):
-    cmd = CMD.format(fact_dir=fact_dir, depth=depth)
+    cmd = CMD.format(fact_dir=fact_dir, depth=depth, time=time))
     if abduce:
         cmd += " -abduce"
     with open(config) as f:
@@ -113,7 +113,7 @@ def bach(config, fact_dir, depth, time, abduce):
         print ("running combo")
         with open("/tmp/tmp.sexp", "w") as f:
             f.write(sexp)
-        result_strings.append(do_it(cmd, time))
+        result_strings.append(do_it(cmd))
     return gather_results("\n".join(result_strings))
 
 # ----------------------------------------
