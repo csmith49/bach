@@ -102,7 +102,7 @@ def gather_results(output):
 # ----------------------------------------
 # now we do the fun stuff
 # ----------------------------------------
-CMD = "./bach.native -induct /tmp/tmp{depth}.sexp -fact {fact_dir} -mindepth {depth} -csv"
+CMD = "./bach.native -induct /tmp/tmp{depth}.sexp -fact {fact_dir} -mindepth {depth} -csv -id {depth}"
 
 def bach(config, fact_dir, depth, time, abduce):
     cmd = CMD.format(fact_dir=fact_dir, depth=depth)

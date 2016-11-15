@@ -84,7 +84,7 @@ def int_gen():
 def fp_gen():
     from random import randint
     while True:
-        size = abs(norm_int(0,3))
+        size = randint(0,3)
         d = {}
         for i in range(1,size+1):
             d[randint(0,2)] = randint(0,1)
@@ -94,7 +94,7 @@ def fp_gen():
 def fp_gen():
     from random import randint
     while True:
-        a = abs(norm_int(0, 1))
+        a = abs(norm_int(0, 2))
         yield a
 
 

@@ -61,6 +61,10 @@ length = Function('length', BitVecSort(3), BitVecSort(3))
 identity = Function('identity', BitVecSort(3), BoolSort())
 tr = Function('tr', BitVecSort(3), BoolSort())
 fls = Function('fls', BitVecSort(3), BoolSort())
+twoPiApart = Function('twoPi', BitVecSort(3), BitVecSort(3), BoolSort())
+halfPiApart = Function('halfPi', BitVecSort(3), BitVecSort(3), BoolSort())
+invi = Function('invi', BitVecSort(3), BitVecSort(3), BoolSort())
+invr = Function('invr', BitVecSort(3), BitVecSort(3), BoolSort())
 
 class AstRefKey:
     """ Wrapper for allowing Z3 ASTs to be stored into Python Hashtables """
@@ -107,10 +111,8 @@ allforms = {}
 f = open('specs.out','r')
 
 for l in f:
-    print l
     l = l.replace("\n","")
     lt = l.split("\t")   
-    print "lt?, ",lt
     ln = lt[0].split("|")
     bi = "b"
     if "===" in ln[0]:
@@ -122,13 +124,10 @@ for l in f:
         bi = "l"
         zstr = ln[0].split("==>")
     
-    print zstr
 
     g = ln[1].replace("=","==")
-    print "g: ", g
     if g == "\n": g = True
     else: g = eval("And("+g+")")
-    print "ng: ", g
 
     zstr[0] = zstr[0].replace("=","==")
     zstr[1] = zstr[1].replace("=","==")
@@ -179,12 +178,9 @@ def impl(f1,f2):
     a = And(f1,Not(f2))
 
     s.add(a)
-    print "calling z3"
     if s.check() == unsat:
-        print "tru done caalling z3"
         return True
     
-    print "done caalling z3"
     return False
 
 
@@ -192,24 +188,18 @@ unique = {}
 for l in allforms:
     there = False
     for l2 in unique:
-        print "checking", l
-        print "  and", u
 
 
         #print "z3 :checking", allforms[l]
         #print "z3 :   and", unique[u]
         if impl(unique[l2], allforms[l]):
-            print "sub"
-            print unique[l2]
-            print allforms[l]
-            #print "true"
             there = True
             break
 
     if there: continue
 
     unique[l] = allforms[l]
-print "\noutput:\n"
+
 for l in  unique: print l
 
 f.close()

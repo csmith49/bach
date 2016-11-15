@@ -1,5 +1,5 @@
 (
-    (max_terms 2)
+    (max_terms 3)
     (variables
         (
             (tensor (x y z))

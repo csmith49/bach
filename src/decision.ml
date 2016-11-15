@@ -126,7 +126,7 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
     let to_string (c : conjunct) : string = match c with
         Conjunct (l, r) ->
             let ls = List.map (fun a -> D.tag_to_string (description a)) l in
-            let rs = List.map (fun a -> "!" ^ (D.tag_to_string (description a))) r in
+            let rs = List.map (fun a -> "Not("^ (D.tag_to_string (description a)) ^")") r in
             Aux.concat (ls @ rs)
     (* lift application to positive and negative instances *)
     let apply_conjunct (c : conjunct) (e : elt) : bool =

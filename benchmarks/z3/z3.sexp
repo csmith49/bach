@@ -2,14 +2,13 @@
     (max_terms 4)
     (variables
         (
-            (form (x y z))
+            (form (x y z w))
             (bool (p q))
         )
     )
     (signature
         (
-            (Symbol sat (form bool))
-            (Symbol valid (form bool))
+            (Symbol and (form form form))
         )
     )
 )
