@@ -24,6 +24,8 @@ let interval_start = ref 0
 let interval_end = ref 10000
 let interval_exclude = ref false
 
+let unique_id = ref ""
+
 let spec_list = [
     ("-noisy", Arg.Set noisy, " Print additional information.");
     ("-induct", Arg.String parse_problem_file, " Parses problem statement file.");
@@ -42,7 +44,8 @@ let spec_list = [
     ("-exclude", Arg.Set interval_exclude, " Turns interval selection to exclusion.");
     ("-sample", Arg.Set_int sample_count, " Samples k values from the chosen interval.");
     ("-csv", Arg.Set csv_flag, " Enables tab-separated output.");
-    ("-maxdepth", Arg.Set_int maxdepth, " Maximum size of specs.")
+    ("-maxdepth", Arg.Set_int maxdepth, " Maximum size of specs.");
+    ("-id", Arg.Set_string unique_id, " So Aws can stop breaking everything.")
 ]
 
 let usage_msg = "todo"
@@ -219,8 +222,9 @@ let _ =
     Arg.parse (Arg.align spec_list) anon_fun usage_msg;
     (* initialize rng *)
     Random.self_init ();
+    (* and our working directory *)
     (* load config options *)
-    parse_work_file "config.sexp";
+    parse_work_file "config.sexp" !unique_id;
     (* load fact files *)
     load_fact_data_long
         !Problem.fact_dir

@@ -13,24 +13,21 @@ let usable_preds var_sorts =
             ts in
     List.filter usable !global_preds
 
-(* we now make our special instance of the id3 module *)
-module AbductionLearner =
-    IDTree(struct
-        type elt = string list
-        type tag = relation
-        let elt_to_string = Aux.concat
-        let tag_to_string = Relation.to_string
-        let is_error = List.mem "Error"
-    end)
+module Domain = struct
+    type elt = string list
+    type tag = relation
+    let elt_to_string = Aux.concat
+    let tag_to_string = Relation.to_string
+    let is_error = List.mem "Error"
+    let well_defined_tag r = match r with
+        Relation (n, vs) ->
+            let unique = List.sort_uniq Pervasives.compare vs in
+            (List.length vs) = (List.length unique)
+end
 
-module ConjunctLearner =
-    Conjuncts(struct
-        type elt = string list
-        type tag = relation
-        let elt_to_string = Aux.concat
-        let tag_to_string = Relation.to_string
-        let is_error = List.mem "Error"
-    end)
+(* we now make our special instance of the id3 module *)
+module AbductionLearner = IDTree(Domain)
+module ConjunctLearner = Conjuncts(Domain)
 
 (* to convert our learned tree into something reasonable, we should convert to labeled paths *)
 type path_label = PLabel | NLabel | MLabel

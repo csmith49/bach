@@ -50,8 +50,16 @@ let work_globals = ref {
     max_file_size = 1000;
 }
 
-let parse_work_file fname =
-    work_globals := WorkParams.of_string (String.concat " " (Aux.load_lines fname))
+let parse_work_file fname unique_id =
+    let _ = work_globals := WorkParams.of_string (String.concat " " (Aux.load_lines fname)) in
+    if unique_id != ""
+        then begin
+            let new_work_dir = !work_globals.work_dir ^ unique_id ^ "/" in
+            work_globals := {!work_globals with work_dir = new_work_dir};
+            Aux.syscall ("mkdir -p " ^ new_work_dir);
+            ()
+        end
+        else ()
 
 (* finally, we have some more globals we might want to mess with *)
 let fact_dir = ref ""

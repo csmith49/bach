@@ -11,6 +11,7 @@ module type DECIDABLE = sig
     val elt_to_string : elt -> string
     val tag_to_string : tag -> string
     val is_error : elt -> bool
+    val well_defined_tag : tag -> bool
 end
 
 module IDTree = functor (D : DECIDABLE) -> struct
@@ -151,6 +152,7 @@ module Conjuncts = functor (D : DECIDABLE) -> struct
     (* we put together all conjuncts below a certain size *)
     (* TODO : wow, this is so inefficient *)
     let construct_conjuncts (atts : attribute list) (max_size : int) : conjunct list =
+        let atts = List.filter (fun a -> D.well_defined_tag (description a)) atts in
         let to_left c = match c with
             Conjunct (l, r) -> List.map (fun a ->
                     (Conjunct (Aux.append l a, r)))
