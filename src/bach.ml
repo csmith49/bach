@@ -10,8 +10,9 @@ let scalar = ref 1.0
 let abduce_flag = ref false
 let prune_flag = ref true
 let times_flag = ref false
+let start_time = ref 0.0
 let time = ref 0.0
-let souffle_time = ref 0.0
+let maxtime = ref 0
 let souffle_count = ref 0
 let csv_flag = ref false
 
@@ -45,7 +46,8 @@ let spec_list = [
     ("-sample", Arg.Set_int sample_count, " Samples k values from the chosen interval.");
     ("-csv", Arg.Set csv_flag, " Enables tab-separated output.");
     ("-maxdepth", Arg.Set_int maxdepth, " Maximum size of specs.");
-    ("-id", Arg.Set_string unique_id, " So Aws can stop breaking everything.")
+    ("-id", Arg.Set_string unique_id, " So Aws can stop breaking everything.");
+    ("-maxtime", Arg.Set_int maxtime, " Set a maximum time.")
 ]
 
 let usage_msg = "todo"
@@ -134,14 +136,12 @@ let process_pair (lhs : ConcretizedMT.t)
     (* now see if we should proceed *)
     if np && nc && (!abduce_flag || wc) then begin
         (* get results! finally! *)
-        let s_time = Unix.gettimeofday () in
         let var_order, counts, values = check lhs rhs !abduce_flag in
-        let _ = souffle_time := !souffle_time +. ((Unix.gettimeofday ()) -. s_time) in
         let _ = noisy_print ("\t" ^ (counts_to_string counts)) in
         let _ = incr souffle_count in
+        let _ = time := (Unix.gettimeofday ()) -. !start_time in
         let _ = if !times_flag then
-            let t = (Unix.gettimeofday ()) -. !time in
-            print_endline ("TIME:\t" ^ (string_of_float t) ^ "\t" ^ (string_of_float !souffle_time) ^ "\t" ^ (string_of_int !souffle_count)) in
+            print_endline ("TIME:\t" ^ (string_of_float !time) ^ "\t" ^ (string_of_int !souffle_count)) in
         if equivalent counts then begin
             if !prune_flag then begin
                 let crhs = ConcretizedMT.rebase_variables rhs in
@@ -206,7 +206,7 @@ let process_pair (lhs : ConcretizedMT.t)
                 let gs = string_of_int !guard_size in
                 print_endline (String.concat "\t" [fs;ps;ss;vs;hs;gs]);
             end else begin
-                print_endline (pair_string !direction);
+                if not !times_flag then print_endline (pair_string !direction);
                 noisy_print ("\t" ^ (counts_to_string counts));
                 noisy_print ("\t" ^ (string_of_float s));
             end
@@ -235,7 +235,7 @@ let _ =
     (* now we search *)
     noisy_print "Starting iteration...";
     (* set the time! *)
-    time := Unix.gettimeofday ();
+    start_time := Unix.gettimeofday ();
     (* construct the frontier and history *)
     let frontier = ref (AbstractSearch.start LiftedMT.Truth) in
     let seen = ref ([] : LiftedMT.t list) in
@@ -245,14 +245,15 @@ let _ =
         (* push an abstract mt off the frontier *)
         let e, frontier' = AbstractSearch.next !frontier in
         frontier := frontier';
-        noisy_print ("GENERATED: " ^ (LiftedMT.to_string e));
-        noisy_print ("CONCRETIZING...");
         (* how do we actually compare? *)
         let compare_with_symbolic c =
             (* minimum depth check *)
             if ((LiftedMT.length c) + (LiftedMT.length e)) < !mindepth then
                 []
             else if ((LiftedMT.length c) + (LiftedMT.length e)) > !maxdepth then
+                let _ = running := false in
+                []
+            else if !maxtime > 0 && (float_of_int !maxtime) <= !time then
                 let _ = running := false in
                 []
             else begin
