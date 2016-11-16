@@ -16,9 +16,8 @@ class TimeLine(object):
         # and get a name
         self.name = filename.split(".")[0]
     def plot(self, **kwargs):
-        label = {"small": "Small", "big_d": "Data", "big_f": "Functions", "big_v": "Variables"}[self.name]
         kwargs["linewidth"] = 2
-        plt.plot(self.time, self.count, label=label, **kwargs)
+        plt.plot(self.time, self.count, label=self.name, **kwargs)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="We make graphs.")
@@ -35,7 +34,7 @@ if __name__ == "__main__":
     plt.title("Speed of induction")
     plt.xlabel("time (seconds)")
     plt.xlim(0, 300)
-    plt.ylabel("formulas visited")
+    plt.ylabel("specifications visited")
     plt.legend()
 
     plt.show()
