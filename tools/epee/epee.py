@@ -63,34 +63,127 @@ def main():
                     output = args.error
                 csvwriter.writerow(inputs + [output])
 
-# sample generators go here
-@add_generator('int')
-def int_gen():
+# GENERATORS
+
+# for dict
+@add_generator('dict')
+def dict_gen():
     from random import randint
     while True:
-        yield randint(-32768, 32767)
+        size = randint(0, 3)
+        d = {}
+        for i in range(1, size + 1):
+            key = randint(0, 2)
+            value = randint(0, 1)
+            d[key] = value
+        yield d
 
-@add_generator('cons_int')
-def int_gen():
-    from random import randint
-    while True:
-        yield randint(0, 2)
-
+# for finitefield (actually does fp_199)
 @add_generator('fp17')
 def fp_gen():
     from random import randint
     while True:
         yield randint(0, 198)
 
+# for geometry
+@add_generator('point')
+def point_gen():
+    from random import randint
+    while True:
+        x = randint(-1, 1)
+        y = x
+        yield (x, y)
+
+@add_generator('rect')
+def rect_gen():
+    from random import randint
+    while True:
+        x = randint(-1, 1)
+        y = x
+        size = randint(1, 6)
+        yield (x, y, size)
+
+@add_generator('int')
+def int_gen():
+    from numpy import random
+    while True:
+        a = random.normal(0, 2, 1)
+        yield int(a[0])
+
+@add_generator('rad')
+def rad_gen():
+    from numpy import random
+    while True:
+        a =  random.normal(0, 2, 1)
+        yield int(a[0])
+
+@add_generator('posint')
+def posint_gen():
+    from random import randint
+    while True:
+        a = randint(1, 3)
+        yield a
+
+# for list
+@add_generator('cons_int')
+def consint_gen():
+    from random import randint
+    while True:
+        yield randint(0, 2)
+
+@add_generator('list')
+def list_gen():
+    from random import randint
+    while True:
+        size = randint(0, 3)
+        yield [randint(0, 2) for r in range(size)]
+
+# for matrix
+@add_generator('tensor')
+def tensor_gen():
+    from random import randint
+    while True:
+        x1 = randint(-1, 2)
+        y1 = randint(-1, 1)
+        x2 = randint(-1, 1)
+        y2 = randint(-1, 1)
+        yield (x1, x2, y1, y2)
+
+# for queue
+@add_generator('queue')
+def queue_gen():
+    from random import randint
+    while True:
+        size = randint(0, 3)
+        s = []
+        for i in range(1, size + 1):
+            value = randint(0, 1)
+            s.append(value)
+        yield s
+
+# for sets
+@add_generator('set')
+def set_gen():
+    from random import randint
+    from numpy import random
+    while True:
+        size = abs(int(random.normal(0, 3, 1)[0]))
+        s = set([])
+        for i in range(1, size + 1):
+            value = randint(0, 2)
+            s.add(value)
+        yield s
+
+# for strings
 @add_generator('string')
 def string_gen():
     from random import randint
     while True:
         size = randint(0,4)
         s = ""
-        for i in range(1,size+1):
+        for i in range(1, size + 1):
             x = randint(0, 2)
-            if x == 0: 
+            if x == 0:
                 s += "1"
             if x == 1:
                 s += "a"
@@ -99,11 +192,20 @@ def string_gen():
         if s == "": s = "@"
         yield s
 
-@add_generator('list')
-def list_gen():
+# for trig
+@add_generator('arc')
+def arc_gen():
     from random import randint
     while True:
-        yield [randint(0,2) for r in range(randint(1, 3))]
+        yield randint(-10, 10)
 
+@add_generator('radian')
+def radian_gen():
+    from random import randint
+    while True:
+        yield randint(-10, 10)
+
+
+# if called as a standalone, execute as expected
 if __name__ == "__main__":
     main()
