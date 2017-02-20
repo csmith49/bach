@@ -53,6 +53,9 @@ all: native
 
 clean:
 	$(OCB) -clean
+	$(foreach bm,$(BENCHMARKS),rm -r benchmarks/$(bm)/facts; )
+	rm -r $(GRAPHS)
+	rm -r $(TRUTH)
 
 native:
 	$(OCB) bach.native
