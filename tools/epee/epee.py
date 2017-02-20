@@ -114,7 +114,7 @@ def int_gen():
 def rad_gen():
     from numpy import random
     while True:
-        a =  random.normal(0, 2, 1)
+        a = random.normal(0, 2, 1)
         yield int(a[0])
 
 @add_generator('posint')
