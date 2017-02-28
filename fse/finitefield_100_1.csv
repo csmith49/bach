@@ -1,0 +1,18 @@
+True === True | 	1	2	0	0	0
+ff_add_inv(x) = y === ff_add_inv(y) = x | 	32	4	2	4	0
+ff_mult_inv(x) = y === ff_mult_inv(y) = x | 	24	4	2	4	0
+ff_add(x, y) = x === ff_add(y, z) = z | 	2	6	3	4	0
+ff_add(x, y) = x <== ff_add(z, y) = x | 	2	6	3	5	0
+ff_add(x, y) = x === ff_add(z, y) = z | 	4	6	3	4	0
+ff_add(x, y) = z === ff_add(x, z) = y | 	1	6	3	6	0
+ff_add(x, y) = z === ff_add(z, y) = x | 	2	6	3	6	0
+ff_add(x, y) = z ==> ff_add(z, y) = z | 	2	6	3	5	0
+True === ff_add_inv(ff_add_inv(x)) = x | 	32	4	1	1	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(y)) = x | 	32	6	2	4	0
+ff_add_inv(ff_mult_inv(x)) = y === ff_add_inv(ff_mult_inv(y)) = x | 	4	6	2	4	0
+ff_mult(x, y) = x === ff_mult(y, z) = z | 	3	6	3	4	0
+ff_mult(x, y) = x === ff_mult(z, y) = x | 	1	6	3	5	0
+ff_mult(x, y) = x === ff_mult(z, y) = z | 	1	6	3	4	0
+ff_add_inv(ff_mult_inv(x)) = y === ff_mult_inv(ff_add_inv(x)) = y | 	10	6	2	4	0
+True === ff_mult_inv(ff_mult_inv(x)) = x | 	24	4	1	1	0
+ff_add_inv(ff_add_inv(x)) = y === ff_mult_inv(ff_mult_inv(x)) = y | 	4	6	2	4	0

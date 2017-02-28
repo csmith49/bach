@@ -1,0 +1,340 @@
+True === True | 	1	2	0	0	0
+all_strip(x) = x <== all_strip(y) = x | 	99	4	2	3	0
+all_strip(x) = y ==> all_strip(y) = y | 	99	4	2	3	0
+all_strip(x) = x ==> left_strip(x) = x | 	39	4	1	2	0
+all_strip(x) = y ==> left_strip(y) = y | 	94	4	2	3	0
+left_strip(x) = x <== left_strip(y) = x | 	101	4	2	3	0
+left_strip(x) = y ==> left_strip(y) = y | 	101	4	2	3	0
+reverse(x) = y === reverse(y) = x | 	75	4	2	4	0
+all_strip(x) = x ==> right_strip(x) = x | 	35	4	1	2	0
+all_strip(x) = y ==> right_strip(y) = y | 	89	4	2	3	0
+right_strip(x) = x <== right_strip(y) = x | 	96	4	2	3	0
+right_strip(x) = y ==> right_strip(y) = y | 	96	4	2	3	0
+to_caps(x) = x <== to_caps(y) = x | 	81	4	2	3	0
+to_caps(x) = y ==> to_caps(y) = y | 	81	4	2	3	0
+to_lower(x) = x <== to_lower(y) = x | 	87	4	2	3	0
+to_lower(x) = y ==> to_lower(y) = y | 	87	4	2	3	0
+all_strip(x) = x === all_strip(all_strip(x)) = x | 	44	5	1	2	0
+all_strip(x) = x <== all_strip(all_strip(y)) = x | 	99	5	2	3	0
+all_strip(x) = y === all_strip(all_strip(x)) = y | 	99	5	2	4	0
+all_strip(x) = x === all_strip(left_strip(x)) = x | 	39	5	1	2	0
+all_strip(x) = x <== all_strip(left_strip(y)) = x | 	87	5	2	3	0
+all_strip(x) = y === all_strip(left_strip(x)) = y | 	85	5	2	4	0
+all_strip(x) = x <== all_strip(reverse(x)) = x | 	14	5	1	2	0
+all_strip(x) = x <== all_strip(reverse(y)) = x | 	77	5	2	3	0
+left_strip(x) = x <== all_strip(reverse(x)) = x | 	12	5	1	2	0
+left_strip(x) = x <== all_strip(reverse(y)) = x | 	73	5	2	3	0
+reverse(x) = x <== all_strip(reverse(x)) = x | 	14	5	1	2	0
+right_strip(x) = x <== all_strip(reverse(x)) = x | 	12	5	1	2	0
+right_strip(x) = x <== all_strip(reverse(y)) = x | 	69	5	2	3	0
+all_strip(x) = x === all_strip(right_strip(x)) = x | 	35	5	1	2	0
+all_strip(x) = x <== all_strip(right_strip(y)) = x | 	88	5	2	3	0
+all_strip(x) = y === all_strip(right_strip(x)) = y | 	83	5	2	4	0
+all_strip(x) = x <== all_strip(to_caps(x)) = x | 	6	5	1	2	0
+all_strip(x) = x <== all_strip(to_caps(y)) = x | 	82	5	2	3	0
+left_strip(x) = x <== all_strip(to_caps(x)) = x | 	6	5	1	2	0
+left_strip(x) = x <== all_strip(to_caps(y)) = x | 	71	5	2	3	0
+reverse(x) = x <== all_strip(to_caps(x)) = x | 	5	5	1	2	0
+reverse(x) = x <== all_strip(to_caps(y)) = x | 	79	5	2	3	0
+right_strip(x) = x <== all_strip(to_caps(x)) = x | 	5	5	1	2	0
+right_strip(x) = x <== all_strip(to_caps(y)) = x | 	68	5	2	3	0
+to_caps(x) = x <== all_strip(to_caps(x)) = x | 	6	5	1	2	0
+to_caps(x) = x <== all_strip(to_caps(y)) = x | 	71	5	2	3	0
+all_strip(reverse(x)) = x <== all_strip(to_caps(x)) = x | 	5	6	1	2	0
+all_strip(reverse(x)) = x <== all_strip(to_caps(y)) = x | 	79	6	2	3	0
+all_strip(to_caps(x)) = x <== all_strip(to_caps(y)) = x | 	71	6	2	3	0
+all_strip(to_caps(x)) = y ==> all_strip(to_caps(y)) = y | 	71	6	2	3	0
+all_strip(x) = x <== all_strip(to_lower(x)) = x | 	7	5	1	2	0
+all_strip(x) = x <== all_strip(to_lower(y)) = x | 	75	5	2	3	0
+left_strip(x) = x <== all_strip(to_lower(x)) = x | 	7	5	1	2	0
+left_strip(x) = x <== all_strip(to_lower(y)) = x | 	75	5	2	3	0
+right_strip(x) = x <== all_strip(to_lower(x)) = x | 	7	5	1	2	0
+right_strip(x) = x <== all_strip(to_lower(y)) = x | 	75	5	2	3	0
+to_lower(x) = x <== all_strip(to_lower(x)) = x | 	7	5	1	2	0
+to_lower(x) = x <== all_strip(to_lower(y)) = x | 	75	5	2	3	0
+all_strip(reverse(x)) = x <== all_strip(to_lower(x)) = x | 	6	6	1	2	0
+all_strip(reverse(x)) = x <== all_strip(to_lower(y)) = x | 	68	6	2	3	0
+all_strip(to_lower(x)) = x <== all_strip(to_lower(y)) = x | 	75	6	2	3	0
+all_strip(to_lower(x)) = y ==> all_strip(to_lower(y)) = y | 	75	6	2	3	0
+is_prefix(x, x) = p === is_prefix(y, y) = p | 	49	6	3	4	0
+all_strip(x) = x === left_strip(all_strip(x)) = x | 	39	5	1	2	0
+all_strip(x) = x <== left_strip(all_strip(y)) = x | 	94	5	2	3	0
+all_strip(x) = y === left_strip(all_strip(x)) = y | 	94	5	2	4	0
+all_strip(x) = x ==> left_strip(left_strip(x)) = x | 	39	5	1	2	0
+all_strip(x) = y ==> left_strip(left_strip(y)) = y | 	94	5	2	3	0
+left_strip(x) = x === left_strip(left_strip(x)) = x | 	71	5	1	2	0
+left_strip(x) = x <== left_strip(left_strip(y)) = x | 	101	5	2	3	0
+left_strip(x) = y === left_strip(left_strip(x)) = y | 	101	5	2	4	0
+all_strip(x) = x <== left_strip(reverse(x)) = x | 	12	5	1	2	0
+left_strip(x) = x <== left_strip(reverse(x)) = x | 	13	5	1	2	0
+left_strip(x) = x <== left_strip(reverse(y)) = x | 	80	5	2	3	0
+reverse(x) = x <== left_strip(reverse(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== left_strip(reverse(x)) = x | 	13	5	1	2	0
+all_strip(reverse(x)) = x === left_strip(reverse(x)) = x | 	12	6	1	2	0
+all_strip(x) = x === left_strip(right_strip(x)) = x | 	32	5	1	2	0
+all_strip(x) = x <== left_strip(right_strip(y)) = x | 	81	5	2	3	0
+all_strip(x) = y === left_strip(right_strip(x)) = y | 	75	5	2	4	0
+left_strip(x) = x <== left_strip(to_caps(x)) = x | 	14	5	1	2	0
+left_strip(x) = x <== left_strip(to_caps(y)) = x | 	76	5	2	3	0
+to_caps(x) = x <== left_strip(to_caps(x)) = x | 	14	5	1	2	0
+to_caps(x) = x <== left_strip(to_caps(y)) = x | 	76	5	2	3	0
+all_strip(to_caps(x)) = x ==> left_strip(to_caps(x)) = x | 	6	6	1	2	0
+all_strip(to_caps(x)) = y ==> left_strip(to_caps(y)) = y | 	71	6	2	3	0
+left_strip(to_caps(x)) = x <== left_strip(to_caps(y)) = x | 	76	6	2	3	0
+left_strip(to_caps(x)) = y ==> left_strip(to_caps(y)) = y | 	76	6	2	3	0
+left_strip(x) = x <== left_strip(to_lower(x)) = x | 	14	5	1	2	0
+left_strip(x) = x <== left_strip(to_lower(y)) = x | 	91	5	2	3	0
+to_lower(x) = x <== left_strip(to_lower(x)) = x | 	14	5	1	2	0
+to_lower(x) = x <== left_strip(to_lower(y)) = x | 	84	5	2	3	0
+all_strip(to_lower(x)) = x ==> left_strip(to_lower(x)) = x | 	7	6	1	2	0
+all_strip(to_lower(x)) = y ==> left_strip(to_lower(y)) = y | 	75	6	2	3	0
+left_strip(to_lower(x)) = x <== left_strip(to_lower(y)) = x | 	84	6	2	3	0
+left_strip(to_lower(x)) = y ==> left_strip(to_lower(y)) = y | 	84	6	2	3	0
+length(x) = a === length(reverse(x)) = a | 	51	5	2	4	0
+length(x) = a === length(to_caps(x)) = a | 	67	5	2	4	0
+length(x) = a === length(to_lower(x)) = a | 	56	5	2	4	0
+all_strip(x) = x <== reverse(all_strip(x)) = x | 	14	5	1	2	0
+all_strip(x) = x <== reverse(all_strip(y)) = x | 	86	5	2	3	0
+left_strip(x) = x <== reverse(all_strip(x)) = x | 	12	5	1	2	0
+left_strip(x) = x <== reverse(all_strip(y)) = x | 	87	5	2	3	0
+reverse(x) = x <== reverse(all_strip(x)) = x | 	14	5	1	2	0
+right_strip(x) = x <== reverse(all_strip(x)) = x | 	12	5	1	2	0
+right_strip(x) = x <== reverse(all_strip(y)) = x | 	80	5	2	3	0
+all_strip(reverse(x)) = x === reverse(all_strip(x)) = x | 	14	6	1	2	0
+all_strip(reverse(x)) = y === reverse(all_strip(x)) = y | 	66	6	2	4	0
+all_strip(x) = x <== reverse(left_strip(x)) = x | 	12	5	1	2	0
+left_strip(x) = x <== reverse(left_strip(x)) = x | 	13	5	1	2	0
+reverse(x) = x <== reverse(left_strip(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== reverse(left_strip(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== reverse(left_strip(y)) = x | 	80	5	2	3	0
+all_strip(reverse(x)) = x === reverse(left_strip(x)) = x | 	12	6	1	2	0
+True === reverse(reverse(x)) = x | 	75	4	1	1	0
+reverse(reverse(x)) = y === reverse(reverse(y)) = x | 	75	6	2	4	0
+all_strip(x) = x <== reverse(right_strip(x)) = x | 	12	5	1	2	0
+left_strip(x) = x <== reverse(right_strip(x)) = x | 	13	5	1	2	0
+left_strip(x) = x <== reverse(right_strip(y)) = x | 	79	5	2	3	0
+reverse(x) = x <== reverse(right_strip(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== reverse(right_strip(x)) = x | 	13	5	1	2	0
+all_strip(reverse(x)) = x === reverse(right_strip(x)) = x | 	12	6	1	2	0
+left_strip(reverse(x)) = y === reverse(right_strip(x)) = y | 	64	6	2	4	0
+reverse(x) = x <== reverse(to_caps(x)) = x | 	9	5	1	2	0
+to_caps(x) = x <== reverse(to_caps(x)) = x | 	9	5	1	2	0
+to_caps(x) = x <== reverse(to_caps(y)) = x | 	55	5	2	3	0
+all_strip(to_caps(x)) = x ==> reverse(to_caps(x)) = x | 	5	6	1	2	0
+all_strip(to_caps(x)) = y ==> reverse(to_caps(y)) = y | 	68	6	2	3	0
+reverse(x) = x <== reverse(to_lower(x)) = x | 	11	5	1	2	0
+to_lower(x) = x <== reverse(to_lower(x)) = x | 	11	5	1	2	0
+to_lower(x) = x <== reverse(to_lower(y)) = x | 	77	5	2	3	0
+all_strip(x) = x === right_strip(all_strip(x)) = x | 	35	5	1	2	0
+all_strip(x) = x <== right_strip(all_strip(y)) = x | 	89	5	2	3	0
+all_strip(x) = y === right_strip(all_strip(x)) = y | 	89	5	2	4	0
+all_strip(x) = x === right_strip(left_strip(x)) = x | 	32	5	1	2	0
+all_strip(x) = x <== right_strip(left_strip(y)) = x | 	78	5	2	3	0
+all_strip(x) = y === right_strip(left_strip(x)) = y | 	73	5	2	4	0
+all_strip(x) = x <== right_strip(reverse(x)) = x | 	12	5	1	2	0
+left_strip(x) = x <== right_strip(reverse(x)) = x | 	13	5	1	2	0
+reverse(x) = x <== right_strip(reverse(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== right_strip(reverse(x)) = x | 	13	5	1	2	0
+right_strip(x) = x <== right_strip(reverse(y)) = x | 	76	5	2	3	0
+all_strip(reverse(x)) = x === right_strip(reverse(x)) = x | 	12	6	1	2	0
+reverse(left_strip(x)) = y === right_strip(reverse(x)) = y | 	67	6	2	4	0
+all_strip(x) = x ==> right_strip(right_strip(x)) = x | 	35	5	1	2	0
+all_strip(x) = y ==> right_strip(right_strip(y)) = y | 	89	5	2	3	0
+right_strip(x) = x === right_strip(right_strip(x)) = x | 	64	5	1	2	0
+right_strip(x) = x <== right_strip(right_strip(y)) = x | 	96	5	2	3	0
+right_strip(x) = y === right_strip(right_strip(x)) = y | 	96	5	2	4	0
+right_strip(x) = x <== right_strip(to_caps(x)) = x | 	11	5	1	2	0
+right_strip(x) = x <== right_strip(to_caps(y)) = x | 	65	5	2	3	0
+to_caps(x) = x <== right_strip(to_caps(x)) = x | 	11	5	1	2	0
+to_caps(x) = x <== right_strip(to_caps(y)) = x | 	62	5	2	3	0
+all_strip(to_caps(x)) = x ==> right_strip(to_caps(x)) = x | 	5	6	1	2	0
+all_strip(to_caps(x)) = y ==> right_strip(to_caps(y)) = y | 	68	6	2	3	0
+right_strip(to_caps(x)) = x <== right_strip(to_caps(y)) = x | 	62	6	2	3	0
+right_strip(to_caps(x)) = y ==> right_strip(to_caps(y)) = y | 	62	6	2	3	0
+right_strip(x) = x <== right_strip(to_lower(x)) = x | 	14	5	1	2	0
+right_strip(x) = x <== right_strip(to_lower(y)) = x | 	89	5	2	3	0
+to_lower(x) = x <== right_strip(to_lower(x)) = x | 	14	5	1	2	0
+to_lower(x) = x <== right_strip(to_lower(y)) = x | 	87	5	2	3	0
+all_strip(to_lower(x)) = x ==> right_strip(to_lower(x)) = x | 	7	6	1	2	0
+all_strip(to_lower(x)) = y ==> right_strip(to_lower(y)) = y | 	75	6	2	3	0
+right_strip(to_lower(x)) = x <== right_strip(to_lower(y)) = x | 	87	6	2	3	0
+right_strip(to_lower(x)) = y ==> right_strip(to_lower(y)) = y | 	87	6	2	3	0
+all_strip(x) = x <== to_caps(all_strip(x)) = x | 	6	5	1	2	0
+all_strip(x) = x <== to_caps(all_strip(y)) = x | 	85	5	2	3	0
+left_strip(x) = x <== to_caps(all_strip(x)) = x | 	6	5	1	2	0
+left_strip(x) = x <== to_caps(all_strip(y)) = x | 	82	5	2	3	0
+reverse(x) = x <== to_caps(all_strip(x)) = x | 	5	5	1	2	0
+right_strip(x) = x <== to_caps(all_strip(x)) = x | 	5	5	1	2	0
+right_strip(x) = x <== to_caps(all_strip(y)) = x | 	76	5	2	3	0
+to_caps(x) = x <== to_caps(all_strip(x)) = x | 	6	5	1	2	0
+to_caps(x) = x <== to_caps(all_strip(y)) = x | 	82	5	2	3	0
+all_strip(reverse(x)) = x <== to_caps(all_strip(x)) = x | 	5	6	1	2	0
+all_strip(reverse(x)) = x <== to_caps(all_strip(y)) = x | 	82	6	2	3	0
+all_strip(to_caps(x)) = x === to_caps(all_strip(x)) = x | 	6	6	1	2	0
+all_strip(to_caps(x)) = x <== to_caps(all_strip(y)) = x | 	77	6	2	3	0
+all_strip(to_caps(x)) = y === to_caps(all_strip(x)) = y | 	72	6	2	4	0
+left_strip(x) = x <== to_caps(left_strip(x)) = x | 	14	5	1	2	0
+left_strip(x) = x <== to_caps(left_strip(y)) = x | 	81	5	2	3	0
+to_caps(x) = x <== to_caps(left_strip(x)) = x | 	14	5	1	2	0
+to_caps(x) = x <== to_caps(left_strip(y)) = x | 	81	5	2	3	0
+all_strip(to_caps(x)) = x ==> to_caps(left_strip(x)) = x | 	6	6	1	2	0
+all_strip(to_caps(x)) = y ==> to_caps(left_strip(y)) = y | 	71	6	2	3	0
+left_strip(to_caps(x)) = x === to_caps(left_strip(x)) = x | 	14	6	1	2	0
+left_strip(to_caps(x)) = x <== to_caps(left_strip(y)) = x | 	81	6	2	3	0
+left_strip(to_caps(x)) = y === to_caps(left_strip(x)) = y | 	71	6	2	4	0
+reverse(x) = x <== to_caps(reverse(x)) = x | 	9	5	1	2	0
+to_caps(x) = x <== to_caps(reverse(x)) = x | 	9	5	1	2	0
+to_caps(x) = x <== to_caps(reverse(y)) = x | 	62	5	2	3	0
+all_strip(to_caps(x)) = x ==> to_caps(reverse(x)) = x | 	5	6	1	2	0
+all_strip(to_caps(x)) = y ==> to_caps(reverse(y)) = y | 	68	6	2	3	0
+reverse(to_caps(x)) = x === to_caps(reverse(x)) = x | 	9	6	1	2	0
+reverse(to_caps(x)) = y === to_caps(reverse(x)) = y | 	52	6	2	4	0
+right_strip(x) = x <== to_caps(right_strip(x)) = x | 	11	5	1	2	0
+right_strip(x) = x <== to_caps(right_strip(y)) = x | 	71	5	2	3	0
+to_caps(x) = x <== to_caps(right_strip(x)) = x | 	11	5	1	2	0
+to_caps(x) = x <== to_caps(right_strip(y)) = x | 	73	5	2	3	0
+all_strip(to_caps(x)) = x ==> to_caps(right_strip(x)) = x | 	5	6	1	2	0
+all_strip(to_caps(x)) = y ==> to_caps(right_strip(y)) = y | 	68	6	2	3	0
+right_strip(to_caps(x)) = x === to_caps(right_strip(x)) = x | 	11	6	1	2	0
+right_strip(to_caps(x)) = x <== to_caps(right_strip(y)) = x | 	68	6	2	3	0
+right_strip(to_caps(x)) = y === to_caps(right_strip(x)) = y | 	60	6	2	4	0
+to_caps(x) = x === to_caps(to_caps(x)) = x | 	26	5	1	2	0
+to_caps(x) = x <== to_caps(to_caps(y)) = x | 	81	5	2	3	0
+to_caps(x) = y === to_caps(to_caps(x)) = y | 	81	5	2	4	0
+to_caps(x) = x === to_caps(to_lower(x)) = x | 	18	5	1	2	0
+to_caps(x) = x <== to_caps(to_lower(y)) = x | 	66	5	2	3	0
+to_caps(x) = y === to_caps(to_lower(x)) = y | 	66	5	2	4	0
+all_strip(x) = x <== to_lower(all_strip(x)) = x | 	7	5	1	2	0
+all_strip(x) = x <== to_lower(all_strip(y)) = x | 	79	5	2	3	0
+left_strip(x) = x <== to_lower(all_strip(x)) = x | 	7	5	1	2	0
+left_strip(x) = x <== to_lower(all_strip(y)) = x | 	88	5	2	3	0
+right_strip(x) = x <== to_lower(all_strip(x)) = x | 	7	5	1	2	0
+right_strip(x) = x <== to_lower(all_strip(y)) = x | 	88	5	2	3	0
+to_lower(x) = x <== to_lower(all_strip(x)) = x | 	7	5	1	2	0
+to_lower(x) = x <== to_lower(all_strip(y)) = x | 	88	5	2	3	0
+all_strip(reverse(x)) = x <== to_lower(all_strip(x)) = x | 	6	6	1	2	0
+all_strip(to_lower(x)) = x === to_lower(all_strip(x)) = x | 	7	6	1	2	0
+all_strip(to_lower(x)) = x <== to_lower(all_strip(y)) = x | 	79	6	2	3	0
+all_strip(to_lower(x)) = y === to_lower(all_strip(x)) = y | 	65	6	2	4	0
+left_strip(x) = x <== to_lower(left_strip(x)) = x | 	14	5	1	2	0
+left_strip(x) = x <== to_lower(left_strip(y)) = x | 	85	5	2	3	0
+to_lower(x) = x <== to_lower(left_strip(x)) = x | 	14	5	1	2	0
+to_lower(x) = x <== to_lower(left_strip(y)) = x | 	80	5	2	3	0
+all_strip(to_lower(x)) = x ==> to_lower(left_strip(x)) = x | 	7	6	1	2	0
+all_strip(to_lower(x)) = y ==> to_lower(left_strip(y)) = y | 	75	6	2	3	0
+left_strip(to_lower(x)) = x === to_lower(left_strip(x)) = x | 	14	6	1	2	0
+left_strip(to_lower(x)) = x <== to_lower(left_strip(y)) = x | 	80	6	2	3	0
+left_strip(to_lower(x)) = y === to_lower(left_strip(x)) = y | 	80	6	2	4	0
+reverse(x) = x <== to_lower(reverse(x)) = x | 	11	5	1	2	0
+to_lower(x) = x <== to_lower(reverse(x)) = x | 	11	5	1	2	0
+to_lower(x) = x <== to_lower(reverse(y)) = x | 	70	5	2	3	0
+reverse(to_lower(x)) = x === to_lower(reverse(x)) = x | 	11	6	1	2	0
+reverse(to_lower(x)) = y === to_lower(reverse(x)) = y | 	64	6	2	4	0
+right_strip(x) = x <== to_lower(right_strip(x)) = x | 	14	5	1	2	0
+right_strip(x) = x <== to_lower(right_strip(y)) = x | 	85	5	2	3	0
+to_lower(x) = x <== to_lower(right_strip(x)) = x | 	14	5	1	2	0
+to_lower(x) = x <== to_lower(right_strip(y)) = x | 	84	5	2	3	0
+all_strip(to_lower(x)) = x ==> to_lower(right_strip(x)) = x | 	7	6	1	2	0
+all_strip(to_lower(x)) = y ==> to_lower(right_strip(y)) = y | 	75	6	2	3	0
+right_strip(to_lower(x)) = x === to_lower(right_strip(x)) = x | 	14	6	1	2	0
+right_strip(to_lower(x)) = x <== to_lower(right_strip(y)) = x | 	83	6	2	3	0
+right_strip(to_lower(x)) = y === to_lower(right_strip(x)) = y | 	76	6	2	4	0
+to_lower(x) = x === to_lower(to_caps(x)) = x | 	18	5	1	2	0
+to_lower(x) = x <== to_lower(to_caps(y)) = x | 	67	5	2	3	0
+to_lower(x) = y === to_lower(to_caps(x)) = y | 	65	5	2	4	0
+to_lower(x) = x === to_lower(to_lower(x)) = x | 	28	5	1	2	0
+to_lower(x) = x <== to_lower(to_lower(y)) = x | 	87	5	2	3	0
+to_lower(x) = y === to_lower(to_lower(x)) = y | 	87	5	2	4	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	44	6	2	3	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(z) = x | 	99	6	3	4	0
+all_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	44	6	2	3	0
+all_strip(x) = x <== all_strip(x) = z, all_strip(y) = x | 	99	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x | 	99	4	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	44	6	2	3	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	99	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(z) = x | 	421	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(z) = y | 	99	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(z) = z | 	4356	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	44	6	2	3	0
+all_strip(x) = x <== all_strip(y) = y, all_strip(z) = x | 	4356	6	3	4	0
+all_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	99	6	3	4	0
+all_strip(x) = x <== all_strip(y) = z, all_strip(z) = x | 	99	6	3	4	0
+all_strip(x) = y <== all_strip(x) = z, all_strip(z) = y | 	99	6	3	5	0
+all_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	44	6	2	4	0
+all_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	99	6	3	5	0
+all_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	44	6	2	4	0
+all_strip(x) = y ==> all_strip(y) = y | 	99	4	2	3	0
+all_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	99	6	3	5	0
+all_strip(x) = y <== all_strip(x) = z, all_strip(z) = y | 	99	6	3	5	0
+all_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	99	6	3	5	0
+all_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	99	6	3	5	0
+left_strip(x) = x <== all_strip(x) = x | 	39	4	1	2	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(x) = y | 	39	6	2	3	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = x | 	94	6	2	3	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = y | 	1716	6	2	3	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = z | 	3861	6	3	4	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(x) = y | 	39	6	2	3	0
+left_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	39	6	2	3	0
+left_strip(x) = x <== all_strip(x) = y, all_strip(z) = x | 	94	6	3	4	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = x | 	94	6	2	3	0
+left_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	39	6	2	3	0
+left_strip(x) = x <== all_strip(x) = z, all_strip(y) = x | 	94	6	3	4	0
+left_strip(x) = x <== all_strip(y) = x | 	94	4	2	3	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	39	6	2	3	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	94	6	3	4	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(z) = x | 	416	6	3	4	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(z) = y | 	94	6	3	4	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(z) = z | 	4136	6	3	4	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = y | 	1716	6	2	3	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	39	6	2	3	0
+left_strip(x) = x <== all_strip(y) = y, all_strip(z) = x | 	4136	6	3	4	0
+left_strip(x) = x <== all_strip(x) = x, all_strip(y) = z | 	3861	6	3	4	0
+left_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	94	6	3	4	0
+left_strip(x) = x <== all_strip(y) = z, all_strip(z) = x | 	94	6	3	4	0
+left_strip(x) = y <== all_strip(x) = x, all_strip(x) = y | 	39	6	2	4	0
+left_strip(x) = y <== all_strip(x) = x, all_strip(x) = y | 	39	6	2	4	0
+left_strip(x) = y <== all_strip(x) = y, all_strip(y) = x | 	39	6	2	4	0
+left_strip(x) = y <== all_strip(x) = y, all_strip(z) = x | 	94	6	3	5	0
+left_strip(x) = y <== all_strip(x) = y, all_strip(y) = x | 	39	6	2	4	0
+left_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	39	6	2	4	0
+left_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	94	6	3	5	0
+left_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	39	6	2	4	0
+left_strip(x) = y <== all_strip(x) = y, all_strip(z) = x | 	94	6	3	5	0
+left_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	94	6	3	5	0
+left_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	94	6	3	5	0
+left_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	94	6	3	5	0
+right_strip(x) = x <== all_strip(x) = x | 	35	4	1	2	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(x) = y | 	35	6	2	3	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = x | 	89	6	2	3	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = y | 	1540	6	2	3	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = z | 	3465	6	3	4	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(x) = y | 	35	6	2	3	0
+right_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	35	6	2	3	0
+right_strip(x) = x <== all_strip(x) = y, all_strip(z) = x | 	89	6	3	4	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = x | 	89	6	2	3	0
+right_strip(x) = x <== all_strip(x) = y, all_strip(y) = x | 	35	6	2	3	0
+right_strip(x) = x <== all_strip(x) = z, all_strip(y) = x | 	89	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x | 	89	4	2	3	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	35	6	2	3	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	89	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(z) = x | 	409	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(z) = y | 	89	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(z) = z | 	3916	6	3	4	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = y | 	1540	6	2	3	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(y) = y | 	35	6	2	3	0
+right_strip(x) = x <== all_strip(y) = y, all_strip(z) = x | 	3916	6	3	4	0
+right_strip(x) = x <== all_strip(x) = x, all_strip(y) = z | 	3465	6	3	4	0
+right_strip(x) = x <== all_strip(y) = x, all_strip(y) = z | 	89	6	3	4	0
+right_strip(x) = x <== all_strip(y) = z, all_strip(z) = x | 	89	6	3	4	0
+right_strip(x) = y <== all_strip(x) = x, all_strip(x) = y | 	35	6	2	4	0
+right_strip(x) = y <== all_strip(x) = x, all_strip(x) = y | 	35	6	2	4	0
+right_strip(x) = y <== all_strip(x) = y, all_strip(y) = x | 	35	6	2	4	0
+right_strip(x) = y <== all_strip(x) = y, all_strip(z) = x | 	89	6	3	5	0
+right_strip(x) = y <== all_strip(x) = y, all_strip(y) = x | 	35	6	2	4	0
+right_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	35	6	2	4	0
+right_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	89	6	3	5	0
+right_strip(x) = y <== all_strip(y) = x, all_strip(y) = y | 	35	6	2	4	0
+right_strip(x) = y <== all_strip(x) = y, all_strip(z) = x | 	89	6	3	5	0
+right_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	89	6	3	5	0
+right_strip(x) = y <== all_strip(y) = x, all_strip(z) = y | 	89	6	3	5	0
+right_strip(x) = y <== all_strip(z) = x, all_strip(z) = y | 	89	6	3	5	0

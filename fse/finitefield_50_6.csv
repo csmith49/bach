@@ -1,0 +1,8 @@
+True === True | 	1	2	0	0	0
+ff_add_inv(x) = y === ff_add_inv(y) = x | 	18	4	2	4	0
+ff_mult_inv(x) = y === ff_mult_inv(y) = x | 	11	4	2	4	0
+True === ff_add_inv(ff_add_inv(x)) = x | 	18	4	1	1	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(y)) = x | 	18	6	2	4	0
+ff_add_inv(ff_mult_inv(x)) = y === ff_mult_inv(ff_add_inv(x)) = y | 	2	6	2	4	0
+True === ff_mult_inv(ff_mult_inv(x)) = x | 	11	4	1	1	0
+ff_mult_inv(ff_mult_inv(x)) = y === ff_mult_inv(ff_mult_inv(y)) = x | 	11	6	2	4	0

@@ -1,0 +1,4 @@
+True === True | 	1	2	0	0	0
+ff_add_inv(x) = y === ff_add_inv(y) = x | 	2	4	2	4	0
+True === ff_add_inv(ff_add_inv(x)) = x | 	2	4	1	1	0
+ff_add_inv(ff_add_inv(x)) = y === ff_add_inv(ff_add_inv(y)) = x | 	2	6	2	4	0

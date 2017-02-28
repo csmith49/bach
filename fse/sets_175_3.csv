@@ -1,0 +1,77 @@
+True === True | 	1	2	0	0	0
+set_clear(x) = x === set_clear(y) = x | 	8	4	2	3	0
+set_add(x, a) = x <== set_add(y, a) = x | 	23	6	3	5	0
+set_add(x, a) = y ==> set_add(y, a) = y | 	23	6	3	5	0
+set_clear(x) = x === set_clear(set_clear(x)) = x | 	1	5	1	2	0
+set_clear(x) = x === set_clear(set_clear(y)) = x | 	8	5	2	3	0
+set_clear(x) = x === set_difference(x, x) = x | 	1	5	1	2	0
+set_clear(x) = x ==> set_difference(x, y) = x | 	8	5	2	3	0
+set_clear(x) = x <== set_difference(x, y) = y | 	1	5	2	3	0
+set_clear(x) = x <== set_difference(y, x) = x | 	1	5	2	3	0
+set_clear(x) = x ==> set_difference(y, x) = y | 	8	5	2	3	0
+set_clear(x) = x === set_difference(y, y) = x | 	7	5	2	3	0
+set_difference(x, y) = x <== set_difference(x, y) = y | 	1	6	2	4	0
+set_difference(x, y) = x <== set_difference(x, z) = z | 	8	6	3	4	0
+set_difference(x, y) = x <== set_difference(y, x) = x | 	1	6	2	4	0
+set_difference(x, y) = x === set_difference(y, x) = y | 	23	6	2	4	0
+set_difference(x, y) = x <== set_difference(y, z) = z | 	8	6	3	4	0
+set_difference(x, y) = x <== set_difference(z, x) = x | 	8	6	3	4	0
+set_difference(x, y) = x <== set_difference(z, x) = y | 	53	6	3	5	0
+set_difference(x, y) = x <== set_difference(z, y) = x | 	53	6	3	5	0
+set_difference(x, y) = x <== set_difference(z, y) = y | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_difference(x, y) = x | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_difference(x, z) = x | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_difference(x, z) = y | 	8	6	3	5	0
+set_difference(x, y) = y === set_difference(y, x) = x | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_difference(y, x) = y | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_difference(y, z) = x | 	8	6	3	5	0
+set_difference(x, y) = y ==> set_difference(y, z) = y | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_difference(z, x) = z | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_difference(z, y) = z | 	8	6	3	4	0
+set_difference(x, y) = z <== set_difference(x, z) = z | 	8	6	3	5	0
+set_difference(x, y) = z ==> set_difference(y, z) = y | 	53	6	3	5	0
+set_difference(x, y) = z <== set_difference(z, x) = x | 	8	6	3	5	0
+set_difference(x, y) = z ==> set_difference(z, y) = z | 	53	6	3	5	0
+set_clear(x) = x ==> set_discard(x, a) = x | 	9	5	2	3	0
+set_difference(x, y) = y ==> set_discard(x, a) = x | 	9	6	3	4	0
+set_difference(x, y) = y ==> set_discard(x, a) = y | 	9	6	3	5	0
+set_difference(x, y) = y ==> set_discard(y, a) = x | 	9	6	3	5	0
+set_difference(x, y) = y ==> set_discard(y, a) = y | 	9	6	3	4	0
+set_discard(x, a) = x <== set_discard(y, a) = x | 	52	6	3	5	0
+set_discard(x, a) = y ==> set_discard(y, a) = y | 	52	6	3	5	0
+set_issubset(x, x) = p === set_issubset(y, y) = p | 	49	6	3	4	0
+set_issubset(x, x) = p === set_issuperset(x, x) = p | 	6	6	2	4	0
+set_issubset(x, y) = p === set_issuperset(y, x) = p | 	52	6	3	6	0
+set_length(set_clear(x)) = a === set_length(set_clear(y)) = a | 	64	6	3	4	0
+True === set_union(x, x) = x | 	8	4	1	1	0
+set_clear(x) = x ==> set_union(x, y) = y | 	8	5	2	3	0
+set_clear(x) = x ==> set_union(y, x) = y | 	8	5	2	3	0
+set_add(x, a) = y ==> set_union(x, y) = y | 	21	6	3	5	0
+set_add(x, a) = y ==> set_union(y, x) = y | 	21	6	3	5	0
+set_difference(x, y) = y ==> set_union(x, x) = y | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_union(x, y) = x | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_union(x, y) = y | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_union(x, z) = z | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_union(y, x) = x | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_union(y, x) = y | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_union(y, y) = x | 	1	6	2	4	0
+set_difference(x, y) = y ==> set_union(y, z) = z | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_union(z, x) = z | 	8	6	3	4	0
+set_difference(x, y) = y ==> set_union(z, y) = z | 	8	6	3	4	0
+set_difference(x, y) = z ==> set_union(x, z) = x | 	55	6	3	5	0
+set_difference(x, y) = z ==> set_union(z, x) = x | 	55	6	3	5	0
+set_discard(x, a) = y ==> set_union(x, y) = x | 	50	6	3	5	0
+set_discard(x, a) = y ==> set_union(y, x) = x | 	50	6	3	5	0
+set_union(x, x) = y ==> set_union(x, y) = x | 	8	6	2	4	0
+set_union(x, x) = y ==> set_union(x, y) = y | 	8	6	2	4	0
+set_union(x, x) = y ==> set_union(y, x) = x | 	8	6	2	4	0
+set_union(x, x) = y ==> set_union(y, x) = y | 	8	6	2	4	0
+set_union(x, x) = y === set_union(y, y) = x | 	8	6	2	4	0
+set_union(x, y) = x <== set_union(x, x) = y | 	8	6	2	4	0
+set_union(x, y) = x === set_union(y, x) = x | 	24	6	2	4	0
+set_union(x, y) = x <== set_union(y, y) = x | 	8	6	2	4	0
+set_union(x, y) = x <== set_union(y, z) = x | 	52	6	3	5	0
+set_union(x, y) = x <== set_union(z, y) = x | 	53	6	3	5	0
+set_union(x, y) = z === set_union(y, x) = z | 	50	6	3	6	0
+set_union(x, y) = z ==> set_union(z, x) = z | 	52	6	3	5	0
+set_union(x, y) = z ==> set_union(z, y) = z | 	53	6	3	5	0
