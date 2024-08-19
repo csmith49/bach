@@ -1,5 +1,7 @@
 # Bach
 
+Implementation for [Discovering Relational Specifications](https://dl.acm.org/doi/abs/10.1145/3106237.3106279).
+
 ## Building
 **Bach** is dependent on [Souffle](https://github.com/oracle/souffle). Follow the build instructions and add the path to the **Souffle** executable in `config.sexp`.
 
